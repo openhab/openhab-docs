@@ -24,8 +24,14 @@ If you have any issues, questions or an idea for additional features, please tak
 ## Latest Changes
 
 ::: tip State of this document
-This documentation refers to release [v4.1.0](https://github.com/openhab/openhab-google-assistant/releases/tag/v4.1.0) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2025-07-23
+This documentation refers to release [v5.0.1](https://github.com/openhab/openhab-google-assistant/releases/tag/v5.0.1) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2025-11-30
 :::
+
+### v5.0.1
+
+- Added [`Humidifier`](#humidifier) device type with humidity control and fan speed support
+- Added extended [`Vacuum`](#vacuum-as-group-with-advanced-functionality) device with dock, locate, battery status and cycle information
+- Added [Rotation trait](https://developers.home.google.com/cloud-to-cloud/traits/rotation) support to Awning, Blinds, Curtain, Pergola and Shutter devices
 
 ### v4.1.0
 
@@ -237,6 +243,24 @@ Switch { ga="Washer" [ inverted=false ] }
 Switch { ga="Dishwasher" [ inverted=false ] }
 ```
 
+### Vacuum as Group with advanced functionality
+
+| | |
+|---|---|
+| **Device Type** | [Vacuum](https://developers.home.google.com/cloud-to-cloud/guides/vacuum) |
+| **Supported Traits** | [StartStop](https://developers.home.google.com/cloud-to-cloud/traits/startstop), [Dock](https://developers.home.google.com/cloud-to-cloud/traits/dock), [Locator](https://developers.home.google.com/cloud-to-cloud/traits/locator), [RunCycle](https://developers.home.google.com/cloud-to-cloud/traits/runcycle), [EnergyStorage](https://developers.home.google.com/cloud-to-cloud/traits/energystorage) |
+| **Supported Items** | Group as `Vacuum` with the following members:<br>(required) Switch as `vacuumPower`<br>(optional) Switch as `vacuumDock`<br>(optional) Switch as `vacuumLocate`<br>(optional) Number or Dimmer as `vacuumBattery`<br>(optional) String as `vacuumCurrentCycle` |
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
+
+```shell
+Group  vacuumRobot { ga="Vacuum" [ checkState=true ] }
+Switch vacuumPowerItem     (vacuumRobot) { ga="vacuumPower" }
+Switch vacuumDockItem      (vacuumRobot) { ga="vacuumDock" }
+Switch vacuumLocateItem    (vacuumRobot) { ga="vacuumLocate" }
+Number vacuumBatteryItem   (vacuumRobot) { ga="vacuumBattery" }
+String vacuumCycleItem     (vacuumRobot) { ga="vacuumCurrentCycle" }
+```
+
 ### Lock
 
 | | |
@@ -438,14 +462,49 @@ Number setpointItemHigh (acunitGroup) { ga="thermostatTemperatureSetpointHigh" }
 String modeItem         (acunitGroup) { ga="thermostatMode" }
 ```
 
+### Humidifier
+
+| | |
+|---|---|
+| **Device Type** | [Humidifier](https://developers.home.google.com/cloud-to-cloud/guides/humidifier) |
+| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff) (all devices), [HumiditySetting](https://developers.home.google.com/cloud-to-cloud/traits/humiditysetting) (Dimmer/Number items and Groups with humidity setpoint), [FanSpeed](https://developers.home.google.com/cloud-to-cloud/traits/fanspeed) (Groups with fan speed member) |
+| **Supported Items** | Switch (on/off only), Dimmer, Number, or Group as `Humidifier` with the following members:<br>(optional) Switch as `humidifierPower`<br>(optional) Number or Dimmer as `humidifierHumiditySetpoint`<br>(optional) Number as `humidifierHumidityAmbient`<br>(optional) Number or Dimmer as `humidifierFanSpeed` |
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>(optional) `maxHumidity=1-100`<br>(optional) `humidityRange="30,80"`<br>(optional) `fanSpeeds="low=Low:Slow,high=High:Fast"`<br>(optional) `ordered=true/false`<br>(optional) `lang="en"` |
+
+For simple humidifiers, you can use:
+
+- **Switch**: Basic on/off control only (no humidity percentage)
+- **Dimmer/Number**: Full humidity control with setpoint
+
+For advanced functionality, use a Group with specific members.
+
+- `maxHumidity=100` defines the maximum value of your humidity items if they don't use percentage (0-100). For example, if your sensor reports 0.0-1.0, set `maxHumidity=1`.
+- `humidityRange="30,80"` defines the supported humidity range for the setpoint (defaults to 0-100%).
+- `fanSpeeds` allows you to define named fan speeds with synonyms.
+
+Google Commands: "_Hey Google, turn on the humidifier_", "_Hey Google, set humidifier to 60 percent_" (Dimmer/Number/Group only), "_Hey Google, set humidifier fan speed to high_" (Group with fan speed only).
+
+```shell
+# Simple humidifier
+Switch { ga="Humidifier" }
+Dimmer { ga="Humidifier" [ maxHumidity=1 ] }
+
+# Advanced humidifier with humidity control and fan speed
+Group  humidifierGroup { ga="Humidifier" [ humidityRange="30,80", fanSpeeds="low=Low:Slow,high=High:Fast", maxHumidity=100 ] }
+Switch humidifierPowerItem     (humidifierGroup) { ga="humidifierPower" }
+Number humidifierSetpointItem  (humidifierGroup) { ga="humidifierHumiditySetpoint" }
+Number humidifierAmbientItem   (humidifierGroup) { ga="humidifierHumidityAmbient" }
+Dimmer humidifierFanSpeedItem  (humidifierGroup) { ga="humidifierFanSpeed" }
+```
+
 ### Awning, Blinds, Curtain, Door, Garage, Gate, Pergola, Shutter, Window
 
 | | |
 |---|---|
 | **Device Type** | [Awning](https://developers.home.google.com/cloud-to-cloud/guides/awning), [Blinds](https://developers.home.google.com/cloud-to-cloud/guides/blinds), [Curtain](https://developers.home.google.com/cloud-to-cloud/guides/curtain), [Door](https://developers.home.google.com/cloud-to-cloud/guides/door), [Garage](https://developers.home.google.com/cloud-to-cloud/guides/garage), [Gate](https://developers.home.google.com/cloud-to-cloud/guides/gate), [Pergola](https://developers.home.google.com/cloud-to-cloud/guides/pergola), [Shutter](https://developers.home.google.com/cloud-to-cloud/guides/shutter), [Window](https://developers.home.google.com/cloud-to-cloud/guides/window) |
-| **Supported Traits** | [OpenClose](https://developers.home.google.com/cloud-to-cloud/traits/openclose), [StartStop](https://developers.home.google.com/cloud-to-cloud/traits/startstop) |
-| **Supported Items** | Contact (no device control), Switch (no open percentage), Rollershutter |
-| **Configuration** | (optional) `discreteOnly=true/false`<br>(optional) `queryOnly=true/false`<br>(optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
+| **Supported Traits** | [OpenClose](https://developers.home.google.com/cloud-to-cloud/traits/openclose), [StartStop](https://developers.home.google.com/cloud-to-cloud/traits/startstop), [Rotation](https://developers.home.google.com/cloud-to-cloud/traits/rotation) (awning, blinds, curtain, pergola, shutter - requires group configuration) |
+| **Supported Items** | Contact (no device control), Switch (no open percentage), Rollershutter, Group (for rotation support) |
+| **Configuration** | (optional) `discreteOnly=true/false`<br>(optional) `queryOnly=true/false`<br>(optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>**Rotation Support (Groups with shutterRotation only):**<br>(optional) `supportsDegrees=true/false` (default: true)<br>(optional) `supportsContinuousRotation=true/false` (default: false)<br>(optional) `rotationDegreesRange="min,max"` (default: "0,90") |
 
 Blinds and similar devices should always use the `Rollershutter` item type for proper functionality.
 Since Google and openHAB use the opposite percentage value for "opened" and "closed", the action will translate this automatically.
@@ -454,7 +513,63 @@ If the values are still inverted in your case, you can state the `inverted=true`
 Since Google only tells the open percentage (and not the verb "close" or "down"), it can not be differentiated between saying "set blind to 100%" or "open blind".
 Therefore, it is not possible to "not invert" the verbs, if the user chooses to invert the numbers.
 
+#### Rotation Support for Awning, Blinds, Curtain, Pergola, and Shutter
+
+Awnings, blinds, curtains, pergolas, and shutters support the [Rotation trait](https://developers.home.google.com/cloud-to-cloud/traits/rotation), allowing control of slat tilt/rotation in addition to opening/closing. This feature is only available for group-based configurations with separate position and rotation controls.
+
+**Group Configuration for Rotation:**
+For devices with separate items for position and rotation control:
+
 ```shell
+Group blindsGroup { ga="Blinds" }
+  Rollershutter blindsPosition  { ga="shutterPosition" }
+  Number        blindsRotation  { ga="shutterRotation" }
+```
+
+**Voice Commands:**
+
+- "Open the shutters to 50%"
+- "Tilt the shutters to 30 degrees"
+- "Set the blinds to 75%"
+- "Rotate the blinds to 45 degrees"
+
+**Group Members:**
+
+- `shutterPosition`: Controls the opening/closing position (Rollershutter, Dimmer, Number)
+- `shutterRotation`: Controls the slat rotation/tilt (Rollershutter, Dimmer, Number)
+
+**Configuration Options:**
+The rotation trait supports the following optional configuration parameters:
+
+- `supportsDegrees=true/false` (default: true) - Enable degree-based control (percentage is always supported)
+  - Set to `false` if you only want percentage-based control without degree conversion
+- `supportsContinuousRotation=true/false` (default: false) - Enable continuous rotation beyond limits
+- `rotationDegreesRange="min,max"` (default: "0,90") - Rotation range in degrees as comma-separated values (only used when supportsDegrees is true)
+
+::: tip Note
+openHAB items always store rotation as percentages (0-100). When `supportsDegrees=true`, the percentage is converted to/from degrees using the configured range for Google Assistant commands and state responses.
+:::
+
+```shell
+Group shutterGroup { ga="Shutter" [ rotationDegreesRange="-45,45" ] }
+  Rollershutter shutterPosition  { ga="shutterPosition" }
+  Number        shutterRotation  { ga="shutterRotation" }
+
+# Example with continuous rotation support
+Group blindsGroup { ga="Blinds" [ supportsContinuousRotation=true, rotationDegreesRange="0,360" ] }
+  Rollershutter blindsCover     { ga="shutterPosition" }
+  Number        blindsRotation  { ga="shutterRotation" }
+
+# Example with percentage-only control (no degree conversion)
+Group awningGroup { ga="Awning" [ supportsDegrees=false ] }
+  Rollershutter awningPosition  { ga="shutterPosition" }
+  Dimmer        awningSlats     { ga="shutterRotation" }
+```
+
+**Basic Examples:**
+
+```shell
+# Simple devices (no rotation)
 Rollershutter { ga="Awning" }
 Rollershutter { ga="Blinds" [ inverted=true ] }
 Rollershutter { ga="Curtain" }
@@ -464,6 +579,15 @@ Contact       { ga="Gate" }
 Rollershutter { ga="Pergola" }
 Rollershutter { ga="Shutter" }
 Rollershutter { ga="Window" }
+
+# Advanced devices with rotation support
+Group shutterGroup { ga="Shutter" }
+  Rollershutter ShutterPosition  { ga="shutterPosition" }
+  Number        ShutterTilt      { ga="shutterRotation" }
+
+Group blindsGroup { ga="Blinds" [ rotationDegreesRange="0,180" ] }
+  Rollershutter blindsPosition  { ga="shutterPosition" }
+  Rollershutter blindsSlats     { ga="shutterRotation" }
 ```
 
 ### Charger
