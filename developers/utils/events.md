@@ -42,18 +42,33 @@ This string type presentation is used by event subscribers for event subscriptio
 
 The event source identifies the sender.
 Not all senders will set the source.
-The source should be structured, and of the form `<sending package>[$<actor>][=><sending package[$<actor>]]+`
-The sending package is meant to be the Java package name of the component that sent the event.
+The source should be structured, consisting of a series of concatenated components (separated by `=>` to indicate delegation), and each component consists of a bundle name with an optional actor name (separated by `$`).
+For example, given `org.openhab.ui.basic$default:03=>org.openhab.core.io.rest` we have two components separated by the `=>`.
+The first component has the bundle `org.openhab.ui.basic` and the actor `default:03`.
+The second component only has the bundle `org.openhab.core.io.rest`.
+Bundle names can contain neither the delegation separator, nor the actor separator.
+Actor names cannot contain the delegation separator.
+The sending bundle is meant to be the OSGi bundle name of the component that sent the event, though this isn't a strict rule and may be violated in some cases, especially for something like `org.openhab.core` that has many different packages in it.
 For non-Java components generating a source (such as the Android and iOS apps), it should still be in Java package name format, as if the component were a Java package.
-The optional actor piece is an identifier of some sort that identifies the end user, device, or rule that initiated the event.
-If another event is triggered in response to an initial event, it should preserve the original source, and append (separated by `=>`) another identifier for itself.
-A few examples:
+The actor piece is an identifier of some sort that identifies the end user, device, rule, or other identifier of a specific instance that initiated the event, if one is relevant.
+If an event is passed through multiple components before being processed, it should preserve the original source, and append (separated by `=>`) another component for itself.
+A few concrete examples:
 
-- `org.openhab.ui$admin` would mean the event was initiated by a user named `admin` via Main UI.
+- `org.openhab.ui=>org.openhab.core.io.rest$admin` would mean the event was initiated by a user named `admin` via Main UI (through the REST API).
+- `org.openhab.ui.basic$default:03=>org.openhab.core.io.rest` would mean the event was initiated via the `default` sitemap in Basic UI, on the third page (through the REST API, and unauthenticated).
 - `org.openhab.io.homekit$1467397f-c2e7-4b15-a7dc-315331ced2db` would mean the event was initiated from the HomeKit addon by a user identified by a UUID.
-- `org.openhab.android$my-phone=>org.openhab.io.openhabcloud$user@gmail.com` would mean the event was initiated in the Android openHAB app, and proxied through myopenhab.org using the user `user@gmail.com`.
-- `org.openhab.core.io.console=>org.openhab.core.automation$f8e461d0d9` would mean an event was sent via the Karaf console, which then triggered a rule with ID `f8e461d0d9`, triggering the current event.
-- `org.openhab.binding.mqtt$mqtt:thing:mything:mychannel` would mean an event was sent by a specific channel from the MQTT binding.
+- `org.openhab.ui.basic$default:03=>org.openhab.android$my-phone=>org.openhab.io.openhabcloud$user@gmail.com=>org.openhab.core.io.rest` would mean the event was initiated by using a sitemap in the Android openHAB app, and proxied through myopenhab.org using the user `user@gmail.com` (and finally through the REST API, but without a user).
+- `org.openhab.core.io.console` would mean the event was sent via the Karaf console.
+- `org.openhab.core.automation` would mean the event was triggered by a command or update sent in a rule action in most langauges. Some languages might provide a more detailed source.
+- `org.openhab.automation.jrubyscripting$rule:virtual_lighting:98` would mean the event was sent by an action written in JRuby using the helper library, with rule ID `virtual_lighting:98`.
+- `org.openhab.binding.mqtt$mqtt:thing:mything:mychannel` would mean the event was sent by the `mychannel` channel of the `mything` thing from the MQTT binding (updating a state).
+- `org.openhab.core.persistence` would mean the event was sent by the persistence engine (restoring the state).
+- `org.openhab.core.autoupdate` would mean the event was sent by the AutoUpdate manager (updating the state automatically).
+
+::: tip Note
+Sources can be provided by the user (either as parameters to REST API calls, or as arguments in rule actions), and thus no assumptions should be made about what values might be seen, including things like "all events triggered by rules flow through `org.openhab.core.automation`," "if a source indicates it came from a given bundle, that bundle actually triggered the event," or "I can enumerate all possible source bundles by searching through the code."
+In general, event sources are informational only, and helpful for end users to debug their installations, and should not be used internally by openHAB core code.
+:::
 
 #### Item Events
 
