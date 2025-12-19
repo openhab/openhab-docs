@@ -52,11 +52,11 @@ For example, a common approach would be to use [`MapDB`](/addons/persistence/map
 
 ## Recommended Persistence Configuration
 
-openHAB has a [`rrd4j`](/addons/persistence/rrd4j) persistence addon that comes with a suggested persistence strategy of `everyChange`, `everyMinute`, and `restoreOnStartup` for every supported Item.
+openHAB has a [rrd4j](/addons/persistence/rrd4j) persistence addon that comes with a suggested persistence strategy of `everyChange`, `everyMinute`, and `restoreOnStartup` for every supported Item.
 Configuring and using this will allow analyzing many items' history out-of-the-box.
 The good thing about `rrd4j` is that the database never grows beyond a given size, so you never have to clean it up.
 However, the way it achieves this (replacing ten readings with the average of the ten readings as the data gets older) makes the database not work for all Item types.
-If you need to `restoreOnStartup` unsupported Item types, `mapDB` might be a better choice for these items.
+If you need to `restoreOnStartup` unsupported Item types, [MapDB](/addons/persistence/mapdb/) might be a better choice for these items.
 
 ## Why Bother with Persistence?
 
