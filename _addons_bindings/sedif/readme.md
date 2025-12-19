@@ -4,6 +4,7 @@ label: Sedif
 title: Sedif - Bindings
 type: binding
 description: "This binding enables you to retrieve water consumption data for consumers in the Île-de-France region of France."
+logo: images/addons/sedif.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Sedif Binding
+
+<AddonLogo />
 
 This binding enables you to retrieve water consumption data for consumers in the Île-de-France region of France.
 
