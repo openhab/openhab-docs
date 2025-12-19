@@ -801,7 +801,7 @@ Caveat: Please note the semicolon after the return statement which terminates th
 
 ### Concurrency Guard
 
-If a rule is explicitly run from another script, rule, MainUI widget, instead of a trigger, the rule can be started before the current execution has ended.
+If a rule is explicitly run from another script, rule, a Main UI widget, etc., instead of a trigger, the rule can be started before the current execution has ended.
 It may be necessary to guard against concurrency.
 
 ```javascript
