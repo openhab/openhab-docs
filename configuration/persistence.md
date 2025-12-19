@@ -55,7 +55,7 @@ Strategies {
 ::: tip Note
 openHAB version 5.1 and above no longer support default strategies.
 If you have a `Default` under `Strategies` you should remove it.
-Also make sure every [Items](###items) definition has one or more strategies defined.
+Also make sure every `Items` definition has one or more strategies defined.
 :::
 
 #### Predefined Strategies
