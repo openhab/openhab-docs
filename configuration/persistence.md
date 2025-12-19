@@ -8,8 +8,6 @@ title: Persistence
 openHAB can store data over time; this is known as persistence.
 The data may be retrieved at a later time, for example to restore your system after startup, or to prepare graphs for display on a UI.
 
-openHAB ships with the [rrd4j persistence service](addons/persistence/rrd4j/) installed by default, which persists every Item on every state change and at least once a minute. Additionally, it restores the last stored value at system startup. To change this behaviour see [Persistence Configuration](#persistence-configuration).
-
 openHAB persists Item states in a database, and most popular databases are supported.
 You may have more than one persistence add-on loaded, and each of these may be configured independently.
 
@@ -53,6 +51,12 @@ Strategies {
   ...
 }
 ```
+
+::: tip Note
+openHAB version 5.1 and above no longer support default strategies.
+If you have a `Default` under `Strategies` you should remove it.
+Also make sure every `Items` definition has one or more strategies defined.
+:::
 
 #### Predefined Strategies
 
