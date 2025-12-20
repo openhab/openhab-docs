@@ -149,7 +149,7 @@ This step rewrites the profiles to the new format.
 
 The upgrade tool needs to know the path to the openHAB userdata folder (e.g. `/var/lib/openhab` on most Debian like systems).
 If the tool is not operated from that folder, it can be specified by using `--userdata /var/lib/openhab` on the commandline.
-The upgrade tool needs to know the parth to the openHAB conf folder (e.g. `/etc/openhab` on most Debian like systems).
+The upgrade tool needs to know the path to the openHAB conf folder (e.g. `/etc/openhab` on most Debian like systems).
 You can specify this conf folder using `--conf /etc/openhab` on the commandline.
 The full list of command line options can be displayed using the `--help` argument
 
