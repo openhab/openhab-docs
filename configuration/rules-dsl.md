@@ -619,7 +619,7 @@ var DecimalType parsedResult = new DecimalType(Long.parseLong(hex_code, 16))
 var myTemperature = 20|°C
 
 // get units in text
-var myUnits = myTemperature.getUnit.toString  // gives "°C"
+var myUnits = myTemperature.unit.toString  // gives "°C"
 
 // convert a quantity state into a different unit:
 var fahrenheit = myTemperature.toUnit("°F")   // will contain quantity 68°F
@@ -804,10 +804,10 @@ Caveat: Please note the semicolon after the return statement which terminates th
 If a rule is explicitly run from another script, rule, a Main UI widget, etc., instead of a trigger, the rule can be started before the current execution has ended.
 It may be necessary to guard against concurrency.
 
-```javascript
+```java
 import java.util.concurrent.locks.ReentrantLock
 
-val ReentrantLock lock  = new ReentrantLock
+val lock  = new ReentrantLock
 
 rule ConcurrentCode
 when
@@ -859,7 +859,7 @@ try {
     var temperature = transformRaw("JSONPATH", "$.temperature", jsonstring)
 }
 catch(TransformationException e) {
-    logError("Error", "Some bad stuff happened in my rule: " + e.getMessage)
+    logError("Error", "Some bad stuff happened in my rule: " + e.message)
 }
 finally {
     // always runs even if there was an error, good place for cleanup

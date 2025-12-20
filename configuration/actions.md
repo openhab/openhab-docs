@@ -109,8 +109,8 @@ All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpP
 
 For example:
 
-```javascript
-val headers = newHashMap("Cache-control" -> "no-cache")
+```java
+val headers = #{"Cache-control" -> "no-cache"}
 val output = sendHttpGetRequest("https://example.com/?id=1", headers, 1000)
 ```
 
@@ -189,7 +189,7 @@ The Timer object supports the following methods:
 The result is of type `ThingStatusInfo`.
 It contains [Thing Status]({{base}}/concepts/things.html), [Status Details]({{base}}/concepts/things.html) and [Status Description]({{base}}/concepts/things.html).
 Refer to [Thing Status API]({{base}}/concepts/things.html) for how to get those information.
-If you just want to know the status, you can use `thingStatusInfo.getStatus().toString()` and the result will be one of the values in [Thing Status]({{base}}/concepts/things.html).
+If you just want to know the status, you can use `thingStatusInfo.status.toString` and the result will be one of the values in [Thing Status]({{base}}/concepts/things.html).
 
 > If the thing is removed or it's not added yet, it'll return null.
 
@@ -198,7 +198,7 @@ For example:
 ```java
 var thingStatusInfo = getThingStatusInfo("zwave:device:c5155aa4:node2")
 
-if ((thingStatusInfo !== null) && (thingStatusInfo.getStatus().toString() == "ONLINE")) {
+if (thingStatusInfo?.status?.toString == "ONLINE") {
     logInfo("ThingStatus", "The thing is online.")
 } else {
     logError("ThingStatus", "The thing is offline or doesn't exist.")
