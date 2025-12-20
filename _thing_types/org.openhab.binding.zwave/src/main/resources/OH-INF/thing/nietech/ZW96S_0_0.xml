@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_ZW96S_00_000" listed="false">
+    <label>ZW96S Minoston MP22ZP IP65 Weather-Resistant Outdoor Plug</label>
+    <description><![CDATA[
+Minoston MP22ZP IP65 Weather-Resistant Outdoor Plug<br /> <h1>Overview</h1><p>This zwave outlet is bulit-in a zwave 800 chip which is more reliable and faster, have a longer range and are more secure than the 700 series. It can up to 1300ft in the open range if your hub support Z-Wave LR. The device has IP65 Weather-resistant housing of this zwave plug is ideal for the Garden, Backyard. It has max loading is up to 15A and 1875W. Its power is 125V, 60Hz. </p> <br /> <h2>Inclusion Information</h2><p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). LED will blink rapidly. It will be included to network. (Once your controller confirmed, refresh the Z-Wave network to optimize performance.)</p> <br /> <h2>Exclusion Information</h2><p>Put the Z-Wave interface controller into "Remove" mode, triple press the Program button (A). LED will blink rapidly. It will be excluded to network</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">ZW96S</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">C000:C005</property>
+      <property name="dbReference">1681</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LED Indicator</label>
+        <description><![CDATA[
+Status LED Configuration<br /> <h1>Overview</h1><p>value=00 (default) LED is On when switch (light) is On</p><p>value=01 LED is On when the switch (light) is Off</p><p>Value: 02 led off, led no work.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">outlet on,led on</option>
+          <option value="1">outlet on,led off</option>
+          <option value="2">led off, led no work</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_4" type="integer" groupName="configuration">
+        <label>2: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Timer to make the switch turn off automatically after the switch turned on<br /> <h1>Overview</h1><p>This parameter can access you to set a timer to make the switch turn</p><p>off automatically after the switch turned on.The number entered as</p><p>value corresponds to number of minutes. (LED flashes twice when</p><p>the configuration parameter changed)</p><p><br /></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration">
+        <label>4: Auto Turn-On Timer</label>
+        <description>Timer to make the switch turn on automatically after the switch turned off</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Restores state after power failure</label>
+        <description><![CDATA[
+Restores state after power failure<br /> <h1>Overview</h1><p>Value=0 - The switch is off regardless of the state prior to power failure.</p><p>Value=1 - The switch is on regardless of the state prior to power failure.</p><p>Value=2(default) - This switch will be return to state prior to the power failure after power is restored.</p><p>Adjust LED brightness (quickly press 8x: change Parameter.)</p><p>(Green LED flashes twice to confirm the setting is successful.)</p><p>Parameter=7, Size=1,</p><p>Value=0 --- Bright</p><p>Value=1 --- Medium</p><p>Value=2 --- Low (default)</p><p><br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">The switch is off regardless of the state prior to power failure</option>
+          <option value="1">The switch is on regardless of the state prior to power failure</option>
+          <option value="2">This switch will be return to state prior to the power failure after p</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Association group 1<br /> <h1>Overview</h1><p>This Device supports Lifeline (association group 1) supporting 1 node for lifeline communication.</p><p>Group 1 must be assigned the Node ID of the primary controller where unsolicited notifications will be sent.</p><p>The Z-Wave controller should set this association automatically after inclusion.</p><p>Lifeline association only supports the “Device Reset Locally” function. Refer to the instructions of your controller for any available details on how this can be set.</p><p><br /></p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

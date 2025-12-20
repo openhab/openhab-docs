@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shelly_wavepro1pm_00_000" listed="false">
+    <label>Wave Pro 1PM The Device is a DIN rail mountable 1-channel smart switch with power measurement. It controls the on/off function for one electrical device</label>
+    <description><![CDATA[
+The Device is a DIN rail mountable 1-channel smart switch with power measurement. It controls the on/off function for one electrical device<br /> <h1>Overview</h1><p>The Device is a DIN rail mountable smart switch with power measurement. It controls the on/off function for one electrical device with a load up to 16 A. It is compatible with switches (default) and push-buttons.</p><p>Switch connected to input terminal SW (SW1)</p><p>If the SW (SW1) is configured as a switch (default), each toggle of the switch will change the output O (O1) state to the opposite state - on, off, on, etc.</p><p>Change switch position once: Change the state of the output O (O1) state to the opposite state and send the command to the associated devices in associated groups 2 and 3 (check chapter Z-Wave Association).</p><p>Change switch position twice: If the delay between the first in the second click is less then 500ms, this is interpreted as “Change the switch possition twice”. Send command to the associated devices (dimmers, shutters,….) in associated groups 2 and 3 (check chapter Z-Wave Association).</p><p>Switch-memory connected to input terminal SW (SW1)</p><p>If the SW (SW1) is configured as a switch-memory, than:</p><p>Switching to Close switch-memory contact: Change the state of the output state O (O1) to the On state and send command to the associated devices in associated groups 2 and 3 (check chapter Z-Wave Association)</p><p>Switching to Open switch-memory contact: Change the state of the output state O (O1) to the Off state and send command to the associated devices in associated groups 2 and 3 (check chapter Z-Wave Association)</p><p>Push-button connected to input terminal SW (SW1)</p><p>If the SW (SW1) is configured as a push-button in the Device settings, each press of the push-button changes the output state O (O1) to opposite - ON, OFF, ON, etc.</p><p>Short press: Change the state of the output state O (O1) to the opposite one and send command to the associated devices in associated groups 2 and 3 (check chapter Z-Wave Association)</p><p>Hold: Send command to the associated devices in associated group 3 (check chapter Z-Wave Association)</p><p>Release: Send command to the associated devices in associated group 3 (check chapter Z-Wave Association)</p><p>Switching On/Off load connected to O (O1)</p><p>Load connected to O (O1) is possible to switch On/Off by:</p><p>by Z-Wave command</p><p>Automatically switching can be enabled by proper Parameters No. 19 and 20 settings.</p><p>pressing the switch/push-button SW (SW1): Change the state of the connected load to the opposite one</p> <br /> <h2>Inclusion Information</h2><p>SmartStart adding (inclusion)</p><p>SmartStart enabled products can be added into a Z-Wave® network by scanning the Z-Wave® QR Code present on the Device with a gateway providing SmartStart inclusion. No further action is required, and the SmartStart device will be added automatically within 10 minutes of being switched on in the network vicinity.</p><p>With the gateway application scan the QR code on the Device label and add the Security 2 (S2) Device Specific Key (DSK) to the provisioning list in the gateway.</p><p>Connect the Device to a power supply.</p><p>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</p><p>Adding will be initiated automatically within a few seconds after connecting the Device to a power supply, and the Device will be added to a Z-Wave® network automatically.</p><p>The blue LED will be blinking in Mode 2 during the adding process.</p><p>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</p><p>Adding (inclusion) with the S button</p><p>Connect the Device to a power supply.</p><p>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>To enter the Setting mode, quickly press and hold the S button on the Device until the LED turns solid blue.</p><p>Quickly release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the Learn mode.</p><p>The blue LED will be blinking in Mode 2 during the adding process.</p><p>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</p><p>Adding (inclusion) with a switch/push-button</p><p>Connect the Device to a power supply.</p><p>Check if the blue LED is blinking in Mode 1. If so, the Device is not added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>Toggle the switch/push-button connected to any of the SW terminals (SW, SW1, SW2, etc.) 3 times within 3 seconds (this procedure puts the Device in Learn mode*). The Device must receive on/off signal 3 times, which means pressing the momentary switch 3 times, or toggling the switch on and off 3 times.</p><p>The blue LED will be blinking in Mode 2 during the adding process.</p><p>The green LED will be blinking in Mode 1 if the Device is successfully added to a Z-Wave® network.</p> <br /> <h2>Exclusion Information</h2><p>Removing (exclusion) with the S button</p><p>Connect the Device to a power supply.</p><p>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>To enter the Setting mode, quickly press and hold the S button on the Device until the LED turns solid blue.</p><p>Quickly release and then press and hold (&gt; 2s) the S button on the Device until the blue LED starts blinking in Mode 3. Releasing the S button will start the LEARN MODE.</p><p>The blue LED will be blinking in Mode 2 during the removing process.</p><p>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.</p><p>Note! In Setting mode, the Device has a timeout of 10s before entering again into Normal mode.</p><p>Removing (exclusion) with a switch/push-button</p><p>Connect the Device to a power supply.</p><p>Check if the green LED is blinking in Mode 1. If so, the Device is added to a Z-Wave® network.</p><p>Enable add/remove mode on the gateway.</p><p>Toggle the switch/push-button connected to any of the SW terminals (SW, SW1, SW2,…) 3 times within 3 seconds (this procedure puts the Device in LEARN MODE). The Device must receive on/off signal 3 times, which means pressing the momentary switch 3 times, or toggling the switch on and off 3 times.</p><p>The blue LED will be blinking in Mode 2 during the removing process.</p><p>The blue LED will be blinking in Mode 1 if the Device is successfully removed from a Z-Wave® network.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shelly</property>
+      <property name="modelId">Wave Pro 1PM</property>
+      <property name="manufacturerId">0460</property>
+      <property name="manufacturerRef">0002:008B</property>
+      <property name="dbReference">1682</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_0" type="integer" groupName="configuration">
+        <label>0: </label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: SW (SW1) Switch type</label>
+        <description><![CDATA[
+This parameter defines how the Device should treat the switch (which type) connected to the SW (SW1) terminal.<br /> <h1>Overview</h1><p>0 - momentary switch,</p><p>1 - toggle switch (contact closed - ON / contact opened - OFF),</p><p>2 - toggle switch (device changes status when switch changes status)</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">momentary switch</option>
+          <option value="1">toggle switch (contact closed - ON / contact opened - OFF)</option>
+          <option value="2">toggle switch (device changes status when switch changes status)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: SW2 Switch type</label>
+        <description>This parameter defines how the Device should treat the switch (which type) connected to the SW2 terminal.</description>
+        <default>0</default>
+        <options>
+          <option value="0">momentary switch (push button)</option>
+          <option value="1">toggle switch (contact closed - ON / contact opened - OFF)</option>
+          <option value="2">toggle switch (device changes status when switch changes status)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Restore state of O (O1) after power failure</label>
+        <description><![CDATA[
+This parameter determines if on/off status is saved and restored for load connected to O (O1) after power failure.<br /> <h1>Overview</h1><p>0 - Device saves last on/off status and restores it after a power failure</p><p>1 - Device does not save on/off status and does not restore it after a power failure, it remains off</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Device saves last on/off status and restores it after a power failure</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_2" type="integer" groupName="configuration">
+        <label>19: O (O1) Auto OFF with timer</label>
+        <description>If the load O (O1) is ON, you can schedule it to turn OFF automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an ON command, either remotely (from the gateway or associated device) or lo</description>
+        <default>0</default>
+        <options>
+          <option value="0">Auto OFF Disabled</option>
+          <option value="1">1 - 32535 seconds (or milliseconds – see Parameter no. 25.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration">
+        <label>20: O (O1) Auto ON with timer</label>
+        <description>If the load O (O1) is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an OFF command, either remotely (from the gateway or associated device) or l</description>
+        <default>0</default>
+        <options>
+          <option value="0">Auto ON Disabled</option>
+          <option value="1">1 - 32535 seconds (or milliseconds – see Parameter no. 25. Auto ON tim</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: O (O1) contact type - NO/NC</label>
+        <description><![CDATA[
+The set value determines the relay contact type for output O (O1). The relay contact type can be normally open (NO) or normally closed (NC).<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">NO</option>
+          <option value="1">NC</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Set timer units to s or ms for O (O1)</label>
+        <description>Set Timer Units to Seconds or Milliseconds Choose if you want to set the timer in seconds or milliseconds in Parameters No. 19, 20.</description>
+        <default>0</default>
+        <options>
+          <option value="0">timer set in seconds</option>
+          <option value="1">timer set in milliseconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_36_1" type="integer" groupName="configuration">
+        <label>36: O (O1) Power report on change - percentage</label>
+        <description><![CDATA[
+This parameter determines the minimum change in consumed power that will result in sending a new report to the gateway.<br /> <h1>Overview</h1><p>NOTE: When the Device reports the power consumption (W), it will also automatically report the voltage (V) and current (A).</p><p>NOTE: Regardless of the power consumption change in percentage, the report will not be sent more frequently than defined by Parameter No. 39.</p>
+        ]]></description>
+        <default>50</default>
+        <options>
+          <option value="0">reports are disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration">
+        <label>39: Minimal time between reports (O) O1</label>
+        <description><![CDATA[
+This parameter determines the minimum time that must elapse before a new power report on O (O1) is sent to the gateway.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>30</default>
+        <options>
+          <option value="0">reports are disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_91_4" type="integer" groupName="configuration">
+        <label>91: Water Alarm</label>
+        <description>This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.</description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">open relay</option>
+          <option value="2">close relay</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_92_4" type="integer" groupName="configuration">
+        <label>92: Smoke Alarm</label>
+        <description><![CDATA[
+This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">open relay</option>
+          <option value="2">close relay</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_93_4" type="integer" groupName="configuration">
+        <label>93: CO Alarm</label>
+        <description><![CDATA[
+This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">open relay</option>
+          <option value="2">close relay</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_94_4" type="integer" groupName="configuration">
+        <label>94: Heat Alarm</label>
+        <description><![CDATA[
+This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">open relay</option>
+          <option value="2">close relay</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_120_4" type="integer" groupName="configuration">
+        <label>120: Factory Reset</label>
+        <description>Reset to factory default settings and removed from the z-wave network</description>
+        <default>0</default>
+        <options>
+          <option value="0">Don’t do Factory reset</option>
+          <option value="1431655765">Do the Factory reset (hex 0x55555555)</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

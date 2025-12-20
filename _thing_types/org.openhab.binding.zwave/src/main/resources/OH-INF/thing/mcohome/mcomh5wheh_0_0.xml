@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mcomh5wheh_00_000" listed="false">
+    <label>MCO MH5-WH or MH5-EH MCO MH5-WH or MH5-EH</label>
+    <description><![CDATA[
+MCO MH5-WH or MH5-EH<br /> <h1>Overview</h1><p>The MCO MH5-WH thermostat is a Z-Wave Plus enabled device designed for indoor temperature control. MH5-WH is mainly applied to control water heating systems like wall mounted boiler, water heating valve, heating actuator etc, while MH5-EH is for electrical heating system. The device is of high reliability and practicability, which can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers</p> <br /> <h2>Inclusion Information</h2><p>In normal working interface, long press DOWN and UP arrows enter interface for inclusion or exclusion of Z-Wave network. Before the device included into network, "---" will display on the screen. Then press UP arrow once, device will enter learning mode to get a node ID. If inclusion is success, a node ID will display on the screen in a few seconds. A node ID can always inform us whether the device is in the network or not.</p> <br /> <h2>Exclusion Information</h2><p>In normal working interface, long press DOWN and UP arrows enter interface for inclusion or exclusion of Z-Wave network. Before the device included into network, "---" will display on the screen. Then press UP arrow once, device will enter learning mode to get a node ID. If inclusion is success, a node ID will display on the screen in a few seconds. A node ID can always inform us whether the device is in the network or not.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="mcohome_mcomh5wheh_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MCO MH5-WH or MH5-EH</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">8101:F5D1</property>
+      <property name="dbReference">1673</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Temperature Unit</label>
+        <description><![CDATA[
+Set temperature display unit<br /> <h1>Overview</h1><p>0: Celsius</p><p>1: Fahrenheit</p><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Celsius</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Temperature Difference Reporting</label>
+        <description><![CDATA[
+Temperature difference required to trigger a report in either Celsius or Fahrenheit<br /> <h1>Overview</h1><p>Sets the minimum temperature variation, in 0.1 increments, that triggers an automatic report to the gateway.</p><p>Default value is 5ºC or 10ºF. </p><p>0.3 is the minimum value possible.</p><p><br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Humidity Difference Reporting</label>
+        <description><![CDATA[
+Humidity difference required to trigger a report<br /> <h1>Overview</h1><p>0: Disabled</p><p>1-99: Specifies the humidity variation percentage that will cause the device to send a report to the gateway.</p><p><br /></p>
+        ]]></description>
+        <default>6</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Power Failure Memory</label>
+        <description><![CDATA[
+Power Failure Memory<br /> <h1>Overview</h1><p>Secret Menu No. P7<br />0: OFF<br />1: Man<br />2: Auto<br />3: Restore the working mode before the power failure</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Man</option>
+          <option value="2">Auto</option>
+          <option value="3">Restore the working mode before the power failure</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Schedule Function Selection</label>
+        <description><![CDATA[
+Enable or disable scheduling functionality<br /> <h1>Overview</h1><p>0: Disabled<br />1: Enabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Backlight Setting</label>
+        <description><![CDATA[
+Control for the backlight<br /> <h1>Overview</h1><p>Secret Menu No. P2<br />0: close after no operate<br />1: always on</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Close after no operate</option>
+          <option value="1">Always on</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Panel Lock</label>
+        <description><![CDATA[
+Panel lock<br /> <h1>Overview</h1><p>0: Off<br />1: On</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_14" type="integer" groupName="configuration">
+        <label>14: Button Volume</label>
+        <description><![CDATA[
+Volume on button press<br /> <h1>Overview</h1><p>Secret Menu No. P4<br />0: Mute<br />1: Beep</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Mute</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Controlled temperature</label>
+        <description><![CDATA[
+Select controlled temperature of Air or Floor<br /> <h1>Overview</h1><p>Secret Menu No. P8<br />0: Air<br />1: Floor</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Air</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Room (air) temperature calibration</label>
+        <description><![CDATA[
+Room (air) temperature calibration<br /> <h1>Overview</h1><p>Parameter menu No. P9:</p><p>unit (°C): n*0.1 °C, setting gap 0.5 °C</p><p>unit (°F): n*0.1 °F</p><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Floor temperature calibration</label>
+        <description><![CDATA[
+Floor temperature calibration<br /> <h1>Overview</h1><p>Parameter menu No. P10:</p><p>unit (°C): n*0.1 °C, setting gap 0.5 °C</p><p>unit (°F): n*0.1 °F</p><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Hysteresis when controlling room temperature</label>
+        <description><![CDATA[
+Hysteresis when controlling room temperature<br /> <h1>Overview</h1><p>Parameter menu No. P11:</p><p>unit (°F): n*0.1 °F, range 1-20</p><p>unit (°C): n*0.1 °C, setting gap 0.5 °C, range 5-100</p><p><br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Hysteresis when controlling floor temperature</label>
+        <description><![CDATA[
+Hysteresis when controlling floor temperature<br /> <h1>Overview</h1><p>Parameter menu No. P12:</p><p>unit (°F): n*0.1 °F, range 1-20</p><p>unit (°C): n*0.1 °C, setting gap 0.5 °C, range 5-100</p><p><br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Hysteresis when controlling high temperature protection</label>
+        <description><![CDATA[
+Hysteresis when controlling high temperature protection<br /> <h1>Overview</h1><p>Parameter menu No. P13:</p><p>unit (°F): n*0.1 °F, range 5-100</p><p>unit (°C): n*0.1 °C, setting gap 0.5 °C, range 1-20</p><p><br /></p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_2" type="integer" groupName="configuration">
+        <label>24: High temperature protection</label>
+        <description><![CDATA[
+High temperature protection<br /> <h1>Overview</h1><p>Parameter menu No. P14:</p><p>unit (°C): n*0.1 °C, setting gap 0.1 °C, range 445-950<br />445: turn off high temperature protection<br /><br />unit (°F): n*1°F, range 112-203<br />112: turn off high temperature protection</p><p><br /></p>
+        ]]></description>
+        <default>550</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_1" type="integer" groupName="configuration">
+        <label>255: Factory Restore</label>
+        <description>Factory Restore</description>
+        <default>0</default>
+        <options>
+          <option value="0">Invalid</option>
+          <option value="1">Restore factory setting</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>Gateway controller association group</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="mcohome_mcomh5wheh_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>
