@@ -384,8 +384,7 @@ To persist an Item called `Lights` in an rrd4j database, you would enter the fol
 To get the time of the last change of an Item `Humidity` from the default persistence service, default to the current time if the last persisted state is different from the current state:
 
 ```java
-var lastChange = Humidity.lastChange()
-lastChange = (lastChange !== null) ? lastChange : now
+val lastChange = Humidity.lastChange ?: now
 ```
 
 To get the average temperature over the last 5 minutes from the Item called `Temperature` in the influxdb persistence service, you would use:
