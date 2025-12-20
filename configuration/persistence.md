@@ -160,7 +160,7 @@ The syntax is as follows:
 
 ```java
 Items {
-    <itemlist1> : strategy = <strategy1>, <strategy2>, ... [filter = <filter1>, <filter2>, ...]
+    <itemlist1> : strategy = <strategy1>, <strategy2> ... [filter = <filter1>, <filter2>, ...]
     <itemlist2> : strategy = <strategyX>, <strategyY>, ...
     ...
 
