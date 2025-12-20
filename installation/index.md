@@ -129,6 +129,7 @@ If you run into any problems, use the search function in the forum or open a new
 In some cases upgrading to a new version of openHAB requires additional steps.
 For textual based configuration this can usually be done using a text editor or VS Code.
 UI configuration updates to the JSON database should not be done manually but by using the upgrade tool.
+When using the standard upgrade scripts, the upgrade tool will execute automatically and there should not be a need to run them manually.
 
 The upgrade tool is a Java application and allows performing different steps.
 Each step can only be executed once (unless you `--force` the tool to perform them again).
@@ -142,10 +143,19 @@ They have been replaced by the generic script transformation/profile which requi
 This step rewrites the profiles to the new format.
 - `linkUpgradeScriptProfile`: Upgrades the script profile `toHandlerScript` option into separate `commandFromItemScript` and `stateFromItemScript` options.
 - `yamlTagsListToMap`: The original implementation of custom tags in openHAB 4 were defined in a YAML List. This step converts them into map format used in openHAB 5. It will process valid YAML files in `conf/tags` directory.
+- `homeAssistantUpgrader`: The Home Assistant addon has been separated from the mqtt addon. This installs the Home Assistant addon if Home Assistant Things are present.
+- `homieUpgrader`: The Homie addon has been separated from the mqtt addon. This installs the Homie addon if Homie Things are present.
+- `persistenceCopyDefaultStrategy`: Move persistence default strategy configuration to all persistence configurations without strategy defined and create it when none exists.
 
 The upgrade tool needs to know the path to the openHAB userdata folder (e.g. `/var/lib/openhab` on most Debian like systems).
 If the tool is not operated from that folder, it can be specified by using `--userdata /var/lib/openhab` on the commandline.
+The upgrade tool needs to know the parth to the openHAB conf folder (e.g. `/etc/openhab` on most Debian like systems).
+You can specify this conf folder using `--conf /etc/openhab` on the commandline.
 The full list of command line options can be displayed using the `--help` argument
+
+After running the upgrade tool, it is recommended to reset the file ownership of the content of the userdata jsondb folder (e.g. `/var/lib/openhab/jsondb` on most Debian like systems).
+On Debian like systems, this could be done with `sudo chown -R ohuser:ohgroup /var/lib/openhab/jsondb`, where `ohuser` and `ohgroup` are the user, resp. group for openhab.
+If you have an openhabian or Homebrew installation, you can simply reset ownerships using `sudo openhab-cli reset-ownership`.
 
 Example:
 
