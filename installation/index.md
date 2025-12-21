@@ -143,8 +143,8 @@ They have been replaced by the generic script transformation/profile which requi
 This step rewrites the profiles to the new format.
 - `linkUpgradeScriptProfile`: Upgrades the script profile `toHandlerScript` option into separate `commandFromItemScript` and `stateFromItemScript` options.
 - `yamlTagsListToMap`: The original implementation of custom tags in openHAB 4 were defined in a YAML List. This step converts them into map format used in openHAB 5. It will process valid YAML files in `conf/tags` directory.
-- `homeAssistantUpgrader`: The Home Assistant addon has been separated from the mqtt addon. This installs the Home Assistant addon if Home Assistant Things are present.
-- `homieUpgrader`: The Homie addon has been separated from the mqtt addon. This installs the Homie addon if Homie Things are present.
+- `homeAssistantUpgrader`: The Home Assistant add-on has been separated from the MQTT add-on. This installs the Home Assistant add-on if Home Assistant Things are present.
+- `homieUpgrader`: The Homie add-on has been separated from the MQTT add-on. This installs the Homie add-on if Homie Things are present.
 - `persistenceCopyDefaultStrategy`: Move persistence default strategy configuration to all persistence configurations without strategy defined and create it when none exists.
 
 The upgrade tool needs to know the path to the openHAB userdata folder (e.g. `/var/lib/openhab` on most Debian like systems).
@@ -155,7 +155,7 @@ The full list of command line options can be displayed using the `--help` argume
 
 After running the upgrade tool, it is recommended to reset the file ownership of the content of the userdata jsondb folder (e.g. `/var/lib/openhab/jsondb` on most Debian like systems).
 On Debian like systems, this could be done with `sudo chown -R ohuser:ohgroup /var/lib/openhab/jsondb`, where `ohuser` and `ohgroup` are the user, resp. group for openhab.
-If you have an openhabian or Homebrew installation, you can simply reset ownerships using `sudo openhab-cli reset-ownership`.
+If you have an openHABian installation, you can simply reset ownerships using `sudo openhab-cli reset-ownership`.
 
 Example:
 
