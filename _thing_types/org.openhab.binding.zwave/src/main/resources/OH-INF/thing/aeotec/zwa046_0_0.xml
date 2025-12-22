@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa046_00_000" listed="false">
+    <label>ZWA046 Home Energy Meter 8</label>
+    <description><![CDATA[
+Home Energy Meter 8<br /> <h1>Overview</h1><p>Aeotec Home Energy Meter is an energy meter for the entire home. It can wirelessly report instantaneous Power, KWH, Voltage and Amperage measurements to Z-Wave® gateway/controller. It can send Z-Wave REPORTS at any time when it receives Z-Wave Get Commands.</p><p>The HEM can be setup to send automatic reports to any associated nodes in association group 1 at an interval time It can be included and operated in any Z-Wave network with other Z-Wave/ Z-Wave Plus® certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network. The device supports the Z-Wave Security S2 framework with authenticated and unauthenticated network keys. Please follow the instructions on the central controller when including. The device also supports SmartStart. It also supports the Over The Air (OTA) feature for the product’s firmware upgrade. As soon as the HEM is removed from a Z-Wave network it will be reset to default factory settings.</p><p><br /></p> <br /> <h2>Inclusion Information</h2><p>The following will step you through adding the product to your Z-Wave network.</p><ol><li>Fix Back-Mount Plate to the selected position with the provided screws. The plate should be installed vertically to make sure the connected cables naturally hanging and to fully ensure that the IP44 weatherized rating applies.</li><li>Set your Z-Wave gateway into its ‘add device’ mode in order to connect Home Energy Meter to your Z-Wave system. Refer to the gateway’s manual if you are unsure of how to perform this step.</li><li>Press Action Button on the back of main body; its LED will flash blue rapidly to indicate it has entered pair mode.</li><li>When Home Energy Meter successfully joins your Z-Wave network its LED will flash blue for several seconds and then turn solid blue. Should the LED keep blinking blue, it has been unable to join your Z-Wave network; repeat the above steps and please contact us for further support if needed.</li><li>Attach the main body to Back-Mount Plate.</li></ol><p><br /></p> <br /> <h2>Exclusion Information</h2><ol><li>Set your Z-Wave gateway into its ‘remove device’ mode.</li><li>Press Action Button on the back of main body; its LED will flash blue rapidly to indicate it has entered remove mode.</li><li>When Home Energy Meter successfully remove, its LED will flash blue.</li></ol><p><br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah" typeId="meter_kvah">
+        <label>Electric meter (kVAh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA046</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0003:0034</property>
+      <property name="dbReference">1683</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Treshold Check Enable/Disable</label>
+        <description><![CDATA[
+Treshold Check Enable/Disable<br /> <h1>Overview</h1><p>Enable selective reporting only when power change reaches a certain threshold or percentage set in 4-19 below. This is used to reduce network traffic.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration">
+        <label>4: Import watt threshold (total)</label>
+        <description>Import watt Threshold (total)</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration">
+        <label>5: Import watt threshold (Phase A)</label>
+        <description><![CDATA[
+Import watt threshold (Phase A)<br /> <h1>Overview</h1><p>Threshold change in import wattage to induce an automatic report (Phase A).</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration">
+        <label>6: Import watt threshold (Phase B)</label>
+        <description><![CDATA[
+Import watt threshold (Phase B)<br /> <h1>Overview</h1><p>Threshold change in import wattage to induce an automatic report (Phase B).</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration">
+        <label>7: Import watt threshold (Phase C)</label>
+        <description>Import watt threshold (Phase C)</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration">
+        <label>8: Export watt threshold (total)</label>
+        <description>Export watt threshold (total)</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration">
+        <label>9: Export watt threshold (Phase A)</label>
+        <description>Export watt threshold (Phase A)</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration">
+        <label>10: Export watt threshold (Phase B)</label>
+        <description>Export watt threshold (Phase B)</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration">
+        <label>11: Export watt threshold (Phase C)</label>
+        <description>Export watt threshold (Phase C)</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Import watt percent threshold (total)</label>
+        <description><![CDATA[
+Import watt percent threshold (total)<br /> <h1>Overview</h1><p>Percentage change in import wattage to induce an automatic report.</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Import watt percent threshold (Phase A)</label>
+        <description>Import watt percent threshold (Phase A)</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Import watt percent threshold (Phase B)</label>
+        <description>Import watt percent threshold (Phase B)</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Import watt percent threshold (Phase C)</label>
+        <description>Import watt percent threshold (Phase C)</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Export watt percent threshold (total)</label>
+        <description>Export watt percent threshold (total)</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Export watt percent threshold (Phase A)</label>
+        <description>Export watt percent threshold (Phase A)</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Export watt percent threshold (Phase B)</label>
+        <description>Export watt percent threshold (Phase B)</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Export watt percent threshold (Phase C)</label>
+        <description>Export watt percent threshold (Phase C)</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Enable automatic report of root device</label>
+        <description><![CDATA[
+Enable automatic report of root device<br /> <h1>Overview</h1><p>0=disable; 1=enable</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_100_1" type="integer" groupName="configuration">
+        <label>100: Set 101-106 to default</label>
+        <description>Set 101-106 to default</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_101_4" type="integer" groupName="configuration">
+        <label>101: Automatic report list 1 (Import)</label>
+        <description>Automatic report list 1 (Import)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_102_4" type="integer" groupName="configuration">
+        <label>102: Automatic report list 2 (Import)</label>
+        <description>Automatic report list 2 (Import)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_103_4" type="integer" groupName="configuration">
+        <label>103: Automatic report list 3 (Import)</label>
+        <description>Automatic report list 3 (Import)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_104_4" type="integer" groupName="configuration">
+        <label>104: Automatic report list 1 (Export)</label>
+        <description>Automatic report list 1 (Export)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_105_4" type="integer" groupName="configuration">
+        <label>105: Automatic report list 2 (Export)</label>
+        <description>Automatic report list 2 (Export)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_106_4" type="integer" groupName="configuration">
+        <label>106: Automatic report list 3 (Export)</label>
+        <description>Automatic report list 3 (Export)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_110_1" type="integer" groupName="configuration">
+        <label>110: Set 111-116 to default</label>
+        <description>Set 111-116 to default</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration">
+        <label>111: Automatic list 1 interval Time (Import)</label>
+        <description><![CDATA[
+Automatic list 1 interval Time (Import)<br /> <h1>Overview</h1><p>Set the interval time of sending report in Report group 1</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_112_4" type="integer" groupName="configuration">
+        <label>112: Automatic list 2 interval Time (Import)</label>
+        <description><![CDATA[
+Automatic list 2 interval Time (Import)<br /> <h1>Overview</h1><p>Set the interval time of sending report in Report group 2</p>
+        ]]></description>
+        <default>7200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_113_4" type="integer" groupName="configuration">
+        <label>113: Automatic list 3 interval Time (Import)</label>
+        <description><![CDATA[
+Automatic list 3 interval Time (Import)<br /> <h1>Overview</h1><p>Set the interval time of sending report in Report group 3</p>
+        ]]></description>
+        <default>7200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_114_4" type="integer" groupName="configuration">
+        <label>114: Automatic list 1 interval Time (Export)</label>
+        <description><![CDATA[
+Automatic list 1 interval Time (Export)<br /> <h1>Overview</h1><p>Set the interval time of sending report in Report group 1</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_115_4" type="integer" groupName="configuration">
+        <label>115: Automatic list 2 interval Time (Export)</label>
+        <description><![CDATA[
+Automatic list 2 interval Time (Export)<br /> <h1>Overview</h1><p>Set the interval time of sending report in Report group 2</p>
+        ]]></description>
+        <default>7200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_116_4" type="integer" groupName="configuration">
+        <label>116: Automatic list 3 interval Time (Export)</label>
+        <description><![CDATA[
+Automatic list 3 interval Time (Export)<br /> <h1>Overview</h1><p>Set the interval time of sending report in Report group 3</p>
+        ]]></description>
+        <default>7200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration">
+        <label>252: Enable/disable to lock configuration setting</label>
+        <description><![CDATA[
+Enable/disable to lock configuration setting<br /> <h1>Overview</h1><p>Enable/disable to lock configuration parameters; (0=disable; 1=enable)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
