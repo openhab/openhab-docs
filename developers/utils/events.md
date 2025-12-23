@@ -59,7 +59,7 @@ A few concrete examples:
 - `org.openhab.io.homekit$1467397f-c2e7-4b15-a7dc-315331ced2db` would mean the event was initiated from the HomeKit addon by a user identified by a UUID.
 - `org.openhab.ui.basic$default:03=>org.openhab.android$my-phone=>org.openhab.io.openhabcloud$user@gmail.com=>org.openhab.core.io.rest` would mean the event was initiated by using a sitemap in the Android openHAB app, and proxied through myopenhab.org using the user `user@gmail.com` (and finally through the REST API, but without a user).
 - `org.openhab.core.io.console` would mean the event was sent via the Karaf console.
-- `org.openhab.core.automation` would mean the event was triggered by a command or update sent in a rule action in most langauges. Some languages might provide a more detailed source.
+- `org.openhab.core.automation` would mean the event was triggered by a command or update sent in a rule action in most languages. Some languages might provide a more detailed source.
 - `org.openhab.automation.jrubyscripting$rule:virtual_lighting:98` would mean the event was sent by an action written in JRuby using the helper library, with rule ID `virtual_lighting:98`.
 - `org.openhab.binding.mqtt$mqtt:thing:mything:mychannel` would mean the event was sent by the `mychannel` channel of the `mything` thing from the MQTT binding (updating a state).
 - `org.openhab.core.persistence` would mean the event was sent by the persistence engine (restoring the state).
