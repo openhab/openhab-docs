@@ -328,7 +328,6 @@ Strategies {
     everyMinute : "0 * * * * ?"
     everyHour : "0 0 * * * ?"
     everyDay  : "0 0 0 * * ?"
-    default = everyChange
 }
 
 Items {
