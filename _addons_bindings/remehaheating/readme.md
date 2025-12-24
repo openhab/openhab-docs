@@ -4,7 +4,7 @@ label: RemehaHeating
 title: RemehaHeating - Bindings
 type: binding
 description: "This binding integrates Remeha Home heating systems with openHAB."
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
