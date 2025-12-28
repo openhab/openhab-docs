@@ -133,6 +133,64 @@ Usage: openhab:send <item> <command> - sends a command for an item
 
 Apache Karaf itself also provides many useful commands, especially for debugging and development purposes.
 
+### Bundle Management
+
+Karaf provides a number of commands to manage bundles.
+
+Use the `bundle --help` command to get a list of all available bundle management commands.
+`bundle:<command> --help` provides more information about a specific command.
+
+The following commands are particularly useful:
+
+- `bundle:list`: Lists all installed bundles.
+- `bundle:list <bundleName>`: Lists a bundle by name, e.g.:
+  ```text
+  openhab> bundle:list org.openhab.ui
+  START LEVEL 100 , List Threshold: 50
+   ID │ State  │ Lvl │ Version │ Name
+  ────┼────────┼─────┼─────────┼──────────────────────────────────
+  228 │ Active │  80 │ 5.1.0   │ openHAB UI :: Bundles :: Main UI
+  ```
+- `bundle:restart <bundleID>`: Restarts a bundle, e.g. `org.openhab.ui`:
+  ```text
+  openhab> bundle:restart 228
+  ````
+- `bundle:update <bundleID> <location>`: Updates a bundle.
+  This command is especially useful for upgrading parts of openHAB without having to restart the whole system, e.g.:
+  ```text
+  openhab> bundle:update 228 https://ci.openhab.org/job/openHAB-WebUI/lastSuccessfulBuild/artifact/bundles/org.openhab.ui/target/org.openhab.ui-5.2.0-SNAPSHOT.jar
+  ```
+  The above command upgrades the `org.openhab.ui` bundle to the latest version from the CI build.
+
+#### Bundle Upgrades
+
+As mentioned above, bundles can be updated using the `bundle:update` command during runtime.
+
+When a bug has been discovered in an add-on or Main UI and a fix is available and has been backported for your version of openHAB,
+you can update the individual bundle to get the fix immediately without waiting for the next patch release.
+Bundles can either be built locally (through Maven) or downloaded from the [CI build server](https://ci.openhab.org) or from our [JFrog Artifactory](https://openhab.jfrog.io):
+
+1. Depending on the openHAB version, the following sources are available:
+   1. openHAB stable release:
+      - Add-ons: [Add-ons Artifactory](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/addons/bundles/)
+      - UIs (Main UI, Basic UI): [WebUI Artifactory](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/ui/bundles/)
+   2. Current openHAB milestone or snapshot:
+      - Add-ons: [Add-ons Integration Build](https://ci.openhab.org/job/openHAB-Addons/lastSuccessfulBuild/artifact/bundles/)
+      - UIs (Main UI, Basic UI): [WebUI Integration Build](https://ci.openhab.org/job/openHAB-WebUI/lastSuccessfulBuild/artifact/bundles/)
+1. Independent of the source, select the appropiate bundle, e.g. `org.openhab.ui` for Main UI or `org.openhab.binding.matter` for the Matter binding.
+   It should be generally possible to find the bundle by searching for the add-on name.
+1. **Only for rtifactory:** Select the appropiate version from the list of available versions.
+   For example, the latest `5.1.x-SNAPSHOT` version should be used for openHAB 5.1.x, e.g. [5.1.2-SNAPSHOT](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/ui/bundles/org.openhab.ui/5.1.2-SNAPSHOT/).
+1. Get the bundle download link:
+   1. Artifactory: Right-click the latest `.jar` file (not `-sources.jar`!) and copy the download link.
+   1. Integration Build: Right-click the `.jar` file (not `-sources.jar`!) and copy the download link.
+
+The download link can then be used with the `bundle:update` command, e.g.:
+
+```text
+openhab> bundle:update 228 https://openhab.jfrog.io/artifactory/sandbox-snapshot/org/openhab/ui/bundles/org.openhab.ui/5.1.2-SNAPSHOT/org.openhab.ui-5.1.2-20251228.141753-2.jar
+```
+
 ### Thread Monitor
 
 When experiencing high CPU usage by openHAB, one of its threads might be running wild.
@@ -182,4 +240,4 @@ Created dump zip: 2025-08-08_171434.zip
 
 You will find this ZIP in the `$OPENHAB_USERDATA` folder, usually `/var/lib/openhab/` on Linux systems.
 
-Please refer to the [Karaf Developer Commands documentation](https://karaf.apache.org/manual/latest/#_developer_commands) for more information about all available commands.
+Please refer to the [Karaf Developer Commands documentation](https://karaf.apache.org/manual/latest/#_developer_commands) for more information about all available developer commands.
