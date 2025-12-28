@@ -180,7 +180,7 @@ Bundles can either be built locally (through Maven) or downloaded from the [CI b
    1. openHAB stable release:
       - Add-ons: [Add-ons Artifactory](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/addons/bundles/)
       - UIs (Main UI, Basic UI): [WebUI Artifactory](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/ui/bundles/)
-   2. Current openHAB milestone or snapshot:
+   1. Current openHAB milestone or snapshot:
       - Add-ons: [Add-ons Integration Build](https://ci.openhab.org/job/openHAB-Addons/lastSuccessfulBuild/artifact/bundles/)
       - UIs (Main UI, Basic UI): [WebUI Integration Build](https://ci.openhab.org/job/openHAB-WebUI/lastSuccessfulBuild/artifact/bundles/)
 1. Independent of the source, select the appropiate bundle, e.g. `org.openhab.ui` for Main UI or `org.openhab.binding.matter` for the Matter binding.
