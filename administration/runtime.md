@@ -157,7 +157,7 @@ The following commands are particularly useful:
 
   ```text
   openhab> bundle:restart 228
-  ````
+  ```
 
 - `bundle:update <bundleID> <location>`: Updates a bundle.
   This command is especially useful for upgrading parts of openHAB without having to restart the whole system, e.g.:
@@ -185,7 +185,7 @@ Bundles can either be built locally (through Maven) or downloaded from the [CI b
       - UIs (Main UI, Basic UI): [WebUI Integration Build](https://ci.openhab.org/job/openHAB-WebUI/lastSuccessfulBuild/artifact/bundles/)
 1. Independent of the source, select the appropiate bundle, e.g. `org.openhab.ui` for Main UI or `org.openhab.binding.matter` for the Matter binding.
    It should be generally possible to find the bundle by searching for the add-on name.
-1. **Only for rtifactory:** Select the appropiate version from the list of available versions.
+1. **Only for Artifactory:** Select the appropriate version from the list of available versions.
    For example, the latest `5.1.x-SNAPSHOT` version should be used for openHAB 5.1.x, e.g. [5.1.2-SNAPSHOT](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/ui/bundles/org.openhab.ui/5.1.2-SNAPSHOT/).
 1. Get the bundle download link:
    1. Artifactory: Right-click the latest `.jar` file (not `-sources.jar`!) and copy the download link.
