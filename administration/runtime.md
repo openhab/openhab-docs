@@ -144,6 +144,7 @@ The following commands are particularly useful:
 
 - `bundle:list`: Lists all installed bundles.
 - `bundle:list <bundleName>`: Lists a bundle by name, e.g.:
+
   ```text
   openhab> bundle:list org.openhab.ui
   START LEVEL 100 , List Threshold: 50
@@ -151,15 +152,20 @@ The following commands are particularly useful:
   ────┼────────┼─────┼─────────┼──────────────────────────────────
   228 │ Active │  80 │ 5.1.0   │ openHAB UI :: Bundles :: Main UI
   ```
+
 - `bundle:restart <bundleID>`: Restarts a bundle, e.g. `org.openhab.ui`:
+
   ```text
   openhab> bundle:restart 228
   ````
+
 - `bundle:update <bundleID> <location>`: Updates a bundle.
   This command is especially useful for upgrading parts of openHAB without having to restart the whole system, e.g.:
+
   ```text
   openhab> bundle:update 228 https://ci.openhab.org/job/openHAB-WebUI/lastSuccessfulBuild/artifact/bundles/org.openhab.ui/target/org.openhab.ui-5.2.0-SNAPSHOT.jar
   ```
+
   The above command upgrades the `org.openhab.ui` bundle to the latest version from the CI build.
 
 #### Bundle Upgrades
