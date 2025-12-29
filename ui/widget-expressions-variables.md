@@ -38,6 +38,9 @@ You can use arithmetic or string operations etc., the [conditional (ternary) ope
   It's recommended to use CSS [`calc()`](css-pages-widgets.html) for dynamic positioning and styling.
 - `user` returns an object with information about the logged-in user:
   The name (`user.name`) and an array of the assigned roles for the user (`user.roles`).
+- `translation` is method that provides access to the I18n translation system. All translations from the [`common` module](https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/assets/i18n/common/en.json),
+  [`about` module](https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/assets/i18n/about/en.json) and translation for all [semantic tags]({{base}}/tutorial/model.html#introduction-to-the-ontology-and-relationships)
+  are available. For example: `translation('home.locations.title')`, `translation('Floor')`. `t` is available as a shortcut: `t('home.locations.title')`.
 
 ## Variables
 
