@@ -271,6 +271,13 @@ Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"            // e.g. "
 Location  My_Location              "My Location [%2$s°N %3$s°E %1$sm]" // e.g. "49.26°N 123.19°E 0m"
 ```
 
+##### State Description
+
+Internally items have a State Description, which can be obtained by GET `/rest/items/<itemName>`.
+When an item is linked to a channel without `CommandTopic`, the State Description of the item is read-only.
+Some UIs may disallow the user to send commands to such an item.
+To change the item to read-write add `stateDescription=" "[readOnly=false]` in bindingconfig.
+
 #### State Transformation
 
 Transformations can be used in the state part of an Item, to translate the raw state of an Item into another language, or to convert technical values into human readable information.
