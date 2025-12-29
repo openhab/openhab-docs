@@ -3,7 +3,7 @@ id: pushsafer
 label: Pushsafer
 title: Pushsafer - Bindings
 type: binding
-description: "The Pushsafer binding allows you to notify mobile devices of a message using the [Pushsafer API](https://www.pushsafer.com/pushapi)."
+description: "This binding allows you to notify mobile devices using the [Pushsafer API](https://www.pushsafer.com/pushapi)."
 install: auto
 ---
 
@@ -13,14 +13,14 @@ install: auto
 
 # Pushsafer Binding
 
-The Pushsafer binding allows you to notify mobile devices of a message using the [Pushsafer API](https://www.pushsafer.com/pushapi).
-To get started you first need to register (a free process) to get a Private Key.
-Initially you have to register a device with one of the [client apps](https://www.pushsafer.com/apps), to get a device id.
+This binding allows you to notify mobile devices using the [Pushsafer API](https://www.pushsafer.com/pushapi).
+To get started, first register (a free process) to get a Private Key.
+Initially, register a device with one of the [client apps](https://www.pushsafer.com/apps) to get a device ID.
 
 ## Supported Things
 
-There is only one Thing available - the `pushsafer-account`.
-You are able to create multiple instances of this Thing to broadcast to different devices or groups with push-notification content and setting.
+There is only one Thing available: `pushsafer-account`.
+You can create multiple instances of this Thing to broadcast to different devices or groups with push-notification content and settings.
 
 ## Thing Configuration
 
@@ -53,8 +53,8 @@ Currently the binding does not support any Channels.
 
 ## Thing Actions
 
-All actions return a `Boolean` value to indicate if the message was sent successfully or not.
-The parameter `message` is **mandatory**, the `title` parameter defaults to whatever value you defined in the `title` related configuration parameter.
+All actions return a `Boolean` value to indicate if the message was sent successfully.
+The parameter `message` is **mandatory**; the `title` parameter defaults to whatever value you defined in the `title` configuration parameter.
 
 - `sendPushsaferMessage(String message, @Nullable String title)` - This method is used to send a plain text message.
 
@@ -72,7 +72,6 @@ The parameter `message` is **mandatory**, the `title` parameter defaults to what
 
 demo.rules
 
-```java
 ```java
 val actions = getActions("pushsafer", "pushsafer:pushsafer-account:account")
 // send message with attachment
