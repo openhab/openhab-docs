@@ -28,7 +28,7 @@ module.exports = {
 		},
 	],
 	'constant': /\b(?:INCREASE|DECREASE|NEXT|PREVIOUS|ON|OFF|OPEN|CLOSED|PLAY|PAUSE|REWIND|FASTFORWARD|STOP|MOVE|UP|DOWN|UNDEF|string|int|boolean|long|float|double|short|char|byte|NULL|null)\b/,
-	'keyword': /\b(?:if|else|while|do|for|return|in|instanceof|import|function|new|try|throw|catch|finally|break|continue|switch|case|default|synchronized|rule|when|Item|Thing|Channel|changed|updated|Time cron|Time is midnight|Time is noon|System started|System shuts down|received update|received command|triggered|from|to|or|as|then|end|var|val)\b/,
+	'keyword': /\b(?:if|else|while|do|for|return|in|instanceof|import|function|new|try|throw|catch|finally|break|continue|switch|case|default|synchronized|rule|when|Item|Thing|Channel|changed|updated|Time cron|Time is midnight|Time is noon|System started|received update|received command|triggered|from|to|or|as|then|end|var|val)\b/,
 	'boolean': /\b(?:true|false)\b/,
 	'function': /(?:\w+(?=\()|toString|getInstance|intValue|doubleValue|floatValue)/,
 	'function-name': /\b[A-Z][\w_]+(?=\.|:)/,
