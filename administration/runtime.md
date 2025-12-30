@@ -183,7 +183,7 @@ Created dump zip: 2025-08-08_171434.zip
 You will find this ZIP in the `$OPENHAB_USERDATA` folder, usually `/var/lib/openhab/` on Linux systems.
 
 ::: tip Note
-The thread dumps created from Karaf lacks some important information for troubleshooting blocked threads.
+The thread dumps created from Karaf lack some important information for troubleshooting blocked threads.
 See alternative ways to create thread dumps below if that is the intended use.
 :::
 
