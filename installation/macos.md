@@ -178,7 +178,7 @@ Homebrew, unfortunately, does not support having multiple versions of the same p
 Our CI servers automatically tag the stable package versions with the release number, so you can use the following Git command to have Homebrew install a specific stable version.
 
 ```shell
-git -C $(brew --prefix)/Homebrew/Library/Taps/openhab/homebrew-openhab checkout v5.0 Formula/openhab.rb
+git -C $(brew --prefix)/Library/Taps/openhab/homebrew-openhab checkout v5.0 Formula/openhab.rb
 ```
 
 The above command will check out the `v5.0` tagged version of the `openhab` package, thus installing the latest openHAB `v5.0.x` release.
@@ -186,7 +186,7 @@ The above command will check out the `v5.0` tagged version of the `openhab` pack
 To revert to the latest stable version, you can use the following command.
 
 ```shell
-git -C $(brew --prefix)/Homebrew/Library/Taps/openhab/homebrew-openhab checkout main && git -C $(brew --prefix)/Homebrew/Library/Taps/openhab/homebrew-openhab pull
+git -C $(brew --prefix)/Library/Taps/openhab/homebrew-openhab checkout main && git -C $(brew --prefix)/Library/Taps/openhab/homebrew-openhab pull
 ```
 
 #### Running as a service

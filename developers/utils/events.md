@@ -30,15 +30,24 @@ The event itself will be subclassed for each event type, which exists in the Sys
 This section lists the core events provided by openHAB which can be divided into the categories _Item Events_, _Thing Events_ and _Inbox Events_.
 
 An event consists of a `topic`, a `type`, a `payload` and a `source`.
-The payload can be serialized with any String representation and is determined by its concrete event type implementation (e.g. `ItemCommandEvent`, `ItemUpdatedEvent`).
-The payloads of the openHAB core events are serialized with JSON.
-Each event implementation provides the payload as high level methods as well, usually presented by a data transfer object (DTO).
+
+#### Event Topic
 
 A topic clearly defines the target of the event and its structure is similar to a REST URI, except the last part, the action.
 The topics of openHAB events are divided into the following four parts: `{namespace}/{entityType}/{entity}/{action}`, e.g. `openhab/items/{itemName}/command`.
 
+#### Event Type
+
 The type of an event is represented by a string, usually the name of the concrete event implementation class, e.g. `ItemCommandEvent`, `ItemUpdatedEvent` .
 This string type presentation is used by event subscribers for event subscription (see chapter "Receive Events") and by the framework for the creation of concrete event instances.
+
+#### Event Payload
+
+The payload can be serialized with any String representation and is determined by its concrete event type implementation (e.g. `ItemCommandEvent`, `ItemUpdatedEvent`).
+The payloads of the openHAB core events are serialized with JSON.
+Each event implementation provides the payload as high level methods as well, usually presented by a data transfer object (DTO).
+
+#### Event Source
 
 The event source identifies the sender.
 Not all senders will set the source.
@@ -59,7 +68,7 @@ A few concrete examples:
 - `org.openhab.io.homekit$1467397f-c2e7-4b15-a7dc-315331ced2db` would mean the event was initiated from the HomeKit addon by a user identified by a UUID.
 - `org.openhab.ui.basic$default:03=>org.openhab.android$my-phone=>org.openhab.io.openhabcloud$user@gmail.com=>org.openhab.core.io.rest` would mean the event was initiated by using a sitemap in the Android openHAB app, and proxied through myopenhab.org using the user `user@gmail.com` (and finally through the REST API, but without a user).
 - `org.openhab.core.io.console` would mean the event was sent via the Karaf console.
-- `org.openhab.core.automation` would mean the event was triggered by a command or update sent in a rule action in most langauges. Some languages might provide a more detailed source.
+- `org.openhab.core.automation` would mean the event was triggered by a command or update sent in a rule action in most languages. Some languages might provide a more detailed source.
 - `org.openhab.automation.jrubyscripting$rule:virtual_lighting:98` would mean the event was sent by an action written in JRuby using the helper library, with rule ID `virtual_lighting:98`.
 - `org.openhab.binding.mqtt$mqtt:thing:mything:mychannel` would mean the event was sent by the `mychannel` channel of the `mything` thing from the MQTT binding (updating a state).
 - `org.openhab.core.persistence` would mean the event was sent by the persistence engine (restoring the state).

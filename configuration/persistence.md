@@ -160,10 +160,9 @@ The syntax is as follows:
 
 ```java
 Items {
-    <itemlist1> : strategy = <strategy1>, <strategy2>, ... [filter = <filter1>, <filter2>, ...]
+    <itemlist1> : strategy = <strategy1>, <strategy2> ... [filter = <filter1>, <filter2>, ...]
     <itemlist2> : strategy = <strategyX>, <strategyY>, ...
     ...
-
 }
 ```
 
@@ -194,7 +193,6 @@ Aliases {
     <itemName1> -> <alias1>
     <itemName2> -> <alias2>
     ...
-
 }
 ```
 
@@ -212,7 +210,7 @@ Strategies {
 Filters {
         fivepercent : > % 5
         atMostOnceAMinute : T 1 m
-  }
+}
 /*
  * Each line in this section defines for which Item(s) which strategy(ies) should be applied.
  * You can list single items, use "*" for all items or "groupitem*" for all members of a group
@@ -394,7 +392,7 @@ lastChange = (lastChange !== null) ? lastChange : now
 To get the average temperature over the last 5 minutes from the Item called `Temperature` in the influxdb persistence service, you would use:
 
 ```java
-Temperature.averageSince(now.minusMinutes(5), "influxdb")`
+Temperature.averageSince(now.minusMinutes(5), "influxdb")
 ```
 
 To calculate the total energy consumption over the last month from an Item called `Power` in the jdbc persistence service, you can do:
@@ -403,7 +401,7 @@ To calculate the total energy consumption over the last month from an Item calle
 var today = now.truncatedTo(ChronoUnit.DAYS)
 var currentMonthStart = today.withDayOfMonth(1)
 var lastMonthStart = today.minusMonths(1).withDayOfMonth(1)
-var consumption = Power.riemannSumBetween(lastMonthStart, currentMonthStart, RiemannType.TRAPEZOIDAL, "jdbc")`
+var consumption = Power.riemannSumBetween(lastMonthStart, currentMonthStart, RiemannType.TRAPEZOIDAL, "jdbc")
 ```
 
 If `Power` is a `QuantityType<Power>` Item, `consumption` will be of `QuantityType<Energy>`.
