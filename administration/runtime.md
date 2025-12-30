@@ -143,7 +143,17 @@ Use the `bundle --help` command to get a list of all available bundle management
 The following commands are particularly useful:
 
 - `bundle:list`: Lists all installed bundles.
-- `bundle:list <bundleName>`: Lists a bundle by name, e.g.:
+  `grep` may be used to filter the output, e.g.:
+
+  ```text
+  openhab> bundle:list | grep "Main UI"
+  START LEVEL 100 , List Threshold: 50
+   ID │ State  │ Lvl │ Version │ Name
+  ────┼────────┼─────┼─────────┼──────────────────────────────────
+  228 │ Active │  80 │ 5.1.0   │ openHAB UI :: Bundles :: Main UI
+  ```
+
+- `bundle:list <bundleName>`: Lists a bundle by name (see below on how to discover the name), e.g.:
 
   ```text
   openhab> bundle:list org.openhab.ui
@@ -183,8 +193,9 @@ Bundles can either be built locally (through Maven) or downloaded from the [CI b
    1. Current openHAB milestone or snapshot:
       - Add-ons: [Add-ons Integration Build](https://ci.openhab.org/job/openHAB-Addons/lastSuccessfulBuild/artifact/bundles/)
       - UIs (Main UI, Basic UI): [WebUI Integration Build](https://ci.openhab.org/job/openHAB-WebUI/lastSuccessfulBuild/artifact/bundles/)
-1. Independent of the source, select the appropiate bundle, e.g. `org.openhab.ui` for Main UI or `org.openhab.binding.matter` for the Matter binding.
-   It should be generally possible to find the bundle by searching for the add-on name.
+1. In your browser, navigate to the appropriate URL for your version of openHAB from the list above.
+   Search for the general add-on name or scroll down the list to find the bundle name.
+   Select the appropriate bundle, e.g. `org.openhab.ui` for Main UI or `org.openhab.binding.matter` for the Matter binding.
 1. **Only for Artifactory:** Select the appropriate version from the list of available versions.
    For example, the latest `5.1.x-SNAPSHOT` version should be used for openHAB 5.1.x, e.g. [5.1.2-SNAPSHOT](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/ui/bundles/org.openhab.ui/5.1.2-SNAPSHOT/).
 1. Get the bundle download link:
