@@ -182,4 +182,72 @@ Created dump zip: 2025-08-08_171434.zip
 
 You will find this ZIP in the `$OPENHAB_USERDATA` folder, usually `/var/lib/openhab/` on Linux systems.
 
+::: tip Note
+The thread dumps created from Karaf lacks some important information for troubleshooting blocked threads.
+See alternative ways to create thread dumps below if that is the intended use.
+:::
+
 Please refer to the [Karaf Developer Commands documentation](https://karaf.apache.org/manual/latest/#_developer_commands) for more information about all available commands.
+
+## Thread Dumps
+
+Thread dumps capture the state of all JVM threads and are essential when diagnosing high CPU usage, deadlocks or blocked threads.
+Below are several methods to produce thread dumps.
+
+### Java Process Identifier
+
+The command line tools described here require the process identifier (PID) of the Java process as an argument.
+To find the PID, open a command console and run one of the following commands:
+
+```shell
+ps u -C java                          # Linux
+ps aux | grep java                    # macOS/Linux
+tasklist /FI "IMAGENAME eq java.exe"  # Windows
+```
+
+Sometimes, more than one entry is returned, and it might not be obvious which one is openHAB. In most situations it will either only be one entry, or it will be obvious which one is openHAB.
+
+### Using `jstack`
+
+`jstack` is part of the JDK and prints a full thread dump from a running JVM.
+Required privileges will usually be `root`/`administrator`: prefix with `sudo` on Linux and macOS, use an elevated command prompt on Windows.
+
+This command will create a new file called `threaddump.txt` in the current directory, which contains the thread dump information:
+
+```shell
+jstack -l <PID> > threaddump.txt
+```
+
+`jstack` is located in the JDK `bin` directory.
+
+### Using `jcmd`
+
+`jcmd` is another JDK tool that can trigger many diagnostic actions.
+It also usually requires `sudo` (Linux/macOS) or elevated command prompt (Windows).
+
+This command will create a new file called `threaddump.txt` in the current directory, which contains the thread dump information:
+
+```shell
+jcmd <PID> Thread.print -l > threaddump.txt
+```
+
+### Using VisualVM / Java Mission Control
+
+GUI tools such as [VisualVM](https://visualvm.github.io/) or [Java Mission Control (JMC)](https://www.oracle.com/java/technologies/javase/products-jmc9-downloads.html) can attach to a running JVM (local or remote with JMX) and provide thread dumps with additional visualization and analysis tools.
+Setting up remote access can be a bit of work and isn't covered here, so these tools are recommended only if openHAB is running on a computer with a desktop environment, but are excellent options when that is the case.
+
+### Inside Containers and Remote Systems
+
+For Docker containers, either exec into the container and run `jcmd`/`jstack`:
+
+```shell
+docker exec -it <container> jcmd <PID> Thread.print -l
+```
+
+For remote systems without SSH access to JDK tools, remote JMX can be configured and enabled to allow remote access from VisuaVM or Java Mission Control, but the details for doing this must be acquired elsewhere.
+
+### Helpful Tips
+
+- Always run diagnostic tools with appropriate privileges (e.g., `sudo` on Linux).
+- If you need to correlate a Java thread to an OS thread, look for the `nid` value in the thread dump (usually hex). Convert it to decimal to compare with `top`/`ps` thread ids.
+- If a thread dump is not enough, capture several dumps spaced a few seconds apart to see which stacks are consistently present (useful for intermittent CPU spikes).
