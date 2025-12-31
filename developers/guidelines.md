@@ -93,6 +93,15 @@ The rules are defined using the Eclipse Java Formatter definitions. There are pl
 
 The rules are defined at <https://github.com/openhab/static-code-analysis/tree/main/codestyle/src/main/resources> for the Eclipse WTP formatter, but will have to be manually entered into your IDE.
 
+#### XML files for Thing-Type Definitions
+
+Thing-Type definitions must comply with the [thing-description-1.0.0.xsd schema](https://www.openhab.org/schemas/thing-description-1.0.0.xsd).
+
+To enable automatic schema validation in your IDE you many need to do the following:
+
+- Eclipse: download the latest copy of `thing-description-1.0.0.xsd` to your `.lemminx\cache\https\openhab.org\schemas` cache folder.
+- Visual Studio Code: install the XML extension from Red Hat.
+
 ### Java Coding Style
 
 - The [Java naming conventions](https://java.about.com/od/javasyntax/a/nameconventions.htm) should always be used and are described in detail at the link, a quick summary is:
