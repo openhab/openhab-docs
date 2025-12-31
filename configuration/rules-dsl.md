@@ -53,7 +53,7 @@ Check out the editors page for more information and additional editor possibilit
 ### The Syntax
 
 ::: tip Note
-The rule syntax is based on [Xbase](https://www.eclipse.org/Xtext/#xbase) and as a result it is sharing many details with [Xtend](https://www.eclipse.org/xtend/), which is built on top of Xbase as well.
+The rule syntax is based on [Xbase](https://eclipse.dev/Xtext/documentation/305_xbase.html#xbase-language-ref-introduction) and as a result it is sharing many details with [Xtend](https://eclipse.dev/Xtext/xtend/documentation/), which is built on top of Xbase as well.
 As a result, we will often point to the Xtend documentation for details.
 :::
 
