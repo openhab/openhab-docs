@@ -98,6 +98,7 @@ The rules are defined at <https://github.com/openhab/static-code-analysis/tree/m
 Thing-Type definitions must comply with the [thing-description-1.0.0.xsd schema](https://www.openhab.org/schemas/thing-description-1.0.0.xsd).
 
 To enable automatic schema validation in your IDE you many need to do the following:
+
 - Eclipse: download the latest copy of `thing-description-1.0.0.xsd` to your `.lemminx\cache\https\openhab.org\schemas` cache folder.
 - Visual Studio Code: install the XML extension from Red Hat.
 
