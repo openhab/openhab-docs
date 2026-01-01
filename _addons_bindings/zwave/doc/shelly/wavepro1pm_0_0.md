@@ -299,7 +299,7 @@ This parameter has the configuration ID ```config_17_1``` and is of type ```INTE
 
 If the load O (O1) is ON, you can schedule it to turn OFF automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an ON command, either remotely (from the gateway or associated device) or lo
 
-The following option values may be configured, in addition to values in the range 0 to 0 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -315,7 +315,7 @@ This parameter has the configuration ID ```config_19_2``` and is of type ```INTE
 
 If the load O (O1) is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an OFF command, either remotely (from the gateway or associated device) or l
 
-The following option values may be configured, in addition to values in the range 0 to 1 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|

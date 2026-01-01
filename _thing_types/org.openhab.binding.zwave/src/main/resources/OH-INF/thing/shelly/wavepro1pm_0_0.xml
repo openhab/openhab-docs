@@ -119,22 +119,28 @@ This parameter determines if on/off status is saved and restored for load connec
 
       <parameter name="config_19_2" type="integer" groupName="configuration">
         <label>19: O (O1) Auto OFF with timer</label>
-        <description>If the load O (O1) is ON, you can schedule it to turn OFF automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an ON command, either remotely (from the gateway or associated device) or lo</description>
+        <description><![CDATA[
+If the load O (O1) is ON, you can schedule it to turn OFF automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an ON command, either remotely (from the gateway or associated device) or lo<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Auto OFF Disabled</option>
           <option value="1">1 - 32535 seconds (or milliseconds – see Parameter no. 25.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: O (O1) Auto ON with timer</label>
-        <description>If the load O (O1) is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an OFF command, either remotely (from the gateway or associated device) or l</description>
+        <description><![CDATA[
+If the load O (O1) is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an OFF command, either remotely (from the gateway or associated device) or l<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">Auto ON Disabled</option>
           <option value="1">1 - 32535 seconds (or milliseconds – see Parameter no. 25. Auto ON tim</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration">
