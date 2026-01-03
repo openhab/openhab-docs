@@ -4,6 +4,7 @@ label: Bluelink (Hyundai/Genesis)
 title: Bluelink (Hyundai/Genesis) - Bindings
 type: binding
 description: "This binding integrates Hyundai vehicles equipped with Bluelink connected car services."
+logo: images/addons/bluelink.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Bluelink Binding (Hyundai/Genesis)
+
+<AddonLogo />
 
 This binding integrates Hyundai vehicles equipped with Bluelink connected car services.
 It allows you to monitor your vehicle's status and control various features remotely.
