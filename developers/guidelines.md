@@ -99,8 +99,9 @@ Thing-Type definitions must comply with the [thing-description-1.0.0.xsd schema]
 
 To enable automatic schema validation in your IDE you many need to do the following:
 
-- Eclipse: download the latest copy of `thing-description-1.0.0.xsd` to your `.lemminx\cache\https\openhab.org\schemas` cache folder.
-- Visual Studio Code: install the XML extension from Red Hat.
+- Eclipse: Download the latest copy of `thing-description-1.0.0.xsd` to your `.lemminx\cache\https\openhab.org\schemas` cache folder.
+- IntelliJ: Put the cursor into the `xsi:schemeLocation` field of the XML, trigger the <kbd>Alt</kbd><kbd>Enter</kbd> shortcut and select _Fetch external resource_.
+- Visual Studio Code: Install the XML extension from Red Hat.
 
 ### Java Coding Style
 
