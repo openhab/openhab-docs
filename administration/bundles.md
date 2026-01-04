@@ -117,6 +117,34 @@ openhab>bundle:update 303 file:///localhost/srv/openhab-sys/org.openhab.binding.
 
 Note: Using `bundle:uninstall` to uninstall an add-on will very likely **not** work, because all add-ons bundles are part of a feature and as long as the feature is installed, the bundle will likely be reinstalled.
 
+#### Updating from CI
+
+When a bug has been discovered in an add-on or Main UI and a fix is available and has been backported for your version of openHAB,
+you can update the individual bundle to get the fix immediately without waiting for the next patch release.
+Bundles can either be built locally (through Maven) or downloaded directly from the [CI build server](https://ci.openhab.org) or from our [JFrog Artifactory](https://openhab.jfrog.io):
+
+1. Depending on the openHAB version, the following sources are available:
+  1. openHAB stable release:
+    - Add-ons: [Add-ons Artifactory](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/addons/bundles/)
+    - UIs (Main UI, Basic UI): [WebUI Artifactory](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/ui/bundles/)
+  1. Current openHAB milestone or snapshot:
+    - Add-ons: [Add-ons Integration Build](https://ci.openhab.org/job/openHAB-Addons/lastSuccessfulBuild/artifact/bundles/)
+    - UIs (Main UI, Basic UI): [WebUI Integration Build](https://ci.openhab.org/job/openHAB-WebUI/lastSuccessfulBuild/artifact/bundles/)
+1. In your browser, navigate to the appropriate URL for your version of openHAB from the list above.
+   Search for the general add-on name or scroll down the list to find the bundle name (see below).
+   Select the appropriate bundle, e.g. `org.openhab.ui` for Main UI or `org.openhab.binding.matter` for the Matter binding.
+1. **Only for Artifactory:** Select the appropriate version from the list of available versions.
+   For example, the latest `5.1.x-SNAPSHOT` version should be used for openHAB 5.1.x, e.g. [5.1.2-SNAPSHOT](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/ui/bundles/org.openhab.ui/5.1.2-SNAPSHOT/).
+1. Get the bundle download link:
+  1. Artifactory: Right-click the latest `.jar` file (not `-sources.jar`!) and copy the download link.
+  1. Integration Build: Right-click the `.jar` file (not `-sources.jar`!) and copy the download link.
+
+The download link can then be used with the `bundle:update` command, e.g.:
+
+```text
+openhab> bundle:update 228 https://openhab.jfrog.io/artifactory/sandbox-snapshot/org/openhab/ui/bundles/org.openhab.ui/5.1.2-SNAPSHOT/org.openhab.ui-5.1.2-20251228.141753-2.jar
+```
+
 ### Installation via the `$OPENHAB_ADDONS` folder
 
 If it's just about add-ons, it’s also fine to uninstall it and then put the `.jar` in the add-on folder.
