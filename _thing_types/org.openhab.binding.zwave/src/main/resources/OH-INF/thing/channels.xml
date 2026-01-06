@@ -689,6 +689,34 @@
         <state pattern="%.1f" readOnly="true">
         </state>
     </channel-type>
+    
+    <!-- Energy - Power Consumption (Reactive)-->
+    <channel-type id="meter_kvar">
+        <item-type>Number</item-type>
+        <label>Electric Power Consumption</label>
+        <description>Indicates the reactive power consumption</description>
+        <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Power</tag>
+        </tags>
+        <state pattern="%.1f" readOnly="true">
+        </state>
+    </channel-type>
+    
+    <!-- Energy - Energy Consumption (kvarh) -->
+    <channel-type id="meter_kvarh">
+        <item-type>Number</item-type>
+        <label>Energy Consumption</label>
+        <description>Indicates the reactive energy consumption (kvarh)</description>
+        <category>Energy</category>
+        <tags>
+            <tag>Measurement</tag>
+            <tag>Energy</tag>
+        </tags>
+        <state pattern="%.1f" readOnly="true">
+        </state>
+    </channel-type>
 
     <!-- Energy - Energy Consumption (kWh) -->
     <channel-type id="meter_kwh">
