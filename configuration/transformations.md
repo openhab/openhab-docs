@@ -40,7 +40,7 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
 
     Usage of Transformations in the [label parameter of Sitemap elements]({{base}}/ui/sitemaps.html#element-type-text) works the same way.
 
-    When creating Item's through the UI, the content of the `[]` brackets has to be put into the `pattern` field of the State Description Item metadata.
+    When creating an Item through the UI, the content of the `[]` brackets has to be put into the `pattern` field of the State Description Item metadata.
 
 1. Rules
 
@@ -69,8 +69,7 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
 
 ## Script Transformation
 
-The script transformation is provided by the framework and needs no additional installation of a [transformation add-on](/addons/#transform).
-It allows transforming values using any of the available scripting languages in openHAB (Rules DSL and those provided by [automation add-ons](/addons/#automation)).
+The script transformation is provided by the framework and allows transforming values using any of the available scripting languages in openHAB (Rules DSL and those provided by [automation add-ons](/addons/#automation)).
 openHAB ensures that one and the same script transformation is not executed in parallel, there is no need to program protections against race conditions.
 
 The script needs to be placed in the `$OPENHAB_CONF/transform` folder with the native extension for the chosen language, for example `stringlength.js` for a transformation using [JavaScript Scripting](/addons/automation/jsscripting/).
