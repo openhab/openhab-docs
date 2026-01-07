@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen58_00_000" listed="false">
+    <label>ZEN58 XS Low Voltage Relay</label>
+    <description><![CDATA[
+XS Low Voltage Relay<br /> <h1>Overview</h1><p>Manual or z-wave on/off control for low voltage loads.  </p><p>Monitors analog dry contact inputs like open/close sensors.  </p><p>Installs behind your existing wall switch (single pole or 3-way).  </p><p>Z-wave Long Range for next -level wireless network</p><p>Remembers and restores on/off status after power failure</p><p>800 series z-wave and s2 SmartStart security.</p><p>Specs: </p><p>Power 9-40v ac/dc</p><p>Max load: 3A @ 240V.</p><p>Range: up to 300ft LoS and 1300ft with zwave long range enabled. </p><p>Indoor use only.</p><p>1.2"x1"x0.6" (its so tiny!)</p> <br /> <h2>Inclusion Information</h2><p>Initiate inclusion on hub and press the z-wave button 3 times as quickly as possible.</p> <br /> <h2>Exclusion Information</h2><p>Initiate exclusion on hub and press the z-wave button 3 times as quickly as possible.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN58</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0004:0322</property>
+      <property name="dbReference">1687</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LED Indicator</label>
+        <description><![CDATA[
+LED Indicator options<br /> <h1>Overview</h1><p>Choose if you want the LED to indicate the on/off status of the load or if you want it to remain on or off at all times.</p><p>Values: 0 – LED always off; 1 – LED on when load on, LED off when load off. Default: 1</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED always off</option>
+          <option value="1">LED on when load on, LED off when load off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: On/Off Status After Power Failure</label>
+        <description><![CDATA[
+Controls for status after power failure<br /> <h1>Overview</h1><p>Set the on off status for the relay after power failure.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">always off once restored</option>
+          <option value="1">always on once restored</option>
+          <option value="2">remembers and restores status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Status Report Type</label>
+        <description><![CDATA[
+Status Report Type<br /> <h1>Overview</h1><p>Choose physical (wall switch) and Z-Wave triggers for the relay to send a status change report to the hub.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Scene Control</label>
+        <description><![CDATA[
+Scene Control<br /> <h1>Overview</h1><p>Enable or disable scene control functionality for quick double tap triggers.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Input Type</label>
+        <description><![CDATA[
+Input Type (input to the relay, not load)<br /> <h1>Overview</h1><p>Choose the wall switch or input type you want to connect to the relay. *Not all values are supported on all hubs. Please check the How to Access the Advanced Settings for My ZEN58 article for your hub for more information.</p><p>IMPORTANT: If you set this parameter to value 4-12, you’ll need to exclude and re-include the device (without changing any settings) so that a child device is created for the input of your choice!</p><p>NOTE: When the relay is first powered, the default settings should auto-detect the external switch type after it has been toggled once. If auto-detect fails to detect the proper input type and you are using a hub that does not provide access to the advanced settings, you can also manually configure the external switch type: Quickly press the Z-Wave Button 5 times within 2 seconds. The relay will enter into a switch type selecting mode. The LED will flash in green to indicate the switch type it should connect: Flash once every 2 seconds – Toggle Switch; Flash twice every 2 seconds – Momentary Switch; Flash 3 times every 2 seconds – Toggle switch with fixed actions (NO/NC Switch); Flash 4 times every 2 seconds – 3-way impulse control.</p><p>When in the switch type selecting mode, press the Z-Wave Button ONCE in sequence to shift the switch types.</p><p>After the switch type matches the external switch you have connected, press and hold the Z-Wave Button for more than 1 second to confirm the selection. If the selection is not confirmed in 30 seconds, the Relay will exit the switch type selecting mode.</p><p>SEE https://www.support.getzooz.com/kb/article/2016-zen58-low-voltage-xs-relay-advanced-settings/ because this parameter documentation is huge</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">automatic detection</option>
+          <option value="1">toggle switch (state changes whenever the switch is toggled)</option>
+          <option value="2">momentary push button</option>
+          <option value="3">toggle switch (light on when the switch is toggled up, etc)</option>
+          <option value="4">leak alarm (water sensor)</option>
+          <option value="5">heat alarm</option>
+          <option value="6">motion alert</option>
+          <option value="7">open/close alert (door sensor)</option>
+          <option value="8">CO alarm</option>
+          <option value="9">CO2 alarm</option>
+          <option value="10">on/off report (dry contact switch/sensor) *SEE NOTES*</option>
+          <option value="11">garage door mode</option>
+          <option value="12">garage door mode for the relay</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Inclusion from Switch</label>
+        <description><![CDATA[
+Inclusion from Switch<br /> <h1>Overview</h1><p>Enable or disable the ability to put the ZEN58 into inclusion / exclusion mode from the connected wall switch by toggling it 3 times quickly. Each toggle is an up-down sequence so you need to perform the following as quickly as possible to put the device in inclusion/exclusion mode: up-down-up-down-up-down.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable inclusion from switch</option>
+          <option value="1">Enable inclusion from switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_4" type="integer" groupName="configuration">
+        <label>7: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Auto Turn-Off Timer<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the relay to automatically turn off once it has been turned on). Auto-off timer will automatically turn the relay off after x seconds once it has been turned on.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_4" type="integer" groupName="configuration">
+        <label>8: Auto Turn-On Timer</label>
+        <description><![CDATA[
+Auto Turn-On Timer<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the relay to automatically turn on once it has been turned off). Auto-on timer will automatically turn the relay on after x seconds once it has been turned off.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Relay Control (Smart Bulb Mode)</label>
+        <description><![CDATA[
+Relay Control (Smart Bulb Mode)<br /> <h1>Overview</h1><p>Enable or disable physical and Z-Wave on/off control. Disable both physical switch / button and Z-Wave control for smart bulbs (use central scene triggers). Scene control and other functionality will still be available from the connected wall switch.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable control from switch and button</option>
+          <option value="1">Enable switch, button, and Z-Wave control</option>
+          <option value="2">Disable switch, button, and Z-Wave control</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Relay Type (NO/NC)</label>
+        <description><![CDATA[
+Relay Type (NO/NC)<br /> <h1>Overview</h1><p>Choose if you'd like the relay to act as a normally open (on when the circuit is closed, off when the circuit it open), or a normally closed relay (off when the circuit is closed, on when the circuit is open).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">NO (normally open)</option>
+          <option value="1">NC (normally closed)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Input Trigger</label>
+        <description><![CDATA[
+Input Trigger<br /> <h1>Overview</h1><p>Choose if you’d like the connected input (wall switch or other type of input) to trigger the load connected to the relay or if you want to use the input reports for monitoring only and separate the output from the input.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Input trigger enabled</option>
+          <option value="1">Input trigger disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Scene Control Multi-Tap</label>
+        <description><![CDATA[
+Scene Control Multi-Tap<br /> <h1>Overview</h1><p>Disable multi-tap scene control so that only single taps from the connected wall switch report via central scene. Once this functionality is disabled, double taps, held, released, 3-tap, 4-tap, and 5-tap events will be ignored and won't be reported to the hub. The inclusion and exclusion 3-toggle functionality from the external switch will also be disabled.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">multi-tap for scene control disabled</option>
+          <option value="1">multi-tap for scene control enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Reversed Reports For Input</label>
+        <description><![CDATA[
+Reversed Reports For Input<br /> <h1>Overview</h1><p>Reverse the reported values for your selected input type (value 1). Expert users only. See manual for details.</p><p>NOTE: This will not affect the relay behavior if you leave the input linked to the output (parameter 11). It will still trigger the relay to turn on when the circuit is closed, regardless of the reported value. This setting only affects the reports displayed in the hub for the input and does not affect the relay (output) behavior.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">values reported as normally open, not reversed</option>
+          <option value="1">input values reversed</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline Group</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Lifeline Group communication with up to 5 devices. This device will send BASIC REPORT and SWITCH BINARY REPORT to Group 1</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: On/Off Control</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>On/Off Control: This device will send BASIC SET command to Group 2 with up to 5 devices for On/Off control when the status changes. Supported when Parameter 5 is set to a values 0-9.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: EP2 On/Off Control</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>EP2 On/Off Control: This device will send BASIC SET command to Group 3 (for EP2) with up to 5 devices for On/Off control when the status changes. Supported when Parameter 5 is set to a value of 10.</p><p>You can set direct association to have the relay control another Z-Wave device independently of the hub by using Group 2 or Group 3. Not every hub exposes direct association settings in the interface so please check with your system provider for details.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
