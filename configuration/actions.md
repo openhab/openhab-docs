@@ -159,10 +159,10 @@ then
             logInfo("rules", "Timer rescheduled")
             myTimer.reschedule(now.plusMinutes(5))
         } else {
-            myTimer = createTimer(now.plusMinutes(5), [ |
+            myTimer = createTimer(now.plusMinutes(5)) [
                 logInfo("rules", "Timer activated")
                 //Do something...
-            ])
+            ]
             logInfo("rules", "Timer created")
         }
     } else {
