@@ -59,6 +59,16 @@ START LEVEL 100 , List Threshold: 50
 228 │ Active │  80 │ 5.1.0   │ openHAB UI :: Bundles :: Main UI
 ```
 
+The `-l` argument may be used to list the URL of a bundle, e.g.:
+
+```text
+openhab> bundle:list -l 340
+START LEVEL 100 , List Threshold: 50
+ ID │ State  │ Lvl │ Version │ Location
+────┼────────┼─────┼─────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+340 │ Active │  80 │ 5.1.0   │ mvn:org.openhab.addons.bundles/org.openhab.binding.zigbee/5.1.0
+```
+
 ## Start/Stop or Restart a Bundle
 
 A bundle can be started using the `bundle:start <ID>` command:
