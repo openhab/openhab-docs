@@ -618,9 +618,9 @@ rule "Window open reminder"
 when
   Member of gWindows changed to OPEN
 then
-  createTimer(now.plusMinutes(60), [ |
+  createTimer(now.plusMinutes(60)) [
     if (triggeringItem.state == OPEN) sendBroadcastNotification(triggeringItem.label + " is open for one hour!")
-  ])
+  ]
 end
 ```
 
