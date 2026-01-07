@@ -166,9 +166,9 @@ The procedure should be as follows:
 - Wait until uninstall has completed,
 - then drop the new file in the `$OPENHAB_ADDONS` folder.
 
-It is possible that add-on installation does not work if the add-on depends on some non-standard feature (e.g. KNX depends on the feature openhab-transport-serial).
-These features are automatically installed if you install an add-on (via Main UI or `addons.cfg`) and are also uninstalled if there is no add-on using it.
-If that is the case, it is necessary to install the feature manually with the `feature:install` command, e.g. openhab-transport-serial (preferred way) OR drop the required bundles in the addons-folder, too.
+It is possible that add-on installation does not work if the add-on depends on features other than `openhab-runtime-base` (e.g. KNX depends on the feature `openhab-transport-serial`).
+These features are automatically loaded if you install an add-on (via Main UI or `addons.cfg`) and are also unloaded if there is no add-on using it.
+If that is the case, it is necessary to load the feature manually with the `feature:install` command, e.g. `feature:install openhab-transport-serial` (preferred way).
 
 ## Naming Convention For Bundles
 
