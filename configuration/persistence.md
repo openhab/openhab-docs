@@ -8,8 +8,6 @@ title: Persistence
 openHAB can store data over time; this is known as persistence.
 The data may be retrieved at a later time, for example to restore your system after startup, or to prepare graphs for display on a UI.
 
-openHAB ships with the [rrd4j persistence service](addons/persistence/rrd4j/) installed by default, which persists every Item on every state change and at least once a minute. Additionally, it restores the last stored value at system startup. To change this behaviour see [Persistence Configuration](#persistence-configuration).
-
 openHAB persists Item states in a database, and most popular databases are supported.
 You may have more than one persistence add-on loaded, and each of these may be configured independently.
 
@@ -53,6 +51,12 @@ Strategies {
   ...
 }
 ```
+
+::: tip Note
+openHAB version 5.1 and above no longer support default strategies.
+If you have a `Default` under `Strategies` you should remove it.
+Also make sure every `Items` definition has one or more strategies defined.
+:::
 
 #### Predefined Strategies
 
@@ -124,7 +128,7 @@ Filters {
 The include (exclude) filter allows to define a range for accepted (rejected) values.
 It can only be used with `Number` items.
 
-The range is defined by to decimal values.
+The range is defined by two decimal values.
 The boundaries are always considered to be part (not part) of the defined range (i.e. a lower boundary of `5` considers a value of `5` to be inside the range for an include filter and outside of the range for exclude filters).
 In case of dimensional items (e.g `Number:Temperature`) a unit MUST be provided.
 
@@ -156,10 +160,9 @@ The syntax is as follows:
 
 ```java
 Items {
-    <itemlist1> : strategy = <strategy1>, <strategy2>, ... [filter = <filter1>, <filter2>, ...]
+    <itemlist1> : strategy = <strategy1>, <strategy2> ... [filter = <filter1>, <filter2>, ...]
     <itemlist2> : strategy = <strategyX>, <strategyY>, ...
     ...
-
 }
 ```
 
@@ -190,7 +193,6 @@ Aliases {
     <itemName1> -> <alias1>
     <itemName2> -> <alias2>
     ...
-
 }
 ```
 
@@ -208,7 +210,7 @@ Strategies {
 Filters {
         fivepercent : > % 5
         atMostOnceAMinute : T 1 m
-  }
+}
 /*
  * Each line in this section defines for which Item(s) which strategy(ies) should be applied.
  * You can list single items, use "*" for all items or "groupitem*" for all members of a group
@@ -390,7 +392,7 @@ lastChange = (lastChange !== null) ? lastChange : now
 To get the average temperature over the last 5 minutes from the Item called `Temperature` in the influxdb persistence service, you would use:
 
 ```java
-Temperature.averageSince(now.minusMinutes(5), "influxdb")`
+Temperature.averageSince(now.minusMinutes(5), "influxdb")
 ```
 
 To calculate the total energy consumption over the last month from an Item called `Power` in the jdbc persistence service, you can do:
@@ -399,7 +401,7 @@ To calculate the total energy consumption over the last month from an Item calle
 var today = now.truncatedTo(ChronoUnit.DAYS)
 var currentMonthStart = today.withDayOfMonth(1)
 var lastMonthStart = today.minusMonths(1).withDayOfMonth(1)
-var consumption = Power.riemannSumBetween(lastMonthStart, currentMonthStart, RiemannType.TRAPEZOIDAL, "jdbc")`
+var consumption = Power.riemannSumBetween(lastMonthStart, currentMonthStart, RiemannType.TRAPEZOIDAL, "jdbc")
 ```
 
 If `Power` is a `QuantityType<Power>` Item, `consumption` will be of `QuantityType<Energy>`.

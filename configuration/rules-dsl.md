@@ -53,7 +53,7 @@ Check out the editors page for more information and additional editor possibilit
 ### The Syntax
 
 ::: tip Note
-The rule syntax is based on [Xbase](https://www.eclipse.org/Xtext/#xbase) and as a result it is sharing many details with [Xtend](https://www.eclipse.org/xtend/), which is built on top of Xbase as well.
+The rule syntax is based on [Xbase](https://eclipse.dev/Xtext/documentation/305_xbase.html#xbase-language-ref-introduction) and as a result it is sharing many details with [Xtend](https://eclipse.dev/Xtext/xtend/documentation/), which is built on top of Xbase as well.
 As a result, we will often point to the Xtend documentation for details.
 :::
 
@@ -801,7 +801,8 @@ Caveat: Please note the semicolon after the return statement which terminates th
 
 ### Concurrency Guard
 
-If a rule triggers on UI events it may be necessary to guard against concurrency.
+If a rule is explicitly run from another script, rule, a Main UI widget, etc., instead of a trigger, the rule can be started before the current execution has ended.
+It may be necessary to guard against concurrency.
 
 ```javascript
 import java.util.concurrent.locks.ReentrantLock
