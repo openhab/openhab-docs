@@ -58,6 +58,41 @@ variables:
 
 The `variables:` section can appear anywhere in the YAML document, but placing it at the top makes it easier to find.
 
+### Referencing Other Variables During Definition
+
+Variables may reference **other variables**, including those defined earlier in the **same** `variables:` block.
+The only requirement is that the referenced variable appears **above** the one that uses it.
+
+This makes it easy to define simple derived values without introducing additional preprocessing steps.
+
+**Example:**
+
+```yaml
+variables:
+  foo: bar
+  baz: !sub ${foo}   # => "bar"
+```
+
+Variables can also reference **inherited variables** when used inside included files or packages:
+
+```yaml
+# main.yaml
+variables:
+  room: "Kitchen"
+
+items:
+  !include child.inc.yaml
+```
+
+```yaml
+# child.inc.yaml
+variables:
+  label: !sub ${room} Light   # => "Kitchen Light"
+
+ExampleItem:
+  label: !sub ${label}
+```
+
 ## Variable Substitution
 
 Defining variables is only the first step.
@@ -329,6 +364,36 @@ Expressions and filters can be combined freely, allowing you to compute values, 
 - `rooms|length` — returns the number of rooms
 - `device_name|replace(" ", "_")|lower` — replaces spaces and lowercases the result
 - `value|default("unknown")` — uses `"unknown"` if `value` is empty
+
+### Calling Java Methods
+
+If a filter doesn’t provide the transformation you need, expressions can also call methods on the underlying Java objects. Variables inside expressions retain their actual Java types, so you can invoke methods exactly as you would in Java.
+
+Common types you may encounter include:
+
+- [`String`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
+- [`Integer`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html)
+- [`Double`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html)
+- [`Boolean`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html)
+- [`Map`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html)
+- [`List`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html)
+
+This is especially useful when you need functionality beyond the built‑in filters — for example, using `String.replaceAll()` with regular expressions.
+
+Example
+
+```yaml
+# This file is included from a packages section.
+# ${package_id} is provided by the main file; here it is "LivingRoom_Light".
+variables:
+  # Convert "LivingRoom_Light" -> "Living Room Light"
+  label: '${package_id.replaceAll("([a-z])([A-Z])", "$1 $2") | replace("_", " ") | title}'
+
+items: !sub
+  ${package_id}:
+    type: Group
+    label: ${label}
+```
 
 ## Common Pitfalls
 

@@ -13,31 +13,48 @@ Files may be further structured within subdirectories, offering flexibility in o
 
 ## General Structure
 
-Top-level entries in the YAML file must be unique key-value maps with the following valid keys in no particular order:
+A YAML configuration file contains two categories of top‑level keys:
 
-| Key                                   | Object Type                                                                             |
-|:--------------------------------------|:----------------------------------------------------------------------------------------|
-| `version`                             | A mandatory key that contains the file-version. The currently supported version is `1`. |
-| [things](#things)                     | openHAB [Things]({{base}}/concepts/things.html)                                         |
-| [items](#items)                       | openHAB [Items]({{base}}/concepts/items.html)                                           |
-| [tags](#tags)                         | Custom Semantic Tags                                                                    |
-| [variables](variables.md)             | Variables for Substitutions                                                             |
-| [packages](packages.md)               | Packages                                                                                |
-| [.hiddenkeys](anchors.md#hidden-keys) | Top-level keys starting with a dot (`.`) are not included in the final YAML.            |
+1. **Core openHAB structure** — the parts that openHAB loads at runtime
+1. **Preprocessing keys** — features handled before openHAB sees the file
+
+### Core openHAB Structure
+
+These keys define the actual openHAB model:
+
+| Key               | Object Type                                                                             |
+|:------------------|:----------------------------------------------------------------------------------------|
+| `version`         | A mandatory key that contains the file-version. The currently supported version is `2`. |
+| [things](#things) | openHAB [Things]({{base}}/concepts/things.html)                                         |
+| [items](#items)   | openHAB [Items]({{base}}/concepts/items.html)                                           |
+| [tags](#tags)     | Custom Semantic Tags                                                                    |
+
+### Preprocessing Keys
+
+These keys control how the file is processed before openHAB loads it:
+
+| Key                                   | Purpose                                                                                  |
+|:--------------------------------------|:-----------------------------------------------------------------------------------------|
+| [variables](variables.md)             | Defines substitution variables                                                           |
+| [preprocessor](output-debugging.md)   | Document‑level preprocessing options that control how the final YAML document is handled |
+| [packages](packages.md)               | Reusable multi‑section templates                                                         |
+| [.hiddenkeys](anchors.md#hidden-keys) | Keys starting with a dot (`.`) are excluded from the final YAML                          |
 
 The YAML files in general must follow the standard YAML syntax, with a few openHAB-specific features:
 
-- Each YAML file must contain a `version` key which must be set to `1`.
+- Each YAML file must contain a `version` key which must be set to `2`.
   YAML files without a valid `version` key will be ignored.
-- Comments are allowed, either on its own line, or at the end of the line of an existing element.
+- Comments are allowed, either on their own line or at the end of an existing line.
 - Blank lines are allowed.
 
-::: tip Note:
+::: tip YAML Model Version
+Starting with openHAB 5.2, the YAML model has been updated from **Version 1** to **Version 2**.
+Version 1 files remain fully supported and continue to load exactly as before.
 
-Only unquoted `true` and `false` (case insensitive) are valid `boolean` values.
-`ON`, `OFF`, `Yes`, `No`, `disable`, and `enable` are parsed as plain strings.
-To specify `true` or `false` as a string, they must be enclosed in single or double quotes.
+**What’s new in Version 2:**
 
+- Fully backwards compatible — a Version 1 file can simply be updated to `version: 2` with no other changes required.
+- Adds support for [Advanced YAML Capabilities](#next-steps-advanced-yaml-capabilities).
 :::
 
 Notes about entities:
@@ -53,7 +70,7 @@ Notes about entities:
 ### A Quick Example
 
 ```yaml
-version: 1
+version: 2
 
 # All the top-level sections below are optional and may appear in any order
 
@@ -90,6 +107,14 @@ items:
     format: "%d" # Values starting with a percent sign must be quoted
     channel: lgwebos:WebOSTV:3aab9eea-953b-4272-bdbd-f0cd0ecf4a46:volume
 ```
+
+::: tip Boolean Values
+
+Only unquoted `true` and `false` (case insensitive) are valid `boolean` values.
+`ON`, `OFF`, `Yes`, `No`, `disable`, and `enable` are parsed as plain strings.
+To specify `true` or `false` as a string, they must be enclosed in single or double quotes.
+
+:::
 
 ## Object Configuration Structure
 
@@ -146,7 +171,7 @@ Channels Section:
 Example:
 
 ```yaml
-version: 1
+version: 2
 
 things:
   mqtt:broker:mosquitto:
@@ -261,7 +286,7 @@ items:
 Example:
 
 ```yaml
-version: 1
+version: 2
 
 items:
   lBedroom1:
@@ -370,7 +395,7 @@ This structure ensures that the tag is uniquely identified and correctly integra
 Example:
 
 ```yaml
-version: 1
+version: 2
 
 tags:
   Location_Indoor_Room_HomeCinemaRoom:

@@ -15,9 +15,7 @@ YAML utilizes two primary symbols to manage reusable content:
 - **Alias (`*name`):** References a previously anchored node and injects its content at the current location.
 
 ::: tip Scope Note:
-
-Anchors and aliases are **file-local**. An anchor defined in an include file cannot be referenced in the main file, and vice versa.
-
+Anchors and aliases are **file‑local**. An anchor defined in an include file cannot be referenced in the main file, and vice versa.
 :::
 
 > For a comparison of all reuse mechanisms, see
@@ -27,7 +25,7 @@ Anchors and aliases are **file-local**. An anchor defined in an include file can
 
 To store anchored nodes without cluttering your final configuration, use **Hidden Keys**.
 
-- **Definition:** Any top-level YAML key beginning with a dot (`.`).
+- **Definition:** Any top‑level YAML key beginning with a dot (`.`).
 - **Behavior:** These keys are parsed during preprocessing but are **stripped from the final output** sent to openHAB.
 - **Purpose:** They serve as internal storage containers. This allows you to anchor a node for later use without that node being processed as a live entity in your system.
 
@@ -36,7 +34,7 @@ To store anchored nodes without cluttering your final configuration, use **Hidde
 The following example demonstrates how to anchor a node within a hidden key and merge it into active items.
 
 ```yaml
-version: 1
+version: 2
 
 # 1. Store a node in a hidden key and anchor it (&)
 .light-base: &LIGHT_BASE
@@ -64,13 +62,21 @@ You can also create an anchor for a scalar value.
 foo: *BAR # insert `value` here
 ```
 
-## Merge Behavior & Overrides
+## Merge Keys
 
-When using the merge key (`<<:`), YAML follows specific logic to combine the anchored node with the local block:
+Anchors and aliases are often used together with the **merge key** (`<<:`), which inserts the contents of an anchored map into the current map.
 
-- **Maps:** Merged key-by-key.
-- **Scalars:** Local values **override** the values in the anchor.
-- **Lists:** Typically concatenated.
+This page focuses on anchors and aliases themselves.
+For a full explanation of merge semantics—including overrides, list behavior, and advanced patterns—see:
+
+➡️ **[Merge Keys](merge-keys.md)**
+
+That page covers:
+
+- how YAML merges maps
+- how local values override anchored ones
+- how lists behave
+- how merge keys interact with hidden keys and includes
 
 ## Strategic Usage
 

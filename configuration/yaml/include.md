@@ -80,7 +80,7 @@ Example
 `main.yaml`:
 
 ```yaml
-version: 1
+version: 2
 
 variables:
   broker: mqtt:broker:main
@@ -134,7 +134,7 @@ channels: !sub
 Resulting configuration:
 
 ```yaml
-version: 1
+version: 2
 
 things:
   mqtt:topic:livingroom-window:

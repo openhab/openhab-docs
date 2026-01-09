@@ -117,6 +117,7 @@ module.exports = [
               ['configuration/yaml/include', 'Include Files'],
               ['configuration/yaml/packages', 'Packages'],
               ['configuration/yaml/anchors', 'Anchors & Aliases'],
+              ['configuration/yaml/merge-keys', 'Merge Keys'],
               ['configuration/yaml/reuse-mechanisms', 'Reuse Mechanisms'],
             ]
           },
