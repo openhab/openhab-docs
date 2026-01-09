@@ -54,7 +54,7 @@ Version 1 files remain fully supported and continue to load exactly as before.
 **What’s new in Version 2:**
 
 - Fully backwards compatible — a Version 1 file can simply be updated to `version: 2` with no other changes required.
-- Adds support for [Advanced YAML Capabilities](#next-steps-advanced-yaml-capabilities).
+- Adds support for [Advanced YAML Features](#next-steps-advanced-yaml-features).
 :::
 
 Notes about entities:
@@ -414,7 +414,7 @@ In the example `Location_Indoor_Room_HomeCinemaRoom`, the semantic tag `HomeCine
 
 You can have multiple YAML files with different semantic tags but keep semantic tags dependent on each other in the same file.
 
-## Next Steps: Advanced YAML Capabilities
+## Next Steps: Advanced YAML Features
 
 The sections above describe the core structure of YAML configuration in openHAB.
 If you want to go further, openHAB provides several optional features that make larger or more dynamic configurations easier to manage:

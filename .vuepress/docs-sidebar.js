@@ -112,13 +112,17 @@ module.exports = [
           { title: 'YAML Configuration',
             children: [
               ['configuration/yaml/', 'Core Structure'],
-              ['configuration/yaml/variables', 'Variables & Substitution'],
-              ['configuration/yaml/output-debugging', 'Output & Debugging'],
-              ['configuration/yaml/include', 'Include Files'],
-              ['configuration/yaml/packages', 'Packages'],
-              ['configuration/yaml/anchors', 'Anchors & Aliases'],
-              ['configuration/yaml/merge-keys', 'Merge Keys'],
-              ['configuration/yaml/reuse-mechanisms', 'Reuse Mechanisms'],
+              { title: 'Advanced YAML Features',
+                children: [
+                  ['configuration/yaml/variables', 'Variables & Substitution'],
+                  ['configuration/yaml/output-debugging', 'Output & Debugging'],
+                  ['configuration/yaml/include', 'Include Files'],
+                  ['configuration/yaml/packages', 'Packages'],
+                  ['configuration/yaml/anchors', 'Anchors & Aliases'],
+                  ['configuration/yaml/merge-keys', 'Merge Keys'],
+                  ['configuration/yaml/reuse-mechanisms', 'Reuse Mechanisms'],
+                ]
+              }
             ]
           },
         ]
