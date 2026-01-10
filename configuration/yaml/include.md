@@ -42,7 +42,7 @@ In the full syntax, the `vars` section is optional.
 ::: tip Passing Existing Variables to Included Files
 
 The `vars` section of an `!include` directive can contain literal values or references to **existing variables** from the main file or the current file.
-If you want to _evaluate_ a variable reference (such as `${mainvar}`), make sure to wrap it in `!sub`, since substitution only occurs inside `!sub` nodes.
+If you want to use a variable reference (such as `${mainvar}`), make sure to wrap it in `!sub`, since substitution only occurs inside `!sub` nodes.
 
 Example:
 
@@ -192,6 +192,17 @@ things:
 
 - The file can be specified as an absolute path or as a path relative to the current file.
   It may be helpful to store all include files in a subdirectory and refer to them with a relative path.
+    ::: tip Using Predefined Path Variables
+    You can use [predefined variables](variables.md#predefined-variables) such as `OPENHAB_CONF`, `OPENHAB_USERDATA`, `__DIRECTORY__`, or `__FILE_NAME__` when constructing the `file:` path.
+    These can be interpolated with `${...}` and are especially useful for building portable or relative include paths.
+    Example:
+
+    ```yaml
+    keyname: !include
+      file: !sub ${OPENHAB_CONF}/packages/hue-light.pkg.yaml
+    ```
+
+    :::
 - Use the `.inc.yaml` or `.inc.yml` extension for included files so they aren't loaded as primary configuration files.
 - Changes to included files automatically trigger a reload of the primary file.
 - File inclusions can be nested.

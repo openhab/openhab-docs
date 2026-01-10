@@ -535,11 +535,11 @@ This form is also useful when a variable name contains characters that are norma
 It is likewise useful when the variable name itself is stored in another variable.
 However, for simplicity and readability, such naming patterns should generally be avoided.
 
-## Special Variables
+## Predefined Variables
 
-openHAB injects a set of special variables that are automatically available during YAML preprocessing.
+openHAB injects a set of predefined variables that are automatically available during YAML preprocessing.
 
-Available Special Variables:
+Available Predefined Variables:
 
 | Variable           | Description                                                                                                                                            |
 |:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -553,4 +553,4 @@ Available Special Variables:
 | `package_id`       | In a package file, automatically resolved to the [Package ID](packages.md#package-syntax-and-structure). Available only within included package files. |
 
 These variables can be interpolated just like regular ones using `${...}` syntax.
-These may be useful when combined with the `!include` directive described below.
+They may be helpful when constructing paths for the [!include](include.md) directive.
