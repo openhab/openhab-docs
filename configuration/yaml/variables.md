@@ -18,15 +18,8 @@ openHAB first expands these features into a complete, fully resolved YAML docume
 
 ## Introduction
 
-You can define a set of variables and refer to them inside substitution patterns throughout the YAML structure.
-
-Variables let you define a value once and reuse it wherever needed.
-When you update the variable, every substitution automatically picks up the new value.
-This also makes it easy to parameterize templates by passing variables instead of hard‑coding values.
-
-Variables can be defined and referenced within the YAML file itself and within any [included files](include.md).
-
-Variables allow dynamic substitution and parameterization across YAML files.
+Variables let you define reusable values and substitute them throughout your YAML configuration.
+They make templates flexible, reduce hard‑coded values, and work across both the current file and any [included files](include.md).
 
 > For a comparison of all reuse mechanisms, see
 > **[Choosing a Reuse Mechanism](reuse-mechanisms.html)**.
@@ -70,7 +63,7 @@ This makes it easy to define simple derived values without introducing additiona
 ```yaml
 variables:
   foo: bar
-  baz: !sub ${foo}   # => "bar"
+  baz: !sub ${foo|upper}   # => "BAR"
 ```
 
 Variables can also reference **inherited variables** when used inside included files or packages:
@@ -387,7 +380,7 @@ Example
 # ${package_id} is provided by the main file; here it is "LivingRoom_Light".
 variables:
   # Convert "LivingRoom_Light" -> "Living Room Light"
-  label: '${package_id.replaceAll("([a-z])([A-Z])", "$1 $2") | replace("_", " ") | title}'
+  label: '${package_id.replaceAll("([a-z])([A-Z])", "$1 $2") | replace("_", " ")}'
 
 items: !sub
   ${package_id}:
