@@ -125,7 +125,7 @@ Make sure that file location is not within the `$OPENHAB_ADDONS` folder.
 openhab>bundle:update 303 file:///localhost/srv/openhab-sys/org.openhab.binding.my-5.0.0-SNAPSHOT.jar
 ```
 
-Note: Using `bundle:uninstall` to uninstall an add-on will very likely **not** work, because all add-ons bundles are part of a feature and as long as the feature is installed, the bundle will likely be reinstalled.
+Note: Using `bundle:uninstall` to uninstall an add-on will **not** work, because all add-ons bundles are part of a feature and as long as the feature is installed, the bundle will be reinstalled.
 
 #### Updating from CI
 
@@ -162,7 +162,7 @@ A restart of openHAB is not required.
 
 The procedure should be as follows:
 
-- It is highly recommended **to uninstall** the bundle first (e.g. via the UI or bundle:uninstall) as it would otherwise lead to two bundles of the same type to be active at the same time, where no one can clearly say what happens if two versions of the same bundle coexist.
+- It is recommended **to uninstall** the bundle first (e.g. via the UI or bundle:uninstall) as it would otherwise lead to two versions of the same bundle to be active at the same time, which can cause unpredicted and unexpected behavior.
 - Wait until uninstall has completed,
 - then drop the new file in the `$OPENHAB_ADDONS` folder.
 
