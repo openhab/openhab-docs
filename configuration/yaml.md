@@ -133,7 +133,7 @@ Channels Section:
 | `itemDimension` | This may be used to further define a `Number` `itemType`.                                                                                                                            |
 | `label`         | Channel label.                                                                                                                                                                       |
 | `description`   | Channel description.                                                                                                                                                                 |
-| `config`        | A key-value map of the channel's configuration. Refer to the Binding's documentation for details.                                                                                    |
+| `config`        | A key-value or a key-array-of-values map of the channel's configuration. Refer to the Binding's documentation for details.                                                           |
 
 Example:
 

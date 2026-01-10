@@ -30,15 +30,24 @@ The event itself will be subclassed for each event type, which exists in the Sys
 This section lists the core events provided by openHAB which can be divided into the categories _Item Events_, _Thing Events_ and _Inbox Events_.
 
 An event consists of a `topic`, a `type`, a `payload` and a `source`.
-The payload can be serialized with any String representation and is determined by its concrete event type implementation (e.g. `ItemCommandEvent`, `ItemUpdatedEvent`).
-The payloads of the openHAB core events are serialized with JSON.
-Each event implementation provides the payload as high level methods as well, usually presented by a data transfer object (DTO).
+
+#### Event Topic
 
 A topic clearly defines the target of the event and its structure is similar to a REST URI, except the last part, the action.
 The topics of openHAB events are divided into the following four parts: `{namespace}/{entityType}/{entity}/{action}`, e.g. `openhab/items/{itemName}/command`.
 
+#### Event Type
+
 The type of an event is represented by a string, usually the name of the concrete event implementation class, e.g. `ItemCommandEvent`, `ItemUpdatedEvent` .
 This string type presentation is used by event subscribers for event subscription (see chapter "Receive Events") and by the framework for the creation of concrete event instances.
+
+#### Event Payload
+
+The payload can be serialized with any String representation and is determined by its concrete event type implementation (e.g. `ItemCommandEvent`, `ItemUpdatedEvent`).
+The payloads of the openHAB core events are serialized with JSON.
+Each event implementation provides the payload as high level methods as well, usually presented by a data transfer object (DTO).
+
+#### Event Source
 
 The event source identifies the sender.
 Not all senders will set the source.
