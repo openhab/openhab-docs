@@ -541,14 +541,16 @@ openHAB injects a set of special variables that are automatically available duri
 
 Available Special Variables:
 
-| Variable        | Description                                                                                                                                                                                 |
-|:----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `__FILE__`      | Absolute path to the current file, e.g. `/path/to/file.inc.yaml`                                                                                                                            |
-| `__FILE_NAME__` | The filename portion without the extension or leading path, e.g. `file.inc`                                                                                                                 |
-| `__FILE_EXT__`  | The file extension portion of the file name, e.g. `yaml`                                                                                                                                    |
-| `__DIRECTORY__` | The directory portion of the current file, e.g. `/path/to`                                                                                                                                  |
-| `__DIR__`       | Alias for `__DIRECTORY__`.                                                                                                                                                                  |
-| `package_id`    | When used in a package file, automatically resolved to the package key. Only available within `packages:` includes and can be overridden by explicitly specifying it in the `vars` section. |
+| Variable           | Description                                                                                                                                            |
+|:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `OPENHAB_CONF`     | Absolute path to openHAB’s main configuration directory. Typically `/etc/openhab` (apt) or `/openhab/conf` (Docker).                                   |
+| `OPENHAB_USERDATA` | Absolute path to openHAB’s userdata directory. Typically `/var/lib/openhab` (apt) or `/openhab/userdata` (Docker).                                     |
+| `__FILE__`         | Absolute path to the current file, e.g. `/path/to/file.inc.yaml`.                                                                                      |
+| `__FILE_NAME__`    | Filename portion without the extension or leading path, e.g. `file.inc`.                                                                               |
+| `__FILE_EXT__`     | File extension portion of the current file name, e.g. `yaml`.                                                                                          |
+| `__DIRECTORY__`    | Directory portion of the current file, e.g. `/path/to`.                                                                                                |
+| `__DIR__`          | Alias for `__DIRECTORY__`.                                                                                                                             |
+| `package_id`       | In a package file, automatically resolved to the [Package ID](packages.md#package-syntax-and-structure). Available only within included package files. |
 
 These variables can be interpolated just like regular ones using `${...}` syntax.
 These may be useful when combined with the `!include` directive described below.
