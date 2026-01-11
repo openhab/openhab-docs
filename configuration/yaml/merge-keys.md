@@ -5,44 +5,82 @@ title: Merge Keys
 
 # Merge Keys
 
-Merge keys (`<<:`) allow one mapping (a key–value object) to inherit the contents of another.
-They reduce duplication, make configuration more maintainable, and work anywhere a mapping is defined.
-Merge keys integrate cleanly with anchors.
+Merge keys (`<<:`) let you combine mappings defined directly in a mapping with mappings defined elsewhere, such as through anchors or `!include`.
+They promote reusability and avoid repetition by letting you define common mappings once and update them in a single place, with changes applied everywhere they are merged.
 
 [[toc]]
 
 ## What Merge Keys Do
 
-A merge key inserts the contents of one mapping into another.
+A merge key takes one or more source mappings — whether written inline, referenced through an anchor, or loaded from another file — and merges their key–value pairs into the current mapping.
+The merged values behave exactly as if they were written inline, while still allowing local fields to add to or override the merged content.
+
+## Using Merge Keys with Anchors
+
+[Anchors](anchors.md) define reusable structures whose content can be inserted into the current mapping via an alias.
+Merge keys then combine that anchored content with any local fields in the mapping.
+This is the most common pattern for sharing defaults across multiple items.
 
 ```yaml
-.base: &BASE
-  icon: default
+.light-base: &LIGHT_BASE
+  type: Switch
+  icon: light
   autoupdate: false
 
 items:
-  MyItem:
-    <<: *BASE
-    label: My Item
+  Light1:
+    <<: *LIGHT_BASE
+    label: Light One
+
+  Light2:
+    <<: *LIGHT_BASE
+    label: Light Two
 ```
 
-Result:
+## Using Merge Keys with `!include`
+
+[`!include`](include.md) loads the contents of another file so it can be inserted into the current mapping.
+Merge keys then combine the included content with any local fields in the mapping.
+
+Benefits over anchors:
+
+- Included files can be parameterized, allowing the same structure to be reused with different values.
+- Included files can be shared across many different YAML files, not just within a single one.
 
 ```yaml
-items:
-  MyItem:
-    label: My Item
-    icon: default
-    autoupdate: false
+# light-common.inc.yaml - all types of lights share this
+power:
+  type: switch
+  stateTopic: !sub ${id}/power
+availability:
+  type: contact
+  stateTopic: !sub ${id}/availability
+```
+
+```yaml
+# light-color.inc.yaml - only for RGB lights
+color:
+  type: color
+  stateTopic: !sub ${id}/color
+```
+
+```yaml
+# main.yaml
+version: 2
+things:
+  mqtt:topic:living-room-light:
+    channels:
+      <<: !include { file: light-common.inc.yaml, vars: { id: living-room-light } }
+      <<: !include { file: light-color.inc.yaml, vars: { id: living-room-light } }
 ```
 
 ## Merge Rules
 
 - Only mappings can be merged.
-- Local keys override merged keys.
-- Merge order matters: keys from earlier mapping nodes override keys from later ones.
-- Merges are shallow; nested mappings are replaced, not combined.
-- Merge keys can appear multiple times or as a list.
+- Merge keys may appear multiple times or as a list.
+- Merge order matters: keys from earlier mappings override keys from later ones.
+- Local keys always override merged keys, even when defined after a merge key.
+- Merges are shallow: nested mappings are replaced, not combined.
 
 ### Example: Multiple Merges and Precedence
 
@@ -72,32 +110,11 @@ items:
     tags: [Light]
 ```
 
-## Using Merge Keys with Anchors
-
-Anchors define reusable structures that merge keys can insert.
-
-```yaml
-.hidden:
-  light-base: &LIGHT_BASE
-    type: Switch
-    icon: light
-    autoupdate: false
-
-items:
-  Light1:
-    <<: *LIGHT_BASE
-    label: Light One
-
-  Light2:
-    <<: *LIGHT_BASE
-    label: Light Two
-```
-
 ## Debugging Merge Behavior
 
 Use **Output & Debugging** to inspect the fully resolved YAML.
-The `_generated` output shows the final structure after merges, includes, and packages.
-See the [Output & Debugging](output-debugging.md) page for details on how to inspect the fully resolved YAML.
+The `_generated` output shows the fully resolved structure after merges, includes, substitutions, and packages.
+See the [Output & Debugging](output-debugging.md) page for details on how to inspect the final YAML.
 
 ## Related Topics
 
@@ -114,11 +131,11 @@ For details on how variables are resolved and how substitution interacts with YA
 
 - Use merge keys to define reusable base templates.
 - Keep anchors inside hidden keys to avoid clutter.
-- Use includes or packages to centralize shared structures.
-- Use `_generated` output to verify merge results.
+- Use includes, `!include`, or packages to centralize shared structures.
+- Use the `_generated` output to verify merge results.
 - Prefer simple, predictable structures for reusable blocks.
 
 ---
 
 Merge keys are a practical, widely supported YAML feature that integrates naturally with openHAB’s configuration system.
-They provide a clean way to reuse and extend mappings without duplication.
+They offer a clean, predictable way to reuse and extend mappings without duplication.
