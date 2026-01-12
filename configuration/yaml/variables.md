@@ -315,7 +315,8 @@ value: !sub "${'Hello ' ~ username}"
 The `~` operator is the preferred and safer way to concatenate strings because it **automatically converts non‑string operands into strings** before joining them.
 By contrast, the `+` operator only works when **both** operands are already strings.
 
-For simple cases, you don't need an expression at all. Adjacent literal text and substitution patterns are automatically joined:
+For simple cases, you don't need an expression at all.
+Adjacent literal text and substitution patterns are automatically joined:
 
 ```yaml
 value: !sub "Hello ${username}"
@@ -327,6 +328,26 @@ This is often clearer and avoids unnecessary use of operators.
 
 The underlying expression engine is implemented using Jinjava.
 For more details on the expression syntax, see: [Jinja Expressions](https://jinja.palletsprojects.com/en/stable/templates/#expressions).
+
+### Inline if expressions
+
+Expressions also support Jinja’s inline `if` expression form, which selects between values based on a condition.
+
+**Syntax:**
+
+```python
+<value_if_true> if <condition> else <value_if_false>
+```
+
+The `else` part is **not** optional.
+
+**Examples:**
+
+```yaml
+label: !sub "${'Hot' if temperature > 25 else 'Cool'}"
+state: !sub "${'ON' if enabled else 'OFF'}"
+topic: !sub "${rooms[0] if rooms|length > 0 else 'no-room'}"
+```
 
 ### Filters
 
@@ -360,7 +381,8 @@ Expressions and filters can be combined freely, allowing you to compute values, 
 
 ### Calling Java Methods
 
-If a filter doesn’t provide the transformation you need, expressions can also call methods on the underlying Java objects. Variables inside expressions retain their actual Java types, so you can invoke methods exactly as you would in Java.
+If a filter doesn’t provide the transformation you need, expressions can also call methods on the underlying Java objects.
+Variables inside expressions retain their actual Java types, so you can invoke methods exactly as you would in Java.
 
 Common types you may encounter include:
 
@@ -373,7 +395,7 @@ Common types you may encounter include:
 
 This is especially useful when you need functionality beyond the built‑in filters — for example, using `String.replaceAll()` with regular expressions.
 
-Example
+**Example:**
 
 ```yaml
 # This file is included from a packages section.
