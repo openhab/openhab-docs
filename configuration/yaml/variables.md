@@ -26,7 +26,8 @@ They make templates flexible, reduce hard‑coded values, and work across both t
 
 ## Variable Definition
 
-Variables are declared in the top-level `variables:` section.
+Variables are defined in a top‑level `variables:` section.
+It is recommended to place this section at the beginning of the file so it's easier to find.
 
 **Example:**
 
@@ -48,8 +49,6 @@ variables:
     - Kitchen
     - Bedroom
 ```
-
-The `variables:` section can appear anywhere in the YAML document, but placing it at the top makes it easier to find.
 
 ### Referencing Other Variables During Definition
 
