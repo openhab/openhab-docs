@@ -557,6 +557,7 @@ A cleaner approach is to create a Linux service.
 The following instructions are intended for a Linux init system based on **systemd** (e.g. Debian 8 / Ubuntu 15.x and newer).
 This will allow you to register openHAB as a service, so that it runs at startup and automatically restarts if openHAB crashes.
 The service will be running with the privileges of the user "openhab" and expects the openHAB files under `/opt/openhab`.
+In addition if you need to add or change environmental variables, create the file `/opt/openhab/conf/misc/linux.parameters` with your changes or additions.
 
 Create the file `/usr/lib/systemd/system/openhab.service` with the following content:
 
@@ -573,7 +574,7 @@ User=openhab
 Group=openhab
 
 WorkingDirectory=/opt/openhab
-#EnvironmentFile=-/etc/default/openhab
+EnvironmentFile=-/opt/openhab/conf/misc/linux.parameters
 
 ExecStart=/opt/openhab/runtime/bin/karaf daemon
 ExecStop=/opt/openhab/runtime/bin/karaf stop
