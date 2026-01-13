@@ -5,11 +5,10 @@ title: YAML Configuration - Include Files
 
 # Including Other Files
 
+`!include` inserts the referenced file or structure exactly at the position where the include appears.
+
 openHAB supports including external YAML files to facilitate modular, reusable, and maintainable configurations.
 This is especially useful for templating, creating device [packages](packages.md), or separating concerns across multiple files.
-
-> For a comparison of all reuse mechanisms, see
-> **[Choosing a Reuse Mechanism](reuse-mechanisms.html)**.
 
 [[toc]]
 
@@ -41,7 +40,7 @@ In the full syntax, the `vars` section is optional.
 
 ::: tip Passing Existing Variables to Included Files
 
-The `vars` section of an `!include` directive can contain literal values or references to **existing variables** from the main file or the current file.
+The `vars` section of an `!include` directive can contain literal values or references to **existing variables**.
 If you want to use a variable reference (such as `${mainvar}`), make sure to wrap it in `!sub`, since substitution only occurs inside `!sub` nodes.
 
 Example:
@@ -62,7 +61,8 @@ This means that the top-level keys in the include file will become sub-keys of t
 
 Understanding how variables interact across files is important when using includes, especially when templates define their own defaults.
 
-When include files are involved, variables can originate from multiple sources. Their values are resolved according to the following order:
+When include files are involved, variables can originate from multiple sources.
+Their values are resolved according to the following order (highest priority first):
 
 1. Inline `vars` in `!include` directives
 1. Global `variables` defined in the main file
@@ -80,8 +80,6 @@ Example
 `main.yaml`:
 
 ```yaml
-version: 2
-
 variables:
   broker: mqtt:broker:main
 
@@ -104,8 +102,6 @@ things:
 
 ```yaml
 # Template file for a zigbee contact sensor
-
-# ${broker} inherits the global variable unless overridden
 bridge: !sub ${broker}
 label: !sub ${label}
 config:
@@ -134,8 +130,6 @@ channels: !sub
 Resulting configuration:
 
 ```yaml
-version: 2
-
 things:
   mqtt:topic:livingroom-window:
     bridge: mqtt:broker:main

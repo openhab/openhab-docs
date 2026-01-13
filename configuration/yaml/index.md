@@ -6,71 +6,49 @@ title: YAML Configuration - Core Structure
 # YAML Configuration Core Structure
 
 openHAB provides a modular configuration system that allows supported entities (objects such as Things, Items, etc.) to be defined in one or more YAML files.
-The primary directory for these configuration files is `$OPENHAB_CONF/yaml/` and both `.yaml` and `.yml` file extensions are supported.
-Files may be further structured within subdirectories, offering flexibility in organizing configurations.
 
 [[toc]]
 
-## General Structure
+## YAML Configuration File Locations
 
-A YAML configuration file contains two categories of top‑level keys:
+The `$OPENHAB_CONF/yaml/` directory is the standard location for all YAML-based configuration described in this section.
+Both `.yaml` and `.yml` file extensions are supported.
 
-1. **Core openHAB structure** — the parts that openHAB loads at runtime
-1. **Preprocessing keys** — features handled before openHAB sees the file
+Files may also be organized within subdirectories, offering additional flexibility in how configurations are structured.
 
-### Core openHAB Structure
+::: details Optional YAML File Locations (Advanced)
+Although not the recommended practice, YAML files for Items, Things, and Tags may also be placed in their respective domain directories (`$OPENHAB_CONF/items/`, `$OPENHAB_CONF/things/`, and `$OPENHAB_CONF/tags/`).
 
-These keys define the actual openHAB model:
+openHAB does not require strict separation of YAML files by content: any supported configuration file may be placed in any of the watched configuration directories.
+In other words, you could place a Things or Items YAML file inside the Tags directory if you really wanted to.
 
-| Key               | Object Type                                                                             |
-|:------------------|:----------------------------------------------------------------------------------------|
-| `version`         | A mandatory key that contains the file-version. The currently supported version is `2`. |
-| [things](#things) | openHAB [Things]({{base}}/concepts/things.html)                                         |
-| [items](#items)   | openHAB [Items]({{base}}/concepts/items.html)                                           |
-| [tags](#tags)     | Custom Semantic Tags                                                                    |
-
-### Preprocessing Keys
-
-These keys control how the file is processed before openHAB loads it:
-
-| Key                                   | Purpose                                                                                  |
-|:--------------------------------------|:-----------------------------------------------------------------------------------------|
-| [variables](variables.md)             | Defines substitution variables                                                           |
-| [preprocessor](output-debugging.md)   | Document‑level preprocessing options that control how the final YAML document is handled |
-| [packages](packages.md)               | Reusable multi‑section templates                                                         |
-| [.hiddenkeys](anchors.md#hidden-keys) | Keys starting with a dot (`.`) are excluded from the final YAML                          |
-
-The YAML files in general must follow the standard YAML syntax, with a few openHAB-specific features:
-
-- Each YAML file must contain a `version` key which must be set to `2`.
-  YAML files without a valid `version` key will be ignored.
-- Comments are allowed, either on their own line or at the end of an existing line.
-- Blank lines are allowed.
-
-::: tip YAML Model Version
-Starting with openHAB 5.2, the YAML model has been updated from **Version 1** to **Version 2**.
-Version 1 files remain fully supported and continue to load exactly as before.
-
-**What’s new in Version 2:**
-
-- Fully backwards compatible — a Version 1 file can simply be updated to `version: 2` with no other changes required.
-- Adds support for [Advanced YAML Features](#next-steps-advanced-yaml-features).
+These additional locations are supported to offer flexibility in how configurations are organized, but using them is not required.
+Because a single YAML configuration file can define all supported elements, it remains recommended to keep all YAML configuration files within `$OPENHAB_CONF/yaml/` and organize them in subdirectories instead.
 :::
 
-Notes about entities:
+## General Structure
 
-- Entities may be distributed across multiple files; however, each entity must be fully defined within a single file and uniquely identified across all loaded YAML files.
-  For example, Item A can be defined in file1.yaml and Item B in file2.yaml, but Item A must not be defined again in file2.yaml.
-  If duplicates exist, the definition from the first loaded file takes precedence.
-- For convenience, YAML files placed in `$OPENHAB_CONF/items/`, `$OPENHAB_CONF/things/`, and `$OPENHAB_CONF/tags/` are also recognized and processed by openHAB.
-  Unlike the DSL files, YAML files in these directories are not limited to a specific object type—they can contain any supported entities (Things, Items, Tags, etc.).
-  For example, a file like `$OPENHAB_CONF/items/myitems.yaml` may define Things and Tags in addition to Items, or even exclusively contain other entities.
-  To avoid confusion and maintain clarity, it is recommended to place YAML files containing a mix of different entity types in the `$OPENHAB_CONF/yaml/` directory.
+A YAML configuration file contains one or more top‑level sections that define openHAB entities.
 
-### A Quick Example
+| Key               | Object Type          |
+|:------------------|:---------------------|
+| [things](#things) | openHAB Things       |
+| [items](#items)   | openHAB Items        |
+| [tags](#tags)     | Custom Semantic Tags |
+
+::: tip Important!
+Every YAML configuration file must contain a `version` key which must be set to `1`.
+YAML files without a valid `version` key will be ignored.
+:::
+
+Entities may be distributed across multiple files; however, each entity must be fully defined within a single file and uniquely identified across all loaded YAML files.
+For example, Item A can be defined in file1.yaml and Item B in file2.yaml, but Item A must not be defined again in file2.yaml.
+If duplicates exist, the definition from the first loaded file takes precedence.
+
+## A Quick Example
 
 ```yaml
-version: 2
+version: 1 # This is mandatory
 
 # All the top-level sections below are optional and may appear in any order
 
@@ -107,14 +85,6 @@ items:
     format: "%d" # Values starting with a percent sign must be quoted
     channel: lgwebos:WebOSTV:3aab9eea-953b-4272-bdbd-f0cd0ecf4a46:volume
 ```
-
-::: tip Boolean Values
-
-Only unquoted `true` and `false` (case insensitive) are valid `boolean` values.
-`ON`, `OFF`, `Yes`, `No`, `disable`, and `enable` are parsed as plain strings.
-To specify `true` or `false` as a string, they must be enclosed in single or double quotes.
-
-:::
 
 ## Object Configuration Structure
 
@@ -171,7 +141,7 @@ Channels Section:
 Example:
 
 ```yaml
-version: 2
+version: 1
 
 things:
   mqtt:broker:mosquitto:
@@ -286,7 +256,7 @@ items:
 Example:
 
 ```yaml
-version: 2
+version: 1
 
 items:
   lBedroom1:
@@ -395,7 +365,7 @@ This structure ensures that the tag is uniquely identified and correctly integra
 Example:
 
 ```yaml
-version: 2
+version: 1
 
 tags:
   Location_Indoor_Room_HomeCinemaRoom:
@@ -414,17 +384,9 @@ In the example `Location_Indoor_Room_HomeCinemaRoom`, the semantic tag `HomeCine
 
 You can have multiple YAML files with different semantic tags but keep semantic tags dependent on each other in the same file.
 
-## Next Steps: Advanced YAML Features
+## Next Steps
 
-The sections above describe the core structure of YAML configuration in openHAB.
-If you want to go further, openHAB provides several optional features that make larger or more dynamic configurations easier to manage:
+Once you're familiar with the core structure of YAML configuration, you can explore two important areas:
 
-- [**Variables & Substitution**](variables.md) — define reusable values and embed expressions directly in YAML.
-- [**Output & Debugging**](output-debugging.md) — inspect the fully resolved YAML and test configuration changes without loading them.
-- [**Include Files**](include.md) — split configuration across multiple files and assemble them at load time.
-- [**Packages**](packages.md) — group related configuration into modular, reusable units.
-- [**Anchors & Aliases**](anchors.md) — use YAML's native mechanisms for deduplication and structural reuse.
-
-Each topic has its own dedicated page with explanations and examples.
-
-See also: **[Choosing a Reuse Mechanism](reuse-mechanisms.md)**.
+- [**YAML Basics**](basics.md) — a focused introduction to standard YAML syntax used throughout these examples.
+- [**File Structure & Preprocessing**](preprocessing.md) — how openHAB processes YAML files, expands enhanced features, and assembles the final configuration.

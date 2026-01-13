@@ -3,26 +3,12 @@ layout: documentation
 title: YAML Configuration - Variables & Substitutions
 ---
 
-
 # Variables & Substitution
 
-::: tip 💡 Preprocessing Behavior
-
-All advanced YAML features — including variable substitution, includes, packages, anchors, and aliases — are applied during a preprocessing stage.
-openHAB first expands these features into a complete, fully resolved YAML document.
-**That final expanded document is what openHAB actually loads and interprets.**
-
-:::
+Variables let you define reusable values and substitute them throughout your YAML configuration.
+They make templates flexible, reduce hard‑coded values, and work across both the current file and any included files.
 
 [[toc]]
-
-## Introduction
-
-Variables let you define reusable values and substitute them throughout your YAML configuration.
-They make templates flexible, reduce hard‑coded values, and work across both the current file and any [included files](include.md).
-
-> For a comparison of all reuse mechanisms, see
-> **[Choosing a Reuse Mechanism](reuse-mechanisms.html)**.
 
 ## Variable Definition
 
@@ -50,41 +36,6 @@ variables:
     - Bedroom
 ```
 
-### Referencing Other Variables During Definition
-
-Variables may reference **other variables**, including those defined earlier in the **same** `variables:` block.
-The only requirement is that the referenced variable appears **above** the one that uses it.
-
-This makes it easy to define simple derived values without introducing additional preprocessing steps.
-
-**Example:**
-
-```yaml
-variables:
-  foo: bar
-  baz: !sub ${foo|upper}   # => "BAR"
-```
-
-Variables can also reference **inherited variables** when used inside included files or packages:
-
-```yaml
-# main.yaml
-variables:
-  room: "Kitchen"
-
-items:
-  !include child.inc.yaml
-```
-
-```yaml
-# child.inc.yaml
-variables:
-  label: !sub ${room} Light   # => "Kitchen Light"
-
-ExampleItem:
-  label: !sub ${label}
-```
-
 ## Variable Substitution
 
 Defining variables is only the first step.
@@ -101,7 +52,6 @@ When applied to a scalar value, any `${...}` expression inside the string is rep
 Substitutions can appear anywhere within the value, so `"Location: ${floorName} – ${roomName}"` will expand to `"Location: Ground Floor – Kitchen"` when those variables are set accordingly.
 
 The same behavior applies to YAML keys.
-When `!sub` is used on a map or list, substitutions are processed recursively throughout that structure.
 
 ::: tip Note
 
@@ -112,7 +62,13 @@ The following YAML snippets are not full Thing or Item configurations. They're o
 **Example:**
 
 ```yaml
-# variables section as declared above
+variables:
+  geolocation: -33.12345, 151.6789
+  mqtt:
+    broker: mqtt:broker:mybroker
+  rooms:
+    - Kitchen
+
 things:
   !sub ${mqtt.broker}:
     isBridge: true
@@ -146,57 +102,12 @@ items:
     label: Kitchen Light
 ```
 
-Variable substitution also supports advanced features such as custom delimiters and selective disabling of substitutions, described below.
-
-### Custom Pattern Delimiters
-
-By default, `!sub` uses `${...}` as its expression delimiters.
-
-If your content already contains `${...}` patterns, or you prefer clearer separation between literal text and expressions, you can define your own delimiters using the `pattern=` syntax:
-
-```yaml
-foo: !sub:pattern=@[..] "Hello @[mqtt.username]!"
-bar: !sub:pattern=%(..) "Hello %(mqtt.username)!"
-```
-
-The syntax is `!sub:pattern=begin..end`, where `begin` is the opening delimiter and `end` is the closing delimiter.
-
-In the example above, `@[` is the opening delimiter and `]` is the closing delimiter.
-The two delimiters are separated by the literal `..` sequence.
-
-Choose delimiters that are unlikely to appear in your content to avoid unintentional substitutions.
-
-::: tip URL‑Encoding Note
-
-Some characters cannot appear directly in a `!sub` tag and must be URL‑encoded.
-
-You can generate URL‑encoded text using your browser's built‑in JavaScript function: `encodeURIComponent("your text here")`.
-This works in all modern browsers and doesn't rely on any external tools.
-
-Here are the most common ones:
-
-:::
-
-| Literal | URL-Encoded | Comments                                                                                                        |
-|:-------:|:-----------:|-----------------------------------------------------------------------------------------------------------------|
-|   `!`   |    `%21`    | Example: `!sub:pattern=%21[..]` -> `![ expression ]`                                                            |
-|   `#`   |    `%23`    | Since `#` is a YAML Comment symbol, make sure your value is quoted.                                             |
-|   `^`   |    `%5E`    |                                                                                                                 |
-|   `&`   |    `%26`    |                                                                                                                 |
-|   `{`   |    `%7B`    | This uses the standard Jinja delimiters: `!sub:pattern=%7B%7B..%7D%7D` -> <span v-pre>`{{ expression }}`</span> |
-|   `}`   |    `%7D`    |                                                                                                                 |
-|   `<`   |    `%3C`    |                                                                                                                 |
-|   `>`   |    `%3E`    |                                                                                                                 |
-
-`[`, `]`, `(`, and `)` are safe and can be used literally without encoding them.
-
 ### The `!nosub` Tag
 
-In some cases, you may want to prevent substitutions within part of a structure.
-The `!nosub` tag provides this fine‑grained control.
-
 When a YAML map or list is tagged with `!sub`, substitutions apply recursively to that structure.
-Use `!nosub` to disable substitutions for a specific node without affecting the rest of the `!sub` structure.
+
+In some cases, you may want to prevent substitutions within part of a structure.
+The `!nosub` tag provides this fine‑grained control to disable substitutions for a specific node without affecting the rest of the `!sub` structure.
 Both tags apply recursively, and when they overlap, the innermost tag controls whether substitution occurs.
 
 **Example:**
@@ -212,6 +123,7 @@ top: !sub
         waldo: ${left alone}
     grault: ${left alone}
   qux: ${substituted}
+  groot: !nosub ${left alone}
 ```
 
 ## Interpolation and Inserted Content
@@ -234,36 +146,53 @@ items: !sub
 ```
 
 **Result:**
-`Item1.label` remains `${room}`.
+
+```yaml
+items:
+  Item1:
+    label: "${room}" # literal, not interpolated
+```
 
 ### Example with an include file
 
-```yaml
-# child.yaml
-label: "${room}"     # plain scalar
+`main.yaml`:
 
-# main.yaml
+```yaml
 variables:
-  room: "Kitchen"
+  room: Kitchen
+  file: child.inc.yaml
 
 items: !sub
   Item1:
-    <<: !include child.yaml   # still not interpolated
+    <<: !include "${file}" # the pattern `${file}` here gets interpolated
+                           # but the contents of the file aren't interpolated
+                           # just because the !include is under a !sub here
   Item2:
-    label: ${room}            # this gets interpolated as normal
+    label: ${room}         # this gets interpolated as normal
+```
+
+`child.inc.yaml`
+
+```yaml
+label: ${room}             # plain scalar
 ```
 
 **Result:**
-`Item1.label` remains `${room}`, whereas `Item2.label` is set to `Kitchen`.
 
-### Why this happens
+```yaml
+items:
+  Item1:
+    label: ${room}        # literal, not interpolated
+  Item2:
+    label: Kitchen
+```
 
-- Interpolation is performed **once**, during the initial processing pass.
-- This pass happens before any merges or insertions are done.
-- At that time, the anchor or include file content is still a plain node without a `!sub` tag, so it is not interpolated.
-- The section that references the anchor or include is also interpolated during this same pass.
-- Anchors and include files are merged **only after** interpolation has finished.
-- Therefore, wrapping inserted content in `!sub` does **not** cause interpolation to run again, even when the merged data contains patterns that would otherwise be interpolated.
+### Order of Operation
+
+- Variable substitution runs once while a YAML file is processed.
+- Included files and anchors are merged afterward, so external `!sub` does not re-run on their contents.
+- `!sub` inside an included file will work for that file, but `!sub` outside it won’t change the included data.
+- If you want an included file's scalars substituted, put `!sub` in that included file itself.
 
 ### Why this matters
 
@@ -274,11 +203,14 @@ This prevents external `!sub` tags from implicitly changing the meaning of data 
 
 ### What “inserted" means
 
-In this context, _inserted_ refers to content that is brought into the YAML structure through an alias (`<<: *anchor`) or an `!include` directive.
+In this context, _inserted_ refers to content brought into the YAML structure through an alias referencing an [anchor](anchors.md) (e.g., `<<: *anchor`) or an `!include` directive.
 It does **not** refer to manually pasting or writing the text in that location.
 Only structural insertion happens after interpolation, which is why plain values inside anchors or include files are not re‑interpolated when they appear under a `!sub` node.
 
 ## Expression Syntax
+
+Expression syntax in openHAB is based on the [Jinja expression](https://jinja.palletsprojects.com/en/stable/templates/#expressions) language (via Jinjava).
+Only expressions inside `${...}` are supported — template blocks and macros such as `{% if %}` or `{% for %}` are not available.
 
 The simplest expression contains a variable name.
 The expression will be substituted with the content of the variable.
@@ -325,12 +257,9 @@ This is often clearer and avoids unnecessary use of operators.
 
 :::
 
-The underlying expression engine is implemented using Jinjava.
-For more details on the expression syntax, see: [Jinja Expressions](https://jinja.palletsprojects.com/en/stable/templates/#expressions).
-
 ### Inline if expressions
 
-Expressions also support Jinja’s inline `if` expression form, which selects between values based on a condition.
+Expressions also support Jinja's inline `if` expression form, which selects between values based on a condition.
 
 **Syntax:**
 
@@ -360,7 +289,9 @@ For a complete list, see the Jinja documentation: [Jinja Filters](https://jinja.
 |:-----------|:--------------------------------------------------------|
 | capitalize | Capitalize a value.                                     |
 | default    | Return a default value if the variable is empty.        |
+| first      | Return the first item of a list.                        |
 | format     | Apply the given values to a printf-style format string. |
+| length     | Return the length of a list or string.                  |
 | lower      | Convert a value to lowercase.                           |
 | replace    | Replace a substring.                                    |
 | title      | Return a titlecased version of the value.               |
@@ -373,41 +304,9 @@ Expressions and filters can be combined freely, allowing you to compute values, 
 - `mqtt.username|upper` — uppercases the username
 - `rooms|first|capitalize` — takes the first room and capitalizes it
 - `"%s/%s"|format(city, country)` — formats a string with two variables
-- `(temperature * 1.8 + 32)|round(1)` — converts °C to °F and rounds to one decimal place
 - `rooms|length` — returns the number of rooms
 - `device_name|replace(" ", "_")|lower` — replaces spaces and lowercases the result
 - `value|default("unknown")` — uses `"unknown"` if `value` is empty
-
-### Calling Java Methods
-
-If a filter doesn’t provide the transformation you need, expressions can also call methods on the underlying Java objects.
-Variables inside expressions retain their actual Java types, so you can invoke methods exactly as you would in Java.
-
-Common types you may encounter include:
-
-- [`String`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
-- [`Integer`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html)
-- [`Double`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html)
-- [`Boolean`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html)
-- [`Map`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html)
-- [`List`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html)
-
-This is especially useful when you need functionality beyond the built‑in filters — for example, using `String.replaceAll()` with regular expressions.
-
-**Example:**
-
-```yaml
-# This file is included from a packages section.
-# ${package_id} is provided by the main file; here it is "LivingRoom_Light".
-variables:
-  # Convert "LivingRoom_Light" -> "Living Room Light"
-  label: '${package_id.replaceAll("([a-z])([A-Z])", "$1 $2") | replace("_", " ")}'
-
-items: !sub
-  ${package_id}:
-    type: Group
-    label: ${label}
-```
 
 ## Common Pitfalls
 
@@ -422,7 +321,7 @@ These are the most common issues to watch out for:
     If the tag is missing, expressions like `${...}` are left untouched.
 
     ```yaml
-    label: "Room ${index}"     # no substitution happens
+    label: "Room ${index}"       # no substitution happens
     label: !sub "Room ${index}"  # substitution works
     ```
 
@@ -431,7 +330,8 @@ These are the most common issues to watch out for:
     Substitution in keys only happens when the key itself — or the map containing it — is tagged with `!sub`.
 
     ```yaml
-    # Tagging the map (common case)
+    # Tagging the map enables substitution for everything
+    # in the map, including all keys and values
     items: !sub
       ${room}_Light:
         label: "Static label"
@@ -450,7 +350,7 @@ These are the most common issues to watch out for:
     Expressions that include operators (`~`, `+`, `-`, `*`, `/`, `==`, etc.) must be quoted, or YAML may misinterpret them.
 
     ```yaml
-    value: !sub "${'Hello ' ~ name}"
+    value: !sub "${'Hello ' ~ name}" # Note the "" around the pattern
     ```
 
 1. **Using `+` when you intended string concatenation**
@@ -464,9 +364,9 @@ These are the most common issues to watch out for:
     If your goal is to build strings, use `~`, which always coerces values to text and never fails due to type mismatch.
 
     ```yaml
-    value1: !sub "${1 + 2}"          # → 3   (numeric addition)
+    value1: !sub "${1 + 2}"          # → 3    (numeric addition)
     value2: !sub "${'a' + 'b'}"      # → "ab" (string concatenation)
-    value3: !sub "${'a' + 1}"        # error (mixed types)
+    value3: !sub "${'a' + 1}"        # error  (mixed types)
     value4: !sub "${'a' ~ 1}"        # → "a1" (string coercion + concatenation)
     ```
 
@@ -481,8 +381,8 @@ These are the most common issues to watch out for:
       count: 1
       label: "1"
 
-    value1: !sub "${count + 1}"     # → 2   (numeric addition)
-    value2: !sub "${label + 1}"     # error (string + number)
+    value1: !sub "${count + 1}"     # → 2    (numeric addition)
+    value2: !sub "${label + 1}"     # error  (string + number)
     value3: !sub "${label ~ 1}"     # → "11" (string coercion)
     value4: !sub "${count ~ 1}"     # → "11" (number coerced to string)
     ```
@@ -528,7 +428,50 @@ These are the most common issues to watch out for:
 
 :::
 
-## `VARS` and Reserved Keywords
+## Advanced Usage
+
+### Custom Pattern Delimiters
+
+Most users never need to change the default `${...}` delimiters.
+However, if your content already contains `${...}` patterns or you prefer clearer separation, you can define custom delimiters using the `pattern=` syntax.
+
+```yaml
+foo: !sub:pattern=@[..] "Hello @[mqtt.username]!"
+bar: !sub:pattern=%(..) "Hello %(mqtt.username)!"
+```
+
+The syntax is `!sub:pattern=begin..end`, where `begin` is the opening delimiter and `end` is the closing delimiter.
+
+In the example above, `@[` is the opening delimiter and `]` is the closing delimiter.
+The two delimiters are separated by the literal `..` sequence.
+
+Choose delimiters that are unlikely to appear in your content to avoid unintentional substitutions.
+
+::: tip URL‑Encoding Note
+
+Some characters cannot appear directly in a `!sub` tag and must be URL‑encoded.
+
+You can generate URL‑encoded text using your browser's built‑in JavaScript function: `encodeURIComponent("your text here")`.
+This works in all modern browsers and doesn't rely on any external tools.
+
+Here are the most common ones:
+
+:::
+
+| Literal | URL-Encoded | Comments                                                                                                        |
+|:-------:|:-----------:|-----------------------------------------------------------------------------------------------------------------|
+|   `!`   |    `%21`    | Example: `!sub:pattern=%21[..]` -> `![ expression ]`                                                            |
+|   `#`   |    `%23`    | Since `#` is a YAML Comment symbol, make sure your value is quoted.                                             |
+|   `^`   |    `%5E`    |                                                                                                                 |
+|   `&`   |    `%26`    |                                                                                                                 |
+|   `{`   |    `%7B`    | This uses the standard Jinja delimiters: `!sub:pattern=%7B%7B..%7D%7D` -> <span v-pre>`{{ expression }}`</span> |
+|   `}`   |    `%7D`    |                                                                                                                 |
+|   `<`   |    `%3C`    |                                                                                                                 |
+|   `>`   |    `%3E`    |                                                                                                                 |
+
+`[`, `]`, `(`, and `)` are safe and can be used literally without encoding them.
+
+### `VARS` and Reserved Keywords
 
 Some variable names cannot be referenced normally because Jinja reserves them as expression keywords.
 
@@ -549,7 +492,7 @@ This form is also useful when a variable name contains characters that are norma
 It is likewise useful when the variable name itself is stored in another variable.
 However, for simplicity and readability, such naming patterns should generally be avoided.
 
-## Predefined Variables
+### Predefined Variables
 
 openHAB injects a set of predefined variables that are automatically available during YAML preprocessing.
 
@@ -557,8 +500,8 @@ Available Predefined Variables:
 
 | Variable           | Description                                                                                                                                            |
 |:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `OPENHAB_CONF`     | Absolute path to openHAB’s main configuration directory. Typically `/etc/openhab` (apt) or `/openhab/conf` (Docker).                                   |
-| `OPENHAB_USERDATA` | Absolute path to openHAB’s userdata directory. Typically `/var/lib/openhab` (apt) or `/openhab/userdata` (Docker).                                     |
+| `OPENHAB_CONF`     | Absolute path to openHAB's main configuration directory. Typically `/etc/openhab` (apt) or `/openhab/conf` (Docker).                                   |
+| `OPENHAB_USERDATA` | Absolute path to openHAB's userdata directory. Typically `/var/lib/openhab` (apt) or `/openhab/userdata` (Docker).                                     |
 | `__FILE__`         | Absolute path to the current file, e.g. `/path/to/file.inc.yaml`.                                                                                      |
 | `__FILE_NAME__`    | Filename portion without the extension or leading path, e.g. `file.inc`.                                                                               |
 | `__FILE_EXT__`     | File extension portion of the current file name, e.g. `yaml`.                                                                                          |
@@ -568,3 +511,68 @@ Available Predefined Variables:
 
 These variables can be interpolated just like regular ones using `${...}` syntax.
 They may be helpful when constructing paths for the [!include](include.md) directive.
+
+### Referencing Other Variables During Definition
+
+Variables may reference **other variables**, including those defined earlier in the **same** `variables:` block.
+The only requirement is that the referenced variable is defined before it is used.
+
+**Example:**
+
+```yaml
+variables:
+  foo: bar
+  baz: !sub ${foo|upper}   # => foo is defined before baz
+```
+
+Variables can also reference [inherited variables](include.md#variable-resolution-order) when used inside included files or packages:
+
+`main.yaml`:
+
+```yaml
+variables:
+  room: "Kitchen"
+
+items:
+  !include child.inc.yaml
+```
+
+`child.inc.yaml`:
+
+```yaml
+variables:
+  label: !sub ${room} Light   # => "Kitchen Light"
+
+ExampleItem:
+  label: !sub ${label}
+```
+
+### Calling Java Methods
+
+Inside an expression, variables keep their actual Java types, so you can call methods on them just as you would in Java.
+
+Common types you may encounter include:
+
+- [`String`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
+- [`Integer`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html)
+- [`Double`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html)
+- [`Boolean`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html)
+- [`Map`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html)
+- [`List`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html)
+
+This is especially useful when you need functionality beyond the built‑in filters — for example, using `String.replaceAll()` with regular expressions.
+
+**Example:**
+
+```yaml
+# This file is included from a packages section.
+# ${package_id} is provided by the main file; here it is "LivingRoom_Light".
+variables:
+  # Convert "LivingRoom_Light" -> "Living Room Light"
+  label: '${package_id.replaceAll("([a-z])([A-Z])", "$1 $2") | replace("_", " ")}'
+
+items: !sub
+  ${package_id}:
+    type: Group
+    label: ${label}
+```

@@ -22,20 +22,19 @@ Merge keys then combine that anchored content with any local fields in the mappi
 This is the most common pattern for sharing defaults across multiple items.
 
 ```yaml
-.light-base: &LIGHT_BASE
-  type: Switch
-  icon: light
-  autoupdate: false
-
 items:
-  Light1:
-    <<: *LIGHT_BASE
+  Light1: &LIGHT_BASE
+    type: Switch
+    icon: light
+    autoupdate: false
     label: Light One
 
   Light2:
     <<: *LIGHT_BASE
     label: Light Two
 ```
+
+See also: [Using Hidden Keys for Anchors](anchors.md#using-hidden-keys-for-anchors)
 
 ## Using Merge Keys with `!include`
 
@@ -66,7 +65,6 @@ color:
 
 ```yaml
 # main.yaml
-version: 2
 things:
   mqtt:topic:living-room-light:
     channels:
@@ -89,13 +87,13 @@ things:
   icon: default
   autoupdate: false
 
-.metadata: &METADATA
+.metadata: &LIGHTS
   tags: [Light]
-  icon: metadata-icon
+  icon: light
 
 items:
   Lamp:
-    <<: [*DEFAULTS, *METADATA]
+    <<: [*LIGHTS, *DEFAULTS]
     label: Desk Lamp
 ```
 
@@ -105,7 +103,7 @@ Result:
 items:
   Lamp:
     label: Desk Lamp
-    icon: default        # from DEFAULTS (earlier mapping wins)
+    icon: light        # from LIGHTS (earlier mapping wins)
     autoupdate: false
     tags: [Light]
 ```
@@ -137,5 +135,5 @@ For details on how variables are resolved and how substitution interacts with YA
 
 ---
 
-Merge keys are a practical, widely supported YAML feature that integrates naturally with openHAB’s configuration system.
+Merge keys are a practical, widely supported YAML feature that integrates naturally with openHAB's configuration system.
 They offer a clean, predictable way to reuse and extend mappings without duplication.

@@ -18,65 +18,42 @@ YAML utilizes two primary symbols to manage reusable content:
 Anchors and aliases are **file‑local**. An anchor defined in an include file cannot be referenced in the main file, and vice versa.
 :::
 
-> For a comparison of all reuse mechanisms, see
-> **[Choosing a Reuse Mechanism](reuse-mechanisms.html)**.
+### Using Hidden Keys for Anchors
 
-## Hidden Keys
+Hidden keys are a convenient place to store anchored nodes without exposing them in the final configuration.
 
-To store anchored nodes without cluttering your final configuration, use **Hidden Keys**.
+For a full explanation of hidden keys, see [File Structure & Preprocessing](preprocessor.md#hidden-keys).
 
-- **Definition:** Any top‑level YAML key beginning with a dot (`.`).
-- **Behavior:** These keys are parsed during preprocessing but are **stripped from the final output** sent to openHAB.
-- **Purpose:** They serve as internal storage containers. This allows you to anchor a node for later use without that node being processed as a live entity in your system.
-
-### Implementation Example
-
-The following example demonstrates how to anchor a node within a hidden key and merge it into active items.
+Anchors are often combined with the YAML **merge key** (`<<:`), which inserts the contents of an anchored map into the current map.
+For full merge‑key semantics, see [Merge Keys](merge-keys.md).
 
 ```yaml
-version: 2
-
-# 1. Store a node in a hidden key and anchor it (&)
-.light-base: &LIGHT_BASE
+.base-switch: &BASE_SWITCH
   type: Switch
-  label: "Light"
-  tags: [Lighting]
+  autoupdate: false
 
 items:
   Light1:
-    # 2. Reference and merge the anchored node using an alias (*)
-    <<: *LIGHT_BASE
-    name: Light1
-
-  Light2:
-    <<: *LIGHT_BASE
-    name: Light2
+    <<: *BASE_SWITCH
+    label: Light One
 ```
 
 You can also create an anchor for a scalar value.
+This works similarly to using a variable.
 
 ```yaml
-.hidden:
-  bar: &BAR value # create an anchor for `value`
+.bar: &BAR value
 
-foo: *BAR # insert `value` here
+foo: *BAR
 ```
 
-## Merge Keys
+## When to Use Anchors
 
-Anchors and aliases are often used together with the **merge key** (`<<:`), which inserts the contents of an anchored map into the current map.
+Anchors and aliases are ideal when you want to reuse structural blocks **within a single file** without introducing external includes or packages. They work best for:
 
-This page focuses on anchors and aliases themselves.
-For a full explanation of merge semantics—including overrides, list behavior, and advanced patterns—see:
-
-➡️ **[Merge Keys](merge-keys.md)**
-
-That page covers:
-
-- how YAML merges maps
-- how local values override anchored ones
-- how lists behave
-- how merge keys interact with hidden keys and includes
+- repeating common fields across many entries
+- sharing channel or configuration structures
+- keeping templates close to where they are used
 
 ## Strategic Usage
 
@@ -89,5 +66,4 @@ That page covers:
 ### Best Practices
 
 - **Naming:** Use `UPPER_CASE` for anchors to distinguish them from standard keys.
-- **Organization:** Group all anchored nodes at the top of your file under hidden keys.
-- **Standardization:** Use them to enforce consistent metadata or channel structures across many Items within one file.
+- **Standardization:** Use anchors to enforce consistent structure across any repeated YAML blocks within a file.
