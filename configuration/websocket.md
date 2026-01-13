@@ -125,11 +125,15 @@ Topic filters can be used to include and/or exclude events of a specific topic f
 They can be applied both inclusive and exclusive, and provide API compatibility with the existing topic filter functionality of the SSE event stream.
 
 Topics usually start with `openhab` and are split into several segments separated by an `/`, e.g. `openhab/items/MyItem/command` to listen to commands to `MyItem`.
-You may use `*` as a wildcard for a topic segment.
+You may use `*` as a wildcard for a single or multiple topic segment(s).
 To exclude a topic, start it with a `!`.
 
-When sending only exclude topics, all events except those excluded are sent.
-In other cases, only events of the selected topics are sent, whereas exclude topics can be used to filter out a subset of the selected events.
+In addition to the `*` wildcard syntax, regular expressions can be used.
+To use a regular expression for filtering, provide the regular expression as the topic:
+E.g., `openhab/items/Kitchen_[^/]*/state` will match topics such as `openhab/items/Kitchen_Light/state`, but not `openhab/items/Kitchen_HVAC/Kitchen_Temperature/state`.
+
+When sending only excluded topics, all events except those excluded are sent.
+In other cases, only events of the selected topics are sent, whereas excluded topics can be used to filter out a subset of the selected events.
 
 The payload of the event contains a list of string with the topics:
 
