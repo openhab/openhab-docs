@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: File Structure & Preprocessing
+title: YAML Configuration - File Structure & Preprocessing
 ---
 
 # File Structure & Preprocessing

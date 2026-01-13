@@ -1,3 +1,8 @@
+---
+layout: documentation
+title: YAML Configuration - Basics
+---
+
 # Standard YAML Syntax
 
 This page introduces the standard YAML syntax used throughout the openHAB documentation.

@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Merge Keys
+title: YAML Configuration - Merge Keys
 ---
 
 # Merge Keys
