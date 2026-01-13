@@ -7,6 +7,8 @@ title: YAML Configuration - Anchors & Aliases
 
 Anchors and aliases provide efficient, in-file content reuse to reduce repetition without the overhead of external include files or packages.
 
+[[toc]]
+
 ## Core Concepts
 
 YAML utilizes two primary symbols to manage reusable content:
