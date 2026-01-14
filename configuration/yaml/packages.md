@@ -93,22 +93,20 @@ packages:
 things: !sub
   mqtt:topic:${package_id}:
     bridge: ${broker}
-    label: ${label}
     channels:
       power:
         type: switch
         config:
-          stateTopic: zigbee2mqtt/${package_id}/state
-          commandTopic: zigbee2mqtt/${package_id}/set/state
-      # ... other channels (brightness, color_temp)
+          stateTopic: ${package_id}/state
+          commandTopic: ${package_id}/set/state
+      # ... other channels (brightness, color)
 
 items: !sub
   ${name}_Power:
     type: Switch
     label: ${label} Power
-    tags: [Switch]
-    channels:
-      mqtt:topic:${package_id}:power: {}
+    channel: mqtt:topic:${package_id}:power
+  # ... more items for the light, e.g. brightness, color, etc.
 ```
 
 Resulting YAML structure:
@@ -117,39 +115,30 @@ Resulting YAML structure:
 things:
   mqtt:topic:livingroom-light:
     bridge: mqtt:broker:main
-    label: Living Room Light
     channels:
       power:
         type: switch
         config:
-          stateTopic: zigbee2mqtt/livingroom-light/state
-          commandTopic: zigbee2mqtt/livingroom-light/set/state
+          stateTopic: livingroom-light/state
+          commandTopic: livingroom-light/set/state
   mqtt:topic:bedroom-light:
     bridge: mqtt:broker:main
-    label: Bed Room Light
     channels:
       power:
         type: switch
         config:
-          stateTopic: zigbee2mqtt/bedroom-light/state
-          commandTopic: zigbee2mqtt/bedroom-light/set/state
+          stateTopic: bedroom-light/state
+          commandTopic: bedroom-light/set/state
 
 items:
   Living_Room_Light_Power:
     type: Switch
     label: Living Room Light Power
-    tags:
-      - Switch
-    channels:
-      mqtt:topic:livingroom-light:power: {}
-
+    channel: mqtt:topic:livingroom-light:power
   Bed_Room_Light_Power:
     type: Switch
     label: Bed Room Light Power
-    tags:
-      - Switch
-    channels:
-      mqtt:topic:bedroom-light:power: {}
+    channel: mqtt:topic:bedroom-light:power
 ```
 
 ## Merge Behavior
