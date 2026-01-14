@@ -60,20 +60,22 @@ Understanding preprocessing is essential when designing reusable templates or de
 ## Output & Debugging
 
 When working with YAML configuration, it is often helpful to inspect the **final resolved output** after all substitutions, includes, merges, and package expansions have been applied.
-openHAB provides several debugging tools that let you see exactly what the preprocessor produces before the configuration is loaded.
+openHAB provides debugging tools that let you see exactly what the preprocessor produces before the configuration is loaded.
 
-These tools are controlled through the top‑level `preprocessor:` section and can:
+These tools are configured through the top‑level `preprocessor:` section:
 
-- write the fully resolved YAML to the `_generated/` directory
-- optionally prevent openHAB from loading the processed file
-- help you test and debug complex templates safely
+```yaml
+preprocessor:
+  generate_resolved_file: [true | false]
+  load_into_openhab: [true | false]
+```
 
 ### `generate_resolved_file`
 
 When enabled, the preprocessor writes the final, fully expanded YAML to:
 
 ```text
-$OPENHAB_CONF/yaml/_generated/path_to_the_original_file
+$OPENHAB_CONF/yaml/_generated/PATH_TO_ORIGINAL_FILE
 ```
 
 This output shows exactly what openHAB "sees" after preprocessing and is the most effective way to debug advanced YAML features.
