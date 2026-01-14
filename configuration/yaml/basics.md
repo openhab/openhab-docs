@@ -19,8 +19,13 @@ For more detailed information on the YAML 1.1 syntax supported in openHAB config
 ## Indentation and Structure
 
 YAML uses indentation to represent structure.
-Only spaces are allowed.
-Tabs are not permitted.
+
+- Indentation defines the nesting level
+- Only spaces are allowed
+- Tabs are not permitted for indentation
+- All items at the same level must use the same indentation
+
+openHAB recommends using **two spaces** per indentation level for consistency.
 
 ```yaml
 thing:
@@ -28,8 +33,6 @@ thing:
   label: "Example Thing"
 ```
 
-Indentation defines nesting.
-All items at the same level must use the same indentation.
 Misaligned indentation is one of the most common YAML errors.
 
 ## Block Style vs Flow Style
