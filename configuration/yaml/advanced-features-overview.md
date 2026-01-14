@@ -74,8 +74,8 @@ preprocessor:
 
 When enabled, the preprocessor writes the final, fully expanded YAML to:
 
-```text
-$OPENHAB_CONF/yaml/_generated/PATH_TO_ORIGINAL_FILE
+```xml
+$OPENHAB_CONF/yaml/_generated/<PATH_TO_ORIGINAL_FILE>
 ```
 
 This output shows exactly what openHAB "sees" after preprocessing and is the most effective way to debug advanced YAML features.
