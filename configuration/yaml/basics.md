@@ -53,6 +53,8 @@ It is functionally identical to block style.
 item: { type: Switch, label: "Lamp", tags: [Light, LivingRoom] }
 ```
 
+YAML allows block and flow styles to be mixed freely.
+
 ## Comments
 
 - Comments begin with `#`.
