@@ -231,8 +231,8 @@ This constrasts with standard YAML [Merge Keys](merge-keys.md), which perform on
 
 **Merge Key (shallow merge):**
 
-Normally, merge keys are used with an alias.
-In this example, the merge key is shown directly with a mapping to make the structural difference clearer.
+Normally, merge keys are used together with an alias.
+In this example, the merge key is shown directly with a mapping to make the merge behavior easier to see.
 
 ```yaml
 # merge key:
@@ -240,13 +240,15 @@ targetkey:
   foo:
     bar:
       boo: baz
-  <<:
+  <<: # merge `foo` into `targetkey`
     foo:
       bar:
         boo: waldo
         goo: fy
       qux: quux
+```
 
+```yaml
 # result — the merge key's foo mapping
 # is ignored because foo already exists in main
 targetkey:
