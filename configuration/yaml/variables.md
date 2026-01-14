@@ -203,7 +203,7 @@ If a value is defined as a plain scalar, it remains plain, even when inserted in
 If a value is defined with `!sub`, it is interpolated exactly once, using the variables available during the initial processing pass.
 This prevents external `!sub` tags from implicitly changing the meaning of data defined elsewhere, and ensures that anchors and include files behave predictably even when they are parameterized through variables or the `vars:` option.
 
-### What “inserted" means
+### What "inserted" means
 
 In this context, _inserted_ refers to content brought into the YAML structure through an alias referencing an [anchor](anchors.md) (e.g., `<<: *anchor`) or an `!include` directive.
 It does **not** refer to manually pasting or writing the text in that location.

@@ -227,9 +227,12 @@ The way keys interact depends on their data type:
 #### How Package Merging Differs from YAML Merge Keys
 
 Mappings from packages are merged **recursively** with the corresponding mappings in the main file.
-This differs from standard YAML [Merge Keys](merge-keys.md), which perform only **shallow** merges.
+This constrasts with standard YAML [Merge Keys](merge-keys.md), which perform only **shallow** merges.
 
 **Merge Key (shallow merge):**
+
+Normally, merge keys are used with an alias.
+In this example, the merge key is shown directly with a mapping to make the structural difference clearer.
 
 ```yaml
 # merge key:
