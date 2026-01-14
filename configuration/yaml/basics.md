@@ -9,6 +9,11 @@ This page introduces the standard YAML syntax used throughout the openHAB docume
 It is not a full YAML tutorial.
 It provides the foundational YAML concepts needed to understand and work with the examples in the YAML Configuration section.
 
+openHAB builds on top of standard YAML 1.1 and adds its own processing features such as custom tags and preprocessing behavior.
+This page focuses on the core YAML syntax that those features extend.
+
+For more detailed information on the YAML 1.1 syntax supported in openHAB configurations, see the [YAML 1.1 specification](https://yaml.org/spec/1.1/).
+
 [[toc]]
 
 ## Indentation and Structure
