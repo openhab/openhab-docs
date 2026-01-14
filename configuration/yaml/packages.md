@@ -287,9 +287,9 @@ targetkey:
 
 Because the merge is recursive, you can customize keys at any depth in the mapping.
 
-### Controlling Merges with Tags
+### Controlling Package Merge Behavior with Tags
 
-Use these special YAML tags in the **main file** to override the default behavior:
+Use these special YAML tags in the **main file** to override the default merge behavior:
 
 #### 1. The `!replace` Tag
 
@@ -366,6 +366,8 @@ items:
 Choose a **Package ID** that can also serve as a Thing UID fragment, Item name, or similar identifier.
 This avoids defining extra variables in your `!include` call and lets you derive some or all related identifiers directly from `${package_id}` inside the package file.
 
+You can override `${package_id}` in the `vars:` block of the `!include` statement if needed.
+
 **Example:**
 
 ```yaml
@@ -393,5 +395,3 @@ variables: !sub
 | `${thing_uid}`  | `mqtt:topic:living-room-light` | `mqtt:topic:kitchen-light` |
 | `${item_name}`  | `Living_Room_Light`            | `Kitchen_Light`            |
 | `${label}`      | `Living Room Light`            | `Kitchen Light`            |
-
-You can override `${package_id}` in the `vars:` block of the `!include` statement if needed.

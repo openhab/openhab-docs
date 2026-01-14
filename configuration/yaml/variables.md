@@ -112,6 +112,8 @@ Both tags apply recursively, and when they overlap, the innermost tag controls w
 
 **Example:**
 
+In the example below, `!sub` applies recursively except where a nested `!nosub` disables substitution.
+
 ```yaml
 top: !sub
   foo: ${substituted}
@@ -142,7 +144,7 @@ variables:
 
 items: !sub
   Item1:
-    <<: *BASE        # !sub does NOT re-run interpolation
+    <<: *BASE        # !sub does not apply to the contents of the anchor
 ```
 
 **Result:**
@@ -150,7 +152,7 @@ items: !sub
 ```yaml
 items:
   Item1:
-    label: "${room}" # literal, not interpolated
+    label: "${room}"
 ```
 
 ### Example with an include file
@@ -430,46 +432,25 @@ These are the most common issues to watch out for:
 
 ## Advanced Usage
 
-### Custom Pattern Delimiters
+### Predefined Variables
 
-Most users never need to change the default `${...}` delimiters.
-However, if your content already contains `${...}` patterns or you prefer clearer separation, you can define custom delimiters using the `pattern=` syntax.
+openHAB injects a set of predefined variables that are automatically available during YAML preprocessing.
 
-```yaml
-foo: !sub:pattern=@[..] "Hello @[mqtt.username]!"
-bar: !sub:pattern=%(..) "Hello %(mqtt.username)!"
-```
+Available Predefined Variables:
 
-The syntax is `!sub:pattern=begin..end`, where `begin` is the opening delimiter and `end` is the closing delimiter.
+| Variable           | Description                                                                                                                                            |
+|:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `OPENHAB_CONF`     | Absolute path to openHAB's main configuration directory. Typically `/etc/openhab` (apt) or `/openhab/conf` (Docker).                                   |
+| `OPENHAB_USERDATA` | Absolute path to openHAB's userdata directory. Typically `/var/lib/openhab` (apt) or `/openhab/userdata` (Docker).                                     |
+| `__FILE__`         | Absolute path to the current file, e.g. `/path/to/file.inc.yaml`.                                                                                      |
+| `__FILE_NAME__`    | Filename portion without the extension or leading path, e.g. `file.inc`.                                                                               |
+| `__FILE_EXT__`     | File extension portion of the current file name, e.g. `yaml`.                                                                                          |
+| `__DIRECTORY__`    | Directory portion of the current file, e.g. `/path/to`.                                                                                                |
+| `__DIR__`          | Alias for `__DIRECTORY__`.                                                                                                                             |
+| `package_id`       | In a package file, automatically resolved to the [Package ID](packages.md#package-syntax-and-structure). Available only within included package files. |
 
-In the example above, `@[` is the opening delimiter and `]` is the closing delimiter.
-The two delimiters are separated by the literal `..` sequence.
-
-Choose delimiters that are unlikely to appear in your content to avoid unintentional substitutions.
-
-::: tip URL‑Encoding Note
-
-Some characters cannot appear directly in a `!sub` tag and must be URL‑encoded.
-
-You can generate URL‑encoded text using your browser's built‑in JavaScript function: `encodeURIComponent("your text here")`.
-This works in all modern browsers and doesn't rely on any external tools.
-
-Here are the most common ones:
-
-:::
-
-| Literal | URL-Encoded | Comments                                                                                                        |
-|:-------:|:-----------:|-----------------------------------------------------------------------------------------------------------------|
-|   `!`   |    `%21`    | Example: `!sub:pattern=%21[..]` -> `![ expression ]`                                                            |
-|   `#`   |    `%23`    | Since `#` is a YAML Comment symbol, make sure your value is quoted.                                             |
-|   `^`   |    `%5E`    |                                                                                                                 |
-|   `&`   |    `%26`    |                                                                                                                 |
-|   `{`   |    `%7B`    | This uses the standard Jinja delimiters: `!sub:pattern=%7B%7B..%7D%7D` -> <span v-pre>`{{ expression }}`</span> |
-|   `}`   |    `%7D`    |                                                                                                                 |
-|   `<`   |    `%3C`    |                                                                                                                 |
-|   `>`   |    `%3E`    |                                                                                                                 |
-
-`[`, `]`, `(`, and `)` are safe and can be used literally without encoding them.
+These variables can be interpolated just like regular ones using `${...}` syntax.
+They may be helpful when constructing paths for the [!include](include.md) directive.
 
 ### `VARS` and Reserved Keywords
 
@@ -491,26 +472,6 @@ foo: !sub ${VARS['and']}
 This form is also useful when a variable name contains characters that are normally invalid in expressions, such as `living-room` or even `living room`.
 It is likewise useful when the variable name itself is stored in another variable.
 However, for simplicity and readability, such naming patterns should generally be avoided.
-
-### Predefined Variables
-
-openHAB injects a set of predefined variables that are automatically available during YAML preprocessing.
-
-Available Predefined Variables:
-
-| Variable           | Description                                                                                                                                            |
-|:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `OPENHAB_CONF`     | Absolute path to openHAB's main configuration directory. Typically `/etc/openhab` (apt) or `/openhab/conf` (Docker).                                   |
-| `OPENHAB_USERDATA` | Absolute path to openHAB's userdata directory. Typically `/var/lib/openhab` (apt) or `/openhab/userdata` (Docker).                                     |
-| `__FILE__`         | Absolute path to the current file, e.g. `/path/to/file.inc.yaml`.                                                                                      |
-| `__FILE_NAME__`    | Filename portion without the extension or leading path, e.g. `file.inc`.                                                                               |
-| `__FILE_EXT__`     | File extension portion of the current file name, e.g. `yaml`.                                                                                          |
-| `__DIRECTORY__`    | Directory portion of the current file, e.g. `/path/to`.                                                                                                |
-| `__DIR__`          | Alias for `__DIRECTORY__`.                                                                                                                             |
-| `package_id`       | In a package file, automatically resolved to the [Package ID](packages.md#package-syntax-and-structure). Available only within included package files. |
-
-These variables can be interpolated just like regular ones using `${...}` syntax.
-They may be helpful when constructing paths for the [!include](include.md) directive.
 
 ### Referencing Other Variables During Definition
 
@@ -576,3 +537,44 @@ items: !sub
     type: Group
     label: ${label}
 ```
+
+### Custom Pattern Delimiters
+
+Most users never need to change the default `${...}` delimiters.
+However, if your content already contains `${...}` patterns or you prefer clearer separation, you can define custom delimiters using the `pattern=` syntax.
+
+```yaml
+foo: !sub:pattern=@[..] "Hello @[mqtt.username]!"
+bar: !sub:pattern=%(..) "Hello %(mqtt.username)!"
+```
+
+The syntax is `!sub:pattern=begin..end`, where `begin` is the opening delimiter and `end` is the closing delimiter.
+
+In the example above, `@[` is the opening delimiter and `]` is the closing delimiter.
+The two delimiters are separated by the literal `..` sequence.
+
+Choose delimiters that are unlikely to appear in your content to avoid unintentional substitutions.
+
+::: tip URL‑Encoding Note
+
+Some characters cannot appear directly in a `!sub` tag and must be URL‑encoded.
+
+You can generate URL‑encoded text using your browser's built‑in JavaScript function: `encodeURIComponent("your text here")`.
+This works in all modern browsers and doesn't rely on any external tools.
+
+Here are the most common ones:
+
+:::
+
+| Literal | URL-Encoded | Comments                                                                                                        |
+|:-------:|:-----------:|-----------------------------------------------------------------------------------------------------------------|
+|   `!`   |    `%21`    | Example: `!sub:pattern=%21[..]` -> `![ expression ]`                                                            |
+|   `#`   |    `%23`    | Since `#` is a YAML Comment symbol, make sure your value is quoted.                                             |
+|   `^`   |    `%5E`    |                                                                                                                 |
+|   `&`   |    `%26`    |                                                                                                                 |
+|   `{`   |    `%7B`    | This uses the standard Jinja delimiters: `!sub:pattern=%7B%7B..%7D%7D` -> <span v-pre>`{{ expression }}`</span> |
+|   `}`   |    `%7D`    |                                                                                                                 |
+|   `<`   |    `%3C`    |                                                                                                                 |
+|   `>`   |    `%3E`    |                                                                                                                 |
+
+`[`, `]`, `(`, and `)` are safe and can be used literally without encoding them.

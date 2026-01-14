@@ -122,7 +122,7 @@ This is the recommended setup when testing new templates, debugging substitution
 YAML keys beginning with a dot (`.`) are treated as **hidden**.
 Hidden keys:
 
-- are available during preprocessing
+- are only available during preprocessing
 - are ideal for storing anchors, templates, or shared structures
 - help keep the visible configuration clean and readable
 - are stripped away before the preprocessor produces the final output for openHAB's runtime
