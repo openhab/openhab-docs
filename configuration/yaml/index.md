@@ -389,4 +389,4 @@ You can have multiple YAML files with different semantic tags but keep semantic 
 Once you're familiar with the core structure of YAML configuration, you can explore two important areas:
 
 - [**YAML Basics**](basics.md) — a focused introduction to standard YAML syntax used throughout these examples.
-- [**File Structure & Preprocessing**](preprocessing.md) — how openHAB processes YAML files, expands enhanced features, and assembles the final configuration.
+- [**Advanced Features Overview**](advanced-features-overview.md) — how openHAB processes YAML files, expands enhanced features, and assembles the final configuration.

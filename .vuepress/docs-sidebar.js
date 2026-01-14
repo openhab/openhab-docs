@@ -115,7 +115,7 @@ module.exports = [
               ['configuration/yaml/basics', 'YAML Basics'],
               { title: 'Advanced Features',
                 children: [
-                  ['configuration/yaml/preprocessing', 'File Structure & Preprocessing'],
+                  ['configuration/yaml/advanced-features-overview', 'Overview'],
                   ['configuration/yaml/variables', 'Variables & Substitution'],
                   ['configuration/yaml/include', 'Include Files'],
                   ['configuration/yaml/packages', 'Packages'],

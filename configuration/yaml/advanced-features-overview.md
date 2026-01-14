@@ -1,16 +1,16 @@
 ---
 layout: documentation
-title: YAML Configuration - File Structure & Preprocessing
+title: YAML Configuration - Advanced Features Overview
 ---
 
-# File Structure & Preprocessing
+# Advanced Features Overview
 
 openHAB extends standard YAML with additional capabilities that support modular, reusable, and maintainable configuration files.
 These capabilities work together during a preprocessing stage that assembles the final YAML document that openHAB loads.
 
 [[toc]]
 
-## Advanced YAML Features in openHAB
+## Feature Summary
 
 openHAB adds several enhancements on top of standard YAML.
 Each feature solves a different kind of reuse or composition problem.
@@ -76,14 +76,7 @@ When enabled, the preprocessor writes the final, fully expanded YAML to:
 $OPENHAB_CONF/yaml/_generated/path_to_the_original_file
 ```
 
-This output shows exactly what openHAB "sees" after preprocessing.
-It is the most useful tool for debugging:
-
-- variable substitution
-- includes and parameterized templates
-- merge key behavior
-- anchor expansion
-- package composition
+This output shows exactly what openHAB "sees" after preprocessing and is the most effective way to debug advanced YAML features.
 
 **Example:**
 

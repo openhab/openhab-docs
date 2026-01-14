@@ -306,4 +306,4 @@ If a YAML file fails to load, indentation, quoting, or multiline formatting issu
 
 ---
 
-For openHAB‑specific enhancements such as variables, includes, packages, and advanced merging behavior, see [File Structure & Preprocessing](preprocessing.md).
+For openHAB‑specific YAML enhancements such as variables, includes, packages, and advanced merging behavior, see the [Advanced Features Overview](advanced-features-overview.md).
