@@ -224,6 +224,69 @@ The way keys interact depends on their data type:
 | Map       | Merge     | Key‑value objects are merged key by key, recursively.                                                                                                                                      |
 | List      | Merge     | Arrays are concatenated together.                                                                                                                                                          |
 
+#### How Package Merging Differs from YAML Merge Keys
+
+Mappings from packages are merged **recursively** with the corresponding mappings in the main file.
+This differs from standard YAML [Merge Keys](merge-keys.md), which perform only **shallow** merges.
+
+**Merge Key (shallow merge):**
+
+```yaml
+# merge key:
+targetkey:
+  foo:
+    bar:
+      boo: baz
+  <<:
+    foo:
+      bar:
+        boo: waldo
+        goo: fy
+      qux: quux
+
+# result — the merge key's foo mapping
+# is ignored because foo already exists in main
+targetkey:
+  foo:
+    bar:
+      boo: baz
+```
+
+**Package Merging (recursive merge):**
+
+```yaml
+# main file
+targetkey:
+  foo:
+    bar:
+      boo: baz
+
+packages:
+  anyid: !include packagefile.inc.yaml
+```
+
+```yaml
+# packagefile.inc.yaml
+targetkey:
+  foo:
+    bar:
+      boo: waldo
+      goo: fy
+    qux: quux
+```
+
+```yaml
+# result:
+targetkey:
+  foo:
+    bar:
+      boo: baz  # main file overrides matching keys
+      goo: fy   # but includes additional keys...
+    qux: quux   # from the package
+```
+
+Because the merge is recursive, you can customize keys at any depth in the mapping.
+
 ### Controlling Merges with Tags
 
 Use these special YAML tags in the **main file** to override the default behavior:
