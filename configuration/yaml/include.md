@@ -41,7 +41,6 @@ In the full syntax, the `vars` section is optional.
 ::: tip Passing Existing Variables to Included Files
 
 The `vars` section of an `!include` directive can contain literal values or references to **existing variables**.
-If you want to use a variable reference (such as `${mainvar}`), make sure to wrap it in `!sub`, since substitution only occurs inside `!sub` nodes.
 
 Example:
 
@@ -51,6 +50,9 @@ keyname: !include
   vars:
     var1: !sub ${mainvar}
 ```
+
+The include file can now refer to `var1` without relying on the variable names used in the main file.
+This is especially useful when the same include file is shared across multiple configurations that may use different variable names.
 
 :::
 
@@ -85,46 +87,28 @@ variables:
 
 things:
   mqtt:topic:livingroom-window: !include
-    file: zigbee_contact.inc.yaml
+    file: mqtt_contact.inc.yaml
     vars:
       label: Living Room Window
       id: livingroom-window
 
   mqtt:topic:bedroom-window: !include
-    file: zigbee_contact.inc.yaml
+    file: mqtt_contact.inc.yaml
     vars:
       label: Bedroom Window
       id: bedroom-window
       broker: mqtt:broker:external # override the global broker variable
 ```
 
-`zigbee_contact.inc.yaml`:
+`mqtt_contact.inc.yaml`:
 
 ```yaml
-# Template file for a zigbee contact sensor
 bridge: !sub ${broker}
 label: !sub ${label}
 config:
-  availabilityTopic: !sub zigbee2mqtt/${id}/availability
-  payloadAvailable: '{"state":"online"}'
-  payloadNotAvailable: '{"state":"offline"}'
-channels: !sub
-  contact:
-    type: contact
-    config:
-      stateTopic: zigbee2mqtt/${id}/contact
-      on: "false"   # string, not boolean
-      off: "true"   # string, not boolean
-  linkquality:
-    type: number
-    label: Link Quality
-    config:
-      stateTopic: zigbee2mqtt/${id}/linkquality
-  battery:
-    type: number
-    label: Battery Level
-    config:
-      stateTopic: zigbee2mqtt/${id}/battery
+  availabilityTopic: !sub ${id}/availability
+  payloadAvailable: online
+  payloadNotAvailable: offline
 ```
 
 Resulting configuration:
@@ -135,51 +119,17 @@ things:
     bridge: mqtt:broker:main
     label: Living Room Window
     config:
-      availabilityTopic: zigbee2mqtt/livingroom-window/availability
-      payloadAvailable: '{"state":"online"}'
-      payloadNotAvailable: '{"state":"offline"}'
-    channels:
-      contact:
-        type: contact
-        config:
-          stateTopic: zigbee2mqtt/livingroom-window/contact
-          "on": "false"
-          "off": "true"
-      linkquality:
-        type: number
-        label: Link Quality
-        config:
-          stateTopic: zigbee2mqtt/livingroom-window/linkquality
-      battery:
-        type: number
-        label: Battery Level
-        config:
-          stateTopic: zigbee2mqtt/livingroom-window/battery
+      availabilityTopic: livingroom-window/availability
+      payloadAvailable: online
+      payloadNotAvailable: offline
 
   mqtt:topic:bedroom-window:
     bridge: mqtt:broker:external
     label: Bedroom Window
     config:
-      availabilityTopic: zigbee2mqtt/bedroom-window/availability
-      payloadAvailable: '{"state":"online"}'
-      payloadNotAvailable: '{"state":"offline"}'
-    channels:
-      contact:
-        type: contact
-        config:
-          stateTopic: zigbee2mqtt/bedroom-window/contact
-          "on": "false"
-          "off": "true"
-      linkquality:
-        type: number
-        label: Link Quality
-        config:
-          stateTopic: zigbee2mqtt/bedroom-window/linkquality
-      battery:
-        type: number
-        label: Battery Level
-        config:
-          stateTopic: zigbee2mqtt/bedroom-window/battery
+      availabilityTopic: bedroom-window/availability
+      payloadAvailable: online
+      payloadNotAvailable: offline
 ```
 
 ## File Naming & Reload Behavior
