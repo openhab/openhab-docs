@@ -347,7 +347,20 @@ These are the most common issues to watch out for:
         label: "Static label"
     ```
 
-1. **Unquoted expressions containing operators**
+1. Using a reserved keyword as a variable name
+
+    Certain keywords are reserved in Jinja and should not be used as variable names.
+    These include: `in`, `True`, `False`, `true`, `false`, `null`, `empty`, `if`, `else`, `and`, `or`, `not`.
+
+    If you use one of these as a variable, you’ll encounter an error such as:
+
+    ```xml
+    syntax error at position 7, encountered '}', expected <IDENTIFIER>|<STRING>|<FLOAT>|<INTEGER>|'true'|'false'|'null'|'-'|'!'|'not'|'empty'|'('
+    ```
+
+    To resolve this, rename the variable or use the `VARS` form described in [VARS and Reserved Keywords](#vars-and-reserved-keywords).
+
+2. **Unquoted expressions containing operators**
 
     Expressions that include operators (`~`, `+`, `-`, `*`, `/`, `==`, etc.) must be quoted, or YAML may misinterpret them.
 
@@ -355,7 +368,7 @@ These are the most common issues to watch out for:
     value: !sub "${'Hello ' ~ name}" # Note the "" around the pattern
     ```
 
-1. **Using `+` when you intended string concatenation**
+3. **Using `+` when you intended string concatenation**
 
     The `+` operator only works when both operands already have the same type.
 
@@ -372,7 +385,7 @@ These are the most common issues to watch out for:
     value4: !sub "${'a' ~ 1}"        # → "a1" (string coercion + concatenation)
     ```
 
-1. **Confusing string and numeric types in expressions**
+4. **Confusing string and numeric types in expressions**
 
     Jinjava respects the types defined in YAML.
     A variable defined as a number behaves numerically; a variable defined as a string behaves textually.
@@ -391,7 +404,7 @@ These are the most common issues to watch out for:
 
     Use `~` when you want to treat values as text, regardless of how they were defined in YAML.
 
-1. **Mixing filters and strings without `~`**
+5. **Mixing filters and strings without `~`**
 
     When combining filtered values with text, use `~` to ensure proper string conversion.
 
@@ -399,7 +412,7 @@ These are the most common issues to watch out for:
     value: !sub "${rooms|length ~ ' rooms'}"
     ```
 
-1. **Whitespace sensitivity**
+6. **Whitespace sensitivity**
 
     Quoted strings preserve all spaces exactly as written.
     But spaces outside quotes — including spaces around expressions inside `${ ... }` — are not preserved.
@@ -413,7 +426,7 @@ These are the most common issues to watch out for:
     label5: !sub "${   x   }"         # → value of x only (outer spaces ignored)
     ```
 
-1. **Expecting full Jinja template features**
+7. **Expecting full Jinja template features**
 
     Jinjava itself supports statements and macros, but openHAB's YAML substitution layer does **not**.
     openHAB only evaluates `${ ... }` expressions — template blocks such as `{% for %}`, `{% if %}`, and macros are not available.
