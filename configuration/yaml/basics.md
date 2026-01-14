@@ -293,13 +293,12 @@ For more details, see [Merge Keys](merge-keys.md).
 
 ## Common Pitfalls
 
-- Mixing tabs and spaces.
+- Using tab characters instead of spaces for indentation.
 - Using inconsistent indentation.
 - Misaligning list items.
 - Omitting quotes around strings containing special characters.
 - Incorrectly nesting mappings.
 - Incorrect indentation under `|` or `>` for multiline strings.
-- Using tabs anywhere in the file.
 
 If a YAML file fails to load, indentation, quoting, or multiline formatting issues are often the cause.
 
