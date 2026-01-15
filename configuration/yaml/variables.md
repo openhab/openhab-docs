@@ -458,8 +458,7 @@ items: !sub
 
 ### Interpolation and Inserted Content
 
-Interpolation (`!sub`) does **not** apply recursively to content that is inserted via [anchors](anchors.md) or [include](include.md) files.
-This is because interpolation happens **before** merges and includes are applied.
+Interpolation (`!sub`) does **not** apply recursively to content inserted via anchors or include files, because interpolation happens **before** merges and includes are applied.
 
 #### Example with an anchor
 
@@ -515,24 +514,6 @@ items:
   Item2:
     label: Kitchen
 ```
-
-#### Order of Operation
-
-1. Variables are extracted as the first step after the YAML file is loaded.
-1. Substitutions (`!sub`) are performed, including on the arguments for `!include` (such as `file` and `vars`) and on any anchored values.
-1. Included files are loaded next.
-1. YAML key merge (`<<:`) is applied.
-
-This behavior preserves the original substitution intent of each piece of data.
-
-If a value is defined as a plain scalar inside an include file or in an anchor, it remains plain, even when it gets _inserted_ into a `!sub` structure in the main file.
-This prevents external `!sub` tags from implicitly changing the meaning of data defined inside an anchor or an included file.
-
-#### What “inserted” means
-
-In this context, _inserted_ refers to content brought into the YAML structure through an alias referencing an [anchor](anchors.md) (e.g., `<<: *anchor`) or an `!include` directive. It does **not** refer to manually pasting or writing the text in that location.
-
-Structural insertion happens after interpolation, so plain values inside anchors or include files are **not** re‑interpolated when they appear under a `!sub` node.
 
 ### Custom Pattern Delimiters
 
