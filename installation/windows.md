@@ -199,12 +199,6 @@ You can:
 
 ## Maintenance
 
-### Backup
-
-Make sure that you make regular backups of the **conf** and **userdata** folders, you can zip and unzip these folders too and from openHAB installations (even across most versions).
-When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openHAB` folder.
-Which can be used any time after a failure.
-
 ### Updating the openHAB Runtime
 
 To start the update process, run PowerShell as an administrator and use the following commands, while replacing `x.x.x` with the wanted openHAB version.
