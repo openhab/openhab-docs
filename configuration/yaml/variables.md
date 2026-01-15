@@ -169,20 +169,38 @@ topic: !sub "${rooms[0] if rooms|length > 0 else 'no-room'}"
 Jinja offers a number of built‑in filters that are useful when building YAML structures.
 Filters are applied to a variable or value using the syntax `variable|filter`, and they can be chained, e.g. `variable|filter1|filter2`.
 
-Some commonly used filters are listed below.
-For a complete list, see the Jinja documentation: [Jinja Filters](https://jinja.palletsprojects.com/en/stable/templates/#builtin-filters).
+Some commonly used filters are listed below:
 
-| Filter     | Description                                             |
-|:-----------|:--------------------------------------------------------|
-| capitalize | Capitalize a value.                                     |
-| default    | Return a default value if the variable is empty.        |
-| first      | Return the first item of a list.                        |
-| format     | Apply the given values to a printf-style format string. |
-| length     | Return the length of a list or string.                  |
-| lower      | Convert a value to lowercase.                           |
-| replace    | Replace a substring.                                    |
-| title      | Return a titlecased version of the value.               |
-| upper      | Convert a value to uppercase.                           |
+#### Text transformation
+
+| Filter     | Description                   |
+|------------|-------------------------------|
+| capitalize | Capitalize a value.           |
+| title      | Return a titlecased version.  |
+| lower      | Convert a value to lowercase. |
+| upper      | Convert a value to uppercase. |
+| replace    | Replace a substring.          |
+
+#### Formatting
+
+| Filter | Description                                   |
+|--------|-----------------------------------------------|
+| format | Apply values to a printf-style format string. |
+
+#### Collection helpers
+
+| Filter | Description                            |
+|--------|----------------------------------------|
+| first  | Return the first item of a list.       |
+| length | Return the length of a list or string. |
+
+#### Fallbacks
+
+| Filter  | Description                                      |
+|---------|--------------------------------------------------|
+| default | Return a default value if the variable is empty. |
+
+For a complete list, see the Jinja documentation: [Jinja Filters](https://jinja.palletsprojects.com/en/stable/templates/#builtin-filters).
 
 Expressions and filters can be combined freely, allowing you to compute values, transform text, or derive new strings dynamically.
 
@@ -406,6 +424,36 @@ ExampleItem:
   label: !sub ${label}
 ```
 
+### Calling Java Methods
+
+Inside an expression, variables keep their actual Java types, so you can call methods on them just as you would in Java.
+
+Common types you may encounter include:
+
+- [`String`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
+- [`Integer`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html)
+- [`Double`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html)
+- [`Boolean`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html)
+- [`Map`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html)
+- [`List`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html)
+
+This is especially useful when you need functionality beyond the built‑in filters — for example, using `String.replaceAll()` with regular expressions.
+
+**Example:**
+
+```yaml
+# This file is included from a packages section.
+# ${package_id} is provided by the main file; here it is "LivingRoom_Light".
+variables:
+  # Convert "LivingRoom_Light" -> "Living Room Light"
+  label: '${package_id.replaceAll("([a-z])([A-Z])", "$1 $2") | replace("_", " ")}'
+
+items: !sub
+  ${package_id}:
+    type: Group
+    label: ${label}
+```
+
 ### Interpolation and Inserted Content
 
 Interpolation (`!sub`) does **not** apply recursively to content that is inserted via [anchors](anchors.md) or [include](include.md) files.
@@ -486,36 +534,6 @@ This prevents external `!sub` tags from implicitly changing the meaning of data 
 In this context, _inserted_ refers to content brought into the YAML structure through an alias referencing an [anchor](anchors.md) (e.g., `<<: *anchor`) or an `!include` directive.
 It does **not** refer to manually pasting or writing the text in that location.
 Only structural insertion happens after interpolation, which is why plain values inside anchors or include files are not re‑interpolated when they appear under a `!sub` node.
-
-### Calling Java Methods
-
-Inside an expression, variables keep their actual Java types, so you can call methods on them just as you would in Java.
-
-Common types you may encounter include:
-
-- [`String`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
-- [`Integer`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html)
-- [`Double`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html)
-- [`Boolean`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html)
-- [`Map`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html)
-- [`List`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html)
-
-This is especially useful when you need functionality beyond the built‑in filters — for example, using `String.replaceAll()` with regular expressions.
-
-**Example:**
-
-```yaml
-# This file is included from a packages section.
-# ${package_id} is provided by the main file; here it is "LivingRoom_Light".
-variables:
-  # Convert "LivingRoom_Light" -> "Living Room Light"
-  label: '${package_id.replaceAll("([a-z])([A-Z])", "$1 $2") | replace("_", " ")}'
-
-items: !sub
-  ${package_id}:
-    type: Group
-    label: ${label}
-```
 
 ### Custom Pattern Delimiters
 
