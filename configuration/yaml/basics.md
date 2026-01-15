@@ -312,9 +312,8 @@ A tag can be applied to a simple scalar:
 value: !sub ${room}
 ```
 
-Here, `!sub` is applied to the scalar value.
-
-A tag can also be applied to a mapping. In that case, the **entire mapping belongs to the tag**:
+A tag can also be applied to a mapping.
+In that form, it applies to everything inside the mapping:
 
 ```yaml
 thing: !sub
