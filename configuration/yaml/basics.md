@@ -301,6 +301,29 @@ item:
 
 For more details, see [Merge Keys](merge-keys.md).
 
+## YAML Tags (brief introduction)
+
+YAML supports _tags_, which change how a value is interpreted.
+Some tags are built in (used for YAML’s standard data types), and openHAB adds a few **custom tags** such as `!sub`, `!nosub`, and `!include` to enable enhanced features.
+
+A tag can be applied to a simple scalar:
+
+```yaml
+value: !sub ${room}
+```
+
+Here, `!sub` is applied to the scalar value.
+
+A tag can also be applied to a mapping. In that case, the **entire mapping belongs to the tag**:
+
+```yaml
+thing: !sub
+  label: ${room} Light
+  id: ${room}_Light
+```
+
+You’ll see these custom tags throughout the enhanced YAML configuration.
+
 ## Common Pitfalls
 
 - Using tab characters instead of spaces for indentation.
