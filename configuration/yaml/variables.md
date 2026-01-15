@@ -144,26 +144,6 @@ This is often clearer and avoids unnecessary use of operators.
 
 :::
 
-### Inline if expressions
-
-Expressions also support Jinja's inline `if` expression form, which selects between values based on a condition.
-
-**Syntax:**
-
-```python
-<value_if_true> if <condition> else <value_if_false>
-```
-
-The `else` part is **not** optional.
-
-**Examples:**
-
-```yaml
-label: !sub "${'Hot' if temperature > 25 else 'Cool'}"
-state: !sub "${'ON' if enabled else 'OFF'}"
-topic: !sub "${rooms[0] if rooms|length > 0 else 'no-room'}"
-```
-
 ### Filters
 
 Jinja offers a number of built‑in filters that are useful when building YAML structures.
@@ -186,6 +166,8 @@ Some commonly used filters are listed below:
 | Filter | Description                                   |
 |--------|-----------------------------------------------|
 | format | Apply values to a printf-style format string. |
+| round  | Round a number to an optional precision.      |
+| int    | Convert a value into an integer.              |
 
 #### Collection helpers
 
@@ -212,6 +194,26 @@ Expressions and filters can be combined freely, allowing you to compute values, 
 - `rooms|length` — returns the number of rooms
 - `device_name|replace(" ", "_")|lower` — replaces spaces and lowercases the result
 - `value|default("unknown", true)` — uses `"unknown"` if `value` is empty
+
+### Conditional Expressions
+
+Expressions can include Jinja’s inline `if` form, which selects between values based on a condition.
+
+**Syntax:**
+
+```python
+<value_if_true> if <condition> else <value_if_false>
+```
+
+The `else` part is **not** optional.
+
+**Examples:**
+
+```yaml
+label: !sub "${'Hot' if temperature > 25 else 'Cool'}"
+state: !sub "${'ON' if enabled else 'OFF'}"
+topic: !sub "${rooms[0] if rooms|length > 0 else 'no-room'}"
+```
 
 ## Common Pitfalls
 
