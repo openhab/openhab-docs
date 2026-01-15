@@ -468,7 +468,7 @@ variables:
   room: "Kitchen"
 
 .base: &BASE
-  label: "${room}"   # plain scalar, never interpolated
+  label: "${room}"   # no !sub here -> won't be interpolated
 
 items: !sub
   Item1:
@@ -480,7 +480,7 @@ items: !sub
 ```yaml
 items:
   Item1:
-    label: "${room}"
+    label: "${room}" # stays literal
 ```
 
 #### Example with an include file
@@ -492,19 +492,18 @@ variables:
   room: Kitchen
   file: child.inc.yaml
 
-items: !sub
+items: !sub                # <- this !sub
   Item1:
-    <<: !include "${file}" # the pattern `${file}` here gets interpolated
-                           # but the contents of the file aren't interpolated
-                           # just because the !include is under a !sub here
+    <<: !include "${file}" # -> applies to this pattern -> ${file} is interpolated
+                           # -> but not to the included content
   Item2:
-    label: ${room}         # this gets interpolated as normal
+    label: ${room}         # -> also applies to this pattern
 ```
 
-`child.inc.yaml`
+`child.inc.yaml`:
 
 ```yaml
-label: ${room}             # plain scalar
+label: ${room}             # no !sub here -> won't be interpolated
 ```
 
 **Result:**
@@ -512,30 +511,28 @@ label: ${room}             # plain scalar
 ```yaml
 items:
   Item1:
-    label: ${room}        # literal, not interpolated
+    label: ${room}        # stays literal
   Item2:
     label: Kitchen
 ```
 
 #### Order of Operation
 
-- Variable substitution runs once while a YAML file is processed.
-- Included files and anchors are merged afterward, so external `!sub` does not re-run on their contents.
-- `!sub` inside an included file will work for that file, but `!sub` outside it won’t change the included data.
-- If you want an included file's scalars substituted, put `!sub` in that included file itself.
+1. Variables are extracted as the first step after the YAML file is loaded.
+1. Substitutions (`!sub`) are performed, including on the arguments for `!include` (such as `file` and `vars`) and on any anchored values.
+1. Included files are loaded next.
+1. YAML key merge (`<<:`) is applied.
 
-#### Why this matters
+This behavior preserves the original substitution intent of each piece of data.
 
-This behavior preserves the substitution intent of each piece of data.
-If a value is defined as a plain scalar, it remains plain, even when inserted into a `!sub` structure.
-If a value is defined with `!sub`, it is interpolated exactly once, using the variables available during the initial processing pass.
-This prevents external `!sub` tags from implicitly changing the meaning of data defined elsewhere, and ensures that anchors and include files behave predictably even when they are parameterized through variables or the `vars:` option.
+If a value is defined as a plain scalar inside an include file or in an anchor, it remains plain, even when it gets _inserted_ into a `!sub` structure in the main file.
+This prevents external `!sub` tags from implicitly changing the meaning of data defined inside an anchor or an included file.
 
-#### What "inserted" means
+#### What “inserted” means
 
-In this context, _inserted_ refers to content brought into the YAML structure through an alias referencing an [anchor](anchors.md) (e.g., `<<: *anchor`) or an `!include` directive.
-It does **not** refer to manually pasting or writing the text in that location.
-Only structural insertion happens after interpolation, which is why plain values inside anchors or include files are not re‑interpolated when they appear under a `!sub` node.
+In this context, _inserted_ refers to content brought into the YAML structure through an alias referencing an [anchor](anchors.md) (e.g., `<<: *anchor`) or an `!include` directive. It does **not** refer to manually pasting or writing the text in that location.
+
+Structural insertion happens after interpolation, so plain values inside anchors or include files are **not** re‑interpolated when they appear under a `!sub` node.
 
 ### Custom Pattern Delimiters
 
