@@ -20,15 +20,12 @@ It is recommended to place this section at the beginning of the file so it's eas
 ```yaml
 variables:
   # Scalar variables
-  expire: 5m,command=OFF
-  geolocation: -33.12345, 151.6789
+  expire: 5m
+  label: Living Room
 
   # Map variable
   mqtt:
     broker: mqtt:broker:mybroker
-    server: 1.2.3.4
-    username: mqttuser
-    password: password
 
   # List variable
   rooms:
@@ -53,50 +50,21 @@ Substitutions can appear anywhere within the value, so `"Location: ${floorName} 
 
 The same behavior applies to YAML keys.
 
-::: tip Note
-
-The following YAML snippets are not full Thing or Item configurations. They're only meant to show how variable substitution works.
-
-:::
-
 **Example:**
 
 ```yaml
 variables:
-  geolocation: -33.12345, 151.6789
-  mqtt:
-    broker: mqtt:broker:mybroker
-  rooms:
-    - Kitchen
-
-things:
-  !sub ${mqtt.broker}:
-    isBridge: true
-    label: MQTT Broker
-
-  astro:sun:home:
-    label: Astro Sun
-    config:
-      geolocation: !sub ${geolocation}
+  room: Kitchen
+  light_id: Kitchen_Light
 
 items:
-  !sub ${rooms[0]}_Light:
-    label: !sub ${rooms[0]} Light
+  !sub ${light_id}:
+    label: !sub ${room} Light
 ```
 
 The resulting document will be:
 
 ```yaml
-things:
-  mqtt:broker:mybroker:
-    isBridge: true
-    label: MQTT Broker
-
-  astro:sun:home:
-    label: Astro Sun
-    config:
-      geolocation: -33.12345, 151.6789
-
 items:
   Kitchen_Light:
     label: Kitchen Light
@@ -113,101 +81,18 @@ Both tags apply recursively, and when they overlap, the innermost tag controls w
 **Example:**
 
 In the example below, `!sub` applies recursively except where a nested `!nosub` disables substitution.
+`${LITERAL}` indicates a value where substitution is not performed because `!nosub` disables interpolation inside a `!sub` block.
 
 ```yaml
 top: !sub
   foo: ${substituted}
   bar: !nosub
-    baz: ${this will be left alone}
-    quux: !sub
-      corge: ${substituted}
-      garply: !nosub
-        waldo: ${left alone}
-    grault: ${left alone}
+    baz: ${LITERAL}
+    quux: !sub ${substituted}
+    grault: ${LITERAL}
   qux: ${substituted}
-  groot: !nosub ${left alone}
+  groot: !nosub ${LITERAL}
 ```
-
-## Interpolation and Inserted Content
-
-Interpolation (`!sub`) does **not** apply recursively to content that is inserted via [anchors](anchors.md) or [include](include.md) files.
-This is because interpolation happens **before** merges and includes are applied.
-
-### Example with an anchor
-
-```yaml
-variables:
-  room: "Kitchen"
-
-.base: &BASE
-  label: "${room}"   # plain scalar, never interpolated
-
-items: !sub
-  Item1:
-    <<: *BASE        # !sub does not apply to the contents of the anchor
-```
-
-**Result:**
-
-```yaml
-items:
-  Item1:
-    label: "${room}"
-```
-
-### Example with an include file
-
-`main.yaml`:
-
-```yaml
-variables:
-  room: Kitchen
-  file: child.inc.yaml
-
-items: !sub
-  Item1:
-    <<: !include "${file}" # the pattern `${file}` here gets interpolated
-                           # but the contents of the file aren't interpolated
-                           # just because the !include is under a !sub here
-  Item2:
-    label: ${room}         # this gets interpolated as normal
-```
-
-`child.inc.yaml`
-
-```yaml
-label: ${room}             # plain scalar
-```
-
-**Result:**
-
-```yaml
-items:
-  Item1:
-    label: ${room}        # literal, not interpolated
-  Item2:
-    label: Kitchen
-```
-
-### Order of Operation
-
-- Variable substitution runs once while a YAML file is processed.
-- Included files and anchors are merged afterward, so external `!sub` does not re-run on their contents.
-- `!sub` inside an included file will work for that file, but `!sub` outside it won’t change the included data.
-- If you want an included file's scalars substituted, put `!sub` in that included file itself.
-
-### Why this matters
-
-This behavior preserves the substitution intent of each piece of data.
-If a value is defined as a plain scalar, it remains plain, even when inserted into a `!sub` structure.
-If a value is defined with `!sub`, it is interpolated exactly once, using the variables available during the initial processing pass.
-This prevents external `!sub` tags from implicitly changing the meaning of data defined elsewhere, and ensures that anchors and include files behave predictably even when they are parameterized through variables or the `vars:` option.
-
-### What "inserted" means
-
-In this context, _inserted_ refers to content brought into the YAML structure through an alias referencing an [anchor](anchors.md) (e.g., `<<: *anchor`) or an `!include` directive.
-It does **not** refer to manually pasting or writing the text in that location.
-Only structural insertion happens after interpolation, which is why plain values inside anchors or include files are not re‑interpolated when they appear under a `!sub` node.
 
 ## Expression Syntax
 
@@ -219,11 +104,11 @@ The expression will be substituted with the content of the variable.
 
 The syntax of variable references:
 
-- `geolocation` — refers to the scalar variable named `geolocation`
+- `label` — refers to the scalar variable named `label`
 - `rooms[0]` — refers to the first element of the list named `rooms`
-- `mqtt.username` — refers to the `username` subkey of the `mqtt` map
-- `mqtt['username']` — refers to the same `username` subkey
-- `mqtt[key]` — refers to the same value as `mqtt.username` when the variable `key` has the value `username`
+- `mqtt.broker` — refers to the `broker` subkey of the `mqtt` map
+- `mqtt['broker']` — refers to the same `broker` subkey
+- `mqtt[key]` — refers to the same value as `mqtt.broker` when the variable `key` has the value `broker`
 
 An expression can also include string, arithmetic, and boolean operations.
 
@@ -308,7 +193,7 @@ Expressions and filters can be combined freely, allowing you to compute values, 
 - `"%s/%s"|format(city, country)` — formats a string with two variables
 - `rooms|length` — returns the number of rooms
 - `device_name|replace(" ", "_")|lower` — replaces spaces and lowercases the result
-- `value|default("unknown")` — uses `"unknown"` if `value` is empty
+- `value|default("unknown", true)` — uses `"unknown"` if `value` is empty
 
 ## Common Pitfalls
 
@@ -520,6 +405,87 @@ variables:
 ExampleItem:
   label: !sub ${label}
 ```
+
+### Interpolation and Inserted Content
+
+Interpolation (`!sub`) does **not** apply recursively to content that is inserted via [anchors](anchors.md) or [include](include.md) files.
+This is because interpolation happens **before** merges and includes are applied.
+
+#### Example with an anchor
+
+```yaml
+variables:
+  room: "Kitchen"
+
+.base: &BASE
+  label: "${room}"   # plain scalar, never interpolated
+
+items: !sub
+  Item1:
+    <<: *BASE        # !sub does not apply to the contents of the anchor
+```
+
+**Result:**
+
+```yaml
+items:
+  Item1:
+    label: "${room}"
+```
+
+#### Example with an include file
+
+`main.yaml`:
+
+```yaml
+variables:
+  room: Kitchen
+  file: child.inc.yaml
+
+items: !sub
+  Item1:
+    <<: !include "${file}" # the pattern `${file}` here gets interpolated
+                           # but the contents of the file aren't interpolated
+                           # just because the !include is under a !sub here
+  Item2:
+    label: ${room}         # this gets interpolated as normal
+```
+
+`child.inc.yaml`
+
+```yaml
+label: ${room}             # plain scalar
+```
+
+**Result:**
+
+```yaml
+items:
+  Item1:
+    label: ${room}        # literal, not interpolated
+  Item2:
+    label: Kitchen
+```
+
+#### Order of Operation
+
+- Variable substitution runs once while a YAML file is processed.
+- Included files and anchors are merged afterward, so external `!sub` does not re-run on their contents.
+- `!sub` inside an included file will work for that file, but `!sub` outside it won’t change the included data.
+- If you want an included file's scalars substituted, put `!sub` in that included file itself.
+
+#### Why this matters
+
+This behavior preserves the substitution intent of each piece of data.
+If a value is defined as a plain scalar, it remains plain, even when inserted into a `!sub` structure.
+If a value is defined with `!sub`, it is interpolated exactly once, using the variables available during the initial processing pass.
+This prevents external `!sub` tags from implicitly changing the meaning of data defined elsewhere, and ensures that anchors and include files behave predictably even when they are parameterized through variables or the `vars:` option.
+
+#### What "inserted" means
+
+In this context, _inserted_ refers to content brought into the YAML structure through an alias referencing an [anchor](anchors.md) (e.g., `<<: *anchor`) or an `!include` directive.
+It does **not** refer to manually pasting or writing the text in that location.
+Only structural insertion happens after interpolation, which is why plain values inside anchors or include files are not re‑interpolated when they appear under a `!sub` node.
 
 ### Calling Java Methods
 
