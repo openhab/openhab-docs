@@ -241,6 +241,7 @@ value: 0h3m0s
 config:
   ignoreStateUpdates: "true"
   ignoreCommands: "true"
+```
 with the blocks that can access it:
 
 ![blockly-metadata](../images/blockly/blockly-metadata.png)
