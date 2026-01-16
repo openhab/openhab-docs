@@ -5,7 +5,12 @@ title: YAML Configuration - Merge Keys
 
 # Merge Keys
 
-Merge keys (`<<:`) let you combine mappings defined directly in a mapping with mappings defined elsewhere, such as through anchors or `!include`.
+Merge keys (`<<:`) let you combine mappings defined directly in a mapping with other mappings defined elsewhere, such as:
+
+- anchors
+- `!include`
+- [variables](variables.md)
+
 They promote reusability and avoid repetition by letting you define common mappings once and update them in a single place, with changes applied everywhere they are merged.
 
 [[toc]]
@@ -71,6 +76,50 @@ things:
       <<: !include { file: light-common.inc.yaml, vars: { id: living-room-light } }
       <<: !include { file: light-color.inc.yaml, vars: { id: living-room-light } }
 ```
+
+## Using Merge Keys with `!sub`
+
+In addition to anchors and included files, merge keys can also combine content produced dynamically by a `!sub` expression.
+The key advantage is that, when used with a [conditional expression](variables.md#conditional-expressions), a `!sub` expression can resolve to **either a mapping or an empty map**.
+This lets you conditionally merge a block — or skip it entirely — based on variables or expressions.
+
+Simple example:
+
+```yaml
+variables:
+  color_channel:
+    color:
+      type: color
+
+things:
+  mqtt:topic:light:
+    channels:
+      power:
+        type: switch
+      <<: !sub ${color_channel}
+```
+
+Example with conditional expression:
+
+```yaml
+variables:
+  has_color: true # Set to false to skip merging color_channel
+
+  color_channel:
+    color:
+      type: color
+
+  empty_map: {}
+
+things:
+  mqtt:topic:light:
+    channels:
+      power:
+        type: switch
+      <<: !sub ${color_channel if has_color else empty_map}
+```
+
+This is especially useful in package files, where you can parameterize which channels a Thing includes and which Items are created.
 
 ## Merge Rules
 
