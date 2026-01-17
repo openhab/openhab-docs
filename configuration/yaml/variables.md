@@ -430,6 +430,7 @@ ExampleItem:
 
 You can assign a variable to the contents of another file using `!include`.
 This can be combined with [merge keys, substitutions, and conditional expressions](merge-keys.md#using-merge-keys-with-sub).
+Because `!include` can be parameterized, you can parameterize an entire section and store the result in a variable.
 
 ```yaml
 variables:
