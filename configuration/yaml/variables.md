@@ -426,6 +426,16 @@ ExampleItem:
   label: !sub ${label}
 ```
 
+### Loading Variable Data From Another File
+
+You can assign a variable to the contents of another file using `!include`.
+This can be combined with [merge keys, substitutions, and conditional expressions](merge-keys.md#using-merge-keys-with-sub).
+
+```yaml
+variables:
+  external_data: !include other_file.inc.yaml
+```
+
 ### Calling Java Methods
 
 Inside an expression, variables keep their actual Java types, so you can call methods on them just as you would in Java.
