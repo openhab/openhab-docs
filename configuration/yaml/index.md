@@ -1,53 +1,56 @@
 ---
 layout: documentation
-title: YAML Configuration
+title: YAML Configuration - Core Structure
 ---
 
-# YAML Configuration
+# YAML Configuration Core Structure
 
 openHAB provides a modular configuration system that allows supported entities (objects such as Things, Items, etc.) to be defined in one or more YAML files.
-The primary directory for these configuration files is `$OPENHAB_CONF/yaml/` and both `.yaml` and `.yml` file extensions are supported.
-Files may be further structured within subdirectories, offering flexibility in organizing configurations.
 
 [[toc]]
 
+## YAML Configuration File Locations
+
+The `$OPENHAB_CONF/yaml/` directory is the standard location for all YAML-based configuration described in this section.
+Both `.yaml` and `.yml` file extensions are supported.
+
+Files may also be organized within subdirectories, offering additional flexibility in how configurations are structured.
+
+::: details Optional YAML File Locations (Advanced)
+Although not the recommended practice, YAML files for Items, Things, and Tags may also be placed in their respective domain directories (`$OPENHAB_CONF/items/`, `$OPENHAB_CONF/things/`, and `$OPENHAB_CONF/tags/`).
+
+openHAB does not require strict separation of YAML files by content: any supported configuration file may be placed in any of the watched configuration directories.
+In other words, you could place a Things or Items YAML file inside the Tags directory if you really wanted to.
+
+These additional locations are supported to offer flexibility in how configurations are organized, but using them is not required.
+Because a single YAML configuration file can define all supported elements, it remains recommended to keep all YAML configuration files within `$OPENHAB_CONF/yaml/` and organize them in subdirectories instead.
+:::
+
 ## General Structure
 
-Top-level entries in the YAML file must be unique key-value maps with the following valid keys in no particular order:
+A YAML configuration file contains one or more top‑level sections that define openHAB entities.
 
-| Key                                  | Object Type                                                                                                        |
-|:-------------------------------------|:-------------------------------------------------------------------------------------------------------------------|
-| `version`                            | A mandatory key that contains the file-version. The currently supported version is `1`.                            |
-| [things](#things)                    | openHAB [Things]({{base}}/concepts/things.html)                                                                    |
-| [items](#items)                      | openHAB [Items]({{base}}/concepts/items.html)                                                                      |
-| [tags](#tags)                        | Custom Semantic Tags                                                                                               |
+| Key               | Object Type          |
+|:------------------|:---------------------|
+| [things](#things) | openHAB Things       |
+| [items](#items)   | openHAB Items        |
+| [tags](#tags)     | Custom Semantic Tags |
 
-The YAML files in general must follow the standard YAML syntax, with a few openHAB-specific features:
+::: tip Important!
+Every YAML configuration file must contain a `version` key which must be set to `1`.
+YAML files without a valid `version` key will be ignored.
+:::
 
-- Each YAML file must contain a `version` key which must be set to `1`.
-  YAML files without a valid `version` key will be ignored.
-- Comments are allowed, either on its own line, or at the end of the line of an existing element.
-- Blank lines are allowed.
-- Only unquoted `true` and `false` (case insensitive) are valid `boolean` values.
-  `ON`, `OFF`, `Yes`, `No`, `disable`, and `enable` are parsed as plain strings.
-  To specify `true` or `false` as a string, they must be enclosed in single or double quotes.
+Entities may be distributed across multiple files; however, each entity must be fully defined within a single file and uniquely identified across all loaded YAML files.
+For example, Item A can be defined in file1.yaml and Item B in file2.yaml, but Item A must not be defined again in file2.yaml.
+If duplicates exist, the definition from the first loaded file takes precedence.
 
-Notes about entities:
-
-- Entities may be distributed across multiple files; however, each entity must be fully defined within a single file and uniquely identified across all loaded YAML files.
-  For example, Item A can be defined in file1.yaml and Item B in file2.yaml, but Item A must not be defined again in file2.yaml.
-  If duplicates exist, the definition from the first loaded file takes precedence.
-- For convenience, YAML files placed in `$OPENHAB_CONF/items/`, `$OPENHAB_CONF/things/`, and `$OPENHAB_CONF/tags/` are also recognized and processed by openHAB.
-  Unlike the DSL files, YAML files in these directories are not limited to a specific object type—they can contain any supported entities (Things, Items, Tags, etc.).
-  For example, a file like `$OPENHAB_CONF/items/myitems.yaml` may define Things and Tags in addition to Items, or even exclusively contain other entities.
-  To avoid confusion and maintain clarity, it is recommended to place YAML files containing a mix of different entity types in the `$OPENHAB_CONF/yaml/` directory.
-
-### A Quick Example
+## A Quick Example
 
 ```yaml
-version: 1
+version: 1 # This is mandatory
 
-# All the sections below are optional and may appear in any order
+# All the top-level sections below are optional and may appear in any order
 
 tags:
   Equipment_Curtain:
@@ -133,7 +136,7 @@ Channels Section:
 | `itemDimension` | This may be used to further define a `Number` `itemType`.                                                                                                                            |
 | `label`         | Channel label.                                                                                                                                                                       |
 | `description`   | Channel description.                                                                                                                                                                 |
-| `config`        | A key-value or a key-array-of-values map of the channel's configuration. Refer to the Binding's documentation for details.                                                           |
+| `config`        | A map of the channel's configuration parameters. Each key may contain a single value or a list of values. Refer to the binding’s documentation for details.                          |
 
 Example:
 
@@ -300,22 +303,20 @@ items:
         function: "|open=ON;closed=OFF" # | is a YAML special character, so enclose it in quotes.
 ```
 
-> Note:
->
-> The last item-channel link in the example above requires some configurations,
-> so it needs to be defined with `channels:` instead of the short form `channel:`.
-> In this instance, it is configured to use a Profile,
-> specifically a MAP Profile.
-> The item-channel configuration keys and values depend on which profile is used, and
-> the details can be found in the corresponding profile's documentation.
-> For example, [MAP Profile]({{base}}/addons/transformations/map/#usage-as-a-profile) requires
-> a `function` parameter.
->
-> For more information on Profiles, see:
->
-> - [Item-Channel Link Profile]({{base}}/configuration/items.html#profiles)
-> - [Script Transformation Profile]({{base}}/configuration/transformations.html#script-transformation-profile)
-> - List of available [transfomation addons](https://www.openhab.org/addons/#transform), most of which support profiles
+::: tip Note:
+
+The last item-channel link in the example above requires some configurations, so it needs to be defined with `channels:` instead of the short form `channel:`.
+In this instance, it is configured to use a Profile, specifically a MAP Profile.
+The item-channel configuration keys and values depend on which profile is used, and the details can be found in the corresponding profile's documentation.
+For example, [MAP Profile]({{base}}/addons/transformations/map/#usage-as-a-profile) requires a `function` parameter.
+
+For more information on Profiles, see:
+
+- [Item-Channel Link Profile]({{base}}/configuration/items.html#profiles)
+- [Script Transformation Profile]({{base}}/configuration/transformations.html#script-transformation-profile)
+- List of available [transfomation addons](https://www.openhab.org/addons/#transform), most of which support profiles
+
+:::
 
 ### Tags
 
@@ -382,3 +383,10 @@ tags:
 In the example `Location_Indoor_Room_HomeCinemaRoom`, the semantic tag `HomeCinemaRoom` is nested under `Room`, which itself is a child of `Indoor`, which in turn belongs to the root tag `Location`.
 
 You can have multiple YAML files with different semantic tags but keep semantic tags dependent on each other in the same file.
+
+## Next Steps
+
+Once you're familiar with the core structure of YAML configuration, you can explore two important areas:
+
+- [**YAML Basics**](basics.md) — a focused introduction to standard YAML syntax used throughout these examples.
+- [**Advanced Features Overview**](advanced-features-overview.md) — how openHAB processes YAML files, expands enhanced features, and assembles the final configuration.

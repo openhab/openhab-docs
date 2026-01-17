@@ -109,7 +109,22 @@ module.exports = [
               ['configuration/blockly/rules-blockly-standard-ext', 'Standard Extensions'],
             ]
           },
-          'configuration/yaml',
+          { title: 'YAML Configuration',
+            children: [
+              ['configuration/yaml/', 'Core Structure'],
+              ['configuration/yaml/basics', 'YAML Basics'],
+              { title: 'Advanced Features',
+                children: [
+                  ['configuration/yaml/advanced-features-overview', 'Overview'],
+                  ['configuration/yaml/variables', 'Variables & Substitution'],
+                  ['configuration/yaml/include', 'Include Files'],
+                  ['configuration/yaml/packages', 'Packages'],
+                  ['configuration/yaml/anchors', 'YAML Anchors & Aliases'],
+                  ['configuration/yaml/merge-keys', 'Merge Keys']
+                ]
+              }
+            ]
+          },
         ]
       },
       'configuration/actions',
