@@ -39,6 +39,9 @@ server {
     listen                                    80;
     server_name                               mydomain_or_myip;
 
+    # Enable web sockets, e.g. used by the log viewver in the new OH4 GUI
+    proxy_http_version                        1.1;
+
     # Cross-Origin Resource Sharing
     add_header 'Access-Control-Allow-Origin' '*' always;
     add_header 'Access-Control-Allow_Credentials' 'true' always;
@@ -52,6 +55,8 @@ server {
         proxy_set_header X-Real-IP            $remote_addr;
         proxy_set_header X-Forwarded-For      $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto    $scheme;
+        proxy_set_header Upgrade              $http_upgrade;
+        proxy_set_header Connection           "Upgrade";
         proxy_read_timeout                    3600;
     }
 }
