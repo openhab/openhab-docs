@@ -77,11 +77,6 @@ The Device is a DIN rail mountable 1-channel smart switch with power measurement
       </parameter-group>
 
       <!-- PARAMETER DEFINITIONS -->
-      <parameter name="config_0_0" type="integer" groupName="configuration">
-        <label>0: </label>
-        <default>0</default>
-      </parameter>
-
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: SW (SW1) Switch type</label>
         <description><![CDATA[
@@ -114,32 +109,25 @@ This parameter determines if on/off status is saved and restored for load connec
         <default>0</default>
         <options>
           <option value="0">Device saves last on/off status and restores it after a power failure</option>
+          <option value="1">Device does not save on/off status and does not restore it after a pow</option>
         </options>
       </parameter>
 
       <parameter name="config_19_2" type="integer" groupName="configuration">
         <label>19: O (O1) Auto OFF with timer</label>
         <description><![CDATA[
-If the load O (O1) is ON, you can schedule it to turn OFF automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an ON command, either remotely (from the gateway or associated device) or lo<br /> <h1>Overview</h1><p><br /></p>
+If the load O (O1) is ON, you can schedule it to turn OFF automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an ON command, either remotely (from the gateway or associated device) or lo<br /> <h1>Overview</h1><p>0 = Auto OFF Disabled</p><p>1 - 32535 seconds (or milliseconds – see Parameter no. 25.</p>
         ]]></description>
         <default>0</default>
-        <options>
-          <option value="0">Auto OFF Disabled</option>
-          <option value="1">1 - 32535 seconds (or milliseconds – see Parameter no. 25.</option>
-        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_2" type="integer" groupName="configuration">
         <label>20: O (O1) Auto ON with timer</label>
         <description><![CDATA[
-If the load O (O1) is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an OFF command, either remotely (from the gateway or associated device) or l<br /> <h1>Overview</h1><p><br /></p>
+If the load O (O1) is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an OFF command, either remotely (from the gateway or associated device) or l<br /> <h1>Overview</h1><p>0 = Auto ON Disabled</p><p>1 - 32535 seconds (or milliseconds – see Parameter no. 25. Auto ON tim</p>
         ]]></description>
         <default>0</default>
-        <options>
-          <option value="0">Auto ON Disabled</option>
-          <option value="1">1 - 32535 seconds (or milliseconds – see Parameter no. 25. Auto ON tim</option>
-        </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -247,6 +235,15 @@ This parameter determines which alarm frames the Device should respond to and ho
           <option value="0">Don’t do Factory reset</option>
           <option value="1431655765">Do the Factory reset (hex 0x55555555)</option>
         </options>
+      </parameter>
+
+      <parameter name="config_121_0" type="integer" groupName="configuration">
+        <label>121: to be deleted</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

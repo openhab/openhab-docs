@@ -213,7 +213,6 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 0 |  |  |
 | 1 | SW (SW1) Switch type | This parameter defines how the Device should treat the switch (which type) connected to the SW (SW1) terminal. |
 | 2 | SW2 Switch type | This parameter defines how the Device should treat the switch (which type) connected to the SW2 terminal. |
 | 17 | Restore state of O (O1) after power failure | This parameter determines if on/off status is saved and restored for load connected to O (O1) after power failure. |
@@ -228,17 +227,7 @@ Detailed information on each parameter can be found in the sections below.
 | 93 | CO Alarm | This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification. |
 | 94 | Heat Alarm | This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification. |
 | 120 | Factory Reset | Reset to factory default settings and removed from the z-wave network |
-
-### Parameter 0: 
-
-
-
-Values in the range 0 to 0 may be set.
-
-The manufacturer defined default value is ```0```.
-
-This parameter has the configuration ID ```config_0_0``` and is of type ```INTEGER```.
-
+| 121 | to be deleted |  |
 
 ### Parameter 1: SW (SW1) Switch type
 
@@ -289,6 +278,7 @@ The following option values may be configured, in addition to values in the rang
 | Value  | Description |
 |--------|-------------|
 | 0 | Device saves last on/off status and restores it after a power failure |
+| 1 | Device does not save on/off status and does not restore it after a pow |
 
 The manufacturer defined default value is ```0``` (Device saves last on/off status and restores it after a power failure).
 
@@ -298,15 +288,12 @@ This parameter has the configuration ID ```config_17_1``` and is of type ```INTE
 ### Parameter 19: O (O1) Auto OFF with timer
 
 If the load O (O1) is ON, you can schedule it to turn OFF automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an ON command, either remotely (from the gateway or associated device) or lo
+0 = Auto OFF Disabled
 
-The following option values may be configured -:
+1 - 32535 seconds (or milliseconds – see Parameter no. 25.
+Values in the range 0 to 32535 may be set.
 
-| Value  | Description |
-|--------|-------------|
-| 0 | Auto OFF Disabled |
-| 1 | 1 - 32535 seconds (or milliseconds – see Parameter no. 25. |
-
-The manufacturer defined default value is ```0``` (Auto OFF Disabled).
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_19_2``` and is of type ```INTEGER```.
 
@@ -314,15 +301,12 @@ This parameter has the configuration ID ```config_19_2``` and is of type ```INTE
 ### Parameter 20: O (O1) Auto ON with timer
 
 If the load O (O1) is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an OFF command, either remotely (from the gateway or associated device) or l
+0 = Auto ON Disabled
 
-The following option values may be configured -:
+1 - 32535 seconds (or milliseconds – see Parameter no. 25. Auto ON tim
+Values in the range 0 to 32535 may be set.
 
-| Value  | Description |
-|--------|-------------|
-| 0 | Auto ON Disabled |
-| 1 | 1 - 32535 seconds (or milliseconds – see Parameter no. 25. Auto ON tim |
-
-The manufacturer defined default value is ```0``` (Auto ON Disabled).
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_20_2``` and is of type ```INTEGER```.
 
@@ -473,6 +457,17 @@ The following option values may be configured, in addition to values in the rang
 The manufacturer defined default value is ```0``` (Don’t do Factory reset).
 
 This parameter has the configuration ID ```config_120_4``` and is of type ```INTEGER```.
+
+
+### Parameter 121: to be deleted
+
+
+This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_121_0``` and is of type ```INTEGER```.
 
 
 ## Association Groups

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_zwn4017_00_000" listed="false">
+    <label>ZWN4017 UltraPro 800 Series Z-Wave On/Off Switch</label>
+    <description><![CDATA[
+UltraPro 800 Series Z-Wave On/Off Switch<br /> <h1>Overview</h1><p>Voice control – AMAZON ALEXA AND GOOGLE ASSISTANT COMPATIBLE; requires a Z-Wave certified hub from brands including SmartThings, Ring Alarm, Wink, ADT Pulse, ADT Command, Trane, Vivint, Nexia, Honeywell, HomeSeer, Ezlo and more</p><p>DIY design – QuickFit design improved components, reduces housing depth by 20% and eliminated heat tabs while color-coded flying leads offers worry-free wiring</p><p>Multi-switch capable – Works in single-pole or multi-switch configurations with up to four compatible add-on switches to maintain full functions of the smart device from all locations or one standard three-way switch for ON/OFF control</p><p>Universal compatibility – Wireless range up to 1,300ft. from the controller and take when paired as a Z-Wave Plus Long Range device to hubs supporting Z-Wave LR or connect as a Z-Wave Classic device for a range of 150ft. from the nearest device or hub</p><p>Personalization options – ETL safety certified, the smart switch features a customizable LED indicator with eight colors and four operation modes</p> <br /> <h2>Inclusion Information</h2><p>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</p><p>Once the controller is ready to add your device, press and release the top or bottom of the wireless smart switch (rocker).</p><p>Now you have complete control to turn your fixture ON/OFF according to groups, scenes, schedules and interactive automations programmed by your controller. If your Z-Wave certified controller features remote access, you can control your fixture from your mobile devices.</p> <br /> <h2>Exclusion Information</h2><p>Follow the instructions for your Z-Wave certified controller to exclude a device to the Z-Wave network.</p><p>Once the controller is ready to exclude your device, press and release the top or bottom of the wireless smart switch (rocker).</p><p><br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">ZWN4017</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4952:3534</property>
+      <property name="dbReference">1689</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
