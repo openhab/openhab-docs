@@ -49,28 +49,34 @@ Therefore, a template may contain references to variables that do not yet exist;
 
 :::
 
-## Using `!insert`
+## Syntax Options
 
 `!insert` expands a template at the point where it appears.
 It supports two forms:
 
 ### Short Form
 
-Use when no variables need to be passed:
-
 ```yaml
 message: !insert simple_greeting
 ```
 
-### Long Form (with variables)
+Use this when you don’t need to explicitly pass any variables.
 
-Use when the template requires parameters:
+### Long Form (supports variables)
 
 ```yaml
+# Block style (multi-line)
+message: !insert
+  template: greeting
+  vars:
+    name: "Jimmy"
+
+# Or flow style (single-line)
 message: !insert { template: greeting, vars: { name: "Jimmy" } }
 ```
 
 The `vars:` mapping is layered on top of the file’s current variables to form the evaluation context.
+In the long form, the `vars:` section is optional.
 
 ## How Template Evaluation Works
 

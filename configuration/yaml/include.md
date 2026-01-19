@@ -8,21 +8,21 @@ title: YAML Configuration - Include Files
 `!include` inserts the referenced file or structure exactly at the position where the include appears.
 
 openHAB supports including external YAML files to facilitate modular, reusable, and maintainable configurations.
-This is especially useful for templating, creating device [packages](packages.md), or separating concerns across multiple files.
+This is especially useful for modular reuse, creating device [packages](packages.md), or separating concerns across multiple files.
 
 [[toc]]
 
 ## Syntax Options
 
-### Simple Syntax
+### Short Form
 
 ```yaml
 keyname: !include filename.inc.yaml
 ```
 
-Use this when no variable overrides are needed.
+Use this when you don’t need to explicitly pass any variables.
 
-### Full Syntax
+### Long Form (supports variables)
 
 ```yaml
 # Block style (multi-line)
@@ -32,15 +32,16 @@ keyname: !include
     var1: value1
     var2: value2
 
-# Or inline style (single-line)
+# Or flow style (single-line)
 keyname: !include { file: filename.inc.yaml, vars: { var1: value1, var2: value2 } }
 ```
 
-In the full syntax, the `vars` section is optional.
+The `vars:` mapping is layered on top of the file’s current variables to form the evaluation context.
+In the long form, the `vars:` section is optional.
 
 ::: tip Passing Existing Variables to Included Files
 
-The `vars` section of an `!include` directive can contain literal values or references to **existing variables**.
+The `vars:` section of an `!include` directive can contain literal values or references to **existing variables**.
 
 Example:
 
