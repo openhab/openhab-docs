@@ -150,7 +150,7 @@ Entries you define directly under these sections can merge with package‑genera
 
 The following example uses `!insert`, but the same merge rules apply to packages sourced from `!include`.
 
-When a package is included, its contents are merged into the main YAML structure.
+When a package is expanded, its contents are merged into the main YAML structure.
 You may optionally customize the resulting structure by overriding, adding, or removing elements defined in the package.
 This is done by redefining the elements you want to customize in the main file, which then appear in the final top‑level section.
 
