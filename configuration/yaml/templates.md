@@ -8,14 +8,13 @@ title: YAML Configuration - Templates
 Templates let you define reusable blocks of YAML directly within the same file.
 They are stored under the top‑level `templates:` section and can be expanded using the `!insert` tag.
 
-Templates behave similarly to `!include`, with the main difference that they are defined locally rather than in external files.
-Everything else about how they are evaluated — including variable scoping and per‑invocation isolation — works the same way as `!include`.
+Templates behave similarly to `!include` in how they are evaluated — including variable scoping and per‑invocation isolation — but they are defined locally rather than in external files.
 
 [[toc]]
 
 ## What Templates Are
 
-A template is a named YAML node stored under the top-level `templates:` section.
+A template is a named YAML node stored under the top‑level `templates:` section.
 A template may contain **any YAML value**:
 
 - a mapping
@@ -88,8 +87,6 @@ Each `!insert` call is evaluated in its **own isolated context**:
 - The template body is evaluated using this combined set of variables.
 - The resulting value — scalar, list, or mapping — replaces the `!insert` node.
 
-This makes templates flexible and reusable.
-
 ### Example: Scalar Template
 
 ```yaml
@@ -153,7 +150,7 @@ Templates and includes share the same evaluation model:
   - variables provided through `vars:` for this specific invocation
 - Variable resolution inside the template uses this combined context.
 
-This makes template behavior predictable and consistent with `!include`.
+This section is intentionally mechanical — it explains *how* templates behave, not *when* to use them.
 
 ## Template Scope and Variable Resolution
 
@@ -172,10 +169,8 @@ Inside a template:
 
 ## Best Practices
 
-- Use templates for reusable blocks that belong logically to a single file.
-- Use `!include` for shared structures reused across multiple files.
 - Keep template names descriptive and consistent.
-- Prefer the long form when passing variables for clarity.
+- Prefer the block style when passing multiple variables for readability.
 - Use the `_generated` output to verify template expansion.
 
 ---

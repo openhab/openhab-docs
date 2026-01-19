@@ -6,7 +6,7 @@ title: YAML Configuration - Packages
 # Packages
 
 Packages provide a way to bundle multiple related YAML sections into a reusable, parameterized unit.
-Where `!include` inserts a fragment at the point it appears, a package loads a complete file containing full top‑level sections and merges those sections into the top level of the main configuration.
+Unlike fragment‑level insertion, a package expands into full top‑level sections (such as `things:` or `items:`), sourced from either an external file or a same‑file template, and merges them into the current configuration.
 
 [[toc]]
 
@@ -21,15 +21,14 @@ Where `!include` inserts a fragment at the point it appears, a package loads a c
 
 ## Package Syntax and Structure
 
-Packages are declared in the main YAML file under the top‑level `packages:` section:
+Packages are declared in the main YAML file under the top‑level `packages:` section.
+Each entry defines a package ID and the source from which the package content is obtained.
 
 ```yaml
 packages:
-  <package_id>: !include
-    file: <path/to/package_file>
-    vars:
-      var1: value1
-      var2: value2
+  <package_id>: <package_source>
+  <another_package_id>: <package_source>
+  ...
 ```
 
 ### Key Components
@@ -37,33 +36,34 @@ packages:
 - **Package ID:**
   A unique identifier for the package (for example, `package1`).
   It may include spaces.
-  The special variable `${package_id}` resolves to this key inside the included package file.
+  The special variable `${package_id}` resolves to this key inside the package content.
 
-- **`!include` Directive**:
-  Points to the reusable package file and configures its parameters.
+- **Package Source:**
+  A package can be created from either of the following sources:
 
-  - **`file` Path:**
-    The path to the package file.
-    It is recommended to use an extension like `.inc.yaml` to prevent fragments from being loaded as standalone main configurations.
+  - **`!include` (external file):**
+    Loads a separate YAML file and applies the package’s variable context to it.
+    See the [`!include` syntax options](include.md#syntax-options).
 
-  - **`vars` Values:**
-    An optional mapping used to parameterize the package.
+  - **`!insert` (same‑file template):**
+    Expands a template defined under the main file’s `templates:` section.
+    See the [`!insert` syntax options](templates.md#syntax-options).
 
-  See [!include](include.md) for more details on how the include directive works.
+  Both forms support parameterization through `vars:` and participate fully in package merging.
 
-## Package File Contents
+## Package Source Contents
 
 - **Top‑Level Sections:**
-  Package files can contain any combination of top‑level keys such as `things:` and `items:`.
+  Package sources can contain any combination of top‑level keys such as `things:` and `items:`.
 
 - **Restrictions:**
-  Package files **must not** contain unique global top‑level keys such as `version:`.
+  Package sources **must not** contain unique global top‑level keys such as `version:`.
 
 - **Uniqueness:**
-  Because package files can be included multiple times, use variable substitutions such as `${package_id}` for entity UIDs to avoid collisions.
+  Because package sources can be referenced multiple times, use variable substitutions such as `${package_id}` and unique `vars:` variables for entity UIDs in each invocation to avoid collisions.
 
 - **Nesting:**
-  A package file can itself include other files.
+  A package source can itself include other files or templates.
 
 ## Package Example
 
@@ -143,45 +143,51 @@ items:
 
 ## Merge Behavior
 
+### Final Top-Level Sections
+
+A **final top-level section** is the fully expanded `things:`, `items:`, or other top‑level section of the configuration that openHAB receives after all packages, templates, includes, and merges have been applied.
+Entries you define directly under these sections can merge with package‑generated entries when their identifiers match; otherwise, they remain independent.
+
+The following example uses `!insert`, but the same merge rules apply to packages sourced from `!include`.
+
 When a package is included, its contents are merged into the main YAML structure.
 You may optionally customize the resulting structure by overriding, adding, or removing elements defined in the package.
-This is done by redefining the elements you want to customize in your main file.
+This is done by redefining the elements you want to customize in the main file, which then appear in the final top‑level section.
 
 ### Default Merge Behavior
 
-`main.yaml`:
+Source YAML File:
 
 ```yaml
+templates:
+  number_item:
+    items: !sub
+      ${package_id}_Item:
+        type: Number
+        label: Package Label
+        tags: [Measurement]
+        metadata:
+          stateDescription:
+            config:
+              min: 1
+              pattern: '%.3f'
+          widget:
+            value: oh-card
+
 packages:
-  Number: !include pkg/number.inc.yaml
+  Number: !insert number_item
 
-# Custom overrides
+# This is the final top‑level `items:` section of the configuration
+# The packages will merge into this section
 items:
-  Number_Item:        # Redefine an item from the package
-    label: Power Draw # Scalar override
-    dimension: Power  # Add a new key
-    tags: [Power]     # List: merged by default
-    metadata:         # Map: merged by default
-      stateDescription:
-        config:
-          max: 10
-```
-
-`pkg/number.inc.yaml`:
-
-```yaml
-items: !sub
-  ${package_id}_Item:
-    type: Number
-    label: Package Label
-    tags: [Measurement]
+  Number_Item:
+    label: Power Draw
+    dimension: Power
+    tags: [Power]
     metadata:
       stateDescription:
         config:
-          min: 1
-          pattern: '%.3f'
-      widget:
-        value: oh-card
+          max: 10
 ```
 
 Result:
@@ -207,21 +213,18 @@ items:
 
 The way keys interact depends on their data type:
 
-| Data Type | Behavior  | Description                                                                                                                                                                                |
-|:----------|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Scalar    | Overwrite | If the main file defines a scalar value (string, number, or boolean) at a specific path in the YAML structure, that value replaces the scalar defined at the same path inside the package. |
-| Map       | Merge     | Key‑value objects are merged key by key, recursively.                                                                                                                                      |
-| List      | Merge     | Arrays are concatenated together.                                                                                                                                                          |
+| Data Type | Behavior  | Description                                                                                                                                                                       |
+|-----------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Scalar    | Overwrite | If the [final top‑level section](#final-top-level-sections) defines a scalar value at a specific path, that value replaces the scalar defined at the same path inside the package. |
+| Map       | Merge     | Key‑value objects are merged key by key, recursively.                                                                                                                             |
+| List      | Merge     | Arrays are concatenated together.                                                                                                                                                 |
 
 #### How Package Merging Differs from YAML Merge Keys
 
-Mappings from packages are merged **recursively** with the corresponding mappings in the main file.
-This constrasts with standard YAML [Merge Keys](merge-keys.md), which perform only **shallow** merges.
+Mappings from packages are merged **recursively** with the corresponding mappings in the [final top‑level section](#final-top-level-sections) of the configuration.
+This contrasts with standard YAML [Merge Keys](merge-keys.md), which perform only **shallow** merges.
 
 **Merge Key (shallow merge):**
-
-Normally, merge keys are used together with an alias.
-In this example, the merge key is shown directly with a mapping to make the merge behavior easier to see.
 
 ```yaml
 # merge key:
@@ -348,8 +351,8 @@ items:
 
 ::: tip Usage Notes
 
-- `!replace` and `!remove` are only valid in the **main YAML file**.
-- They are ignored if used inside a package file.
+- `!replace` and `!remove` are only valid in the top-level of the **main YAML file**.
+- They are ignored if used inside a package source.
 - `!remove` removes the entire key; it cannot remove individual list items.
 - Use `!replace` to prune unwanted inherited map keys or list items.
 
@@ -358,9 +361,9 @@ items:
 ## Strategic Use of Package IDs
 
 Choose a **Package ID** that can also serve as a Thing UID fragment, Item name, or similar identifier.
-This avoids defining extra variables in your `!include` call and lets you derive some or all related identifiers directly from `${package_id}` inside the package file.
+This avoids defining extra variables in your package source and lets you derive related identifiers directly from `${package_id}`.
 
-You can override `${package_id}` in the `vars:` block of the `!include` statement if needed.
+You can override `${package_id}` in the `vars:` block if needed.
 
 **Example:**
 
@@ -372,7 +375,7 @@ packages:
 ```
 
 ```yaml
-# light.inc.yaml package file
+# light.inc.yaml package source
 variables: !sub
   id: ${package_id|lower|replace('_', '-')}
   thing_uid: "mqtt:topic:${id}"

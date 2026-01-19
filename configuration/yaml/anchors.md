@@ -5,7 +5,7 @@ title: YAML Configuration - Anchors & Aliases
 
 # Anchors & Aliases
 
-Anchors and aliases provide efficient, in-file content reuse to reduce repetition without the overhead of external include files or packages.
+Anchors and aliases provide efficient, in‑file content reuse to reduce repetition without the overhead of external include files or packages.
 
 [[toc]]
 
@@ -17,7 +17,8 @@ YAML utilizes two primary symbols to manage reusable content:
 - **Alias (`*name`):** References a previously anchored node and injects its content at the current location.
 
 ::: tip Scope Note:
-Anchors and aliases are **file‑local**. An anchor defined in an include file cannot be referenced in the main file, and vice versa.
+Anchors and aliases are **file‑local**.
+An anchor defined in an include file cannot be referenced in the main file, and vice versa.
 :::
 
 ### Using Hidden Keys for Anchors
@@ -51,21 +52,17 @@ foo: *BAR
 
 ## When to Use Anchors
 
-Anchors and aliases are ideal when you want to reuse structural blocks **within a single file** without introducing external includes or packages. They work best for:
+Anchors and aliases are most useful when reusing structural blocks **within the same file**.
+They work well for:
 
 - repeating common fields across many entries
 - sharing channel or configuration structures
 - keeping small reusable fragments close to where they are used
 
-## Strategic Usage
+Anchors are a YAML‑native mechanism.
+They can participate in variable substitution, but they do not support cross‑file reuse or template‑style evaluation.
 
-| Feature             | Best For...                                                       |
-|:--------------------|:------------------------------------------------------------------|
-| **Anchors/Aliases** | Reusing structural nodes multiple times within a **single file**. |
-| **Include Files**   | Configurations or logic shared across **multiple files**.         |
-| **Variables**       | Dynamic text replacement (scalars) rather than structural blocks. |
-
-### Best Practices
+## Best Practices
 
 - **Naming:** Use `UPPER_CASE` for anchors to distinguish them from standard keys.
-- **Standardization:** Use anchors to enforce consistent structure across any repeated YAML blocks within a file.
+- **Standardization:** Use anchors to enforce consistent structure across repeated YAML blocks within a file.

@@ -15,14 +15,14 @@ These capabilities work together during a preprocessing stage that assembles the
 openHAB adds several enhancements on top of standard YAML.
 Each feature solves a different kind of reuse or composition problem.
 
-| Feature                                  | Purpose                                                   | Typical Use                                                            |
-|------------------------------------------|-----------------------------------------------------------|------------------------------------------------------------------------|
-| **Variables & Substitution (`!sub`)**    | Insert dynamic values or evaluate expressions             | Build labels, topics, IDs, or computed values                          |
-| **Include (`!include`)**                 | Insert the contents of another file                       | Reuse YAML across files; parameterize reusable blocks                  |
-| **Templates (`!insert`)**                | Reuse YAML defined within the same file                   | Parameterized blocks local to a file; reusable channel/item fragments  |
-| **Packages**                             | Bundle multiple top‑level sections into one reusable unit | Define reusable device structures containing things, items, metadata   |
-| **Anchors & Aliases (`&name`, `*name`)** | Define small, reusable YAML fragments                     | Static defaults, shared fields                                         |
-| **Merge Keys (`<<:`)**                   | Combine mappings from multiple sources                    | Layer defaults, override fields, compose structures                    |
+| Feature                                  | Purpose                                                   | Typical Use                                                                                                    |
+|------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| **Variables & Substitution (`!sub`)**    | Insert dynamic values or evaluate expressions             | Build labels, topics, IDs, or computed values                                                                  |
+| **Include (`!include`)**                 | Insert the contents of another file                       | Reuse YAML across files; parameterize reusable blocks                                                          |
+| **Templates (`!insert`)**                | Reuse YAML defined within the same file                   | Parameterized blocks local to a file; reusable channel/item fragments                                          |
+| **Packages**                             | Bundle multiple top‑level sections into one reusable unit | Define reusable device structures containing things, items, metadata; sourced from external files or templates |
+| **Anchors & Aliases (`&name`, `*name`)** | Define small, reusable YAML fragments                     | Static defaults, shared fields                                                                                 |
+| **Merge Keys (`<<:`)**                   | Combine mappings from multiple sources                    | Layer defaults, override fields, compose structures                                                            |
 
 You can learn more about each feature on its dedicated page:
 
@@ -41,22 +41,26 @@ Before openHAB loads your YAML configuration, it performs a **preprocessing pass
 
 During preprocessing, openHAB performs these steps:
 
-- substitutes variables (`!sub`)
-- expands templates (`!insert`)
-- loads and integrates includes (`!include`)
-- loads anchors and resolves aliases
-- applies merge keys (`<<:`)
-- loads and integrates packages
+During preprocessing, openHAB performs these steps:
+
+1. YAML parsing
+1. Variable substitution (`!sub`)
+1. Template expansion (`!insert`)
+1. Include loading (`!include`)
+1. Package expansion
+1. Recursive merging
+1. Hidden key removal
 
 The result is a complete YAML structure with:
 
 - all variables resolved
-- all includes inserted
+- all templates and includes expanded
 - all anchors and merges applied
 - all packages integrated
 - all hidden keys removed
 
 This final expanded document is what openHAB interprets as Things, Items, Tags, and other configuration elements as defined by the [Core Structure](index.md).
+It represents the fully resolved top‑level sections (`things:`, `items:`, etc.) after all preprocessing is complete.
 
 Understanding preprocessing is essential when designing reusable templates or debugging unexpected behavior.
 
