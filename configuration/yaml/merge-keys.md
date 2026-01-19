@@ -121,6 +121,14 @@ things:
 
 This is especially useful in package files, where you can parameterize which channels a Thing includes and which Items are created.
 
+::: tip Hints:
+
+- Place the pattern directly after `!sub` without quotes.
+- The result of the substitution has to be a map, since it gets merged into the parent map.
+- If you use `!sub` inside an array for a merge key, make sure the array uses block style.
+
+:::
+
 ## Merge Rules
 
 - Only mappings can be merged.
