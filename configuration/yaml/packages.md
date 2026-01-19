@@ -148,7 +148,11 @@ items:
 A **final top-level section** is the fully expanded `things:`, `items:`, or other top‑level section of the configuration that openHAB receives after all packages, templates, includes, and merges have been applied.
 Entries you define directly under these sections can merge with package‑generated entries when their identifiers match; otherwise, they remain independent.
 
+::: tip Note
+
 The following example uses `!insert`, but the same merge rules apply to packages sourced from `!include`.
+
+:::
 
 When a package is expanded, its contents are merged into the main YAML structure.
 You may optionally customize the resulting structure by overriding, adding, or removing elements defined in the package.
