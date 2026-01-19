@@ -134,9 +134,12 @@ you can update the individual bundle to get the fix immediately without waiting 
 Bundles can either be built locally (through Maven) or downloaded directly from the [CI build server](https://ci.openhab.org) or from our [JFrog Artifactory](https://openhab.jfrog.io):
 
 1. Depending on the openHAB version, the following sources are available:
-   1. openHAB stable release:
+   1. Current openHAB stable release:
+      - Add-ons: [Add-ons Artifactory](https://openhab.jfrog.io/ui/native/sandbox-release/org/openhab/addons/bundles/)
+      - UIs (Main UI, Basic UI): [WebUI Artifactory](https://openhab.jfrog.io/ui/native/sandbox-release/org/openhab/ui/bundles/)
+   1. Previous openHAB stable release:
       - Add-ons: [Add-ons Artifactory](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/addons/bundles/)
-      - UIs (Main UI, Basic UI): [WebUI Artifactory](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/ui/bundles/)
+      - UIs (Main UI, Basic UI): [WebUI Artifactory](https://openhab.jfrog.io/ui/native/sandbox-snapshot/org/openhab/ui/bundles/) 
    1. Current openHAB milestone or snapshot:
       - Add-ons: [Add-ons Integration Build](https://ci.openhab.org/job/openHAB-Addons/lastSuccessfulBuild/artifact/bundles/)
       - UIs (Main UI, Basic UI): [WebUI Integration Build](https://ci.openhab.org/job/openHAB-WebUI/lastSuccessfulBuild/artifact/bundles/)
