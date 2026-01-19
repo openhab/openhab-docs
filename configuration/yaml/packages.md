@@ -75,19 +75,19 @@ variables:
 
 packages:
   livingroom-light: !include
-    file: templates/mqtt-light.inc.yaml
+    file: package/mqtt-light.inc.yaml
     vars:
       name: Living_Room_Light
       label: Living Room Light
 
   bedroom-light: !include
-    file: templates/mqtt-light.inc.yaml
+    file: package/mqtt-light.inc.yaml
     vars:
       name: Bed_Room_Light
       label: Bed Room Light
 ```
 
-`templates/mqtt-light.inc.yaml`:
+`package/mqtt-light.inc.yaml`:
 
 ```yaml
 things: !sub

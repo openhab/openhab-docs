@@ -61,7 +61,7 @@ This means that the top-level keys in the include file will become sub-keys of t
 
 ## Variable Resolution Order
 
-Understanding how variables interact across files is important when using includes, especially when templates define their own defaults.
+Understanding how variables interact across files is important when using includes, especially when include files define their own defaults.
 
 When include files are involved, variables can originate from multiple sources.
 Their values are resolved according to the following order (highest priority first):
@@ -72,8 +72,8 @@ Their values are resolved according to the following order (highest priority fir
 
 Variables provided in the `vars` section of an `!include` directive are visible only within the included file, but they override both global and local variables.
 
-Local variables, defined inside an include file, can act as default values when they are not provided in the `!include` directive.
-This enables included files to act as parameterized templates that can be reused with different values.
+Local variables defined inside an include file can act as default values when they are not provided in the `!include` directive.
+This allows include files to be reused with different parameters while keeping sensible defaults inside the file itself.
 
 The following example demonstrates how the variable resolution order works in practice.
 

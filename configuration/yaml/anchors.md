@@ -55,7 +55,7 @@ Anchors and aliases are ideal when you want to reuse structural blocks **within 
 
 - repeating common fields across many entries
 - sharing channel or configuration structures
-- keeping templates close to where they are used
+- keeping small reusable fragments close to where they are used
 
 ## Strategic Usage
 

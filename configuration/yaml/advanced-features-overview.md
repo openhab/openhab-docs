@@ -18,15 +18,17 @@ Each feature solves a different kind of reuse or composition problem.
 | Feature                                  | Purpose                                                   | Typical Use                                                            |
 |------------------------------------------|-----------------------------------------------------------|------------------------------------------------------------------------|
 | **Variables & Substitution (`!sub`)**    | Insert dynamic values or evaluate expressions             | Build labels, topics, IDs, or computed values                          |
-| **Include (`!include`)**                 | Insert the contents of another file                       | Reuse templates across files; parameterize blocks                      |
-| **Packages**                             | Bundle multiple top‑level sections into one reusable unit | Create a device template which contains its thing(s) and related items |
-| **Anchors & Aliases (`&name`, `*name`)** | Define small, reusable snippets                           | Static templates, defaults                                             |
+| **Include (`!include`)**                 | Insert the contents of another file                       | Reuse YAML across files; parameterize reusable blocks                  |
+| **Templates (`!insert`)**                | Reuse YAML defined within the same file                   | Parameterized blocks local to a file; reusable channel/item fragments  |
+| **Packages**                             | Bundle multiple top‑level sections into one reusable unit | Define reusable device structures containing things, items, metadata   |
+| **Anchors & Aliases (`&name`, `*name`)** | Define small, reusable YAML fragments                     | Static defaults, shared fields                                         |
 | **Merge Keys (`<<:`)**                   | Combine mappings from multiple sources                    | Layer defaults, override fields, compose structures                    |
 
 You can learn more about each feature on its dedicated page:
 
 - [Variables & Substitution](variables.md)
 - [Include](include.md)
+- [Templates](templates.md)
 - [Packages](packages.md)
 - [Anchors & Aliases](anchors.md)
 - [Merge Keys](merge-keys.md)
@@ -40,6 +42,7 @@ Before openHAB loads your YAML configuration, it performs a **preprocessing pass
 During preprocessing, openHAB performs these steps:
 
 - substitutes variables (`!sub`)
+- expands templates (`!insert`)
 - loads and integrates includes (`!include`)
 - loads anchors and resolves aliases
 - applies merge keys (`<<:`)

@@ -20,7 +20,51 @@ They promote reusability and avoid repetition by letting you define common mappi
 A merge key takes one or more source mappings — whether written inline, referenced through an anchor, or loaded from another file — and merges their key–value pairs into the current mapping.
 The merged values behave exactly as if they were written inline, while still allowing local fields to add to or override the merged content.
 
-## Using Merge Keys with Anchors
+## Merge Rules
+
+- Only mappings can be merged.
+- Merge keys may appear multiple times or as a list.
+- Merge order matters: keys from earlier mappings override keys from later ones.
+- Local keys always override merged keys, even when defined after a merge key.
+- Merges are shallow: nested mappings are replaced, not combined.
+
+### Example: Multiple Merges and Precedence
+
+```yaml
+.defaults: &DEFAULTS
+  icon: default
+  autoupdate: false
+
+.metadata: &LIGHTS
+  tags: [Light]
+  icon: light
+
+items:
+  Lamp:
+    <<: [*LIGHTS, *DEFAULTS]
+    label: Desk Lamp
+```
+
+Result:
+
+```yaml
+items:
+  Lamp:
+    label: Desk Lamp
+    icon: light        # from LIGHTS (earlier mapping wins)
+    autoupdate: false
+    tags: [Light]
+```
+
+## Limitations
+
+- Merge keys only merge mappings, not lists.
+- Merge keys cannot modify scalar values.
+- Merge keys cannot be used inside sequences unless the sequence elements are mappings.
+
+## Integrating with Other Features
+
+### Anchors
 
 [Anchors](anchors.md) define reusable structures whose content can be inserted into the current mapping via an alias.
 Merge keys then combine that anchored content with any local fields in the mapping.
@@ -41,7 +85,7 @@ items:
 
 See also: [Using Hidden Keys for Anchors](anchors.md#using-hidden-keys-for-anchors)
 
-## Using Merge Keys with `!include`
+### `!include`
 
 [`!include`](include.md) loads the contents of another file so it can be inserted into the current mapping.
 Merge keys then combine the included content with any local fields in the mapping.
@@ -77,7 +121,37 @@ things:
       <<: !include { file: light-color.inc.yaml, vars: { id: living-room-light } }
 ```
 
-## Using Merge Keys with `!sub`
+### Templates (`!insert`)
+
+`!insert` inserts the contents of an in‑file [template](templates.md) into the current mapping.
+Merge keys then combine the template’s fields with any local fields in that mapping.
+
+- Unlike anchors or variable substitutions, templates can be parameterized when used through a merge key.
+- Unlike `!include`, templates are defined in the same file, reducing the number of files to manage. They cannot, however, be shared across different files.
+
+```yaml
+templates:
+  common_channels:
+    power:
+      type: switch
+      stateTopic: !sub ${id}/power
+    availability:
+      type: contact
+      stateTopic: !sub ${id}/availability
+
+  color_channel:
+    color:
+      type: color
+      stateTopic: !sub ${id}/color
+
+things:
+  mqtt:topic:living-room-light:
+    channels:
+      <<: !insert { template: common_channels, vars: { id: living-room-light } }
+      <<: !insert { template: color_channel, vars: { id: living-room-light } }
+```
+
+### Substitution (`!sub`)
 
 In addition to anchors and included files, merge keys can also combine content produced dynamically by a `!sub` expression.
 The key advantage is that, when used with a [conditional expression](variables.md#conditional-expressions), a `!sub` expression can resolve to **either a mapping or an empty map**.
@@ -129,42 +203,6 @@ This is especially useful in package files, where you can parameterize which cha
 
 :::
 
-## Merge Rules
-
-- Only mappings can be merged.
-- Merge keys may appear multiple times or as a list.
-- Merge order matters: keys from earlier mappings override keys from later ones.
-- Local keys always override merged keys, even when defined after a merge key.
-- Merges are shallow: nested mappings are replaced, not combined.
-
-### Example: Multiple Merges and Precedence
-
-```yaml
-.defaults: &DEFAULTS
-  icon: default
-  autoupdate: false
-
-.metadata: &LIGHTS
-  tags: [Light]
-  icon: light
-
-items:
-  Lamp:
-    <<: [*LIGHTS, *DEFAULTS]
-    label: Desk Lamp
-```
-
-Result:
-
-```yaml
-items:
-  Lamp:
-    label: Desk Lamp
-    icon: light        # from LIGHTS (earlier mapping wins)
-    autoupdate: false
-    tags: [Light]
-```
-
 ## Debugging Merge Behavior
 
 Use **Output & Debugging** to inspect the fully resolved YAML.
@@ -175,12 +213,6 @@ See the [Output & Debugging](output-debugging.md) page for details on how to ins
 
 For details on how variables are resolved and how substitution interacts with YAML structures, see
 [Variables & Substitution — Interpolation and Inserted Content](variables.md#interpolation-and-inserted-content).
-
-## Limitations
-
-- Merge keys only merge mappings, not lists.
-- Merge keys cannot modify scalar values.
-- Merge keys cannot be used inside sequences unless the sequence elements are mappings.
 
 ## Best Practices
 

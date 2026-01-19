@@ -118,6 +118,7 @@ module.exports = [
                   ['configuration/yaml/advanced-features-overview', 'Overview'],
                   ['configuration/yaml/variables', 'Variables & Substitution'],
                   ['configuration/yaml/include', 'Include Files'],
+                  ['configuration/yaml/templates', 'Templates'],
                   ['configuration/yaml/packages', 'Packages'],
                   ['configuration/yaml/anchors', 'YAML Anchors & Aliases'],
                   ['configuration/yaml/merge-keys', 'Merge Keys']
