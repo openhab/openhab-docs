@@ -213,11 +213,11 @@ items:
 
 The way keys interact depends on their data type:
 
-| Data Type | Behavior  | Description                                                                                                                                                                       |
-|-----------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Data Type | Behavior  | Description                                                                                                                                                                        |
+|-----------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Scalar    | Overwrite | If the [final top‑level section](#final-top-level-sections) defines a scalar value at a specific path, that value replaces the scalar defined at the same path inside the package. |
-| Map       | Merge     | Key‑value objects are merged key by key, recursively.                                                                                                                             |
-| List      | Merge     | Arrays are concatenated together.                                                                                                                                                 |
+| Map       | Merge     | Key‑value objects are merged key by key, recursively.                                                                                                                              |
+| List      | Merge     | Arrays are concatenated together.                                                                                                                                                  |
 
 #### How Package Merging Differs from YAML Merge Keys
 

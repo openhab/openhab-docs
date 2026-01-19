@@ -150,7 +150,7 @@ Templates and includes share the same evaluation model:
   - variables provided through `vars:` for this specific invocation
 - Variable resolution inside the template uses this combined context.
 
-This section is intentionally mechanical — it explains *how* templates behave, not *when* to use them.
+This section is intentionally mechanical — it explains _how_ templates behave, not _when_ to use them.
 
 ## Template Scope and Variable Resolution
 
