@@ -153,47 +153,67 @@ Some commonly used filters are listed below:
 
 #### Text transformation
 
-| Filter     | Description                   |
-|------------|-------------------------------|
-| capitalize | Capitalize a value.           |
-| title      | Return a titlecased version.  |
-| lower      | Convert a value to lowercase. |
-| upper      | Convert a value to uppercase. |
-| replace    | Replace a substring.          |
+| Filter       | Description                                                                                                                             |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| `capitalize` | Capitalize a value.                                                                                                                     |
+| `title`      | Return a titlecased version.                                                                                                            |
+| `lower`      | Convert a value to lowercase.                                                                                                           |
+| `upper`      | Convert a value to uppercase.                                                                                                           |
+| `replace`    | Replace a substring.                                                                                                                    |
+| `label`      | Convert an identifier into a human‑friendly label. [More details](#label-openhab-custom-filter). _(Custom filter provided by openHAB.)_ |
 
 #### Formatting
 
-| Filter | Description                                   |
-|--------|-----------------------------------------------|
-| format | Apply values to a printf-style format string. |
-| round  | Round a number to an optional precision.      |
-| int    | Convert a value into an integer.              |
+| Filter   | Description                                   |
+|----------|-----------------------------------------------|
+| `format` | Apply values to a printf-style format string. |
+| `round`  | Round a number to an optional precision.      |
+| `int`    | Convert a value into an integer.              |
 
 #### Collection helpers
 
-| Filter | Description                            |
-|--------|----------------------------------------|
-| first  | Return the first item of a list.       |
-| length | Return the length of a list or string. |
+| Filter   | Description                            |
+|----------|----------------------------------------|
+| `first`  | Return the first item of a list.       |
+| `length` | Return the length of a list or string. |
 
 #### Fallbacks
 
-| Filter  | Description                                      |
-|---------|--------------------------------------------------|
-| default | Return a default value if the variable is empty. |
+| Filter    | Description                                      |
+|-----------|--------------------------------------------------|
+| `default` | Return a default value if the variable is empty. |
 
-For a complete list, see the Jinja documentation: [Jinja Filters](https://jinja.palletsprojects.com/en/stable/templates/#builtin-filters).
+---
 
-Expressions and filters can be combined freely, allowing you to compute values, transform text, or derive new strings dynamically.
+#### `label` (openHAB custom filter)
 
-**Examples:**
+Formats an identifier into a human‑friendly label.
 
-- `mqtt.username|upper` — uppercases the username
-- `rooms|first|capitalize` — takes the first room and capitalizes it
-- `"%s/%s"|format(city, country)` — formats a string with two variables
-- `rooms|length` — returns the number of rooms
-- `device_name|replace(" ", "_")|lower` — replaces spaces and lowercases the result
-- `value|default("unknown", true)` — uses `"unknown"` if `value` is empty
+##### Behavior
+
+- Splits words on whitespace, hyphens (`-`), underscores (`_`), and repeated separators.
+- Splits camelCase only when an uppercase letter is followed by a lowercase letter
+  (`fooBar` → `Foo Bar`, `openHab` → `Open Hab`, but `openHAB` → `OpenHAB`).
+- Collapses multiple spaces and title‑cases the resulting words.
+- Leaves fully uppercase inputs unchanged (`FOOBAR` → `FOOBAR`).
+
+##### Why this exists
+
+Package IDs, item names, and thing UIDs are often written in a specific format.
+The `label` filter turns them into clean, human‑friendly labels without requiring a separate value.
+
+##### Examples
+
+```sh
+${ "foo bar" | label } → "Foo Bar"
+${ "fooBar" | label } → "Foo Bar"
+${ "foo-bar_baz" | label } → "Foo Bar Baz"
+${ "multiple---separators___here" | label } → "Multiple Separators Here"
+${ "openHAB" | label } → "OpenHAB"
+```
+
+For a complete list of built-in filters, see the Jinja documentation:
+[Jinja Filters](https://jinja.palletsprojects.com/en/stable/templates/#builtin-filters).
 
 ### Conditional Expressions
 
