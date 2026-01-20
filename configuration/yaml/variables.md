@@ -192,8 +192,8 @@ Formats an identifier into a human‑friendly label.
 ##### Behavior
 
 - Splits words on whitespace, hyphens (`-`), underscores (`_`), and repeated separators.
-- Splits camelCase only when an uppercase letter is followed by a lowercase letter
-  (`fooBar` → `Foo Bar`, `openHab` → `Open Hab`, but `openHAB` → `OpenHAB`).
+- Splits camelCase and PascalCase
+  (`powerGrid` → `Power Grid`, `LivingRoom` → `Living Room`, `StatusLED` → `Status LED`).
 - Collapses multiple spaces and title‑cases the resulting words.
 - Leaves fully uppercase inputs unchanged (`FOOBAR` → `FOOBAR`).
 
@@ -209,7 +209,7 @@ ${ "foo bar" | label } → "Foo Bar"
 ${ "fooBar" | label } → "Foo Bar"
 ${ "foo-bar_baz" | label } → "Foo Bar Baz"
 ${ "multiple---separators___here" | label } → "Multiple Separators Here"
-${ "openHAB" | label } → "OpenHAB"
+${ "StatusLED" | label } → "Status LED"
 ```
 
 For a complete list of built-in filters, see the Jinja documentation:
