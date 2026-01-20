@@ -75,6 +75,7 @@ module.exports = [
       'concepts/discovery',
       'concepts/audio',
       'concepts/units-of-measurement',
+      'concepts/profiles',
       'concepts/rules',
     ]
   },
