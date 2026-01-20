@@ -21,7 +21,7 @@ When you choose to install an add-on, openHAB will download it from the internet
 If you plan on disconnecting your machine from the internet, then you will want to also install the add-ons package.
 
 ```shell
-# pkg_add openbsd-addons
+# pkg_add openhab-addons
 ```
 
 #### Start openHAB automatically
