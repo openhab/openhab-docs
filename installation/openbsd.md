@@ -30,7 +30,7 @@ If everything went well, you can start openHAB and register it to be automatical
 
 ```shell
 # rcctl start openhab
-# rcctl status openhab
+# rcctl check openhab
 # rcctl enable openhab
 ```
 
