@@ -183,22 +183,24 @@ variables:
     color:
       type: color
 
-  empty_map: {}
-
 things:
   mqtt:topic:light:
     channels:
       power:
         type: switch
-      <<: !sub ${color_channel if has_color else empty_map}
+      # `{}` is an empty map; returning it makes the merge a no‑op
+      <<: !sub ${color_channel if has_color else {}}
 ```
 
 This is especially useful in package files, where you can parameterize which channels a Thing includes and which Items are created.
 
 ::: tip Hints:
 
-- Place the pattern directly after `!sub` without quotes.
-- The result of the substitution has to be a map, since it gets merged into the parent map.
+- Merge keys only merge mappings, so `!sub` must return a map.
+- Leave the pattern unquoted; quoting it causes `!sub` to return the value as a literal string.
+- Avoid compound patterns (`${foo}${bar}`, `x${foo}`, etc.).
+  These are interpreted as literal strings and cannot be merged.
+- Merging an empty map is a no-op, effectively the same as omitting the merge key.
 - If you use `!sub` inside an array for a merge key, make sure the array uses block style.
 
 :::
