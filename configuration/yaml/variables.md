@@ -112,6 +112,8 @@ The syntax of variable references:
 
 An expression can also include string, arithmetic, and boolean operations.
 
+> **Note:** Referencing an undefined variable resolves to an empty string and emits a warning.
+
 **Examples:**
 
 - `"Hello " ~ mqtt.username` — concatenates strings using Jinja's `~` operator
@@ -179,9 +181,12 @@ Some commonly used filters are listed below:
 
 #### Fallbacks
 
-| Filter    | Description                                      |
-|-----------|--------------------------------------------------|
-| `default` | Return a default value if the variable is empty. |
+| Filter    | Description                                                   |
+|-----------|---------------------------------------------------------------|
+| `default` | Return a default value if the variable is empty or undefined. |
+
+For a complete list of built-in filters, see the Jinja documentation:
+[Jinja Filters](https://jinja.palletsprojects.com/en/stable/templates/#builtin-filters).
 
 ---
 
@@ -211,9 +216,6 @@ ${ "foo-bar_baz" | label } → "Foo Bar Baz"
 ${ "multiple---separators___here" | label } → "Multiple Separators Here"
 ${ "StatusLED" | label } → "Status LED"
 ```
-
-For a complete list of built-in filters, see the Jinja documentation:
-[Jinja Filters](https://jinja.palletsprojects.com/en/stable/templates/#builtin-filters).
 
 ### Conditional Expressions
 
