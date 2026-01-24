@@ -16,8 +16,8 @@ They are often useful, to **interpret received Item values**, like sensor readin
 
 ## Installation
 
-Transformations are performed by Transformation Services which are available as [transformation add-ons](/addons/#transform).
-The relevant add-on needs to be installed via the Main UI or addons.cfg before use.
+Transformations are performed by Transformation services which are available as [transformation add-ons](/addons/#transform).
+The relevant add-on needs to be installed via the Main UI or `addons.cfg` before use.
 
 ## Usage
 
@@ -27,11 +27,10 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
 
 1. Item and Sitemap Labels
 
-     Transformations used in the [state/value part]({{base}}/configuration/items.html#state-transformations) of labels are applied **on the fly**.
-     While the **transformed value** will (for example) be visible on a Sitemap, the **original value** is stored in the Item.
+    Transformations used in the [state/value part]({{base}}/configuration/items.html#state-transformation) of labels are applied **on the fly**.
+    While the **transformed value** will (for example) be visible on a Sitemap, the **original value** is stored in the Item.
 
-    The following example shows a Map transformation (see below) used in the State part of an Item's label.
-    The technical state of a Contact Item (e.g. "CLOSED") is translated into a human readable representation in Spanish ("cerrado").
+    The following example shows various Transformation services used in the state part of an Item's label.
 
     ```java
     Contact Livingroom_Window        "Window [MAP(window_esp.map):%s]"             {/*Some Binding*/}
@@ -40,10 +39,13 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
     ```
 
     Usage of Transformations in the [label parameter of Sitemap elements]({{base}}/ui/sitemaps.html#element-type-text) works the same way.
+
+    When creating an Item through the UI, the content of the `[]` brackets has to be put into the `pattern` field of the State Description Item metadata.
+
 1. Rules
 
     Transformations can also be [used in rules]({{base}}/configuration/rules-dsl.html#transformations) to transform/translate/convert data.
-    The following shows three examples:
+    The following shows three Rules DSL examples:
 
     ```java
     var condition = transform("MAP", "window_esp.map", "CLOSED")
@@ -51,25 +53,27 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
     var fahrenheit = transform("JS", "convert-C-to-F.js", temperature)
     ```
 
-1. Bindings
-
-    Transformations can sometimes be used in binding add-ons.  For example, transforming an openHAB ON command into "action=powerup" for sending to a device.
-    If, and how, this use may be available is described in individual binding documentation.
-
 1. Profiles
 
-    Transformations can be associated with channels, working on data being passed between bindings and Items. See [profile documentation]({{base}}/configuration/items.html#profiles) for more detail.
+    Profiles can be used to control the data that is passed between channels of a Thing and Items.
+    Transformations can be used in profiles to transform data, both from channel to Item and from Item to channel.
+    The distinction from using transformations on Item labels is, that with profiles data is transformed **as it passes through the channel** rather than **on the fly** and the transformed value will be stored in the Item.
+    See [profile documentation]({{base}}/configuration/items.html#profiles) for more details.
 
-To keep these examples simple, the contents of the referenced files `window_esp.map` and `convert-C-to-F.js` were left out.
+1. Channels
+
+    Transformations can sometimes be used directly in [binding add-ons](/addons/#binding).
+    For example, transforming an openHAB ON command into "action=powerup" for sending to a device.
+    Bindings can either implement their own way of handling transformations or use the Channel Transformation provided by the framework.
+    If, and how, transformation can be used will be described the individual binding documentation.
 
 ## Script Transformation
 
-The script transformation is available from the framework and needs no additional installation.
-It allows transforming values using any of the available scripting languages in openHAB (JSR-223 or DSL).
+The script transformation is provided by the framework and allows transforming values using any of the available scripting languages in openHAB (Rules DSL and those provided by [automation add-ons](/addons/#automation)).
 openHAB ensures that one and the same script transformation is not executed in parallel, there is no need to program protections against race conditions.
 
-The script needs to be placed in the `$OPENHAB_CONF/transform` folder with the native extension for the chosen language, for example `stringlength.js` for a transformation using JS Scripting.
-The script file name here acts as the `script identifier` for the script transformation.
+The script needs to be placed in the `$OPENHAB_CONF/transform` folder with the native extension for the chosen language, for example `stringlength.js` for a transformation using [JavaScript Scripting](/addons/automation/jsscripting/).
+The script file name here acts as the _script identifier_ for the script transformation.
 A script identifier can also refer to a transformation script created in the UI.
 
 The input value is injected into the script context as a _string_ variable `input`.
@@ -97,8 +101,8 @@ returnValue
 
 ::: tab JS
 
-For the modern JS Scripting, the script file name is `stringlength.js` and the transformation is `JS(stringlength.js)`.
-For the legacy JS Scripting, the script file name is `stringlength.nashornjs` and the transformation is `NASHORNJS(stringlength.nashornjs)`.
+For the modern [JavaScript Scripting](/addons/automation/jsscripting/), the script file name is `stringlength.js` and the transformation is `JS(stringlength.js)`.
+For the legacy [JavaScript Scripting Nashorn](/addons/automation/jsscriptingnashorn/), the script file name is `stringlength.nashornjs` and the transformation is `NASHORNJS(stringlength.nashornjs)`.
 
 Note the overall syntax is the same.
 
@@ -149,7 +153,7 @@ A simple transformation rule can also be given as an inline script.
 The inline script should start with the `|` character.
 Quotes within the script may need to be escaped with a `\` when used within another quoted string such as in sitemaps or text configurations.
 
-Examples:
+Examples for Item and Sitemap Labels:
 
 :::: tabs
 
@@ -198,6 +202,8 @@ GROOVY(|"String has ${input.length()} characters")
 
 ::::
 
+Examples for inline transformations in profiles can be found below.
+
 ### Script Transformation Profile
 
 The script transformation is also available as profile. When acting as transformation profile:
@@ -209,9 +215,9 @@ The script transformation is also available as profile. When acting as transform
 
 | Parameter Name          | Description                                                                                                     |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------|
-| `toItemScript`          | The `script identifier` for performing transformations from the Thing handler to the item.                      |
-| `commandFromItemScript` | The `script identifier` for performing transformations of **commands** from the item to the Thing handler.      |
-| `stateFromItemScript`   | The `script identifier` for performing transformations of **state updates** from the item to the Thing handler. |
+| `toItemScript`          | The _script identifier_ for performing transformations from the Thing handler to the item.                      |
+| `commandFromItemScript` | The _script identifier_ for performing transformations of **commands** from the item to the Thing handler.      |
+| `stateFromItemScript`   | The _script identifier_ for performing transformations of **state updates** from the item to the Thing handler. |
 
 When a script is not provided, the input for that parameter's action will be discarded, similar to when a script returned a `null` value.
 So be sure to provide a pass-through script for the relevant parameter as necessary.
@@ -230,7 +236,7 @@ Here, additional parameters can also be injected into the script using the URL s
 Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="multiply.rb?factor=10", commandFromItemScript="multiply.rb?factor=0.1" ] }
 ```
 
-Inline script is also supported in the profile syntax.
+Inline script is also supported in the profile syntax:
 
 ```java
 Number <itemName> { channel="<channelUID>"[profile="transform:RB", toItemScript="| input.to_f * 10", commandFromItemScript="| input.to_f * 0.1" ] }

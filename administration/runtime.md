@@ -132,6 +132,16 @@ Usage: openhab:send <item> <command> - sends a command for an item
 ## Karaf Commands
 
 Apache Karaf itself also provides many useful commands, especially for debugging and development purposes.
+Refer to the [Karaf Developer Commands documentation](https://karaf.apache.org/manual/latest/#_developer_commands) for more information about all available developer commands.
+
+### Bundle Management
+
+Karaf provides a number of commands to manage bundles.
+
+Use the `bundle --help` command to get a list of all available bundle management commands.
+`bundle:<command> --help` provides more information about a specific command.
+
+Refer to [Bundle Management](bundles.html) for more information.
 
 ### Thread Monitor
 
