@@ -4,6 +4,7 @@ label: Geocoding Profile
 title: Geocoding Profile - Transformation Services
 type: transform
 description: "Transformation to convert"
+logo: images/addons/geocoding.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Geocoding Profile Transformation Service
+
+<AddonLogo />
 
 Transformation to convert
 

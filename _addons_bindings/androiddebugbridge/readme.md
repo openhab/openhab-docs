@@ -3,7 +3,7 @@ id: androiddebugbridge
 label: Android Debug Bridge
 title: Android Debug Bridge - Bindings
 type: binding
-description: "This binding allows to connect to android devices through the adb protocol."
+description: ":::warning"
 logo: images/addons/androiddebugbridge.png
 install: auto
 ---
@@ -15,6 +15,10 @@ install: auto
 # Android Debug Bridge Binding
 
 <AddonLogo />
+
+:::warning
+There is much evidence that installing Debug Bridge on your Android device poses a strong security threat e.g. to enable Trojan horse software that could compromise it, or other LAN devices!_
+:::
 
 This binding allows to connect to android devices through the adb protocol.
 
