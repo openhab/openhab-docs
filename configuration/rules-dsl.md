@@ -564,7 +564,7 @@ If the conversion from or into hexadecimal values is necessary, the following ex
 // to convert a hex_code (a number expressed in hexadecimals) to a Number type
 val dimVal =  Integer.parseInt(hex_code, 16) as Number
 //for very large_hex_codes use
-val dimVal = Long.valueOf(large_hex_code, 16).longValue() as Number
+val dimVal = Long.valueOf(large_hex_code, 16).longValue as Number
 
 // and here an additional example to convert an integer_value to hex_code string
 var String hex = Long.toHexString(integer_value);
@@ -807,17 +807,17 @@ It may be necessary to guard against concurrency.
 ```javascript
 import java.util.concurrent.locks.ReentrantLock
 
-val ReentrantLock lock  = new ReentrantLock()
+val ReentrantLock lock  = new ReentrantLock
 
 rule ConcurrentCode
 when
     Item Dummy received update
 then
-    lock.lock()
+    lock.lock
     try {
         // do stuff
     } finally{
-        lock.unlock()
+        lock.unlock
     }
 end
 ```
