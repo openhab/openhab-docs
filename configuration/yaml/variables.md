@@ -146,6 +146,42 @@ This is often clearer and avoids unnecessary use of operators.
 
 :::
 
+### List Concatenation with `+`
+
+Jinja’s `+` operator also supports list concatenation.
+When one side of the expression is a list and the other is a scalar, the scalar is automatically wrapped into a single‑element list.
+
+**Examples:**
+
+```yaml
+variables:
+  groups: [Group1, Group2]
+  location: SemanticLocationGroup
+
+effective_groups: !sub ${ groups + location }
+# → [Group1, Group2, SemanticLocationGroup]
+```
+
+This works because Jinja treats:
+
+```text
+groups + location
+```
+
+as:
+
+```text
+['Group1', 'Group2'] + ['SemanticLocationGroup']
+```
+
+You can also concatenate two lists directly:
+
+```yaml
+!sub ${ ['A'] + ['B', 'C'] }   # → ['A', 'B', 'C']
+```
+
+This behavior originates from Jinja’s expression language, which follows Python‑style list semantics.
+
 ### Filters
 
 Jinja offers a number of built‑in filters that are useful when building YAML structures.
