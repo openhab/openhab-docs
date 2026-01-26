@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa0463p_00_000" listed="false">
+    <label>ZWA046-3P Aeotec Home Energy Monitor 8</label>
+    <description><![CDATA[
+Aeotec Home Energy Monitor 8<br /> <h1>Overview</h1><p>Aeotec Home Energy Meter is an energy meter for the entire home. It can wirelessly report instantaneous Power, KWH, Voltage and Amperage measurements to Z-Wave® gateway/controller. It can send Z-Wave REPORTS at any time when it receives Z-Wave Get Commands.</p><p>The HEM can be setup to send automatic reports to any associated nodes in association group 1 at an interval time It can be included and operated in any Z-Wave network with other Z-Wave/ Z-Wave Plus® certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network. The device supports the Z-Wave Security S2 framework with authenticated and unauthenticated network keys. Please follow the instructions on the central controller when including. The device also supports SmartStart. It also supports the Over The Air (OTA) feature for the product’s firmware upgrade. As soon as the HEM is removed from a Z-Wave network it will be reset to default factory settings.</p> <br /> <h2>Inclusion Information</h2><p>The following will step you through adding the product to your Z-Wave network.</p><p>Fix Back-Mount Plate to the selected position with the provided screws. The plate should be installed vertically to make sure the connected cables naturally hanging and to fully ensure that the IP44 weatherized rating applies.</p><p>Set your Z-Wave gateway into its ‘add device’ mode in order to connect Home Energy Meter to your Z-Wave system. Refer to the gateway’s manual if you are unsure of how to perform this step.</p><p>Press Action Button on the back of main body; its LED will flash blue rapidly to indicate it has entered pair mode.</p><p>When Home Energy Meter successfully joins your Z-Wave network its LED will flash blue for several seconds and then turn solid blue. Should the LED keep blinking blue, it has been unable to join your Z-Wave network; repeat the above steps and please contact us for further support if needed.</p><p>Attach the main body to Back-Mount Plate.</p> <br /> <h2>Exclusion Information</h2><p>The following will step you through adding the product to your Z-Wave network.</p><p>Fix Back-Mount Plate to the selected position with the provided screws. The plate should be installed vertically to make sure the connected cables naturally hanging and to fully ensure that the IP44 weatherized rating applies.</p><p>Set your Z-Wave gateway into its ‘add device’ mode in order to connect Home Energy Meter to your Z-Wave system. Refer to the gateway’s manual if you are unsure of how to perform this step.</p><p>Press Action Button on the back of main body; its LED will flash blue rapidly to indicate it has entered pair mode.</p><p>When Home Energy Meter successfully joins your Z-Wave network its LED will flash blue for several seconds and then turn solid blue. Should the LED keep blinking blue, it has been unable to join your Z-Wave network; repeat the above steps and please contact us for further support if needed.</p><p>Attach the main body to Back-Mount Plate.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah" typeId="meter_kvah">
+        <label>Electric meter (kVAh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvarh" typeId="meter_kvarh">
+        <label>Electric meter (kvarh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KVARH</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah1" typeId="meter_kvah">
+        <label>Electric meter (kVAh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage1" typeId="meter_voltage">
+        <label>Electric meter (volts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current1" typeId="meter_current">
+        <label>Electric meter (amps) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor1" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvarh1" typeId="meter_kvarh">
+        <label>Electric meter (kvarh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KVARH</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh2" typeId="meter_kwh">
+        <label>Electric meter (kWh) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah2" typeId="meter_kvah">
+        <label>Electric meter (kVAh) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage2" typeId="meter_voltage">
+        <label>Electric meter (volts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current2" typeId="meter_current">
+        <label>Electric meter (amps) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor2" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvarh2" typeId="meter_kvarh">
+        <label>Electric meter (kvarh) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KVARH</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh3" typeId="meter_kwh">
+        <label>Electric meter (kWh) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah3" typeId="meter_kvah">
+        <label>Electric meter (kVAh) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts3" typeId="meter_watts">
+        <label>Electric meter (watts) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage3" typeId="meter_voltage">
+        <label>Electric meter (volts) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current3" typeId="meter_current">
+        <label>Electric meter (amps) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor3" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvarh3" typeId="meter_kvarh">
+        <label>Electric meter (kvarh) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_KVARH</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh4" typeId="meter_kwh">
+        <label>Electric meter (kWh) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah4" typeId="meter_kvah">
+        <label>Electric meter (kVAh) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts4" typeId="meter_watts">
+        <label>Electric meter (watts) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage4" typeId="meter_voltage">
+        <label>Electric meter (volts) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current4" typeId="meter_current">
+        <label>Electric meter (amps) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor4" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvarh4" typeId="meter_kvarh">
+        <label>Electric meter (kvarh) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4;type=E_KVARH</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh5" typeId="meter_kwh">
+        <label>Electric meter (kWh) 5</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:5;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah5" typeId="meter_kvah">
+        <label>Electric meter (kVAh) 5</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:5;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts5" typeId="meter_watts">
+        <label>Electric meter (watts) 5</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:5;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage5" typeId="meter_voltage">
+        <label>Electric meter (volts) 5</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:5;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current5" typeId="meter_current">
+        <label>Electric meter (amps) 5</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:5;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor5" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 5</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:5;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvarh5" typeId="meter_kvarh">
+        <label>Electric meter (kvarh) 5</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:5;type=E_KVARH</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh6" typeId="meter_kwh">
+        <label>Electric meter (kWh) 6</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:6;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah6" typeId="meter_kvah">
+        <label>Electric meter (kVAh) 6</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:6;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts6" typeId="meter_watts">
+        <label>Electric meter (watts) 6</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:6;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage6" typeId="meter_voltage">
+        <label>Electric meter (volts) 6</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:6;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current6" typeId="meter_current">
+        <label>Electric meter (amps) 6</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:6;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor6" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 6</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:6;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvarh6" typeId="meter_kvarh">
+        <label>Electric meter (kvarh) 6</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:6;type=E_KVARH</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh7" typeId="meter_kwh">
+        <label>Electric meter (kWh) 7</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:7;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah7" typeId="meter_kvah">
+        <label>Electric meter (kVAh) 7</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:7;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts7" typeId="meter_watts">
+        <label>Electric meter (watts) 7</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:7;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage7" typeId="meter_voltage">
+        <label>Electric meter (volts) 7</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:7;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current7" typeId="meter_current">
+        <label>Electric meter (amps) 7</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:7;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor7" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 7</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:7;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvarh7" typeId="meter_kvarh">
+        <label>Electric meter (kvarh) 7</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:7;type=E_KVARH</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh8" typeId="meter_kwh">
+        <label>Electric meter (kWh) 8</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:8;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah8" typeId="meter_kvah">
+        <label>Electric meter (kVAh) 8</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:8;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts8" typeId="meter_watts">
+        <label>Electric meter (watts) 8</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:8;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage8" typeId="meter_voltage">
+        <label>Electric meter (volts) 8</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:8;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current8" typeId="meter_current">
+        <label>Electric meter (amps) 8</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:8;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor8" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 8</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:8;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvarh8" typeId="meter_kvarh">
+        <label>Electric meter (kvarh) 8</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:8;type=E_KVARH</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh9" typeId="meter_kwh">
+        <label>Electric meter (kWh) 9</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:9;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts9" typeId="meter_watts">
+        <label>Electric meter (watts) 9</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:9;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh10" typeId="meter_kwh">
+        <label>Electric meter (kWh) 10</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:10;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts10" typeId="meter_watts">
+        <label>Electric meter (watts) 10</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:10;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA046-3P</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0003:0034</property>
+      <property name="dbReference">1692</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Threshold Check Enable/Disable</label>
+        <description><![CDATA[
+Enable/Disable threshold reporting<br /> <h1>Overview</h1><p>Enable selective reporting only when power change reaches a certain threshold or percentage set in 4-19</p><p>below. This is used to reduce network traffic.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration">
+        <label>4: Import watt threshold (total)</label>
+        <description>Threshold change in import wattage to induce an automatic report (Whole HEM).</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration">
+        <label>5: Import watt threshold (Phase A)</label>
+        <description>Threshold change in import wattage to induce an automatic report (Phase A).</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration">
+        <label>6: Import watt threshold (Phase B)</label>
+        <description>Threshold change in import wattage to induce an automatic report (Phase B).</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration">
+        <label>7: Import watt threshold (Phase C)</label>
+        <description><![CDATA[
+Threshold change in import wattage to induce an automatic report (Phase C).<br /> <h1>Overview</h1><p>Threshold change in import wattage to induce an automatic report (Phase C).</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration">
+        <label>8: Export watt threshold(total)</label>
+        <description>Threshold change in export wattage to induce an automatic report (Whole HEM).</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration">
+        <label>9: Export watt threshold (Phase A)</label>
+        <description>Threshold change in export wattage to induce an automatic report (Phase A).</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration">
+        <label>10: Export watt threshold (Phase B)</label>
+        <description>Threshold change in export wattage to induce an automatic report (Phase B).</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration">
+        <label>11: Export watt threshold (Phase C)</label>
+        <description><![CDATA[
+Threshold change in export wattage to induce an automatic report (Phase C).<br /> <h1>Overview</h1><p>Threshold change in export wattage to induce an automatic report (Phase C).</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Import watt percent threshold (total)</label>
+        <description>Percentage change in import wattage to induce an automatic report (Whole HEM).</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Import watt percent threshold (Phase A)</label>
+        <description>Percentage change in import wattage to induce an automatic report (Phase A).</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Import watt percent threshold (Phase B)</label>
+        <description>Percentage change in import wattage to induce an automatic report (Phase B).</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Import watt percent threshold (Phase C)</label>
+        <description><![CDATA[
+Percentage change in import wattage to induce an automatic report (Phase C).<br /> <h1>Overview</h1><p>Percentage change in import wattage to induce an automatic report (Phase C).</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Export watt percent threshold (total)</label>
+        <description>Percentage change in export wattage to induce an automatic report (Whole HEM).</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Export watt percent threshold (Phase A)</label>
+        <description>Percentage change in export wattage to induce an automatic report (Phase A).</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Export watt percent threshold (Phase B)</label>
+        <description>Percentage change in export wattage to induce an automatic report (Phase B).</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Export watt percent threshold (Phase C)</label>
+        <description><![CDATA[
+Percentage change in export wattage to induce an automatic report (Phase C).<br /> <h1>Overview</h1><p>Percentage change in export wattage to induce an automatic report (Phase C).</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Enable automatic report of root device.</label>
+        <description><![CDATA[
+Enable automatic report of root device.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_100_1" type="integer" groupName="configuration">
+        <label>100: Set 101-106 to default</label>
+        <description><![CDATA[
+Set 101-106 to default<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4" type="integer" groupName="configuration">
+        <label>101: Automatic Report list 1 (Import)</label>
+        <description><![CDATA[
+Checklist 1 for automatic timed report<br /> <h1>Overview</h1><p>Configure which import report to send in Report group 1 by adding the decimals together. Default is all the KWH and watt readings.</p>
+        ]]></description>
+        <default>50529027</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_102_4" type="integer" groupName="configuration">
+        <label>102: Automatic Report list 2 (Import)</label>
+        <description><![CDATA[
+Checklist 2 for automatic timed report<br /> <h1>Overview</h1><p>Configure which import report to send in Report group 2 by adding the decimals together. Default is all the volt and ampere readings.</p>
+        ]]></description>
+        <default>202116108</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_103_4" type="integer" groupName="configuration">
+        <label>103: Automatic Report list 3 (Import)</label>
+        <description><![CDATA[
+Checklist 3 for automatic timed report<br /> <h1>Overview</h1><p>Configure which import report to send in Report group 3 by adding the decimals together. Default is all the KVarh, Kvah, Kvar and Power Factor readings.</p>
+        ]]></description>
+        <default>-252645136</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_104_4" type="integer" groupName="configuration">
+        <label>104: Automatic Report list 1 (Export)</label>
+        <description><![CDATA[
+Checklist 1 for automatic timed report<br /> <h1>Overview</h1><p>Configure which export report to send in Report group 1 by adding the decimals together. Default is all the KWH and watt readings.</p>
+        ]]></description>
+        <default>50529027</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_105_4" type="integer" groupName="configuration">
+        <label>105: Automatic Report list 2 (Export)</label>
+        <description><![CDATA[
+Checklist 2 for automatic timed report<br /> <h1>Overview</h1><p>Configure which Export report to send in Report group 2 by adding the decimals together. Default is all the volt and ampere readings.</p>
+        ]]></description>
+        <default>202116108</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_106_4" type="integer" groupName="configuration">
+        <label>106: Automatic Report list 3 (Export)</label>
+        <description><![CDATA[
+Checklist 3 for automatic timed report<br /> <h1>Overview</h1><p>Configure which Export report to send in Report group 3 by adding the decimals together. Default is all the KVarh, Kvah, Kvar and Power Factor readings.</p>
+        ]]></description>
+        <default>-252645136</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_110_0" type="integer" groupName="configuration">
+        <label>110: Set 111-116 to default</label>
+        <description><![CDATA[
+Set 111-116 to default<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration">
+        <label>111: Automatic list 1 Interval Time (Import)</label>
+        <description><![CDATA[
+Timing detection time of Checklist 1<br /> <h1>Overview</h1><p>Set the interval time of sending report in Report group 1</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_112_4" type="integer" groupName="configuration">
+        <label>112: Automatic list 2 Interval Time (Import)</label>
+        <description><![CDATA[
+Timing detection time of Checklist 2<br /> <h1>Overview</h1><p>Set the interval time of sending report in Report group 2</p>
+        ]]></description>
+        <default>7200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_113_4" type="integer" groupName="configuration">
+        <label>113: Automatic list 3 Interval Time (Import)</label>
+        <description><![CDATA[
+Timing detection time of Checklist 3<br /> <h1>Overview</h1><p>Set the interval time of sending report in Report group 3</p>
+        ]]></description>
+        <default>7200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_114_4" type="integer" groupName="configuration">
+        <label>114: Automatic list 1 Interval Time (Export)</label>
+        <description><![CDATA[
+Timing detection time of Checklist 1<br /> <h1>Overview</h1><p>Set the interval time of sending report in Report group 1</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_115_4" type="integer" groupName="configuration">
+        <label>115: Automatic list 2 Interval Time (Export)</label>
+        <description><![CDATA[
+Timing detection time of Checklist 2<br /> <h1>Overview</h1><p>Set the interval time of sending report in Report group 2</p>
+        ]]></description>
+        <default>7200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_116_4" type="integer" groupName="configuration">
+        <label>116: Automatic list 3 Interval Time (Export)</label>
+        <description><![CDATA[
+Timing detection time of Checklist 3<br /> <h1>Overview</h1><p>Set the interval time of sending report in Report group 3</p>
+        ]]></description>
+        <default>7200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration">
+        <label>252: Enable/disable to lock configuration setting</label>
+        <description><![CDATA[
+Enable/disable to lock configuration setting<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Root</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
