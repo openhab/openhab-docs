@@ -416,7 +416,7 @@ However, for simplicity and readability, such naming patterns should generally b
 ### Referencing Other Variables During Definition
 
 Variables may reference **other variables**, including those defined earlier in the **same** `variables:` block.
-The only requirement is that the referenced variable is defined before it is used.
+The only requirement is that a variable must be defined **before** it is used.
 
 **Example:**
 
@@ -426,7 +426,7 @@ variables:
   baz: !sub ${foo|upper}   # => foo is defined before baz
 ```
 
-Variables can also reference [inherited variables](include.md#variable-resolution-order) when used inside included files or packages:
+Variables can also reference [inherited variables](include.md#variable-resolution-order) when used inside included files or packages.
 
 `main.yaml`:
 
@@ -447,6 +447,23 @@ variables:
 ExampleItem:
   label: !sub ${label}
 ```
+
+::: tip
+
+Referencing other variables also lets you build values step‑by‑step: compute intermediate results with expressions, then combine them into a final variable.
+
+Example:
+
+```yaml
+variables:
+  contact_type: door   # May be overridden by the including file
+
+  groups: !sub ${ ['AllDoors'] if contact_type == 'door' else ['AllWindows'] }
+  semantic_location: LivingRoom
+  effective_group: !sub ${ groups + semantic_location }   # => [AllDoors, LivingRoom]
+```
+
+:::
 
 ### Loading Variable Data From Another File
 
