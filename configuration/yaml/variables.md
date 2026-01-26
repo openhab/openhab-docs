@@ -494,16 +494,16 @@ This is especially useful when you need functionality beyond the built‑in filt
 **Example:**
 
 ```yaml
-# This file is included from a packages section.
-# ${package_id} is provided by the main file; here it is "LivingRoom_Light".
 variables:
-  # Convert "LivingRoom_Light" -> "Living Room Light"
-  label: '${package_id.replaceAll("([a-z])([A-Z])", "$1 $2") | replace("_", " ")}'
+  device_id: "sensor_ABC123"
 
-items: !sub
-  ${package_id}:
-    type: Group
-    label: ${label}
+  # Call a Java String method; result is a real Boolean
+  is_sensor: !sub ${ device_id.startsWith("sensor_") }
+
+items:
+  DeviceInfo:
+    type: String
+    label: !sub ${ "Sensor Device" if is_sensor else "Other Device" }
 ```
 
 ### Interpolation and Inserted Content
