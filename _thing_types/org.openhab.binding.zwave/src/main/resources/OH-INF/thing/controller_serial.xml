@@ -33,11 +33,6 @@
                 <description></description>
             </parameter-group>
 
-            <parameter-group name="actions">
-                <label>Actions</label>
-                <description></description>
-            </parameter-group>
-
             <parameter name="port" type="text" required="true" groupName="port">
                 <label>Serial Port</label>
                 <context>serial-port</context>
@@ -124,35 +119,6 @@
                     <option value="23">11 PM</option>
                     <option value="0">Midnight</option>
                 </options>
-            </parameter>
-           
-            <parameter name="controller_softreset" type="boolean" groupName="actions">
-                <label>Soft Reset Controller</label>
-                <description>Resets the Z-Wave stick - similar to removing the stick from the USB.</description>
-                <advanced>true</advanced>
-                <default>false</default>
-            </parameter>
-
-            <parameter name="controller_hardreset" type="boolean" groupName="actions">
-                <label>Hard Reset Controller</label>
-                <description>Hard resets the Z-Wave stick - this will erase all configuration from the controller!</description>
-                <advanced>true</advanced>
-                <verify>true</verify>
-                <default>false</default>
-            </parameter>
-
-            <parameter name="controller_exclude" type="boolean" groupName="actions">
-                <label>Exclude Devices</label>
-                <description>Puts the controller into Exclusion mode.</description>
-                <advanced>true</advanced>
-                <default>false</default>
-            </parameter>
-
-            <parameter name="controller_sync" type="boolean" groupName="actions">
-                <label>Synchronize network</label>
-                <description>Download the network with the SUC</description>
-                <advanced>true</advanced>
-                <default>false</default>
             </parameter>
 
             <parameter name="inclusion_mode" type="integer" groupName="network">
