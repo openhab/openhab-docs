@@ -56,14 +56,14 @@ packages:
 - **Top‑Level Sections:**
   Package sources can contain any combination of top‑level keys such as `things:` and `items:`.
 
-- **Restrictions:**
-  Package sources **must not** contain unique global top‑level keys such as `version:`.
-
 - **Uniqueness:**
   Because package sources can be referenced multiple times, use variable substitutions such as `${package_id}` and unique `vars:` variables for entity UIDs in each invocation to avoid collisions.
 
 - **Nesting:**
   A package source can itself include other files or templates.
+
+- **No `version:` key needed:**
+  Package sources do not define their own version. Only the main package file provides the `version:` key, and its value overrides anything that might appear in a package source.
 
 ## Package Example
 
