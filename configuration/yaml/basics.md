@@ -207,11 +207,6 @@ value5:
 
 All of these are interpreted as `null`.
 
-::: tip Null in openHAB
-openHAB converts `null` values into empty strings (`""`).
-Null cannot be used to remove or unset a value.
-:::
-
 ### Lists (Sequences)
 
 Lists are introduced with a dash (`-`) at the start of each item.
