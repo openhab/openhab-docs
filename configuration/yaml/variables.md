@@ -260,10 +260,12 @@ Expressions can include Jinja’s inline `if` form, which selects between values
 **Syntax:**
 
 ```python
-<value_if_true> if <condition> else <value_if_false>
+<value_if_true> if <condition> [else <value_if_false>]
 ```
 
-The `else` part is **not** optional.
+The `else` part is optional.
+When omitted, the expression evaluates to `null` (Jinja’s `None`).
+If the result is used in a string context, it becomes an empty string.
 
 **Examples:**
 
