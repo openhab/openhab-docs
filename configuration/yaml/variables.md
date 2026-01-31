@@ -275,6 +275,8 @@ state: !sub "${'ON' if enabled else 'OFF'}"
 topic: !sub "${rooms[0] if rooms|length > 0 else 'no-room'}"
 ```
 
+See also [conditional YAML blocks](conditionals.md)
+
 ## Common Pitfalls
 
 When working with expressions and filters, a few patterns can lead to confusing results.

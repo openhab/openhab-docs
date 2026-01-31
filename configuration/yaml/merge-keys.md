@@ -5,13 +5,15 @@ title: YAML Configuration - Merge Keys
 
 # Merge Keys
 
-Merge keys (`<<:`) let you combine mappings defined directly in a mapping with other mappings defined elsewhere, such as:
+Merge keys (`<<`) let you combine mappings defined directly in a mapping with other mappings defined elsewhere, such as:
 
-- anchors
-- `!include`
-- [variables](variables.md)
+- [Anchors](anchors.md)
+- [`!include`](include.md) (External files)
+- [`!insert`](templates.md) (In-file Templates)
+- [`!if`](conditionals.md) (Conditionals)
+- [Variables](variables.md)
 
-They promote reusability and avoid repetition by letting you define common mappings once and update them in a single place, with changes applied everywhere they are merged.
+They promote reusability and avoid repetition by letting you define common mappings once and update them in a single place.
 
 [[toc]]
 
@@ -68,7 +70,7 @@ items:
 
 [Anchors](anchors.md) define reusable structures whose content can be inserted into the current mapping via an alias.
 Merge keys then combine that anchored content with any local fields in the mapping.
-This is the most common pattern for sharing defaults across multiple items.
+While anchors are a standard YAML feature for sharing data within a single file, [Variables](variables.md) or [Templates](templates.md) are often preferred for more complex needs.
 
 ```yaml
 items:
@@ -87,13 +89,13 @@ See also: [Using Hidden Keys for Anchors](anchors.md#using-hidden-keys-for-ancho
 
 ### `!include`
 
-[`!include`](include.md) loads the contents of another file so it can be inserted into the current mapping.
+The [`!include`](include.md) tag loads the contents of another file so it can be inserted into the current mapping.
 Merge keys then combine the included content with any local fields in the mapping.
 
-Benefits over anchors:
+**Benefits over anchors:**
 
-- Included files can be parameterized, allowing the same structure to be reused with different values.
-- Included files can be shared across many different YAML files, not just within a single one.
+- Included files can be **parameterized**, allowing the same structure to be reused with different values.
+- Included files can be **shared across many different YAML files**, whereas anchors are limited to a single file.
 
 ```yaml
 # light-common.inc.yaml - all types of lights share this
@@ -123,11 +125,13 @@ things:
 
 ### Templates (`!insert`)
 
-`!insert` inserts the contents of an in‑file [template](templates.md) into the current mapping.
+The [`!insert`](templates.md) tag inserts the contents of an in-file template into the current mapping.
 Merge keys then combine the template’s fields with any local fields in that mapping.
 
-- Unlike anchors or variable substitutions, templates can be parameterized when used through a merge key.
-- Unlike `!include`, templates are defined in the same file, reducing the number of files to manage. They cannot, however, be shared across different files.
+**Benefits over anchors:**
+
+- Unlike anchors, templates can be **parameterized** when used through a merge key.
+- Unlike `!include`, templates are defined in the same file, making them easier to manage when the logic is specific to a single configuration.
 
 ```yaml
 templates:
@@ -151,16 +155,30 @@ things:
       <<: !insert { template: color_channel, vars: { id: living-room-light } }
 ```
 
+### Conditionals (`!if`)
+
+The [`!if`](conditionals.md) tag is the most powerful way to conditionally merge content.
+Because the engine resolves tags before the merge, you can choose between different mappings or return `null` to skip the merge entirely.
+
+```yaml
+# Merge extra settings only for production
+server:
+  port: 8080
+  <<: !if
+    if: !sub ${is_prod}
+    value: { ssl: true, cache: true }
+```
+
 ### Substitution (`!sub`)
 
-In addition to anchors and included files, merge keys can also combine content produced dynamically by a `!sub` expression.
-The key advantage is that, when used with a [conditional expression](variables.md#conditional-expressions), a `!sub` expression can resolve to **either a mapping or an empty map**.
-This lets you conditionally merge a block — or skip it entirely — based on variables or expressions.
+Merge keys can also combine content produced dynamically by a `!sub` expression.
+The key advantage is that `!sub` is type-aware: if a variable contains a map, `!sub` returns that map directly to the merge key.
 
-Simple example:
+This also allows for **inline conditional merging** using Python-style expressions:
 
 ```yaml
 variables:
+  has_color: true
   color_channel:
     color:
       type: color
@@ -170,37 +188,17 @@ things:
     channels:
       power:
         type: switch
-      <<: !sub ${color_channel}
+      # Returns color_channel map if true
+      <<: !sub ${color_channel if has_color}
 ```
-
-Example with conditional expression:
-
-```yaml
-variables:
-  has_color: true # Set to false to skip merging color_channel
-
-  color_channel:
-    color:
-      type: color
-
-things:
-  mqtt:topic:light:
-    channels:
-      power:
-        type: switch
-      # `{}` is an empty map; returning it makes the merge a no‑op
-      <<: !sub ${color_channel if has_color else {}}
-```
-
-This is especially useful in package files, where you can parameterize which channels a Thing includes and which Items are created.
 
 ::: tip Hints:
 
-- Merge keys only merge mappings, so `!sub` must return a map.
+- Merge keys only merge mappings, so `!sub` must resolve to a map.
 - Leave the pattern unquoted; quoting it causes `!sub` to return the value as a literal string.
 - Avoid compound patterns (`${foo}${bar}`, `x${foo}`, etc.).
   These are interpreted as literal strings and cannot be merged.
-- Merging an empty map is a no-op, effectively the same as omitting the merge key.
+- Merging `null` or an empty map is a no-op, effectively omitting the merge key.
 - If you use `!sub` inside an array for a merge key, make sure the array uses block style.
 
 :::
@@ -223,8 +221,3 @@ For details on how variables are resolved and how substitution interacts with YA
 - Use includes, `!include`, or packages to centralize shared structures.
 - Use the `_generated` output to verify merge results.
 - Prefer simple, predictable structures for reusable blocks.
-
----
-
-Merge keys are a practical, widely supported YAML feature that integrates naturally with openHAB's configuration system.
-They offer a clean, predictable way to reuse and extend mappings without duplication.

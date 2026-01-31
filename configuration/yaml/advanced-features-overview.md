@@ -18,6 +18,7 @@ Each feature solves a different kind of reuse or composition problem.
 | Feature                                  | Purpose                                                   | Typical Use                                                                                                    |
 |------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
 | **Variables & Substitution (`!sub`)**    | Insert dynamic values or evaluate expressions             | Build labels, topics, IDs, or computed values                                                                  |
+| **Conditionals (`!if`)**                 | Conditionally include or exclude YAML blocks              | Selective feature inclusion when using packages or templates flags                                             |
 | **Include (`!include`)**                 | Insert the contents of another file                       | Reuse YAML across files; parameterize reusable blocks                                                          |
 | **Templates (`!insert`)**                | Reuse YAML defined within the same file                   | Parameterized blocks local to a file; reusable channel/item fragments                                          |
 | **Packages**                             | Bundle multiple top‑level sections into one reusable unit | Define reusable device structures containing things, items, metadata; sourced from external files or templates |
@@ -27,10 +28,11 @@ Each feature solves a different kind of reuse or composition problem.
 You can learn more about each feature on its dedicated page:
 
 - [Variables & Substitution](variables.md)
+- [Conditionals](conditionals.md)
 - [Include](include.md)
 - [Templates](templates.md)
 - [Packages](packages.md)
-- [Anchors & Aliases](anchors.md)
+- [Anchors](anchors.md)
 - [Merge Keys](merge-keys.md)
 
 These features are independent, but they become especially powerful when used together.
@@ -41,28 +43,23 @@ Before openHAB loads your YAML configuration, it performs a **preprocessing pass
 
 During preprocessing, openHAB performs these steps:
 
-During preprocessing, openHAB performs these steps:
-
-1. YAML parsing
-1. Variable substitution (`!sub`)
-1. Template expansion (`!insert`)
-1. Include loading (`!include`)
-1. Package expansion
-1. Recursive merging
-1. Hidden key removal
+1. **YAML Parsing**: The initial file is read and parsed into a memory structure.
+1. **Variable Substitution (`!sub`)**: Expressions are evaluated and injected.
+1. **Conditionals (`!if`)**: Logic is evaluated to determine which blocks of YAML to keep or discard based on the current context.
+1. **Template & Include Expansion**: `!insert` and `!include` pull in content, often using the resolved variables.
+1. **Package Expansion**: External or local packages are loaded and their internal structures are expanded.
+1. **Recursive Merging**: The preprocessor merges the expanded packages into the main document’s top-level sections.
+1. **Hidden Key Removal**: Keys starting with `.` are stripped from the final output.
 
 The result is a complete YAML structure with:
 
-- all variables resolved
+- all variables and logic resolved
 - all templates and includes expanded
 - all anchors and merges applied
 - all packages integrated
 - all hidden keys removed
 
 This final expanded document is what openHAB interprets as Things, Items, Tags, and other configuration elements as defined by the [Core Structure](index.md).
-It represents the fully resolved top‑level sections (`things:`, `items:`, etc.) after all preprocessing is complete.
-
-Understanding preprocessing is essential when designing reusable templates or debugging unexpected behavior.
 
 ## Output & Debugging
 
@@ -87,42 +84,12 @@ $OPENHAB_CONF/yaml/_generated/<PATH_TO_ORIGINAL_FILE>
 
 This output shows exactly what openHAB "sees" after preprocessing and is the most effective way to debug advanced YAML features.
 
-**Example:**
-
-```yaml
-preprocessor:
-  generate_resolved_file: true
-```
-
 ### `load_into_openhab`
 
 When set to `false`, the file is still processed and (optionally) written to `_generated/`, but openHAB will **not** load it.
 A warning is logged to indicate that loading was intentionally disabled.
 
 This is ideal when experimenting with new YAML structures or verifying preprocessing behavior without affecting your running system.
-
-**Example:**
-
-```yaml
-preprocessor:
-  load_into_openhab: false
-```
-
-### Using Both Options Together
-
-```yaml
-preprocessor:
-  generate_resolved_file: true
-  load_into_openhab: false
-```
-
-In this mode:
-
-- the file is fully preprocessed
-- the resolved output is written to `_generated/…`
-- openHAB does **not** load the resulting configuration
-
-This is the recommended setup when testing new templates, debugging substitution issues, or validating include/merge behavior.
 
 ## Hidden Keys
 
@@ -147,15 +114,12 @@ items:
     label: Light One
 ```
 
-Hidden keys are a convenient place to define reusable blocks without cluttering the main configuration.
-
 ## File Structure and Conventions
 
 Although YAML files can be structured flexibly, the following conventions improve readability and maintainability:
 
-- Place `variables:` at the top of the file.
+- Place `variables:` and `templates:` at the top of the file.
 - Group reusable structures under hidden keys.
-- Keep includes and packages near the top‑level sections they affect.
 - Use anchors for static templates and includes for parameterized ones.
 - Use `_generated` output to verify the final structure.
 

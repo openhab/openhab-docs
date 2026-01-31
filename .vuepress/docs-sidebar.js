@@ -116,9 +116,10 @@ module.exports = [
               { title: 'Advanced Features',
                 children: [
                   ['configuration/yaml/advanced-features-overview', 'Overview'],
-                  ['configuration/yaml/variables', 'Variables & Substitution'],
-                  ['configuration/yaml/include', 'Include Files'],
-                  ['configuration/yaml/templates', 'Templates'],
+                  ['configuration/yaml/variables', 'Variables (!sub)'],
+                  ['configuration/yaml/conditionals', 'Conditionals (!if)'],
+                  ['configuration/yaml/include', 'Include Files (!include)'],
+                  ['configuration/yaml/templates', 'Templates (!insert)'],
                   ['configuration/yaml/packages', 'Packages'],
                   ['configuration/yaml/anchors', 'YAML Anchors & Aliases'],
                   ['configuration/yaml/merge-keys', 'Merge Keys']
