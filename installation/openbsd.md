@@ -62,7 +62,7 @@ To downgrade or replace an installed version with another:
 # pkg_add -r openhab ...
 ```
 
-You may also wish to simply delete and install the package again. Deleting the package does not remove user data, and reinstalling well allow you to select the flavor:
+You may also wish to simply delete and install the package again. Deleting the package does not remove user data, and reinstalling will allow you to select the flavor:
 
 ```shell
 # pkg_delete openhab
