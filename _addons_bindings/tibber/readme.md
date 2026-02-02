@@ -432,8 +432,6 @@ JSON Object `scheduleEntry`
 | duration | int    | Duration in seconds            |
 | cost     | double | Cost in your currency          |
 
-
-
 #### Result Example
 
 ```json

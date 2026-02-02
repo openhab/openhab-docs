@@ -3,7 +3,7 @@ id: windcentrale
 label: Windcentrale
 title: Windcentrale - Bindings
 type: binding
-description: "This Binding is used to display the details of Windcentrale windmills."
+description: "This binding is used to display the details of Windcentrale windmills."
 logo: images/addons/windcentrale.png
 install: auto
 ---
@@ -16,7 +16,7 @@ install: auto
 
 <AddonLogo />
 
-This Binding is used to display the details of Windcentrale windmills.
+This binding is used to display the details of Windcentrale windmills.
 
 ## Supported Things
 
@@ -29,11 +29,11 @@ The binding supports the following Windcentrale Things:
 
 ## Discovery
 
-After creating an account Thing the Binding can discover windmills based on the participations linked to the account.
+After creating an account Thing, the binding can discover windmills based on the participations linked to the account.
 
 ## Binding Configuration
 
-No binding configuration required.
+No binding configuration is required.
 
 ## Thing Configuration
 
@@ -48,7 +48,7 @@ No binding configuration required.
 
 | Configuration Parameter | Required | Default          | Description                                         |
 |-------------------------|----------|------------------|-----------------------------------------------------|
-| name                    | X        | De Blauwe Reiger | Identifies the windmill (see names list below)      |
+| name                    | X        | De Blauwe Reiger | Identifies the windmill (see the list below)        |
 | shares                  |          | 1                | Number of wind shares ("Winddelen")                 |
 | refreshInterval         |          | 30               | Refresh interval for refreshing the data in seconds |
 
