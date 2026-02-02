@@ -38,12 +38,43 @@ The first start may take **up to 15 minutes**, this is a good time to reward you
 
 You should be able to reach the openHAB Dashboard at `http://localhost:8080` at this point.
 
+#### Upgrading
+
+To upgrade openHAB (and all other packages and their dependencies) to their latest version:
+
+```shell
+# pkg_add -u
+```
+
+OpenBSD cannot exclude a package for upgrade, however, you can list only the package(s) you'd like to upgrade leaving openHAB out:
+
+```shell
+# pkg_add -u somepackage
+```
+
+### Downgrading / Specific Version
+
+OpenBSD has the concept of "FLAVORS" for packages. These are specific builds of packages that may incorporate different features, or track specific major versions. When initially installing openHAB, you are given the option to select the version of openHAB you want to use.
+
+To downgrade or replace an installed version with another:
+
+```shell
+# pkg_add -r openhab ...
+```
+
+You may also wish to simply delete and install the package again. Deleting the package does not remove user data, and reinstalling well allow you to select the flavor:
+
+```shell
+# pkg_delete openhab
+# pkg_add openhab
+```
+
 #### Uninstall
 
 To uninstall openHAB and get rid of all related files managed by the package manager, make a backup, then uninstall openHAB and remove the repository:
 
 ```shell
-# doas pkg_delete openhab
+# pkg_delete openhab
 ```
 
 ### File Locations
