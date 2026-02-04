@@ -153,7 +153,7 @@ When the notification is sent, it will show a button with the text "ON" and when
 ### Actions: On-Click Button Actions
 
 This is similar to the On-Click Action, but allows to attach up to three buttons to the notification that can be chosen from.
-An example would be to send a notification that a windows has been open for some time and then provide the user with the following three options:
+An example would be to send a notification that a window has been open for some time and then provide the user with the following three options:
 
 - Close the roller shutter
 - Remind me in two hours.

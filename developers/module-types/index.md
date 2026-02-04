@@ -493,7 +493,7 @@ The rule that implements our application is declaratively described in the json 
          {
             "id":"RuleTrigger",
             "label":"Item State Change Trigger",
-            "description":"This triggers a rule if an items state changed",
+            "description":"This triggers a rule if an item’s state changed",
             "type":"ItemStateChangeTrigger",
             "configuration":{
                "itemName":"DemoSwitch"
