@@ -125,7 +125,7 @@ _Image URL:_
 URL of the image to display in the background. The image is stretched to fit the screen size, while preserving its aspect ratio.
 If you want to achieve a different placement, adding margins to the image in an image editor will be necessary.
 
-This setting is in particular in important if you want to make your background image interactive, in which case it has to be of type SVG.
+This setting is in particular important if you want to make your background image interactive, in which case it has to be of type SVG.
 See below for more information on [interactive backgrounds](layout-pages-fixed.html#interactive-backgrounds).
 
 _Image Source Set:_

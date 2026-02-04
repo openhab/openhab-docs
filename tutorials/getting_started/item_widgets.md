@@ -18,7 +18,7 @@ This can be a powerful way to combine multiple Items into one widget (e.g. an oh
 Common things one might use an expression for are to change an icon or color based on the state of an Item, to hide a widget entirely if an Item isn't in a given state, or to change the colors of the widget elements.
 For full details on expressions see the [Expressions docs]({{base}}/ui/widget-expressions-variables.html).
 
-Note that when working with Units of Masurement, the state of the Item needs to be parsed into a number for comparisons.
+Note that when working with Units of Measurement, the state of the Item needs to be parsed into a number for comparisons.
 For example -
 
 ```javascript

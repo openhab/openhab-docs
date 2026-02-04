@@ -43,7 +43,6 @@ from the repository root to ensure that the build works smoothly (that step take
 
 The build includes [Tooling for static code analysis](https://github.com/openhab/static-code-analysis) that will validate your code against the openHAB Coding Guidelines and some additional best practices.
 Please fix all the priority 1 issues and all issues with priority 2 and 3 that are relevant (if you have any doubt don't hesitate to ask).
-to
 
 You can always run the above command from within your add-on's directory to speed the build up and fix and check reported errors.
 Formatting error can be fixed by

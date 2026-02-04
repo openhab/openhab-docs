@@ -270,7 +270,7 @@ This is particularly useful if one has created an Equipment from a Thing but onl
 
 ### From the Things's Page
 
-Select a Things and click on the "Channels" tab.
+Select a Thing and click on the "Channels" tab.
 Click on the Channel from which the Item is to be created.
 Click on "Add Link to Item..." and select "Create new Item".
 Fill out the information about the Item to be created, omitting the semantic tags.
