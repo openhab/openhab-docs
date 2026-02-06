@@ -34,15 +34,15 @@ The mapping form is best for binary choices.
 # Simple boolean check using a substitution
 example: !if
   if: !sub ${is_production}
-  value: "secure-server-url"
+  then: "secure-server-url"
   else: "localhost"
 ```
 
-| Key     | Description                                                           | Required |
-|:--------|:----------------------------------------------------------------------|:---------|
-| `if`    | The condition to evaluate. Can be a boolean, a string, or a variable. | Yes      |
-| `value` | The value to return if the condition is **truthy**.                   | Yes      |
-| `else`  | The value to return if the condition is **falsy**.                    | No       |
+| Key    | Description                                                           | Required |
+|:-------|:----------------------------------------------------------------------|:---------|
+| `if`   | The condition to evaluate. Can be a boolean, a string, or a variable. | Yes      |
+| `then` | The value to return if the condition is **truthy**.                   | Yes      |
+| `else` | The value to return if the condition is **falsy**.                    | No       |
 
 ### Sequence Form (Multiple Branches)
 
@@ -52,9 +52,9 @@ The engine stops at the first condition that evaluates to "truthy."
 ```yaml
 environment_type: !if
   - if: !sub ${is_prod}
-    value: "production"
+    then: "production"
   - elseif: !sub ${is_test}
-    value: "testing"
+    then: "testing"
   - else: "development"
 ```
 
@@ -92,7 +92,7 @@ server_config:
   port: 8080
   <<: !if
     if: !sub ${is_prod}
-    value:
+    then:
       ssl_enabled: true
       strict_security: true
     # No 'else' needed; if false, no extra keys are merged
@@ -107,7 +107,7 @@ server_config:
 target: !sub
   <<: !if
     if: ${is_active}
-    value: ${feature_data}
+    then: ${feature_data}
 ```
 
 ### Conditional Includes and Inserts
@@ -119,7 +119,7 @@ Only the tag in the active branch is processed.
 # Only loads the specific file needed for the environment
 network_settings: !if
   if: !sub ${wifi_enabled}
-  value: !include wifi-config.inc.yaml
+  then: !include wifi-config.inc.yaml
   else: !insert ethernet-template
 ```
 
@@ -132,7 +132,7 @@ Since substitutions are type‑aware, the result can be a simple scalar or a com
 # The !sub tag can return a string or a whole object/list
 database_settings: !if
   if: !sub ${use_external_db}
-  value: !sub ${external_db_config_map}
+  then: !sub ${external_db_config_map}
   else:
     driver: "h2"
     url: "jdbc:h2:mem:testdb"
