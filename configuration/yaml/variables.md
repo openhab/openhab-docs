@@ -146,6 +146,53 @@ This is often clearer and avoids unnecessary use of operators.
 
 :::
 
+### Return Types & Coercion
+
+The output type of a `!sub` tag depends on how the substitution is structured within the YAML scalar.
+
+#### Type Preservation (Single Expression)
+
+If the YAML value consists **entirely** of a single substitution pattern, the resulting object preserves the original Java type returned by the expression.
+This allows you to inject complex structures like lists, maps, booleans, or numbers directly into the configuration.
+
+```yaml
+# Becomes a real Boolean (true/false)
+is_active: !sub ${status == 'ON'}
+
+# Becomes a real List
+target_rooms: !sub ${rooms}
+
+# Quoting ensures YAML doesn't misinterpret special characters,
+# but the return type remains a Map if it's the only thing inside
+connection: !sub "${mqtt_config_map}"
+```
+
+#### String Coercion (Mixed Content)
+
+If the substitution pattern is combined with any other text (even a single space), or if multiple patterns are used together, the entire value is coerced into a **String**.
+
+```yaml
+# Becomes a String: "Status is ON"
+description: !sub "Status is ${status}"
+
+# Becomes a String: "1020" (not 30)
+concatenated: !sub "${10}${20}"
+
+# Becomes a String: "Kitchen " (note the trailing space)
+room_name: !sub "${room} "
+```
+
+| Syntax Pattern      | Resulting Type | Example Output          |
+|:--------------------|:---------------|:------------------------|
+| `!sub ${expr}`      | **Preserved**  | `[Item1, Item2]` (List) |
+| `!sub "${expr}"`    | **Preserved**  | `true` (Boolean)        |
+| `!sub Text ${expr}` | **String**     | `"Count: 5"` (String)   |
+| `!sub ${ex1}${ex2}` | **String**     | `"1020"` (String)       |
+
+::: tip Recommendation
+If you need to pass a list or map to a key, ensure the `!sub` contains exactly one `${...}` block and no surrounding text.
+:::
+
 ### List Concatenation with `+`
 
 Jinja’s `+` operator also supports list concatenation.
@@ -264,7 +311,7 @@ Expressions can include Jinja’s inline `if` form, which selects between values
 ```
 
 The `else` part is optional.
-When omitted, the expression evaluates to `null` (Jinja’s `None`).
+When omitted, the expression evaluates to `null`.
 If the result is used in a string context, it becomes an empty string.
 
 **Examples:**
@@ -314,7 +361,7 @@ These are the most common issues to watch out for:
         label: "Static label"
     ```
 
-1. Using a reserved keyword as a variable name
+1. **Using a reserved keyword as a variable name**
 
     Certain keywords are reserved in Jinja and should not be used as variable names.
     These include: `in`, `True`, `False`, `true`, `false`, `null`, `empty`, `if`, `else`, `and`, `or`, `not`.
