@@ -71,7 +71,7 @@ The string is evaluated directly as an expression against the available variable
 if: count > 10 and status == 'ALARM'
 ```
 
-The expression can be quoted when it contains characters that YAML would otherwise misinterpret (such as `: ` or `#`).
+The expression can be quoted when it contains characters that YAML would otherwise misinterpret (such as `:` or `#`).
 
 ### 2. Using `!sub` (Advanced - Double Evaluation)
 
