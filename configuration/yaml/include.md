@@ -20,7 +20,20 @@ This is especially useful for modular reuse, creating device [packages](packages
 keyname: !include filename.inc.yaml
 ```
 
-Use this when you don’t need to explicitly pass any variables.
+```yaml
+keyname: !include filename.inc.yaml?arg1=value1&flag
+```
+
+The short form allows you to reference another file directly after the `!include` tag.
+Optional arguments may be appended using URL‑style query syntax:
+
+- `arg1=value1` assigns a specific value
+- `flag` (a value‑less argument) is interpreted as `true`
+- Multiple arguments are separated with `&`
+- The file name, argument names, and argument values are URL‑decoded.
+  If any of them contain characters such as `+`, `%`, or other reserved symbols, make sure to URL‑encode them.
+
+This form is ideal when you only need to include a file and pass a small number of simple parameters.
 
 ### Long Form (supports variables)
 

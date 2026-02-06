@@ -59,7 +59,21 @@ It supports two forms:
 message: !insert simple_greeting
 ```
 
-Use this when you don’t need to explicitly pass any variables.
+```yaml
+message: !insert simple_greeting?arg1=value1&flag
+```
+
+The short form allows you to reference a template directly after the `!insert` tag.
+Optional arguments may be appended using URL‑style query syntax:
+
+- `arg1=value1` assigns a specific value
+- `flag` (a value‑less argument) is interpreted as `true`
+- Multiple arguments are separated with `&`
+- The template name, argument names, and argument values are URL‑decoded.
+  If any of them contain characters such as `+`, `%`, or other reserved symbols, make sure to URL‑encode them.
+
+Use the no‑argument form when you simply want to insert a template as‑is.
+Use the query‑parameter form when you want to pass a small number of simple parameters.
 
 ### Long Form (supports variables)
 
