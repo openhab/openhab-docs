@@ -500,6 +500,23 @@ This form is also useful when a variable name contains characters that are norma
 It is likewise useful when the variable name itself is stored in another variable.
 However, for simplicity and readability, such naming patterns should generally be avoided.
 
+### ENV to Access Environment Variables
+
+A special variable `ENV` exposes a map of environment variables available to the preprocessor.
+For security reasons, only variables whose names begin with `OPENHAB_` are included.
+This is especially useful when running openHAB in Docker, where environment variables can be set directly in a `docker-compose` file.
+
+#### Example
+
+```yaml
+# Suppose the environment contains:
+#   OPENHAB_FOO=bar
+#   OPENHAB_MODE=production
+
+mode: !sub ${ENV.OPENHAB_MODE}   # → "production"
+foo:  !sub ${ENV.OPENHAB_FOO}    # → "bar"
+```
+
 ### Referencing Other Variables During Definition
 
 Variables may reference **other variables**, including those defined earlier in the **same** `variables:` block.
