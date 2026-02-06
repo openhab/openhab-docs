@@ -117,9 +117,11 @@ Garmin does not allow a permanent Wi-Fi connection. Instead, the app must enter 
 
 If no BLE connection to a phone is available, the app automatically checks whether a Wi-Fi connection can be used and, if so, switches to Wi-Fi mode. These checks continue while the app is running, and the app may switch between BLE and Wi-Fi connectivity at any time.
 
-As described above, when running in Wi-Fi mode no live item states are displayed. The current connectivity mode can be checked in the [settings menu](#settings-menu).
+When Wi-Fi mode is active, a small Wi-Fi indicator appears above the menu titles and in full-screen views. Also, the current connectivity mode can be checked in the [settings menu](#settings-menu).
 
 <div class="garmin-screenshot-container">
+  <img src="images/app/12-wifi-indicator-menu.png"/>
+  <img src="images/app/12-wifi-indicator-widget.png"/>
   <img src="images/app/12-wifi-settings-mode.png"/>
 </div>
 
