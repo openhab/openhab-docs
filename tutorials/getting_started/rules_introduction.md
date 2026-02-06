@@ -93,12 +93,12 @@ When run manually, the conditions are ignored.
 If triggers define when the rule runs and conditions define what must be true for the rule to run, the actions define the rule's behaviors.
 There are four categories of Actions.
 
-| Action          | Purpose                                                 |
-|-----------------|---------------------------------------------------------|
-| Item Action     | to command or update an Item                            |
-| Other Rules     | to cause another rule to run                            |
-| Audio and Voice | to cause TTS or an audio file to play on an audio sink  |
-| Script Action   | to execute some code written in a supported rule action |
+| Action          | Purpose                                                   |
+|-----------------|-----------------------------------------------------------|
+| Item Action     | to command or update an Item                              |
+| Other Rules     | to cause another rule to run                              |
+| Audio and Voice | to cause TTS or an audio file to play on an audio sink    |
+| Script Action   | to execute some code written in a supported rule language |
 
 ### A Note on Rule Languages
 
