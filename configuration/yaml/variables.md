@@ -625,6 +625,28 @@ variables:
   external_data: !include other_file.inc.yaml
 ```
 
+### Using `!include` to Perform a Common Transformation
+
+Include files don’t need to return mappings — they can also return a single computed value.
+This makes them useful for reusable transformations that you want to apply across multiple files.
+
+**Example:**
+
+`extract_suffix.inc.yaml`
+
+```yaml
+# Extracts the numeric suffix from the ${input} variable
+# e.g. for "LivingRoom_PIR2" it will extract "2"
+!sub ${input.replaceAll(".*(\\d+$)", "$1")}
+```
+
+This “utility function” can then be used anywhere you need the same transformation:
+
+```yaml
+variables: !sub
+  suffix: !include extract_suffix.inc.yaml?input=${package_id}
+```
+
 ### Undefined Variable Handling
 
 Referencing an undefined variable logs a warning and evaluates to `null`.
