@@ -148,21 +148,117 @@ things:
 
 ## File Naming & Reload Behavior
 
-- The file can be specified as an absolute path or as a path relative to the current file.
-  It may be helpful to store all include files in a subdirectory and refer to them with a relative path.
-    ::: tip Using Predefined Path Variables
-    You can use [predefined variables](variables.md#predefined-variables) such as `OPENHAB_CONF`, `OPENHAB_USERDATA`, `__DIRECTORY__`, or `__FILE_NAME__` when constructing the `file:` path.
-    These can be interpolated with `${...}` and are especially useful for building portable or relative include paths.
-    Example:
+### Path Resolution
 
-    ```yaml
-    keyname: !include
-      file: !sub ${OPENHAB_CONF}/packages/hue-light.pkg.yaml
-    ```
+Include file paths may be written as absolute paths or as paths relative to the current file.
 
-    :::
-- Use the `.inc.yaml` or `.inc.yml` extension for included files so they aren't loaded as primary configuration files.
-- Changes to included files automatically trigger a reload of the primary file.
-- File inclusions can be nested.
-  For example:
-  `main.yaml` → includes `a.inc.yaml` → includes `b.inc.yaml` → etc.
+openHAB also supports two special path prefixes that simplify referencing files inside the configuration directory.
+
+#### `@/path` → `${OPENHAB_CONF}/path`
+
+A single `@` at the beginning of the path is replaced with the value of `OPENHAB_CONF`.
+
+```yaml
+key: !include "@/includes/device.inc.yaml"
+# Resolves to: ${OPENHAB_CONF}/includes/device.inc.yaml
+```
+
+This is a convenient shorthand for absolute paths inside the openHAB configuration tree.
+
+#### `@@/path` → `${OPENHAB_CONF}/<yaml>/path`
+
+A double `@@` prefix resolves to the directory **one level below** `OPENHAB_CONF` that contains the including file.
+
+This works even if the including file is nested several directories deep.
+
+**Example directory layout:**
+
+```sh
+OPENHAB_CONF/
+  yaml/
+    shared.inc.yaml
+    lights/
+      kitchen/
+        main.yaml
+```
+
+If `main.yaml` contains:
+
+```yaml
+key: !include "@@/shared.inc.yaml"
+```
+
+Then `@@` resolves to:
+
+```sh
+${OPENHAB_CONF}/yaml
+```
+
+So the final resolved path becomes:
+
+```sh
+${OPENHAB_CONF}/yaml/shared.inc.yaml
+```
+
+This allows include files to be referenced relative to the top‑level domain directories (`yaml`, `items`, `things`, `tags`) regardless of how deeply nested the including file is.
+
+#### Relative Paths
+
+If the path does not begin with `/`, `@`, or `@@`, it is interpreted as a path **relative to the directory of the including file**.
+
+**Example directory layout:**
+
+```sh
+yaml/
+  main.yaml
+  shared.inc.yaml
+  common/
+    defaults.inc.yaml
+```
+
+**Same directory:**
+
+```yaml
+key: !include "shared.inc.yaml"
+# Resolves to: yaml/shared.inc.yaml
+```
+
+**Navigate downward (into a subdirectory):**
+
+```yaml
+key: !include "common/defaults.inc.yaml"
+# Resolves to: yaml/common/defaults.inc.yaml
+```
+
+Relative paths always resolve from the directory containing the including file.
+
+#### Using Variable Substitutions
+
+You can use variable substitution patterns in the file name to construct paths dynamically.
+This includes normal variables, [predefined variables](variables.md#predefined-variables) such as `OPENHAB_CONF`, `OPENHAB_USERDATA`, `__DIRECTORY__`, or `__FILE_NAME__`, and environment variables exposed through `ENV`.
+
+These can be interpolated using `!sub ${...}` and are especially useful for building portable or relative include paths.
+
+**Example:**
+
+```yaml
+keyname: !include
+  file: !sub ${OPENHAB_CONF}/packages/hue-light.pkg.yaml
+```
+
+### File Organization
+
+It may be helpful to store include files in a dedicated subdirectory and reference them using relative paths.
+Using consistent naming (e.g., `*.inc.yaml`) makes it clear which files are intended for inclusion rather than direct loading.
+
+### Nested Includes
+
+Include files may themselves contain `!include` directives.
+This allows configurations to be composed from multiple layers:
+
+main.yaml → a.inc.yaml → b.inc.yaml → …
+
+### Reload Behavior
+
+- Include files should use the `.inc.yaml` or `.inc.yml` extension so they are not treated as primary configuration files.
+- Changes to included files automatically trigger a reload of the primary file but only if they are located within a monitored directory such as `${OPENHAB_CONF}/yaml`.
