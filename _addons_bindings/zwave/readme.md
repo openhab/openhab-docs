@@ -139,6 +139,7 @@ There are a large number of things supported by the Z-Wave binding, so configura
 
 To configure things manually via a `.things` file you need to configure a Bridge for the controller and then configure devices under that bridge. 
 Follow this sample format:
+
 ```
 Bridge zwave:serial_zstick:controller "ZWave Controller" [ port="/dev/ttyACM0", controller_softreset="false", controller_master="true", heal_enable="true", security_networkkey="XXX" ]
 {
@@ -146,6 +147,7 @@ Bridge zwave:serial_zstick:controller "ZWave Controller" [ port="/dev/ttyACM0", 
 	august_asl03_00_000 frontDoor "Front Door Lock" [ node_id=2 ]	
 }
 ```
+
 Adjust the bridge details as needed, where:
 
 * `serial_zstick` represents the thing type UID of the controller
@@ -164,11 +166,13 @@ If you don't know your device's firmware version discover the device dynamically
 * `node_id` is the device's Z-Wwave node id
 
 Define items via a `.items` file leveraging the [channel details documented for your device](https://www.openhab.org/addons/bindings/zwave/doc/things.html), for example:
+
 ```
 Switch Sensor1 "Motion Sensor" {channel="zwave:aeon_zw100_01_008:controller:sensor1:alarm_motion"}
 ```
 
-##### A note on thing UIDs: 
+##### A note on thing UIDs:
+ 
 All things are assigned a unique id following the format `binding`:`device type`:`bridge`:`id` and Z-Wave devices are no different. 
 The above sample for example would be assigned the UID `zwave:aeon_zw100_01_008:controller:sensor1`.
 
@@ -327,6 +331,19 @@ Internally the binding holds a device state and these states are mapped to the s
 * ONLINE - A device is considered to be operating normally.
 * DEAD - A device is considered DEAD if it does not respond to a message three times. This is a binding state only and while the binding will continue to attempt to contact a DEAD device retries to the node will be stopped until it responds. DEAD devices can slow down communications within the network so you are advised to remove DEAD devices from the network if possible. DEAD devices will be marked as OFFLINE within the system status.
 * FAILED - A device is considered FAILED if the controller can not communicate with the device. The binding does not control this. FAILED devices are treated in a similar way to DEAD devices however the controller will reduce communications to the device and will timeout quicker. It should be noted that the controller will generally not consider battery devices as failed. FAILED devices will be marked as OFFLINE within the system status.
+
+
+### Thing Actions
+
+At the bottom of the Thing UI page are actions, some advanced, which can be directed to a specific device (node).
+
+* View Z-Wave Network Map - Shows the nodes in the network and their neighbors. This data is generated during a network or device heal based on the neighbors found. It does not show actual Z-Wave communication routes, so has limited diagnostic value.
+* Re-Interview the node - The node must be fully initialized to execute this action. This action clears all the information about a node, including the XML in the OH-Userdata/zwave folder, and re-interviews the node. This is one way to get new information if the device information has changed. Battery nodes will execute this action when they are next awake.
+* Rebuild routing tables (nee Heal) - The node must be fully initialized to execute this action. This clears all current routes and establishes new routes for this device only. This action generates less network traffic than the network heal option but is only for one node. The new situation for this node will be reflected in the Network Map. Battery nodes will execute this action when they are next awake.
+* Ping the node (advanced) - Sends a ping to the node. If the node stays (or turns) ONLINE it has a network connection. Battery nodes will not be pinged.
+* Check if node is failed (advanced) - Noting the Thing States discussion above, this action asks if the OFFLINE node is in the controller failed list. This action is blocked for battery devices. It is best to have debug logging on while using this action.
+* Remove failed node from the controller (advanced) - Again for listening nodes only, after the controller has marked the node as failed, this will remove the node. To eliminate the Thing UI page after removal, use the Remove Thing button at the bottom of the UI Thing page.
+* Replace failed node with a new device, reusing the node ID (advanced) - For listening nodes, marked as failed, this allows a new device to be added with the same node ID. After triggering the action, pause a second or two, then put the replacement device into inclusion mode. It is best to have debug logging on while using this action. If the replacement device is not the same, use Remove Thing on the UI page and then go to Things > + sign in bottom right corner > Z-Wave Binding > Scan to get an updated UI page. The replacement device can be battery powered.
 
 
 ### Associations
