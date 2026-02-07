@@ -500,7 +500,7 @@ This form is also useful when a variable name contains characters that are norma
 It is likewise useful when the variable name itself is stored in another variable.
 However, for simplicity and readability, such naming patterns should generally be avoided.
 
-### ENV to Access Environment Variables
+### `ENV` to Access Environment Variables
 
 A special variable `ENV` exposes a map of environment variables available to the preprocessor.
 For security reasons, only variables whose names begin with `OPENHAB_` are included.
