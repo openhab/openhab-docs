@@ -8,9 +8,9 @@ title: YAML Configuration - Merge Keys
 Merge keys (`<<`) let you combine mappings defined directly in a mapping with other mappings defined elsewhere, such as:
 
 - [Anchors](anchors.md)
-- [`!include`](include.md) (External files)
-- [`!insert`](templates.md) (In-file Templates)
-- [`!if`](conditionals.md) (Conditionals)
+- [!include](include.md) (External files)
+- [!insert](templates.md) (In-file Templates)
+- [!if](conditionals.md) (Conditionals)
 - [Variables](variables.md)
 
 They promote reusability and avoid repetition by letting you define common mappings once and update them in a single place.
@@ -89,7 +89,7 @@ See also: [Using Hidden Keys for Anchors](anchors.md#using-hidden-keys-for-ancho
 
 ### `!include`
 
-The [`!include`](include.md) tag loads the contents of another file so it can be inserted into the current mapping.
+The [!include](include.md) tag loads the contents of another file so it can be inserted into the current mapping.
 Merge keys then combine the included content with any local fields in the mapping.
 
 **Benefits over anchors:**
@@ -125,7 +125,7 @@ things:
 
 ### Templates (`!insert`)
 
-The [`!insert`](templates.md) tag inserts the contents of an in-file template into the current mapping.
+The [!insert](templates.md) tag inserts the contents of an in-file template into the current mapping.
 Merge keys then combine the template’s fields with any local fields in that mapping.
 
 **Benefits over anchors:**
@@ -157,7 +157,7 @@ things:
 
 ### Conditionals (`!if`)
 
-The [`!if`](conditionals.md) tag is the most powerful way to conditionally merge content.
+The [!if](conditionals.md) tag is the most powerful way to conditionally merge content.
 Because the engine resolves tags before the merge, you can choose between different mappings or return `null` to skip the merge entirely.
 
 ```yaml

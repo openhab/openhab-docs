@@ -43,11 +43,11 @@ packages:
 
   - **`!include` (external file):**
     Loads a separate YAML file and applies the package’s variable context to it.
-    See the [`!include` syntax options](include.md#syntax-options).
+    See the [!include syntax options](include.md#syntax-options).
 
   - **`!insert` (same‑file template):**
     Expands a template defined under the main file’s `templates:` section.
-    See the [`!insert` syntax options](templates.md#syntax-options).
+    See the [!insert syntax options](templates.md#syntax-options).
 
   Both forms support parameterization through `vars:` and participate fully in package merging.
 

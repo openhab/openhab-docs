@@ -113,6 +113,7 @@ The syntax of variable references:
 An expression can also include string, arithmetic, and boolean operations.
 
 > **Note:** Referencing an undefined variable resolves to an empty string and emits a warning.
+> For more details see [how to handle missing variables](#undefined-variable-handling).
 
 **Examples:**
 
@@ -198,7 +199,7 @@ If you need to pass a list or map to a key, ensure the `!sub` contains exactly o
 Jinja’s `+` operator also supports list concatenation.
 When one side of the expression is a list and the other is a scalar, the scalar is automatically wrapped into a single‑element list.
 
-**Examples:**
+**Example:**
 
 ```yaml
 variables:
@@ -229,7 +230,7 @@ You can also concatenate two lists directly:
 
 This behavior originates from Jinja’s expression language, which follows Python‑style list semantics.
 
-### Filters
+### Built-in Filters
 
 Jinja offers a number of built‑in filters that are useful when building YAML structures.
 Filters are applied to a variable or value using the syntax `variable|filter`, and they can be chained, e.g. `variable|filter1|filter2`.
@@ -245,7 +246,6 @@ Some commonly used filters are listed below:
 | `lower`      | Convert a value to lowercase.                                                                                                           |
 | `upper`      | Convert a value to uppercase.                                                                                                           |
 | `replace`    | Replace a substring.                                                                                                                    |
-| `label`      | Convert an identifier into a human‑friendly label. [More details](#label-openhab-custom-filter). _(Custom filter provided by openHAB.)_ |
 
 #### Formatting
 
@@ -268,12 +268,27 @@ Some commonly used filters are listed below:
 |-----------|---------------------------------------------------------------|
 | `default` | Return a default value if the variable is empty or undefined. |
 
+##### Default Example
+
+```yaml
+label: !sub ${room_label | default('Kitchen')}
+```
+
 For a complete list of built-in filters, see the Jinja documentation:
 [Jinja Filters](https://jinja.palletsprojects.com/en/stable/templates/#builtin-filters).
 
 ---
 
-#### `label` (openHAB custom filter)
+### openHAB Custom Filters
+
+openHAB provides several custom filters to help in YAML configuration building.
+
+| Filter          | Description                                        |
+|-----------------|----------------------------------------------------|
+| [label](#label) | Convert an identifier into a human‑friendly label. |
+| [dig](#dig)     | Safely navigate deeply nested map structures.      |
+
+#### `label`
 
 Formats an identifier into a human‑friendly label.
 
@@ -299,6 +314,36 @@ ${ "foo-bar_baz" | label } → "Foo Bar Baz"
 ${ "multiple---separators___here" | label } → "Multiple Separators Here"
 ${ "StatusLED" | label } → "Status LED"
 ```
+
+#### `dig`
+
+Safely navigates deeply nested map structures without raising errors.
+Instead of throwing an error when a key is missing, it returns `null`, making it useful for optional or partially defined configuration data.
+
+##### Behavior
+
+- Traverses nested maps using a sequence of keys
+- Returns the value if all keys exist
+- Returns `null` if any key in the chain is missing
+- Works seamlessly with `default()` to provide fallbacks
+
+##### Example
+
+```yaml
+variables:
+  infrastructure:
+    config:
+      login:
+        user: alice
+
+username: !sub ${ infrastructure | dig('config', 'login', 'user') }
+# → "alice"
+
+password: !sub ${ infrastructure | dig('config', 'login', 'password') }
+# → null
+```
+
+See [undefined variable handling](#undefined-variable-handling).
 
 ### Conditional Expressions
 
@@ -580,18 +625,40 @@ variables:
   external_data: !include other_file.inc.yaml
 ```
 
+### Undefined Variable Handling
+
+Referencing an undefined variable logs a warning and evaluates to `null`.
+To avoid triggering this warning, you can first check for the variable's existence using the [VARS](#vars-and-reserved-keywords) special dictionary.
+
+This can be combined with the [default() filter](#default-example) to provide fallback values when a variable is missing.
+The [dig](#dig) filter is also useful when navigating deeply nested structures, as it returns `null` instead of raising an error when any key in the chain is absent.
+
+**Examples:**
+
+```yaml
+# None of these will trigger a warning despite missing variable `host`
+host_defined: !sub ${ 'host' in VARS }            # → false (variable 'host' is not defined)
+host: !sub ${ VARS.host }                         # → null
+host: !sub ${ VARS | dig('host') }                # → null (alternative method)
+user: !sub ${ VARS | dig('config', 'username') }  # → null
+
+# With a default value
+host: !sub ${ VARS | dig('config', 'host', 'address') | default('127.0.0.1') }
+# → 127.0.0.1
+```
+
 ### Calling Java Methods
 
 Inside an expression, variables keep their actual Java types, so you can call methods on them just as you would in Java.
 
 Common types you may encounter include:
 
-- [`String`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
-- [`Integer`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html)
-- [`Double`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html)
-- [`Boolean`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html)
-- [`Map`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html)
-- [`List`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html)
+- [String](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
+- [Integer](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html)
+- [Double](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html)
+- [Boolean](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html)
+- [Map](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html)
+- [List](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html)
 
 This is especially useful when you need functionality beyond the built‑in filters — for example, using `String.replaceAll()` with regular expressions.
 

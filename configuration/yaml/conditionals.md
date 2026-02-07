@@ -14,7 +14,7 @@ The `!if` tag performs logical branching during the **preprocessing phase**.
 
 ## When to Use `!if`
 
-Use the `!if` tag to adapt your configuration based on the **Resolution Context** (variables defined in the file, injected via `!include` or `!insert`, or environment globals):
+Use the `!if` tag to adapt your configuration based on the **Resolution Context** (variables defined in the file, injected via `!include` or `!insert`, or [environment globals](variables.md#env-to-access-environment-variables)):
 
 - **Conditional Snippets**: choose between alternative configuration blocks or values.
 - **Optional Properties**: conditionally merge in additional settings using [merge keys (<<)](merge-keys.md).
@@ -71,7 +71,9 @@ The string is evaluated directly as an expression against the available variable
 if: count > 10 and status == 'ALARM'
 ```
 
+::: tip
 The expression can be quoted when it contains characters that YAML would otherwise misinterpret (such as `:` or `#`).
+:::
 
 ### 2. Using `!sub` (Advanced - Double Evaluation)
 
