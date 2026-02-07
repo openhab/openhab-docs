@@ -152,59 +152,25 @@ things:
 
 Include file paths may be written as absolute paths or as paths relative to the current file.
 
-openHAB also supports two special path prefixes that simplify referencing files inside the configuration directory.
+openHAB also supports a special path prefix that simplifies referencing files inside the YAML configuration directory.
 
-#### `@/path` → `${OPENHAB_CONF}/path`
+#### `@/path` → `${OPENHAB_CONF}/yaml/path`
 
-A single `@` at the beginning of the path is replaced with the value of `OPENHAB_CONF`.
+A leading `@` resolves to the `yaml` directory inside the openHAB configuration root.
+
+**Note:** Paths beginning with `@` **must be quoted** (e.g., `"@/path"`).
+YAML plain scalars cannot begin with `@`, so quoting ensures the value is parsed as a normal string.
 
 ```yaml
 key: !include "@/includes/device.inc.yaml"
-# Resolves to: ${OPENHAB_CONF}/includes/device.inc.yaml
+# Resolves to: ${OPENHAB_CONF}/yaml/includes/device.inc.yaml
 ```
 
-This is a convenient shorthand for absolute paths inside the openHAB configuration tree.
-
-#### `@@/path` → `${OPENHAB_CONF}/<yaml>/path`
-
-A double `@@` prefix resolves to the directory **one level below** `OPENHAB_CONF` that contains the including file.
-
-This works even if the including file is nested several directories deep.
-
-**Example directory layout:**
-
-```sh
-OPENHAB_CONF/
-  yaml/
-    shared.inc.yaml
-    lights/
-      kitchen/
-        main.yaml
-```
-
-If `main.yaml` contains:
-
-```yaml
-key: !include "@@/shared.inc.yaml"
-```
-
-Then `@@` resolves to:
-
-```sh
-${OPENHAB_CONF}/yaml
-```
-
-So the final resolved path becomes:
-
-```sh
-${OPENHAB_CONF}/yaml/shared.inc.yaml
-```
-
-This allows include files to be referenced relative to the top‑level domain directories (`yaml`, `items`, `things`, `tags`) regardless of how deeply nested the including file is.
+This is a convenient shorthand for the most common case: including files stored within the YAML configuration domain.
 
 #### Relative Paths
 
-If the path does not begin with `/`, `@`, or `@@`, it is interpreted as a path **relative to the directory of the including file**.
+If the path does not begin with `/` or `@`, it is interpreted as a path **relative to the directory of the including file**.
 
 **Example directory layout:**
 
