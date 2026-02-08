@@ -323,7 +323,9 @@ Instead of throwing an error when a key is missing, it returns `null`, making it
 
 ##### Behavior
 
-- Traverses nested maps using a sequence of keys
+- Traverses nested maps and lists using a sequence of keys
+- Accepts multiple key arguments, a dot‑separated path, or any combination of both
+- List indices may be provided as numbers or numeric strings (e.g., `2` or `'2'`)
 - Returns the value if all keys exist
 - Returns `null` if any key in the chain is missing
 - Works seamlessly with `default()` to provide fallbacks
@@ -336,12 +338,27 @@ variables:
     config:
       login:
         user: alice
+      servers:
+        - host: a.example.com
+        - host: b.example.com
 
 username: !sub ${ infrastructure | dig('config', 'login', 'user') }
 # → "alice"
 
 password: !sub ${ infrastructure | dig('config', 'login', 'password') }
 # → null
+
+dot_notation: !sub ${ infrastructure | dig('config.login.user') }
+# → "alice"
+
+mixed_notation: !sub ${ infrastructure | dig('config', 'login.user') }
+# → "alice"
+
+list_access: !sub ${ infrastructure | dig('config', 'servers', 1, 'host') }
+# → "b.example.com"
+
+list_access_string_index: !sub ${ infrastructure | dig('config.servers.0.host') }
+# → "a.example.com"
 ```
 
 See [undefined variable handling](#undefined-variable-handling).
