@@ -239,13 +239,14 @@ Some commonly used filters are listed below:
 
 #### Text transformation
 
-| Filter       | Description                                                                                                                             |
-|--------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| `capitalize` | Capitalize a value.                                                                                                                     |
-| `title`      | Return a titlecased version.                                                                                                            |
-| `lower`      | Convert a value to lowercase.                                                                                                           |
-| `upper`      | Convert a value to uppercase.                                                                                                           |
-| `replace`    | Replace a substring.                                                                                                                    |
+| Filter       | Description                                                   |
+|--------------|---------------------------------------------------------------|
+| `capitalize` | Capitalize a value.                                           |
+| `title`      | Return a titlecased version.                                  |
+| `lower`      | Convert a value to lowercase.                                 |
+| `upper`      | Convert a value to uppercase.                                 |
+| `replace`    | Replace a substring.                                          |
+| `trim`       | Strip leading and trailing characters, by default whitespace. |
 
 #### Formatting
 
