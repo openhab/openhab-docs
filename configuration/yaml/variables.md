@@ -638,7 +638,7 @@ This makes them useful for reusable transformations that you want to apply acros
 ```yaml
 # Extracts the numeric suffix from the ${input} variable
 # e.g. for "LivingRoom_PIR2" it will extract "2"
-!sub ${input.replaceAll(".*(\\d+$)", "$1")}
+!sub ${input.replaceAll(".*?([0-9]*)$", "$1")}
 ```
 
 This “utility function” can then be used anywhere you need the same transformation:
