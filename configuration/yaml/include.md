@@ -148,13 +148,22 @@ things:
 
 ## File Naming & Reload Behavior
 
+### Include File Naming
+
+Include files should use a dedicated extension, either `.inc.yaml` or `.inc.yml`.
+Files with a normal `.yaml` extension are treated as **main configuration files** and must contain the full [top‑level structure](index.md) required by the YAML configuration schema.
+
+In contrast, `.inc.yaml` files are recognized as include fragments and are only processed when referenced through `!include`.
+
 ### Path Resolution
 
 Include file paths may be written as absolute paths or as paths relative to the current file.
 
 openHAB also supports a special path prefix that simplifies referencing files inside the YAML configuration directory.
 
-#### `@/path` → `${OPENHAB_CONF}/yaml/path`
+#### Shorthand for Referencing Files in the YAML Configuration Directory
+
+**`@/path` → `${OPENHAB_CONF}/yaml/path`**
 
 A leading `@` resolves to the `yaml` directory inside the openHAB configuration root.
 
@@ -252,8 +261,8 @@ keyname: !include
 
 ### File Organization
 
-It may be helpful to store include files in a dedicated subdirectory and reference them using relative paths.
-Using consistent naming (e.g., `*.inc.yaml`) makes it clear which files are intended for inclusion rather than direct loading.
+It may be helpful to store include files in a dedicated subdirectory.
+These files can be referenced using relative paths, the `@` shorthand, or full absolute paths—choose whichever style best matches your preference.
 
 ### Nested Includes
 
@@ -264,5 +273,5 @@ main.yaml → a.inc.yaml → b.inc.yaml → …
 
 ### Reload Behavior
 
-- Include files should use the `.inc.yaml` or `.inc.yml` extension so they are not treated as primary configuration files.
-- Changes to included files automatically trigger a reload of the primary file but only if they are located within a monitored directory such as `${OPENHAB_CONF}/yaml`.
+When an include file changes, openHAB reloads the main files that reference it rather than attempting to load the include file directly.
+Reloads occur only if the include file is located within a monitored directory such as `${OPENHAB_CONF}/yaml`.
