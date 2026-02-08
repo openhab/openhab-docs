@@ -166,34 +166,72 @@ key: !include "@/includes/device.inc.yaml"
 # Resolves to: ${OPENHAB_CONF}/yaml/includes/device.inc.yaml
 ```
 
-This is a convenient shorthand for the most common case: including files stored within the YAML configuration domain.
+Using `@` provides several benefits:
+
+- **Avoids long or fragile relative paths** such as `../../../../includes/device.inc.yaml`.
+- **Makes it immediately clear** that the referenced file lives inside the YAML configuration domain.
+- **Allows files to be moved around freely** without needing to update include paths.
+- **Provides a concise alternative** to the full substitution form `${OPENHAB_CONF}/yaml/...`.
+- **Requires no substitution syntax** and avoids typing long absolute paths.
+- **Supports different user preferences**:
+  - Those who value **brevity** can use `@`.
+  - Those who prefer **explicitness** can continue using `${OPENHAB_CONF}/yaml/...`.
+
+**Relative paths also remain a valid option.**
+Use them when the included files are meant to move _together_ with the referencing files.
+Use absolute or `@` paths when the included files remain _static_ and only the referencing files may move.
+
+Every file—regardless of its location—can reference the same include using the same path:
+
+```sh
+yaml/
+  includes/
+    device.inc.yaml
+  main.yaml
+  rooms/
+    rooms.yaml
+    kitchen/
+      kitchen.yaml
+```
+
+> **Note:** If you intentionally use a directory whose name literally begins with `@`, you can still reference it using a normal relative path such as `"./@/file.yaml"`. The `@` prefix only applies when it appears at the very start of the include path.
 
 #### Relative Paths
 
 If the path does not begin with `/` or `@`, it is interpreted as a path **relative to the directory of the including file**.
+You may use `.` and `..` to refer to the current and parent directory.
 
 **Example directory layout:**
 
 ```sh
 yaml/
-  main.yaml
-  shared.inc.yaml
-  common/
-    defaults.inc.yaml
+  parent.inc.yaml
+  main/
+    main.yaml
+    shared.inc.yaml
+    common/
+      defaults.inc.yaml
 ```
 
 **Same directory:**
 
 ```yaml
 key: !include "shared.inc.yaml"
-# Resolves to: yaml/shared.inc.yaml
+# Resolves to: yaml/main/shared.inc.yaml
 ```
 
 **Navigate downward (into a subdirectory):**
 
 ```yaml
 key: !include "common/defaults.inc.yaml"
-# Resolves to: yaml/common/defaults.inc.yaml
+# Resolves to: yaml/main/common/defaults.inc.yaml
+```
+
+***Navigate upward:**
+
+```yaml
+key: !include "../parent.inc.yaml"
+# Resolves to: yaml/parent.inc.yaml
 ```
 
 Relative paths always resolve from the directory containing the including file.
