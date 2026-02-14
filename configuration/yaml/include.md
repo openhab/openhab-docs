@@ -159,55 +159,74 @@ In contrast, `.inc.yaml` files are recognized as include fragments and are only 
 
 Include file paths may be written as absolute paths or as paths relative to the current file.
 
-openHAB also supports a special path prefix that simplifies referencing files inside the YAML configuration directory.
+openHAB also supports **two shorthand prefixes** that simplify referencing files inside the openHAB configuration directory.
 
-#### Shorthand for Referencing Files in the YAML Configuration Directory
+#### Shorthand Prefixes
 
-**`@/path` → `${OPENHAB_CONF}/yaml/path`**
+| Shorthand           | Resolves To                                  | Meaning                                                                                                                              |
+|---------------------|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| `@/path`<br>`@path` | `${OPENHAB_CONF}/path`                       | The openHAB configuration root. Use when referencing files anywhere under `OPENHAB_CONF`. The slash after `@` is optional.           |
+| `$/path`<br>`$path` | `${OPENHAB_CONF}/<top-level-directory>/path` | The top‑level directory (e.g., `yaml`, `items`, `things`, `tags`) that contains the including file. The slash after `$` is optional. |
 
-A leading `@` resolves to the `yaml` directory inside the openHAB configuration root.
+##### `@/path` → `${OPENHAB_CONF}/path`
 
-**Note:** Paths beginning with `@` **must be quoted** (e.g., `"@/path"`).
-YAML plain scalars cannot begin with `@`, so quoting ensures the value is parsed as a normal string.
+A leading `@` resolves directly to the openHAB configuration root (`OPENHAB_CONF`).
 
 ```yaml
-key: !include "@/includes/device.inc.yaml"
+key: !include "@/yaml/includes/device.inc.yaml"
 # Resolves to: ${OPENHAB_CONF}/yaml/includes/device.inc.yaml
 ```
 
-Using `@` provides several benefits:
+**Notes:**
 
-- **Avoids long or fragile relative paths** such as `../../../../includes/device.inc.yaml`.
-- **Makes it immediately clear** that the referenced file lives inside the YAML configuration domain.
-- **Allows files to be moved around freely** without needing to update include paths.
-- **Provides a concise alternative** to the full substitution form `${OPENHAB_CONF}/yaml/...`.
-- **Requires no substitution syntax** and avoids typing long absolute paths.
-- **Supports different user preferences**:
-  - Those who value **brevity** can use `@`.
-  - Those who prefer **explicitness** can continue using `${OPENHAB_CONF}/yaml/...`.
+- Paths beginning with `@` **must be quoted** (e.g., `"@/path"`), because YAML plain scalars cannot begin with `@`.
+- The slash after `@` is **optional**: `"@yaml/includes/device.inc.yaml"` works the same.
+- Use `@` when you want to reference files anywhere under the configuration root without writing long absolute paths.
 
-**Relative paths also remain a valid option.**
-Use them when the included files are meant to move _together_ with the referencing files.
-Use absolute or `@` paths when the included files remain _static_ and only the referencing files may move.
+##### `$/path` → `${OPENHAB_CONF}/<top-level-directory>/path`
 
-Every file—regardless of its location—can reference the same include using the same path:
+A leading `$` resolves to the **top‑level directory under `OPENHAB_CONF` that contains the including file**.
+
+This allows deeply nested files to reference shared resources located at the top of their domain (e.g., `yaml`, `items`, `things`, `tags`) without needing relative paths.
+
+**Example directory layout:**
 
 ```sh
-yaml/
-  includes/
-    device.inc.yaml
-  main.yaml
-  rooms/
-    rooms.yaml
-    kitchen/
-      kitchen.yaml
+OPENHAB_CONF/
+  yaml/
+    shared.inc.yaml
+    lights/
+      kitchen/
+        main.yaml
 ```
 
-> **Note:** If you intentionally use a directory whose name literally begins with `@`, you can still reference it using a normal relative path such as `"./@/file.yaml"`. The `@` prefix only applies when it appears at the very start of the include path.
+If `main.yaml` contains:
+
+```yaml
+key: !include "$/shared.inc.yaml"
+```
+
+Then `$` resolves to:
+
+```sh
+${OPENHAB_CONF}/yaml
+```
+
+So the final resolved path becomes:
+
+```sh
+${OPENHAB_CONF}/yaml/shared.inc.yaml
+```
+
+**Notes:**
+
+- The slash after `$` is **optional**: `"$shared.inc.yaml"` works the same.
+- `$` is ideal when you want to reference a file that lives at the top of the same domain (e.g., the root of `yaml/`, `items/`, `things/`, etc.).
+- It avoids brittle paths like `../../../shared.inc.yaml`.
 
 #### Relative Paths
 
-If the path does not begin with `/` or `@`, it is interpreted as a path **relative to the directory of the including file**.
+If the path does not begin with `/`, `@`, or `$` it is interpreted as a path **relative to the directory of the including file**.
 You may use `.` and `..` to refer to the current and parent directory.
 
 **Example directory layout:**
@@ -236,7 +255,7 @@ key: !include "common/defaults.inc.yaml"
 # Resolves to: yaml/main/common/defaults.inc.yaml
 ```
 
-***Navigate upward:**
+**Navigate upward:**
 
 ```yaml
 key: !include "../parent.inc.yaml"
@@ -262,7 +281,7 @@ keyname: !include
 ### File Organization
 
 It may be helpful to store include files in a dedicated subdirectory.
-These files can be referenced using relative paths, the `@` shorthand, or full absolute paths—choose whichever style best matches your preference.
+These files can be referenced using relative paths, the `@` or `$` shorthands, or full absolute paths—choose whichever style best matches your preference.
 
 ### Nested Includes
 
