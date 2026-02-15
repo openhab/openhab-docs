@@ -104,6 +104,14 @@ Using your phone for connectivity allows the app to take advantage of all networ
 - **iOS**: HTTP and HTTPS are supported  
 - **Android**: Only HTTPS with a valid certificate is supported due to Garmin SDK limitations
 
+A green Bluetooth icon at the top of the menus and in full-screen views indicates that a phone connection is available. Also, the current connectivity mode can be checked in the [settings menu](#settings-menu).
+
+<div class="garmin-screenshot-container">
+  <img src="images/app/12-indicator-bluetooth-menu.png"/>
+  <img src="images/app/12-indicator-bluetooth-widget.png"/>
+  <img src="images/app/12-settings-mode-bluetooth.png"/>
+</div>
+
 You can use [myopenHAB](https://www.myopenhab.org) to securely access your local openHAB instance over the Internet via HTTPS.
 
 ### Wi-Fi
@@ -118,12 +126,19 @@ Garmin does not allow a permanent Wi-Fi connection. Instead, the app must enter 
 
 If no BLE connection to a phone is available, the app automatically checks whether a Wi-Fi connection can be used and, if so, switches to Wi-Fi mode. These checks continue while the app is running, and the app may switch between BLE and Wi-Fi connectivity at any time.
 
-When Wi-Fi mode is active, a small Wi-Fi indicator appears above the menu titles and in full-screen views. Also, the current connectivity mode can be checked in the [settings menu](#settings-menu).
+The first screenshot shows the startup screen when no BLE connection is available and the app is searching for Wi-Fi. The second screenshot shows the screen displayed when neither BLE nor Wi-Fi could be found.
 
 <div class="garmin-screenshot-container">
-  <img src="images/app/12-wifi-indicator-menu.png"/>
-  <img src="images/app/12-wifi-indicator-widget.png"/>
-  <img src="images/app/12-wifi-settings-mode.png"/>
+  <img src="images/app/12-full-screen-wifi-search.png"/>
+  <img src="images/app/12-full-screen-offline"/>
+</div>
+
+When Wi-Fi mode is active, a small Wi-Fi indicator appears above the menu titles and in full-screen views.
+
+<div class="garmin-screenshot-container">
+  <img src="images/app/12-indicator-wifi-menu.png"/>
+  <img src="images/app/12-indicator-wifi-widget.png"/>
+  <img src="images/app/12-settings-mode-wifi.png"/>
 </div>
 
 #### No Polling of Sitemap Changes and States
@@ -131,14 +146,14 @@ When Wi-Fi mode is active, a small Wi-Fi indicator appears above the menu titles
 Due to these limitations, the app does not regularly poll openHAB for sitemap changes or state updates while in Wi-Fi mode. As a result, item states are not displayed.
 
 <div class="garmin-screenshot-container">
-  <img src="images/app/12-wifi-nostates.png"/>
+  <img src="images/app/12-nostates.png"/>
 </div>
 
 Only if no data is available at startup, for example after settings changes or a fatal error, the app enters sync mode to retrieve the full sitemap. The [settings menu](#settings-menu) shows when the sitemap was last retrieved, and the user can also manually trigger an update via Wi-Fi, for example to download structural changes to the sitemap.
 
 <div class="garmin-screenshot-container">
-  <img src="images/app/12-wifi-settings-last-update.png"/>
-  <img src="images/app/12-wifi-sitemap-update.png"/>
+  <img src="images/app/12-settings-last-update.png"/>
+  <img src="images/app/12-sitemap-update.png"/>
 </div>
 
 #### Sending Commands
