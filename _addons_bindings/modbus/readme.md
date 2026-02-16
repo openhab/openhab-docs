@@ -3,7 +3,7 @@ id: modbus
 label: Modbus
 title: Modbus - Bindings
 type: binding
-description: "This is the binding to access Modbus TCP and serial slaves."
+description: "This binding supports generic Modbus TCP and serial slave devices."
 logo: images/addons/modbus.png
 install: auto
 ---
@@ -16,7 +16,20 @@ install: auto
 
 <AddonLogo />
 
-This is the binding to access Modbus TCP and serial slaves.
+This binding supports generic Modbus TCP and serial slave devices.
+And it has specialist extensions for the following manufacturers products:
+
+- Hager E3/DC
+- FoxEss Inverters (Solakon ONE, Avocado 22 Pro, etc.)
+- Helios Easy Controls
+- Kermi
+- Lambda
+- Saia Burgess Controls SBC
+- Stiebel Eltron ISG
+- Studer
+- SunGrow
+- SunSpec
+
 RTU, ASCII and BIN variants of Serial Modbus are supported.
 Modbus TCP slaves are usually also called as Modbus TCP servers.
 
@@ -27,10 +40,6 @@ The binding can act as
 
 The Modbus binding polls the slave data with a configurable poll period.
 openHAB commands are translated to write requests.
-
-The binding has the following extensions:
-
-<!--list-subs-->
 
 The rest of this page contains details for configuring this binding:
 

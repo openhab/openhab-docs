@@ -3,7 +3,7 @@ id: mqtt
 label: MQTT Things and Channels
 title: MQTT Things and Channels - Bindings
 type: binding
-description: "MQTT is one of the most commonly used protocols in IoT (Internet of Things) projects. It stands for Message Queuing Telemetry Transport."
+description: "This binding supports generic MQTT devices."
 logo: images/addons/mqtt.svg
 install: auto
 ---
@@ -15,6 +15,14 @@ install: auto
 # MQTT Things and Channels Binding
 
 <AddonLogo />
+
+This binding supports generic MQTT devices.
+And has specialist extensions for the following manufacturers products:
+
+- AwTrix Lights
+- ESP Milight
+- Falcon Player (FPP)
+- Ruuvi Gateway
 
 MQTT is one of the most commonly used protocols in IoT (Internet of Things) projects. It stands for Message Queuing Telemetry Transport.
 
@@ -34,9 +42,6 @@ You can use any of the freely available MQTT Brokers like [Mosquitto](https://mo
 
 This particular binding allows to configure connections to brokers via openHAB Things, and configure channels corresponding to MQTT topics.
 This binding does NOT perform auto-discovery of available MQTT topics.
-Please check out the available extensions:
-
-<!--list-subs-->
 
 ## MQTT Topics
 

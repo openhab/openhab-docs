@@ -3,7 +3,7 @@ id: bluetooth
 label: Bluetooth
 title: Bluetooth - Bindings
 type: binding
-description: "This binding provides support for generic Bluetooth devices."
+description: "This binding supports generic Bluetooth devices."
 logo: images/addons/bluetooth.svg
 install: auto
 ---
@@ -16,11 +16,23 @@ install: auto
 
 <AddonLogo />
 
-This binding provides support for generic Bluetooth devices.
+This binding supports generic Bluetooth devices.
+And has specialist extensions for the following manufacturers products:
 
-It has the following extensions:
-
-<!--list-subs-->
+- AirThings
+- AM43 Blinds
+- BlueGiga
+- BlueZ
+- BluKii
+- Daikin Madoka
+- EnOcean
+- Govee
+- Grundfos Alpha
+- Hunter Douglas (Luxaflex) PowerView
+- Listener
+- RadonEye
+- Roaming
+- RuuviAir, RuuviTag
 
 ## Bridges
 
