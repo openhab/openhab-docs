@@ -24,7 +24,7 @@ If you plan on disconnecting your machine from the internet, then you will want 
 # pkg_add openhab-addons
 ```
 
-#### Start openHAB automatically
+### Start openHAB automatically
 
 If everything went well, you can start openHAB and register it to be automatically executed at system startup.
 
@@ -38,7 +38,7 @@ The first start may take **up to 15 minutes**, this is a good time to reward you
 
 You should be able to reach the openHAB Dashboard at `http://localhost:8080` at this point.
 
-#### Upgrading
+### Upgrading
 
 To upgrade openHAB (and all other packages and their dependencies) to their latest version:
 
@@ -69,7 +69,7 @@ You may also wish to simply delete and install the package again. Deleting the p
 # pkg_add openhab
 ```
 
-#### Uninstall
+### Uninstall
 
 To uninstall openHAB and get rid of all related files managed by the package manager, make a backup, then uninstall openHAB and remove the repository:
 
