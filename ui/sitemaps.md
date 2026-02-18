@@ -750,7 +750,7 @@ In the fourth example above, multiple conditions are combined, a control for a l
 
 ### Label, Value and Icon Colors
 
-Colors can be used to emphasize an items label or its value based on conditions.
+Colors can be used to emphasize an items’ label or its value based on conditions.
 Colors may be assigned to either the label or the value associated with an Item.
 The icon may be tinted depending on the state as well.
 
