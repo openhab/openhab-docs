@@ -91,11 +91,11 @@ Once the app is installed, you can configure the following settings by opening i
 
 This section explains how to connect your Garmin wearable to openHAB, covering network access (BLE via phone or Wi-Fi), the use of myopenHAB, and the available methods for sending commands (native REST APIs or webhooks).
 
-## Network Access
+### Network Access
 
 All Garmin wearables can access your local network and the Internet via a BLE (Bluetooth Low Energy) connection to your phone.
 
-### BLE / Phone Connectivity
+#### BLE / Phone Connectivity
 
 Using your phone for connectivity allows the app to take advantage of all network options available on the phone, including VPNs such as Tailscale. When connected via the phone, the openHAB app maintains a permanent connection to openHAB and is therefore able to display live item states.
 
@@ -104,7 +104,7 @@ Using your phone for connectivity allows the app to take advantage of all networ
 - **iOS**: HTTP and HTTPS are supported  
 - **Android**: Only HTTPS with a valid certificate is supported due to Garmin SDK limitations
 
-A green Bluetooth icon at the top of the menus and in full-screen views indicates that a phone connection is available. Also, the current connectivity mode can be checked in the [settings menu](#settings-menu).
+A green status indicator and a Bluetooth icon at the top of the menus and full-screen views indicate that a BLE connection is available. Also, the current connectivity mode can be checked in the [settings menu](#settings-menu).
 
 <div class="garmin-screenshot-container">
   <img src="images/app/12-indicator-bluetooth-menu.png"/>
@@ -114,7 +114,7 @@ A green Bluetooth icon at the top of the menus and in full-screen views indicate
 
 You can use [myopenHAB](https://www.myopenhab.org) to securely access your local openHAB instance over the Internet via HTTPS.
 
-### Wi-Fi
+#### Wi-Fi
 
 Some Garmin wearables can also connect directly to Wi-Fi. This allows access to the local LAN and, if Internet connectivity is available, to services such as myopenHAB.
 
@@ -122,45 +122,48 @@ When connected via Wi-Fi, both HTTP and HTTPS are supported.
 
 Garmin does not allow a permanent Wi-Fi connection. Instead, the app must enter a dedicated sync mode, perform its network operations, and then close the Wi-Fi connection again. While this sync is active, Garmin displays system-provided views to inform the user about sync progress.
 
-#### Automatic Wi-Fi Detection and Mode Switching
+##### Automatic Wi-Fi Detection and Mode Switching
 
 If no BLE connection to a phone is available, the app automatically checks whether a Wi-Fi connection can be used and, if so, switches to Wi-Fi mode. These checks continue while the app is running, and the app may switch between BLE and Wi-Fi connectivity at any time.
 
-The first screenshot shows the startup screen when no BLE connection is available and the app is searching for Wi-Fi. The second screenshot shows the screen displayed when neither BLE nor Wi-Fi could be found.
+At startup, if no BLE connection is available, a red status indicator indicates that the app is offline. A Wi-Fi icon with a magnifying glass shows that the app is searching for a Wi-Fi connection. Once connected to Wi-Fi, the status indicator turns yellow, indicating Wi-Fi mode.
 
 <div class="garmin-screenshot-container">
-  <img src="images/app/12-full-screen-wifi-search.png"/>
-  <img src="images/app/12-full-screen-offline"/>
-</div>
-
-When Wi-Fi mode is active, a small Wi-Fi indicator appears above the menu titles and in full-screen views.
-
-<div class="garmin-screenshot-container">
+  <img src="images/app/12-indicator-wifi-check-menu.png"/>
   <img src="images/app/12-indicator-wifi-menu.png"/>
   <img src="images/app/12-indicator-wifi-widget.png"/>
   <img src="images/app/12-settings-mode-wifi.png"/>
 </div>
 
-#### No Polling of Sitemap Changes and States
+##### No Polling of Sitemap Changes and States
 
-Due to these limitations, the app does not regularly poll openHAB for sitemap changes or state updates while in Wi-Fi mode. As a result, item states are not displayed.
+Due to the limitations of the Wi-Fi mode, the app does not regularly poll openHAB for sitemap changes or state updates while in Wi-Fi mode. As a result, item states are not displayed.
 
 <div class="garmin-screenshot-container">
   <img src="images/app/12-nostates.png"/>
 </div>
 
-Only if no data is available at startup, for example after settings changes or a fatal error, the app enters sync mode to retrieve the full sitemap. The [settings menu](#settings-menu) shows when the sitemap was last retrieved, and the user can also manually trigger an update via Wi-Fi, for example to download structural changes to the sitemap.
+Only if no cached sitemap is available at startup, for example after settings changes or a fatal error, the app enters sync mode to retrieve the full sitemap. The [settings menu](#settings-menu) shows when the sitemap was last retrieved, and the user can also manually trigger an update via Wi-Fi, for example to download structural changes to the sitemap.
 
 <div class="garmin-screenshot-container">
   <img src="images/app/12-settings-last-update.png"/>
   <img src="images/app/12-sitemap-update.png"/>
 </div>
 
-#### Sending Commands
+##### Sending Commands
 
 Because current item states are not available in Wi-Fi mode, sending commands cannot rely on existing state information. For toggle switches, this means the user must explicitly choose whether the item should be switched on or off via an action menu.
 
 Another example is the [`Slider`](#setpoint-and-slider). In Wi-Fi mode, the slider always starts at the middle of its range and operates in `releaseOnly` mode. The command is sent only when the new value is confirmed, not while the value is being adjusted.
+
+#### Offline
+
+While searching for Wi-Fi, and whenever neither BLE nor Wi-Fi is available, the app enters offline mode, indicated by a red status indicator. In offline mode, the menu structure can still be navigated. However, when attempting to send a command, an “OFFLINE” toast notification is displayed.
+
+<div class="garmin-screenshot-container">
+  <img src="images/app/12-indicator-offline-menu.png"/>
+  <img src="images/app/12-offline-toast.png"/>
+</div>
 
 ### Using myopenHAB
 
