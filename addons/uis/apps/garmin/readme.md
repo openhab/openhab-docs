@@ -147,7 +147,7 @@ Only if no cached sitemap is available at startup, for example after settings ch
 
 <div class="garmin-screenshot-container">
   <img src="images/app/12-settings-last-update.png"/>
-  <img src="images/app/12-sitemap-update.png"/>
+  <img src="images/app/12-settings-sitemap-update.png"/>
 </div>
 
 ##### Sending Commands
