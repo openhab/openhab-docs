@@ -128,6 +128,7 @@ The following contexts require a specific format of the content:
   <tr><td>password</td><td>text</td><td>Alphanumeric characters</td><td><code>&lt;input type="password"/></code></td></tr>
   <tr><td>password-create</td><td>text</td><td>Alphanumeric characters</td><td>custom password input</td></tr>
   <tr><td>persistenceService</td><td>text</td><td>A UI would probably show a persistence service selection widget</td><td>custom input field</td></tr>
+  <tr><td>props</td><td>text</td><td>A set of name = value properties</td><td>custom input field</td></tr>
   <tr><td>qrcode</td><td>text</td><td>A text that is presented as a QR-Code image</td><td>custom input field</td></tr>
   <tr><td>rule</td><td>text</td><td>UID of a rule<br></td><td>custom input field</td></tr>
   <tr><td>script</td><td>text</td><td>A UI would probably render a multi line editor</td><td>custom input field</td></tr>
