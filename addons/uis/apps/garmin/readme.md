@@ -75,8 +75,8 @@ Once the app is installed, you can configure the following settings by opening i
 |-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **URL**                           | Your openHAB URL in the format `https://host:port` or `http://host:port`. Note: HTTP only works with iOS. See [Connectivity](#connectivity) and [Using myopenHAB](#using-myopenhab) for details.                                                                                                                                                                                                                                                                      |
 | **Sitemap Name**                  | Name of the sitemap to display. See [Sitemap Setup](#sitemap-setup) for details.                                                                                                                                                                                                                                                                                                                                                                                      |
-| **Native REST API Support**       | Enable if your openHAB supports the new JSON-based REST API for sending commands. See [Sending Commands](#sending-commands) for details.                                                                                                                                                                                                                                                                                                                              |
-| **Webhook Identifier**            | If your openHAB version doesn't support the JSON-based REST API (see above), you can configure a custom webhook to send commands. See [Sending Commands](#sending-commands) for details.                                                                                                                                                                                                                                                                              |
+| **Native REST API Support**       | Enabled by default. When enabled, the app uses the JSON-based REST API to send commands. See [Sending Commands](#sending-commands) for details.                                                                                                                                                                                                                                                                                                                              |
+| **Webhook Identifier**            | If your openHAB version does not support the JSON-based REST API (see above), you can disable the setting above and configure a custom webhook instead to send commands. See [Sending Commands](#sending-commands) for details.                                                                                                                                                                                                                                                                              |
 | **Username**                      | For basic authentication (used for [myopenHAB](#using-myopenhab), see below)                                                                                                                                                                                                                                                                                                                                                                                          |
 | **Password**                      | Password for basic authentication                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Supress empty response errors** | Suppress errors for empty sitemap responses. Recommended when using myopenhab.org, which occasionally returns empty results. See the related [openhab-cloud issue #496](https://github.com/openhab/openhab-cloud/issues/496) for details.                                                                                                                                                                                                                             |
@@ -635,6 +635,7 @@ Currently supported icons are:
 - `door`
 - `frontdoor`
 - `garagedoor`
+- `heating`
 - `humidity`
 - `light`
 - `lightbulb`
@@ -681,6 +682,7 @@ The app distinguishes between **temporary (non-fatal)** and **critical (fatal)**
 
 - Most communication-related issues when requesting the sitemap.
 - All communication-related issues when sending a command.
+- Issues that occur while processing user input
 
 > Note: Non-fatal errors related to requesting the sitemap will become fatal if they persist for more than 10 seconds.
 
@@ -704,7 +706,7 @@ When this option is enabled in the [Settings](#configuration), toast notificatio
 
 However, if these errors persist for more than 10 seconds, they will be treated as fatal, and a full-screen error view will be shown.
 
-### Communication Error Codes
+### Communication Error Codes (Prefix: `S:`/`C:`)
 
 To save space, communication errors shown in toast notifications follow this format:
 
@@ -728,6 +730,12 @@ The following error codes are used for common communication issues and those wit
 - `NO PHONE` – The watch is not connected to the smartphone (error codes `-104` and `-2`).
 - `INVRES` – The response was invalid (error code `-400`).
 - `EMRES` – The response was empty.
+
+### User Interface Error Codes (Prefix `UI:`)
+
+All error codes with the `UI:` prefix currently indicate an internal programming error in the user interface. These errors are not caused by incorrect user interaction or configuration.
+
+If you encounter a **UI:** error code, please report it to the development team, as it helps identify and fix issues in the application. Including the exact error code and the circumstances under which it occurred is especially helpful. Reports can be submitted in [the forum](https://community.openhab.org/t/announcing-openhab-for-garmin/163891) or by creating an issue on [GitHub](https://github.com/openhab/openhab-garmin/issues).
 
 ### Common Issues
 
