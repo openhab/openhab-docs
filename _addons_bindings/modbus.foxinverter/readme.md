@@ -1,7 +1,7 @@
 ---
 id: modbus.foxinverter
-label: Modbus FoxInverter
-title: Modbus FoxInverter - Bindings
+label: Modbus Fox ESS Inverters (Solakon ONE, Avocado 22 Pro, etc.)
+title: Modbus Fox ESS Inverters (Solakon ONE, Avocado 22 Pro, etc.) - Bindings
 type: binding
 description: "This binding integrates the FoxESS solar inverters into openHAB."
 install: manual
@@ -11,7 +11,7 @@ install: manual
 
 {% include base.html %}
 
-# Modbus FoxInverter Binding
+# Modbus Fox ESS Inverters (Solakon ONE, Avocado 22 Pro, etc.)
 
 This binding integrates the FoxESS solar inverters into openHAB.
 

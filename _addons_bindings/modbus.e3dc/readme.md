@@ -1,7 +1,7 @@
 ---
 id: modbus.e3dc
-label: E3DC
-title: E3DC - Bindings
+label: Hager / E3DC Power Plants
+title: Hager / E3DC Power Plants - Bindings
 type: binding
 description: "Integrates the Home Power Plants from E3/DC GmbH into openHAB."
 logo: images/addons/modbus.e3dc.png
@@ -12,7 +12,7 @@ install: manual
 
 {% include base.html %}
 
-# E3DC
+# Hager / E3DC Power Plants
 
 <AddonLogo />
 
@@ -63,7 +63,7 @@ Check the [full example Things](#things) for manual setup.
 | port            | integer | TCP Port of your E3DC device Modbus Settings.. Default is 502 |
 | deviceid        | integer | Modbus ID of your E3DC device Modbus Settings. Default is 1           |
 
-## Home Power Plant
+### E3DC Home Power Plant
 
 Select as Bridge your previously created Modbus TCP Slave.
 
@@ -71,7 +71,7 @@ Select as Bridge your previously created Modbus TCP Slave.
 |-----------------|---------|-------------------------------------------------------------------------|
 | refresh         | integer | Refresh Rate of E3DC values in Milliseconds                             |
 
-## Wallbox
+### E3DC Wallbox
 
 Select as Bridge your previously created E3DC Home Power Plant.
 
@@ -138,7 +138,7 @@ Each string X = 1,2 or 3 provides following channels:
 | Charge Lock time Active                     | emergency        | charge-lock-time           |  Switch  | Charge Lock Time is currently active |
 | Discharge Lock time Active                  | emergency        | discharge-lock-time        |  Switch  | Discharge Lock Time is currently active |
 
-## Wallbox Channels
+### E3DC Wallbox Channels
 
 Some of the Wallbox Settings can be changed. See the Access column if the actual value is Read/Write (RW) or Read Only (RO)
 

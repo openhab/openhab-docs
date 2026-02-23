@@ -19,10 +19,7 @@ install: auto
 This binding supports generic MQTT devices.
 And has specialist extensions for the following manufacturers products:
 
-- AwTrix Lights
-- ESP Milight
-- Falcon Player (FPP)
-- Ruuvi Gateway
+<!--list-subs-->
 
 MQTT is one of the most commonly used protocols in IoT (Internet of Things) projects. It stands for Message Queuing Telemetry Transport.
 
