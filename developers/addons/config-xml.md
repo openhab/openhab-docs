@@ -111,7 +111,7 @@ The following contexts require a specific format of the content:
 
 <table><tr><th>Name</th><th>Type</th><th>Format</th><th>Sample implementation</th></tr>
   <tr><td>channel</td><td>text</td><td>UID of a channel<br></td><td>custom input field</td></tr>
-  <tr><td>channeltype</td><td>text</td><td>UID of a channel type - a UI would probably show a channel type selection widget</td><td>custom input field</td></tr>
+  <tr><td>channel-type</td><td>text</td><td>UID of a channel type - a UI would probably show a channel type selection widget</td><td>custom input field</td></tr>
   <tr><td>color</td><td>text</td><td>#000000 - #ffffff (hex color)</td><td><code>&lt;input type="color"/></code></td></tr>
   <tr><td>cronexpression</td><td>text</td><td>e.g. "* * * * *" - a UI would probably show a cron expression generator</td><td>custom input field</td></tr>
   <tr><td>date</td><td>text</td><td>YYYY-MM-DD</td><td><code>&lt;input type="date"/></code></td></tr>
@@ -121,13 +121,14 @@ The following contexts require a specific format of the content:
   <tr><td>group</td><td>text</td><td>Name of a Group Item</td><td>custom input field</td></tr>
   <tr><td>item</td><td>text</td><td>Item name</td><td>custom input field</td></tr>
   <tr><td>location</td><td>text</td><td>Latitude,longitude[,altitude]<br></td><td>custom input field</td></tr>
+  <tr><td>mac-address</td><td>text</td><td>MAC address</td><td><code>&lt;input type="text"/></code></td></tr>
   <tr><td>month</td><td>text</td><td>Month of year</td><td>custom input field</td></tr>
   <tr><td>network-address</td><td>text</td><td>IPv4, IPv6, domain name</td><td><code>&lt;input type="text"/></code></td></tr>
   <tr><td>network-interface</td><td>text</td><td>Network interface name, e.g. eth0</td><td>custom input field</td></tr>
   <tr><td>page</td><td>text</td><td>UID of a page - a UI would probably show a page selection widget</td><td>custom input field</td></tr>
   <tr><td>password</td><td>text</td><td>Alphanumeric characters</td><td><code>&lt;input type="password"/></code></td></tr>
   <tr><td>password-create</td><td>text</td><td>Alphanumeric characters</td><td>custom password input</td></tr>
-  <tr><td>persistenceService</td><td>text</td><td>A UI would probably show a persistence service selection widget</td><td>custom input field</td></tr>
+  <tr><td>persistence-service</td><td>text</td><td>A UI would probably show a persistence service selection widget</td><td>custom input field</td></tr>
   <tr><td>props</td><td>text</td><td>A set of name = value properties</td><td>custom input field</td></tr>
   <tr><td>qrcode</td><td>text</td><td>A text that is presented as a QR-Code image</td><td>custom input field</td></tr>
   <tr><td>rule</td><td>text</td><td>UID of a rule<br></td><td>custom input field</td></tr>
