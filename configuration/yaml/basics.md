@@ -9,10 +9,10 @@ This page introduces the standard YAML syntax used throughout the openHAB docume
 It is not a full YAML tutorial.
 It provides the foundational YAML concepts needed to understand and work with the examples in the YAML Configuration section.
 
-openHAB builds on top of standard YAML 1.1 and adds its own processing features such as custom tags and preprocessing behavior.
+openHAB builds on top of standard YAML 1.2 and adds its own processing features such as custom tags and preprocessing behavior.
 This page focuses on the core YAML syntax that those features extend.
 
-For more detailed information on the YAML 1.1 syntax supported in openHAB configurations, see the [YAML 1.1 specification](https://yaml.org/spec/1.1/).
+For more detailed information on the YAML 1.2 syntax supported in openHAB configurations, see the [YAML 1.2 specification](https://yaml.org/spec/1.2/).
 
 [[toc]]
 
@@ -86,7 +86,7 @@ Scalars represent simple values such as strings, numbers, booleans, and nulls.
 
 #### Booleans
 
-In openHAB YAML files, only unquoted `true` and `false` (case insensitive) are valid boolean values.
+In openHAB YAML files, only the unquoted literals `true`, `True`, `TRUE`, and `false`, `False`, `FALSE` are recognized as boolean values.
 `ON`, `OFF`, `Yes`, `No`, `enable`, and `disable` are parsed as plain strings.
 To specify `true` or `false` as a string, they must be enclosed in single or double quotes.
 
@@ -274,6 +274,9 @@ For more details, see [Anchors and Aliases](anchors.md).
 ## Merge Keys
 
 YAML merge keys use the `<<:` syntax to merge mappings.
+
+> **Note:** Although merge keys (<<:) are not defined in YAML 1.2, openHAB includes full support for them.
+> They are a foundational mechanism used throughout the preprocessing system to combine mappings, apply defaults, and build modular configuration structures.
 
 ```yaml
 base: &base
