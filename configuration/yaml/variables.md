@@ -779,40 +779,29 @@ items:
 ### Custom Pattern Delimiters
 
 Most users never need to change the default `${...}` delimiters.
-However, if your content already contains `${...}` patterns or you prefer clearer separation, you can define custom delimiters using the `pattern=` syntax.
+However, if your content already contains `${...}` patterns or you prefer clearer separation, you can define custom delimiters by selecting a **named pattern**.
+
+Custom delimiters are introduced using the syntax:
 
 ```yaml
-foo: !sub:pattern=@[..] "Hello @[mqtt.username]!"
-bar: !sub:pattern=%(..) "Hello %(mqtt.username)!"
+!sub:pattern_name
 ```
 
-The syntax is `!sub:pattern=begin..end`, where `begin` is the opening delimiter and `end` is the closing delimiter.
+Here, `pattern_name` refers to a variable whose value defines the opening and closing delimiters.
+The usual variable‑resolution rules apply.
+This also means you can define the pattern in the main file and use the same pattern consistently across all included files.
 
-In the example above, `@[` is the opening delimiter and `]` is the closing delimiter.
-The two delimiters are separated by the literal `..` sequence.
+#### Example
 
-Choose delimiters that are unlikely to appear in your content to avoid unintentional substitutions.
+```yaml
+variables:
+  square:  "[..]"
+  percent: "%(..)"
+  jinja:   "{{..}}"
 
-::: tip URL‑Encoding Note
+foo: !sub:square   "Hello [mqtt.username]!"
+bar: !sub:percent  "Hello %(mqtt.username)!"
+baz: !sub:jinja    "Hello {{ mqtt.username }}!"
+```
 
-Some characters cannot appear directly in a `!sub` tag and must be URL‑encoded.
-
-You can generate URL‑encoded text using your browser's built‑in JavaScript function: `encodeURIComponent("your text here")`.
-This works in all modern browsers and doesn't rely on any external tools.
-
-Here are the most common ones:
-
-:::
-
-| Literal | URL-Encoded | Comments                                                                                                        |
-|:-------:|:-----------:|-----------------------------------------------------------------------------------------------------------------|
-|   `!`   |    `%21`    | Example: `!sub:pattern=%21[..]` -> `![ expression ]`                                                            |
-|   `#`   |    `%23`    | Since `#` is a YAML Comment symbol, make sure your value is quoted.                                             |
-|   `^`   |    `%5E`    |                                                                                                                 |
-|   `&`   |    `%26`    |                                                                                                                 |
-|   `{`   |    `%7B`    | This uses the standard Jinja delimiters: `!sub:pattern=%7B%7B..%7D%7D` -> <span v-pre>`{{ expression }}`</span> |
-|   `}`   |    `%7D`    |                                                                                                                 |
-|   `<`   |    `%3C`    |                                                                                                                 |
-|   `>`   |    `%3E`    |                                                                                                                 |
-
-`[`, `]`, `(`, and `)` are safe and can be used literally without encoding them.
+Choose delimiters that are unlikely to appear in your content to avoid accidental substitutions.
