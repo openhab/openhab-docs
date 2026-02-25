@@ -119,6 +119,7 @@ The following contexts require a specific format of the content:
   <tr><td>dayOfWeek</td><td>text</td><td>MON, TUE, WED, THU, FRI, SAT, SUN <br></td><td>custom input field</td></tr>
   <tr><td>email</td><td>text</td><td>username@domain.com</td><td><code>&lt;input type="email"/></code></td></tr>
   <tr><td>group</td><td>text</td><td>Name of a Group Item</td><td>custom input field</td></tr>
+  <tr><td>ip-address</td><td>text</td><td>The configuration value represents a pure IPv4 or IPv6 address (without protocol, port, or path)</td><td>custom input field</td></tr>
   <tr><td>item</td><td>text</td><td>Item name</td><td>custom input field</td></tr>
   <tr><td>location</td><td>text</td><td>Latitude,longitude[,altitude]<br></td><td>custom input field</td></tr>
   <tr><td>mac-address</td><td>text</td><td>MAC address</td><td><code>&lt;input type="text"/></code></td></tr>
