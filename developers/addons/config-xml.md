@@ -110,29 +110,39 @@ The UIs use it to render different kind of input widgets.
 The following contexts require a specific format of the content:
 
 <table><tr><th>Name</th><th>Type</th><th>Format</th><th>Sample implementation</th></tr>
-  <tr><td>network-address</td><td>text</td><td>IPv4,IPv6, domain name</td><td><code>&lt;input type="text"/></code></td></tr>
-  <tr><td>network-interface</td><td>text</td><td>Network interface name, e.g. eth0</td><td><code>custom input field</code></td></tr>
-  <tr><td>serial-port</td><td>text</td><td>Serial port name, e.g. COM1</td><td>custom input field</td></tr>
-  <tr><td>password</td><td>text</td><td>alphanumeric characters</td><td><code>&lt;input type="password"/></code></td></tr>
-  <tr><td>password-create</td><td>text</td><td>alphanumeric characters</td><td>custom password input</td></tr>
-  <tr><td>color</td><td>text</td><td>#000000 - #ffffff (hex color)</td><td><code>&lt;input type="color"/></code></td></tr>
-  <tr><td>date</td><td>text</td><td>YYYY-MM-DD</td><td><code>&lt;input type="date"/></code></td></tr>
-  <tr><td>datetime</td><td>text</td><td>YYYY-MM-DD'T'hh:mm:ss, e.g. 2019-12-31T23:59:59</td><td>custom input field</td></tr>
-  <tr><td>email</td><td>text</td><td>username@domain.com</td><td><code>&lt;input type="email"/></code></td></tr>
-  <tr><td>month</td><td>text</td><td>month of year</td><td>custom input field</td></tr>
-  <tr><td>week</td><td>integer</td><td>week of year</td><td>custom input field</td></tr>
-  <tr><td>dayOfWeek</td><td>text</td><td>MON, TUE, WED, THU, FRI, SAT, SUN <br></td><td>custom input field</td></tr>
-  <tr><td>time</td><td>text/integer</td><td>hh:mm:ss/milliseconds since epoch</td><td><code>&lt;input type="time"/></code></td></tr>
-  <tr><td>telephone</td><td>text</td><td>telephone number</td><td>custom input field</td></tr>
-  <tr><td>url</td><td>text</td><td>web url</td><td><code>&lt;input type="url"/></code></td></tr>
-  <tr><td>item</td><td>text</td><td>Item name</td><td>custom input field</td></tr>
-  <tr><td>thing</td><td>text</td><td>UID of a thing</td><td>custom input field</td></tr>
-  <tr><td>group</td><td>text</td><td>name of a Group Item</td><td></td></tr>
-  <tr><td>tag</td><td>text</td><td>tag name</td><td>custom input field</td></tr>
-  <tr><td>service</td><td>text</td><td>service name</td><td>custom input field</td></tr>
-  <tr><td>channel</td><td>text</td><td>UID of a channel<br></td><td>custom input field</td></tr>
-  <tr><td>rule</td><td>text</td><td>UID of a rule<br></td><td>custom input field</td></tr>
-  <tr><td>location</td><td>text</td><td>latitude,longitude[,altitude]<br></td><td>custom input field</td></tr>
+  <tr><td>channel</td><td>text</td><td>UID of a channel<br></td><td>custom input field</td></tr>
+  <tr><td>channel-type</td><td>text</td><td>UID of a channel type - a UI would probably show a channel type selection widget</td><td>custom input field</td></tr>
+  <tr><td>color</td><td>text</td><td>#000000 - #ffffff (hex color)</td><td><code>&lt;input type="color"/></code></td></tr>
+  <tr><td>cronexpression</td><td>text</td><td>e.g. "* * * * *" - a UI would probably show a cron expression generator</td><td>custom input field</td></tr>
+  <tr><td>date</td><td>text</td><td>YYYY-MM-DD</td><td><code>&lt;input type="date"/></code></td></tr>
+  <tr><td>datetime</td><td>text</td><td>YYYY-MM-DD'T'hh:mm:ss, e.g. 2019-12-31T23:59:59</td><td>custom input field</td></tr>
+  <tr><td>dayOfWeek</td><td>text</td><td>MON, TUE, WED, THU, FRI, SAT, SUN <br></td><td>custom input field</td></tr>
+  <tr><td>email</td><td>text</td><td>username@domain.com</td><td><code>&lt;input type="email"/></code></td></tr>
+  <tr><td>group</td><td>text</td><td>Name of a Group Item</td><td>custom input field</td></tr>
+  <tr><td>ip-address</td><td>text</td><td>The configuration value represents a pure IPv4 or IPv6 address (without protocol, port, or path)</td><td>custom input field</td></tr>
+  <tr><td>item</td><td>text</td><td>Item name</td><td>custom input field</td></tr>
+  <tr><td>location</td><td>text</td><td>Latitude,longitude[,altitude]<br></td><td>custom input field</td></tr>
+  <tr><td>mac-address</td><td>text</td><td>MAC address</td><td><code>&lt;input type="text"/></code></td></tr>
+  <tr><td>month</td><td>text</td><td>Month of year</td><td>custom input field</td></tr>
+  <tr><td>network-address</td><td>text</td><td>IPv4, IPv6, domain name</td><td><code>&lt;input type="text"/></code></td></tr>
+  <tr><td>network-interface</td><td>text</td><td>Network interface name, e.g. eth0</td><td>custom input field</td></tr>
+  <tr><td>page</td><td>text</td><td>UID of a page - a UI would probably show a page selection widget</td><td>custom input field</td></tr>
+  <tr><td>password</td><td>text</td><td>Alphanumeric characters</td><td><code>&lt;input type="password"/></code></td></tr>
+  <tr><td>password-create</td><td>text</td><td>Alphanumeric characters</td><td>custom password input</td></tr>
+  <tr><td>persistence-service</td><td>text</td><td>A UI would probably show a persistence service selection widget</td><td>custom input field</td></tr>
+  <tr><td>props</td><td>text</td><td>A set of name = value properties</td><td>custom input field</td></tr>
+  <tr><td>qrcode</td><td>text</td><td>A text that is presented as a QR-Code image</td><td>custom input field</td></tr>
+  <tr><td>rule</td><td>text</td><td>UID of a rule<br></td><td>custom input field</td></tr>
+  <tr><td>script</td><td>text</td><td>A UI would probably render a multi line editor</td><td>custom input field</td></tr>
+  <tr><td>serial-port</td><td>text</td><td>Serial port name, e.g. COM1</td><td>custom input field</td></tr>
+  <tr><td>service</td><td>text</td><td>Service name</td><td>custom input field</td></tr>
+  <tr><td>tag</td><td>text</td><td>Tag name</td><td>custom input field</td></tr>
+  <tr><td>telephone</td><td>text</td><td>telephone number</td><td>custom input field</td></tr>
+  <tr><td>thing</td><td>text</td><td>UID of a thing</td><td>custom input field</td></tr>
+  <tr><td>time</td><td>text / integer</td><td>hh:mm:ss/milliseconds since epoch</td><td><code>&lt;input type="time"/></code></td></tr>
+  <tr><td>url</td><td>text</td><td>Web url</td><td><code>&lt;input type="url"/></code></td></tr>
+  <tr><td>week</td><td>integer</td><td>Week of year</td><td>custom input field</td></tr>
+  <tr><td>widget</td><td>text</td><td>UID of a widget - a UI would probably show a widget selection widget</td><td>custom input field</td></tr>
 </table>
 
 Further, the <strong>item</strong> context can contain criteria to filter the list of items. For example:
