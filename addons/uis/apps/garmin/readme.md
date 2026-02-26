@@ -150,6 +150,12 @@ Only if no cached sitemap is available at startup, for example after settings ch
   <img src="images/app/12-settings-sitemap-update.png"/>
 </div>
 
+**If you encounter a -402 error:**
+
+On devices with limited memory, the size limit for sitemaps can be lower in Wi-Fi mode than over a BLE connection. In such cases, retrieving the sitemap via Wi-Fi may result in a -402 communication error. 
+
+If this occurs, try updating the sitemap over BLE before reducing the sitemap size.
+
 ##### Sending Commands
 
 Because current item states are not available in Wi-Fi mode, sending commands cannot rely on existing state information. For toggle switches, this means the user must explicitly choose whether the item should be switched on or off via an action menu.
@@ -619,8 +625,16 @@ The only behavioral difference between the two is the `Slider` widget’s suppor
   - **With `releaseOnly`:** The value is only sent when the dialog is confirmed. Cancelling leaves the value unchanged.
   - **Without `releaseOnly`:** Values are sent immediately as the slider is moved. Confirming keeps the current value; cancelling reverts to the value before the dialog was opened.
 
-**Important note:**
-While the default `step=1` is consistent with openHAB’s default, it often results in too many steps (e.g., 100 steps for a range of 0–100), which is impractical for wearable interfaces. Increasing `step` to `10` reduces the number of steps to 10, making interaction much more manageable.
+**Notes and Limitations**
+
+- Floating point values are supported with a maximum of four decimal places, for example 1.2345.
+- A maximum of 100 steps is supported, for example:
+  - minValue=0, maxValue=100, step=1
+  - minValue=0, maxValue=50, step=0.5
+- While up to 100 steps are supported, this can be impractical for wearable interfaces. It is recommended to define the range and `step` so that the total number of steps is limited to roughly 10 to 20, making interaction significantly more manageable.
+- The formatting pattern defined in the item’s metadata is not used. Instead, predefined formatting rules are applied when displaying values:
+  - In the menu, values are formatted as compactly as possible and the unit is appended without a space to conserve space. For example “20°C” or “20.5°C”.
+  - In the full-screen widget, values are always formatted with the same number of decimal places as defined by the step. The unit is appended with a space, except for %. For example “20.0 °C” or “20.5 °C” with step=0.5.
 
 **Example configuration:**
 
@@ -643,7 +657,7 @@ Frame label="First Floor" {
 - The **lower-right** screenshot shows the slider on a touch-based device.
 
 Note: Even button-based devices may support touch input, and on those, the UI reacts to both.
-On **button-based devices**, use **up/down** to scroll through the values, press **enter** (upper-right button) to confirm or **back** (lower-right button) to cancel.
+/On **button-based devices**, use **up/down** to scroll through the values, press **enter** (upper-right button) to confirm or **back** (lower-right button) to cancel.
 On **touch-based devices** simply **tap the icons** corresponding to the desired action or value to make a selection.
 
 ### Dynamic Sitemaps
