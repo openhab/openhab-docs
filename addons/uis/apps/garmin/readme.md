@@ -99,7 +99,7 @@ All Garmin wearables can access your local network and the Internet via a BLE (B
 
 Using your phone for connectivity allows the app to take advantage of all network options available on the phone, including VPNs such as Tailscale. When connected via the phone, the openHAB app maintains a permanent connection to openHAB and is therefore able to display live item states.
 
-**Platform-specific limitations:**
+##### Platform-specific limitations:
 
 - **iOS**: HTTP and HTTPS are supported  
 - **Android**: Only HTTPS with a valid certificate is supported due to Garmin SDK limitations
@@ -150,9 +150,9 @@ Only if no cached sitemap is available at startup, for example after settings ch
   <img src="images/app/12-settings-sitemap-update.png"/>
 </div>
 
-**If you encounter a -402 error:**
+###### If you encounter a -402 error:
 
-On devices with limited memory, the size limit for sitemaps can be lower in Wi-Fi mode than over a BLE connection. In such cases, retrieving the sitemap via Wi-Fi may result in a -402 communication error. 
+On devices with limited memory, the size limit for sitemaps can be lower in Wi-Fi mode than over a BLE connection. In such cases, retrieving the sitemap via Wi-Fi may result in a -402 communication error.
 
 If this occurs, try updating the sitemap over BLE before reducing the sitemap size.
 
@@ -390,7 +390,7 @@ If this is not the case, an error will be shown instead.
 
 The ➡️ [`Text`]({{base}}/ui/sitemaps.html#element-type-text) Sitemap Widget is used to display the current state of an item without allowing any user interaction.
 
-**Supported parameters:**
+##### Supported parameters:
 
 - `label`: the label shown in the UI.
 - `item`: the name of the openHAB item whose state should be displayed.
@@ -398,7 +398,7 @@ The ➡️ [`Text`]({{base}}/ui/sitemaps.html#element-type-text) Sitemap Widget 
 This widget is ideal for showing read-only information, such as temperature, system status, or sensor readings.
 It also supports [nested elements](#nested-elements), making it suitable for creating a hierarchical sitemap structure.
 
-**Example configuration:**
+###### Example configuration:
 
 In this example, the `Text` Sitemap Widget is used to display the status of entrance gates.
 Triggering the gates is handled by a separate `Switch` element.
@@ -410,7 +410,7 @@ Frame label="Entrance Gates" {
 }
 ```
 
-**Resulting UI:**
+###### Resulting UI:
 
 <div class="garmin-screenshot-container">
   <img src="images/app/03-entrance-gates.png"/>
@@ -421,7 +421,7 @@ Frame label="Entrance Gates" {
 The ➡️ [`Group`]({{base}}/ui/sitemaps.html#element-type-group) Sitemap Widget will present a submenu containing all the items in the associated item of type `Group`.
 This also works recursively, if the `Group` item itself contains other `Group` items, those will again open their own submenus.
 
-**Example configuration:**
+##### Example configuration:
 
 In this example, the `CC_House_Lights` item represents a hierarchical structure: it contains groups for each floor (e.g., the first floor), which in turn contain groups for individual rooms, and those room groups include the actual light switch items.
 
@@ -432,7 +432,7 @@ sitemap garmin_demo label="My Home" {
 }
 ```
 
-**Resulting UI:**
+###### Resulting UI:
 
 <div class="garmin-screenshot-container">
   <img src="images/app/08-group-1.png"/>
@@ -453,7 +453,7 @@ However, due to the limited screen space on wearables, the Garmin app always ope
 
 As a result, `Selection` is treated as a **synonym for `Switch`**, and both behave identically in the Garmin app.
 
-**Supported parameters:**
+##### Supported parameters:
 
 - `label`: Text displayed in the UI.
 - `item`: Name of the associated openHAB item.
@@ -479,7 +479,7 @@ The switch simply toggles between `ON` and `OFF`.
 **Note:** If an item of type `Dimmer` is linked to a `Switch` and no state mappings are defined, a toggle switch will be displayed.
 The toggle will send `ON` and `OFF` commands. For display purposes, a `Dimmer` state of `0` is treated as `OFF`, while any value from `1` to `100` is considered `ON`.
 
-**Example:**
+###### Example:
 
 ```openhab
 Frame label="Switches" {
@@ -487,7 +487,7 @@ Frame label="Switches" {
 }
 ```
 
-**UI Preview:**
+###### UI Preview:
 
 <div class="garmin-screenshot-container">
   <img src="images/app/06-switches-1-toggle.png"/>
@@ -502,7 +502,7 @@ In the menu, the item displays a textual or percentage-based state:
 - `mappings` can be used to map numeric states (e.g., `0="Open"`, `100="Closed"`), but **only affect the menu label**.
 - The full-screen view **always** shows numeric percentages for clarity, since states like `0` and `100` can reflect transitional movement (e.g., “opening”) rather than final state (“open”).
 
-**Example:**
+###### Example:
 
 ```java
 Frame label="Switches" {
@@ -510,7 +510,7 @@ Frame label="Switches" {
 }
 ```
 
-**UI Preview:**
+###### UI Preview:
 
 <div class="garmin-screenshot-container">
   <img src="images/app/06-switches-2-rollershutter-1.png"/>
@@ -523,7 +523,7 @@ Frame label="Switches" {
 
 When the item type is `Player`, the widget opens a full-screen control with `PLAY`/`PAUSE`, `NEXT`, and `PREVIOUS` actions. In the menu, the item displays the `PLAY`/`PAUSE` state.
 
-**Example:**
+###### Example:
 
 ```java
 Frame label="Switches" {
@@ -531,7 +531,7 @@ Frame label="Switches" {
 }
 ```
 
-**UI Preview:**
+###### UI Preview:
 
 <div class="garmin-screenshot-container">
   <img src="images/app/06-switches-4-player-1.png"/>
@@ -555,14 +555,14 @@ In the menu, the widget displays the current state as text:
 
 **Tip:** You can use an empty label in `mappings` if the item's function is self-explanatory from context.
 
-**Selection behavior:**
+###### Selection behavior:
 
 - If **one** command is defined, it is sent immediately when the item is selected.
 - If **two** commands are defined and one of them matches the current state, the **other** is sent immediately.
 - In all other cases, an **action menu** appears on the right side of the screen, allowing the user to select from the list of available commands.
   If the current state matches one of the commands, that command is **not shown** in the menu.
 
-**Example:**
+###### Example:
 
 ```java
 Frame label="Switches" {
@@ -570,7 +570,7 @@ Frame label="Switches" {
 }
 ```
 
-**UI Rendering:**
+###### UI Rendering:
 
 <div class="garmin-screenshot-container">
   <img src="images/app/06-switches-3-generic-1.png">
@@ -580,7 +580,7 @@ Frame label="Switches" {
 **Note:** The action menu shown in the right screenshot is a **mockup**.
 The actual appearance may vary depending on the device, as it uses a native UI component.
 
-**Example with Empty Mapping Entry:**
+###### Example with Empty Mapping Entry:
 
 Consider a garage door opener that acts as a toggle switch: sending an `ON` command triggers the gate to open or close, and the switch automatically resets to `OFF` after one second.
 
@@ -614,7 +614,7 @@ When selected, both widgets open a full-screen view for choosing a new value, wh
 
 The only behavioral difference between the two is the `Slider` widget’s support for the `releaseOnly` parameter (see below).
 
-**Supported parameters:**
+##### Supported Parameters
 
 - `label`: the label displayed in the UI.
 - `item`: the name of the associated openHAB item.
@@ -625,7 +625,7 @@ The only behavioral difference between the two is the `Slider` widget’s suppor
   - **With `releaseOnly`:** The value is only sent when the dialog is confirmed. Cancelling leaves the value unchanged.
   - **Without `releaseOnly`:** Values are sent immediately as the slider is moved. Confirming keeps the current value; cancelling reverts to the value before the dialog was opened.
 
-**Notes and Limitations**
+##### Notes and Limitations
 
 - Floating point values are supported with a maximum of four decimal places, for example 1.2345.
 - A maximum of 100 steps is supported, for example:
@@ -636,7 +636,7 @@ The only behavioral difference between the two is the `Slider` widget’s suppor
   - In the menu, values are formatted as compactly as possible and the unit is appended without a space to conserve space. For example “20°C” or “20.5°C”.
   - In the full-screen widget, values are always formatted with the same number of decimal places as defined by the step. The unit is appended with a space, except for %. For example “20.0 °C” or “20.5 °C” with step=0.5.
 
-**Example configuration:**
+##### Example configuration:
 
 ```java
 Frame label="First Floor" {
@@ -645,7 +645,7 @@ Frame label="First Floor" {
 }
 ```
 
-**Resulting UI:**
+###### Resulting UI:
 
 <div class="garmin-screenshot-container">
   <img src="images/app/07-slider-1.png">
@@ -759,7 +759,7 @@ The app distinguishes between **temporary (non-fatal)** and **critical (fatal)**
 - **Non-fatal errors** trigger a toast notification at the top of the screen, allowing you to continue using the app.
 - **Fatal errors** display a full-screen error view, halting further use until the issue is resolved.
 
-**Non-fatal errors include:**
+#### Non-fatal errors include:
 
 - Most communication-related issues when requesting the sitemap.
 - All communication-related issues when sending a command.
@@ -767,7 +767,7 @@ The app distinguishes between **temporary (non-fatal)** and **critical (fatal)**
 
 > Note: Non-fatal errors related to requesting the sitemap will become fatal if they persist for more than 10 seconds.
 
-**Immediately fatal errors include:**
+#### Immediately fatal errors include:
 
 - Certain communication errors when requesting the sitemap, specifically:
 
@@ -778,7 +778,7 @@ The app distinguishes between **temporary (non-fatal)** and **critical (fatal)**
 
 > Note: Even after a fatal error, the app continues querying the sitemap. If a response is successfully processed, it returns to displaying the sitemap.
 
-**If "Suppress Empty Response Errors" is enabled:**
+#### If "Suppress Empty Response Errors" is enabled:
 
 When this option is enabled in the [Settings](#configuration), toast notifications for the following errors will be suppressed:
 
@@ -804,7 +804,7 @@ To save space, communication errors shown in toast notifications follow this for
 
 For a full list of Garmin SDK error codes, see the **Constant Summary** section here: [Garmin Communications API Docs](https://developer.garmin.com/connect-iq/api-docs/Toybox/Communications.html)
 
-**Special error codes:**
+#### Special error codes:
 
 The following error codes are used for common communication issues and those without specific error codes:
 
@@ -825,3 +825,18 @@ If you encounter a **UI:** error code, please report it to the development team,
 | `S:0` or `C:0` | When in [Wi-Fi mode](#wi-fi), this error occurs if a sitemap request or command fails because the server is not reachable, for example due to an incorrect URL in the configuration. |
 | `C:415`   | HTTP response code **415** means _Unsupported Media Type_. This usually occurs when **Native REST API Support** is enabled in the [Configuration](#configuration), but your openHAB instance doesn’t support it. If you're using the backport (see [Sending Commands](#sending-commands) and have recently updated openHAB to a newer version or installed a new binding, you may need to re-install the backport to restore compatibility.                                                       |
 | `S:EMRES` | myopenHAB currently experiences an intermittent issue ([details here](https://github.com/openhab/openhab-cloud/issues/496)) where sitemap requests may return empty responses. When this happens, the app displays a non-fatal `S:EMRES` notification. Typically, the next request succeeds, so the issue doesn't escalate into a fatal error. To avoid seeing these notifications, you can enable the **Suppress empty response errors** option in the [Configuration](#configuration) settings. |
+
+### Edge 550 / 850 Menu Focus Indicator Issue
+
+On the Edge 550 and 850, a firmware bug prevents the menu focus indicator, which highlights the currently selected item, from being rendered correctly.
+
+Due to the nature of the issue, the available workarounds are limited.
+
+On the Edge 550, the only reliable solution was to render a thin vertical line on the left side of each non-selected menu item. While this indicator is subtle and not highly visible at first glance, it becomes understandable once the user recognizes the visual pattern. In the screenshots above, the second item, “Fenster,” is selected.
+
+<div class="garmin-screenshot-container">
+  <img src="images/app/13-edgex50-menu-workaround-light.png">
+  <img src="images/app/13-edgex50-menu-workaround-dark.png">
+</div>
+
+On the Edge 850, no visual workaround is applied. Instead, users are encouraged to navigate the menu using touch input rather than the hardware buttons, since touch interaction does not rely on a focus indicator.
