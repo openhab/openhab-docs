@@ -56,7 +56,7 @@ prev: /docs/ui/components/
     <PropOption value="min" label="Minimal" />
   </PropOptions>
 </PropBlock>
-<PropBlock type="BOOLEAN" name="startonSunday" label="Start Week on Sunday">
+<PropBlock type="BOOLEAN" name="startOnSunday" label="Start Week on Sunday">
   <PropDescription>
     Check to start the week on Sundays instead of Mondays
   </PropDescription>
@@ -107,11 +107,6 @@ prev: /docs/ui/components/
 ### Axis and Coordinate System Assignments
 <div class="props">
 <PropGroup name="componentRelations" label="Axis and Coordinate System Assignments">
-<PropBlock type="INTEGER" name="gridIndex" label="Grid Index" context="chartGrid">
-  <PropDescription>
-    The index of the grid for this axis
-  </PropDescription>
-</PropBlock>
 <PropBlock type="INTEGER" name="gridIndex" label="Grid Index" context="chartGrid">
   <PropDescription>
     The index of the grid for this axis

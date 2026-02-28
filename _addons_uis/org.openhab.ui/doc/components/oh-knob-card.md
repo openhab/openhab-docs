@@ -60,7 +60,7 @@ Use the advanced properties to change the appearance from a knob to a rounded sl
 ### Knob & Rounded Slider
 <div class="props">
 <PropGroup name="knob" label="Knob & Rounded Slider">
-  Parameters are passed to the underlying <a target="_blank" class="external text-color-blue" href="https://github.com/soundar24/vue-round-slider#props">round-slider control</a>
+  Parameters are passed to the underlying <a target="_blank" class="external text-color-blue" href="https://github.com/Artem9989/vue-three-round-slider?tab=readme-ov-file#props">round-slider control</a>
 <PropBlock type="TEXT" name="item" label="Item" context="item">
   <PropDescription>
     Item to control

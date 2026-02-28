@@ -86,6 +86,7 @@ prev: /docs/ui/components/
     Choose from a selection of preset color palettes for the values in range. The default is a yellow (low) to red (high) gradient
   </PropDescription>
   <PropOptions>
+    <PropOption value="yellowred" label="Yellow-Red" />
     <PropOption value="greenred" label="Green-Yellow-Red" />
     <PropOption value="whiteblue" label="White-Blue" />
     <PropOption value="bluered" label="Blue-red" />
