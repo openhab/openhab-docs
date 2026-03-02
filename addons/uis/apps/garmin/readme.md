@@ -150,7 +150,7 @@ Only if no cached sitemap is available at startup, for example after settings ch
   <img src="images/app/12-settings-sitemap-update.png"/>
 </div>
 
-###### If you encounter a -402 error:
+**If you encounter a -402 error:**
 
 On devices with limited memory, the size limit for sitemaps can be lower in Wi-Fi mode than over a BLE connection. In such cases, retrieving the sitemap via Wi-Fi may result in a -402 communication error.
 
@@ -398,7 +398,7 @@ The ➡️ [`Text`]({{base}}/ui/sitemaps.html#element-type-text) Sitemap Widget 
 This widget is ideal for showing read-only information, such as temperature, system status, or sensor readings.
 It also supports [nested elements](#nested-elements), making it suitable for creating a hierarchical sitemap structure.
 
-###### Example configuration:
+##### Example configuration:
 
 In this example, the `Text` Sitemap Widget is used to display the status of entrance gates.
 Triggering the gates is handled by a separate `Switch` element.
@@ -410,7 +410,7 @@ Frame label="Entrance Gates" {
 }
 ```
 
-###### Resulting UI:
+##### Resulting UI:
 
 <div class="garmin-screenshot-container">
   <img src="images/app/03-entrance-gates.png"/>
@@ -432,7 +432,7 @@ sitemap garmin_demo label="My Home" {
 }
 ```
 
-###### Resulting UI:
+##### Resulting UI:
 
 <div class="garmin-screenshot-container">
   <img src="images/app/08-group-1.png"/>
@@ -479,7 +479,7 @@ The switch simply toggles between `ON` and `OFF`.
 **Note:** If an item of type `Dimmer` is linked to a `Switch` and no state mappings are defined, a toggle switch will be displayed.
 The toggle will send `ON` and `OFF` commands. For display purposes, a `Dimmer` state of `0` is treated as `OFF`, while any value from `1` to `100` is considered `ON`.
 
-###### Example:
+**Example:**
 
 ```openhab
 Frame label="Switches" {
@@ -487,7 +487,7 @@ Frame label="Switches" {
 }
 ```
 
-###### UI Preview:
+**UI Preview:**
 
 <div class="garmin-screenshot-container">
   <img src="images/app/06-switches-1-toggle.png"/>
@@ -502,7 +502,7 @@ In the menu, the item displays a textual or percentage-based state:
 - `mappings` can be used to map numeric states (e.g., `0="Open"`, `100="Closed"`), but **only affect the menu label**.
 - The full-screen view **always** shows numeric percentages for clarity, since states like `0` and `100` can reflect transitional movement (e.g., “opening”) rather than final state (“open”).
 
-###### Example:
+**Example:**
 
 ```java
 Frame label="Switches" {
@@ -510,7 +510,7 @@ Frame label="Switches" {
 }
 ```
 
-###### UI Preview:
+**UI Preview:**
 
 <div class="garmin-screenshot-container">
   <img src="images/app/06-switches-2-rollershutter-1.png"/>
@@ -523,7 +523,7 @@ Frame label="Switches" {
 
 When the item type is `Player`, the widget opens a full-screen control with `PLAY`/`PAUSE`, `NEXT`, and `PREVIOUS` actions. In the menu, the item displays the `PLAY`/`PAUSE` state.
 
-###### Example:
+**Example:**
 
 ```java
 Frame label="Switches" {
@@ -531,7 +531,7 @@ Frame label="Switches" {
 }
 ```
 
-###### UI Preview:
+**UI Preview:**
 
 <div class="garmin-screenshot-container">
   <img src="images/app/06-switches-4-player-1.png"/>
@@ -555,14 +555,14 @@ In the menu, the widget displays the current state as text:
 
 **Tip:** You can use an empty label in `mappings` if the item's function is self-explanatory from context.
 
-###### Selection behavior:
+**Selection behavior:**
 
 - If **one** command is defined, it is sent immediately when the item is selected.
 - If **two** commands are defined and one of them matches the current state, the **other** is sent immediately.
 - In all other cases, an **action menu** appears on the right side of the screen, allowing the user to select from the list of available commands.
   If the current state matches one of the commands, that command is **not shown** in the menu.
 
-###### Example:
+**Example:**
 
 ```java
 Frame label="Switches" {
@@ -570,7 +570,7 @@ Frame label="Switches" {
 }
 ```
 
-###### UI Rendering:
+**UI Rendering:**
 
 <div class="garmin-screenshot-container">
   <img src="images/app/06-switches-3-generic-1.png">
@@ -580,7 +580,7 @@ Frame label="Switches" {
 **Note:** The action menu shown in the right screenshot is a **mockup**.
 The actual appearance may vary depending on the device, as it uses a native UI component.
 
-###### Example with Empty Mapping Entry:
+**Example with Empty Mapping Entry:**
 
 Consider a garage door opener that acts as a toggle switch: sending an `ON` command triggers the gate to open or close, and the switch automatically resets to `OFF` after one second.
 
@@ -645,7 +645,7 @@ Frame label="First Floor" {
 }
 ```
 
-###### Resulting UI:
+**Resulting UI:**
 
 <div class="garmin-screenshot-container">
   <img src="images/app/07-slider-1.png">
