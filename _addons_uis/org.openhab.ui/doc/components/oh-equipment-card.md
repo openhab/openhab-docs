@@ -56,7 +56,7 @@ A card showing model items belonging to a certain equipment class
     <PropOption value="blue" label="Blue" />
     <PropOption value="pink" label="Pink" />
     <PropOption value="yellow" label="Yellow" />
-    <PropOption value="(empty)" label="Orange" />
+    <PropOption value="orange" label="Orange" />
     <PropOption value="purple" label="Purple" />
     <PropOption value="deeppurple" label="Deep Purple" />
     <PropOption value="lightblue" label="Light Blue" />

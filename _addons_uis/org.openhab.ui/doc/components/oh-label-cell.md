@@ -141,7 +141,7 @@ A cell with a big label to show a short item state value
 </PropBlock>
 <PropBlock type="TEXT" name="actionCommand" label="Action Command">
   <PropDescription>
-    Command to send to the Item. If "Toogle Item" is selected as the action, only send the command when the state is different
+    Command to send to the Item. If "Toggle Item" is selected as the action, only send the command when the state is different
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionCommandAlt" label="Action Toggle Command">

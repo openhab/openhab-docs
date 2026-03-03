@@ -1,9 +1,9 @@
 ---
 id: bluelink
-label: Bluelink (Hyundai/Genesis)
-title: Bluelink (Hyundai/Genesis) - Bindings
+label: Bluelink (Hyundai/Kia/Genesis)
+title: Bluelink (Hyundai/Kia/Genesis) - Bindings
 type: binding
-description: "This binding integrates Hyundai vehicles equipped with Bluelink connected car services."
+description: "This binding integrates these telematics systems for connected vehicles:"
 logo: images/addons/bluelink.svg
 install: auto
 ---
@@ -12,17 +12,20 @@ install: auto
 
 {% include base.html %}
 
-# Bluelink Binding (Hyundai/Genesis)
+# Bluelink Binding (Hyundai/Kia/Genesis)
 
 <AddonLogo />
 
-This binding integrates Hyundai vehicles equipped with Bluelink connected car services.
+This binding integrates these telematics systems for connected vehicles:
+
+* Hyundai Bluelink (US, Canada, and EU)
+* Kia Connect (Canada and EU, also formerly known as UVO)
+* Genesis Connected Services (US, Canada, and EU)
+
 It allows you to monitor your vehicle's status and control various features remotely.
 
-Genesis vehicles may also work, though this has not been tested.
-
-**NOTE: The binding only support the US region at the moment, because the Bluelink API
-differs by region.**
+**NOTE: Due to regional differences, only the above brand/region combinations are supported.
+Not all combinations have been tested.**
 
 ## Supported Things
 
@@ -40,12 +43,22 @@ registered to your account.
 
 ### `account` Bridge
 
-| Parameter  | Required | Description                                              |
-|------------|----------|----------------------------------------------------------|
-| `username` | Yes      | Bluelink account email                                   |
-| `password` | Yes      | Bluelink account password                                |
-| `pin`      | No       | Bluelink service PIN (required for lock/unlock commands) |
-| `region`   | No       | Country code (`US`), autodetected if absent              |
+| Parameter  | Required | Description                                                      |
+|------------|----------|------------------------------------------------------------------|
+| `username` | No       | Bluelink account email (not required for EU region)              |
+| `password` | Yes      | Bluelink account password (for EU: refresh token)                |
+| `pin`      | No       | Bluelink service PIN (required for lock/unlock commands)         |
+| `region`   | No       | Country code (`US`, `CA`, or `EU`), autodetected if absent       |
+| `brand`    | No       | One of `hyundai`, `kia`, `genesis` (required for CA and EU)      |
+
+#### EU Region Notes
+
+The EU region uses an OAuth2 refresh token instead of username/password authentication.
+Put your refresh token in the `password` field.
+A refresh token is typically valid for 180 days, after which you will need to provide a new one.
+The following script may be used to obtain a refresh token: [RustyDust/bluelink_refresh_token](https://github.com/RustyDust/bluelink_refresh_token).
+
+The `username` field is not required for EU.
 
 ### `vehicle` Thing
 
@@ -64,7 +77,7 @@ The Force Refresh action can be used to refresh on demand.
 
 ## Actions
 
-Vehicle things support the following actions:
+Vehicle things support the following actions.
 
 | Action          | Parameters                                                 | Description                                                |
 |-----------------|------------------------------------------------------------|------------------------------------------------------------|

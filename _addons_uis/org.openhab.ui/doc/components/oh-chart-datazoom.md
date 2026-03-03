@@ -55,6 +55,18 @@ prev: /docs/ui/components/
 <div class="props">
 <PropGroup name="position" label="Position">
   Applicable only to slider types
+<PropBlock type="TEXT" name="top" label="Top">
+</PropBlock>
+<PropBlock type="TEXT" name="bottom" label="Bottom">
+</PropBlock>
+<PropBlock type="TEXT" name="left" label="Left">
+</PropBlock>
+<PropBlock type="TEXT" name="right" label="Right">
+</PropBlock>
+<PropBlock type="TEXT" name="width" label="Width">
+</PropBlock>
+<PropBlock type="TEXT" name="height" label="Height">
+</PropBlock>
 </PropGroup>
 </div>
 
