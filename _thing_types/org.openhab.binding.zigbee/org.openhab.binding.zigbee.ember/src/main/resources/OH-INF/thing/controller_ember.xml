@@ -19,19 +19,16 @@
 
 		<config-description>
 			<parameter-group name="network">
-				<context></context>
 				<label>ZigBee Network Configuration</label>
 				<description></description>
 			</parameter-group>
 
 			<parameter-group name="port">
-				<context></context>
 				<label>Serial Port Configuration</label>
 				<description></description>
 			</parameter-group>
 
 			<parameter-group name="ember">
-				<context></context>
 				<label>Ember NCP Configuration</label>
 				<description></description>
 			</parameter-group>

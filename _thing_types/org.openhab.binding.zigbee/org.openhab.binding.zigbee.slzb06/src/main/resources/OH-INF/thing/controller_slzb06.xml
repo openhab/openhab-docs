@@ -21,17 +21,14 @@
         <representation-property>slzb06_server</representation-property>
         <config-description>
             <parameter-group name="network">
-                <context></context>
                 <label>ZigBee Network Configuration</label>
                 <description></description>
             </parameter-group>
             <parameter-group name="server">
-                <context></context>
                 <label>Server Configuration</label>
                 <description></description>
             </parameter-group>
             <parameter-group name="ember">
-                <context></context>
                 <label>Ember NCP Configuration</label>
                 <description></description>
             </parameter-group>
