@@ -4,7 +4,7 @@ label: Math
 title: Math - Transformation Services
 type: transform
 description: "Transforms the input by applying simple math on it."
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
