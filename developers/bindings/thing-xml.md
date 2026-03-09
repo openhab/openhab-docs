@@ -481,6 +481,8 @@ If an Item should be linked to a channel within a group, the channel UID would b
 
 ## Properties
 
+### Thing Properties
+
 Solutions based on openHAB might require meta data from a device.
 These meta data could include:
 
@@ -565,6 +567,33 @@ If a configuration parameter will be used, then its respective `parameter` shall
         ...
     </thing-type>
 ```
+
+### Channel Properties
+
+Channel properties in openHAB are a small but important part of the Thing/Channel model, and they behave differently from both Thing properties and Channel configuration parameters.
+Channel properties are metadata attached to a channel, represented as a simple key–value map.
+They are exposed through the REST API as part of the Thing structure and are typically used by bindings to store non-user-editable, binding-defined attributes.
+
+Examples include:
+
+- Identifiers derived from the device (service, scheme, source, index).
+- Internal metadata needed by the handler.
+- Read‑only attributes that should not appear as configuration parameters.
+
+How channel properties differ from other channel metadata:
+
+1. Channel configuration parameters are:
+    - User editable and appear in the UI.
+    - Defined in the binding’s XML (channel-type => config-description).
+    - Persisted separately and can be changed by the user.
+
+1. Channel properties are:
+    - Binding defined at run-time.
+    - Not user editable and not part of the configuration description.
+    - Returned in the Thing JSON under each channel, and visible in Main UI.
+
+1. Thing properties are:
+    - Properties of the Thing itself, not of its Channels.
 
 ## Formatting Labels and Descriptions
 
