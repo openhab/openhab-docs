@@ -590,7 +590,7 @@ How channel properties differ from other channel metadata:
 1. Channel properties are:
     - Binding defined at run-time.
     - Not user editable and not part of the configuration description.
-    - Returned in the Thing JSON under each channel, and visible in Main UI.
+    - Returned in the Thing JSON under each channel, and visible in the UI.
 
 1. Thing properties are:
     - Properties of the Thing itself, not of its Channels.
