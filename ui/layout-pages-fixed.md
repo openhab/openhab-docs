@@ -8,7 +8,7 @@ title: Fixed Layout Pages
 
 Fixed layouts allow you to position and size widgets freely, either on a grid with **Fixed Grid** layout, or in a completely free way with **Fixed Canvas** layouts (with **Fixed Canvas**, you are still able to temporarily switch on a grid if you want to snap some widgets).
 
-The main idea is to create a layout on which you can freely place [widgets](/ui/building-pages.html#building-pages-components-widgets) which provide the interaction with your home automation system.
+The main idea is to create a layout on which you can freely place [widgets](/docs/ui/building-pages.html#building-pages-components-widgets) which provide the interaction with your home automation system.
 
 You can even make the **background image interactive** and use it as multi-widget to control and trigger actions like you can do with widgets.
 
