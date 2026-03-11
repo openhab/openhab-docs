@@ -81,6 +81,7 @@ Once the app is installed, you can configure the following settings by opening i
 | **Password**                      | Password for basic authentication                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Supress empty response errors** | Suppress errors for empty sitemap responses. Recommended when using myopenhab.org, which occasionally returns empty results. See the related [openhab-cloud issue #496](https://github.com/openhab/openhab-cloud/issues/496) for details.                                                                                                                                                                                                                             |
 | **Polling Interval (ms)**         | Interval between data requests to your openHAB instance. Set to 0 to fetch new data immediately after the previous response is processed. Polling only occurs while the app is open, not in the background. If you're using **myopenhab.org**, it's recommended to use the default (3000 ms) or a higher value to avoid overloading their servers. If you're connecting to your own openHAB server directly, you may try setting it to 0 for more responsive updates. |
+| **Post command hold time (ms)** | Time during which state updates are ignored after a command is sent. Since a sitemap request is executed immediately after sending a command, a slow response from openHAB may still return the previous state, causing switches in the UI to briefly toggle back and forth. The post-command hold time prevents this by locking the item state for a configurable duration while the command is processed and the new state is applied. |
 
 <div style="display: flex; justify-content: center;">
   <img src="images/app-settings/app-settings.png" alt="App Settings" style="max-width: 340px;">
@@ -88,15 +89,87 @@ Once the app is installed, you can configure the following settings by opening i
 
 ## Connectivity
 
-Garmin wearables rely on your smartphone for network access.
-If your phone can reach your openHAB instance (e.g. via local network or VPN like Tailscale), the watch can too.
+This section explains how to connect your Garmin wearable to openHAB, covering network access (BLE via phone or Wi-Fi), the use of myopenHAB, and the available methods for sending commands (native REST APIs or webhooks).
 
-**Platform-specific Limitations:**
+### Network Access
 
-- **iOS**: HTTP and HTTPS supported
+All Garmin wearables can access your local network and the Internet via a BLE (Bluetooth Low Energy) connection to your phone.
+
+#### BLE / Phone Connectivity
+
+Using your phone for connectivity allows the app to take advantage of all network options available on the phone, including VPNs such as Tailscale. When connected via the phone, the openHAB app maintains a permanent connection to openHAB and is therefore able to display live item states.
+
+##### Platform-specific limitations:
+
+- **iOS**: HTTP and HTTPS are supported  
 - **Android**: Only HTTPS with a valid certificate is supported due to Garmin SDK limitations
 
-You can use [myopenHAB](https://www.myopenhab.org) to securely access your local openHAB instance over the Internet using HTTPS.
+A green status indicator and a Bluetooth icon at the top of the menus and full-screen views indicate that a BLE connection is available. Also, the current connectivity mode can be checked in the [settings menu](#settings-menu).
+
+<div class="garmin-screenshot-container">
+  <img src="images/app/12-indicator-bluetooth-menu.png"/>
+  <img src="images/app/12-indicator-bluetooth-widget.png"/>
+  <img src="images/app/12-settings-mode-bluetooth.png"/>
+</div>
+
+You can use [myopenHAB](https://www.myopenhab.org) to securely access your local openHAB instance over the Internet via HTTPS.
+
+#### Wi-Fi
+
+Some Garmin wearables can also connect directly to Wi-Fi. This allows access to the local LAN and, if Internet connectivity is available, to services such as myopenHAB.
+
+When connected via Wi-Fi, both HTTP and HTTPS are supported.
+
+Garmin does not allow a permanent Wi-Fi connection. Instead, the app must enter a dedicated sync mode, perform its network operations, and then close the Wi-Fi connection again. While this sync is active, Garmin displays system-provided views to inform the user about sync progress.
+
+##### Automatic Wi-Fi Detection and Mode Switching
+
+If no BLE connection to a phone is available, the app automatically checks whether a Wi-Fi connection can be used and, if so, switches to Wi-Fi mode. These checks continue while the app is running, and the app may switch between BLE and Wi-Fi connectivity at any time.
+
+At startup, if no BLE connection is available, a red status indicator indicates that the app is offline. A Wi-Fi icon with a magnifying glass shows that the app is searching for a Wi-Fi connection. Once connected to Wi-Fi, the status indicator turns yellow, indicating Wi-Fi mode.
+
+<div class="garmin-screenshot-container">
+  <img src="images/app/12-indicator-wifi-check-menu.png"/>
+  <img src="images/app/12-indicator-wifi-menu.png"/>
+  <img src="images/app/12-indicator-wifi-widget.png"/>
+  <img src="images/app/12-settings-mode-wifi.png"/>
+</div>
+
+##### No Polling of Sitemap Changes and States
+
+Due to the limitations of the Wi-Fi mode, the app does not regularly poll openHAB for sitemap changes or state updates while in Wi-Fi mode. As a result, item states are not displayed.
+
+<div class="garmin-screenshot-container">
+  <img src="images/app/12-nostates.png"/>
+</div>
+
+Only if no cached sitemap is available at startup, for example after settings changes or a fatal error, the app enters sync mode to retrieve the full sitemap. The [settings menu](#settings-menu) shows when the sitemap was last retrieved, and the user can also manually trigger an update via Wi-Fi, for example to download structural changes to the sitemap.
+
+<div class="garmin-screenshot-container">
+  <img src="images/app/12-settings-last-update.png"/>
+  <img src="images/app/12-settings-sitemap-update.png"/>
+</div>
+
+**If you encounter a -402 error:**
+
+On devices with limited memory, the size limit for sitemaps can be lower in Wi-Fi mode than over a BLE connection. In such cases, retrieving the sitemap via Wi-Fi may result in a -402 communication error.
+
+If this occurs, try updating the sitemap over BLE before reducing the sitemap size.
+
+##### Sending Commands
+
+Because current item states are not available in Wi-Fi mode, sending commands cannot rely on existing state information. For toggle switches, this means the user must explicitly choose whether the item should be switched on or off via an action menu.
+
+Another example is the [`Slider`](#setpoint-and-slider). In Wi-Fi mode, the slider always starts at the middle of its range and operates in `releaseOnly` mode. The command is sent only when the new value is confirmed, not while the value is being adjusted.
+
+#### Offline
+
+While searching for Wi-Fi, and whenever neither BLE nor Wi-Fi is available, the app enters offline mode, indicated by a red status indicator. In offline mode, the menu structure can still be navigated. However, when attempting to send a command, an “OFFLINE” toast notification is displayed.
+
+<div class="garmin-screenshot-container">
+  <img src="images/app/12-indicator-offline-menu.png"/>
+  <img src="images/app/12-offline-toast.png"/>
+</div>
 
 ### Using myopenHAB
 
@@ -317,7 +390,7 @@ If this is not the case, an error will be shown instead.
 
 The ➡️ [`Text`]({{base}}/ui/sitemaps.html#element-type-text) Sitemap Widget is used to display the current state of an item without allowing any user interaction.
 
-**Supported parameters:**
+##### Supported parameters:
 
 - `label`: the label shown in the UI.
 - `item`: the name of the openHAB item whose state should be displayed.
@@ -325,7 +398,7 @@ The ➡️ [`Text`]({{base}}/ui/sitemaps.html#element-type-text) Sitemap Widget 
 This widget is ideal for showing read-only information, such as temperature, system status, or sensor readings.
 It also supports [nested elements](#nested-elements), making it suitable for creating a hierarchical sitemap structure.
 
-**Example configuration:**
+##### Example configuration:
 
 In this example, the `Text` Sitemap Widget is used to display the status of entrance gates.
 Triggering the gates is handled by a separate `Switch` element.
@@ -337,7 +410,7 @@ Frame label="Entrance Gates" {
 }
 ```
 
-**Resulting UI:**
+##### Resulting UI:
 
 <div class="garmin-screenshot-container">
   <img src="images/app/03-entrance-gates.png"/>
@@ -348,7 +421,7 @@ Frame label="Entrance Gates" {
 The ➡️ [`Group`]({{base}}/ui/sitemaps.html#element-type-group) Sitemap Widget will present a submenu containing all the items in the associated item of type `Group`.
 This also works recursively, if the `Group` item itself contains other `Group` items, those will again open their own submenus.
 
-**Example configuration:**
+##### Example configuration:
 
 In this example, the `CC_House_Lights` item represents a hierarchical structure: it contains groups for each floor (e.g., the first floor), which in turn contain groups for individual rooms, and those room groups include the actual light switch items.
 
@@ -359,7 +432,7 @@ sitemap garmin_demo label="My Home" {
 }
 ```
 
-**Resulting UI:**
+##### Resulting UI:
 
 <div class="garmin-screenshot-container">
   <img src="images/app/08-group-1.png"/>
@@ -380,7 +453,7 @@ However, due to the limited screen space on wearables, the Garmin app always ope
 
 As a result, `Selection` is treated as a **synonym for `Switch`**, and both behave identically in the Garmin app.
 
-**Supported parameters:**
+##### Supported parameters:
 
 - `label`: Text displayed in the UI.
 - `item`: Name of the associated openHAB item.
@@ -541,7 +614,7 @@ When selected, both widgets open a full-screen view for choosing a new value, wh
 
 The only behavioral difference between the two is the `Slider` widget’s support for the `releaseOnly` parameter (see below).
 
-**Supported parameters:**
+##### Supported Parameters
 
 - `label`: the label displayed in the UI.
 - `item`: the name of the associated openHAB item.
@@ -552,10 +625,18 @@ The only behavioral difference between the two is the `Slider` widget’s suppor
   - **With `releaseOnly`:** The value is only sent when the dialog is confirmed. Cancelling leaves the value unchanged.
   - **Without `releaseOnly`:** Values are sent immediately as the slider is moved. Confirming keeps the current value; cancelling reverts to the value before the dialog was opened.
 
-**Important note:**
-While the default `step=1` is consistent with openHAB’s default, it often results in too many steps (e.g., 100 steps for a range of 0–100), which is impractical for wearable interfaces. Increasing `step` to `10` reduces the number of steps to 10, making interaction much more manageable.
+##### Notes and Limitations
 
-**Example configuration:**
+- Floating point values are supported with a maximum of four decimal places, for example 1.2345.
+- A maximum of 100 steps is supported, for example:
+  - minValue=0, maxValue=100, step=1
+  - minValue=0, maxValue=50, step=0.5
+- While up to 100 steps are supported, this can be impractical for wearable interfaces. It is recommended to define the range and `step` so that the total number of steps is limited to roughly 10 to 20, making interaction significantly more manageable.
+- The formatting pattern defined in the item’s metadata is not used. Instead, predefined formatting rules are applied when displaying values:
+  - In the menu, values are formatted as compactly as possible and the unit is appended without a space to conserve space. For example “20°C” or “20.5°C”.
+  - In the full-screen widget, values are always formatted with the same number of decimal places as defined by the step. The unit is appended with a space, except for %. For example “20.0 °C” or “20.5 °C” with step=0.5.
+
+##### Example configuration:
 
 ```java
 Frame label="First Floor" {
@@ -576,7 +657,7 @@ Frame label="First Floor" {
 - The **lower-right** screenshot shows the slider on a touch-based device.
 
 Note: Even button-based devices may support touch input, and on those, the UI reacts to both.
-On **button-based devices**, use **up/down** to scroll through the values, press **enter** (upper-right button) to confirm or **back** (lower-right button) to cancel.
+/On **button-based devices**, use **up/down** to scroll through the values, press **enter** (upper-right button) to confirm or **back** (lower-right button) to cancel.
 On **touch-based devices** simply **tap the icons** corresponding to the desired action or value to make a selection.
 
 ### Dynamic Sitemaps
@@ -678,7 +759,7 @@ The app distinguishes between **temporary (non-fatal)** and **critical (fatal)**
 - **Non-fatal errors** trigger a toast notification at the top of the screen, allowing you to continue using the app.
 - **Fatal errors** display a full-screen error view, halting further use until the issue is resolved.
 
-**Non-fatal errors include:**
+#### Non-fatal errors include:
 
 - Most communication-related issues when requesting the sitemap.
 - All communication-related issues when sending a command.
@@ -686,7 +767,7 @@ The app distinguishes between **temporary (non-fatal)** and **critical (fatal)**
 
 > Note: Non-fatal errors related to requesting the sitemap will become fatal if they persist for more than 10 seconds.
 
-**Immediately fatal errors include:**
+#### Immediately fatal errors include:
 
 - Certain communication errors when requesting the sitemap, specifically:
 
@@ -697,7 +778,7 @@ The app distinguishes between **temporary (non-fatal)** and **critical (fatal)**
 
 > Note: Even after a fatal error, the app continues querying the sitemap. If a response is successfully processed, it returns to displaying the sitemap.
 
-**If "Suppress Empty Response Errors" is enabled:**
+#### If "Suppress Empty Response Errors" is enabled:
 
 When this option is enabled in the [Settings](#configuration), toast notifications for the following errors will be suppressed:
 
@@ -723,7 +804,7 @@ To save space, communication errors shown in toast notifications follow this for
 
 For a full list of Garmin SDK error codes, see the **Constant Summary** section here: [Garmin Communications API Docs](https://developer.garmin.com/connect-iq/api-docs/Toybox/Communications.html)
 
-**Special error codes:**
+#### Special error codes:
 
 The following error codes are used for common communication issues and those without specific error codes:
 
@@ -741,5 +822,21 @@ If you encounter a **UI:** error code, please report it to the development team,
 
 | Error     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `S:0` or `C:0` | When in [Wi-Fi mode](#wi-fi), this error occurs if a sitemap request or command fails because the server is not reachable, for example due to an incorrect URL in the configuration. |
 | `C:415`   | HTTP response code **415** means _Unsupported Media Type_. This usually occurs when **Native REST API Support** is enabled in the [Configuration](#configuration), but your openHAB instance doesn’t support it. If you're using the backport (see [Sending Commands](#sending-commands) and have recently updated openHAB to a newer version or installed a new binding, you may need to re-install the backport to restore compatibility.                                                       |
 | `S:EMRES` | myopenHAB currently experiences an intermittent issue ([details here](https://github.com/openhab/openhab-cloud/issues/496)) where sitemap requests may return empty responses. When this happens, the app displays a non-fatal `S:EMRES` notification. Typically, the next request succeeds, so the issue doesn't escalate into a fatal error. To avoid seeing these notifications, you can enable the **Suppress empty response errors** option in the [Configuration](#configuration) settings. |
+
+### Edge 550 / 850 Menu Focus Indicator Issue
+
+On the Edge 550 and 850, a firmware bug prevents the menu focus indicator, which highlights the currently selected item, from being rendered correctly.
+
+Due to the nature of the issue, the available workarounds are limited.
+
+On the Edge 550, the only reliable solution was to render a thin vertical line on the left side of each non-selected menu item. While this indicator is subtle and not highly visible at first glance, it becomes understandable once the user recognizes the visual pattern. In the screenshots above, the second item, “Fenster,” is selected.
+
+<div class="garmin-screenshot-container">
+  <img src="images/app/13-edgex50-menu-workaround-light.png">
+  <img src="images/app/13-edgex50-menu-workaround-dark.png">
+</div>
+
+On the Edge 850, no visual workaround is applied. Instead, users are encouraged to navigate the menu using touch input rather than the hardware buttons, since touch interaction does not rely on a focus indicator.
