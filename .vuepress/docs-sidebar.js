@@ -50,6 +50,7 @@ module.exports = [
       ['installation/linux', 'Linux'],
       ['installation/windows', 'Windows'],
       ['installation/macos', 'macOS'],
+      ['installation/openbsd', 'OpenBSD'],
       { title: 'openHABian',
         children: [
           'installation/openhabian',
