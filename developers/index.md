@@ -133,6 +133,7 @@ Follow these steps to generate your binding:
    - `-o`: Won't update any dependencies.
    - `-DskipChecks`: Skips the static analysis checks
    - `-DskipTests`: Skips the unit tests
+   - `-DskipFeatureChecks`: Skips Karaf feature resolution checks
    - `-Dspotless.check.skip=true` : Skips the spotless file formatting checks
    - `-Dohc.version=5.0.0` : The version of openhab you are building for
 
