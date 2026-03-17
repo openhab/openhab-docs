@@ -4,6 +4,7 @@ label: LG ThinQ
 title: LG ThinQ - Bindings
 type: binding
 description: "This binding was developed to integrate the LG ThinQ API with openHAB."
+logo: images/addons/lgthinq.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # LG ThinQ Binding
+
+<AddonLogo />
 
 This binding was developed to integrate the LG ThinQ API with openHAB.
 
