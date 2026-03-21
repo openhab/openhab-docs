@@ -24,8 +24,14 @@ If you have any issues, questions or an idea for additional features, please tak
 ## Latest Changes
 
 ::: tip State of this document
-This documentation refers to release [v5.0.2](https://github.com/openhab/openhab-google-assistant/releases/tag/v5.0.2) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2025-12-21
+This documentation refers to release [v5.1.0](https://github.com/openhab/openhab-google-assistant/releases/tag/v5.1.0) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2026-03-21
 :::
+
+### v5.1.0
+
+- Added [`Washer`](#washer-and-dishwasher-as-group-with-cycle-information) support, including advanced group configuration with cycle information
+- Improved command validation and state checks (including humidity, rotation and thermostat flows)
+- Standardized Google error propagation with `GoogleAssistantError` across command handling
 
 ### v5.0.1
 
@@ -185,6 +191,33 @@ Color colorItem2             (colorItems)
 ...
 ```
 
+### Light with Modes support
+
+| | |
+|---|---|
+| **Device Type** | [Light](https://developers.home.google.com/cloud-to-cloud/guides/light) |
+| **Supported Traits** | [Modes](https://developers.home.google.com/cloud-to-cloud/traits/modes) |
+| **Supported Items** | Switch, Dimmer, Number, String, Color, Rollershutter, Player (static modes)<br>Group with `modesCurrentMode` and `modesSettings` members (dynamic modes) |
+| **Configuration** | (required) `mode="ModeName,ModeAlias"`<br>(required) `settings="value1=Name1:Synonym1,value2=Name2"` _(static)_ or `modesSettings` member _(dynamic)_<br>(optional) `lang="en"`<br>(optional) `ordered=true/false` |
+
+Any item with `ga="Light"` extended with `mode` and `settings` configuration options will present a Light device with the [Modes](https://developers.home.google.com/cloud-to-cloud/traits/modes) trait.
+The item's state value is used directly as the mode setting key when executing a command.
+
+`mode` is a comma-separated list of names for the mode — the first entry is the mode key used internally, any additional entries are treated as synonyms.
+`settings` is a comma-separated list of `value=Name:Synonym` pairs, where `value` is the raw state value sent to/read from the openHAB item.
+
+For Group-based lights with dynamic mode settings (where available modes are read from an openHAB item at runtime), use a Group with a `modesSettings` string member encoding the available settings, and a `modesCurrentMode` member holding the current setting.
+
+```shell
+# Static modes: item state maps directly to a mode setting value
+String lightModeItem { ga="Light" [ mode="LightEffect,Effect", settings="1=Relax:Warm,2=Focus:Cool,3=Party:RGB", lang="en" ] }
+
+# Dynamic modes: settings are read from a group member at runtime
+Group  lightGroup { ga="Light" [ mode="LightEffect,Effect", lang="en" ] }
+String currentModeItem (lightGroup) { ga="modesCurrentMode" }
+String settingsItem    (lightGroup) { ga="modesSettings" }  # state e.g. "1=Relax:Warm,2=Focus:Cool"
+```
+
 ### Scene
 
 | | |
@@ -261,6 +294,24 @@ Number vacuumBatteryItem   (vacuumRobot) { ga="vacuumBattery" }
 String vacuumCycleItem     (vacuumRobot) { ga="vacuumCurrentCycle" }
 ```
 
+### Washer and Dishwasher as Group with cycle information
+
+| | |
+|---|---|
+| **Device Type** | [Washer](https://developers.home.google.com/cloud-to-cloud/guides/washer), [Dishwasher](https://developers.home.google.com/cloud-to-cloud/guides/dishwasher) |
+| **Supported Traits** | [StartStop](https://developers.home.google.com/cloud-to-cloud/traits/startstop), [RunCycle](https://developers.home.google.com/cloud-to-cloud/traits/runcycle) |
+| **Supported Items** | Group as `Washer` or `Dishwasher` with at least one of the following members:<br>(optional) Switch as `washerPower`<br>(optional) Number as `washerTimerRemaining`<br>(optional) String as `washerCurrentCycle` |
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
+
+```shell
+Group  washerDevice { ga="Washer" [ checkState=true ] }
+Switch washerPowerItem          (washerDevice) { ga="washerPower" }
+Number washerTimerRemainingItem (washerDevice) { ga="washerTimerRemaining" }
+String washerCurrentCycleItem   (washerDevice) { ga="washerCurrentCycle" }
+```
+
+You can configure a dishwasher the same way; just change the group metadata to `ga="Dishwasher"` while keeping the same member tags (`washerPower`, `washerTimerRemaining`, `washerCurrentCycle`).
+
 ### Lock
 
 | | |
@@ -301,7 +352,7 @@ Switch houseAlarm "House Alarm" { ga="SecuritySystem", pinNeeded="1234" }
 | **Device Type** | [SecuritySystem](https://developers.home.google.com/cloud-to-cloud/guides/securitysystem) |
 | **Supported Traits** | [ArmDisarm](https://developers.home.google.com/cloud-to-cloud/traits/armdisarm)<br>[StatusReport](https://developers.home.google.com/cloud-to-cloud/traits/statusreport) |
 | **Supported Items** | Group as `SecuritySystem` with the following members: <br>Switch as `securitySystemArmed`<br>(optional) String as `securitySystemArmLevel`<br>(optional) Switch as `securitySystemTrouble`<br>(optional) String as `securitySystemTroubleCode`<br>(optional) Contact as `securitySystemZone` |
-| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>(optional) `ackNeeded=true/false`<br>(optional) `pinNeeded="1234"`<br> (optional) `pinOnDisarmOnly=true/false` <br>(optional) `waitForStateChange="2"`<br>(optional) `armLevels="L1=Level 1,L2=Level 2"`<br><br>Specifically on Zone Contacts:<br>(required) `zoneType="OpenClose/Motion"` <br>(optional) `blocking=true/false`|
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>(optional) `ackNeeded=true/false`<br>(optional) `pinNeeded="1234"`<br>(optional) `pinOnDisarmOnly=true/false`<br>(optional) `waitForStateChange="2"`<br>(optional) `armLevels="L1=Level 1,L2=Level 2"`<br>(optional) `ordered=true/false`<br><br>Specifically on Zone Contacts:<br>(required) `zoneType="OpenClose/Motion"`<br>(optional) `blocking=true/false` |
 
 Configuring the `SecuritySystem` as a Group will enable a lot of advanced functionality.
 
@@ -316,6 +367,7 @@ The `Switch` and the `Group` configuration support the following configuration p
 When configured as a group, you can add arm levels as well as report errors and get details of zones causing the system to not arm.
 
 `armLevels="Key=Label"` - The label is used for commanding Google Assistant, the key is the matching value sent to openHAB.
+`ordered=true` - When set together with `armLevels`, marks the arm levels as ordered, so Google understands their relative ranking.
 
 Google Command: "_Hey Google, set House Alarm to Level 1_" (L1 sent to item).
 
@@ -367,7 +419,7 @@ Dimmer { ga="Speaker" [ volumeDefaultPercentage="50", levelStepSize="10", volume
 | | |
 |---|---|
 | **Device Type** | [TV](https://developers.home.google.com/cloud-to-cloud/guides/tv) |
-| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff), [Volume](https://developers.home.google.com/cloud-to-cloud/traits/volume), [TransportControl](https://developers.home.google.com/cloud-to-cloud/traits/transportcontrol), [InputSelector](https://developers.home.google.com/cloud-to-cloud/traits/inputselector), [AppSelector](https://developers.home.google.com/cloud-to-cloud/traits/appselector), [Channel](https://developers.home.google.com/cloud-to-cloud/traits/channel) (depending on used members) |
+| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff), [Volume](https://developers.home.google.com/cloud-to-cloud/traits/volume), [TransportControl](https://developers.home.google.com/cloud-to-cloud/traits/transportcontrol), [InputSelector](https://developers.home.google.com/cloud-to-cloud/traits/inputselector), [AppSelector](https://developers.home.google.com/cloud-to-cloud/traits/appselector), [MediaState](https://developers.home.google.com/cloud-to-cloud/traits/mediastate), [Channel](https://developers.home.google.com/cloud-to-cloud/traits/channel) (when `tvChannel` member is present) |
 | **Supported Items** | Group as `TV` with the following members:<br>(optional) Switch as `tvPower`<br>(optional) Switch as `tvMute`<br>(optional) Dimmer or Number as `tvVolume`<br>(optional) String or Number as `tvChannel`<br>(optional) String or Number as `tvInput`<br>(optional) String or Number as `tvApplication`<br>(optional) Player as `tvTransport` |
 | **Configuration** | (optional) `checkState=true/false`<br>(optional) `volumeDefaultPercentage="20"`<br>(optional) `levelStepSize="5"`<br>(optional) `volumeMaxLevel="100"`<br>(optional) `transportControlSupportedCommands="NEXT,PREVIOUS,PAUSE,RESUME"`<br>(optional) `availableChannels="channelNumber=channelId=channelName:channelSynonym:...,..."`<br>(optional) `availableInputs="inputKey=inputName:inputSynonym:...,..."`<br>(optional) `availableApplications="applicationKey=applicationName:applicationSynonym:...,..."`<br>(optional) `lang="en"` |
 
@@ -413,8 +465,8 @@ Switch { ga="AirPurifier" } # No speed control - only on/off
 
 | | |
 |---|---|
-| **Device Type** | [Fan](https://developers.google.com/assistant/smarthome/guides/fan), [Hood](https://developers.google.com/assistant/smarthome/guides/hood), [AirPurifier](https://developers.google.com/assistant/smarthome/guides/airpurifier) |
-| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/OnOff), [FanSpeed](https://developers.google.com/assistant/smarthome/traits/fanspeed), [Modes](https://developers.google.com/assistant/smarthome/traits/modes),  [SensorState](https://developers.google.com/assistant/smarthome/traits/sensorstate) |
+| **Device Type** | [Fan](https://developers.home.google.com/cloud-to-cloud/guides/fan), [Hood](https://developers.home.google.com/cloud-to-cloud/guides/hood), [AirPurifier](https://developers.home.google.com/cloud-to-cloud/guides/airpurifier) |
+| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff), [FanSpeed](https://developers.home.google.com/cloud-to-cloud/traits/fanspeed), [Modes](https://developers.home.google.com/cloud-to-cloud/traits/modes), [SensorState](https://developers.home.google.com/cloud-to-cloud/traits/sensorstate) |
 | **Supported Items** | Group as `Fan`, `Hood` or `AirPurifier` with the following members:<br>(optional) Switch as `fanPower`<br>(optional) Dimmer or Number as `fanSpeed`<br>(optional) Number or String as `fanMode`<br>(optional) Number as `fanFilterLifeTime`<br>(optional) Number as `fanPM25` |
 | **Configuration** | (optional) `checkState=true/false`<br>(optional) `fanSpeeds="0=away:zero,50=default:standard:one,100=high:two"`<br>(optional) `fanModeName="OperationMode,Modus"`<br>(optional) `fanModeSettings="1=Low:Silent,2=Normal,3=High:Night"`<br>(optional) `lang="en"`<br>(optional) `ordered=true/false` |
 
@@ -440,8 +492,8 @@ Number pm25Item     (fanGroup) { ga="fanPM25" }
 
 | | |
 |---|---|
-| **Device Type** | [AC_Unit](https://developers.google.com/assistant/smarthome/guides/acunit) |
-| **Supported Traits** | [OnOff](https://developers.google.com/assistant/smarthome/traits/OnOff), [FanSpeed](https://developers.google.com/assistant/smarthome/traits/fanspeed), [TemperatureSetting](https://developers.google.com/assistant/smarthome/traits/temperaturesetting), [Modes](https://developers.google.com/assistant/smarthome/traits/modes),  [SensorState](https://developers.google.com/assistant/smarthome/traits/sensorstate) |
+| **Device Type** | [AC_Unit](https://developers.home.google.com/cloud-to-cloud/guides/acunit) |
+| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff), [FanSpeed](https://developers.home.google.com/cloud-to-cloud/traits/fanspeed), [TemperatureSetting](https://developers.home.google.com/cloud-to-cloud/traits/temperaturesetting), [Modes](https://developers.home.google.com/cloud-to-cloud/traits/modes), [SensorState](https://developers.home.google.com/cloud-to-cloud/traits/sensorstate) |
 | **Supported Items** | Group as `AC_Unit` with the following members:<br>(optional) Switch as `fanPower`<br>(optional) Dimmer or Number as `fanSpeed`<br>(optional) Number or String as `fanMode`<br>(optional) Number as `fanFilterLifeTime`<br>(optional) Number as `fanPM25`<br>(optional) Number as `thermostatTemperatureAmbient`<br>(optional) Number as `thermostatTemperatureSetpoint`<br>(optional) Number as `thermostatTemperatureSetpointLow`<br>(optional) Number as `thermostatTemperatureSetpointHigh`<br>(optional) Number as `thermostatHumidityAmbient`<br>(optional) String or Number or Switch as `thermostatMode` |
 | **Configuration** | (optional) `checkState=true/false`<br>(optional) `fanSpeeds="0=away:zero,50=default:standard:one,100=high:two"`<br>(optional) `fanModeName="OperationMode,Modus"`<br>(optional) `fanModeSettings="1=Low:Silent,2=Normal,3=High:Night"`<br>(optional) `useFahrenheit=true/false`<br>(optional) `maxHumidity=1-100`<br>(optional) `thermostatTemperatureRange="10,30"`<br>(optional) `thermostatModes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto"`<br>(optional) `lang="en"`<br>(optional) `ordered=true/false` |
 
@@ -703,7 +755,7 @@ String modeItem         (thermostatGroup) { ga="thermostatMode" }
 |---|---|
 | **Device Type** | [Sensor](https://developers.home.google.com/cloud-to-cloud/guides/sensor) |
 | **Supported Traits** | [SensorState](https://developers.home.google.com/cloud-to-cloud/traits/sensorstate) |
-| **Supported Items** | Number, Dimmer |
+| **Supported Items** | Number, String, Dimmer, Switch, Rollershutter, Contact |
 | **Configuration** |`sensorName="SmokeLevel"`<br>`valueUnit="PARTS_PER_MILLION"`<br>`states="no smoke=10,smoke detected=50,high=90"` |
 
 Please see the [SensorState documentation](https://developers.home.google.com/cloud-to-cloud/traits/sensorstate) for more details on configuration options.
@@ -723,7 +775,7 @@ If you do not want to adjust your labels to be human spellable, you can use the 
 
 Furthermore, you can state synonyms for the device name: `Switch KitchenLight "Kitchen Lights" { synonyms="Top Light", ga="Light" }`.
 
-To ease setting up new devices you can add a room hint: `[ roomHint="Living Room" ]`.
+To ease setting up new devices you can add a room hint: `[ roomHint="Living Room" ]` or a structure hint: `[ structureHint="My Home" ]`.
 
 For devices supporting the `OnOff` trait, the attribute `[ queryOnly=true ]` can be configured.
 For devices supporting the `OpenClose` trait, the attributes `[ queryOnly=true, discreteOnly=true ]` can be configured.
