@@ -189,7 +189,7 @@ module.exports = [
       'ui/habpanel/habpanel',
       'apps/android',
       'apps/ios',
-      'apps/sailfishos',
+      'apps/sailfishos/',
       'apps/garmin/',
       'apps/windows'
     ]
