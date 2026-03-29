@@ -46,6 +46,10 @@ on:
         description: The doc default file to rename as `base_file`.
         required: false
         type: string
+      doc_exclude_pattern:
+        description: A file name or pattern to exclude from the .md copy step (e.g., `README.md` or `*_test.md`).
+        required: false
+        type: string
       image_base_dir:
         description: The image directory path that holds the image resources. Defaults to `/images`.
         default: /images
@@ -90,7 +94,12 @@ jobs:
           TARGET_DIR: ${{ inputs.base_folder }}
 
       - name: Copy latest doc resources
-        run: find $SOURCE_DIR -maxdepth 1 -iname "${{ inputs.doc_base_name }}*.md" -type f -exec cp -v {} $TARGET_DIR \;
+        run: |
+          if [ -z "${{ inputs.doc_exclude_pattern }}" ]; then
+            find $SOURCE_DIR -maxdepth 1 -iname "${{ inputs.doc_base_name }}*.md" -type f -exec cp -v {} $TARGET_DIR \;
+          else
+            find $SOURCE_DIR -maxdepth 1 -iname "${{ inputs.doc_base_name }}*.md" -not -iname "${{ inputs.doc_exclude_pattern }}" -type f -exec cp -v {} $TARGET_DIR \;
+          fi
         env:
           SOURCE_DIR: ./external_repositories/${{ inputs.base_source_repository }}${{ inputs.doc_base_dir }}
           TARGET_DIR: ${{ inputs.base_folder }}

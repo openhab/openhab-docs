@@ -50,6 +50,7 @@ module.exports = [
       ['installation/linux', 'Linux'],
       ['installation/windows', 'Windows'],
       ['installation/macos', 'macOS'],
+      ['installation/openbsd', 'OpenBSD'],
       { title: 'openHABian',
         children: [
           'installation/openhabian',
@@ -188,6 +189,7 @@ module.exports = [
       'ui/habpanel/habpanel',
       'apps/android',
       'apps/ios',
+      'apps/sailfishos/',
       'apps/garmin/',
       'apps/windows'
     ]

@@ -209,6 +209,7 @@ All units which are currently supported by default are listed in the tables belo
 | RadiantExposure           | Joule per square meter           | J/m²   |
 | RadiationDoseAbsorbed     | Gray                             | Gy     |
 | RadiationDoseEffective    | Sievert                          | Sv     |
+| RadiationDoseRate         | Sievert per Hour                 | Sv/h   |
 | RadiationSpecificActivity | Curie                            | Ci     |
 | SolidAngle                | Steradian                        | sr     |
 | Speed                     | Metre per Second                 | m/s    |
