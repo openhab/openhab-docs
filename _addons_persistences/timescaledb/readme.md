@@ -4,6 +4,7 @@ label: TimescaleDB
 title: TimescaleDB - Persistence Services
 type: persistence
 description: "This service persists and queries openHAB item states using [TimescaleDB](https://www.timescale.com/), a time-series database built on PostgreSQL."
+logo: images/addons/timescaledb.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # TimescaleDB Persistence
+
+<AddonLogo />
 
 This service persists and queries openHAB item states using [TimescaleDB](https://www.timescale.com/), a time-series database built on PostgreSQL.
 

@@ -4,6 +4,7 @@ label: Atmo France
 title: Atmo France - Bindings
 type: binding
 description: "This binding uses the [Atmo France service](https://www.atmo-france.org/) for providing air quality and pollens information in France."
+logo: images/addons/atmofrance.png
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Atmo France Binding
+
+<AddonLogo />
 
 This binding uses the [Atmo France service](https://www.atmo-france.org/) for providing air quality and pollens information in France.
 To use it, you first need to [register and get your credentials](https://admindata.atmo-france.org/inscription-api).
