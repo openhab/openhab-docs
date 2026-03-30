@@ -5,17 +5,9 @@ title: Framework Tools
 
 # Framework Tools
 
-The openHAB framework provides a number of Java tools and utilities so that add-on developers do not have to _"re-invent the wheel"_ when writing their own addon code:
+The openHAB framework provides a number of Java tools and utilities so that add-on developers do not have to _"re-invent the wheel"_ when writing their own add-on code:
 
 [[toc]]
-- [Thing Properties](#thing-properties)
-- [Hex Utilities](#hex-utilities)
-- [Statistics Utilities](#statistics-utilities)
-- [String Utilities](#string-utilities)
-- [Lighting Model and Color Utilities](#lighting-model-and-color-utilities)
-- [Unique ID Utilities](#unique-id-utilities)
-- [Network Configuration Utilities](#network-address-service)
-- [Caching Support](#caching)
 
 ## Channel Types
 
