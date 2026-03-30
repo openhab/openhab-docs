@@ -7,7 +7,7 @@ title: Framework Tools
 
 The openHAB framework provides a number of Java tools and utilities so that add-on developers do not have to _"re-invent the wheel"_ when writing their own addon code:
 
-- [Channel Types](#channel-types)
+[[toc]]
 - [Thing Properties](#thing-properties)
 - [Hex Utilities](#hex-utilities)
 - [Statistics Utilities](#statistics-utilities)
