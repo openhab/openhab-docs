@@ -4,7 +4,7 @@ label: Energy Forecast
 title: Energy Forecast - Bindings
 type: binding
 description: "Binding provides AI price forecast 48h / 96h beyond day-ahead pricing with [Energy Forecast Service](https://www.energyforecast.de/)."
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
