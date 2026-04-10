@@ -358,7 +358,7 @@ There are multiple types of approximation possible when calculating Riemann Sums
 The type can be explicitly set on all extensions doing time-weighted calculations (`riemannSum`, `average`, `variance` and `deviation`) with an extra parameter at the end (before the persistence service parameter).
 Possible values for the type are:
 
-| `Riemann.LEFT`                                    | `Riemann.RIGHT`                                   | `Riemann.TRAPEZOIDAL`                             | `Riemann.MIDPOINT`                                |
+| `RiemannType.LEFT`                                | `RiemannType.RIGHT`                               | `RiemannType.TRAPEZOIDAL`                         | `RiemannType.MIDPOINT`                            |
 |---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|
 | ![left](images/riemann-left.svg)                  | ![right](images/riemann-right.svg)                | ![trapezoidal](images/riemann-trapezoidal.svg)    | ![midpoint](images/riemann-midpoint.svg)          |
 
