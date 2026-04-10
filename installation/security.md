@@ -88,7 +88,11 @@ It also provides you a simple way of **protecting your server** with authenticat
 
 The good news is that [openHABian](openhabian) already offers the possibility to activate a preconfigured NGINX reverse proxy, which includes setting up authentication and a valid [Let's Encrypt](https://letsencrypt.org) certificate.
 
-Read the more on page [Running openHAB Behind a Reverse Proxy using NGINX](reverse-proxy.html) about how to configure NGINX.
+Read the more following pages for your configuration:
+
+- [NGINX/openHABian](reverse-proxy-nginx.html)
+- [Synology DiskStation](reverse-proxy-synology.html)
+- [Apache](reverse-proxy-apache.html)
 
 ::: warning Security Warning
 It is vitally important that you MUST NOT directly expose your openHAB instance to the Internet (e.g. by opening a port in your firewall)!
