@@ -119,7 +119,7 @@ The iOS app can react to updates of a dedicated String Item so you can remotely 
 
 Whenever the state of the Item changes the app interprets the new value as an [Action String](#action-syntax) and executes it immediately – exactly the same mechanism that is used for push-notification actions.
 
-**Setting up the Command Item**
+### Setting up the Command Item
 
 1. Create a String Item in openHAB, for example:
 
@@ -129,10 +129,10 @@ String Tablet_Command "iOS TabletCommand"
 
    Any existing String/Text Item will also work – just remember its name.
 
-2. In the iOS app open **Settings → Application Settings → Command Item** and pick the Item you just created.
+1. In the iOS app open **Settings → Application Settings → Command Item** and pick the Item you just created.
    The list shown in the picker is populated from your openHAB instance.
 
-3. Send actions by updating the Item.
+1. Send actions by updating the Item.
 
 Example rules:
 
@@ -250,7 +250,7 @@ Also see [Action Syntax](#action-syntax) for more information on actions that ca
 
 The app exposes several actions that let you control your openHAB installation from the Shortcuts app.
 
-**Supported actions**
+### Supported actions
 
 - **Get Item State** – Retrieves the current state of any item. Returns the item's state text so it can be used by later steps in a shortcut.
 - **Set Switch State** – Sends an `ON` or `OFF` command to a Switch item.
