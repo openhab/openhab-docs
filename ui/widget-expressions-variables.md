@@ -305,7 +305,7 @@ Functions are defined using the arrow syntax and referenced with the `fn` object
 
 ## Examples
 
-Translates the third part of the HSB state (brightness) of an `Color` Item to "On" or "Off":
+Translates the third part of the HSB state (brightness) of a `Color` Item to "On" or "Off":
 
 ```javascript
 =(@@'Color1'.split(',')[2] !== '0') ? 'On ' + '(' + @@'Color1'.split(',')[2] + '%)' : 'Off'
