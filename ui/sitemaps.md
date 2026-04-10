@@ -409,7 +409,7 @@ Selection item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC O
 ### Element Type 'Setpoint'
 
 ```java
-Setpoint item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] minValue=<min value> maxValue=<max value> step=<step value>
+Setpoint item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [minValue=<min value>] [maxValue=<max value>] [step=<step value>]
 ```
 
 - `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
@@ -554,7 +554,7 @@ Mapview item=Demo_Location height=5
 ### Element Type 'Image'
 
 ```java
-Image [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] url="<url of image>" [refresh=xxxx]
+Image [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [url="<url of image>"] [refresh=xxxx]
 ```
 
 This element type is able to present an image.
