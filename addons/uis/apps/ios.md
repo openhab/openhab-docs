@@ -56,14 +56,14 @@ This sets up the app to use the openHAB demo server and can be used to experienc
 
 #### Local URL
 
-This is the primary connection to your openHAB instance, a fully qualified URL with a IP or host is required.
+This is the primary connection to your openHAB instance, a fully qualified URL with an IP or host is required.
 
 Example:
 `https://openhab.local:8443`
 
 #### Remote URL
 
-This is the secondary connection to your openHAB instance, a fully qualified URL with a IP or host is required.
+This is the secondary connection to your openHAB instance, a fully qualified URL with an IP or host is required.
 If using the openHAB cloud service, leave this as the default setting of `https://myopenhab.org`.
 When set to the public cloud, the app will also register for push notifications (as long as credentials are correct)
 
