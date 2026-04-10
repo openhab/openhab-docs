@@ -4,6 +4,7 @@ label: Twilio
 title: Twilio - Bindings
 type: binding
 description: "This binding integrates with the [Twilio](https://www.twilio.com/) cloud communications platform."
+logo: images/addons/twilio.png
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Twilio Binding
+
+<AddonLogo />
 
 This binding integrates with the [Twilio](https://www.twilio.com/) cloud communications platform.
 It allows sending and receiving SMS, MMS, and WhatsApp messages, as well as making and receiving voice calls with text-to-speech and DTMF input support.
