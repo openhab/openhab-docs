@@ -4,6 +4,7 @@ label: UniFi Access
 title: UniFi Access - Bindings
 type: binding
 description: "This binding integrates [Ubiquiti UniFi Access](https://ui.com/door-access) door access control systems with openHAB."
+logo: images/addons/unifiaccess.png
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # UniFi Access Binding
+
+<AddonLogo />
 
 This binding integrates [Ubiquiti UniFi Access](https://ui.com/door-access) door access control systems with openHAB.
 It connects to your UniFi console using the internal API, providing real-time door events via WebSocket and channels to monitor and control door locks, access methods, and doorbell events.

@@ -4,6 +4,7 @@ label: Energy Forecast
 title: Energy Forecast - Bindings
 type: binding
 description: "Binding provides AI price forecast 48h / 96h beyond day-ahead pricing with [Energy Forecast Service](https://www.energyforecast.de/)."
+logo: images/addons/energyforecast.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Energy Forecast Binding
+
+<AddonLogo />
 
 Binding provides AI price forecast 48h / 96h beyond day-ahead pricing with [Energy Forecast Service](https://www.energyforecast.de/).
 Check in beforehand if your [price zone](https://www.energyforecast.de/api-docs/index.html) is supported.
