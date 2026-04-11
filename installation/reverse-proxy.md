@@ -39,9 +39,6 @@ server {
     listen                                    80;
     server_name                               mydomain_or_myip;
 
-    # Enable web sockets, e.g. used by the log viewver in the new OH4 GUI
-    proxy_http_version                        1.1;
-
     # Cross-Origin Resource Sharing
     add_header 'Access-Control-Allow-Origin' '*' always;
     add_header 'Access-Control-Allow_Credentials' 'true' always;
