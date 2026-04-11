@@ -21,7 +21,7 @@ Armbian is a base operating system platform for single board computers.
 
 openHAB will run on any Armbian [supported hardware](https://www.armbian.com/download/?device_support=Supported) but it is recommended to choose boards that have at least:
 
-- 512 Kb of memory (on minimal or server image)
+- 512 MB of memory (on minimal or server image)
 - eMMC or a [quality SD card](https://docs.armbian.com/User-Guide_Getting-Started/#how-to-prepare-a-sd-card)
 - 4 core
 - wired networking

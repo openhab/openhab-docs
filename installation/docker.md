@@ -305,10 +305,10 @@ docker-compose.yaml:
 version: '3.9'
 services:
 
-  frontail:     # place frontail configuration here ... 
+  frontail:     # place frontail configuration here ...
   grafana:      # place grafana configuration here ...
   influxdb:     # place influx configuration here ...
-  zigbee2mqtt:  # place zigbee2mqtt configuration here ..
+  zigbee2mqtt:  # place zigbee2mqtt configuration here ...
   mosquitto:    # place mosquitto configuration here ...
 
   openhab:
@@ -318,7 +318,7 @@ services:
       - grafana
       - zigbee2mqtt
     container_name: ${COMPOSE_PROJECT_NAME}-server
-    image: openhab/openhab:4.1.0-debian
+    image: openhab/openhab:5.0.0-debian
     restart: unless-stopped
     network_mode: host
     group_add:

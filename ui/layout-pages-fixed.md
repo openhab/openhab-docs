@@ -8,7 +8,7 @@ title: Fixed Layout Pages
 
 Fixed layouts allow you to position and size widgets freely, either on a grid with **Fixed Grid** layout, or in a completely free way with **Fixed Canvas** layouts (with **Fixed Canvas**, you are still able to temporarily switch on a grid if you want to snap some widgets).
 
-The main idea is to create a layout on which you can freely place [widgets](/ui/building-pages.html#building-pages-components-widgets) which provide the interaction with your home automation system.
+The main idea is to create a layout on which you can freely place [widgets]({{base}}/ui/building-pages.html#building-pages-components-widgets) which provide the interaction with your home automation system.
 
 You can even make the **background image interactive** and use it as multi-widget to control and trigger actions like you can do with widgets.
 
@@ -125,7 +125,7 @@ _Image URL:_
 URL of the image to display in the background. The image is stretched to fit the screen size, while preserving its aspect ratio.
 If you want to achieve a different placement, adding margins to the image in an image editor will be necessary.
 
-This setting is in particular in important if you want to make your background image interactive, in which case it has to be of type SVG.
+This setting is in particular important if you want to make your background image interactive, in which case it has to be of type SVG.
 See below for more information on [interactive backgrounds](layout-pages-fixed.html#interactive-backgrounds).
 
 _Image Source Set:_
@@ -304,7 +304,7 @@ This is in particular helpful if the element should become more transparent depe
 - **Invert State Opacity**: If this option is enabled, the opacity will be inverted.
 
 An example could be the closing state of a rollershutter that makes a window element more and more (in)transparent.
-The blue bar that depicts the window will become less and less transperent the more the rollershutter is closed and will finally look like the wall when the rollershutter is completely closed.
+The blue bar that depicts the window will become less and less transperent the more the roller shutter is closed and will finally look like the wall when the rollershutter is completely closed.
 
   ![interactive-element-rollershutter-window.png](images/interactive-element-rollershutter-window.png)
 

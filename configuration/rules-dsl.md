@@ -53,7 +53,7 @@ Check out the editors page for more information and additional editor possibilit
 ### The Syntax
 
 ::: tip Note
-The rule syntax is based on [Xbase](https://www.eclipse.org/Xtext/#xbase) and as a result it is sharing many details with [Xtend](https://www.eclipse.org/xtend/), which is built on top of Xbase as well.
+The rule syntax is based on [Xbase](https://eclipse.dev/Xtext/documentation/305_xbase.html#xbase-language-ref-introduction) and as a result it is sharing many details with [Xtend](https://eclipse.dev/Xtext/xtend/documentation/), which is built on top of Xbase as well.
 As a result, we will often point to the Xtend documentation for details.
 :::
 
@@ -277,6 +277,8 @@ You can find all the possible values for status from [Thing Status](/docs/concep
 The `thingUID` is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
 You can find it from UI or from Karaf remote console.
 For example, one z-wave device can be "zwave:device:c5155aa4:node14".
+The `*` wildcard is allowed in the `thingUID`.
+For example, `chromecast:*` will trigger on all `chromecast` Things and `*` will trigger on all things.
 
 If the Rule needs to know what the triggering thing was, or access a string value of the previous or new status, use the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `triggeringThing`, `previousThingStatus` or `newThingStatus` to access the information.
 
@@ -562,7 +564,7 @@ If the conversion from or into hexadecimal values is necessary, the following ex
 // to convert a hex_code (a number expressed in hexadecimals) to a Number type
 val dimVal =  Integer.parseInt(hex_code, 16) as Number
 //for very large_hex_codes use
-val dimVal = Long.valueOf(large_hex_code, 16).longValue() as Number
+val dimVal = Long.valueOf(large_hex_code, 16).longValue as Number
 
 // and here an additional example to convert an integer_value to hex_code string
 var String hex = Long.toHexString(integer_value);
@@ -763,21 +765,24 @@ MyItem will automatically apply the method that corresponds to the argument type
 
 Besides the implicitly available variables for items and commands/states, rules can have additional pre-defined variables, depending on their triggers:
 
-- `receivedCommand` - implicitly available in every rule that has at least one command event trigger.
-- `previousState` - implicitly available in every rule that has at least one status change event trigger.
-- `newState` - implicitly available in every rule that has at least one status update or status change event trigger.
-- `triggeringItemName` - implicitly available in every rule that has at least one status update, status change or command event trigger.
-- `triggeringItem` - implicitly available in every rule that has a "Member of" trigger.
-- `triggeringGroupName` - implicitly available in every rule that has a "Member of" trigger.
-- `triggeringGroup` - implicitly available in every rule that has a "Member of" trigger.
-- `receivedEvent` - implicitly available in every rule that has a channel-based trigger.
-- `triggeringChannel` - implicitly available in every rule that has a channel-based trigger.
-- `triggeringThing` - implicitly available in every rule that has a thing-based trigger.
-- `previousThingStatus` - implicitly available in every rule that has a thing-based trigger.
-- `newThingStatus` - implicitly available in every rule that has a thing-based trigger.
-
-- `sharedCache` - a cache that is shared between all rules and all scripting languages
-- `privateCache` - a cache private to the script/rule that requests it
+| Variable              | Description                                                                                                                                                                                          |
+| :-------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `receivedCommand`     | implicitly available in every rule that has at least one command event trigger.                                                                                                                      |
+| `previousState`       | implicitly available in every rule that has at least one status change event trigger.                                                                                                                |
+| `newState`            | implicitly available in every rule that has at least one status update or status change event trigger.                                                                                               |
+| `lastStateUpdate`     | implicitly available in every rule that has at least one status update or status change event trigger. This variable contains the time when the last state update occurred prior to the current one. |
+| `lastStateChange`     | implicitly available in every rule that has at least one status change event trigger. This variable contains the time when the last state change occurred prior to the current one.                  |
+| `triggeringItemName`  | implicitly available in every rule that has at least one status update, status change or command event trigger.                                                                                      |
+| `triggeringItem`      | implicitly available in every rule that has a "Member of" trigger.                                                                                                                                   |
+| `triggeringGroupName` | implicitly available in every rule that has a "Member of" trigger.                                                                                                                                   |
+| `triggeringGroup`     | implicitly available in every rule that has a "Member of" trigger.                                                                                                                                   |
+| `receivedEvent`       | implicitly available in every rule that has a channel-based trigger.                                                                                                                                 |
+| `triggeringChannel`   | implicitly available in every rule that has a channel-based trigger.                                                                                                                                 |
+| `triggeringThing`     | implicitly available in every rule that has a thing-based trigger.                                                                                                                                   |
+| `previousThingStatus` | implicitly available in every rule that has a thing-based trigger.                                                                                                                                   |
+| `newThingStatus`      | implicitly available in every rule that has a thing-based trigger.                                                                                                                                   |
+| `sharedCache`         | a cache that is shared between all rules and all scripting languages                                                                                                                                 |
+| `privateCache`        | a cache private to the script/rule that requests it                                                                                                                                                  |
 
 For further documentation on using the cache see [here](jsr223.html#cache-preset).
 
@@ -796,22 +801,23 @@ Caveat: Please note the semicolon after the return statement which terminates th
 
 ### Concurrency Guard
 
-If a rule triggers on UI events it may be necessary to guard against concurrency.
+If a rule is explicitly run from another script, rule, a Main UI widget, etc., instead of a trigger, the rule can be started before the current execution has ended.
+It may be necessary to guard against concurrency.
 
 ```javascript
 import java.util.concurrent.locks.ReentrantLock
 
-val ReentrantLock lock  = new ReentrantLock()
+val ReentrantLock lock  = new ReentrantLock
 
 rule ConcurrentCode
 when
     Item Dummy received update
 then
-    lock.lock()
+    lock.lock
     try {
         // do stuff
     } finally{
-        lock.unlock()
+        lock.unlock
     }
 end
 ```

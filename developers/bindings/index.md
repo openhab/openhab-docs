@@ -287,7 +287,7 @@ Of course, the polling job must be cancelled in the dispose method:
 ```java
 @Override
 public void dispose() {
-    final job = pollingJob;
+    final var job = pollingJob;
     if (job != null) {
         job.cancel(true);
         pollingJob = null;
@@ -322,7 +322,7 @@ If the device or service is not working correctly, the binding should change the
 The status can be updated via an inherited method from the BaseThingHandler class by calling:
 
 ```java
-updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.OFFLINE.COMMUNICATION_ERROR);
+updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR);
 ```
 
 The second argument of the method takes a `ThingStatusDetail` enumeration value, which further specifies the current status situation.
@@ -332,7 +332,16 @@ The binding should also provide additional status description, if available.
 This description might contain technical information (e.g. an HTTP status code, or any other protocol specific information, which helps to identify the current problem):
 
 ```java
-updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.OFFLINE.COMMUNICATION_ERROR, "HTTP 403 - Access denied");
+updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR, "HTTP 403 - Access denied");
+```
+
+Some bindings may need to collect further configurations or login credentials through its servlet, hosted by openHAB.
+A link can be included in the status description when it starts with `http(s)://<YOUROPENHAB>:<YOURPORT>/` followed by binding-specific path.
+This special string will be converted in Main UI into a clickable link with the same openhab host and port that Main UI is connected to.
+For example:
+
+```java
+updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.CONFIGURATION_ERROR, "Please login through: http(s)://<YOUROPENHAB>:<YOURPORT>/mybinding/" + getThing().getUID().getId());
 ```
 
 After the thing is created, the framework calls the `initialize` method of the handler.

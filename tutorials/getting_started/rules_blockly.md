@@ -9,10 +9,8 @@ What should one do if the simple "when-then-but only if" rules are not enough?
 This is where the Script Actions and Script Conditions come into play.
 Both of these are a way for you to write code that can be as long and complex as it needs to be to achieve your goals.
 
-As you recall from the previous page, one of the four types of conditions are Script Conditions and one of the four types of actions are Script Actions.
+As you recall from the previous page, one type of condition is Script Condition and one type of action is Inline Script.
 Choosing either of those presents you with a choice of language to use.
-By default there are only three choices: Blockly, ECMAScript, and Rules DSL.
-If you've installed other automation add-ons, those might be listed as well.
 
 This tutorial is not going to be a full tutorial on how to write code in Blockly.
 See the [**Blockly Reference**]({{base}}/configuration/blockly/index.html) for a detailed tutorial and reference for doing that.

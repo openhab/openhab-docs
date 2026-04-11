@@ -409,7 +409,7 @@ Selection item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC O
 ### Element Type 'Setpoint'
 
 ```java
-Setpoint item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] minValue=<min value> maxValue=<max value> step=<step value>
+Setpoint item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [minValue=<min value>] [maxValue=<max value>] [step=<step value>]
 ```
 
 - `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
@@ -554,7 +554,7 @@ Mapview item=Demo_Location height=5
 ### Element Type 'Image'
 
 ```java
-Image [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] url="<url of image>" [refresh=xxxx]
+Image [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [url="<url of image>"] [refresh=xxxx]
 ```
 
 This element type is able to present an image.
@@ -608,6 +608,7 @@ Video url="https://demo.openhab.org/Hue.m4v"
 ```java
 Chart item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [refresh=xxxx]
 period=xxxx [service="<service>"] [legend=true/false] [forceasitem=true/false] [yAxisDecimalPattern=xxxx]
+[interpolation=xxxx]
 ```
 
 Adds a time-series chart object for the display of logged data.
@@ -635,6 +636,11 @@ Adds a time-series chart object for the display of logged data.
 - `yAxisDecimalPattern` is used to format the values on the y axis.
     It accepts [DecimalFormat](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/text/DecimalFormat.html).
     For example with `#.##` a number has to decimals.
+
+- `interpolation` is used to change how the line is drawn between 2 datapoints.
+    By default, a horizontal line (step) will be drawn between 2 datapoints of `Switch` or `Contact` items.
+    All other item types will have a line (linear) connecting the datapoints.
+    With the `linear` or `step` value for this parameter, this default behaviour can be changed.
 
 **Other options to look out for:**
 The Chart element type is a good way to present time series data quickly.
@@ -744,7 +750,7 @@ In the fourth example above, multiple conditions are combined, a control for a l
 
 ### Label, Value and Icon Colors
 
-Colors can be used to emphasize an items label or its value based on conditions.
+Colors can be used to emphasize an item's label or its value based on conditions.
 Colors may be assigned to either the label or the value associated with an Item.
 The icon may be tinted depending on the state as well.
 

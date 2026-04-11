@@ -74,3 +74,12 @@ open it in your browser.
 
 Each modification of your code requires rebuilding your add-on with `mvn clean install` so that it is
 deployed in your local repository and accessible for the next execution.
+
+### Felix Webconsole
+
+The demo app includes the Apache Felix Webconsole, which can be used to diagnose, manage, and deploy bundles during runtime.
+
+Check out [http://localhost:8080/system/console/](http://localhost:8080/system/console/).
+Default credentials are admin:admin.
+
+Note that this feature is only available in the demo app

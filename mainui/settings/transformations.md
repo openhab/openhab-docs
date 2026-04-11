@@ -9,7 +9,7 @@ title: Settings - Transformations
 **Transformations** convert a value or Item state into a different value or state.
 Transformations can be used in many different instances including links between channels and Items, rules and scripts, and some Thing configurations.
 
-The different available transformation methods must be individually installed via the **Other** tab of the add-on store.
+The different available transformation methods must be individually installed via the **Transformations** tab of the add-on store.
 
 To learn more about transformations, read the [transformation docs]({{base}}/configuration/transformations.html).
 

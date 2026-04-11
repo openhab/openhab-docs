@@ -39,23 +39,24 @@ The good news here is that if you don't know what you may want to use persistenc
 
 ## Persistence Configuration
 
-Each persistence add-on comes with it's own default persistence strategy.
-See the documentation for the specific persistence add-on for what the default strategy is.
-This default can be overridden.
+Each persistence add-on comes with it's own suggested persistence strategy.
+See the documentation for the specific persistence add-on for what the suggested strategy is.
+The suggested strategy will not be applied automatically, but will be suggested when configuring through the UI.
 See the [Persistence docs]({{base}}/configuration/persistence.html) for full documentation, and see the installation page for the method you used to install openHAB for a table listing file locations.
-At a high level, you will create a file in `$OH_CONF/persistence` with the name of the add-on and a .persist extension (e.g. `influxdb.persist`).
+If you wish to configure persistence through configuration files, at a high level, you will create a file in `$OH_CONF/persistence` with the name of the add-on and a .persist extension (e.g. `influxdb.persist`).
 Edit the file per the docs to define the strategies.
 
 Often, one will not want to use the same persistence strategy for all Items.
 One may not even want to save all their Items, or may want to save different Items to different databases using different strategies.
-For example, a common approach would be to use [`MapDB`](/addons/persistence/mapdb/) only for those Items that should be restored on startup, [`rrd4j`](/addons/persistence/rrd4j) with an `everyChange` and every minute strategy for number and binary (Switch, Contact) type Items that are to be charted, and [`Influxdb`](/addons/persistence/influxdb) with an `everyUpdate` strategy for analysis with external tools.
+For example, a common approach would be to use [`MapDB`](/addons/persistence/mapdb/) only for those Items that should be restored on startup, [`rrd4j`](/addons/persistence/rrd4j) with an `everyChange` and `everyMinute` strategy for number and binary (Switch, Contact) type Items that are to be charted, and [`Influxdb`](/addons/persistence/influxdb) with an `everyUpdate` strategy for analysis with external tools.
 
-## Default Persistence
+## Recommended Persistence Configuration
 
-openHAB ships with [`rrdj4`](/addons/persistence/rrd4j) as the default persistence database and comes with a default persistence strategy of `everyChange`, `everyMinute`, and `restoreOnStartup` for every supported Item.
+openHAB has a [rrd4j](/addons/persistence/rrd4j) persistence addon that comes with a suggested persistence strategy of `everyChange`, `everyMinute`, and `restoreOnStartup` for every supported Item.
+Configuring and using this will allow analyzing many items' history out-of-the-box.
 The good thing about `rrd4j` is that the database never grows beyond a given size, so you never have to clean it up.
 However, the way it achieves this (replacing ten readings with the average of the ten readings as the data gets older) makes the database not work for all Item types.
-If you need to `restoreOnStartup` unsupported Item types, `MapDB` might be a better choice for you.
+If you need to `restoreOnStartup` unsupported Item types, [MapDB](/addons/persistence/mapdb/) might be a better choice for these items.
 
 ## Why Bother with Persistence?
 

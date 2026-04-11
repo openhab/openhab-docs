@@ -145,6 +145,11 @@ These attributes are returned with the following types:
 - state: State
 - numeric state: Number
 - quantity state: [Quantity](rules-blockly-uom.html#unit-of-measurement-blocks)
+- previous state: State
+- previous numeric state: Number
+- previous quantity state: [Quantity](rules-blockly-uom.html#unit-of-measurement-blocks)
+- last state update: ZonedDateTime
+- last state change: ZonedDateTime
 - category: String
 - tags: Array, e.g.
 
@@ -236,6 +241,8 @@ value: 0h3m0s
 config:
   ignoreStateUpdates: "true"
   ignoreCommands: "true"
+```
+
 with the blocks that can access it:
 
 ![blockly-metadata](../images/blockly/blockly-metadata.png)

@@ -38,6 +38,7 @@ Which Things can be associated through which bridge type is defined within the d
         <label>Sample Thing</label>
         <description>Some sample description</description>
         <category>Lightbulb</category>
+        <semantic-equipment-tag>LightSource</semantic-equipment-tag>
     ...
     </thing-type>
 ```
@@ -61,6 +62,20 @@ In that way, a generic thing type could be listed for users and a corresponding 
 Categories are used to provide meta information about Things. Thing categories describe how the physical device **looks like**. UIs can use this information e.g. to render icons.
 The available categories correspond with the [available icons of the classic iconset]({{base}}/configuration/iconsets/classic/), however categories are written in Java class-naming style, e.g. `FrontDoor` instead of lowercase `frontdoor`.
 
+### Thing Semantic Equipment Tags
+
+The XML definition of a Thing-type allows to assign a semantic equipment tag.
+See [reference below](#general-information-about-tags).
+This describes the Equipment family to which the Thing belongs.
+All Things created based on the Thing-type will automatically inherit this tag.
+The user may override this tag if they desire.
+The semantic equipment tag is used by the Main User Interface to classify the Thing according to a semantic classification scheme.
+The following snippet shows an `Equipment.Blinds` tag definition:
+
+```xml
+<semantic-equipment-tag>Blinds</semantic-equipment-tag>
+```
+
 ## Channels
 
 A channel describes a specific functionality of a thing and can be linked to an item.
@@ -82,6 +97,7 @@ The following XML snippet shows a thing type definition with three channels and 
 <thing-type id="thing-type-id">
     <label>Sample Thing</label>
     <description>Some sample description</description>
+    <semantic-equipment-tag>LightSource</semantic-equipment-tag>
     <channels>
         <channel id="switch" typeId="power-switch" />
         <channel id="temperature" typeId="setpoint-temperature" />
@@ -128,33 +144,34 @@ The following XML snippet shows a system channel type definition and thing type 
 
 There exist system-wide channel types that are available by default and which should be used whenever possible:
 
-| Channel Type ID       | Reference typeId             | Item Type                | Category         | Tags                      | Description                                                                                                                                                                                                             |
-|-----------------------|------------------------------|--------------------------|------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| signal-strength       | system.signal-strength       | Number                   | QualityOfService | Measurement, Level        | Represents signal strength of a device as a Number with values 0, 1, 2, 3 or 4; 0 being worst strength and 4 being best strength.                                                                                       |
-| low-battery           | system.low-battery           | Switch                   | LowBattery       | LowBattery, Energy        | Represents a low battery warning with possible values on (low battery) and off (battery ok).                                                                                                                            |
-| battery-level         | system.battery-level         | Number                   | Battery          | Measurement, Energy       | Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading. |
-| power                 | system.power                 | Switch                   | Switch           | Switch, Power             | Turn a device on/off.                                                                                                                                                                                                   |
-| brightness            | system.brightness            | Dimmer                   | Light            | Control, Light            | Brightness of a bulb (0-100%).                                                                                                                                                                                          |
-| color                 | system.color                 | Color                    | ColorLight       | Control, Light            | Color of a bulb.                                                                                                                                                                                                        |
-| color-temperature     | system.color-temperature     | Dimmer                   | ColorLight       | Control, ColorTemperature | Color temperature of a bulb (0-100%). 0% should be the coldest setting (highest Kelvin value), 100 the warmest.                                                                                                         |
-| color-temperature-abs | system.color-temperature-abs | Number                   | ColorLight       | Control, ColorTemperature | Color temperature of a bulb in Kelvin (1000K-10000K).                                                                                                                                                                   |
-| location              | system.location              | Location                 | -                | Measurement               | Location in lat.,lon.,height coordinates.                                                                                                                                                                               |
-| motion                | system.motion                | Switch                   | Motion           | Status, Presence          | Motion detected by the device (ON if motion is detected).                                                                                                                                                               |
-| mute                  | system.mute                  | Switch                   | SoundVolume      | Switch, SoundVolume       | Turn on/off the volume of a device.                                                                                                                                                                                     |
-| volume                | system.volume                | Dimmer                   | SoundVolume      | Control, SoundVolume      | Change the sound volume of a device (0-100%).                                                                                                                                                                           |
-| media-control         | system.media-control         | Player                   | MediaControl     | Control                   | Control for a media player.                                                                                                                                                                                             |
-| media-title           | system.media-title           | String                   | -                | Status                    | Title of a (played) media file.                                                                                                                                                                                         |
-| media-artist          | system.media-artist          | String                   | -                | Status                    | Artist of a (played) media file.                                                                                                                                                                                        |
-| outdoor-temperature   | system.outdoor-temperature   | Number:Temperature       | Temperature      | Measurement, Temperature  | Current outdoor temperature.                                                                                                                                                                                            |
-| indoor-temperature    | system.indoor-temperature    | Number:Temperature       | Temperature      | Measurement, Temperature  | Current indoor temperature.                                                                                                                                                                                             |
-| wind-direction        | system.wind-direction        | Number:Angle             | Wind             | Measurement, Wind         | Wind direction in degrees (0-360°).                                                                                                                                                                                     |
-| wind-speed            | system.wind-speed            | Number:Speed             | Wind             | Measurement, Wind         | Wind speed                                                                                                                                                                                                              |
-| atmospheric-humidity  | system.atmospheric-humidity  | Number:Dimensionless     | Humidity         | Measurement, Humidity     | Atmospheric humidity in percent.                                                                                                                                                                                        |
-| barometric-pressure   | system.barometric-pressure   | Number:Pressure          | Pressure         | Measurement, Pressure     | Barometric pressure                                                                                                                                                                                                     |
-| electric-current      | system.electric-current      | Number:ElectricCurrent   | Energy           | Measurement, Current      | Electric current                                                                                                                                                                                                        |
-| electric-power        | system.electric-power        | Number:Power             | Energy           | Measurement, Power        | Electric power                                                                                                                                                                                                          |
-| electric-voltage      | system.electric-voltage      | Number:ElectricPotential | Energy           | Measurement, Voltage      | Electric voltage                                                                                                                                                                                                        |
-| electrical-energy     | system.electric-energy       | Number:Energy            | Energy           | Measurement, Energy       | Electrical energy                                                                                                                                                                                                       |
+| Channel Type ID       | Reference typeId             | Item Type                | Category         | Tags                        | Description                                                                    |
+|-----------------------|------------------------------|--------------------------|------------------|-----------------------------|--------------------------------------------------------------------------------|
+| location              | system.location              | Location                 | -                | Measurement, GeoLocation    | Location in lat./lon./height coordinates                                       |
+| uv-index              | system.uv-index              | Number                   | -                | Measurement, Ultraviolet    | Current UV index                                                               |
+| media-artist          | system.media-artist          | String                   | -                | Status, Info                | Artist of a (played) media file                                                |
+| media-title           | system.media-title           | String                   | -                | Status, Info                | Title of a (played) media file                                                 |
+| battery-level         | system.battery-level         | Number                   | Battery          | Measurement, Energy         | Battery level as a percentage (0-100%)                                         |
+| color                 | system.color                 | Color                    | ColorLight       | Control, Color              | Controls the color of the light                                                |
+| color-temperature     | system.color-temperature     | Dimmer                   | ColorLight       | Control, ColorTemperature   | Controls the color temperature of the light from 0 (cold) to 100 (warm)        |
+| color-temperature-abs | system.color-temperature-abs | Number:Temperature       | ColorLight       | Control, ColorTemperature   | Controls the color temperature of the light in Kelvin                          |
+| electric-current      | system.electric-current      | Number:ElectricCurrent   | Energy           | Measurement, Current        | Current electric current                                                       |
+| electric-voltage      | system.electric-voltage      | Number:ElectricPotential | Energy           | Measurement, Voltage        | Current electric voltage                                                       |
+| electric-energy       | system.electric-energy       | Number:Energy            | Energy           | Measurement, Energy         | Current electric energy                                                        |
+| electric-power        | system.electric-power        | Number:Power             | Energy           | Measurement, Power          | Current electric power                                                         |
+| atmospheric-humidity  | system.atmospheric-humidity  | Number:Dimensionless     | Humidity         | Measurement, Humidity       | Current atmospheric relative humidity                                          |
+| brightness            | system.brightness            | Dimmer                   | Light            | Control, Brightness         | Controls the brightness and switches the light on and off                      |
+| low-battery           | system.low-battery           | Switch                   | LowBattery       | Alarm, LowBattery           | Low battery warning with possible values on (low battery) and off (battery ok) |
+| media-control         | system.media-control         | Player                   | MediaControl     | Control, MediaControl       |                                                                                |
+| motion                | system.motion                | Switch                   | Motion           | Status, Presence            | Motion detected by the device                                                  |
+| barometric-pressure   | system.barometric-pressure   | Number:Pressure          | Pressure         | Measurement, Pressure       | Current barometric pressure                                                    |
+| signal-strength       | system.signal-strength       | Number                   | QualityOfService | Measurement, SignalStrength | Signal strength as with values 0 (worst), 1, 2, 3 or 4 (best)                  |
+| volume                | system.volume                | Dimmer                   | SoundVolume      | Control, SoundVolume        | Change the sound volume of a device                                            |
+| mute                  | system.mute                  | Switch                   | SoundVolume_Mute | Switch, SoundVolume         | Mute audio of the device                                                       |
+| power                 | system.power                 | Switch                   | Switch           | Switch, Power               | Device is operable when channel has state ON                                   |
+| indoor-temperature    | system.indoor-temperature    | Number:Temperature       | Temperature      | Measurement, Temperature    | Current indoor temperature                                                     |
+| outdoor-temperature   | system.outdoor-temperature   | Number:Temperature       | Temperature      | Measurement, Temperature    | Current outdoor temperature                                                    |
+| wind-direction        | system.wind-direction        | Number:Angle             | Wind             | Measurement, Wind           | Current wind direction expressed as an angle                                   |
+| wind-speed            | system.wind-speed            | Number:Speed             | Wind             | Measurement, Wind           | Current wind speed                                                             |
 
 The `advanced` property indicates whether this channel is a basic or a more specific functionality of the thing.
 If `advanced` is set to `true` a user interface may hide this channel by default.
@@ -171,6 +188,7 @@ The following XML snippet shows a trigger channel:
 <thing-type id="thing-type-id">
     <label>Sample Thing</label>
     <description>Some sample description</description>
+    <semantic-equipment-tag>LightSource</semantic-equipment-tag>
     <channels>
         <channel id="sample-channel" typeId="trigger-channel" />
     </channels>
@@ -207,21 +225,22 @@ There exist system-wide trigger channel types that are available by default:
 In the following sections the declaration and semantics of tags, state descriptions and channel categories will be explained in more detail.
 For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](../addons/config-xml.html).
 
-### Default Tags
+### Default Point and Property Tags
 
-The XML definition of a ChannelType allows to assign default tags to channels.
-All items bound to this channel will automatically be tagged with these default tags.
-The following snippet shows a 'Control' and 'Light' tags definition:
+The XML definition of a Channel-type allows to assign default tags to respective Channels.
+See [reference below](#general-information-about-tags).
+All Items bound to the respective Channel will automatically inherit these default tags.
+The user may override these tags if they desire.
+The XML definition may contain up to two tags.
+The first tag should be a `Point` tag, and the second may be a `Property` tag.
+The following snippet shows a `Point.Control` and `Property.Brightness` tags definition:
 
 ```xml
 <tags>
     <tag>Control</tag>
-    <tag>Light</tag>
+    <tag>Brightness</tag>
 </tags>
 ```
-
-Please note that only [Point](https://openhab.org/javadoc/latest/org/openhab/core/semantics/model/point/package-summary.html) and/or [Property](https://openhab.org/javadoc/latest/org/openhab/core/semantics/model/property/package-summary.html) tags from the pre-defined tag library should be used.
-See also the [Semantic Model]({{base}}/tutorial/model.html) for more information on how tags are used with items.
 
 ### State Description
 
@@ -462,6 +481,8 @@ If an Item should be linked to a channel within a group, the channel UID would b
 
 ## Properties
 
+### Thing Properties
+
 Solutions based on openHAB might require meta data from a device.
 These meta data could include:
 
@@ -546,6 +567,33 @@ If a configuration parameter will be used, then its respective `parameter` shall
         ...
     </thing-type>
 ```
+
+### Channel Properties
+
+Channel properties in openHAB are a small but important part of the Thing/Channel model, and they behave differently from both Thing properties and Channel configuration parameters.
+Channel properties are metadata attached to a channel, represented as a simple key–value map.
+They are exposed through the REST API as part of the Thing structure and are typically used by bindings to store non-user-editable, binding-defined attributes.
+
+Examples include:
+
+- Identifiers derived from the device (service, scheme, source, index).
+- Internal metadata needed by the handler.
+- Read‑only attributes that should not appear as configuration parameters.
+
+How channel properties differ from other channel metadata:
+
+1. Channel configuration parameters are:
+    - User editable and appear in the UI.
+    - Defined in the binding’s XML (channel-type => config-description).
+    - Persisted separately and can be changed by the user.
+
+1. Channel properties are:
+    - Binding defined at run-time.
+    - Not user editable and not part of the configuration description.
+    - Returned in the Thing JSON under each channel, and visible in the UI.
+
+1. Thing properties are:
+    - Properties of the Thing itself, not of its Channels.
 
 ## Formatting Labels and Descriptions
 
@@ -635,6 +683,7 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
     <label>String</label>
     <description>String</description>
     <category>String</category>
+    <semantic-equipment-tag>LightSource</semantic-equipment-tag>
 
     <channels>
       <channel id="channel-id" typeId="channel-type-id" />
@@ -678,6 +727,7 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
     <label>String</label>
     <description>String</description>
     <category>String</category>
+    <semantic-equipment-tag>LightSource</semantic-equipment-tag>
 
     <channels>
       <channel id="channel-id" typeId="channel-type-id" />
@@ -817,7 +867,7 @@ The full Java API for bridge and _Thing_ descriptions can be found in the Java p
 | description                | A human-readable description for the channel                                                                                                                                                                                        | optional                                      |
 | category                   | The category for the channel, e.g. TEMPERATURE                                                                                                                                                                                      | optional                                      |
 | tags                       | A list of default tags to be assigned to bound items                                                                                                                                                                                | optional                                      |
-| tag                        | A tag semantically describes the feature (typical usage) of the channel e.g. AlarmSystem. There are no pre-default tags, they are custom-specific                                                                                   | mandatory                                     |
+| tag                        | A tag semantically describes the feature (typical usage) of the channel e.g. AlarmSystem. See [Default Tags](#default-point-and-property-tags) above.                                                                                                  | mandatory                                     |
 | state                      | The restrictions of an item state which gives information how to interpret it                                                                                                                                                       | optional                                      |
 | state.min                  | The minimum decimal value of the range for the state                                                                                                                                                                                | optional                                      |
 | state.max                  | The maximum decimal value of the range for the state                                                                                                                                                                                | optional                                      |
@@ -938,3 +988,75 @@ Each new contribution of update instructions MUST increase the `thingTypeVersion
 The `thingTypeVersion` is bound to a thing-type, different thing types may have different versions.
 
 The full XML schema for update instructions can be found here: [https://www.openhab.org/schemas/update-description-1.0.0.xsd](https://www.openhab.org/schemas/update-description-1.0.0.xsd).
+
+# General Information about Tags
+
+There are two possible types of tag -- namely "Semantic" and "Non Semantic" tags.
+The former are used by the openHAB User Interface to create automatic groupings of items according to the [Semantic Model]({{base}}/tutorial/model.html).
+The latter are (optionally) be used for any other tagging purpose at the discretion of the user.
+Semantic tags are classed into four sub-types `Point`, `Property`, `Equipment` and `Location`.
+
+Addon developers are strongly requested to provide tags in the channel-type and thing-type type XML.
+It is also possible to provide tags in instantiated Channels and Things via the binding's Java code at run-time.
+
+The following are some general tips and guidelines for applying tags:
+
+1. The purpose of tags is to logically group Things and Channels in the UI.
+The target is that your Thing or Channel shall appear in the UI close to Things or Channels from other bindings that have **SIMILAR** attributes or behavior.
+There is no point in having the granularity of the groups so fine so that groups would contain only one member.
+So please try to select tags in your bindings that align with the tags used by developers of other bindings for similar equipment and functions.
+
+1. Tags belong to a parent/child hierarchy e.g. `Equipment.Sensor` is a parent with `Equipment.TemperatureSensor` and `Equipment.HumiditySensor` as children.
+If there is no child tag that covers exactly what you need, then the general rule is to use the next higher parent tag instead.
+e.g. If you have a multi-sensor that measures both temperature and humidity, then neither `Equipment.TemperatureSensor` nor `Equipment.HumiditySensor` will fit exactly, so use the parent `Equipment.Sensor` instead.
+
+1. Alternatively to the above, if a Thing has multiple functions e.g. "WiZ Ceiling Fans With a Dimmable Bulb" then apply the tag that matches the **PRIMARY** function.
+e.g. `Equipment.CeilingFan` in this case.
+
+1. Sometimes an openHAB Thing is a device that commands another piece of equipment that is itself not directly visible in openHAB.
+e.g. an electronic dimmer may be hardwired on-site to a conventional light.
+Whilst there is no 100% guarantee that the Thing is actually hardwired to such target device, in such cases it is acceptable to tag the Thing (and its Channels) according to the **EXPECTED** target device.
+e.g. in the aforementioned example, instead of tagging the dimmer as `Equipment.ControlDevice` it is acceptable to tag it as `Equipment.LightSource`.
+
+1. Here is the actual list of [Semantic Tags](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv).
+The contents of this list are dynamic, and it may be extended from time to time.
+If you are an addon developer and you think there is something missing from the list please open an [Issue](https://github.com/openhab/openhab-core/issues) or [Pull Request](https://github.com/openhab/openhab-core/pulls) on GitHub.
+
+1. For further reading please see the [Description of the Semantic Model]({{base}}/tutorial/model.html), the [Developer Guidelines on Semantic Tags](semantic-tags.md) and the [Thing-Type and Channel-Type validation schema](https://www.openhab.org/schemas/thing-description-1.0.0.xsd).
+
+## Tagging Conventions for Commonly Confused Use Cases
+
+The following are some use cases that commonly lead to confusion.
+The purpose of this list is to provide the convention for tagging such cases:
+
+1. In the case of `Point` and `Property` tags it may help to consider the `Point` as the VERB and the `Property` as the OBJECT in a sentence.
+So a channel may make a 'Measurement' of a 'Temperature', or show the 'Status' of an operating 'Mode' etc.
+
+1. Do not confuse `Property` tags with Units of Measure.
+A `Property` tag is a WORD (see above) that describes the nature of the action being taken by its respective `Point`.
+So for example `Speed` need not be taken precisely to mean `m/sec` .. but can in general cover operations that "do much stuff in little time".
+
+1. For turning a piece of equipment on or off:
+`Switch.Light` should be used if the equipment is a light, otherwise `Switch.Power` should be used.
+
+1. For reporting or controlling the operating mode of a piece of equipment (e.g. auto/manual, day/night, disable/enable, etc.):
+If the channel has two states (e.g. via a `Switch` type channel) then `Switch.Mode` should be used.
+Or if it has multiple states (e.g. heat/cool/dry/fan/auto via a `String` type channel) then `Control.Mode` should be used.
+
+1. For equipment (e.g. fans, pumps) that can run at several speed/power/volume/flow-rates (e.g. Off/Low/Medium/High):
+In theory the above-mentioned "operating mode of a piece of equipment" `Control.Mode` **_could_** also be applied in this case.
+However for **_this specific case_** ("throughput of a fan/pump") `Control.Speed` should be used instead.
+
+1. For equipment having a set-point, even if the set-point is read-only for openHAB, it is appropriate to use `Setpoint.whatever`.
+
+1. The `Calculation` point type is used when (past or future) data is derived via a precise mathematical formula.
+By contrast the `Forecast` point type is used when (future) data is derived via a human or algorithmic estimation.
+So `Calculation` should be used e.g. for astronomical data such as the time of sunrise tomorrow.
+Whereas `Forecast` should be used e.g. for weather or solar forecasts, etc.
+
+1. For tagging channels that represent entertainment media (e.g. album, artist, composer, actor, director. etc.):
+`Status.Info` should be used.
+
+1. For tagging channels that relate to the progress of playing entertainment media, or of an automatic program:
+`Status.Progress` should be used to indicate the current progress.
+Or `Control.Progress` to change the progress (e.g. via a 'fast forward' or 'next' command).

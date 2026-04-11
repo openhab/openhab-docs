@@ -93,6 +93,16 @@ The rules are defined using the Eclipse Java Formatter definitions. There are pl
 
 The rules are defined at <https://github.com/openhab/static-code-analysis/tree/main/codestyle/src/main/resources> for the Eclipse WTP formatter, but will have to be manually entered into your IDE.
 
+#### XML files for Thing-Type Definitions
+
+Thing-Type definitions must comply with the [thing-description-1.0.0.xsd schema](https://www.openhab.org/schemas/thing-description-1.0.0.xsd).
+
+To enable automatic schema validation in your IDE you many need to do the following:
+
+- Eclipse: Download the latest copy of `thing-description-1.0.0.xsd` to your `.lemminx\cache\https\openhab.org\schemas` cache folder.
+- IntelliJ: Put the cursor into the `xsi:schemeLocation` field of the XML, trigger the <kbd>Alt</kbd><kbd>Enter</kbd> shortcut and select _Fetch external resource_.
+- Visual Studio Code: Install the XML extension from Red Hat.
+
 ### Java Coding Style
 
 - The [Java naming conventions](https://java.about.com/od/javasyntax/a/nameconventions.htm) should always be used and are described in detail at the link, a quick summary is:
@@ -130,6 +140,19 @@ public class MyCoolService {
 }
 ```
 
+### Markdown Format
+
+In order to keep documentation layout consistent, Markdown formatting rules have been defined in [.markdownlint.yaml](https://github.com/openhab/openhab-docs/blob/main/.github/.markdownlint.yaml).
+Rules are enforced automatically during the build whenever a README.md file is part of a change.
+
+To check your Markdown formatting locally, run:
+
+```shell
+mvn clean install -P check-markdown
+```
+
+Before submitting changes, it is recommended to run this check to avoid formatting issues.
+
 ## C. Documentation
 
 JavaDoc is required to describe the purpose and usage of every:
@@ -145,7 +168,7 @@ Data-transfer-objects (DTOs map from JSON/XML to Java classes) do not require Ja
 
 ## D. Language Levels and Libraries
 
-1. openHAB generally targets the long time supported Java 17 release.
+1. openHAB generally targets the long time supported Java 21 release.
 1. The [OSGi Core Release 8](https://osgi.org/download/r8/osgi.core-8.0.0.pdf) with [OSGi Compendium Release 8](https://osgi.org/download/r8/osgi.cmpn-8.0.0.pdf) is targeted, and newer features should not be used.
 1. [SLF4J](http://slf4j.org) is used for logging.
 

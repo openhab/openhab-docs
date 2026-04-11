@@ -26,7 +26,7 @@ On this page you can manage all the basic rules you have added to your system:
 - **Enable/Disable Rules**<br>
   Select multiple rules using the top **Select** button and use the **Enable** or **Disable** buttons at the bottom or use <!--F7 pause_circle --> pause button on the individual rule pages.
 - **Manually run Rules**<br>
-  Use the <!--F7:blue play --> play button on the individual rule pages to have the rule run all actions immediately.
+  Use the <!--F7:blue play --> _Run Now_ button on the individual rule pages to have the rule run all actions immediately without checking conditions.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
 
 The page has a searchable list of rules with the following attributes:

@@ -1,11 +1,13 @@
 # This function will add placeholders for pages that are out of scope of the docs preview
 
 def add_placeholder_pages()
-    puts ">>> Adding placeholder pages for preview"
+    puts "➡️ Adding placeholder pages for preview"
     [
         "addons/integrations/homekit",
         "addons/integrations/openhabcloud",
         "docs/apps/android.md",
+        "docs/apps/garmin",
+        "docs/apps/sailfishos",
         "docs/configuration/habpanel",
         "docs/configuration/iconsets/classic",
         "docs/ui/components",
@@ -16,10 +18,12 @@ def add_placeholder_pages()
         "docs/ecosystem/alexa",
         "docs/ecosystem/google-assistant",
         "docs/ecosystem/ifttt",
-        "docs/ecosystem/mycroft",
-        "docs/installation/openhabian.md"
+        "docs/installation/openhabian.md",
+        "docs/installation/openhabian-troubleshooting.md",
+        "docs/installation/openhabian-backup.md",
+        "docs/installation/openhabian-exim.md"
     ].each { |path|
-        puts " -> #{path}"
+        puts "  ➡️ #{path}"
         page = path
         if (!(path =~ /\.md/)) then
             FileUtils.mkdir_p(path)

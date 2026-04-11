@@ -21,6 +21,14 @@ openHAB can send a notification to your phone.
 Other systems may have a concept of _Automations_, _Tasks_, and other terms.
 In openHAB, rules are used to implement all of these concepts.
 
+Rules can be executed, either when fired by their triggers, or when called explicitly – from a script, another rule, a Main UI widget, etc.
+When a rule is fired by its trigger, the execution of one and the same rule does not happen in parallel.
+If a rule is triggered for execution, while the rule is currently running, it will be queued and run later.
+
+When a rule is called explicitly - e.g. from a script, another rule with [`RuleManager.runNow()`](https://www.openhab.org/javadoc/latest/org/openhab/core/automation/rulemanager), or from a Main UI widget - then this rule can be executed in parallel.
+That is it can start running, while the same rule is executed at the same time.
+In this case there is a need to program protection against race conditions.
+
 ## Parts of a Rule
 
 These rules take the high level form of _When \_\_t\_\_ happens, if \_\_c\_\_ then do \_\_a\_\__,
@@ -210,7 +218,7 @@ Unfortunately the term "Script" is overloaded in openHAB, and has multiple meani
   - These will appear in a specific "Scripts" section on MainUI.
   - They can be used to reuse code and logic across multiple other rules, one off experimentation to figure something out, create a catalog of examples, or to drive tests for other rules and behaviors.
 - In text based rules, a script is a file that is processed by a script engine, see the [automation addons](/addons/#automation).
-  Those scripts can be used to create (multiple) rules, or those are loaded by other script files a libraries.
+  Those scripts can be used to create (multiple) rules, or those are loaded by other script files as libraries.
   <!-- TODO: Update reference to executeCommandLine when the rules docs are reworked -->
 - A script file that is executed on the command line with a script interpreter, e.g. `bash` or `python`, by using the [`executeCommandLine` action](/docs/configuration/actions.html#exec-actions) or the [Exec Binding](/addons/bindings/exec).
   <!-- TODO: Update reference to callScript when the rules docs are reworked -->
@@ -610,9 +618,9 @@ rule "Window open reminder"
 when
   Member of gWindows changed to OPEN
 then
-  createTimer(now.plusMinutes(60), [ |
+  createTimer(now.plusMinutes(60)) [
     if (triggeringItem.state == OPEN) sendBroadcastNotification(triggeringItem.label + " is open for one hour!")
-  ])
+  ]
 end
 ```
 

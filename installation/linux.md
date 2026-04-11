@@ -25,16 +25,15 @@ Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-p
 ## Meeting the Requirements
 
 As a first step, please verify, that your system meets the [prerequisites](index.html#prerequisites).
-You may want to install Zulu, a fully certified Java build [as a package or manually](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallZulu.htm).
+You may want to install Eclipse Temurin [as a package or manually](https://adoptium.net/installation/linux/).
 
-Alternatively, Zulu Embedded can be installed for small systems either from the same package repository as above or [manually](https://www.azul.com/downloads/zulu-embedded/).
-If you're unsure which manual file you should download, using `dpkg --print-architecture` or `rpm -q --qf '%{ARCH}\n' rpm` in your Linux terminal should point you in the right direction (e.g. armhf means ARM Hard Float).
+Alternatively, the Azul Zulu JDK can be installed [manually](https://docs.azul.com/core/install/debian).
+If you're unsure which manual file you should download, using `dpkg --print-architecture` or `rpm -q --qf '%{ARCH}\n' rpm` in your Linux terminal should point you in the right direction.
 
-When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to [set Zulu as the main Java "alternative"](https://docs.azul.com/zulu/zuludocs/#ZuluUserGuide/SwitchingBetweenJavaAlternatives/SwitchBetweenJavaAlts.htm).
+When installing Eclipse Temurin or the Azul Zulu JDK from a .zip or .tar archive, make sure to [set the installed JVM as default](https://www.baeldung.com/linux/java-choose-default-version).
 
 ::: tip Note
-Make sure to download Zulu or Java **17**.
-Using Java 21 is possible, but still considered experimental.
+Make sure to download the **64-bit** Java **21** JDK.
 :::
 
 ## Installation
@@ -159,8 +158,8 @@ sudo apt-mark showhold
 Installing a specific version is possible by specifing the version that should be installed.
 
 ```shell
-sudo apt install openhab=4.0.1
-sudo apt install openhab-addons=4.0.1
+sudo apt install openhab=5.0.0
+sudo apt install openhab-addons=5.0.0
 ```
 
 To get a list of all available versions you can use
@@ -264,6 +263,8 @@ If all goes well, you'll end up with a package file which can be installed with 
 ```shell
 sudo pacman -U openhab3-3.0.0.M4-1-any.pkg.tar.zst
 ```
+
+#### Start openHAB automatically
 
 If everything went well, you can start openHAB and register it to be automatically executed at system startup.
 
@@ -556,6 +557,7 @@ A cleaner approach is to create a Linux service.
 The following instructions are intended for a Linux init system based on **systemd** (e.g. Debian 8 / Ubuntu 15.x and newer).
 This will allow you to register openHAB as a service, so that it runs at startup and automatically restarts if openHAB crashes.
 The service will be running with the privileges of the user "openhab" and expects the openHAB files under `/opt/openhab`.
+Additionally, if you need to modify environment variables, create the file `/opt/openhab/conf/linux.parameters` with your changes or additions.
 
 Create the file `/usr/lib/systemd/system/openhab.service` with the following content:
 
@@ -572,7 +574,7 @@ User=openhab
 Group=openhab
 
 WorkingDirectory=/opt/openhab
-#EnvironmentFile=-/etc/default/openhab
+EnvironmentFile=-/opt/openhab/conf/linux.parameters
 
 ExecStart=/opt/openhab/runtime/bin/karaf daemon
 ExecStop=/opt/openhab/runtime/bin/karaf stop

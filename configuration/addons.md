@@ -36,11 +36,11 @@ It could look similar to this example:
 
 ```text
 ...
-openhab-binding-mqtt                      | 3.0.0.M5         |          | Started     | openhab-addons-3.0.0.M5 | MQTT Binding
-openhab-binding-netatmo                   | 3.0.0.M5         |          | Started     | openhab-addons-3.0.0.M5 | Netatmo Binding
-openhab-binding-onewire                   | 3.0.0.M5         |          | Uninstalled | openhab-addons-3.0.0.M5 | OneWire Binding
+openhab-binding-mqtt                      | 5.0.0            |          | Started     | openhab-addons-5.0.0    | MQTT Binding
+openhab-binding-netatmo                   | 5.0.0            |          | Started     | openhab-addons-5.0.0    | Netatmo Binding
+openhab-binding-onewire                   | 5.0.0            |          | Uninstalled | openhab-addons-5.0.0    | OneWire Binding
 ...
-openhab-binding-network                   | 3.0.0.M5         |          | Uninstalled | openhab-addons-3.0.0.M5 | Network Binding
+openhab-binding-network                   | 5.0.0            |          | Uninstalled | openhab-addons-5.0.0    | Network Binding
 ...
 ```
 
@@ -84,7 +84,7 @@ This option is addressed to advanced users.
 Installing add-on's with a `.jar`file can lead to problems, because add-on dependencies may not be installed.
 Please make sure to use this option only in special cases (like add-on testing for an upcoming version) or when you know what you are doing.
 :::
-For this installation option you need a bundles `.jar` file.
+For this installation option you need a bundle `.jar` file.
 One way of retrieving those files is mentioned above in the openHAB console part.
 
 Place the `.jar` file in the `addons` folder on the machine you are running openHAB on.

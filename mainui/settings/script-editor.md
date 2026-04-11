@@ -36,7 +36,7 @@ Other:
 
 - <kbd>Tab</kbd>: Indent more.
 - <kbd>Shift</kbd><kbd>Tab</kbd>: Indent less.
-- <kbd>Ctrl</kbd><kbd>D</kbd>: Delete the current line.
+- <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>K</kbd>: Delete the current line or selection.
 - <kbd>Ctrl</kbd><kbd>/</kbd>: Comment/Uncomment the current line.
 - <kbd>Ctrl</kbd><kbd>A</kbd>: Select all.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->

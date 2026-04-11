@@ -51,9 +51,6 @@ This brings up a form that lets you choose the type of the trigger and enter som
 
 ![rule triggers dialog](images/rule-triggers-dialog.png)
 
-The title and description are optional and will be automatically populated with meaningful information when you select the trigger.
-However pay attention and if there is more information that might be useful to you later add that.
-
 We need an Item changed event to trigger this rule so it runs when the cloudiness percentage Item changes.
 So I select "Item Event" and select my Item and click "Pick" in the upper right corner.
 
@@ -81,7 +78,7 @@ Click the green + icon under "But only if" labeled "Add Condition".
 ![rule condition dialog](images/rule-condition-dialog.png)
 
 Choose Item Condition because we want to check the state of an Item and select the Item.
-Note, sometimes if the Item not part of the model it can be hard to find.
+Note, sometimes if the Item is not part of the model it can be hard to find.
 If that happens to you, select any Item to start and then you can get a flat list of all your Items on the next screen.
 
 In this case we want to check if the `vCloudiness` Item is >= to 50 %.
@@ -113,7 +110,28 @@ Click Save and watch the log for errors and to see if the rule is working (more 
 ### Copy a Rule
 
 We now have a rule that sets `vIsCloudy` to ON and we need a corresponding rule to trigger it when OFF.
-Since this second rule is very similar to the one we just created, we can copy/paste/edit.
+Since this second rule is very similar to the one we just created, we can copy and edit the rule.
+
+This can be done one of two ways.
+
+#### Using the Duplicate button
+
+Scroll to the bottom of the design tab for the rule we just created, and click <InlineImage alt="Duplicate Rule button" vertical-align="bottom" :src="require('./images/duplicate-rule-button.png')" />.
+
+![basic rule duplicate](images/basic-rule-duplicate.png)
+
+Edit "Rule ID", "Label" and "Description" as appropriate.
+
+![basic rule duplicate 2](images/basic-rule-duplicate-2.png)
+
+Scroll down to "Then" and click the "Send command ON to visCloudy" Action to edit it.
+Change the label and the command so that they reflect `OFF` instead of `ON`.
+
+Using the same logic, click and edit the two conditions under "But only if" to require `<= 50%` and `= ON` instead.
+
+Click `Create` in the upper right corner to save the new rule.
+
+#### Using copy/paste
 
 First, open the code tab for the rule we just created.
 This will show a text version of the rule.
@@ -173,25 +191,53 @@ In this case, the parameters are selecting a DateTime Item to trigger the rule a
 
 ### Updates to Templates
 
-Your rule, once instantiated becomes its own thing separated from the template, just as if you had cut and paste the code as in the first example.
-Therefore, it will not change even if the rule template is changed or removed.
-This means the rule will not update based on changes to the template automatically.
-To update a template and a rule use the following process.
+Your rule, once instantiated becomes an independent rule, separate from the template while retaining a reference to it.
+The rule will not change automatically even if the rule template is changed or removed, but it is possible to regenerate a rule from the template at will.
+
+#### Update a marketplace template
+
+To update a template use the following process:
 
 1. Notice that there has been an update to a template that you want to use (keep checking back).
 1. Select the template in MainUI and click "Remove".
 Then click "Add" to refresh the template with the new changes.
-1. Go to Settings and Rules and navigate to the rule you want to update.
-Click the pause icon to disable that rule.
-Or if you don't want to keep a backup, delete it.
-Note, if you just disable you won't be able to use the same rule UID for the new rule.
-1. Create the rule following the steps from above.
-1. Once the new version of the rule is tested, delete the disabled version of the rule.
+
+#### Update a rule
+
+Rules can be regenerated from their template either from the Rules view or from the Design tab of a specific rule.
+
+To regenerate rules form the Rules view, either click <InlineImage alt="Select button" height="1.2em" :src="require('./images/select-button.png')" /> or <kbd>Ctrl</kbd>-click one of the rules.
+Select one or more rules to regenerate and click <InlineImage alt="Regenerate Icon" height="1.2em" :src="require('./images/regenerate_icon.svg')" />.
+Each rule that is associated with a template has an orange badge with the name of the template like this: <InlineImage alt="Rule template badge" height="1.2em" :src="require('./images/rule-template-badge.png')" />.
+To automatically toggle selection of all rules associated with a specific template, click on the template badge while in "select mode".
+This makes it easy to regenerate all rules that are associated with the updated template at once.
+
+To regenerate a rule from the Design tab of the rule, simply click the regenerate button <InlineImage alt="Regenerate icon" height="1.2em" :src="require('./images/regenerate_icon.svg')" />.
+
+Rules can be regenerated both if the template has been updated or if you want to change some of the parameters used to generate the rule.
+Please note that it's only possible to change the parameters if the rules are regenerated one-by-one and if the rule in question is editable.
+
+An example of a situation where it would be desirable to regenerate a rule even if the template hasn't changed, is if a new Item has been created to replace an old one, and this Item is part of the rule somehow.
+By regenerating the rule and selecting the new Item, the rest of the logic will be preserved, and it will work with the new Item instead.
+
+::: warning
+Rules that have been created from a template in versions of openHAB prior to 5.0, can't be regenerated. They must be manually deleted and recreated from the template first.
+:::
 
 ### Customization of Rules Created From Templates
 
 What if a rule template does almost what you need but not everything?
-Since the rule, once instantiated, becomes severed from the template, you can modify the end rule as much as you want.
+You could simply modify the template-based rule itself.
+But, if you ever were to regenerate the rule in the future, your modifications would be lost.
+A better solution is to make a copy of the template based rule that isn't associated with the template, and then modify that.
+This can be achieved by scrolling to the bottom of the Design tab of the rule and clicking <InlineImage alt="Duplicate Rule button" vertical-align="bottom" :src="require('./images/duplicate-rule-button.png')" />.
+When duplicated, template-based rules will present you with a choice:
+
+![duplicate rule stub](images/basic-rule-stub-duplicate.png)
+
+If you choose "Keep template", the duplicate will still be associated with the template, and you can optionally change some of the parameters before saving the duplicate.
+If you choose "Integrate template", the duplicate will not be associated with the template, and it can never be regenerated.
+By modifying a duplicate that has "integrated the template", the modifications can never be lost due to regeneration in the future.
 Don't be afraid to take a rule template as a starting point and further refine it.
 
 If you make additions to a rule template that you want to share, work with the original poster of the template to add your updates to the original template (posting a new template with only minor differences is against the marketplace rules).

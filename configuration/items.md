@@ -206,7 +206,7 @@ Channel labels can be overwritten by Item definitions and Item labels can be ove
 ### State
 
 The state of an Item depends on the Item type, the Channel bound to the Item, and internal or external events.
-A analogy can be drawn between the state of an Item and the value of a variable in a computer program.
+An analogy can be drawn between the state of an Item and the value of a variable in a computer program.
 
 #### Item State
 
@@ -424,6 +424,7 @@ The default icon will be used for negative numbers, or above 100 i.e. the availa
 Dimmer type Items work in the same way, being limited to 0-100 anyway.
 
 For a dimmable light (0-100%), you might provide icons as in the example:
+
 | File name         | Description                                          |
 | ----------------- | ---------------------------------------------------- |
 | `mydimmer.svg`    | Default icon (used in undefined states)              |
@@ -567,6 +568,26 @@ The easiest way to determine if tags have been implemented in a specific add-on 
 
 See the [Hue Emulation Service](/addons/integrations/hueemulation/) or [HomeKit Add-on](/addons/integrations/homekit/) documentation for more details.
 
+#### Channel Default Tags
+
+As mentioned above, many bindings have preset recommended default tags on their channels.
+And if you define Items via an `.items` file, you can optionally set the channel link to import these tags.
+There are two ways to do this:
+
+1. Individual per Item configuration: apply `useTags` on each respective Items' channel link definition:
+
+    ```java
+    Switch Livingroom_Light "Livingroom Ceiling Light" {channel="hue:device:bridge:light:color" [useTags=true] }
+    ```
+
+1. System wide global configuration for all Items: apply `useTags` in your `conf/services/runtime.cfg` file:
+
+    ```java
+    org.openhab.ItemChannelLinkRegistry:useTags=true
+    ```
+
+Note that if an item has multiple channel links with `useTags=true` (or `useTags` is set globally) then the system applies the tags from the first link, and subsequent links will cause a warning message in the logs.
+
 ### Binding Configuration
 
 One of the greatest strengths of an openHAB automation system is the sheer number of devices you can interact with.
@@ -667,22 +688,49 @@ This parameter allows to post an update or command to an item after a period of 
 
 The expiration timer is started or restarted every time an item receives an update or a command _other than_ the specified "expire" update/command.
 Any future expiring update or command is cancelled, if the item receives an update or command that matches the "expire" update/command.
+See `ignoreStateUpdate` and `ignoreCommands` [configurations](#configurations-for-expire) below.
 
-The parameter accepts a duration of time that can be a combination of hours, minutes and seconds in the format
+The parameter accepts a duration of time expressed as a combination of days, hours, minutes, seconds, and milliseconds. The format follows the structure: `Xd Xh Xm Xs Xms` where:
+
+- Each `X` is a long integer
+- At least one segment must be specified, and any included segments must appear in the following order: **days**, **hours**, **minutes**, **seconds**, **milliseconds**
+- Whitespace is allowed between segments
+- A space between the number and its unit is permitted but not required
+
+Unit names may use short or extended forms:
+
+| Unit         | Accepted Variants                       |
+|--------------|-----------------------------------------|
+| Days         | `d`, `day`, `days`                      |
+| Hours        | `h`, `hr`, `hrs`, `hour`, `hours`       |
+| Minutes      | `m`, `min`, `mins`, `minute`, `minutes` |
+| Seconds      | `s`, `sec`, `secs`, `second`, `seconds` |
+| Milliseconds | `ms`, `millisecond`, `milliseconds`     |
 
 ```shell
 expire="1h 30m 45s"
 expire="1h05s"
+expire="1 h 5 seconds"
 expire="55h 59m 12s"
+expire="55 hours 59 min 12 sec"
+expire="2d 7h 59m 12s"
+expire="2 day 7 h 59 minutes 12 seconds"
+expire="5000 milliseconds"
 ```
 
-Every part is optional, but all parts present must be in the given order (hours, minutes, seconds).
-Whitespaces are allowed between the sections.
+Alternatively, the duration can be specified using a restricted subset of the [ISO 8601 Duration format](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Duration.html#parse(java.lang.CharSequence)). Only non-negative durations are supported, and valid units are limited to days, hours, minutes, and seconds. While ISO 8601 allows fractional seconds, the openHAB expire feature enforces a minimum granularity of one second.
+
+```shell
+expire="PT1H30M45S"
+expire="PT1H5S"
+expire="PT55H59M12S"
+expire="P2DT7H59M12S"
+```
 
 This duration can optionally be followed by a comma and the state or command to post, when the timer expires.
 If this optional section is not present, it defaults to the Undefined (`UnDefType.UNDEF`) state.
 
-```shell
+```java
 Player MyPlayer   { expire="1h,command=STOP" }                // send STOP command after one hour
 Number MyChannel  { channel="xxx", expire="5m,state=0" }      // update state to 0 after five minutes
 String MyMessage  { channel="xxx", expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds
@@ -693,6 +741,28 @@ Note that the `state=` part is optional.
 
 In the special case of a String item, it is possible to define a state/command as the string "UNDEF" or "NULL" by putting it into single quotes (e.g. "1m,state='UNDEF'").
 Without the quotes, the state would be the system type `UNDEF`.
+
+###### Configurations for `expire`
+
+The `expire` parameter is stored as an item metadata which supports the following configurations:
+
+| Configuration Parameter | Description                                                                                                                  |
+|:------------------------|:-----------------------------------------------------------------------------------------------------------------------------|
+| `duration`              | The expire duration as described above.                                                                                      |
+| `command`               | The command to send when the timer expires.                                                                                  |
+| `state`                 | The state to change the item to when the timer expires. This is mutually exclusive to the `command` parameter.               |
+| `ignoreStateUpdate`     | When set to true, do not reset or restart the expire timer when the item received a state update event. Defaults to `false`. |
+| `ignoreCommands`        | When set to true, do not reset or restart the timer when the item received a command. Defaults to `false`.                   |
+
+Examples:
+
+```java
+// These four definitions are equivalent
+Number MyChannel  { expire="5m,state=0" }
+Number MyChannel  { expire="5m,0" }
+Number MyChannel  { expire="5m" [state=0] }
+Number MyChannel  { expire="" [duration="5m", state=0] }
+```
 
 #### Profiles
 
@@ -726,8 +796,8 @@ If this is the case, you will find those within the documentation of the Binding
 | `rawbutton-toggle-switch`                                                                     | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those Channels, it will toggle the Item state when `PRESSED` events arrive. This Profile can e.g. be used to add button channels to a lighting item which will enable you to turn the lighting on and off with your button.                                                                                                                                                                                                                                                 |
 | `rawrocker-to-on-off`                                                                         | Trigger | Dimmer, Switch        | This Profile can only be used on Channels of the type `system.rawrocker`. On those Channels, it will convert a press on the first rocker button to an `ON` command while the second one will be converted to an `OFF` command.                                                                                                                                                                                                                                                                                                                           |
 | `rawrocker-to-dimmer`                                                                         | Trigger | Dimmer                | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.                                                                                                                                                                                                                                                                                                                                            |
-| `rawrocker-to-play-pause`, `rawrocker-to-next-previous` and `rawrocker-to-rewind-fastforward` | Trigger | Player                | These Profiles can only be used on Channels of the type `system.rawrocker` and Player Items. They will convert a press on the first rocker button to an `PLAY` / `NEXT` / `FASTFORWARD` command while the second one will be converted to an `PAUSE` / `PREVIOUS` / `REWIND` command.                                                                                                                                                                                                                                                                    |
-| `rawrocker-to-stop-move` and `rawrocker-to-up-down`                                           | Trigger | Rollershutter         | These Profiles can only be used on Channels of the type `system.rawrocker` and Rollershutter Items. They will convert a press on the first rocker button to an `MOVE` / `UP` command while the second one will be converted to an `STOP` / `DOWN` command.                                                                                                                                                                                                                                                                                               |
+| `rawrocker-to-play-pause`, `rawrocker-to-next-previous` and `rawrocker-to-rewind-fastforward` | Trigger | Player                | These Profiles can only be used on Channels of the type `system.rawrocker` and Player Items. They will convert a press on the first rocker button to a `PLAY` / `NEXT` / `FASTFORWARD` command while the second one will be converted to a `PAUSE` / `PREVIOUS` / `REWIND` command.                                                                                                                                                                                                                                                                    |
+| `rawrocker-to-stop-move` and `rawrocker-to-up-down`                                           | Trigger | Rollershutter         | These Profiles can only be used on Channels of the type `system.rawrocker` and Rollershutter Items. They will convert a press on the first rocker button to a `MOVE` / `UP` command while the second one will be converted to a `STOP` / `DOWN` command.                                                                                                                                                                                                                                                                                               |
 | `timestamp-trigger`                                                                           | Trigger | DateTime              | This Profile can be used to link a trigger Channel to a DateTime Item and will update it every time the Channel triggers an event, whatever the event is.                                                                                                                                                                                                                                                                                                                                                                                                |
 | `trigger-event-string`                                                                        | Trigger | String                | This Profile can be used to link a trigger channel to a String item. The item's state will be updated to the string representation of the triggering event (e.g. `PRESSED`).                                                                                                                                                                                                                                                                                                                                                                             |
 | `transform:<SERVICE>`                                                                         | State   | All                   | Transformation Profiles can be used to transform the item state using the specified transformation service at channel-link level instead of only transforming the visual representation. You can find the documentation of these profiles within the [transformations docs](/docs/configuration/transformations.html) for script transformations or in the [add-on docs](/addons/#transform) for transformation add-ons, e.g. [Map](/addons/transformations/map/#usage-as-a-profile) or [JsonPath](/addons/transformations/jsonpath/#usage-as-a-profile) |

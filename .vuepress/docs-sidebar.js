@@ -50,7 +50,15 @@ module.exports = [
       ['installation/linux', 'Linux'],
       ['installation/windows', 'Windows'],
       ['installation/macos', 'macOS'],
-      'installation/openhabian',
+      ['installation/openbsd', 'OpenBSD'],
+      { title: 'openHABian',
+        children: [
+          'installation/openhabian',
+          'installation/openhabian-troubleshooting',
+          'installation/openhabian-backup',
+          'installation/openhabian-exim',
+        ]
+      },
       'installation/armbian',
       'installation/docker',
       'installation/synology',
@@ -102,6 +110,7 @@ module.exports = [
               ['configuration/blockly/rules-blockly-standard-ext', 'Standard Extensions'],
             ]
           },
+          'configuration/yaml',
         ]
       },
       'configuration/actions',
@@ -178,8 +187,10 @@ module.exports = [
       },
       ['ui/components/', 'Component Reference'],
       'ui/habpanel/habpanel',
-      ['apps/android', 'Android App'],
+      'apps/android',
       'apps/ios',
+      'apps/sailfishos/',
+      'apps/garmin/',
       'apps/windows'
     ]
   },
@@ -191,7 +202,6 @@ module.exports = [
       ['ecosystem/google-assistant/', 'Google Assistant'],
       ['../addons/integrations/homekit/', 'Apple HomeKit'],
       // ['ecosystem/ifttt/', 'IFTTT'], // Temporary remove until service gets reactivated
-      ['ecosystem/mycroft/', 'Mycroft.AI'],
       ['../addons/integrations/openhabcloud/', 'openHAB Cloud'],
     ]
   },
@@ -220,6 +230,7 @@ module.exports = [
           'developer/ide/intellij',
           'developer/ide/vscode',
           'developer/ide/generic',
+          'developer/ide/karaf',
         ]
       },
       'developer/guidelines',
