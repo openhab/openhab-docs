@@ -955,6 +955,18 @@ then
 end
 ```
 
+### Disable Thing
+
+Disable things with UID `enocean:bridge:e` and `mqtt:topic:m` using [`ThingManager.setEnabled()`](https://openhab.org/javadoc/latest/org/openhab/core/thing/thingmanager#setEnabled(org.openhab.core.thing.ThingUID,boolean)):
+
+```java
+val thingManagerBundleContext = org.osgi.framework.FrameworkUtil.getBundle(org.openhab.core.thing.ThingManager).bundleContext
+val thingManagerServiceReference = thingManagerBundleContext.getServiceReference(org.openhab.core.thing.ThingManager)
+val thingManager = thingManagerBundleContext.getService(thingManagerServiceReference)
+#["enocean:bridge:e", "mqtt:topic:m"].forEach[ thingManager.setEnabled(new org.openhab.core.thing.ThingUID(it), false) ]
+thingManagerBundleContext.ungetService(thingManagerServiceReference)
+```
+
 ## Further Examples
 
 Many more examples can be found in the [Tutorials & Examples](https://community.openhab.org/c/tutorials-examples) category of the community forum.
