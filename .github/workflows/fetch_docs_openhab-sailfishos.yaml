@@ -17,4 +17,5 @@ jobs:
       base_file: readme.md
       doc_base_dir: /docs
       doc_base_file: USAGE.md
+      doc_exclude_pattern: DEV*.md
       has_images: true
