@@ -7,6 +7,7 @@ def add_placeholder_pages()
         "addons/integrations/openhabcloud",
         "docs/apps/android.md",
         "docs/apps/garmin",
+        "docs/apps/sailfishos",
         "docs/configuration/habpanel",
         "docs/configuration/iconsets/classic",
         "docs/ui/components",
