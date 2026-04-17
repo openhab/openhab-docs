@@ -10,7 +10,7 @@
     <description><![CDATA[
 Smoke and Carbon Monocide Detector<br /> <h1>Overview</h1><p>Z-Wave Smoke and Carbon Monoxide Detector with </p><p>temperature, humidity, and heat detection, as well as voice prompts and allows access to the “S2 Unauthenticated” class. It is </p><p>capable of sending wireless signals to the Z-Wave gateway/control panel upon detection of smoke particles or Carbon Monoxide.</p><p>The device is also serially connected with other sensors in the Z-Wave gateway to serve as an extra siren. When any other </p><p>sensor in the Z-Wave network is activated and sends an alarm signal, the Smoke Detector will also raise alarm with its built-in </p><p>buzzer as a siren to help sound warning (for serial connection models)</p> <br /> <h2>Inclusion Information</h2><ol><li>Put the Z-Wave gateway or control panel into Inclusion mode (please refer to the Z-Wave gateway or control panel manual).</li><li>Within 1.5 seconds, press the button 3 times.</li><li>Refer to the operation manual of the Z-Wave gateway or control panel to complete the inclusion process.</li><li>If the sensor has already been included into another Z-Wave Gateway/Control Panel, or if the sensor is unable to be included into the current Z-Wave Gateway/Control Panel, please exclude it first (see Exclusion) before attempting to include it into the current Z-WaveGateway/Control Panel</li></ol> <br /> <h2>Exclusion Information</h2><p>The SDCO must be removed from existing Z-Wave network before being included into another.</p><ol><li>Put the Z-Wave gateway or control panel into Exclusion mode (please refer to the Z-Wave gateway or control panel manual).</li><li>Within 1.5 seconds, press the button 3 times and the SDCO will be removed from the Z-Wave network.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
-    <category>Battery</category>
+    <category>Sensor</category>
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
@@ -68,7 +68,7 @@ Smoke and Carbon Monocide Detector<br /> <h1>Overview</h1><p>Z-Wave Smoke and Ca
       <property name="vendor">Climax Technology, Ltd.</property>
       <property name="modelId">SDCO-1-RhTH-ZW-SC-OTA</property>
       <property name="manufacturerId">018E</property>
-      <property name="manufacturerRef">0003:0014</property>
+      <property name="manufacturerRef">0003:0014,0003:001B</property>
       <property name="dbReference">1545</property>
       <property name="defaultAssociations">1</property>
     </properties>

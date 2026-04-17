@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen35_00_000" listed="false">
+    <label>ZEN35 Dimmer Scene Controller</label>
+    <description><![CDATA[
+Dimmer Scene Controller<br /> <h1>Overview</h1><p><b>Features</b></p><ul><li>Switch button: click for on/off control, hold to dim, tap for scenes</li><li>4 remote control buttons: trigger scenes and control other devices in your Z-Wave® network from this switch</li><li><b>NEW 800 series Z-Wave®</b> chip for better range and faster control</li><li><b>Direct 3-Way</b>: works with regular on/off switches in a 3-way</li><li><b>Z-Wave® Long Range</b> for ultra reliable no-mesh communication</li><li><b>Smart bulb mode</b>: disable relay and control lights via Z-Wave®</li><li>Adjustable LED indicator in 7 colors and 3 brightness levels</li><li>S2 Security and SmartStart for easier inclusion</li></ul><p><b>Specifications</b></p><ul><li>Model Number: ZEN35</li><li>Z-Wave Frequency: 908.42 MHz (US/CA/MX)</li><li>Power: 120 VAC, 60 Hz</li><li>Maximum Loads: 150W LED or 500W Incandescent. To be used with LED or incandescent lights only; DON’T use with receptacles, motors, fans, or tube lights.</li><li>Z-Wave Range: Up to 500 feet line of sight or up to 1300 feet via Z-Wave Long Range</li><li>Operating Temperature: 32-104° F (0-40° C)</li><li>Installation: Indoor use only</li></ul> <br /> <h2>Inclusion Information</h2><ul><li>Start Z-Wave inclusion.</li><li>Quickly press the switch button 3 times.</li></ul><p>The LED indicator will blink blue to signal communications and turn green for 3 seconds if inclusion is successful or turn red for 3 seconds if the pairing attempt fails.</p> <br /> <h2>Exclusion Information</h2><ul><li>Start Z-Wave exclusion.</li><li>Quickly press the switch button 3 times.</li></ul><p>If successful, the LED will turn green for 3 seconds.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param1" typeId="zooz_zen35_00_000_config_decimal_param1">
+        <label>Dimmer Button LED State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=1</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param2" typeId="zooz_zen35_00_000_config_decimal_param2">
+        <label>Button 1 LED State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=2</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param3" typeId="zooz_zen35_00_000_config_decimal_param3">
+        <label>Button 2 LED State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=3</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param4" typeId="zooz_zen35_00_000_config_decimal_param4">
+        <label>Button 3 LED State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=4</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param5" typeId="zooz_zen35_00_000_config_decimal_param5">
+        <label>Button 4 LED State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=5</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param6" typeId="zooz_zen35_00_000_config_decimal_param6">
+        <label>Dimmer Button LED Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=6</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param7" typeId="zooz_zen35_00_000_config_decimal_param7">
+        <label>Button 1 LED Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=7</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param8" typeId="zooz_zen35_00_000_config_decimal_param8">
+        <label>Button 2 LED Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=8</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param9" typeId="zooz_zen35_00_000_config_decimal_param9">
+        <label>Button 3 LED Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=9</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param10" typeId="zooz_zen35_00_000_config_decimal_param10">
+        <label>Button 4 LED Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=10</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN35</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">7000:A018</property>
+      <property name="dbReference">1694</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LED Mode for Dimmer Button</label>
+        <description><![CDATA[
+Choose if you want the LED indicator to turn on when the dimmer (light) is on or off, or if you want it to remain on or off at all times.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when dimmer off, LED off when dimmer on</option>
+          <option value="1">LED on when dimmer on, LED off when dimmer off</option>
+          <option value="2">LED always off</option>
+          <option value="3">LED always on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: LED Mode for Button 1</label>
+        <description><![CDATA[
+Choose if you want the LED indicator to turn on when Button 1 is on or off, or if you want it to remain on or off at all times.<br /> <h1>Overview</h1><p>0 - LED on when dimmer off, LED off when dimmer on (default)</p><p>1 - LED on when dimmer on, LED off when dimmer off</p><p>2 - LED always off</p><p>3 - LED always on </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when dimmer off, LED off when dimmer on</option>
+          <option value="1">LED on when dimmer on, LED off when dimmer off</option>
+          <option value="2">LED always off</option>
+          <option value="3">LED always on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Mode for Button 2</label>
+        <description><![CDATA[
+Choose if you want the LED indicator to turn on when Button 2 is on or off, or if you want it to remain on or off at all times.<br /> <h1>Overview</h1><p>0 - LED on when dimmer off, LED off when dimmer on (default)</p><p>1 - LED on when dimmer on, LED off when dimmer off</p><p>2 - LED always off</p><p>3 - LED always on </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when dimmer off, LED off when dimmer on</option>
+          <option value="1">LED on when dimmer on, LED off when dimmer off</option>
+          <option value="2">LED always off</option>
+          <option value="3">LED always on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: LED Mode for Button 3</label>
+        <description><![CDATA[
+Choose if you want the LED indicator to turn on when Button 3 is on or off, or if you want it to remain on or off at all times.<br /> <h1>Overview</h1><p>0 - LED on when dimmer off, LED off when dimmer on (default)</p><p>1 - LED on when dimmer on, LED off when dimmer off</p><p>2 - LED always off</p><p>3 - LED always on </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when dimmer off, LED off when dimmer on</option>
+          <option value="1">LED on when dimmer on, LED off when dimmer off</option>
+          <option value="2">LED always off</option>
+          <option value="3">LED always on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: LED Mode for Button 4</label>
+        <description><![CDATA[
+Choose if you want the LED indicator to turn on when Button 4 is on or off, or if you want it to remain on or off at all times.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when dimmer off, LED off when dimmer on</option>
+          <option value="1">LED on when dimmer on, LED off when dimmer off</option>
+          <option value="2">LED always off</option>
+          <option value="3">LED always on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: LED Color for Dimmer Button</label>
+        <description><![CDATA[
+Choose the color of the dimmer button LED. 0 - white, 1 - blue, 2 - green, 3 - red, 4 - magenta, 5 - yellow, 6 - cyan<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">white</option>
+          <option value="1">blue</option>
+          <option value="2">green</option>
+          <option value="3">red</option>
+          <option value="4">magenta</option>
+          <option value="5">yellow</option>
+          <option value="6">cyan</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: LED Color for Button 1</label>
+        <description><![CDATA[
+Choose the color of Button 1 LED. 0 - white, 1 - blue, 2 - green, 3 - red, 4 - magenta, 5 - yellow, 6 - cyan<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">white</option>
+          <option value="1">blue</option>
+          <option value="2">green</option>
+          <option value="3">red</option>
+          <option value="4">magenta</option>
+          <option value="5">yellow</option>
+          <option value="6">cyan</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: LED Color for Button 2</label>
+        <description><![CDATA[
+Choose the color of Button 2 LED. 0 - white, 1 - blue, 2 - green, 3 - red, 4 - magenta, 5 - yellow, 6 - cyan<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">white</option>
+          <option value="1">blue</option>
+          <option value="2">green</option>
+          <option value="3">red</option>
+          <option value="4">magenta</option>
+          <option value="5">yellow</option>
+          <option value="6">cyan</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: LED Color for Button 3</label>
+        <description><![CDATA[
+Choose the color of Button 3 LED. 0 - white, 1 - blue, 2 - green, 3 - red, 4 - magenta, 5 - yellow, 6 - cyan<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">white</option>
+          <option value="1">blue</option>
+          <option value="2">green</option>
+          <option value="3">red</option>
+          <option value="4">magenta</option>
+          <option value="5">yellow</option>
+          <option value="6">cyan</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: LED Color for Button 4</label>
+        <description><![CDATA[
+Choose the color of Button 4 LED. 0 - white, 1 - blue, 2 - green, 3 - red, 4 - magenta, 5 - yellow, 6 - cyan<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">white</option>
+          <option value="1">blue</option>
+          <option value="2">green</option>
+          <option value="3">red</option>
+          <option value="4">magenta</option>
+          <option value="5">yellow</option>
+          <option value="6">cyan</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: LED Brightness for Dimmer Button</label>
+        <description><![CDATA[
+Choose the dimmer button LED indicator's brightness level. 0 - bright (100%), 1 - medium (60%), 2 - low (30%)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">bright (100%)</option>
+          <option value="1">medium (60%)</option>
+          <option value="2">low (30%)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: LED Brightness for Button 1</label>
+        <description><![CDATA[
+Choose Button 1 LED indicator's brightness level. 0 - bright (100%), 1 - medium (60%), 2 - low (30%)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">bright (100%)</option>
+          <option value="1">medium (60%)</option>
+          <option value="2">low (30%)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: LED Brightness for Button 2</label>
+        <description><![CDATA[
+Choose Button 2 LED indicator's brightness level. 0 - bright (100%), 1 - medium (60%), 2 - low (30%)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">bright (100%)</option>
+          <option value="1">medium (60%)</option>
+          <option value="2">low (30%)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: LED Brightness for Button 3</label>
+        <description><![CDATA[
+Choose Button 3 LED indicator's brightness level. 0 - bright (100%), 1 - medium (60%), 2 - low (30%)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">bright (100%)</option>
+          <option value="1">medium (60%)</option>
+          <option value="2">low (30%)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: LED Brightness for Button 4</label>
+        <description><![CDATA[
+Choose Button 4 LED indicator's brightness level. 0 - bright (100%), 1 - medium (60%), 2 - low (30%)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">bright (100%)</option>
+          <option value="1">medium (60%)</option>
+          <option value="2">low (30%)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_4" type="integer" groupName="configuration">
+        <label>16: Auto Turn-Off Timer for Dimmer</label>
+        <description>Auto-off timer will automatically turn the dimmer off after X minutes once it has been turned on 0 = disabled</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_4" type="integer" groupName="configuration">
+        <label>17: Auto Turn-On Timer for Dimmer</label>
+        <description>Auto-on timer will automatically turn the dimmer on after X minutes once it has been turned off 0 = disabled</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: On/Off Status after Power Failure</label>
+        <description><![CDATA[
+Set the on/off status for the dimmer after power failure<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Always off once restored</option>
+          <option value="1">Always on once restored</option>
+          <option value="2">Remembers and restores state</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Load Control (Smart Bulb Mode)</label>
+        <description><![CDATA[
+Enable or disable physical and Z-Wave on/off and dimming control. Disable both for smart bulbs.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable button</option>
+          <option value="1">Enable button and Z-Wave</option>
+          <option value="2">Disable button and Z-Wave</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Disabled Load Behavior</label>
+        <description><![CDATA[
+Set reporting behavior for disabled physical control of the load connected to the dimmer (smart bulb mode)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Reports status / changes LED</option>
+          <option value="1">Doesn't report status / change LED</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Physical Ramp Rate ON</label>
+        <description><![CDATA[
+Adjust the ramp rate ON for your dimmer when the dimmer button is pressed for a smooth fade-in effect (in seconds).<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Physical Ramp Rate OFF</label>
+        <description><![CDATA[
+Adjust the ramp rate OFF for your dimmer when the dimmer button is pressed for a smooth fade-out effect (in seconds).<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>2</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Physical Dimming Speed</label>
+        <description><![CDATA[
+Set the number of seconds it takes to get from 0% to 100% brightness when pressing and holding the button (physical dimming).<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Z-Wave Ramp Rate ON</label>
+        <description><![CDATA[
+Adjust the ramp rate ON for your dimmer when controlled with Z-Wave for a smooth fade-in effect (in seconds).<br /> <h1>Overview</h1><p>0 - instant ON</p><p>1 - 99 (seconds)</p><p>255 (match physical)</p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Z-Wave Ramp Rate OFF</label>
+        <description><![CDATA[
+Adjust the ramp rate OFF for your dimmer when controlled with Z-Wave for a smooth fade-out effect (in seconds).<br /> <h1>Overview</h1><p>0 - instant ON</p><p>1 - 99 (seconds)</p><p>255 (match physical)</p>
+        ]]></description>
+        <default>-1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration">
+        <label>26: Remote Z-Wave Dimming Duration</label>
+        <description><![CDATA[
+Sets the number of seconds it takes to get from 0% to 100% brightness on dimmers and smart bulbs directly associated with ZEN35 in Groups 3 and 4.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Minimum Brightness</label>
+        <description>Set the minimum brightness level (in %) for the dimmer. You won't be able to dim the light below this value.</description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration">
+        <label>28: Maximum Brightness</label>
+        <description>Set the maximum brightness level (in %) for the dimmer. You won't be able to brighten the light above this value.</description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: Dimmer Button Double Tap</label>
+        <description><![CDATA[
+Choose what you'd like the dimmer to do when you double-tap the dimmer button.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">on to full brightness</option>
+          <option value="1">on to the custom brightness (from param 31)</option>
+          <option value="2">on to max brightness (from param 28)</option>
+          <option value="3">double tap disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Dimmer Button Single Tap</label>
+        <description>Choose what you'd like the dimmer to do when you tap the dimmer button once.</description>
+        <default>0</default>
+        <options>
+          <option value="0">on to last brightness level</option>
+          <option value="1">on to the custom brightness (from param 31)</option>
+          <option value="2">on to max brightness (from param 28)</option>
+          <option value="3">on to full brightness</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Physical Custom Brightness On</label>
+        <description><![CDATA[
+Set the custom brightness level (or leave the last brightness level) for single tap and double tap (see params 29 and 30).<br /> <h1>Overview</h1><p>0 - last brightness level</p><p>1 - 99 (%)</p><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: 3-Way Switch Type</label>
+        <description><![CDATA[
+Choose the type of 3-way switch you want to use with this dimmer in a 3-way setup.<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Toggle on/off switch</option>
+          <option value="1">Toggle switch with dimming mode</option>
+          <option value="2">Momentary switch (ZAC99)</option>
+          <option value="3">Momentary switch (ZAC99) with smart sequence</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration">
+        <label>33: Multilevel Dimming Reports</label>
+        <description><![CDATA[
+Choose how you would like the dimmer to report when the dimmer button is tapped and held and physical / Z-Wave control is enabled or disabled.<br /> <h1>Overview</h1><p>0 - Reports each brightness level if physical and Z-Wave control disabled (reports final level if physical and Z-Wave control enabled)</p><p>1 - Always reports final brightness level only (Z-Wave multilevel reports, physical basic reports)</p><p>2 - Reports each brightness level if physical and Z-Wave control disabled (reports final level if physical and Z-Wave control enabled), all multilevel reports</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Reports each brightness level if physical and Z-Wave control disabled</option>
+          <option value="1">Always reports final brightness level only (Z-Wave multilevel reports,</option>
+          <option value="2">Reports each brightness level if physical and Z-Wave control disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration">
+        <label>34: Disable Button Programming</label>
+        <description><![CDATA[
+Disabled programming functionality (inclusion, exclusion, smart bulb mode) so that tripple tap can be used for scenes.<br /> <h1>Overview</h1><p>0- Programming (Inclusion, Exclusion) enabled</p><p>1 - Programming Disabled (triple tap available)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Programming (Inclusion, Exclusion) enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration">
+        <label>35: Association Reports</label>
+        <description><![CDATA[
+Choose physical and Z-Wave triggers for the dimmer to send a status change report to the associated devices. See manual for details.<br /> <h1>Overview</h1><p>0 - None</p><p>1 - Physical tap on button</p><p>2 - Physical tap on connected 3-way switch</p><p>3 - 1 or 2</p><p>4 - Z-Wave command from hub</p><p>5 - 1 and 4</p><p>6 - 2 and 4</p><p>7 - 1 and 2 and 4</p><p>8 - Timer</p><p>9 - 1 or 8</p><p>10 - 2 or 8</p><p>11 - 1 or 2 or 8</p><p>12 - 4 or 8</p><p>13 - 1 or 4 or 8</p><p>14 - 2 or 4 or 8</p><p>15 - All of the above</p>
+        ]]></description>
+        <default>15</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Physical tap on button</option>
+          <option value="2">Physical tap on connected 3-way switch</option>
+          <option value="3">1 or 2</option>
+          <option value="4">Z-Wave command from hub</option>
+          <option value="5">1 or 4</option>
+          <option value="6">2 or 4</option>
+          <option value="7">1 or 2 or 4</option>
+          <option value="8">Timer</option>
+          <option value="9">1 or 8</option>
+          <option value="10">2 or 8</option>
+          <option value="11">1 or 2 or 8</option>
+          <option value="12">4 or 8</option>
+          <option value="13">1 or 4 or 8</option>
+          <option value="14">2 or 4 or 8</option>
+          <option value="15">All of the above</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_36_1" type="integer" groupName="configuration">
+        <label>36: Dimmer Button Scene Control</label>
+        <description>Enable or disable scene control functionality on the dimmer for quick multi tap triggers</description>
+        <default>1</default>
+        <options>
+          <option value="0">Scene control disabled</option>
+          <option value="1">Scene control enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_37_1" type="integer" groupName="configuration">
+        <label>37: Scene Control from 3-Way Switch</label>
+        <description>Enable scene control from a momentary switch connected to the ZEN35 in a 3-way installation.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Scene control commands disabled from remote 3-way switch</option>
+          <option value="1">Scene control commands enabled from remote 3-way switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_38_1" type="integer" groupName="configuration">
+        <label>38: Disable LED Flash On Setting Change</label>
+        <description>Choose if the LED should flash whenever a parameter is adjusted on the device to confirm the change.</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED flashes to confirm setting change</option>
+          <option value="1">LED doesn't flash to confirm setting change</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration">
+        <label>39: Disable LED Flash on Button Press</label>
+        <description>Choose if the LED should flash whenever the corresponding button is pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED flashes when button is pressed</option>
+          <option value="1">LED doesn't flash when button is pressed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: On/Off Switch Mode</label>
+        <description>Convert the dimmer to an on/off switch. When enabled, the dimmer will behave as a switch without the ability to dim.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration">
+        <label>41: Basic Set Custom Brightness ON</label>
+        <description><![CDATA[
+Set custom brightness or leave last brightness for Basic Set ON commands when the ZEN35 is triggered by another device in direct association.<br /> <h1>Overview</h1><p>0 - Last brightness level</p><p>1 - 99 (%)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>Main button binary switch (Z-Wave) / basic set (button) lifeline to hub</p>
+        ]]></description>
+        <multipleLimit>1</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set (dimmer)</label>
+        <description><![CDATA[
+Basic Set<br /> <h1>Overview</h1><p>Main dimmer button basic set (pressed only, doesn’t send anything when switch turned on via hub)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Multilevel (dimmer)</label>
+        <description><![CDATA[
+Multilevel<br /> <h1>Overview</h1><p>Main dimmer button multilevel (held)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Multilevel Start/Stop</label>
+        <description>Multilevel Start/Stop</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Basic Set (#1)</label>
+        <description><![CDATA[
+Basic Set<br /> <h1>Overview</h1><p>Small button #1 basic set (pressed)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Multilevel (#1)</label>
+        <description><![CDATA[
+Multilevel<br /> <h1>Overview</h1><p>Small button #1 multilevel (held) &gt; in sequence &gt; held = increase brightness, release = stop level, held = decrease brightness, release = stop level</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Basic Set (#2)</label>
+        <description><![CDATA[
+Basic Set<br /> <h1>Overview</h1><p>Small button #2 basic set (pressed)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Multilevel (#2)</label>
+        <description><![CDATA[
+Multilevel<br /> <h1>Overview</h1><p>Small button #2 multilevel (held) &gt; in sequence &gt; held = increase brightness, release = stop level, held = decrease brightness, release = stop level</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Basic Set (#3)</label>
+        <description><![CDATA[
+Basic Set<br /> <h1>Overview</h1><p>Small button #3 basic set (pressed)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: Multilevel (#3)</label>
+        <description><![CDATA[
+Multilevel<br /> <h1>Overview</h1><p>Small button #3 multilevel (held) &gt; in sequence &gt; held = increase brightness, release = stop level, held = decrease brightness, release = stop level</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_11" type="text" groupName="association" multiple="true">
+        <label>11: Basic Set (#4)</label>
+        <description><![CDATA[
+Basic Set<br /> <h1>Overview</h1><p>Small button #4 basic set (pressed)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_12" type="text" groupName="association" multiple="true">
+        <label>12: Multilevel (#4)</label>
+        <description><![CDATA[
+Multilevel<br /> <h1>Overview</h1><p>Small button #4 multilevel (held) &gt; in sequence &gt; held = increase brightness, release = stop level, held = decrease brightness, release = stop level</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="zooz_zen35_00_000_config_decimal_param1">
+    <item-type>Number</item-type>
+    <label>LED Mode for Dimmer Button</label>
+    <description>Choose if you want the LED indicator to turn on when the dimmer (light) is on or off, or if you want it to remain on or off at all times.</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">LED on when dimmer off, LED off when dimmer on</option>
+        <option value="1">LED on when dimmer on, LED off when dimmer off</option>
+        <option value="2">LED always off</option>
+        <option value="3">LED always on</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="zooz_zen35_00_000_config_decimal_param2">
+    <item-type>Number</item-type>
+    <label>LED Mode for Button 1</label>
+    <description>Choose if you want the LED indicator to turn on when Button 1 is on or off, or if you want it to remain on or off at all times.</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">LED on when dimmer off, LED off when dimmer on</option>
+        <option value="1">LED on when dimmer on, LED off when dimmer off</option>
+        <option value="2">LED always off</option>
+        <option value="3">LED always on</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="zooz_zen35_00_000_config_decimal_param3">
+    <item-type>Number</item-type>
+    <label>LED Mode for Button 2</label>
+    <description>Choose if you want the LED indicator to turn on when Button 2 is on or off, or if you want it to remain on or off at all times.</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">LED on when dimmer off, LED off when dimmer on</option>
+        <option value="1">LED on when dimmer on, LED off when dimmer off</option>
+        <option value="2">LED always off</option>
+        <option value="3">LED always on</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="zooz_zen35_00_000_config_decimal_param4">
+    <item-type>Number</item-type>
+    <label>LED Mode for Button 3</label>
+    <description>Choose if you want the LED indicator to turn on when Button 3 is on or off, or if you want it to remain on or off at all times.</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">LED on when dimmer off, LED off when dimmer on</option>
+        <option value="1">LED on when dimmer on, LED off when dimmer off</option>
+        <option value="2">LED always off</option>
+        <option value="3">LED always on</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="zooz_zen35_00_000_config_decimal_param5">
+    <item-type>Number</item-type>
+    <label>LED Mode for Button 4</label>
+    <description>Choose if you want the LED indicator to turn on when Button 4 is on or off, or if you want it to remain on or off at all times.</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">LED on when dimmer off, LED off when dimmer on</option>
+        <option value="1">LED on when dimmer on, LED off when dimmer off</option>
+        <option value="2">LED always off</option>
+        <option value="3">LED always on</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="zooz_zen35_00_000_config_decimal_param6">
+    <item-type>Number</item-type>
+    <label>LED Color for Dimmer Button</label>
+    <description>Choose the color of the dimmer button LED. 0 - white, 1 - blue, 2 - green, 3 - red, 4 - magenta, 5 - yellow, 6 - cyan</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">white</option>
+        <option value="1">blue</option>
+        <option value="2">green</option>
+        <option value="3">red</option>
+        <option value="4">magenta</option>
+        <option value="5">yellow</option>
+        <option value="6">cyan</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="zooz_zen35_00_000_config_decimal_param7">
+    <item-type>Number</item-type>
+    <label>LED Color for Button 1</label>
+    <description>Choose the color of Button 1 LED. 0 - white, 1 - blue, 2 - green, 3 - red, 4 - magenta, 5 - yellow, 6 - cyan</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">white</option>
+        <option value="1">blue</option>
+        <option value="2">green</option>
+        <option value="3">red</option>
+        <option value="4">magenta</option>
+        <option value="5">yellow</option>
+        <option value="6">cyan</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="zooz_zen35_00_000_config_decimal_param8">
+    <item-type>Number</item-type>
+    <label>LED Color for Button 2</label>
+    <description>Choose the color of Button 2 LED. 0 - white, 1 - blue, 2 - green, 3 - red, 4 - magenta, 5 - yellow, 6 - cyan</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">white</option>
+        <option value="1">blue</option>
+        <option value="2">green</option>
+        <option value="3">red</option>
+        <option value="4">magenta</option>
+        <option value="5">yellow</option>
+        <option value="6">cyan</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="zooz_zen35_00_000_config_decimal_param9">
+    <item-type>Number</item-type>
+    <label>LED Color for Button 3</label>
+    <description>Choose the color of Button 3 LED. 0 - white, 1 - blue, 2 - green, 3 - red, 4 - magenta, 5 - yellow, 6 - cyan</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">white</option>
+        <option value="1">blue</option>
+        <option value="2">green</option>
+        <option value="3">red</option>
+        <option value="4">magenta</option>
+        <option value="5">yellow</option>
+        <option value="6">cyan</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="zooz_zen35_00_000_config_decimal_param10">
+    <item-type>Number</item-type>
+    <label>LED Color for Button 4</label>
+    <description>Choose the color of Button 4 LED. 0 - white, 1 - blue, 2 - green, 3 - red, 4 - magenta, 5 - yellow, 6 - cyan</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">white</option>
+        <option value="1">blue</option>
+        <option value="2">green</option>
+        <option value="3">red</option>
+        <option value="4">magenta</option>
+        <option value="5">yellow</option>
+        <option value="6">cyan</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

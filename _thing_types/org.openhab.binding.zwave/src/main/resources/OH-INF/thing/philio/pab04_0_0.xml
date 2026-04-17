@@ -123,6 +123,42 @@ Smart Energy Flow Meter<br /> <h1>Overview</h1><p>This valves controller PAB04 i
         <limitToOptions>false</limitToOptions>
       </parameter>
 
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Remember Last Switch State mode</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Water Flow Sample Interval</label>
+        <description><![CDATA[
+1:1S 2:10S 3:30S 4:60S<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">1s</option>
+          <option value="2">10s</option>
+          <option value="3">30s</option>
+          <option value="4">60s</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_4" type="integer" groupName="configuration">
+        <label>9: Accumulated Water Flow value</label>
+        <description><![CDATA[
+0-999999<br /> <h1>Overview</h1><p>0.1 Gallon or 0.1 KL</p><p>999999 x 0.1</p><p>= 99999.9 (max)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>

@@ -17,7 +17,7 @@ XS Low Voltage Relay<br /> <h1>Overview</h1><p>Manual or z-wave on/off control f
       <channel id="switch_binary" typeId="switch_binary">
         <label>Switch</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
         </properties>
       </channel>
       <channel id="scene_number" typeId="scene_number">
@@ -35,6 +35,7 @@ XS Low Voltage Relay<br /> <h1>Overview</h1><p>Manual or z-wave on/off control f
       <property name="manufacturerId">027A</property>
       <property name="manufacturerRef">0004:0322</property>
       <property name="dbReference">1687</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->

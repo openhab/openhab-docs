@@ -17,13 +17,7 @@ Enbrighten Z-Wave In-Wall Smart Light Switch, 700 Series, 58433<br /> <h1>Overvi
       <channel id="switch_binary" typeId="switch_binary">
         <label>Switch</label>
         <properties>
-          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
-        </properties>
-      </channel>
-      <channel id="scene_number" typeId="scene_number">
-        <label>Scene Number</label>
-        <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
         </properties>
       </channel>
       <channel id="scene_number" typeId="scene_number">
@@ -41,10 +35,124 @@ Enbrighten Z-Wave In-Wall Smart Light Switch, 700 Series, 58433<br /> <h1>Overvi
       <property name="manufacturerId">0063</property>
       <property name="manufacturerRef">4952:3239</property>
       <property name="dbReference">1669</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
     <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED</label>
+        <description><![CDATA[
+LED Indicator<br /> <h1>Overview</h1><p>0 On when load is off</p><p>1 On when load is on</p><p>2 Always off</p><p>3 Always on</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Inverted</label>
+        <description><![CDATA[
+Inverted Orientation<br /> <h1>Overview</h1><p>0 Disable</p><p>1 Enable</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: 3-Way Setup</label>
+        <description><![CDATA[
+3-Way Setup<br /> <h1>Overview</h1><p>0 Add-on</p><p>1 Standard</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Alternate Exclusion</label>
+        <description><![CDATA[
+Press two times ON and two times OFF, LED will flash 5 times if successful<br /> <h1>Overview</h1><p>0 Disable</p><p>1 Enable</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration">
+        <label>34: LED Indicator Color</label>
+        <description><![CDATA[
+LED Indicator Color<br /> <h1>Overview</h1><p>1 Red</p><p>2 Orange</p><p>3 Yellow</p><p>4 Green</p><p>5 Blue</p><p>6 Pink</p><p>7 Purple</p><p>8 White</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration">
+        <label>35: LED Indicator Intensity</label>
+        <description>LED Indicator Intensity</description>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_36_1" type="integer" groupName="configuration">
+        <label>36: Guidelight Mode Intensity</label>
+        <description>Guidelight Mode Intensity</description>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration">
+        <label>39: Control Groups 2 &amp; 3</label>
+        <description><![CDATA[
+Control Groups 2 &amp; 3<br /> <h1>Overview</h1><p>0 Enable</p><p>1 Disable</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_84_1" type="integer" groupName="configuration">
+        <label>84: Reset to Factory Default</label>
+        <description><![CDATA[
+Reset to Factory Default<br /> <h1>Overview</h1><p>0 Disable</p><p>1 Enable</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline Group</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Single Press</label>
+        <description><![CDATA[
+Single Press<br /> <h1>Overview</h1><p>Add nodes that react to a single press</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Double Press</label>
+        <description><![CDATA[
+Double Press<br /> <h1>Overview</h1><p>Add nodes to react to double press</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
 
       <!-- STATIC DEFINITIONS -->
       <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">

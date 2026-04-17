@@ -8,7 +8,7 @@ title: SDCO-1-RhTH-ZW-SC-OTA - ZWave
 # SDCO-1-RhTH-ZW-SC-OTA Smoke and Carbon Monocide Detector
 This describes the Z-Wave device *SDCO-1-RhTH-ZW-SC-OTA*, manufactured by *Climax Technology, Ltd.* with the thing type UID of ```climax_sdco1rhth_00_000```.
 
-The device is in the category of *Battery*, defining Batteries, Energy Storages.
+The device is in the category of *Sensor*, defining Device used to measure something.
 
 ![SDCO-1-RhTH-ZW-SC-OTA product image](https://opensmarthouse.org/zwavedatabase/1545/image/)
 

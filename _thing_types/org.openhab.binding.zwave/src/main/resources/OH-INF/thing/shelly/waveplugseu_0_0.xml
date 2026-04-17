@@ -51,7 +51,7 @@ The Device is a smart plug/outlet with power measurement and overheating protect
       <property name="vendor">Shelly</property>
       <property name="modelId">Wave Plug S EU</property>
       <property name="manufacturerId">0460</property>
-      <property name="manufacturerRef">0002:0087</property>
+      <property name="manufacturerRef">0002:0087,0002:0092</property>
       <property name="dbReference">1656</property>
       <property name="defaultAssociations">1</property>
     </properties>

@@ -33,7 +33,7 @@ Door/Window Contact<br /> <h1>Overview</h1><p>The Door/Window Contact and the Mo
         </properties>
       </channel>
       <channel id="sensor_door" typeId="sensor_door">
-        <label></label>
+        <label>Door status</label>
         <properties>
           <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM</property>
         </properties>
