@@ -282,3 +282,77 @@ The header is structured as follows:
 - **Sink Audio (Server -> Client)**: The payload contains raw PCM data. A single-byte payload with value `254` (0xFE) immediately following the 8-byte header indicates the end of the audio stream.
 
 The raw PCM data is encoded according to the format specified in the header.
+
+## Log WebSocket API (`ADAPTER_ID` = `logs`)
+
+The Log WebSocket API allows subscription to openHAB log events.
+It supports retrieving log history and streaming live logs with customizable filters.
+
+The Log WebSocket is available at `ws[s]://{URL}:{PORT}/ws/logs`.
+Authentication is handled as [described above](#establishing-a-connection).
+
+### Protocol Workflow
+
+1.  **Connection**: The client establishes a WebSocket connection.
+2.  **Filter Request**: The client **must** send a filter message (JSON) to start receiving logs.
+    Until a filter is received, no logs are sent.
+3.  **History Transmission**: Upon receiving a filter, the server sends the existing log history that matches the filter criteria as a JSON array.
+4.  **Live Streaming**: After the history is sent, the server begins streaming live logs.
+    -   If logs occur frequently (within 100 ms of each other), they are batched and sent as a JSON array.
+    -   If logs are sparse, they are sent as individual JSON objects.
+
+### Client to Server: Log Filter
+
+To initiate log streaming or update filters, send a JSON object with the following fields:
+
+| Field           | Type          | Description                                                                                          |
+|-----------------|---------------|------------------------------------------------------------------------------------------------------|
+| `timeStart`     | Number        | (Optional) Start timestamp as Unix time in milliseconds.                                             |
+| `timeStop`      | Number        | (Optional) End timestamp as Unix time in milliseconds.                                               |
+| `loggerNames`   | Array<String> | (Optional) List of RegEx patterns to match against logger names (e.g., `["org.openhab.core.*"]`).    |
+| `sequenceStart` | Number        | (Optional) Start logs from this sequence number. If omitted, starts from the last received sequence. |
+
+No filtering:
+
+```json
+{ "sequenceStart": 0 }
+```
+
+Filter for logs from a specific logger, e.g. openHAB events:
+
+```json
+{ "loggerNames": ["org.openhab.event.*"] }
+```
+
+### Server to Client: Log Entry
+
+The server sends log entries either as a single object or an array of objects.
+
+| Field        | Type   | Description                                                        |
+|--------------|--------|--------------------------------------------------------------------|
+| `loggerName` | String | Name of the logger.                                                |
+| `level`      | String | Log level (e.g., `INFO`, `WARN`, `ERROR`, `DEBUG`).                |
+| `timestamp`  | String | ISO-8601 formatted timestamp.                                      |
+| `unixtime`   | Number | Unix timestamp in milliseconds.                                    |
+| `message`    | String | The log message.                                                   |
+| `stackTrace` | String | Stack trace if an exception was logged, otherwise an empty string. |
+| `sequence`   | Number | Unique sequence number for the log entry.                          |
+
+Example (Single Entry):
+
+```json
+{
+    "loggerName": "org.openhab.core.model.script.Rules",
+    "level": "INFO",
+    "timestamp": "2023-10-27T10:00:00.000Z",
+    "unixtime": 1698393600000,
+    "message": "Rule executed successfully",
+    "stackTrace": "",
+    "sequence": 5678
+}
+```
+
+### Keeping the connection alive
+
+To keep the connection alive and prevent it from closing due to inactivity,
+the client should send an empty message (`{}`) at a regular interval (e.g., every 10 seconds).
