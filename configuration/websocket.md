@@ -293,13 +293,13 @@ Authentication is handled as [described above](#establishing-a-connection).
 
 ### Protocol Workflow
 
-1.  **Connection**: The client establishes a WebSocket connection.
-2.  **Filter Request**: The client **must** send a filter message (JSON) to start receiving logs.
-    Until a filter is received, no logs are sent.
-3.  **History Transmission**: Upon receiving a filter, the server sends the existing log history that matches the filter criteria as a JSON array.
-4.  **Live Streaming**: After the history is sent, the server begins streaming live logs.
-    -   If logs occur frequently (within 100 ms of each other), they are batched and sent as a JSON array.
-    -   If logs are sparse, they are sent as individual JSON objects.
+1. **Connection**: The client establishes a WebSocket connection.
+1. **Filter Request**: The client **must** send a filter message (JSON) to start receiving logs.
+   Until a filter is received, no logs are sent.
+1. **History Transmission**: Upon receiving a filter, the server sends the existing log history that matches the filter criteria as a JSON array.
+1. **Live Streaming**: After the history is sent, the server begins streaming live logs.
+   - If logs occur frequently (within 100 ms of each other), they are batched and sent as a JSON array.
+   - If logs are sparse, they are sent as individual JSON objects.
 
 ### Client to Server: Log Filter
 
