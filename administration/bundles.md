@@ -122,7 +122,7 @@ In case the bundle is available on a file location, e.g. on the openHAB server (
 Make sure that file location is not within the `$OPENHAB_ADDONS` folder.
 
 ```text
-openhab>bundle:update 303 file:///localhost/srv/openhab-sys/org.openhab.binding.my-5.0.0-SNAPSHOT.jar
+openhab>bundle:update 303 file://localhost/srv/openhab-sys/org.openhab.binding.my-5.0.0-SNAPSHOT.jar
 ```
 
 Note: Using `bundle:uninstall` to uninstall an add-on will **not** work, because all add-ons bundles are part of a feature and as long as the feature is installed, the bundle will be reinstalled.
