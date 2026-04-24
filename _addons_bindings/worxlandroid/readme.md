@@ -4,7 +4,7 @@ label: WorxLandroid
 title: WorxLandroid - Bindings
 type: binding
 description: "This is the binding for Worx Landroid robotic lawn mowers."
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
