@@ -296,7 +296,7 @@ Authentication is handled as [described above](#establishing-a-connection).
 1. **Connection**: The client establishes a WebSocket connection.
 1. **Filter Request**: The client **must** send a filter message (JSON) to start receiving logs.
    Until a filter is received, no logs are sent.
-1. **History Transmission**: Upon receiving a filter, the server sends the existing log history that matches the filter criteria as a JSON array.
+1. **History Transmission**: Upon receiving a filter, the server sends the existing log history that matches the filter criteria as a JSON array. The existing log history is limited to the size of the log cache. The cache size is determined by the `org.apache.felix.log.maxSize` setting, which is limited to 100 log events by default.
 1. **Live Streaming**: After the history is sent, the server begins streaming live logs.
    - If logs occur frequently (within 100 ms of each other), they are batched and sent as a JSON array.
    - If logs are sparse, they are sent as individual JSON objects.
