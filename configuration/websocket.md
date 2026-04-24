@@ -315,7 +315,7 @@ To initiate log streaming or update filters, send a JSON object with the followi
 No filtering:
 
 ```json
-{ "sequenceStart": 0 }
+{ "loggerNames": [] }
 ```
 
 Filter for logs from a specific logger, e.g. openHAB events:
