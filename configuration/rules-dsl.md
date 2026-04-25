@@ -285,7 +285,7 @@ If the Rule needs to know what the triggering thing was, or access a string valu
 Refer to [Thing Status Action](/docs/configuration/actions.html#thing-status-action) to find how to get the new thing status details or description in the script.
 
 ::: tip Note
-You need to use quotes around `thingUID` if it contains special characters such as ':'.
+You need to use quotes around `thingUID`.
 :::
 
 ### Channel-based Triggers
