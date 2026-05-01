@@ -535,7 +535,7 @@ Webview url="https://www.openhab.org" height=5
 ### Element Type 'Mapview'
 
 ```java
-Mapview [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [height=<heightvalue>]
+Mapview item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] [height=<heightvalue>]
 ```
 
 Displays an [OSM](https://www.openstreetmap.org) map based on a given Location Item.
