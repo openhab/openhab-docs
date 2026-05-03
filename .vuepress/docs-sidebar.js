@@ -110,7 +110,16 @@ module.exports = [
               ['configuration/blockly/rules-blockly-standard-ext', 'Standard Extensions'],
             ]
           },
-          'configuration/yaml',
+          { title: 'YAML Configuration',
+            path: '/docs/configuration/yaml/',
+            children: [
+              ['configuration/yaml/things', 'Things'],
+              ['configuration/yaml/items', 'Items'],
+              ['configuration/yaml/tags', 'Tags'],
+              ['configuration/yaml/pages', 'Pages'],
+              ['configuration/yaml/widgets', 'Widgets'],
+            ]
+          },
         ]
       },
       'configuration/actions',
