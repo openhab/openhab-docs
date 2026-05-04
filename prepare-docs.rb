@@ -74,6 +74,15 @@ end
 verbose "   ➡️ images"
 FileUtils.cp_r("./configuration/images", "docs/configuration")
 
+puts "➡️ Migrating the YAML Configuration section"
+Dir.glob("./configuration/yaml/*.md") do |path|
+  file = File.basename(path)
+
+  verbose "   ➡️ #{file}"
+  process_file("./configuration/yaml", file, "docs/configuration/yaml",
+               "#{$docs_repo_root}/configuration/yaml/#{file}")
+end
+
 puts "➡️ Migrating the Main UI section"
 Dir.glob("./mainui/*.md") do |path|
   file = File.basename(path)
