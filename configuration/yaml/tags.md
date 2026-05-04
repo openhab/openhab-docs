@@ -7,8 +7,6 @@ title: YAML Tags
 
 This page describes the `tags` element for [YAML Configuration](./).
 
-[[toc]]
-
 ## Tags
 
 openHAB comes with pre-defined [semantic tags](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.semantics/model/SemanticTags.csv) that can be readily used.

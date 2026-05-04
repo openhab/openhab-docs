@@ -7,8 +7,6 @@ title: YAML Items
 
 This page describes the `items` element for [YAML Configuration](./).
 
-[[toc]]
-
 ## Items
 
 The `items` top-level key contains a map of Items, defined by their item name.

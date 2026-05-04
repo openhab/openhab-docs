@@ -7,8 +7,6 @@ title: YAML Widgets
 
 This page describes the `widgets` element for [YAML Configuration](./).
 
-[[toc]]
-
 ## Widgets
 
 The `widgets` top-level key contains a map of Main UI widgets, defined by their widget UID.

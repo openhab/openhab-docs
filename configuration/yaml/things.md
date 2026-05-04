@@ -7,8 +7,6 @@ title: YAML Things
 
 This page describes the `things` element for [YAML Configuration](./).
 
-[[toc]]
-
 ## Things
 
 The `things` top-level key contains a map of Things, defined by their Thing UID.

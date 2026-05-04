@@ -7,8 +7,6 @@ title: YAML Pages
 
 This page describes the `pages` element for [YAML Configuration](./).
 
-[[toc]]
-
 ## Pages
 
 The `pages` top-level key contains a map of Main UI pages, defined by their page UID.
