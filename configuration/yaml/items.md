@@ -130,4 +130,4 @@ items:
 >
 > - [Item-Channel Link Profile]({{base}}/configuration/items.html#profiles)
 > - [Script Transformation Profile]({{base}}/configuration/transformations.html#script-transformation-profile)
-> - List of available [transfomation addons](https://www.openhab.org/addons/#transform), most of which support profiles
+> - List of available [transformation addons](https://www.openhab.org/addons/#transform), most of which support profiles
