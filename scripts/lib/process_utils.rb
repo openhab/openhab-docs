@@ -1,20 +1,24 @@
 # frozen_string_literal: true
 
 require "fileutils"
+require "pathname"
+
+ADDONS_REPO_BRANCH = "main"
+
+def verbose(message)
+  puts message if $verbose
+end
 
 # This function converts a "source" file to something looking good in VuePress
-def process_file(indir, file, outdir, source)
+def process_markdown(indir, file, outdir, source)
   in_frontmatter = false
   frontmatter_processed = false
   has_source = false
-  has_logo = false
-  since_1x = false
-  obsolete_binding = false
   og_title = "openHAB"
   og_description = "a vendor and technology agnostic open source automation software for your home"
 
   unless File.exist?("#{indir}/#{file}")
-    verbose "process_file: IGNORING (NON-EXISTING): #{indir}/#{file}"
+    verbose "process_markdown: IGNORING (NON-EXISTING): #{indir}/#{file}"
     return
   end
 
@@ -32,13 +36,11 @@ def process_file(indir, file, outdir, source)
       next if line =~ /no_toc/
 
       has_source = true if in_frontmatter && line =~ /^source:/
-      has_logo = true if in_frontmatter && line =~ /^logo:/
-      since_1x = true if in_frontmatter && line =~ /^since: 1x/
 
       og_title = line.gsub("title: ", "").gsub("\n", "") if in_frontmatter && line =~ /^title:/
       if in_frontmatter && line =~ /^description:/
         og_description = line.gsub("description: ", "").gsub("\n", "").gsub("[", "").gsub("]", "").gsub(
-          %r{\(http[:/\-0-9A-Za-z\.]+\)}, ""
+          %r{\(http[:/\-0-9A-Za-z.]+\)}, ""
         )
       end
 
@@ -61,15 +63,15 @@ def process_file(indir, file, outdir, source)
               source = ""
               if addon_type == "ui"
                 puts "    (add-on type is ui)"
-                source = "https://github.com/openhab/openhab-webui/blob/#{$addons_repo_branch}/bundles/org.openhab.ui.#{addon}/README.md"
+                source = "https://github.com/openhab/openhab-webui/blob/#{ADDONS_REPO_BRANCH}/bundles/org.openhab.ui.#{addon}/README.md"
               elsif addon == "zigbee"
                 puts "    (add-on is zigbee)"
-                source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/#{$addons_repo_branch}/org.openhab.binding.zigbee/README.md"
+                source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/#{ADDONS_REPO_BRANCH}/org.openhab.binding.zigbee/README.md"
               elsif addon == "zwave" && file !~ /things/
                 puts "    (add-on is zwave)"
-                source = "https://github.com/openhab/org.openhab.binding.zwave/blob/#{$addons_repo_branch}/README.md"
+                source = "https://github.com/openhab/org.openhab.binding.zwave/blob/#{ADDONS_REPO_BRANCH}/README.md"
               elsif file !~ /things/
-                source = "https://github.com/openhab/openhab-addons/blob/#{$addons_repo_branch}/bundles/org.openhab.#{addon_type}.#{addon}/README.md"
+                source = "https://github.com/openhab/openhab-addons/blob/#{ADDONS_REPO_BRANCH}/bundles/org.openhab.#{addon_type}.#{addon}/README.md"
               end
 
               out.puts "source: #{source}" if source != ""
@@ -116,12 +118,12 @@ def process_file(indir, file, outdir, source)
       line = line.gsub(%r{]\((.*)/(.*)\)}, '](../thing.html?manufacturer=\1&file=\2)') if file == "zwave/doc/things.md"
 
       # Misc replaces (relative links, remove placeholder interpreted as custom tags)
-      line = line.gsub(%r{https?://docs\.openhab\.org/addons/uis/habpanel/readme\.html}, "/docs/configuration/habpanel.html")
+      line = line.gsub(%r{https?://docs\.openhab\.org/addons/uis/habpanel/readme\.html},
+                       "/docs/configuration/habpanel.html")
       line = line.gsub(%r{https?://docs\.openhab\.org/addons/uis/basic/readme\.html}, "/addons/ui/basic/")
       line = line.gsub(%r{https?://docs\.openhab\.org/addons/(.*)/(.*)/readme\.html}, '/addons/\1/\2/')
       line = line.gsub(%r{https?://docs\.openhab\.org/}, "/docs/")
-      line = line.gsub(%r{https?://openhab\.org/docs/}, "/docs/")
-      line = line.gsub(%r{https?://www\.openhab\.org/docs/}, "/docs/")
+      line = line.gsub(%r{https?://(?:www\.)?openhab\.org/docs/}, "/docs/")
       line = line.gsub("/addons/io/", "/addons/integrations/")
       line = line.gsub("{{base}}/", "./docs/")
       line = line.gsub("(images/", "(./images/")
@@ -168,4 +170,62 @@ def process_file(indir, file, outdir, source)
     out.puts
     out.puts "<EditPageLink/>"
   end
+end
+
+#
+# Moves files recursively from src to dst, passing each .md file through process_markdown.
+#
+# @param src [String, Pathname] the source directory to copy from
+# @param dst [String, Pathname] the destination directory to copy to
+# @param source_root [String, nil] the GitHub URL prefix used for edit links
+# @yield [Pathname] an optional block to filter which files to process (receives the Pathname of each file)
+# @yieldreturn [Boolean] whether to process the file (true) or skip it (false)
+#
+def process_directory(src:, dst:, source_root: nil, &block)
+  source = Pathname(src)
+  destination = Pathname(dst)
+  pattern = source / "**" / "*"
+
+  Pathname.glob(pattern).sort.each do |path|
+    next if block && !block.call(path)
+
+    relative = path.relative_path_from(source)
+    output_path = destination.join(relative)
+
+    if path.directory?
+      output_path.mkpath
+      next
+    end
+    output_dir = output_path.dirname
+
+    source_path = if source_root
+                    File.join(source_root, relative.to_s).tr("\\", "/") # Ensure URL uses forward slashes
+                  end
+
+    if path.extname.downcase == ".md"
+      verbose "   ➡️ #{relative}"
+      # Pathname objects can usually be passed to methods expecting strings
+      process_markdown(path.dirname.to_s, path.basename.to_s, output_dir.to_s, source_path)
+    else
+      # Use join for the final destination file path
+      FileUtils.cp(path, output_dir.join(path.basename))
+    end
+  end
+end
+
+# Get a list of sub-addons to transform them into links
+def get_subs_links(parent_addon_id, search_dir)
+  sub_addons = []
+  Dir.glob("#{search_dir}/#{parent_addon_id}.*/**/readme.md") do |sub_readme|
+    sub_addon_id = File.dirname(sub_readme).split("/").last
+    verbose "    ➡️ expanding list of sub-addons: #{sub_addon_id}"
+    File.open(sub_readme).each do |line|
+      if line =~ /^# /
+        sub_addons.push([sub_addon_id, line.gsub("# ", "").strip])
+        break
+      end
+    end
+  end
+
+  sub_addons
 end
