@@ -1,0 +1,37 @@
+AllCops:
+  TargetRubyVersion: 3.3
+  NewCops: enable
+
+Style/GlobalVars:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Naming/FileName:
+  Enabled: false
+
+# Copied from https://github.com/instructure/rubocop-inst/blob/main/rubocop.yml
+Metrics:
+  Enabled: false
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method # https://github.com/rubocop/ruby-style-guide/issues/821
+Style/EmptyElse:
+  EnforcedStyle: empty # explicit nil indicates programmer intent
+Style/FormatStringToken:
+  EnforcedStyle: template
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+Style/PercentQLiterals:
+  EnforcedStyle: upper_case_q
+Style/PerlBackrefs:
+  Enabled: false # Regexp.last_match(1) is far worse than $1
+Style/RescueStandardError:
+  EnforcedStyle: implicit
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+Style/TernaryParentheses:
+  EnforcedStyle: require_parentheses_when_complex
