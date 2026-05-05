@@ -173,6 +173,7 @@ You can either use some pre-defined expressions for timers or use a [cron expres
 ```java
 Time is midnight
 Time is noon
+Time is 18:00
 Time is <item> [timeOnly] [offset=N]
 Time cron "<cron expression>"
 ```
