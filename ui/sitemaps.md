@@ -18,7 +18,8 @@ This page is structured as follows:
 
 [[toc]]
 
-Sitemaps are text files with the `.sitemap` extension, and are stored in the `$OPENHAB_CONF/sitemaps` directory.
+Sitemaps are text files with the `.sitemap` or `.sitemaps` extension, and are stored in the `$OPENHAB_CONF/sitemaps` directory.
+They can contain one or several sitemap definitions.
 Sitemaps follow the syntax described in this article.
 
 For easy editing of sitemap definition files, we suggest to use one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
@@ -111,13 +112,13 @@ The `sitemap` element is **mandatory** in a Sitemap definition.
 This element shall be the first line in the sitemap file, and the following code block comprises the entire Sitemap definition.
 
 ```java
-sitemap <sitemapname> label="<title of the main screen>" {
+sitemap <sitemapname> [label="<title of the main screen>"] {
     [all sitemap elements]
 }
 ```
 
-- `sitemapname` shall always be equal to the Sitemaps file name, e.g. the `sitemapname` in a sitemap file named `demo.sitemap` must be "demo"
-- `label` is free text and will be shown as the title of the main screen.
+- `sitemapname` is the identifier of the Sitemap definition.
+- `label` is an optional free text and will be shown as the title of the main screen.
 
 (Note that the element `sitemap` is written with a lower case "s".)
 
