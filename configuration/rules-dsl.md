@@ -277,7 +277,11 @@ You can find all the possible values for status from [Thing Status](/docs/concep
 The `thingUID` is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
 You can find it from UI or from Karaf remote console.
 For example, one z-wave device can be "zwave:device:c5155aa4:node14".
-The `*` wildcard is allowed in the `thingUID`.
+The following wildcards may be used in `thingUID` to match multiple Things:
+
+- `*` matches zero or more characters.
+- `?` matches zero or one character.
+
 For example, `chromecast:*` will trigger on all `chromecast` Things and `*` will trigger on all things.
 
 If the Rule needs to know what the triggering thing was, or access a string value of the previous or new status, use the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `triggeringThing`, `previousThingStatus` or `newThingStatus` to access the information.
@@ -306,6 +310,7 @@ Channel "<triggerChannel>" triggered [<triggerEvent>]
 ```
 
 `triggerChannel` is the identifier for a specific channel.
+The `*` and `?` wildcards are allowed in the `triggerChannel` and behave the same as for `thingUID`.
 
 When a binding provides such channels, you can find the needed information in the corresponding binding documentation.
 There is no generic list of possible values for `triggerEvent`,
