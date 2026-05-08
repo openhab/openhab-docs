@@ -73,7 +73,7 @@ It is possible to build a preview version of the documentation on your local mac
 The following software is required:
 
 - [`NodeJS = 16.20.1`](https://nodejs.org/en)
-- [`Ruby >= 3.3.2`](https://www.ruby-lang.org/en/)
+- [`Ruby >= 3.3.11`](https://www.ruby-lang.org/en/)
 
 We recommend to use [Node Version Manager](https://github.com/nvm-sh/nvm) as well as [Ruby Version Manager](https://rvm.io/) to easily allow using multiple versions of NodeJS and Ruby for multiple projects.
 If you don't do that, you can simply start by only installing the above mentioned versions.
@@ -89,7 +89,7 @@ If `nvm` and/or `rvm` complain about the required versions not being installed, 
 
 ```shell script
 nvm install 16.20.1
-rvm install ruby-3.3.2
+rvm install ruby-3.3.11
 ```
 
 Next, you can build & serve the documentation preview:
