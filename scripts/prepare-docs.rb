@@ -6,8 +6,8 @@ require "pathname"
 require_relative "lib/process_utils"
 require_relative "lib/add_placeholders"
 
-SRC_ROOT = File.join(__dir__, "src")
-DST_ROOT = File.join(__dir__, "docs")
+SRC_ROOT = "src"
+DST_ROOT = "docs"
 
 FileUtils.rm_rf(DST_ROOT)
 
