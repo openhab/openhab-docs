@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
+require "pathname"
+
 # This function will add placeholders for pages that are out of scope of the docs preview
 
 def add_placeholder_pages
   puts "➡️ Adding placeholder pages for preview"
-  [
+
+  pages = [
     "docs/apps/android.md",
     "docs/apps/garmin",
     "docs/apps/sailfishos",
@@ -22,17 +25,22 @@ def add_placeholder_pages
     "docs/installation/openhabian-troubleshooting.md",
     "docs/installation/openhabian-backup.md",
     "docs/installation/openhabian-exim.md"
-  ].each do |path|
+  ].map { |p| Pathname.new(p) }
+
+  # Using a standard loop for better clarity and explicit logic at a glance
+  pages.each do |path|
     puts "  ➡️ #{path}"
-    page = path
-    unless path =~ /\.md/
-      FileUtils.mkdir_p(path)
-      page = File.join(path, "readme.md")
-    end
-    File.open(page, "w+") do |f|
-      f.puts "# This content is unavailable"
-      f.puts ""
-      f.puts "This content is migrated from another repository, and is not included in this preview."
-    end
+
+    # Determine if we are writing a specific .md file or a folder's readme
+    target_file = (path.extname == ".md") ? path : path.join("readme.md")
+
+    # Ensure the parent directory exists
+    target_file.dirname.mkpath
+
+    target_file.write <<~MARKDOWN
+      # This content is unavailable
+
+      This content is migrated from another repository and is not included in this preview.
+    MARKDOWN
   end
 end
