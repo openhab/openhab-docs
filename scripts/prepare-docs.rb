@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "fileutils"
-require "pathname"
 
 require_relative "lib/process_utils"
 require_relative "lib/add_placeholders"
