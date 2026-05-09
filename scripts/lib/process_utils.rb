@@ -59,7 +59,7 @@ def process_markdown(indir, file, outdir, source)
             outdir_parts[1] = "io" if outdir_parts[1] == "integrations"
             if outdir_parts[0] == "addons"
               addon_type = outdir_parts[1]
-              addon = file.split("/")[0]
+              addon = outdir_parts[2]
               source = ""
               if addon_type == "ui"
                 puts "    (add-on type is ui)"
@@ -80,7 +80,7 @@ def process_markdown(indir, file, outdir, source)
               out.puts "prev: ../#{addon.split(".")[0]}/" if addon.include?(".")
 
               # Prev link to the main binding doc for zwave/doc/things.md
-              out.puts "prev: ../" if file == "zwave/doc/things.md"
+              out.puts "prev: ../" if addon == "zwave" && outdir.end_with?("/doc") && file == "things.md"
             end
           end
 
