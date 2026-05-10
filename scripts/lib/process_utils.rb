@@ -17,14 +17,18 @@ def process_markdown(indir, file, outdir, source)
   og_title = "openHAB"
   og_description = "a vendor and technology agnostic open source automation software for your home"
 
-  unless File.exist?("#{indir}/#{file}")
-    verbose "process_markdown: IGNORING (NON-EXISTING): #{indir}/#{file}"
+  input_path = Pathname.new(indir) / file
+  output_path = Pathname.new(outdir) / file
+  input_path_str = input_path.to_s
+
+  unless input_path.exist?
+    verbose "process_markdown: IGNORING (NON-EXISTING): #{input_path}"
     return
   end
 
-  FileUtils.mkdir_p(outdir)
-  File.open("#{outdir}/#{file}", "w+") do |out|
-    File.open("#{indir}/#{file}").each do |line|
+  output_path.dirname.mkpath
+  output_path.open("w") do |out|
+    input_path.each_line.with_index(1) do |line, line_number|
       next if line =~ /^layout: documentation/
       next if line =~ /^layout: tutorial/
       next if line =~ /^layout: developers/
@@ -67,10 +71,10 @@ def process_markdown(indir, file, outdir, source)
               elsif addon == "zigbee"
                 puts "    (add-on is zigbee)"
                 source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/#{ADDONS_REPO_BRANCH}/org.openhab.binding.zigbee/README.md"
-              elsif addon == "zwave" && file !~ /things/
+              elsif addon == "zwave" && input_path_str !~ /things/
                 puts "    (add-on is zwave)"
                 source = "https://github.com/openhab/org.openhab.binding.zwave/blob/#{ADDONS_REPO_BRANCH}/README.md"
-              elsif file !~ /things/
+              elsif input_path_str !~ /things/
                 source = "https://github.com/openhab/openhab-addons/blob/#{ADDONS_REPO_BRANCH}/bundles/org.openhab.#{addon_type}.#{addon}/README.md"
               end
 
@@ -80,7 +84,7 @@ def process_markdown(indir, file, outdir, source)
               out.puts "prev: ../#{addon.split(".")[0]}/" if addon.include?(".")
 
               # Prev link to the main binding doc for zwave/doc/things.md
-              out.puts "prev: ../" if addon == "zwave" && outdir.end_with?("/doc") && file == "things.md"
+              out.puts "prev: ../" if addon == "zwave" && outdir.end_with?("/doc") && input_path.basename.to_s == "things.md"
             end
           end
 
@@ -97,71 +101,87 @@ def process_markdown(indir, file, outdir, source)
       end
 
       # Remove collapsibles in Linux install document and replace them by regular headings
-      next if line =~ /include collapsible/ && file =~ /linux/
+      next if line =~ /include collapsible/ && input_path_str =~ /linux/
 
-      line = "##### #{line}" if line =~ /^Apt Based Systems/ && file =~ /linux/
-      line = "##### #{line}" if line =~ /^Yum or Dnf Based Systems/ && file =~ /linux/
-      line = "##### #{line}" if line =~ /^Systems based on/ && file =~ /linux/
+      line = "##### #{line}" if line =~ /^Apt Based Systems/ && input_path_str =~ /linux/
+      line = "##### #{line}" if line =~ /^Yum or Dnf Based Systems/ && input_path_str =~ /linux/
+      line = "##### #{line}" if line =~ /^Systems based on/ && input_path_str =~ /linux/
 
       # Expand <!--list-subs--> comments with a list of links
       # (https://github.com/eclipse/smarthome/issues/5571)
       if line =~ /<!--\s*list-subs\s*-->/
-        sub_addons = get_subs_links(file.split("/")[0], indir)
+        parent_addon = input_path.dirname.basename.to_s
+        sub_addons = get_subs_links(parent_addon, indir)
         out.puts
-        sub_addons.each do |sub|
-          out.puts "- [#{sub[1]}](../#{sub[0]}/)"
+        sub_addons.each do |name, title|
+          out.puts "- [#{title}](../#{name}/)"
         end
         out.puts
       end
 
+      # Log replacements so we know which files need to be fixed in the source
+      log_replace = lambda do |pattern, replacement|
+        column = line.index(pattern)
+        next if line.gsub!(pattern, replacement).nil?
+
+        from = UI.colorize(pattern.inspect, :red)
+        to = UI.colorize(replacement, :green)
+        # Build a clickable link in supported terminals
+        location = UI.colorize("#{input_path}:#{line_number}:#{column + 1}", :cyan)
+        puts "    (replacing #{from} -> #{to} in #{location})"
+      end
+
       # Replace links to generated docs in ZWave's things.md by links to the internal viewer
-      line = line.gsub(%r{]\((.*)/(.*)\)}, '](../thing.html?manufacturer=\1&file=\2)') if file == "zwave/doc/things.md"
+      line.gsub!(%r{]\((.*)/(.*)\)}, '](../thing.html?manufacturer=\1&file=\2)') if input_path.fnmatch?("*/zwave/doc/things.md")
 
       # Misc replaces (relative links, remove placeholder interpreted as custom tags)
-      line = line.gsub(%r{https?://docs\.openhab\.org/addons/uis/habpanel/readme\.html},
-                       "/docs/configuration/habpanel.html")
-      line = line.gsub(%r{https?://docs\.openhab\.org/addons/uis/basic/readme\.html}, "/addons/ui/basic/")
-      line = line.gsub(%r{https?://docs\.openhab\.org/addons/(.*)/(.*)/readme\.html}, '/addons/\1/\2/')
-      line = line.gsub(%r{https?://docs\.openhab\.org/}, "/docs/")
-      line = line.gsub(%r{https?://(?:www\.)?openhab\.org/docs/}, "/docs/")
-      line = line.gsub("/addons/io/", "/addons/integrations/")
-      line = line.gsub("{{base}}/", "./docs/")
-      line = line.gsub("(images/", "(./images/")
-      line = line.gsub("src=\"images/", "src=\"./images/")
-      line = line.gsub("]:images/", "]:./images/")
-      line = line.gsub("](doc/", "](./doc/")
-      line = line.gsub("(diagrams/", "(./diagrams/")
-      line = line.gsub("./docs/tutorials/beginner/", "/docs/tutorial/")
-      line = line.gsub("./docs/", "/docs/")
-      line = line.gsub("<activeState>", '\<activeState\>')
-      line = line.gsub("<passiveState>", '\<passiveState\>')
-      line = line.gsub("(?<!`)<dimension>(?!`)", '\<dimension\>')
-      line = line.gsub("<TransformProgram>", '\<TransformProgram\>')
-      line = line.gsub("<FlahshbriefingDeviceID>", "`<FlahshbriefingDeviceID>`") if file =~ /amazonechocontrol/
-      line = line.gsub("<SerialNumber>", "&lt;SerialNumber&gt;") if file =~ /airvisualnode/
-      line = line.gsub("<version>", "&lt;version&gt;") if file =~ /caldav/
-      line = line.gsub("by <step>", "by `<step>`") if file =~ /ipx8001/
-      line = line.gsub("<BR>", "<BR/>")
-      line = line.gsub("'<package name>:<widget ID>'", "`<package name>:<widget ID>`") if file =~ /lametrictime/
-      line = line.gsub("<mac address of bridge>", "`<mac address of bridge>`") if file =~ /milight/
-      line = line.gsub("<mac>", "`<mac>`") if file =~ /milight/
-      line = line.gsub("<type of bulb>", "`<type of bulb>`") if file =~ /milight/
-      line = line.gsub("<IP-Address of bridge>", "`<IP-Address of bridge>`") if file =~ /milight/
-      line = line.gsub("<bulb>", "`<bulb>`") if file =~ /milight/
-      line = line.gsub("<zone>", "`<zone>`") if file =~ /milight/
-      line = line.gsub("[](", "[here](") if file =~ /powermax1/
-      line = line.gsub("<n>", "&lt;n&gt;") if file =~ /rfxcom/
-      line = line.gsub(" <value> ", " &lt;value&gt; ") if file =~ /zibase/
-      line = line.gsub("<username>", "&lt;username&gt;") if file =~ /zoneminder/
-      line = line.gsub("<password>", "&lt;password&gt;") if file =~ /zoneminder/
-      line = line.gsub("<yourzmip>", "&lt;yourzmip&gt;") if file =~ /zoneminder/
-      line = line.gsub(" <chatId> ", " &lt;chatId&gt; ") if file =~ /telegram/
-      line = line.gsub(" <token> ", " &lt;token&gt; ") if file =~ /telegram/
-      line = line.gsub("<regular expression>", '\<regular expression\>')
-      line = line.gsub('src="images/', 'src="./images/') if outdir =~ /apps/
-      line = line.gsub("](/images/", "](./images/") if outdir =~ /google-assistant/
 
-      line = line.gsub(/\{:(style|target).*\}/, "") # Jekyll inline attributes syntax not supported
+      # Normal replacements, no logging needed
+      line.gsub!("{{base}}/", "./docs/")
+      line.gsub!("](doc/", "](./doc/")
+      line.gsub!("(images/", "(./images/")
+      line.gsub!("src=\"images/", "src=\"./images/")
+      line.gsub!("]:images/", "]:./images/")
+      line.gsub!("<BR>", "<BR/>")
+      line.gsub!("(diagrams/", "(./diagrams/")
+      line.gsub!("./docs/", "/docs/")
+      line.gsub!(%r{https?://(?:www\.)?openhab\.org/docs/}, "/docs/")
+
+      # Log these replacements as they indicate issues in the source that should be fixed
+      log_replace.call(%r{https?://docs\.openhab\.org/addons/uis/habpanel/readme\.html}, "/docs/configuration/habpanel.html")
+      log_replace.call(%r{https?://docs\.openhab\.org/addons/uis/basic/readme\.html}, "/addons/ui/basic/")
+      log_replace.call(%r{https?://docs\.openhab\.org/addons/(.*)/(.*)/readme\.html}, '/addons/\1/\2/')
+      log_replace.call(%r{https?://docs\.openhab\.org/}, "/docs/")
+      log_replace.call("/addons/io/", "/addons/integrations/")
+      log_replace.call("./docs/tutorials/beginner/", "/docs/tutorial/")
+      log_replace.call("<activeState>", '\<activeState\>')
+      log_replace.call("<passiveState>", '\<passiveState\>')
+      log_replace.call("(?<!`)<dimension>(?!`)", '\<dimension\>')
+      # line = line.gsub("<TransformProgram>", '\<TransformProgram\>')  # fixed in source
+      # line = line.gsub("<FlahshbriefingDeviceID>", "`<FlahshbriefingDeviceID>`") if file =~ /amazonechocontrol/ # already fixed in source - also misspelling fixed
+      # line = line.gsub("<SerialNumber>", "&lt;SerialNumber&gt;") if file =~ /airvisualnode/ # already fixed in source
+      # line = line.gsub("<version>", "&lt;version&gt;") if file =~ /caldav/ # binding no longer exists
+      # replace.call("by <step>", "by `<step>`") if file =~ /ipx8001/ # binding no longer exists
+      log_replace.call("'<package name>:<widget ID>'", "`<package name>:<widget ID>`") if input_path_str =~ /lametrictime/
+      log_replace.call("<mac address of bridge>", "`<mac address of bridge>`") if input_path_str =~ /milight/
+      log_replace.call("<mac>", "`<mac>`") if input_path_str =~ /milight/
+      log_replace.call("<type of bulb>", "`<type of bulb>`") if input_path_str =~ /milight/
+      log_replace.call("<IP-Address of bridge>", "`<IP-Address of bridge>`") if input_path_str =~ /milight/
+      log_replace.call("<bulb>", "`<bulb>`") if input_path_str =~ /milight/
+      log_replace.call("<zone>", "`<zone>`") if input_path_str =~ /milight/
+      log_replace.call("[](", "[here](") if input_path_str =~ /powermax1/
+      log_replace.call("<n>", "&lt;n&gt;") if input_path_str =~ /rfxcom/
+      log_replace.call(" <value> ", " &lt;value&gt; ") if input_path_str =~ /zibase/
+      log_replace.call("<username>", "&lt;username&gt;") if input_path_str =~ /zoneminder/
+      log_replace.call("<password>", "&lt;password&gt;") if input_path_str =~ /zoneminder/
+      log_replace.call("<yourzmip>", "&lt;yourzmip&gt;") if input_path_str =~ /zoneminder/
+      log_replace.call(" <chatId> ", " &lt;chatId&gt; ") if input_path_str =~ /telegram/
+      log_replace.call(" <token> ", " &lt;token&gt; ") if input_path_str =~ /telegram/
+      log_replace.call("<regular expression>", '\<regular expression\>')
+      log_replace.call('src="images/', 'src="./images/') if output_path.to_s =~ /apps/
+      log_replace.call("](/images/", "](./images/") if output_path.to_s =~ /google-assistant/
+
+      log_replace.call(/\{:(style|target).*\}/, "") # Jekyll inline attributes syntax not supported
 
       out.puts line
     end
@@ -228,4 +248,19 @@ def get_subs_links(parent_addon_id, search_dir)
   end
 
   sub_addons
+end
+
+#
+# Simple utility to colorize terminal output for better visibility
+#
+module UI
+  COLORS = {
+    red: 31, green: 32, yellow: 33, blue: 34,
+    magenta: 35, cyan: 36, white: 37
+  }
+
+  def self.colorize(text, color_name)
+    color_code = COLORS.fetch(color_name, 37) # Default to white
+    "\e[#{color_code}m#{text}\e[0m"
+  end
 end
