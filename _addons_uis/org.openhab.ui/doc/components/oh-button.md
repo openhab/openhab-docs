@@ -1239,5 +1239,3 @@ TBA
 ![Big Ol' Grid O' Buttons](./images/oh-button/bogob.png)
 
 [BoGoB: Big Ol' Grid O' Buttons](https://community.openhab.org/t/bogob-big-ol-grid-o-buttons-is-this-even-possible-yes-yes-it-is/115343/7) - using the `oh-button` and `oh-repeater` objects together with YAML arrays to create large grids of buttons (emulating remote control operation).
-
-<EditPageLink/>
