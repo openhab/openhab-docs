@@ -40,6 +40,8 @@ smart_move addons/uis/apps src/apps
 smart_move tutorials/getting_started src/tutorial
 smart_move developers src/developer
 
+sed -i 's|openhab-docs/main/developers/ide/|openhab-docs/main/src/developer/ide/|g' src/developer/ide/vscode.md
+
 for folder in administration concepts configuration installation mainui ui; do
     smart_move "$folder" "src/$folder"
 done
