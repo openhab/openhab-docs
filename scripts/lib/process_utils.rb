@@ -110,13 +110,12 @@ def process_markdown(indir, file, outdir, source)
       # Expand <!--list-subs--> comments with a list of links
       # (https://github.com/eclipse/smarthome/issues/5571)
       if line =~ /<!--\s*list-subs\s*-->/
-        parent_addon = input_path.dirname.basename.to_s
-        sub_addons = get_subs_links(parent_addon, indir)
-        out.puts
+        addon_path = input_path.dirname
+        sub_addons = get_sub_addons(addon_path)
         sub_addons.each do |name, title|
           out.puts "- [#{title}](../#{name}/)"
         end
-        out.puts
+        next
       end
 
       # Log replacements so we know which files need to be fixed in the source
@@ -234,17 +233,17 @@ def process_directory(src:, dst:, source_root: nil, &block)
 end
 
 # Get a list of sub-addons to transform them into links
-def get_subs_links(parent_addon_id, search_dir)
+def get_sub_addons(parent_addon_path)
   sub_addons = []
-  Dir.glob("#{search_dir}/#{parent_addon_id}.*/**/readme.md") do |sub_readme|
-    sub_addon_id = File.dirname(sub_readme).split("/").last
-    verbose "    ➡️ expanding list of sub-addons: #{sub_addon_id}"
-    File.open(sub_readme).each do |line|
-      if line =~ /^# /
-        sub_addons.push([sub_addon_id, line.gsub("# ", "").strip])
-        break
-      end
-    end
+  parent_addon_name = parent_addon_path.basename
+  parent_addon_path.dirname.glob("#{parent_addon_name}.*/readme.md") do |sub_readme|
+    sub_addon_id = sub_readme.dirname.basename.to_s
+    header_line = sub_readme.each_line.find { |line| line.start_with?("# ") }
+    next unless header_line
+
+    title = header_line.delete_prefix("# ").strip
+    verbose "    ➡️ expanding list of sub-addons: #{sub_addon_id}: #{title}"
+    sub_addons << [sub_addon_id, title]
   end
 
   sub_addons
