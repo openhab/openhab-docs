@@ -127,6 +127,11 @@ This fourth tab has quick links to create any sort of Object that can be created
 
 Sometimes you may face errors, even if you tried your best with developing a working solution.
 In cases where the failure can not be found in a fast way you can have a look at the logging output that openHAB provides.
+The `square_list` icon right next to the developer sidebar icon toggles the integrated log viewer pane from any page, or you can press <kbd>Shift</kbd><kbd>Alt</kbd><kbd>L</kbd>.
+When the log viewer pane is open, <kbd>Shift</kbd><kbd>Alt</kbd><kbd>F</kbd> maximizes or restores it.
+
+In MainUI, the integrated log viewer can be opened from **Developer Tools -> Log Viewer** or toggled from any page as a bottom pane with <kbd>Shift</kbd><kbd>Alt</kbd><kbd>L</kbd>.
+It stays visible while you move between pages, and <kbd>Shift</kbd><kbd>Alt</kbd><kbd>F</kbd> maximizes or restores it.
 
 Accessing the logs depends on different factors (e.g. the way you have installed openHAB).
 You can find an overview of how to access and handle logging in the [corresponding article](/docs/administration/logging.html).
