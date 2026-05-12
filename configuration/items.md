@@ -30,9 +30,6 @@ There are two methods for defining Items:
     However, each Item must be unique across all `.items` files.
     Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installation's folder structure.
 
-Generally 1.x version Bindings can only be bound to Items through `.items` files.
-2.x Bindings may be configured using either method described above.
-
 **Assumptions for UI:**
 The examples below assume that the user is using a text editor to create a `.items` file.
 While the way of defining an Item using the graphical, interactive UI is different, the elements and the nature of an Item definition are identical using either method.
