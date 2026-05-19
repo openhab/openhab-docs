@@ -246,8 +246,8 @@ Control messages use a JSON structure with a `cmd` field and an optional `args` 
     - `id`: (String) The ID of the audio sink/source (e.g., speaker ID).
     - `forceSampleRate`: (Number, optional) Request a specific sample rate.
     - `startDialog`: (Boolean, optional) Whether to start a voice dialog immediately.
-    - `listeningItem`: (String, optional) Name of an item to reflect the listening state.
-    - `locationItem`: (String, optional) Name of an item representing the location.
+    - `listeningItem`: (String, optional) Name of a `Switch` item to reflect the listening state.
+    - `locationItem`: (String, optional) Name of a `String` item representing the location.
 - **`ON_SPOT`**: Sent by the client to signal an "on spot" event (e.g., a physical button press to start listening).
 
 #### Server to Client Commands
