@@ -34,15 +34,15 @@ things:
           <channel config key>: <config value>
 ```
 
-| Key           | Description                                                                                                                                     |
-|:--------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
-| `<thing_uid>` | The UID of the Thing or Bridge being defined. The UID format is `<binding_id>:<thing_type_id>:[<bridge_id>:]<thing_id>`, e.g. `astro:sun:home`. |
-| `isBridge`    | Whether the entity is a Bridge (`true`) or a Thing (`false`). Default: `false` (a Thing).                                                       |
-| `bridge`      | The bridge UID that this Thing belongs to.                                                                                                      |
-| `label`       | Thing label.                                                                                                                                    |
-| `location`    | The location of the Thing.                                                                                                                      |
-| `config`      | A key-value map of the Thing's configuration. Refer to the Binding's documentation for details.                                                 |
-| `channels`    | Configure built-in channel parameters, or define custom channels.                                                                               |
+| Key           | Description                                                                                                                                                                                                   |
+|:--------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `<thing_uid>` | The UID of the Thing or Bridge being defined. The UID format is `<binding_id>:<thing_type_id>:[<bridge_id>:]<thing_id>`, e.g. `astro:sun:home`.                                                               |
+| `isBridge`    | Whether the entity is a Bridge (`true`) or a Thing (`false`). Default: `false` (a Thing).                                                                                                                     |
+| `bridge`      | The bridge UID that this Thing belongs to.                                                                                                                                                                    |
+| `label`       | Thing label.                                                                                                                                                                                                  |
+| `location`    | The location of the Thing.                                                                                                                                                                                    |
+| `config`      | A key-value map of the Thing's configuration. Refer to the Binding's documentation for details. Textual configuration parameters can reference environment variables using the `${ENV:VARIABLE_NAME}` syntax. |
+| `channels`    | Configure built-in channel parameters, or define custom channels.                                                                                                                                             |
 
 ### Channels Section
 
@@ -66,7 +66,8 @@ things:
   mqtt:broker:mosquitto:
     isBridge: true
     config:
-      host: 192.168.1.1
+      host: ${ENV:MQTT_HOST}
+      port:
       lwtMessage: offline
       lwtTopic: openhab/status
       lwtQos: 1
