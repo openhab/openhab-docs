@@ -151,7 +151,7 @@ A cell expanding to a big vertical slider
   <PropDescription>
     Type of action to perform
   </PropDescription>
-  <PropOptions>
+  <PropOptions multiple="true">
     <PropOption value="navigate" label="Navigate to page" />
     <PropOption value="command" label="Send command" />
     <PropOption value="toggle" label="Toggle Item" />
@@ -227,6 +227,11 @@ A cell expanding to a big vertical slider
 <PropBlock type="TEXT" name="actionPage" label="Page" context="page">
   <PropDescription>
     Page to navigate to
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="actionPageDefineVars" label="Define Page Variables">
+  <PropDescription>
+    An object <code>{ [variableName]: [variableValue] }</code> where <code>variableValue</code> also supports expressions
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionPageTransition" label="Transition Effect">

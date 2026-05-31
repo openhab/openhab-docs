@@ -44,6 +44,11 @@ prev: /docs/ui/components/
     Keep the tooltip within the chart bounds
   </PropDescription>
 </PropBlock>
+<PropBlock type="BOOLEAN" name="smartFormatter" label="Smart Formatter">
+  <PropDescription>
+    Automatically format numbers according to local configuration (e.g., decimal places) & Display markArea information
+  </PropDescription>
+</PropBlock>
 </PropGroup>
 </div>
 

@@ -166,7 +166,7 @@ Display a read-only gauge in a card to visualize a quantifiable item
   <PropDescription>
     Type of action to perform
   </PropDescription>
-  <PropOptions>
+  <PropOptions multiple="true">
     <PropOption value="navigate" label="Navigate to page" />
     <PropOption value="command" label="Send command" />
     <PropOption value="toggle" label="Toggle Item" />
@@ -242,6 +242,11 @@ Display a read-only gauge in a card to visualize a quantifiable item
 <PropBlock type="TEXT" name="actionPage" label="Page" context="page">
   <PropDescription>
     Page to navigate to
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="actionPageDefineVars" label="Define Page Variables">
+  <PropDescription>
+    An object <code>{ [variableName]: [variableValue] }</code> where <code>variableValue</code> also supports expressions
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionPageTransition" label="Transition Effect">

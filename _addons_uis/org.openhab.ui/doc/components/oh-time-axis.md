@@ -33,6 +33,16 @@ prev: /docs/ui/components/
     A name which will appear on tooltips and labels
   </PropDescription>
 </PropBlock>
+<PropBlock type="TEXT" name="style" label="Axis Style">
+  <PropDescription>
+    The style of the axis
+  </PropDescription>
+  <PropOptions>
+    <PropOption value="label" label="Label" />
+    <PropOption value="label+line" label="Label & Line" />
+    <PropOption value="label+line+tick" label="Label, Line & Tick" />
+  </PropOptions>
+</PropBlock>
 </PropGroup>
 </div>
 

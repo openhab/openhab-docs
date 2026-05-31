@@ -53,6 +53,11 @@ prev: /docs/ui/components/
     Do not add the current Item state into the requested period (the item state will be before or at the end time)
   </PropDescription>
 </PropBlock>
+<PropBlock type="BOOLEAN" name="displayState" label="Use Display State">
+  <PropDescription>
+    If set to true, formatting from the state description is applied to the values. For QuantityType states, the unit from the state description is respected, but no formatting is applied.
+  </PropDescription>
+</PropBlock>
 <PropBlock type="INTEGER" name="offsetAmount" label="Offset Amount">
   <PropDescription>
     Offset to <em>subtract</em> from the displayed period, use if you want to do period comparisons (see also Offset Unit).
@@ -79,6 +84,11 @@ prev: /docs/ui/components/
     <PropOption value="heatmap" label="Heatmap" />
     <PropOption value="scatter" label="Scatter" />
   </PropOptions>
+</PropBlock>
+<PropBlock type="TEXT" name="color" label="Color" context="color">
+  <PropDescription>
+    The color of the series
+  </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="aggregationFunction" label="Aggregation Function">
   <PropDescription>
@@ -117,7 +127,7 @@ prev: /docs/ui/components/
   <PropDescription>
     Type of action to perform
   </PropDescription>
-  <PropOptions>
+  <PropOptions multiple="true">
     <PropOption value="navigate" label="Navigate to page" />
     <PropOption value="command" label="Send command" />
     <PropOption value="toggle" label="Toggle Item" />
@@ -193,6 +203,11 @@ prev: /docs/ui/components/
 <PropBlock type="TEXT" name="actionPage" label="Page" context="page">
   <PropDescription>
     Page to navigate to
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="actionPageDefineVars" label="Define Page Variables">
+  <PropDescription>
+    An object <code>{ [variableName]: [variableValue] }</code> where <code>variableValue</code> also supports expressions
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionPageTransition" label="Transition Effect">

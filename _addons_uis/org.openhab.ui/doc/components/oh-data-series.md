@@ -41,6 +41,41 @@ prev: /docs/ui/components/
     <PropOption value="pie" label="Pie" />
   </PropOptions>
 </PropBlock>
+<PropBlock type="TEXT" name="labelPosition" label="Label Position">
+  <PropDescription>
+    The position of the labels on the series
+  </PropDescription>
+  <PropOptions>
+    <PropOption value="top" label="Top" />
+    <PropOption value="left" label="Left" />
+    <PropOption value="right" label="Right" />
+    <PropOption value="bottom" label="Bottom" />
+    <PropOption value="inside" label="Inside" />
+    <PropOption value="insideLeft" label="Inside - Left" />
+    <PropOption value="insideRight" label="Inside - Right" />
+    <PropOption value="insideTop" label="Inside - Top" />
+    <PropOption value="insideBottom" label="Inside - Bottom" />
+    <PropOption value="insideTopLeft" label="Inside - Top Left" />
+    <PropOption value="insideBottomLeft" label="Inside - Bottom Left" />
+    <PropOption value="insideTopRight" label="Inside - Top Right" />
+    <PropOption value="insideBottomRight" label="Inside - Bottom Right" />
+  </PropOptions>
+</PropBlock>
+<PropBlock type="TEXT" name="color" label="Color" context="color">
+  <PropDescription>
+    The color of the series
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="showSymbol" label="Show Symbol">
+  <PropDescription>
+    Whether to always show the datapoint symbol. It will always be shown during tooltip hover.
+  </PropDescription>
+</PropBlock>
+<PropBlock type="INTEGER" name="barBorderRadius" label="Bar Border Radius">
+  <PropDescription>
+    The radius of the border of the bar.
+  </PropDescription>
+</PropBlock>
 </PropGroup>
 </div>
 
@@ -52,7 +87,7 @@ prev: /docs/ui/components/
   <PropDescription>
     Type of action to perform
   </PropDescription>
-  <PropOptions>
+  <PropOptions multiple="true">
     <PropOption value="navigate" label="Navigate to page" />
     <PropOption value="command" label="Send command" />
     <PropOption value="toggle" label="Toggle Item" />
@@ -128,6 +163,11 @@ prev: /docs/ui/components/
 <PropBlock type="TEXT" name="actionPage" label="Page" context="page">
   <PropDescription>
     Page to navigate to
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="actionPageDefineVars" label="Define Page Variables">
+  <PropDescription>
+    An object <code>{ [variableName]: [variableValue] }</code> where <code>variableValue</code> also supports expressions
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="actionPageTransition" label="Transition Effect">

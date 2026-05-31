@@ -35,10 +35,13 @@ Visualize historical series
   <PropOptions>
     <PropOption value="(empty)" label="Dynamic period" />
     <PropOption value="day" label="Day" />
-    <PropOption value="isoWeek" label="Week (starting on Monday)" />
-    <PropOption value="week" label="Week (starting on Sunday)" />
+    <PropOption value="isoWeek" label="Week (always starting on Monday)" />
+    <PropOption value="week" label="Week (starts according to locale)" />
     <PropOption value="month" label="Month" />
     <PropOption value="year" label="Year" />
+    <PropOption value="twoYears" label="2 Years" />
+    <PropOption value="threeYears" label="3 Years" />
+    <PropOption value="fiveYears" label="5 Years" />
   </PropOptions>
 </PropBlock>
 <PropBlock type="TEXT" name="period" label="Initial Period">
@@ -60,10 +63,26 @@ Visualize historical series
     <PropOption value="4M" label="4M" />
     <PropOption value="6M" label="6M" />
     <PropOption value="Y" label="Y" />
+    <PropOption value="2Y" label="2Y" />
     <PropOption value="3Y" label="3Y" />
     <PropOption value="5Y" label="5Y" />
     <PropOption value="10Y" label="10Y" />
   </PropOptions>
+</PropBlock>
+<PropBlock type="INTEGER" name="initialWeek" label="Initial Week" context="week">
+  <PropDescription>
+    The initial week of the year for the chart.
+  </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="initialMonth" label="Initial Month" context="month">
+  <PropDescription>
+    The initial month of the year for the chart.
+  </PropDescription>
+</PropBlock>
+<PropBlock type="INTEGER" name="initialYear" label="Initial Year">
+  <PropDescription>
+    The initial year for the chart.
+  </PropDescription>
 </PropBlock>
 <PropBlock type="DECIMAL" name="future" label="Future Proportion">
   <PropDescription>
@@ -76,6 +95,11 @@ Visualize historical series
     <PropOption value="0.75" label="75% - 1/4 past, 3/4 future" />
     <PropOption value="1" label="100% - Future only" />
   </PropOptions>
+</PropBlock>
+<PropBlock type="INTEGER" name="formatterMaxDecimalPlaces" label="Max Decimal Places">
+  <PropDescription>
+    The maximum number of decimal places to show for values.
+  </PropDescription>
 </PropBlock>
 </PropGroup>
 </div>

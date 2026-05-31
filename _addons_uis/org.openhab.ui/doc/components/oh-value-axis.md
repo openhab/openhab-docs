@@ -45,8 +45,18 @@ prev: /docs/ui/components/
 </PropBlock>
 <PropBlock type="BOOLEAN" name="scale" label="Do Not Force Scale to Include Zero">
   <PropDescription>
-    If checked the scale will not necessarily include the origin (has no effect if min or max are set explicitely)
+    If checked the scale will not necessarily include the origin (has no effect if min or max are set explicitly)
   </PropDescription>
+</PropBlock>
+<PropBlock type="TEXT" name="split" label="Axis Split">
+  <PropDescription>
+    Split the axis in different sections
+  </PropDescription>
+  <PropOptions multiple="true">
+    <PropOption value="line" label="Line" />
+    <PropOption value="minor" label="Minor" />
+    <PropOption value="area" label="Area" />
+  </PropOptions>
 </PropBlock>
 </PropGroup>
 </div>
