@@ -252,8 +252,6 @@ It is usually not necessary to restore all Items since there is a good chance th
 ## Persistence Extensions in Scripts and Rules
 
 To make use of persisted states inside scripts and rules, a few useful extensions have been defined on items.
-Note that these extensions are only available to be applied to Items.
-They are not generally available for use in Scripts or Rules.
 
 Example:
 
