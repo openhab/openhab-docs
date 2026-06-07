@@ -832,7 +832,7 @@ On the Edge 550 and 850, a firmware bug prevents the menu focus indicator, which
 
 Due to the nature of the issue, the available workarounds are limited.
 
-On the Edge 550, the only reliable solution was to render a thin vertical line on the left side of each non-selected menu item. While this indicator is subtle and not highly visible at first glance, it becomes understandable once the user recognizes the visual pattern. In the screenshots above, the second item, “Fenster,” is selected.
+On the Edge 550, the only reliable solution was to render a thin vertical line on the left side of each non-selected menu item. While this indicator is subtle and not highly visible at first glance, it becomes understandable once the user recognizes the visual pattern. In the light mode screenshot below, the second item, “Fenster,” is selected. In the dark mode screenshot, “Alle Lichter” is selected.
 
 <div class="garmin-screenshot-container">
   <img src="images/app/13-edgex50-menu-workaround-light.png">
