@@ -4,6 +4,7 @@ label: Math
 title: Math - Transformation Services
 type: transform
 description: "Transforms the input by applying simple math on it."
+logo: images/addons/math.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Math Transformation Service
+
+<AddonLogo />
 
 Transforms the input by applying simple math on it.
 
