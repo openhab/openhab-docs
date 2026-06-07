@@ -319,12 +319,12 @@ A Buttongrid represents a grid of buttons and enables commands to be sent to an 
 
 This is a typical element for simulating a remote control, for example.
 
-- `item` commands triggered by the buttons are sent to the item identified by this parameter. This parameter is only required if the `buttons` parameter is also used.
+- (deprecated) `item` commands triggered by the buttons are sent to the item identified by this parameter. This parameter is only required if the `buttons` parameter is also used.
 - `label` if set, a header row will be displayed containing this label and the icon.
-- `buttons` defines the position of each button within the grid and the command associated with each button; provided as an array.
+- (deprecated) `buttons` defines the position of each button within the grid and the command associated with each button; provided as an array.
 
 When buttons are defined by the `buttons` parameter, all buttons are linked to the same Item and a command can only be sent to that item when one button is clicked (and not when it is pressed and released); buttons never appear as selected, they do not display the current state of the linked Item.
-The `buttons` parameter is optional, using Button elements as children is now the best option because it provides more functionality, but this option is not yet supported by all sitemap UIs.
+The `buttons` parameter is optional and now deprecated, using Button elements as children is now the best option because it provides more functionality, but this option is not yet supported by all sitemap UIs.
 
 Buttons syntax:
 
