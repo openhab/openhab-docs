@@ -26,6 +26,7 @@
   "homepage": "https://github.com/openhab/openhab-docs#readme",
   "dependencies": {
     "cross-env": "^7.0.3",
+    "framework7-icons": "^5.0.5",
     "null-loader": "^4.0.1",
     "vue-tabs-component": "^1.5.0",
     "vuepress": "^1.9.10",

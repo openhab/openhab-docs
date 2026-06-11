@@ -18,7 +18,7 @@ There are three ways to check log entries:
 
 Administrator users can view the logs directly in Main UI through [Developer Tools - Log Viewer]({{base}}/mainui/developer/log-viewer.html).
 Besides opening it from **Developer Tools**, the log viewer can be toggled from any page as a persistent bottom pane.
-Click the `square_list` icon in the upper right corner or press <kbd>Shift</kbd><kbd>Alt</kbd><kbd>L</kbd>.
+Click the <f7-icon f7="square_list" /> icon in the upper right corner or press <kbd>Shift</kbd><kbd>Alt</kbd><kbd>L</kbd>.
 The pane remains visible while you navigate between Main UI pages, and <kbd>Shift</kbd><kbd>Alt</kbd><kbd>F</kbd> maximizes or restores it.
 
 The Main UI log viewer supports filtering, highlighting, downloading, and copying log messages.
