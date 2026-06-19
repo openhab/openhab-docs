@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<thing:thing-descriptions bindingId="unifiprotect"
+<thing:thing-descriptions bindingId="unifi"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
 	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
 
-	<!-- Bridge: NVR -->
+	<!-- Bridge: NVR (child of unifi:controller) -->
 	<bridge-type id="nvr">
+		<supported-bridge-type-refs>
+			<bridge-type-ref id="controller" bindingId="unifi"/>
+		</supported-bridge-type-refs>
 		<label>UniFi Protect NVR</label>
 		<description>UniFi Protect NVR bridge providing device and event streams</description>
 		<channels>
@@ -42,30 +45,23 @@
 			<property name="wanIp">WAN IP address</property>
 		</properties>
 		<config-description>
-			<parameter name="hostname" type="text" required="true">
-				<context>network-address</context>
-				<label>Hostname</label>
-				<description>Hostname or IP address of the NVR</description>
-			</parameter>
-			<parameter name="username" type="text" required="true">
-				<label>Username</label>
-				<description>Local username for authentication (supports both Public and Private API)</description>
-			</parameter>
-			<parameter name="password" type="text" required="true">
-				<context>password</context>
-				<label>Password</label>
-				<description>Local password for authentication</description>
-			</parameter>
-			<parameter name="port" type="integer" required="false">
-				<label>Port</label>
-				<description>Port number (default: 443)</description>
-				<default>443</default>
-				<advanced>true</advanced>
-			</parameter>
 			<parameter name="token" type="text" required="false">
 				<label>API Token (Optional)</label>
 				<description>Public API token. If not provided, one will be automatically created using the name
 					'openHAB-{thing-id}'</description>
+				<advanced>true</advanced>
+			</parameter>
+			<parameter name="autoManageToken" type="boolean" required="false">
+				<label>Auto-Manage API Token</label>
+				<description>Automatically create and renew the API token. Disable if you manage tokens
+					manually.</description>
+				<default>true</default>
+				<advanced>true</advanced>
+			</parameter>
+			<parameter name="tokenAutoManaged" type="boolean" required="false">
+				<label>Token Auto-Managed (Internal)</label>
+				<description>Set automatically by the binding when it provisions the API token. Do not edit.</description>
+				<default>false</default>
 				<advanced>true</advanced>
 			</parameter>
 		</config-description>
@@ -190,7 +186,7 @@
 		<label>UniFi Protect Doorlock</label>
 		<description>Smart door lock</description>
 		<channels>
-			<channel id="lock" typeId="lock"/>
+			<channel id="lock" typeId="doorlock-lock"/>
 			<channel id="lock-status" typeId="lock-status"/>
 			<channel id="battery" typeId="battery"/>
 			<channel id="calibrate" typeId="calibrate-doorlock"/>

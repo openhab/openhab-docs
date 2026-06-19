@@ -84,6 +84,23 @@ Displays markers on an image overlay
 </PropGroup>
 </div>
 
+### SVG Embedding
+<div class="props">
+<PropGroup name="svgEmbedding" label="SVG Embedding">
+  When the Image URL points to an SVG file, it can be embedded directly into the plan so its elements can reflect Item states and trigger actions. Elements must have an <code>id</code> and an <code>openhab</code> attribute to become interactive.
+<PropBlock type="BOOLEAN" name="embedSvg" label="Embed SVG">
+  <PropDescription>
+    Embed the SVG image (from Image URL) directly into the plan so its elements can reflect Item states and trigger actions (default false)
+  </PropDescription>
+</PropBlock>
+<PropBlock type="BOOLEAN" name="embedSvgFlashing" label="Embed SVG Flashing in Run-Mode">
+  <PropDescription>
+    Flash SVG elements on hover in run-mode as well (default false)
+  </PropDescription>
+</PropBlock>
+</PropGroup>
+</div>
+
 
 <!-- GENERATED /props -->
 
