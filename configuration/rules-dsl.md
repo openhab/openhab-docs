@@ -881,10 +881,21 @@ You can emit log messages from your rules to aid debugging.
 There are a number of logging methods available from your rules, the java signatures are:
 
 ```java
+logTrace(String loggerName, String format, Object... args)
 logDebug(String loggerName, String format, Object... args)
 logInfo(String loggerName, String format, Object... args)
 logWarn(String loggerName, String format, Object... args)
 logError(String loggerName, String format, Object... args)
+```
+
+There are also convenience versions of these methods available that are especially useful when debugging a script, because you can specify any object to have the result of its `toString()` method logged without having the explicitly call `toString()`:
+
+```java
+logTrace(String loggerName, Object message)
+logDebug(String loggerName, Object message)
+logInfo(String loggerName, Object message)
+logWarn(String loggerName, Object message)
+logError(String loggerName, Object message)
 ```
 
 In each case, the `loggerName` parameter is combined with the string `org.openhab.core.model.script.` to create the log4j logger name.
