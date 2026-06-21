@@ -4,7 +4,7 @@ label: Google Gemini
 title: Google Gemini - Bindings
 type: binding
 description: "The openHAB Google Gemini Binding allows openHAB to communicate with the Gemini family of large language models (LLM) from Google."
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
