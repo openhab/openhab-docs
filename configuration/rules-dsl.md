@@ -1,9 +1,9 @@
 ---
 layout: documentation
-title: Textual Rules
+title: Rules DSL
 ---
 
-# Textual Rules
+# Rules DSL
 
 "Rules" are used for automating processes: Each rule can be triggered, which invokes a script that performs any kinds of tasks, e.g. turn on lights by modifying your items, do mathematical calculations, start timers etcetera.
 
@@ -806,12 +806,70 @@ Heating.sendCommand(ON)
 
 Caveat: Please note the semicolon after the return statement which terminates the command without an additional argument.
 
+### Convenience Functionality
+
+While almost anything that is possible to do within openHAB is possible to do by calling the available Java APIs, it can require a significant effort to read Java interfaces and documentation to figure out how to do it all.
+Some classes and methods, that are considered "frequently needed", are therefore provided in a way that aims to simply their use.
+This includes implicit imports, which can be used without explicit import statements.
+
+#### Implicit Imports
+
+The following imports are implicit and can be used directly:
+
+```java
+import static org.openhab.core.model.script.actions.BusEvent.*;
+import static org.openhab.core.model.script.actions.Exec.*;
+import static org.openhab.core.model.script.actions.HTTP.*;
+import static org.openhab.core.model.script.actions.Log.*;
+import static org.openhab.core.model.script.actions.Ping.*;
+import static org.openhab.core.model.script.actions.Transformation.*;
+import static org.openhab.core.model.script.actions.ScriptExecution.*;
+import static org.openhab.core.model.script.ScriptServiceUtil.*;
+import static java.net.URLEncoder.*;
+import static org.openhab.core.model.script.actions.CoreUtil.*;
+import static org.openhab.core.library.unit.ImperialUnits.*;
+import static org.openhab.core.library.unit.MetricPrefix.*;
+import static org.openhab.core.library.unit.SIUnits.*;
+import static org.openhab.core.library.unit.Units.*;
+import static org.openhab.core.library.unit.BinaryPrefix.*;
+import static java.time.temporal.ChronoUnit.*;
+import static java.time.DayOfWeek.*;
+import static java.time.Duration.*;
+import static java.time.Month.*;
+import static java.time.ZoneId.*;
+import static java.time.ZonedDateTime.*;
+
+import org.openhab.core.library.unit.*;
+import org.openhab.core.library.types.*;
+import org.openhab.core.library.items.*;
+import org.openhab.core.types.TimeSeries;
+import org.openhab.core.items.*;
+import org.openhab.core.things.*;
+import org.openhab.core.thing.link.ItemChannelLink;
+import org.openhab.core.thing.link.ItemChannelLinkRegistry;
+import org.openhab.core.persistence.*;
+import org.openhab.core.persistence.extensions.PersistenceExtensions.RiemannType;
+import org.openhab.core.model.script.actions.*;
+import java.time.*;
+import java.time.format.*;
+import java.time.temporal.*;
+import java.util.regex.*;
+import java.util.Locale;
+import java.util.TimeZone;
+import javax.measure.quantity.*;
+import org.openhab.core.model.script.lib.Channels;
+import org.openhab.core.model.script.lib.Items;
+import org.openhab.core.model.script.lib.Rules;
+```
+
+In addition, all registered `org.openhab.core.model.script.engine.action.ActionService` implementations are statically imported with wildcards (`.*`).
+
 ### Concurrency Guard
 
 If a rule is explicitly run from another script, rule, a Main UI widget, etc., instead of a trigger, the rule can be started before the current execution has ended.
 It may be necessary to guard against concurrency.
 
-```javascript
+```java
 import java.util.concurrent.locks.ReentrantLock
 
 val ReentrantLock lock  = new ReentrantLock
