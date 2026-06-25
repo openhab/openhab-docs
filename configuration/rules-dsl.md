@@ -105,8 +105,8 @@ Each rule has the following syntax:
 
 ```java
 rule "<RULE_NAME>" [uid = "<RULE_UID>"] ['[' <TAG> [, <TAG> [, ...]] ']']
-when
-    <TRIGGER_CONDITION> [or <TRIGGER_CONDITION2> [or ...]]
+[when
+    <TRIGGER_CONDITION> [or <TRIGGER_CONDITION2> [or ...]]]
 then
     <SCRIPT_BLOCK>
 end
@@ -115,12 +115,12 @@ end
 - `<RULE_NAME>` - A rule name (given within quotes) which constitutes the "title" of the rule. It is recommended that you choose a name that has meaning when spoken. This will be the name under which the rule is shown in MainUI and is the primary field used for search and sorting.
 - `<RULE_UID>` - Each rule must have a unique identifier. A valid identifier can't contain '/', '\\' or have leading or trailing whitespace. You can provide this identifier, within quotes in case it contains whitespace or non ASCII characters. If not provided, it will be built automatically using the file name (containing the rule) and the position of the rule in this file, e.g. "demo-2" for the second rule in the demo.rules file.
 - `<TAG>` - A tag to set to the rule. This is a way to group several rules and you can then filter rules by tag in MainUI. You can provide several tags separated by commas, all enclosed in square brackets [ and ].
-- `<TRIGGER_CONDITION>` - The triggering event upon which the rule logic is executed. A rule is executed in reaction to one or more trigger conditions. Multiple conditions are separated by the keyword `or`. Please see below for different possible triggers.
+- `<TRIGGER_CONDITION>` - The triggering event upon which the rule logic is executed. One or more trigger conditions can be defined, multiple conditions are separated by the keyword `or`. Please see below for different possible triggers.
 - `<SCRIPT_BLOCK>` - Contains the logic that should be executed when a trigger condition is met, see the [script](#scripts) section for details on its syntax.
 
-### Rule Triggers
+Note that a rule may have no trigger. In this case, it can only be executed from another rule or script.
 
-Before a rule starts working, it has to be triggered.
+### Rule Triggers
 
 There are different categories of rule triggers:
 
