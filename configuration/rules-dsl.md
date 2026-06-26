@@ -963,6 +963,19 @@ The standard library consists of methods from several different classes, and are
 | `Items.updateMetadata(String itemName, String namespace, String value, Object... configProperties)` | `Metadata` | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace. |
 | `Items.updateMetadata(String itemName, String namespace, String value, Map<String, Object> configuration)` | `Metadata` | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace. |
 
+##### [Rules](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/lib/rules)
+
+| Method | Return type | Description |
+| --- | --- | --- |
+| `Rules.getRule(String ruleUid)` | `Rule` | Get a `Rule` by UID. |
+| `Rules.runRule(String ruleUid)` | `Map<String, Object>` | Run the `Rule` with the specified UID and return the results of the execution. |
+| `Rules.runRule(String ruleUid, boolean considerConditions)` | `Map<String, Object>` | Run the `Rule` with the specified UID and return the results of the execution. |
+| `Rules.runRule(String ruleUid, Map<String, Object> context)` | `Map<String, Object>` | Run the `Rule` with the specified UID using the specified context, and return the results of the execution. |
+| `Rules.runRule(String ruleUid, boolean considerConditions, Object... context)` | `Map<String, Object>` | Run the `Rule` with the specified UID using the specified context, and return the results of the execution. |
+| `Rules.runRule(String ruleUid, boolean considerConditions, Map<String, Object> context)` | `Map<String, Object>` | Run the `Rule` with the specified UID using the specified context, and return the results of the execution. |
+| `Rules.isRuleEnabled(String ruleUid)` | `boolean` | Check whether the specified `Rule` is enabled. |
+| `Rules.setRuleEnabled(String ruleUid, boolean enabled)` | N/A | Set whether the specified `Rule` is enabled. |
+
 ### Concurrency Guard
 
 If a rule is explicitly run from another script, rule, a Main UI widget, etc., instead of a trigger, the rule can be started before the current execution has ended.
