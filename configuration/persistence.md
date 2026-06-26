@@ -412,7 +412,6 @@ You can always get the result in `kWh` as follows:
 var consumption_kWh = consumption.toUnit('kWh')
 ```
 
-
 #### Time-weighted averages
 
 Time-weighted averages as implemented in the `average` extensions take into consideration not only the numerical levels of a particular variable, but also the amount of time spent on it.
@@ -440,7 +439,6 @@ var sum = Temperature.sumSince(startTime)
 var count = Temperature.countSince(startTime)
 var average = sum / count
 ```
-
 
 ### Date and Time Extensions
 
