@@ -943,6 +943,26 @@ The standard library consists of methods from several different classes, and are
 | `Channels.removeLinksForItem(Item item)` | `int` | Remove all managed links related to the specified `Item`, and return the number of removed links. |
 | `Channels.removeOrphanedItemChannelLinks()` | `int` | Remove all orphaned (`Item` or `Channel` missing) managed links, and return the number of removed links. |
 
+##### [Items](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/lib/items)
+
+| Method | Return type | Description |
+| --- | --- | --- |
+| `Items.exists(String itemName)` | `boolean` | Check whether a named item exists. |
+| `Items.get(String itemName)` | `Item` | Get an `Item` by name. |
+| `Items.getAll()` | `Collection<Item>` | Get all `Item`s. |
+| `Items.getByPattern(String pattern)` | `Collection<Item>` | Get all `Item`s that match a pattern using `?` and `*`. |
+| `Items.getByTag(String... tags)` | `Collection<Item>` | Get all `Item`s that have all the specified tags. |
+| `Items.getOfType(String type)` | `Collection<Item>` | Get all `Item`s of the specified type. |
+| `Items.getByTagAndType(String type, String... tags)` | `Collection<Item>` | Get all `Item`s of the specified type that also have all the specified tags. |
+| `Items.getMetadata(String itemName, String namespace)` | `Metadata` | Get `Item` metadata for the specified namespace. |
+| `Items.addMetadata(String itemName, String namespace, String value)` | N/A | Add metadata to an Item. |
+| `Items.addMetadata(String itemName, String namespace, String value, Object... configProperties)` | N/A | Add metadata to an Item. |
+| `Items.addMetadata(String itemName, String namespace, String value, Map<String, Object> configuration)` | N/A | Add metadata to an Item. |
+| `Items.removeMetadata(String itemName, String namespace)` | `Metadata` | Remove metadata from an `Item` for the specified namespace, and return the removed `Metadata`. |
+| `Items.updateMetadata(String itemName, String namespace, String value)` | `Metadata` | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace. |
+| `Items.updateMetadata(String itemName, String namespace, String value, Object... configProperties)` | `Metadata` | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace. |
+| `Items.updateMetadata(String itemName, String namespace, String value, Map<String, Object> configuration)` | `Metadata` | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace. |
+
 ### Concurrency Guard
 
 If a rule is explicitly run from another script, rule, a Main UI widget, etc., instead of a trigger, the rule can be started before the current execution has ended.
