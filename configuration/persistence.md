@@ -370,10 +370,11 @@ This is the best approximation when the real values change continuously, the per
 
 The default when no type is provided is `RiemannType.LEFT`.
 
+Riemann sum (and any depending calculations such as average, variance and deviation) for a number Item with a dimension will return a result in a unit directly derived from the Item unit.
 A Riemann sum is always calculated using seconds as unit for time.
-As an example, the Riemann sum of power values in `kW` will result in an energy measurement in `kWs`.
+As an example, the Riemann sum of power values with item unit `kW` will result in an energy measurement in `kWs`.
 You can rely on framework functionality to convert to the appropriate unit (e.g. `kWh`), or do an explicit conversion.
-If you use plain `Number` items and don't use units, be aware of this time multiplication factor.
+If you use plain `Number` item and don't use units, be aware of this time multiplication factor.
 
 ### Examples
 
@@ -403,10 +404,18 @@ var consumption = Power.riemannSumBetween(lastMonthStart, currentMonthStart, Rie
 ```
 
 If `Power` is a `QuantityType<Power>` Item, `consumption` will be of `QuantityType<Energy>`.
+If the Item unit of `Power` is `W`, the unit of `consumption` will be `Ws`.
+If the Item unit of `Power` is `kW`, the unit of `consumption` will be `kWs`.
+You can always get the result in `kWh` as follows:
+
+```java
+var consumption_kWh = consumption.toUnit('kWh')
+```
+
 
 #### Time-weighted averages
 
-Time-weighted averages take into consideration not only the numerical levels of a particular variable, but also the amount of time spent on it.
+Time-weighted averages as implemented in the `average` extensions take into consideration not only the numerical levels of a particular variable, but also the amount of time spent on it.
 For instance, if you are measuring the temperature in a room - acknowledging the differences in the amounts of time until it changes.
 A brief example:
 18 °C for 13 hours a day, 21 °C for 7 hours a day, and 16.5 °C for 4 hours a day, you would obtain 18 °C x 13 h, 21 °C x 7 h and 16.5 °C x 4 h (234, 147, and 66, respectively).
@@ -415,6 +424,23 @@ In this case, 447 °C hours.
 Add together the time weights to get the total weight.
 In our example, the total weight is 13 h + 7 h + 4 h = 24 h.
 Divide the value in Step 2 by the total weights in Step 3, to get an average of 447 °C hours / 24 h = 18.625 °C.
+
+Time-weighted average calculations use Riemann Sums underneath.
+The previous example would be the default calculation with `RiemannType.LEFT`.
+The RiemannType argument will impact the values used in the calculation.
+
+Most of the time, what you want is a time weighted average.
+This neutralizes the impact of persisted values not being at regular intervals.
+Therefore, this average will not be the same as a straight average calculation you may get using database tools.
+If you still want to have the average of values without considering the time dimension, you can calculate it in a rule using `sum` and dividing by `count`, for example:
+
+```java
+var startTime = now.truncatedTo(ChronoUnit.DAYS)
+var sum = Temperature.sumSince(startTime)
+var count = Temperature.countSince(startTime)
+var average = sum / count
+```
+
 
 ### Date and Time Extensions
 
