@@ -338,7 +338,11 @@ To be able to do something useful with the scripts, openHAB provides access to
 
 - all defined items, so that you can easily access them by their name
 - all enumerated states/commands, e.g. `ON, OFF, DOWN, INCREASE` etc.
-- all [standard actions](https://github.com/openhab/openhab/wiki/Actions) to make something happen
+- all [standard actions]({{base}}/configuration/actions.html) to make something happen
+- [persistence extensions]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules) to work with persisted item states
+- [multimedia actions]({{base}}/configuration/multimedia.html) to work with audio, voice and text
+- thing actions, see documentation for the specific binding
+- access to a [cache]({{base}}/configuration/jsr223.html#dsl) that can preserve values accross rules and rule executions
 
 Combining these features, you can easily write code like:
 
