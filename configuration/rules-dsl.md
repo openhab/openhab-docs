@@ -864,6 +864,46 @@ import org.openhab.core.model.script.lib.Rules;
 
 In addition, all registered `org.openhab.core.model.script.engine.action.ActionService` implementations are statically imported with wildcards (`.*`).
 
+#### Standard Library
+
+The standard library consists of methods from several different classes, and are presented here per class.
+
+##### [ScriptServiceUtil](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/scriptserviceutil)
+
+| Method | Return type | Description |
+| --- | --- | --- |
+| `getItemRegistry()` | `ItemRegistry` | Get the `Item` registry. |
+| `getThingRegistry()` | `ThingRegistry` | Get the `Thing` registry. |
+| `getEventPublisher()` | `EventPublisher` | Get the `Event` publisher. |
+| `getModelRepository()` | `ModelRepository` | Get the `ModelRepository`. |
+| `getMetadataRegistry()` | `MetadataRegistry` | Get the `Metadata` registry. |
+| `getRuleRegistry()` | `RuleRegistry` | Get the `Rule` registry. |
+| `getItemChannelLinkRegistry()` | `ItemChannelLinkRegistry` | Get the `ItemChannelLink` registry. |
+| `getTimeZone()` | `TimeZone` | Get the openHAB configured `TimeZone`. |
+| `getZoneId()` | `ZoneId` | Get the openHAB configured `ZoneId`. |
+| `getTimeZoneProvider()` | `TimeZoneProvider` | Get the `TimeZoneProvider` instance. |
+| `getLocale()` | `Locale` | Get the openHAB configured `Locale`. |
+| `getLocaleProvider()` | `LocaleProvider` | Get the `LocaleProvider` instance. |
+| `getRuleManager()` | `RuleManager` | Get the `RuleManager` instance, also known as the "rule engine" or `RuleEngine`. |
+| `getScheduler()` | `Scheduler` | Get the `Scheduler` instance. |
+| `getScriptEngine()` | `ScriptEngine` | Get the `ScriptEngine` instance. |
+| `getActionServices()` | `List<ActionService>` | Get the list of the currently registered `ActionService` instances. |
+| `getThingActions()` | `List<ThingActions>` | Get the list of currently registered `ThingActions` instances. |
+| `getInstance(Class<T> clazz)` | `T` | Get the instance of any registered OSGi service, or `null` if it doesn't exist. The returned type has the type specified in the `clazz` argument. |
+
+##### [Ping](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/ping)
+
+| Method | Return type | Description |
+| --- | --- | --- |
+| `checkVitality(String host, int port, int timeout)` | `boolean` | Check the vitality of `host`. If `port` is `0`, a regular ICMP ping is issued. If any other port is specified, a socket will be attempted opened using this port. `timeout` is specified in milliseconds. |
+
+##### [Things](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/things)
+
+| Method | Return type | Description |
+| --- | --- | --- |
+| `getThingStatusInfo(String thingUid)` | `ThingStatusInfo` | Get the status of a `Thing`. |
+| `getActions(String scope, String thingUid)` | `ThingActions` | Get the `ThingActions` matching the specified `scope` and `thingUid`. |
+
 ### Concurrency Guard
 
 If a rule is explicitly run from another script, rule, a Main UI widget, etc., instead of a trigger, the rule can be started before the current execution has ended.
