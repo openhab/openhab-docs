@@ -976,6 +976,40 @@ The standard library consists of methods from several different classes, and are
 | `Rules.isRuleEnabled(String ruleUid)` | `boolean` | Check whether the specified `Rule` is enabled. |
 | `Rules.setRuleEnabled(String ruleUid, boolean enabled)` | N/A | Set whether the specified `Rule` is enabled. |
 
+#### Extensions
+
+Existing Java classes can also be "extended", which means that methods that aren't really a part of the Java class, will still work when invoked on the object.
+
+##### [ItemExtensions](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/lib/itemextensions)
+
+| Extension method | Return type | Description |
+| --- | --- | --- |
+| `MyItem.getMetadata(String namespace)` | `Metadata` | Get `Item` metadata for the specified namespace. |
+| `MyItem.addMetadata(String namespace, String value)` | N/A | Add metadata to an Item. |
+| `MyItem.addMetadata(String namespace, String value, Object... configProperties)` | N/A | Add metadata to an Item. |
+| `MyItem.addMetadata(String namespace, String value, Map<String, Object> configuration)` | N/A | Add metadata to an Item. |
+| `MyItem.removeMetadata(String namespace)` | `Metadata` | Remove metadata from an `Item` for the specified namespace, and return the removed `Metadata`. |
+| `MyItem.updateMetadata(String namespace, String value)` | `Metadata` | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace. |
+| `MyItem.updateMetadata(String namespace, String value, Object... configProperties)` | `Metadata` | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace. |
+| `MyItem.updateMetadata(String namespace, String value, Map<String, Object> configuration)` | `Metadata` | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace. |
+| `MyItem.getChannelLinks()` | `Set<ItemChannelLink>` | Get the `ItemChannelLink`s that are linked to the `Item`. |
+| `MyItem.getBoundChannels()` | `Set<ChannelUID>` | Get the `ChannelUID`s of the channels that are bound to the `Item`. |
+| `MyItem.getBoundThings()` | `Set<Thing>` | Get the `Thing`s that are bound to the `Item`. |
+| `MyItem.isLinked()` | `boolean` | Check if the `Item` has at least one link. |
+| `MyItem.isLinked(String channelUid)` | `boolean` | Check if the `Item` and channel are linked. |
+| `MyItem.isLinked(ChannelUID channelUid)` | `boolean` | Check if the `Item` and channel are linked. |
+| `MyItem.getChannelLink(ChannelUID channelUid)` | `ItemChannelLink` | Get an existing `ItemChannelLink` for the `Item` and channel. |
+| `MyItem.getChannelLink(String channelUid)` | `ItemChannelLink` | Get an existing `ItemChannelLink` for the `Item` and channel. |
+| `MyItem.addChannelLink(String channelUid)` | `ItemChannelLink` | Add a new `ItemChannelLink` between the `Item` and a `Channel`, and return the newly created `ItemChannelLink`. |
+| `MyItem.addChannelLink(String channelUid, Object... configProperties)` | `ItemChannelLink` | Add a new `ItemChannelLink` between the `Item` and a `Channel`, and return the newly created `ItemChannelLink`. |
+| `MyItem.addChannelLink(String channelUid, Map<String, Object> configProperties)` | `ItemChannelLink` | Add a new `ItemChannelLink` between the `Item` and a `Channel`, and return the newly created `ItemChannelLink`. |
+| `MyItem.replaceChannelLink(String channelUid)` | `ItemChannelLink` | Add or replace a `ItemChannelLink` between the `Item` and a `Channel`, returning the old `ItemChannelLink` if one existed. |
+| `MyItem.replaceChannelLink(String channelUid, Object... configProperties)` | `ItemChannelLink` | Add or replace a `ItemChannelLink` between the `Item` and a `Channel`, returning the old `ItemChannelLink` if one existed. |
+| `MyItem.replaceChannelLink(String channelUid, Map<String, Object> configProperties)` | `ItemChannelLink` | Add or replace a `ItemChannelLink` between the `Item` and a `Channel`, returning the old `ItemChannelLink` if one existed. |
+| `MyItem.removeChannelLink(ChannelUID channelUid)` | `ItemChannelLink` | Remove a `ItemChannelLink` between the `Item` and a `Channel`, and return the removed `ItemChannelLink`. |
+| `MyItem.removeChannelLink(String channelUid)` | `ItemChannelLink` | Remove a `ItemChannelLink` between the `Item` and a `Channel`, and return the removed `ItemChannelLink`. |
+| `MyItem.removeChannelLinks()` | `int` | Remove all managed links related to the `Item`, and return the number of removed links. |
+
 ### Concurrency Guard
 
 If a rule is explicitly run from another script, rule, a Main UI widget, etc., instead of a trigger, the rule can be started before the current execution has ended.
