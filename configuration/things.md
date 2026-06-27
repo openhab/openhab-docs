@@ -71,17 +71,22 @@ Thing <binding_id>:<type_id>:<thing_id> "Label" @ "Location" [ <parameters> ]
 The first keyword defines whether the entry is a bridge or a thing.
 The next statement defines the UID of the thing which contains of the following three segments: `binding id`, `thing type id`, `thing id`.
 The first two segments must match to a thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined.
-Optionally, you may provide a label in order to recognize it easily, otherwise the default label from the thing type will be displayed.
+Optionally, you may provide a label to recognize it easily, otherwise the default label from the thing type will be displayed.
 
 To help organizing your things, you also may define a location (`Location` in the example above).
 
 Inside the square brackets configuration parameters of the thing are defined.
 The type of the configuration parameter is determined by the binding and must be specified accordingly in the DSL.
 
+It is possible to reference environment variables from textual configuration parameters.
+This allows you to keep sensitive information or environment-specific values out of your configuration files.
+The syntax for referencing an environment variable is `${ENV:VARIABLE_NAME}`.
+The framework automatically resolves these variables when the Thing is initialized.
+
 **Examples:**
 
 ```java
-Thing network:device:webcam "Webcam" @ "Living Room" [ hostname="192.168.0.2", timeout="5000", ... ]
+Thing network:device:webcam "Webcam" @ "Living Room" [ hostname="${ENV:WEBCAM_HOSTNAME}", timeout="5000", ... ]
 Thing astro:moon:home [ geolocation="50.12345,10.98765", interval=300 ]
 Thing ntp:ntp:local [ hostname="de.pool.ntp.org" ]
 ```
