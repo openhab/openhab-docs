@@ -904,6 +904,45 @@ The standard library consists of methods from several different classes, and are
 | `getThingStatusInfo(String thingUid)` | `ThingStatusInfo` | Get the status of a `Thing`. |
 | `getActions(String scope, String thingUid)` | `ThingActions` | Get the `ThingActions` matching the specified `scope` and `thingUid`. |
 
+##### [Channels](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/lib/channels)
+
+| Method | Return type | Description |
+| --- | --- | --- |
+| `Channels.getLinks(String itemName)` | `Set<ItemChannelLink>` | Get the `ItemChannelLink`s that are linked to the specified `Item`. |
+| `Channels.getLinks(Item item)` | `Set<ItemChannelLink>` | Get the `ItemChannelLink`s that are linked to the specified `Item`. |
+| `Channels.getChannelLinks(String channelUid)` | `Set<ItemChannelLink>` | Get the `ItemChannelLink`s that are linked to the specified channel. |
+| `Channels.getChannelLinks(ChannelUID channelUid)` | `Set<ItemChannelLink>` | Get the `ItemChannelLink`s that are linked to the specified channel. |
+| `Channels.getBoundChannels(String itemName)` | `Set<ChannelUID>` | Get the `ChannelUID`s of the channels that are bound to the specified `Item`. |
+| `Channels.getBoundChannels(Item item)` | `Set<ChannelUID>` | Get the `ChannelUID`s of the channels that are bound to the specified `Item`. |
+| `Channels.getBoundThings(String itemName)` | `Set<Thing>` | Get the `Thing`s that are bound to the specified `Item`. |
+| `Channels.getBoundThings(Item item)` | `Set<Thing>` | Get the `Thing`s that  are bound to the specified `Item`. |
+| `Channels.getLinkedItemNames(String channelUid)` | `Set<String>` | Get the names of all the `Item`s that are linked to a specific channel. |
+| `Channels.getLinkedItemNames(ChannelUID channelUid)` | `Set<String>` | Get the names of all the `Item`s that are linked to a specific channel. |
+| `Channels.getLinkedItems(String channelUid)` | `Set<Item>` | Get all `Item`s that are linked to a specific channel. |
+| `Channels.getLinkedItems(ChannelUID channelUid)` | `Set<Item>` | Get all `Item`s that are linked to a specific channel. |
+| `Channels.isLinked(String itemName)` | `boolean` | Check if the specified `Item` has at least one link. |
+| `Channels.isLinked(Item item)` | `boolean` | Check if the specified `Item` has at least one link. |
+| `Channels.isLinked(String itemName, String channelUid)` | `boolean` | Check if the specified `Item` and channel are linked. |
+| `Channels.isLinked(Item item, String channelUid)` | `boolean` | Check if the specified `Item` and channel are linked. |
+| `Channels.isLinked(Item item, ChannelUID channelUid)` | `boolean` | Check if the specified `Item` and channel are linked. |
+| `Channels.isChannelLinked(String channelUid)` | `boolean` | Check if the specified channel has at least one link. |
+| `Channels.isChannelLinked(ChannelUID channelUid)` | `boolean` | Check if the specified channel has at least one link. |
+| `Channels.getLink(Item item, ChannelUID channelUid)` | `ItemChannelLink` | Get an existing `ItemChannelLink` for the specified `Item` and channel. |
+| `Channels.getLink(Item item, String channelUid)` | `ItemChannelLink` | Get an existing `ItemChannelLink` for the specified `Item` and channel. |
+| `Channels.getLink(String itemName, String channelUid)` | `ItemChannelLink` | Get an existing `ItemChannelLink` for the specified `Item` and channel. |
+| `Channels.addItemChannelLink(Item item, String channelUid)` | `ItemChannelLink` | Add a new `ItemChannelLink` between an existing `Item` and a `Channel`, and return the newly created `ItemChannelLink`. |
+| `Channels.addItemChannelLink(Item item, String channelUid, Object... configProperties)` | `ItemChannelLink` | Add a new `ItemChannelLink` between an existing `Item` and a `Channel`, and return the newly created `ItemChannelLink`. |
+| `Channels.addItemChannelLink(Item item, String channelUid, Map<String, Object> configProperties)` | `ItemChannelLink` | Add a new `ItemChannelLink` between an existing `Item` and a `Channel`, and return the newly created `ItemChannelLink`. |
+| `Channels.replaceItemChannelLink(Item item, String channelUid)` | `ItemChannelLink` | Add or replace a `ItemChannelLink` between an existing `Item` and a `Channel`, returning the old `ItemChannelLink` if one existed. |
+| `Channels.replaceItemChannelLink(Item item, String channelUid, Object... configProperties)` | `ItemChannelLink` | Add or replace a `ItemChannelLink` between an existing `Item` and a `Channel`, returning the old `ItemChannelLink` if one existed. |
+| `Channels.replaceItemChannelLink(Item item, String channelUid, Map<String, Object> configProperties)` | `ItemChannelLink` | Add or replace a `ItemChannelLink` between an existing `Item` and a `Channel`, returning the old `ItemChannelLink` if one existed. |
+| `Channels.removeItemChannelLink(Item item, ChannelUID channelUid)` | `ItemChannelLink` | Remove a `ItemChannelLink` between an existing `Item` and a `Channel`, and return the removed `ItemChannelLink`. |
+| `Channels.removeItemChannelLink(Item item, String channelUid)` | `ItemChannelLink` | Remove a `ItemChannelLink` between an existing `Item` and a `Channel`, and return the removed `ItemChannelLink`. |
+| `Channels.removeItemChannelLink(String itemName, String channelUid)` | `ItemChannelLink` | Remove a `ItemChannelLink` between an existing `Item` and a `Channel`, and return the removed `ItemChannelLink`. |
+| `Channels.removeLinksForItem(String itemName)` | `int` | Remove all managed links related to the specified `Item`, and return the number of removed links. |
+| `Channels.removeLinksForItem(Item item)` | `int` | Remove all managed links related to the specified `Item`, and return the number of removed links. |
+| `Channels.removeOrphanedItemChannelLinks()` | `int` | Remove all orphaned (`Item` or `Channel` missing) managed links, and return the number of removed links. |
+
 ### Concurrency Guard
 
 If a rule is explicitly run from another script, rule, a Main UI widget, etc., instead of a trigger, the rule can be started before the current execution has ended.
