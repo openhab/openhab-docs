@@ -4,6 +4,7 @@ label: Home Connect Direct
 title: Home Connect Direct - Bindings
 type: binding
 description: "The Home Connect Direct Binding integrates [Home Connect](https://www.home-connect.com/) enabled devices into openHAB via your local network."
+logo: images/addons/homeconnectdirect.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Home Connect Direct Binding
+
+<AddonLogo />
 
 The Home Connect Direct Binding integrates [Home Connect](https://www.home-connect.com/) enabled devices into openHAB via your local network.
 Unlike the standard Home Connect binding, this implementation communicates directly with your appliances, ensuring reliable, low-latency operation without requiring cloud access.
