@@ -1010,6 +1010,18 @@ Existing Java classes can also be "extended", which means that methods that aren
 | `MyItem.removeChannelLink(String channelUid)` | `ItemChannelLink` | Remove a `ItemChannelLink` between the `Item` and a `Channel`, and return the removed `ItemChannelLink`. |
 | `MyItem.removeChannelLinks()` | `int` | Remove all managed links related to the `Item`, and return the number of removed links. |
 
+##### [RuleExtensions](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/lib/ruleextensions)
+
+| Extension method | Return type | Description |
+| --- | --- | --- |
+| `MyRule.run()` | `Map<String, Object>` | Run the `Rule` and return the results of the execution. |
+| `MyRule.run(boolean considerConditions)` | `Map<String, Object>` | Run the `Rule` and return the results of the execution. |
+| `MyRule.run(Map<String, Object> context)` | `Map<String, Object>` | Run the `Rule` using the specified context, and return the results of the execution. |
+| `MyRule.run(boolean considerConditions, Object... context)` | `Map<String, Object>` | Run the `Rule` using the specified context, and return the results of the execution. |
+| `MyRule.run(boolean considerConditions, Map<String, Object> context)` | `Map<String, Object>` | Run the `Rule` using the specified context, and return the results of the execution. |
+| `MyRule.isEnabled()` | `boolean` | Check whether the `Rule` is enabled. |
+| `MyRule.setEnabled(boolean enabled)` | N/A | Set whether the `Rule` is enabled. |
+
 ### Concurrency Guard
 
 If a rule is explicitly run from another script, rule, a Main UI widget, etc., instead of a trigger, the rule can be started before the current execution has ended.
