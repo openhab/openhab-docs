@@ -17,6 +17,8 @@ Top-level entries in the YAML file must be unique key-value maps with the follow
 - [things](things): openHAB Things and Bridges
 - [items](items): openHAB Items
 - [tags](tags): Custom Semantic Tags
+- [rules](rules): openHAB Rules
+- [ruleTemplates](ruletemplates): openHAB Rule Templates
 - [pages](pages): Main UI Pages
 - [widgets](widgets): Main UI Widgets
 
@@ -79,6 +81,52 @@ items:
     label: Volume # Label must not contain a format pattern
     format: "%d" # Values starting with a percent sign must be quoted
     channel: lgwebos:WebOSTV:3aab9eea-953b-4272-bdbd-f0cd0ecf4a46:volume
+
+rules:
+  basic-rule:
+    label: Basic Rule
+    description: A rule that demonstrates the YAML rule structure without doing anything.
+    conditions:
+      - config:
+          days:
+            - MON
+            - WED
+            - FRI
+        type: DayOfWeek
+    actions:
+      - config:
+          type: DSL
+          script: |-
+            logInfo("BasicRule", "Basic Rule is running")
+        type: Script
+    triggers:
+      - config:
+          cronExpression: 0 2 8/2 * * ? *
+        type: Cron
+
+ruleTemplates:
+  basic-rule-template:
+    label: Basic Rule Template
+    description: A basic rule template with a configurable start level.
+    configDescriptions:
+      startLevel:
+        description: The start level which will trigger the rule.
+        label: Start Level
+        required: true
+        type: INTEGER
+        min: 40
+        max: 100
+        default: 80
+    actions:
+      - config:
+          type: DSL
+          script: |-
+            logInfo("BasicRuleTemplate", "Basic Rule Template is running")
+        type: Script
+    triggers:
+      - config:
+          startlevel: "{{startLevel}}"
+        type: StartLevel
 
 widgets:
   custom-clock-card:
