@@ -90,6 +90,8 @@ module.exports = [
           'configuration/addons',
           'configuration/things',
           'configuration/items',
+          'configuration/rules',
+          'configuration/ruletemplates',
           'configuration/persistence',
           'configuration/rules-dsl',
           'configuration/transformations',
