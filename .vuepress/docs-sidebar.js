@@ -123,6 +123,7 @@ module.exports = [
               ['configuration/yaml/things', 'Things'],
               ['configuration/yaml/items', 'Items'],
               ['configuration/yaml/tags', 'Tags'],
+              ['configuration/yaml/rules', 'Rules'],
               ['configuration/yaml/pages', 'Pages'],
               ['configuration/yaml/widgets', 'Widgets'],
             ]
