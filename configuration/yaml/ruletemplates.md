@@ -1,13 +1,13 @@
 ---
 layout: documentation
-title: YAML Rules
+title: YAML Rule Templates
 ---
 
-# YAML Rules
+# YAML Rule Templates
 
-This page describes the `rules` element for [YAML Configuration](./).
+This page describes the `ruleTemplates` element for [YAML Configuration](./).
 
-## Rules
+## Rule Templates
 
 The `rules` top-level key contains a map of rules, defined by their rule UID.
 
