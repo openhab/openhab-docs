@@ -49,13 +49,12 @@ rules:
           script: |
             puts "Hello world"
 ```
-☑ ☐
 
 | Key           | Required | Description                                                                                                                                                                                                   |
 |:--------------|:--------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `<rule_uid>`  | ☑        | The UID of the rule being defined. The UID can be anything as long as it doesn't start or end with whitespace, and doesn't contain `/` or `.                                                                  |
 | `template`    | ☐        | Contains the UID of the rule template if the rule is linked to one.                                                                                                                                           |
-| `label`       | ☑        | The rule name/label.                                                                                                                                                                                               |
+| `label`       | ☑        | The rule name/label.                                                                                                                                                                                          |
 | `description` | ☐        | The rule description.                                                                                                                                                                                         |
 | `tags`        | ☐        | A list of tags to associate with the rule.                                                                                                                                                                    |
 | `visibility`  | ☐        | Determines if the rule will be displayed in the UI. Rarely used, defaults to `VISIBLE`.                                                                                                                       |
@@ -96,9 +95,6 @@ The standard trigger types have been given simplified aliases for convenience, b
 | `ThingChanged`          | `core.ThingStatusChangeTrigger` | A [thing trigger](../../concepts/rules.md#thing-triggers), which triggers on status changes for a thing.                                                                                        |
 | `ThingUpdated`          | `core.ThingStatusUpdateTrigger` | A [thing trigger](../../concepts/rules.md#thing-triggers), which triggers on status updates for a thing.                                                                                        |
 | `TimeOfDay`             | `timer.TimeOfDayTrigger`        | A [time trigger](../../concepts/rules.md#time-triggers), which triggers on the time if day.                                                   |
-
-
-
 
 ### Example
 
