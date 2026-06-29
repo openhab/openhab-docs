@@ -90,8 +90,6 @@ module.exports = [
           'configuration/addons',
           'configuration/things',
           'configuration/items',
-          'configuration/rules',
-          'configuration/ruletemplates',
           'configuration/persistence',
           'configuration/rules-dsl',
           'configuration/transformations',
@@ -118,6 +116,8 @@ module.exports = [
               ['configuration/yaml/things', 'Things'],
               ['configuration/yaml/items', 'Items'],
               ['configuration/yaml/tags', 'Tags'],
+              ['configuration/yaml/rules', 'Rules'],
+              ['configuration/yaml/ruletemplates', 'Rule Templates'],
               ['configuration/yaml/pages', 'Pages'],
               ['configuration/yaml/widgets', 'Widgets'],
             ]
