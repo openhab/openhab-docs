@@ -94,7 +94,7 @@ The standard trigger types have been given simplified aliases for convenience, b
 | `StartLevel`            | `core.SystemStartlevelTrigger`  | A [system trigger](../../concepts/rules.md#system-triggers), which triggers specific start levels during openHAB startup.                                                                       |
 | `ThingChanged`          | `core.ThingStatusChangeTrigger` | A [thing trigger](../../concepts/rules.md#thing-triggers), which triggers on status changes for a thing.                                                                                        |
 | `ThingUpdated`          | `core.ThingStatusUpdateTrigger` | A [thing trigger](../../concepts/rules.md#thing-triggers), which triggers on status updates for a thing.                                                                                        |
-| `TimeOfDay`             | `timer.TimeOfDayTrigger`        | A [time trigger](../../concepts/rules.md#time-triggers), which triggers based on time of day.                                                   |
+| `TimeOfDay`             | `timer.TimeOfDayTrigger`        | A [time trigger](../../concepts/rules.md#time-triggers), which triggers based on time of day.                                                                                                   |
 
 ### Conditions Section
 
@@ -107,6 +107,25 @@ The standard trigger types have been given simplified aliases for convenience, b
 | `config`      | ▧        | A key-value map of the condition's configuration. See the condition type documentation for which keys exist, are mandatory, and what their values should be.                                   |
 | `inputs`      | ☐        | **Advanced**: A key-value map for controlling mapping of inputs from other modules. Inputs are automatically mapped if not mapped explicitly.                                                  |
 
+#### Condition Types
+
+OpenHAB can be extended in various ways, so other condition types than those listed here can be valid in a particular installation.
+Here is a list of standard condition types that exist in any installation.
+The standard condition types have been given simplified aliases for convenience, but can also be used with their "full ID".
+
+| Alias         | ID                              | Description                                                                                                            |
+|:--------------|:--------------------------------|:-----------------------------------------------------------------------------------------------------------------------|
+| `DayOfWeek`   | `timer.DayOfWeekCondition`      | A condition that will only allow the rule to run on specific days of the week.                                         |
+| `Dayset`      | `ephemeris.DaysetCondition`     | A condition that will only allow the rule to run on days in a specified set.                                           |
+| `Holiday`     | `ephemeris.HolidayCondition`    | A condition that will only allow the rule to run on holidays.                                                          |
+| `Interval`    | `timer.IntervalCondition`       | A condition that will only allow the rule to run inside a specified time interval.                                     |
+| `ItemState`   | `core.ItemStateCondition`       | A condition that will only allow the rule to run if a specific Item has a specific state.                              |
+| `NotHoliday`  | `ephemeris.NotHolidayCondition` | A condition that will only allow the rule to run on non-holidays.                                                      |
+| `Script`      | `script.ScriptCondition`        | A scripted condition written in any supported scripting language, which can evaluate the condition using custom logic. |
+| `ThingStatus` | `core.ThingStatusCondition`     | A condition that will only allow the rule to run if a specific Thing has a specific status.                            |
+| `TimeOfDay`   | `core.TimeOfDayCondition`       | A condition that will only allow the rule to run within a specified time window.                                       |
+| `Weekday`     | `ephemeris.WeekdayCondition`    | A condition that will only allow the rule to run on weekdays.                                                          |
+| `Weekend`     | `ephemeris.WeekendCondition`    | A condition that will only allow the rule to run on weekends.                                                          |
 
 ### Example
 
