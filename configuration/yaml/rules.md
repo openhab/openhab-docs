@@ -154,6 +154,25 @@ The standard action types have been given simplified aliases for convenience, bu
 | `Say`         | `media.SayAction`            | An action that uses voice to say something.                                                                                                     |
 | `Script`      | `script.ScriptAction`        | An action written in any supported scripting language and does whatever the script dictates. This is probably the most widely used action type. |
 
+#### Script Types
+
+For scripted conditions and actions, there's an additional `type` parameter that must be specified under `config`, to identify the scripting language to use.
+The identifiers used is based on [MIME-types](https://en.wikipedia.org/wiki/Media_type), but doesn't really adhere to any standard.
+It's up to each scripting add-on to pick a code, and the resulting codes reflect that.
+To make these easier to use and remember, the `type` field in a scripting module's `config` section supports aliases for the most commonly used type.
+Either the alias or the full type code will work.
+Other scripting languages can be specified, but the full type code must be used.
+
+| Alias        | Type Code                                       | Description                                                                                               |
+|:-------------|:------------------------------------------------|:----------------------------------------------------------------------------------------------------------|
+| `DSL`        | `application/vnd.openhab.dsl.rule`              | Rules DSL, openHAB's own scripting language.                                                              |
+| `Groovy`     | `application/x-groovy`                          | [Groovy](https://en.wikipedia.org/wiki/Apache_Groovy) scripting.                                          |
+| `JavaScript` | `application/javascript`                        | JavaScript scripting using [GraalJS](https://en.wikipedia.org/wiki/GraalVM#Language_and_runtime_support). |
+| `Python`     | `application/python`                            | Python 3 scripting using [GraalPy](https://en.wikipedia.org/wiki/GraalVM#Language_and_runtime_support).   |
+| `Jython`     | `application/x-python2`                         | Python 2 scripting using [Jython](https://en.wikipedia.org/wiki/Jython).                                  |
+| `Ruby`       | `application/x-ruby`                            | Ruby scripting using [JRuby](https://en.wikipedia.org/wiki/JRuby).                                        |
+| `NashornJS`  | `application/javascript;version=ECMAScript-5.1` | JavaScript scripting using [Nashorn](https://en.wikipedia.org/wiki/Nashorn_(JavaScript_engine)).          |
+
 ### Example
 
 ```yaml
