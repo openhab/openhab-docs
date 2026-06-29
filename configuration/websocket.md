@@ -247,7 +247,7 @@ Control messages use a JSON structure with a `cmd` field and an optional `args` 
     - `forceSampleRate`: (Number, optional) Request a specific sample rate.
     - `startDialog`: (Boolean, optional) Whether to start a voice dialog immediately.
     - `listeningItem`: (String, optional) Name of a `Switch` item to reflect the listening state.
-    - `locationItem`: (String, optional) Name of a `String` item representing the location.
+    - `locationItem`: (String, optional) Name of a semantic model location item defining the location of the voice satellite.
 - **`ON_SPOT`**: Sent by the client to signal an "on spot" event (e.g., a physical button press to start listening).
 
 #### Server to Client Commands
