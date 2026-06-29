@@ -127,6 +127,33 @@ The standard condition types have been given simplified aliases for convenience,
 | `Weekday`     | `ephemeris.WeekdayCondition`    | A condition that will only allow the rule to run on weekdays.                                                          |
 | `Weekend`     | `ephemeris.WeekendCondition`    | A condition that will only allow the rule to run on weekends.                                                          |
 
+### Actions Section
+
+| Key           | Required | Description                                                                                                                                                                                    |
+|:--------------|:--------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`          | ☐        | The module ID. It must be unique within the rule, across triggers, conditions and actions (modules). Will be generated if not specified.                                                       |
+| `label`       | ☐        | The action label.                                                                                                                                                                           |
+| `description` | ☐        | The action description.                                                                                                                                                                     |
+| `type`        | ☑        | The action type, which must be a valid/existing action type. This is what decides how the action works, what mechanism is in use, and which configuration properties must be present. |
+| `config`      | ▧        | A key-value map of the action's configuration. See the action type documentation for which keys exist, are mandatory, and what their values should be.                                   |
+| `inputs`      | ☐        | **Advanced**: A key-value map for controlling mapping of inputs from other modules. Inputs are automatically mapped if not mapped explicitly.                                                  |
+
+#### Action Types
+
+OpenHAB can be extended in various ways, so other action types than those listed here can be valid in a particular installation.
+Here is a list of standard action types that exist in any installation.
+The standard action types have been given simplified aliases for convenience, but can also be used with their "full ID".
+
+| Alias         | ID                           | Description                                                                                                                                     |
+|:--------------|:-----------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
+| `EnableRule`  | `core.RuleEnablementAction`  | An action that enables or disables rules.                                                                                                       |
+| `SendCommand` | `core.ItemCommandAction`     | An action that sends a command to an Item.                                                                                                      |
+| `PostUpdate`  | `core.ItemStateUpdateAction` | An action that updates an Item state.                                                                                                           |
+| `Play`        | `media.PlayAction`           | An action that plays a media file.                                                                                                              |
+| `RunRule`     | `core.RunRuleAction`         | An action that runs another rule and returns the resulting data.                                                                                |
+| `Say`         | `media.SayAction`            | An action that uses voice to say something.                                                                                                     |
+| `Script`      | `script.ScriptAction`        | An action written in any supported scripting language and does whatever the script dictates. This is probably the most widely used action type. |
+
 ### Example
 
 ```yaml
