@@ -79,6 +79,18 @@ OpenHAB can be extended in various ways, so other trigger types than those liste
 Here is a list of standard trigger types that exist in any installation.
 The standard trigger types have been given simplified aliases for convenience, but can also be used with their "full ID".
 
+| Alias         | ID                              | Description                                                                                      |
+|---------------|---------------------------------|--------------------------------------------------------------------------------------------------|
+| **Time-Based Triggers**                                                   |
+| `Cron`        | `timer.GenericCronTrigger`      | A [time trigger](../../concepts/rules.md#time-triggers), which triggers at specific times, defined by a [Cron expression](https://www.freeformatter.com/cron-expression-generator-quartz.html). |
+| `DateTime`    | `timer.DateTimeTrigger`         | A [time trigger](../../concepts/rules.md#time-triggers), which triggers on a `DateTimeType` state of an Item. |
+| **System Triggers**                                                       |
+| `StartLevel`  | `core.SystemStartlevelTrigger`  | A [system trigger](../../concepts/rules.md#system-triggers), which triggers specific start levels during openHAB startup. |
+| **Item Triggers**                                                         |
+| `ItemReceivedCommand` | `core.ItemCommandTrigger`       | An [item trigger](../../concepts/rules.md#items-triggers), which triggers on received commands for an item. |
+| `ItemChanged`   | `core.ItemStateChangeTrigger`   | An [item trigger](../../concepts/rules.md#items-triggers), which triggers on state changes for an item. |
+| `ItemUpdated`   | `core.ItemStateUpdateTrigger`   | An [item trigger](../../concepts/rules.md#items-triggers), which triggers on state updates for an item. |
+
 | Alias                   | ID                              | Description                                                                                                                                                                                     |
 |:------------------------|:--------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `ChannelEvent`          | `core.ChannelEventTrigger`      | A [channel event trigger](../../concepts/rules.md#channel-triggers), which triggers on specific events from trigger channels.                                                                   |
@@ -135,6 +147,18 @@ The standard condition types have been given simplified aliases for convenience,
 | `Weekday`     | `ephemeris.WeekdayCondition`    | A condition that will only allow the rule to run on weekdays.                                                          |
 | `Weekend`     | `ephemeris.WeekendCondition`    | A condition that will only allow the rule to run on weekends.                                                          |
 
+| Alias         | ID                              | Description                                                                                      |
+|---------------|---------------------------------|--------------------------------------------------------------------------------------------------|
+| **Time-Based Conditions**                                                 |
+| `DayOfWeek`   | `timer.DayOfWeekCondition`      | A condition that will only allow the rule to run on specific days of the week.                     |
+| `Dayset`      | `ephemeris.DaysetCondition`     | A condition that will only allow the rule to run on days in a specified set.                       |
+| `Holiday`     | `ephemeris.HolidayCondition`    | A condition that will only allow the rule to run on holidays.                                      |
+| **Item Conditions**                                                       |
+| `ItemState`   | `core.ItemStateCondition`       | A condition that will only allow the rule to run if a specific Item has a specific state.          |
+| **Other Conditions**                                                      |
+| `Script`      | `script.ScriptCondition`        | A scripted condition written in any supported scripting language, which can evaluate the condition using custom logic. |
+| `ThingStatus` | `core.ThingStatusCondition`     | A condition that will only allow the rule to run if a specific Thing has a specific status.       |
+
 ### Actions Section
 
 | Key           | Required | Description                                                                                                                                                                                    |
@@ -160,6 +184,19 @@ The standard action types have been given simplified aliases for convenience, bu
 | `Play`        | `media.PlayAction`           | An action that plays a media file.                                                                                                              |
 | `RunRule`     | `core.RunRuleAction`         | An action that runs another rule and returns the resulting data.                                                                                |
 | `Say`         | `media.SayAction`            | An action that uses voice to say something.                                                                                                     |
+| `Script`      | `script.ScriptAction`        | An action written in any supported scripting language and does whatever the script dictates. This is probably the most widely used action type. |
+
+| Alias         | ID                           | Description                                                                                       |
+|---------------|------------------------------|---------------------------------------------------------------------------------------------------|
+| **Item Actions**                                                           |
+| `SendCommand` | `core.ItemCommandAction`     | An action that sends a command to an Item.                                                        |
+| `PostUpdate`  | `core.ItemStateUpdateAction` | An action that updates an Item state.                                                             |
+| **Media Actions**                                                          |
+| `Play`        | `media.PlayAction`           | An action that plays a media file.                                                                |
+| `Say`         | `media.SayAction`            | An action that uses voice to say something.                                                       |
+| **Rule Actions**                                                           |
+| `RunRule`     | `core.RunRuleAction`         | An action that runs another rule and returns the resulting data.                                  |
+| **Script Actions**                                                         |
 | `Script`      | `script.ScriptAction`        | An action written in any supported scripting language and does whatever the script dictates. This is probably the most widely used action type. |
 
 #### Script Types
