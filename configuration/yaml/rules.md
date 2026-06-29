@@ -96,6 +96,14 @@ The standard trigger types have been given simplified aliases for convenience, b
 | `ThingUpdated`          | `core.ThingStatusUpdateTrigger` | A [thing trigger](../../concepts/rules.md#thing-triggers), which triggers on status updates for a thing.                                                                                        |
 | `TimeOfDay`             | `timer.TimeOfDayTrigger`        | A [time trigger](../../concepts/rules.md#time-triggers), which triggers based on time of day.                                                                                                   |
 
+| Alias         | ID                              | Description                                                                                      |
+|---------------|---------------------------------|--------------------------------------------------------------------------------------------------|
+| **Time-Based Triggers**                                                  |
+| `Cron`        | `timer.GenericCronTrigger`      | A trigger that fires at specific times, defined by a Cron expression.                                 |
+| `DateTime`    | `timer.DateTimeTrigger`         | A trigger that fires based on the current date and time.                                            |
+| **Channel-Based Triggers**                                              |
+| `ChannelEvent` | `core.ChannelEventTrigger`      | A trigger that fires when an event is received from a channel.                                      |
+
 ### Conditions Section
 
 | Key           | Required | Description                                                                                                                                                                                    |
