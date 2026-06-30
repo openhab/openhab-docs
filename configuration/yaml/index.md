@@ -86,6 +86,10 @@ rules:
   basic-rule:
     label: Basic Rule
     description: A rule that demonstrates the YAML rule structure without doing anything.
+    triggers:
+      - config:
+          cronExpression: 0 2 8/2 * * ? *
+        type: Cron
     conditions:
       - config:
           days:
@@ -99,10 +103,6 @@ rules:
           script: |-
             logInfo("BasicRule", "Basic Rule is running")
         type: Script
-    triggers:
-      - config:
-          cronExpression: 0 2 8/2 * * ? *
-        type: Cron
 
 ruleTemplates:
   basic-rule-template:
@@ -117,16 +117,16 @@ ruleTemplates:
         min: 40
         max: 100
         default: 80
+    triggers:
+      - config:
+          startlevel: "{{startLevel}}"
+        type: StartLevel
     actions:
       - config:
           type: DSL
           script: |-
             logInfo("BasicRuleTemplate", "Basic Rule Template is running")
         type: Script
-    triggers:
-      - config:
-          startlevel: "{{startLevel}}"
-        type: StartLevel
 
 widgets:
   custom-clock-card:
