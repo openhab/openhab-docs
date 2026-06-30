@@ -180,16 +180,63 @@ Other scripting languages can be specified, but the full type code must be used.
 version: 1
 
 rules:
-  my_custom_rule:
+  lights-on:
     label: "Turn on light at sunset"
     description: "This rule turns on the living room light when the sun sets."
     triggers:
-      - type: TimeOfDay
+      - type: ChannelEvent
+        label: Sunset
         config:
-          time: sunset
+          event: START
+          channelUID: astro:sun:local:set#event
     actions:
       - type: SendCommand
         config:
           item: LivingRoomLight
           command: ON
+  welcome-rule:
+    label: Welcome Rule
+    description: Welcomes daytime visitors if the house is heated. 
+    tags:
+      - Welcome
+      - Daytime
+    triggers:
+      - id: startlevel
+        label: Start Level Trigger
+        description: This trigger triggers at start level 80.
+        type: StartLevel
+        config:
+          startlevel: 80
+      - label: Regular Trigger
+        description: Triggers at every 30 minutes starting at minute :15, every hour between 08 and 20, of every day.
+        type: Cron
+        config:
+          cronExpression: 0 15/30 8-20 ? * * *
+    conditions:
+      - id: weekday
+        type: Weekday
+      - type: TimeOfDay
+        label: Daytime
+        config:
+          startTime: 08:00
+          endTime: 20:00
+      - type: ItemState
+        label: Heating Power Sufficient
+        config:
+          itemName: CurrentPower
+          operator: ">"
+          state: "50"
+    actions:
+      - label: Print
+        description: Gives a warm welcome.
+        config:
+          type: Ruby
+          script: |
+            puts "Hello and welcome to a heated house"
+        type: Script
+      - config:
+          volume: 80
+          sink: enhancedjavasound
+          text: Welcome
+        type: Say
 ```
