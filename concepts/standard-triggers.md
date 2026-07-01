@@ -24,9 +24,9 @@ This triggers when the system time matches the time or date and time of the spec
 
 | Parameter  | Description                                                                  |
 |------------|------------------------------------------------------------------------------|
-| `itemName` | The name of the `DateTimeType` `Item`.                                                      |
+| `itemName` | The name of the `DateTimeType` `Item`.                                       |
 | `timeOnly` | Whether only the time of the `Item` should be compared or the date and time. |
-| `offset`   | The offset in seconds to add to the time of the `Item` state.                |
+| `offset`   | The offset in seconds to add to the time of the `Item` state (optional).     |
 
 ### `timer.GenericCronTrigger`
 
@@ -43,6 +43,42 @@ This triggers every day at a specified time of day.
 | Parameter | Description                 |
 |-----------|-----------------------------|
 | `time`    | The time in "hh:mm" format. |
+
+### `core.ItemCommandTrigger`
+
+This triggers when the specified `Item` receives a `Command`.
+
+| Parameter  | Description               |
+|------------|---------------------------|
+| `itemName` | The name of the `Item`.   |
+| `command`  | The `Command` (optional). |
+
+### `core.ItemStateUpdateTrigger`
+
+This triggers when the specified `Item`'s `State` is updated, even if the new value is equal to the old value.
+
+| Parameter  | Description             |
+|------------|-------------------------|
+| `itemName` | The name of the `Item`. |
+| `state`    | The `State` (optional). |
+
+### `core.ItemStateChangeTrigger`
+
+This triggers when the specified `Item`'s `State` is changed.
+
+| Parameter       | Description                      |
+|-----------------|----------------------------------|
+| `itemName`      | The name of the `Item`.          |
+| `previousState` | The previous `State` (optional). |
+| `state`         | The `State` (optional).          |
+
+### `core.GroupCommandTrigger`
+
+| Parameter   | Description                  |
+|-------------|------------------------------|
+| `groupName` | The name of the `GroupItem`. |
+| `command`   | The `Command` (optional)     |
+
 
 ### core.ItemEventTrigger
 
