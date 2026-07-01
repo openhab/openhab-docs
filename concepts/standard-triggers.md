@@ -5,36 +5,59 @@ title: Standard Triggers
 
 # Standard Triggers
 
-OpenHAB comes with a set of standard triggers. This is a short presentation of the triggers and their configuration.
+OpenHAB comes with a set of standard triggers.
+This is a short presentation of these triggers and their configuration.
+Standard triggers in openHAB are built-in mechanisms that initiate rule execution based on specific events or conditions.
+They provide a way to automate actions without the need for custom scripting, making them accessible and easy to use.
 
-## Overview of Standard Triggers
+## Trigger structure
 
-Standard triggers in openHAB are built-in mechanisms that initiate rule execution based on specific events or conditions. They provide a way to automate actions without the need for custom scripting, making them accessible and easy to use.
+The standard triggers are fundamentally Java classes that implements the required logic to make them do what they should.
+We identify these triggers using a code that is often called the trigger type.
+These codes are used as titles for the sections below.
+To tell the trigger implementation what to react to, triggers can have configuration parameters with predefined names.
+These configuration parameters and a brief description of what values they expect, are listed in the below sections.
 
-### TriggerType Objects
+### `timer.DateTimeTrigger`
 
-The following trigger types are defined by openHAB (custom triggers can also be defined) and take the specified parameters in the constructor of [`org.openhab.core.config.core.Configuration`](https://www.openhab.org/javadoc/latest/org/openhab/core/config/core/configuration). The configuration can be passed to `TriggerBuilder.withConfiguration()`. All parameters are Strings. Read the JSR223 language-specific documentation for examples of using these `TriggerType` objects .
+This triggers when the system time matches the time or date and time of the specified `DateTimeType` `Item`.
 
-#### timer.DateTimeTrigger
+| Parameter  | Description                                                                  |
+|------------|------------------------------------------------------------------------------|
+| `itemName` | The name of the `DateTimeType` `Item`.                                                      |
+| `timeOnly` | Whether only the time of the `Item` should be compared or the date and time. |
+| `offset`   | The offset in seconds to add to the time of the `Item` state.                |
 
-| Parameter  | Description                                                               |
-|------------|---------------------------------------------------------------------------|
-| `itemName` | The name of the `Item`                                                    |
+### `timer.GenericCronTrigger`
 
-#### core.ItemEventTrigger
+This triggers when the system time matches the specified [Cron expression](https://en.wikipedia.org/wiki/Cron).
+
+| Parameter        | Description          |
+|------------------|----------------------|
+| `cronExpression` | The cron expression. |
+
+### `timer.TimeOfDayTrigger`
+
+This triggers every day at a specified time of day.
+
+| Parameter | Description                 |
+|-----------|-----------------------------|
+| `time`    | The time in "hh:mm" format. |
+
+### core.ItemEventTrigger
 
 | Parameter  | Description                                                                           |
 |------------|---------------------------------------------------------------------------------------|
 | `eventName`| The event to listen for, such as `ITEM_STATE_CHANGED`, `ITEM_COMMAND_RECEIVED`, etc.  |
 
-#### core.ChannelEventTrigger
+### core.ChannelEventTrigger
 
 | Parameter  | Description                                                               |
 |------------|---------------------------------------------------------------------------|
 | `channelUID`| The UID of the channel to listen to events from.                         |
 | `eventTopic`| The topic of the event to listen for.                                    |
 
-#### core.ThingStatusChangeTrigger
+### core.ThingStatusChangeTrigger
 
 | Parameter  | Description                                                              |
 |------------|--------------------------------------------------------------------------|
@@ -42,7 +65,7 @@ The following trigger types are defined by openHAB (custom triggers can also be 
 | `statusFrom` | The previous status that the thing must have been in (optional).       |
 | `statusTo`   | The new status that the thing must change to (optional).               |
 
-#### core.SystemEventTrigger
+### core.SystemEventTrigger
 
 | Parameter  | Description                                                               |
 |------------|---------------------------------------------------------------------------|
