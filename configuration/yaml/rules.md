@@ -68,7 +68,7 @@ rules:
 
 | Key           | Required | Description                                                                                                                                                                              |
 |:--------------|:--------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`          | ☐        | The trigger ID. It must be unique within the rule, across triggers, conditions and actions (modules). Will be generated if not specified.                                                 |
+| `id`          | ☐        | The trigger ID. It must be unique within the rule, across triggers, conditions and actions (modules). Will be generated if not specified.                                                |
 | `label`       | ☐        | The trigger label.                                                                                                                                                                       |
 | `description` | ☐        | The trigger description.                                                                                                                                                                 |
 | `type`        | ☑        | The trigger type, which must be a valid/existing trigger type. This is what decides how the trigger works, what mechanism is in use, and which configuration properties must be present. |
@@ -133,10 +133,10 @@ The standard condition types have been given simplified aliases for convenience,
 | Key           | Required | Description                                                                                                                                                                                    |
 |:--------------|:--------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `id`          | ☐        | The action ID. It must be unique within the rule, across triggers, conditions and actions (modules). Will be generated if not specified.                                                       |
-| `label`       | ☐        | The action label.                                                                                                                                                                           |
-| `description` | ☐        | The action description.                                                                                                                                                                     |
-| `type`        | ☑        | The action type, which must be a valid/existing action type. This is what decides how the action works, what mechanism is in use, and which configuration properties must be present. |
-| `config`      | ▧        | A key-value map of the action's configuration. See the action type documentation for which keys exist, are mandatory, and what their values should be.                                   |
+| `label`       | ☐        | The action label.                                                                                                                                                                              |
+| `description` | ☐        | The action description.                                                                                                                                                                        |
+| `type`        | ☑        | The action type, which must be a valid/existing action type. This is what decides how the action works, what mechanism is in use, and which configuration properties must be present.          |
+| `config`      | ▧        | A key-value map of the action's configuration. See the action type documentation for which keys exist, are mandatory, and what their values should be.                                         |
 | `inputs`      | ☐        | **Advanced**: A key-value map for controlling mapping of inputs from other modules. Inputs are automatically mapped if not mapped explicitly.                                                  |
 
 #### Action Types
