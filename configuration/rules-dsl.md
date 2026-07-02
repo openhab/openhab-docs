@@ -54,7 +54,6 @@ Check out the editors page for more information and additional editor possibilit
 
 ::: tip Note
 The rule syntax is based on [Xbase](https://eclipse.dev/Xtext/documentation/305_xbase.html#xbase-language-ref-introduction) and as a result it is sharing many details with [Xtend](https://eclipse.dev/Xtext/xtend/documentation/), which is built on top of Xbase as well.
-As a result, we will often point to the Xtend documentation for details.
 :::
 
 A rule file is a text file with the following structure:
