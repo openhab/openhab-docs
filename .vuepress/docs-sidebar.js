@@ -124,6 +124,7 @@ module.exports = [
               ['configuration/yaml/items', 'Items'],
               ['configuration/yaml/tags', 'Tags'],
               ['configuration/yaml/rules', 'Rules'],
+              ['configuration/yaml/ruletemplates', 'Rule Templates'],
               ['configuration/yaml/pages', 'Pages'],
               ['configuration/yaml/widgets', 'Widgets'],
             ]
