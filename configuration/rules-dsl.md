@@ -1,9 +1,9 @@
 ---
 layout: documentation
-title: Textual Rules
+title: Rules DSL
 ---
 
-# Textual Rules
+# Rules DSL
 
 "Rules" are used for automating processes: Each rule can be triggered, which invokes a script that performs any kinds of tasks, e.g. turn on lights by modifying your items, do mathematical calculations, start timers etcetera.
 
@@ -777,7 +777,7 @@ MyItem will automatically apply the method that corresponds to the argument type
 Besides the implicitly available variables for items and commands/states, rules can have additional pre-defined variables, depending on their triggers:
 
 | Variable              | Description                                                                                                                                                                                          |
-| :-------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:----------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `receivedCommand`     | implicitly available in every rule that has at least one command event trigger.                                                                                                                      |
 | `previousState`       | implicitly available in every rule that has at least one status change event trigger.                                                                                                                |
 | `newState`            | implicitly available in every rule that has at least one status update or status change event trigger.                                                                                               |
@@ -810,12 +810,229 @@ Heating.sendCommand(ON)
 
 Caveat: Please note the semicolon after the return statement which terminates the command without an additional argument.
 
+### Convenience Functionality
+
+While almost anything that is possible to do within openHAB is possible to do by calling the available Java APIs, it can require a significant effort to read Java interfaces and documentation to figure out how to do it all.
+Some classes and methods, that are considered "frequently needed", are therefore provided in a way that aims to simply their use.
+This includes implicit imports, which can be used without explicit import statements.
+
+#### Implicit Imports
+
+The following imports are implicit and can be used directly:
+
+```java
+import static org.openhab.core.model.script.actions.BusEvent.*;
+import static org.openhab.core.model.script.actions.Exec.*;
+import static org.openhab.core.model.script.actions.HTTP.*;
+import static org.openhab.core.model.script.actions.Log.*;
+import static org.openhab.core.model.script.actions.Ping.*;
+import static org.openhab.core.model.script.actions.Transformation.*;
+import static org.openhab.core.model.script.actions.ScriptExecution.*;
+import static org.openhab.core.model.script.ScriptServiceUtil.*;
+import static java.net.URLEncoder.*;
+import static org.openhab.core.model.script.actions.CoreUtil.*;
+import static org.openhab.core.library.unit.ImperialUnits.*;
+import static org.openhab.core.library.unit.MetricPrefix.*;
+import static org.openhab.core.library.unit.SIUnits.*;
+import static org.openhab.core.library.unit.Units.*;
+import static org.openhab.core.library.unit.BinaryPrefix.*;
+import static java.time.temporal.ChronoUnit.*;
+import static java.time.DayOfWeek.*;
+import static java.time.Duration.*;
+import static java.time.Month.*;
+import static java.time.ZoneId.*;
+import static java.time.ZonedDateTime.*;
+
+import org.openhab.core.library.unit.*;
+import org.openhab.core.library.types.*;
+import org.openhab.core.library.items.*;
+import org.openhab.core.types.TimeSeries;
+import org.openhab.core.items.*;
+import org.openhab.core.things.*;
+import org.openhab.core.thing.link.ItemChannelLink;
+import org.openhab.core.thing.link.ItemChannelLinkRegistry;
+import org.openhab.core.persistence.*;
+import org.openhab.core.persistence.extensions.PersistenceExtensions.RiemannType;
+import org.openhab.core.model.script.actions.*;
+import java.time.*;
+import java.time.format.*;
+import java.time.temporal.*;
+import java.util.regex.*;
+import java.util.Locale;
+import java.util.TimeZone;
+import javax.measure.quantity.*;
+import org.openhab.core.model.script.lib.Channels;
+import org.openhab.core.model.script.lib.Items;
+import org.openhab.core.model.script.lib.Rules;
+```
+
+In addition, all registered `org.openhab.core.model.script.engine.action.ActionService` implementations are statically imported with wildcards (`.*`).
+
+#### Standard Library
+
+The standard library consists of methods from several different classes, and are presented here per class.
+Only the methods deemed most relevant are listed, to get all the details, consult the Javadoc links.
+
+##### [ScriptServiceUtil](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/scriptserviceutil)
+
+| Method                         | Return type               | Description                                                                                                                                      |
+|--------------------------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| `getItemRegistry()`            | `ItemRegistry`            | Get the `Item` registry.                                                                                                                         |
+| `getThingRegistry()`           | `ThingRegistry`           | Get the `Thing` registry.                                                                                                                        |
+| `getEventPublisher()`          | `EventPublisher`          | Get the `Event` publisher.                                                                                                                       |
+| `getModelRepository()`         | `ModelRepository`         | Get the `ModelRepository`.                                                                                                                       |
+| `getMetadataRegistry()`        | `MetadataRegistry`        | Get the `Metadata` registry.                                                                                                                     |
+| `getRuleRegistry()`            | `RuleRegistry`            | Get the `Rule` registry.                                                                                                                         |
+| `getItemChannelLinkRegistry()` | `ItemChannelLinkRegistry` | Get the `ItemChannelLink` registry.                                                                                                              |
+| `getTimeZone()`                | `TimeZone`                | Get the openHAB configured `TimeZone`.                                                                                                           |
+| `getZoneId()`                  | `ZoneId`                  | Get the openHAB configured `ZoneId`.                                                                                                             |
+| `getTimeZoneProvider()`        | `TimeZoneProvider`        | Get the `TimeZoneProvider` instance.                                                                                                             |
+| `getLocale()`                  | `Locale`                  | Get the openHAB configured `Locale`.                                                                                                             |
+| `getLocaleProvider()`          | `LocaleProvider`          | Get the `LocaleProvider` instance.                                                                                                               |
+| `getRuleManager()`             | `RuleManager`             | Get the `RuleManager` instance, also known as the "rule engine" or `RuleEngine`.                                                                 |
+| `getScheduler()`               | `Scheduler`               | Get the `Scheduler` instance.                                                                                                                    |
+| `getScriptEngine()`            | `ScriptEngine`            | Get the `ScriptEngine` instance.                                                                                                                 |
+| `getActionServices()`          | `List<ActionService>`     | Get the list of currently registered `ActionService` instances.                                                                                  |
+| `getThingActions()`            | `List<ThingActions>`      | Get the list of currently registered `ThingActions` instances.                                                                                   |
+| `getInstance(Class<T> clazz)`  | `T`                       | Get an instance of any registered OSGi service, or `null` if it doesn't exist. The returned type has the type specified in the `clazz` argument. |
+
+##### [Ping](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/ping)
+
+| Method                                              | Return type | Description                                                                                                                                                                                                     |
+|-----------------------------------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `checkVitality(String host, int port, int timeout)` | `boolean`   | Check the vitality of `host`. If `port` is `0`, a regular ICMP ping is issued. If any other port is specified, a socket will be attempted to be opened using this port. `timeout` is specified in milliseconds. |
+
+##### [Things](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/things)
+
+| Method                                      | Return type       | Description                                                           |
+|---------------------------------------------|-------------------|-----------------------------------------------------------------------|
+| `getThingStatusInfo(String thingUid)`       | `ThingStatusInfo` | Get the status of a `Thing`.                                          |
+| `getActions(String scope, String thingUid)` | `ThingActions`    | Get the `ThingActions` matching the specified `scope` and `thingUid`. |
+
+##### [Channels](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/lib/channels)
+
+| Method                                                                                                | Return type            | Description                                                                                                                        |
+|-------------------------------------------------------------------------------------------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `Channels.getLinks(String itemName)`                                                                  | `Set<ItemChannelLink>` | Get the `ItemChannelLink`s that are linked to the specified `Item`.                                                                |
+| `Channels.getLinks(Item item)`                                                                        | `Set<ItemChannelLink>` | Get the `ItemChannelLink`s that are linked to the specified `Item`.                                                                |
+| `Channels.getChannelLinks(String channelUid)`                                                         | `Set<ItemChannelLink>` | Get the `ItemChannelLink`s that are linked to the specified channel.                                                               |
+| `Channels.getChannelLinks(ChannelUID channelUid)`                                                     | `Set<ItemChannelLink>` | Get the `ItemChannelLink`s that are linked to the specified channel.                                                               |
+| `Channels.getBoundChannels(String itemName)`                                                          | `Set<ChannelUID>`      | Get the `ChannelUID`s of the channels that are bound to the specified `Item`.                                                      |
+| `Channels.getBoundChannels(Item item)`                                                                | `Set<ChannelUID>`      | Get the `ChannelUID`s of the channels that are bound to the specified `Item`.                                                      |
+| `Channels.getBoundThings(String itemName)`                                                            | `Set<Thing>`           | Get the `Thing`s that are bound to the specified `Item`.                                                                           |
+| `Channels.getBoundThings(Item item)`                                                                  | `Set<Thing>`           | Get the `Thing`s that are bound to the specified `Item`.                                                                           |
+| `Channels.getLinkedItemNames(String channelUid)`                                                      | `Set<String>`          | Get the names of all the `Item`s that are linked to a specific channel.                                                            |
+| `Channels.getLinkedItemNames(ChannelUID channelUid)`                                                  | `Set<String>`          | Get the names of all the `Item`s that are linked to a specific channel.                                                            |
+| `Channels.getLinkedItems(String channelUid)`                                                          | `Set<Item>`            | Get all `Item`s that are linked to a specific channel.                                                                             |
+| `Channels.getLinkedItems(ChannelUID channelUid)`                                                      | `Set<Item>`            | Get all `Item`s that are linked to a specific channel.                                                                             |
+| `Channels.isLinked(String itemName)`                                                                  | `boolean`              | Check if the specified `Item` has at least one link.                                                                               |
+| `Channels.isLinked(Item item)`                                                                        | `boolean`              | Check if the specified `Item` has at least one link.                                                                               |
+| `Channels.isLinked(String itemName, String channelUid)`                                               | `boolean`              | Check if the specified `Item` and channel are linked.                                                                              |
+| `Channels.isLinked(Item item, String channelUid)`                                                     | `boolean`              | Check if the specified `Item` and channel are linked.                                                                              |
+| `Channels.isLinked(Item item, ChannelUID channelUid)`                                                 | `boolean`              | Check if the specified `Item` and channel are linked.                                                                              |
+| `Channels.isChannelLinked(String channelUid)`                                                         | `boolean`              | Check if the specified channel has at least one link.                                                                              |
+| `Channels.isChannelLinked(ChannelUID channelUid)`                                                     | `boolean`              | Check if the specified channel has at least one link.                                                                              |
+| `Channels.getLink(Item item, ChannelUID channelUid)`                                                  | `ItemChannelLink`      | Get an existing `ItemChannelLink` for the specified `Item` and channel.                                                            |
+| `Channels.getLink(Item item, String channelUid)`                                                      | `ItemChannelLink`      | Get an existing `ItemChannelLink` for the specified `Item` and channel.                                                            |
+| `Channels.getLink(String itemName, String channelUid)`                                                | `ItemChannelLink`      | Get an existing `ItemChannelLink` for the specified `Item` and channel.                                                            |
+| `Channels.addItemChannelLink(Item item, String channelUid)`                                           | `ItemChannelLink`      | Add a new `ItemChannelLink` between an existing `Item` and a `Channel`, and return the newly created `ItemChannelLink`.            |
+| `Channels.addItemChannelLink(Item item, String channelUid, Object... configProperties)`               | `ItemChannelLink`      | Add a new `ItemChannelLink` between an existing `Item` and a `Channel`, and return the newly created `ItemChannelLink`.            |
+| `Channels.addItemChannelLink(Item item, String channelUid, Map<String, Object> configProperties)`     | `ItemChannelLink`      | Add a new `ItemChannelLink` between an existing `Item` and a `Channel`, and return the newly created `ItemChannelLink`.            |
+| `Channels.replaceItemChannelLink(Item item, String channelUid)`                                       | `ItemChannelLink`      | Add or replace a `ItemChannelLink` between an existing `Item` and a `Channel`, returning the old `ItemChannelLink` if one existed. |
+| `Channels.replaceItemChannelLink(Item item, String channelUid, Object... configProperties)`           | `ItemChannelLink`      | Add or replace a `ItemChannelLink` between an existing `Item` and a `Channel`, returning the old `ItemChannelLink` if one existed. |
+| `Channels.replaceItemChannelLink(Item item, String channelUid, Map<String, Object> configProperties)` | `ItemChannelLink`      | Add or replace a `ItemChannelLink` between an existing `Item` and a `Channel`, returning the old `ItemChannelLink` if one existed. |
+| `Channels.removeItemChannelLink(Item item, ChannelUID channelUid)`                                    | `ItemChannelLink`      | Remove a `ItemChannelLink` between an existing `Item` and a `Channel`, and return the removed `ItemChannelLink`.                   |
+| `Channels.removeItemChannelLink(Item item, String channelUid)`                                        | `ItemChannelLink`      | Remove a `ItemChannelLink` between an existing `Item` and a `Channel`, and return the removed `ItemChannelLink`.                   |
+| `Channels.removeItemChannelLink(String itemName, String channelUid)`                                  | `ItemChannelLink`      | Remove a `ItemChannelLink` between an existing `Item` and a `Channel`, and return the removed `ItemChannelLink`.                   |
+| `Channels.removeLinksForItem(String itemName)`                                                        | `int`                  | Remove all managed links related to the specified `Item`, and return the number of removed links.                                  |
+| `Channels.removeLinksForItem(Item item)`                                                              | `int`                  | Remove all managed links related to the specified `Item`, and return the number of removed links.                                  |
+| `Channels.removeOrphanedItemChannelLinks()`                                                           | `int`                  | Remove all orphaned (`Item` or `Channel` missing) managed links, and return the number of removed links.                           |
+
+##### [Items](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/lib/items)
+
+| Method                                                                                                     | Return type        | Description                                                                                               |
+|------------------------------------------------------------------------------------------------------------|--------------------|-----------------------------------------------------------------------------------------------------------|
+| `Items.exists(String itemName)`                                                                            | `boolean`          | Check whether a named item exists.                                                                        |
+| `Items.get(String itemName)`                                                                               | `Item`             | Get an `Item` by name.                                                                                    |
+| `Items.getAll()`                                                                                           | `Collection<Item>` | Get all `Item`s.                                                                                          |
+| `Items.getByPattern(String pattern)`                                                                       | `Collection<Item>` | Get all `Item`s that match a pattern using `?` and `*`.                                                   |
+| `Items.getByTag(String... tags)`                                                                           | `Collection<Item>` | Get all `Item`s that have all the specified tags.                                                         |
+| `Items.getOfType(String type)`                                                                             | `Collection<Item>` | Get all `Item`s of the specified type.                                                                    |
+| `Items.getByTagAndType(String type, String... tags)`                                                       | `Collection<Item>` | Get all `Item`s of the specified type that also have all the specified tags.                              |
+| `Items.getMetadata(String itemName, String namespace)`                                                     | `Metadata`         | Get `Item` metadata for the specified namespace.                                                          |
+| `Items.addMetadata(String itemName, String namespace, String value)`                                       | N/A                | Add metadata to an Item.                                                                                  |
+| `Items.addMetadata(String itemName, String namespace, String value, Object... configProperties)`           | N/A                | Add metadata to an Item.                                                                                  |
+| `Items.addMetadata(String itemName, String namespace, String value, Map<String, Object> configuration)`    | N/A                | Add metadata to an Item.                                                                                  |
+| `Items.removeMetadata(String itemName, String namespace)`                                                  | `Metadata`         | Remove metadata from an `Item` for the specified namespace, and return the removed `Metadata`.            |
+| `Items.updateMetadata(String itemName, String namespace, String value)`                                    | `Metadata`         | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace. |
+| `Items.updateMetadata(String itemName, String namespace, String value, Object... configProperties)`        | `Metadata`         | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace. |
+| `Items.updateMetadata(String itemName, String namespace, String value, Map<String, Object> configuration)` | `Metadata`         | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace. |
+
+##### [Rules](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/lib/rules)
+
+| Method                                                                                   | Return type           | Description                                                                                                 |
+|------------------------------------------------------------------------------------------|-----------------------|-------------------------------------------------------------------------------------------------------------|
+| `Rules.getRule(String ruleUid)`                                                          | `Rule`                | Get a `Rule` by UID.                                                                                        |
+| `Rules.runRule(String ruleUid)`                                                          | `Map<String, Object>` | Run the `Rule` with the specified UID and return the results of the execution.                              |
+| `Rules.runRule(String ruleUid, boolean considerConditions)`                              | `Map<String, Object>` | Run the `Rule` with the specified UID and return the results of the execution.                              |
+| `Rules.runRule(String ruleUid, Map<String, Object> context)`                             | `Map<String, Object>` | Run the `Rule` with the specified UID using the specified context, and return the results of the execution. |
+| `Rules.runRule(String ruleUid, boolean considerConditions, Object... context)`           | `Map<String, Object>` | Run the `Rule` with the specified UID using the specified context, and return the results of the execution. |
+| `Rules.runRule(String ruleUid, boolean considerConditions, Map<String, Object> context)` | `Map<String, Object>` | Run the `Rule` with the specified UID using the specified context, and return the results of the execution. |
+| `Rules.isRuleEnabled(String ruleUid)`                                                    | `boolean`             | Check whether the specified `Rule` is enabled.                                                              |
+| `Rules.setRuleEnabled(String ruleUid, boolean enabled)`                                  | N/A                   | Set whether the specified `Rule` is enabled.                                                                |
+
+#### Extensions
+
+Existing Java classes can also be "extended", which means that methods that aren't really a part of the Java class, will still work when invoked on the object.
+
+##### [ItemExtensions](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/lib/itemextensions)
+
+| Extension method                                                                           | Return type            | Description                                                                                                                |
+|--------------------------------------------------------------------------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| `MyItem.getMetadata(String namespace)`                                                     | `Metadata`             | Get `Item` metadata for the specified namespace.                                                                           |
+| `MyItem.addMetadata(String namespace, String value)`                                       | N/A                    | Add metadata to an Item.                                                                                                   |
+| `MyItem.addMetadata(String namespace, String value, Object... configProperties)`           | N/A                    | Add metadata to an Item.                                                                                                   |
+| `MyItem.addMetadata(String namespace, String value, Map<String, Object> configuration)`    | N/A                    | Add metadata to an Item.                                                                                                   |
+| `MyItem.removeMetadata(String namespace)`                                                  | `Metadata`             | Remove metadata from an `Item` for the specified namespace, and return the removed `Metadata`.                             |
+| `MyItem.updateMetadata(String namespace, String value)`                                    | `Metadata`             | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace.                  |
+| `MyItem.updateMetadata(String namespace, String value, Object... configProperties)`        | `Metadata`             | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace.                  |
+| `MyItem.updateMetadata(String namespace, String value, Map<String, Object> configuration)` | `Metadata`             | Update `Item` metadata for the specified namespace, and return the old `Metadata` for the same namespace.                  |
+| `MyItem.getChannelLinks()`                                                                 | `Set<ItemChannelLink>` | Get the `ItemChannelLink`s that are linked to the `Item`.                                                                  |
+| `MyItem.getBoundChannels()`                                                                | `Set<ChannelUID>`      | Get the `ChannelUID`s of the channels that are bound to the `Item`.                                                        |
+| `MyItem.getBoundThings()`                                                                  | `Set<Thing>`           | Get the `Thing`s that are bound to the `Item`.                                                                             |
+| `MyItem.isLinked()`                                                                        | `boolean`              | Check if the `Item` has at least one link.                                                                                 |
+| `MyItem.isLinked(String channelUid)`                                                       | `boolean`              | Check if the `Item` and channel are linked.                                                                                |
+| `MyItem.isLinked(ChannelUID channelUid)`                                                   | `boolean`              | Check if the `Item` and channel are linked.                                                                                |
+| `MyItem.getChannelLink(ChannelUID channelUid)`                                             | `ItemChannelLink`      | Get an existing `ItemChannelLink` for the `Item` and channel.                                                              |
+| `MyItem.getChannelLink(String channelUid)`                                                 | `ItemChannelLink`      | Get an existing `ItemChannelLink` for the `Item` and channel.                                                              |
+| `MyItem.addChannelLink(String channelUid)`                                                 | `ItemChannelLink`      | Add a new `ItemChannelLink` between the `Item` and a `Channel`, and return the newly created `ItemChannelLink`.            |
+| `MyItem.addChannelLink(String channelUid, Object... configProperties)`                     | `ItemChannelLink`      | Add a new `ItemChannelLink` between the `Item` and a `Channel`, and return the newly created `ItemChannelLink`.            |
+| `MyItem.addChannelLink(String channelUid, Map<String, Object> configProperties)`           | `ItemChannelLink`      | Add a new `ItemChannelLink` between the `Item` and a `Channel`, and return the newly created `ItemChannelLink`.            |
+| `MyItem.replaceChannelLink(String channelUid)`                                             | `ItemChannelLink`      | Add or replace a `ItemChannelLink` between the `Item` and a `Channel`, returning the old `ItemChannelLink` if one existed. |
+| `MyItem.replaceChannelLink(String channelUid, Object... configProperties)`                 | `ItemChannelLink`      | Add or replace a `ItemChannelLink` between the `Item` and a `Channel`, returning the old `ItemChannelLink` if one existed. |
+| `MyItem.replaceChannelLink(String channelUid, Map<String, Object> configProperties)`       | `ItemChannelLink`      | Add or replace a `ItemChannelLink` between the `Item` and a `Channel`, returning the old `ItemChannelLink` if one existed. |
+| `MyItem.removeChannelLink(ChannelUID channelUid)`                                          | `ItemChannelLink`      | Remove a `ItemChannelLink` between the `Item` and a `Channel`, and return the removed `ItemChannelLink`.                   |
+| `MyItem.removeChannelLink(String channelUid)`                                              | `ItemChannelLink`      | Remove a `ItemChannelLink` between the `Item` and a `Channel`, and return the removed `ItemChannelLink`.                   |
+| `MyItem.removeChannelLinks()`                                                              | `int`                  | Remove all managed links related to the `Item`, and return the number of removed links.                                    |
+
+##### [RuleExtensions](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/lib/ruleextensions)
+
+| Extension method                                                      | Return type           | Description                                                                          |
+|-----------------------------------------------------------------------|-----------------------|--------------------------------------------------------------------------------------|
+| `MyRule.run()`                                                        | `Map<String, Object>` | Run the `Rule` and return the results of the execution.                              |
+| `MyRule.run(boolean considerConditions)`                              | `Map<String, Object>` | Run the `Rule` and return the results of the execution.                              |
+| `MyRule.run(Map<String, Object> context)`                             | `Map<String, Object>` | Run the `Rule` using the specified context, and return the results of the execution. |
+| `MyRule.run(boolean considerConditions, Object... context)`           | `Map<String, Object>` | Run the `Rule` using the specified context, and return the results of the execution. |
+| `MyRule.run(boolean considerConditions, Map<String, Object> context)` | `Map<String, Object>` | Run the `Rule` using the specified context, and return the results of the execution. |
+| `MyRule.isEnabled()`                                                  | `boolean`             | Check whether the `Rule` is enabled.                                                 |
+| `MyRule.setEnabled(boolean enabled)`                                  | N/A                   | Set whether the `Rule` is enabled.                                                   |
+
 ### Concurrency Guard
 
 If a rule is explicitly run from another script, rule, a Main UI widget, etc., instead of a trigger, the rule can be started before the current execution has ended.
 It may be necessary to guard against concurrency.
 
-```javascript
+```java
 import java.util.concurrent.locks.ReentrantLock
 
 val ReentrantLock lock  = new ReentrantLock
@@ -885,10 +1102,21 @@ You can emit log messages from your rules to aid debugging.
 There are a number of logging methods available from your rules, the java signatures are:
 
 ```java
+logTrace(String loggerName, String format, Object... args)
 logDebug(String loggerName, String format, Object... args)
 logInfo(String loggerName, String format, Object... args)
 logWarn(String loggerName, String format, Object... args)
 logError(String loggerName, String format, Object... args)
+```
+
+There are also convenience versions of these methods available that are especially useful when debugging a script, because you can specify any object to have the result of its `toString()` method logged without having the explicitly call `toString()`:
+
+```java
+logTrace(String loggerName, Object message)
+logDebug(String loggerName, Object message)
+logInfo(String loggerName, Object message)
+logWarn(String loggerName, Object message)
+logError(String loggerName, Object message)
 ```
 
 In each case, the `loggerName` parameter is combined with the string `org.openhab.core.model.script.` to create the log4j logger name.
