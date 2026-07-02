@@ -208,7 +208,13 @@ Available types of conditions include:
 The script condition is the most universal one, as you can choose one of the many available script/rule languages to build any condition you can think of.
 The only restriction is a script condition's last executed line of code must result in a boolean (i.e. `true` or `false`).
 
-## Scripts
+## Actions
+
+Once a rule has triggered, and all conditions have been met, the rule will execute one or more actions.
+These are what makes the rule actually _do something_.
+OpenHAB has a set of [standard actions with specific definitions](./standard-actions.md).
+
+### Scripts
 
 Unfortunately the term "Script" is overloaded in openHAB, and has multiple meanings based on the context:
 
@@ -224,7 +230,7 @@ Unfortunately the term "Script" is overloaded in openHAB, and has multiple meani
 
 These rule docs mainly refer to the first two meanings when talking about scripts.
 
-## Script Actions
+### Script Actions
 
 Script Actions are an action that allow you to run logic written in one of the available automation/rule languages, e.g. JavaScript, Rules DSL, Blockly.
 

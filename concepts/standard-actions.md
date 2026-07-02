@@ -42,8 +42,8 @@ This action sends a `Command` to an `Item`.
 
 | Parameter  | Description                                                                             |
 |------------|-----------------------------------------------------------------------------------------|
-| `itemName` | The name of the `Item`.                                                 |
-| `command`  | The `Command` to send. |
+| `itemName` | The name of the `Item`.                                                                 |
+| `command`  | The `Command` to send.                                                                  |
 
 ### `core.ItemStateUpdateAction`
 
@@ -51,8 +51,8 @@ This action updates the `State` of an `Item`.
 
 | Parameter  | Description                                                                             |
 |------------|-----------------------------------------------------------------------------------------|
-| `itemName` | The name of the `Item`.                                                 |
-| `state`    | The `State` to set. |
+| `itemName` | The name of the `Item`.                                                                 |
+| `state`    | The `State` to set.                                                                     |
 
 ### `media.PlayAction`
 
@@ -60,9 +60,9 @@ This action plays an audio file.
 
 | Parameter   | Description                                                                             |
 |-------------|-----------------------------------------------------------------------------------------|
-| `sound`     | The filename of the file from the `sounds` folder. |
-| `[sink]`    | The ID of the audio sink to use. Leave out to use the default. |
-| `[volume]`  | The volume to be used. Leave out to use the default. |
+| `sound`     | The filename of the file from the `sounds` folder.                                      |
+| `[sink]`    | The ID of the audio sink to use. Leave out to use the default.                          |
+| `[volume]`  | The volume to be used. Leave out to use the default.                                    |
 
 ### `media.SayAction`
 
@@ -70,9 +70,9 @@ This action uses the voice system to say the specified text.
 
 | Parameter   | Description                                                                             |
 |-------------|-----------------------------------------------------------------------------------------|
-| `text`      | The text to say. |
-| `[sink]`    | The ID of the voice to use. Leave out to use the default. |
-| `[volume]`  | The volume to be used. Leave out to use the default. |
+| `text`      | The text to say.                                                                        |
+| `[sink]`    | The ID of the voice to use. Leave out to use the default.                               |
+| `[volume]`  | The volume to be used. Leave out to use the default.                                    |
 
 ### `script.ScriptAction`
 
@@ -81,4 +81,4 @@ This action executes the provided script.
 | Parameter | Description                                                             |
 |-----------|-------------------------------------------------------------------------|
 | `type`    | The code/MIME-type for the scripting language.                          |
-| `script`  | The script content to execute.                 |
+| `script`  | The script content to execute.                                          |
