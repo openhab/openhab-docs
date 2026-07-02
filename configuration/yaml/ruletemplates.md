@@ -20,7 +20,7 @@ The differences are:
 
 - Rule templates, unlike rules, can't link to a template.
 - There is no point in defining a `config` section, although technicall it's allowed.
-- Rule templates can contain placeholders (`{{placeholder_name}}`) in their module definitions.
+- Rule templates can contain placeholders (`{{`placeholder_name`}}`) in their module definitions.
 - Rule templates has an additional section, `configDescriptions`, which defines one parameter definition per placeholder. It defines the name, label, description, type and optionally restrictions and a default value of each placeholder.
 
 ### YAML Definition Syntax
