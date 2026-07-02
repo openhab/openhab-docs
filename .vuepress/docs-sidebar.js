@@ -76,7 +76,14 @@ module.exports = [
       'concepts/discovery',
       'concepts/audio',
       'concepts/units-of-measurement',
-      'concepts/rules',
+      { title: 'Rules',
+        path: '/docs/concepts/rules',
+        children: [
+          ['concepts/standard-triggers', 'Standard Triggers'],
+          ['concepts/standard-conditions', 'Standard Conditions'],
+          ['concepts/standard-actions', 'Standard Actions']
+        ]
+      }
     ]
   },
   {
