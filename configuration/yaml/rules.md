@@ -9,7 +9,7 @@ This page describes the `rules` element for [YAML Configuration](./).
 
 ## Rules
 
-The `rules` top-level key contains a map of rules, defined by their rule UID.
+The `rules` top-level key contains a map of rules, defined by their rule UIDs.
 The main building blocks of rules are triggers, conditions and actions, collectively called modules.
 
 ### YAML Definition Syntax
