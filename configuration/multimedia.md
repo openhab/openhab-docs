@@ -5,6 +5,8 @@ title: Multimedia
 
 # Multimedia
 
+[[toc]]
+
 ## Volume
 
 The framework supports some base [functions](https://openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#method.summary) to control the audio sinks' volume.
