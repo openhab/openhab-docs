@@ -25,4 +25,4 @@ The <f7-icon f7="gear_alt_fill" /> icon in the bottom right corner provides acce
 To use the Chat interface, you must configure the following on your openHAB server:
 
 1. **Compatible Interpreter**: You need a [LLM-based HLI service](/configuration/multimedia.html#llm-based-interpreters) service, such as [Google Gemini]({{base}}/addons/bindings/gemini/).
-2. **Default Interpreter**: Configure this HLI service as your default interpreter in _System Settings_ → _Voice_.
+1. **Default Interpreter**: Configure this HLI service as your default interpreter in _System Settings_ → _Voice_.

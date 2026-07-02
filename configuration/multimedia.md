@@ -275,13 +275,13 @@ The system evaluates permissions based on the following rules (in order of prece
 
 1. **Explicit Configuration**:<br>
    Set the `permission` parameter of the `voiceSystem` metadata for an Item to explicitly configure the permission (allowed values: `NO_ACCESS`, `READ_ONLY`, `READ_WRITE`).
-2. **Inheritance**:<br>
+1. **Inheritance**:<br>
    If no permission is explicitly configured on the Item, it inherits the permissions defined on its parent Groups.
-3. **Merging & Priority**:<br>
+1. **Merging & Priority**:<br>
    Parent Group permissions are merged.
    If conflicts arise, the most restrictive permission wins (`NO_ACCESS` > `READ_ONLY` > `READ_WRITE`).
    The permission configured on the closest parent layer takes priority over layers further up the hierarchy.
-4. **System Default**:<br>
+1. **System Default**:<br>
    If no explicit or inherited permission is resolved, the system default configured in **Implicit Item Permission** (`implicitItemPermission`) under _System Settings_ → _Voice_ is used. The default value is `READ_WRITE`.
 
 You can inspect the resolved permissions accessible or all Items using the console:
