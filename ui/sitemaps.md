@@ -19,7 +19,7 @@ This page is structured as follows:
 [[toc]]
 
 Sitemaps are text files with the `.sitemap` or `.sitemaps` extension, and are stored in the `$OPENHAB_CONF/sitemaps` directory.
-They can contain any number of sitemap definitions since version 5.2.
+They can contain any number of sitemap definitions since openHAB 5.2.
 Sitemaps follow the syntax described in this article.
 
 For easy editing of sitemap definition files, we suggest to use one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
