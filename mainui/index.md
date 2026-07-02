@@ -25,7 +25,7 @@ Users with the administrator role can use the left panel menu to access:
 - [**Add-on Store**](addons)<br>
   openHAB can and has to be extended via add-ons. Add-ons include bindings, automation, persistence and much more. Visit the store to discover all available add-ons.
 - [**Developer Tools**](developer)<br>
-  Special functions including creation of custom widgets and block libraries as well as the developer sidebar.
+  Special functions including creation of custom widgets and block libraries as well as the developer sidebar and integrated log viewer.
 
 The left panel menu can be pinned to make it stay visible, but for a narrower screen, it may be hidden.
 Pressing the key combination <kbd>Alt</kbd><kbd>Shift</kbd><kbd>M</kbd> on your keyboard will toggle the visibility of the left panel menu.
