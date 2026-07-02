@@ -20,6 +20,47 @@ These codes are used as titles for the sections below.
 To tell the condition implementation what to evaluate, conditions can have configuration parameters with predefined names.
 These configuration parameters and a brief description of what values they expect are listed in the below sections.
 
+### `ephemeris.DaysetCondition`
+
+This condition checks if the current day is in the configured `dayset`.
+
+| Parameter  | Description                                                                             |
+|------------|-----------------------------------------------------------------------------------------|
+| `dayset`   | The name of a `dayset` from the ephemeris settings.                                     |
+| `[offset]` | The number of days to add to or subtract from the current day (values can be negative). |
+
+### `ephemeris.WeekdayCondition`
+
+This condition verifies that the current day is a weekday.
+
+| Parameter  | Description                                                                             |
+|------------|-----------------------------------------------------------------------------------------|
+| `[offset]` | The number of days to add to or subtract from the current day (values can be negative). |
+
+### `ephemeris.WeekendCondition`
+
+This condition verifies that the current day is in a weekend.
+
+| Parameter  | Description                                                                             |
+|------------|-----------------------------------------------------------------------------------------|
+| `[offset]` | The number of days to add to or subtract from the current day (values can be negative). |
+
+### `ephemeris.HolidayCondition`
+
+This condition verifies that the current day is a holiday.
+
+| Parameter  | Description                                                                             |
+|------------|-----------------------------------------------------------------------------------------|
+| `[offset]` | The number of days to add to or subtract from the current day (values can be negative). |
+
+### `ephemeris.NotHolidayCondition`
+
+This condition verifies that the current day isn't a holiday.
+
+| Parameter  | Description                                                                             |
+|------------|-----------------------------------------------------------------------------------------|
+| `[offset]` | The number of days to add to or subtract from the current day (values can be negative). |
+
 ### `timer.DayOfWeekCondition`
 
 This condition checks the current day of the week against a specified list of days.
@@ -28,121 +69,48 @@ This condition checks the current day of the week against a specified list of da
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------|
 | `days`    | A set of days to check against. The days are specified with the following strings: `MON`, `TUE`, `WED`, `THU`, `FRI`, `SAT` and `SUN`. |
 
-### `timer.GenericCronTrigger`
+### `timer.IntervalCondition`
 
-This trigger fires when the system time matches the specified [Cron expression](https://en.wikipedia.org/wiki/Cron).
+This condition verifies that a minimum interval has elapsed since the last time the condition was met.
 
-| Parameter        | Description          |
-|------------------|----------------------|
-| `cronExpression` | The cron expression. |
+| Parameter     | Description                                                             |
+|---------------|-------------------------------------------------------------------------|
+| `minInterval` | The minimum number of milliseconds since the last satisfied evaluation. |
 
-### `timer.TimeOfDayTrigger`
+### `core.ItemStateCondition`
 
-This trigger fires every day at a specified time of day.
+This condition verifies that the `State` of the specified `Item` fulfills the requirements.
 
-| Parameter | Description                 |
-|-----------|-----------------------------|
-| `time`    | The time in "hh:mm" format. |
-
-### `core.ItemCommandTrigger`
-
-This trigger fires when the specified `Item` receives a `Command`.
-
-| Parameter   | Description                 |
-|-------------|-----------------------------|
-| `itemName`  | The name of the `Item`.     |
-| `[command]` | The `Command` (optional).   |
-
-### `core.ItemStateUpdateTrigger`
-
-This trigger fires when the specified `Item`'s `State` is updated, even if the new value is equal to the old value.
-
-| Parameter  | Description             |
-|------------|-------------------------|
+| Parameter     | Description                                                             |
+|---------------|-------------------------------------------------------------------------|
 | `itemName` | The name of the `Item`. |
-| `[state]`  | The `State` (optional). |
+| `operator` | The evaluation operator, one of `=`, `!=`, `<`, `<=`, `>` and `>=`. |
+| `state`    | The `State` to compare with. |
 
-### `core.ItemStateChangeTrigger`
+### `script.ScriptCondition`
 
-This trigger fires when the specified `Item`'s `State` changes.
+This condition verifies that provided script returns `true`.
 
-| Parameter         | Description                      |
-|-------------------|----------------------------------|
-| `itemName`        | The name of the `Item`.          |
-| `[previousState]` | The previous `State` (optional). |
-| `[state]`         | The `State` (optional).          |
+| Parameter | Description                                                             |
+|-----------|-------------------------------------------------------------------------|
+| `type`    | The code/MIME-type for the scripting language. |
+| `script`  | The script content in the specified scripting language. |
 
-### `core.GroupCommandTrigger`
+### `core.ThingStatusCondition`
 
-This trigger fires when a member of the specified item group receives a `Command`.
+This condition verifies that the status of the specified `Thing` fulfills the requirements.
 
-| Parameter   | Description                  |
-|-------------|------------------------------|
-| `groupName` | The name of the `GroupItem`. |
-| `[command]` | The `Command` (optional).    |
+| Parameter  | Description                                                             |
+|------------|-------------------------------------------------------------------------|
+| `thingUID` | The UID of the `Thing`. |
+| `operator` | The evaluation operator, either `=` or `!=`. |
+| `status`   | The status to compare with. |
 
-### `core.GroupStateUpdateTrigger`
+### `core.TimeOfDayCondition`
 
-This trigger fires when the `State` of a member of the specified item group is updated, even if the new value is equal to the old value.
+This condition verified that the clock is within the specified time window.
 
-| Parameter   | Description                  |
-|-------------|------------------------------|
-| `groupName` | The name of the `GroupItem`. |
-| `[state]`   | The `State` (optional).      |
-
-### `core.GroupStateChangeTrigger`
-
-This trigger fires when the `State` of a member of the specified item group changes.
-
-| Parameter         | Description                      |
-|-------------------|----------------------------------|
-| `groupName`       | The name of the `GroupItem`.     |
-| `[previousState]` | The previous `State` (optional). |
-| `[state]`         | The `State` (optional).          |
-
-### `core.ThingStatusUpdateTrigger`
-
-This trigger fires when the specified `Thing`'s status is updated, even if the new status is equal to the old status.
-
-| Parameter  | Description                   |
-|------------|-------------------------------|
-| `thingUID` | The `thingUID`.               |
-| `[status]` | The `ThingStatus` (optional). |
-
-### `core.ThingStatusChangeTrigger`
-
-This trigger fires when the specified `Thing`'s status changes.
-
-| Parameter          | Description                            |
-|--------------------|----------------------------------------|
-| `thingUID`         | The `thingUID`.                        |
-| `[previousStatus]` | The previous `ThingStatus` (optional). |
-| `[status]`         | The `ThingStatus` (optional).          |
-
-### `core.ChannelEventTrigger`
-
-This trigger fires when the specified trigger channel receives an event.
-
-| Parameter    | Description                               |
-|--------------|-------------------------------------------|
-| `channelUID` | The `ChannelUID` of the `Channel`.        |
-| `[event]`    | The `Channel` trigger `Event` (optional). |
-
-### `core.GenericEventTrigger`
-
-This trigger fires when a matching `Event` appears on the event bus.
-
-| Parameter   | Description                                                                                                                                                                                                                                                                                                                                                                             |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `[topic]`   | The topic to match, as a file-system style glob (`*`, `**`, `?`, and `{}` operators).<br><br>Example filters:<br>Item events: `openhab/items/\*/`<br>Channel events: `openhab/channels/\*/triggered`<br>Thing events: `openhab/things/\*\*`                                                                                                                                             |
-| `[source]`  | A string that represents the entity that caused the event.                                                                                                                                                                                                                                                                                                                              |
-| `[types]`   | `ItemCommandEvent`, `ItemStateEvent`, `ItemStateChangedEvent`, `GroupItemStateChangedEvent`, `ItemAddedEvent`, `ItemRemovedEvent`, `ThingAddedEvent`, `ThingRemovedEvent`, `ThingStatusInfoChangedEvent`, `ThingStatusInfoEvent`, `ThingUpdatedEvent`, etc. A non-exhaustive list can be found [in the Javadocs](https://www.openhab.org/javadoc/latest/org/openhab/core/events/event). |
-| `[payload]` | A [regular expression](https://en.wikipedia.org/wiki/Regular_expression) to match against the actual event data.                                                                                                                                                                                                                                                                        |
-
-### `core.SystemStartlevelTrigger`
-
-This trigger fires when the system has reached the specified start level.
-
-| Parameter    | Description              |
-|--------------|--------------------------|
-| `startlevel` | The system `StartLevel`. |
+| Parameter   | Description                                                                                                                            |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| `startTime` | The start of the time window. |
+| `endTime`   | The end of the time window. |
