@@ -195,9 +195,7 @@ Please keep in mind that rule engines provided by separately installed automatio
 
 With triggers, we have the _When \_\_t\_\_ happens* part completed, so next up is the *if \_\_c\_\__ part.
 This part can limit when a rule can run by adding one or more condition(s).
-
-Conditions as a separately definable part of a rule are supported by some rule engines.
-In situations where the rule engine does not support conditions, you can implement your conditions using an `if`-statement in the rule action.
+OpenHAB has a set of [standard conditions with specific definitions](./standard-conditions.md).
 
 Available types of conditions include:
 
