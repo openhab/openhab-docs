@@ -888,15 +888,15 @@ Only the methods deemed most relevant are listed, to get all the details, consul
 | `getRuleManager()` | `RuleManager` | Get the `RuleManager` instance, also known as the "rule engine" or `RuleEngine`. |
 | `getScheduler()` | `Scheduler` | Get the `Scheduler` instance. |
 | `getScriptEngine()` | `ScriptEngine` | Get the `ScriptEngine` instance. |
-| `getActionServices()` | `List<ActionService>` | Get the list of the currently registered `ActionService` instances. |
+| `getActionServices()` | `List<ActionService>` | Get the list of currently registered `ActionService` instances. |
 | `getThingActions()` | `List<ThingActions>` | Get the list of currently registered `ThingActions` instances. |
-| `getInstance(Class<T> clazz)` | `T` | Get the instance of any registered OSGi service, or `null` if it doesn't exist. The returned type has the type specified in the `clazz` argument. |
+| `getInstance(Class<T> clazz)` | `T` | Get an instance of any registered OSGi service, or `null` if it doesn't exist. The returned type has the type specified in the `clazz` argument. |
 
 ##### [Ping](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/ping)
 
 | Method | Return type | Description |
 | --- | --- | --- |
-| `checkVitality(String host, int port, int timeout)` | `boolean` | Check the vitality of `host`. If `port` is `0`, a regular ICMP ping is issued. If any other port is specified, a socket will be attempted opened using this port. `timeout` is specified in milliseconds. |
+| `checkVitality(String host, int port, int timeout)` | `boolean` | Check the vitality of `host`. If `port` is `0`, a regular ICMP ping is issued. If any other port is specified, a socket will be attempted to be opened using this port. `timeout` is specified in milliseconds. |
 
 ##### [Things](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/things)
 
@@ -916,7 +916,7 @@ Only the methods deemed most relevant are listed, to get all the details, consul
 | `Channels.getBoundChannels(String itemName)` | `Set<ChannelUID>` | Get the `ChannelUID`s of the channels that are bound to the specified `Item`. |
 | `Channels.getBoundChannels(Item item)` | `Set<ChannelUID>` | Get the `ChannelUID`s of the channels that are bound to the specified `Item`. |
 | `Channels.getBoundThings(String itemName)` | `Set<Thing>` | Get the `Thing`s that are bound to the specified `Item`. |
-| `Channels.getBoundThings(Item item)` | `Set<Thing>` | Get the `Thing`s that  are bound to the specified `Item`. |
+| `Channels.getBoundThings(Item item)` | `Set<Thing>` | Get the `Thing`s that are bound to the specified `Item`. |
 | `Channels.getLinkedItemNames(String channelUid)` | `Set<String>` | Get the names of all the `Item`s that are linked to a specific channel. |
 | `Channels.getLinkedItemNames(ChannelUID channelUid)` | `Set<String>` | Get the names of all the `Item`s that are linked to a specific channel. |
 | `Channels.getLinkedItems(String channelUid)` | `Set<Item>` | Get all `Item`s that are linked to a specific channel. |
