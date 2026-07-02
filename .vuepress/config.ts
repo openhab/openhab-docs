@@ -45,8 +45,8 @@ const config: UserConfig<DefaultThemeConfig> = {
     themeConfig: {
         logo: `/openhab-logo.svg`,
         editLinks: false,
-        activeHeaderLinks: true,
-        sidebarDepth: 2,
+        activeHeaderLinks: false,
+        sidebarDepth: 0,
         docsDir: 'docs',
         nav: [
             {
