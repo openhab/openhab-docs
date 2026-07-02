@@ -867,6 +867,7 @@ In addition, all registered `org.openhab.core.model.script.engine.action.ActionS
 #### Standard Library
 
 The standard library consists of methods from several different classes, and are presented here per class.
+Only the methods deemed most relevant are listed, to get all the details, consult the Javadoc links.
 
 ##### [ScriptServiceUtil](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/scriptserviceutil)
 
