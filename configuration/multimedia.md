@@ -286,7 +286,7 @@ The system evaluates permissions based on the following rules (in order of prece
 1. **System Default**:<br>
    If no explicit or inherited permission is resolved, the system default configured in **Implicit Item Permission** (`implicitItemPermission`) under _System Settings_ → _Voice_ is used. The default value is `READ_WRITE`.
 
-You can inspect the resolved permissions accessible or all Items using the console:
+You can inspect the resolved permissions for accessible or all Items using the console:
 
 ```text
 openhab> openhab:voice items [--all]
