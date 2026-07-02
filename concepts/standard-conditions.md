@@ -8,8 +8,7 @@ title: Standard Conditions
 This page describes the standard conditions for [rules](./rules.md).
 
 OpenHAB comes with a set of standard conditions.
-These are built-in mechanisms that initiate rule execution based on specific events or conditions.
-They provide a way to automate actions without the need for custom scripting, making them accessible and easy to use.
+These are built-in mechanisms that decide if a rule should be executed when triggered.
 
 ## Conditions Structure
 
