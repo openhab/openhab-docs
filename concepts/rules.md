@@ -59,7 +59,7 @@ In both cases, the rule has no triggers and no conditions.
 ## Triggers
 
 Now that we know the concept of rule triggers, let's look at them in more depth.
-Triggers define those events that, when they occur, causes the rule to run.
+Triggers define those events that, when they occur, cause the rule to run. OpenHAB has a set of [standard triggers with specific definitions](./standard-triggers.md).
 
 These are the categories of rules that can be used to trigger a rule:
 
