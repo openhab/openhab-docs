@@ -1,34 +1,32 @@
 ---
 layout: documentation
-title: Standard Triggers
+title: Standard Conditions
 ---
 
-# Standard Triggers
+# Standard Conditions
 
-This page describes the standard triggers for [rules](./rules.md).
+This page describes the standard conditions for [rules](./rules.md).
 
-OpenHAB comes with a set of standard triggers.
-This is a short presentation of these triggers and their configuration.
-Standard triggers in openHAB are built-in mechanisms that initiate rule execution based on specific events or conditions.
+OpenHAB comes with a set of standard conditions.
+This is a short presentation of these conditions and their configuration.
+Standard conditions in openHAB are built-in mechanisms that initiate rule execution based on specific events or conditions.
 They provide a way to automate actions without the need for custom scripting, making them accessible and easy to use.
 
-## Trigger Structure
+## Conditions Structure
 
-The standard triggers are fundamentally Java classes that implement the required logic to make them do what they should.
-We identify these triggers using a code that is often called the trigger type.
+The standard conditions are fundamentally Java classes that implement the required logic to make them do what they should.
+We identify these conditions using a code that is often called the conditions type.
 These codes are used as titles for the sections below.
-To tell the trigger implementation what to react to, triggers can have configuration parameters with predefined names.
+To tell the condition implementation what to evaluate, conditions can have configuration parameters with predefined names.
 These configuration parameters and a brief description of what values they expect are listed in the below sections.
 
-### `timer.DateTimeTrigger`
+### `timer.DayOfWeekCondition`
 
-This trigger fires when the system time matches the time or date and time specified by the `DateTimeType` `Item`.
+This condition checks the current day of the week against a specified list of days.
 
-| Parameter  | Description                                                                   |
-|------------|-------------------------------------------------------------------------------|
-| `itemName` | The name of the `DateTimeType` `Item`.                                        |
-| `timeOnly` | Whether only the time of the `Item` should be compared, or the date and time. |
-| `[offset]` | The offset in seconds to add to the time of the `Item` state (optional).      |
+| Parameter | Description                                                                                                                            |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------|
+| `days`    | A set of days to check against. The days are specified with the following strings: `MON`, `TUE`, `WED`, `THU`, `FRI`, `SAT` and `SUN`. |
 
 ### `timer.GenericCronTrigger`
 
