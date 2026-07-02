@@ -51,18 +51,18 @@ rules:
             puts "Hello world"
 ```
 
-| Key           | Required | Description                                                                                                                                                                                                   |
-|:--------------|:--------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `<rule_uid>`  | ☑        | The UID of the rule being defined. The UID can be anything as long as it doesn't start or end with whitespace, and doesn't contain `/` or `\`.                                                                |
-| `template`    | ☐        | Contains the UID of the rule template if the rule is linked to one.                                                                                                                                           |
-| `label`       | ☑        | The rule name/label.                                                                                                                                                                                          |
-| `description` | ☐        | The rule description.                                                                                                                                                                                         |
-| `tags`        | ☐        | A list of tags to associate with the rule.                                                                                                                                                                    |
-| `visibility`  | ☐        | Determines if the rule will be displayed in the UI. Rarely used, defaults to `VISIBLE`.                                                                                                                       |
-| `config`      | ☐        | A key-value map of the rule's configuration. Used with rule templates to specify the values of placeholders.                                                                                                  |
-| `triggers`    | ☐        | Specify rule triggers.                                                                                                                                                                                        |
-| `conditions`  | ☐        | Specify rule conditions.                                                                                                                                                                                      |
-| `actions`     | ☐        | Specify rule actions.                                                                                                                                                                                         |
+| Key           | Required | Description                                                                                                                                    |
+|:--------------|:--------:|:-----------------------------------------------------------------------------------------------------------------------------------------------|
+| `<rule_uid>`  | ☑        | The UID of the rule being defined. The UID can be anything as long as it doesn't start or end with whitespace, and doesn't contain `/` or `\`. |
+| `template`    | ☐        | Contains the UID of the rule template if the rule is linked to one. This field is only relevant for template-based rules.                      |
+| `label`       | ☑        | The rule name/label.                                                                                                                           |
+| `description` | ☐        | The rule description.                                                                                                                          |
+| `tags`        | ☐        | A list of tags to associate with the rule.                                                                                                     |
+| `visibility`  | ☐        | Determines if the rule will be displayed in the UI. Rarely used, defaults to `VISIBLE`.                                                        |
+| `config`      | ☐        | A key-value map of the rule's configuration. Used with rule templates to specify the values of placeholders.                                   |
+| `triggers`    | ☐        | Specify rule triggers. Triggers define when the rule should be executed.                                                                       |
+| `conditions`  | ☐        | Specify rule conditions. Conditions control whether a rule should execute based on specific criteria.                                          |
+| `actions`     | ☐        | Specify rule actions. Actions define what happens when a rule is triggered and its conditions are met.                                         |
 
 ### Triggers Section
 
