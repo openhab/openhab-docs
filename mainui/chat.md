@@ -7,7 +7,7 @@ title: Chat
 
 <!-- START MAINUI SIDEBAR DOC - DO NOT REMOVE -->
 The Chat feature allows you to control your smart home using natural language and interact with your devices conversationally.
-It requires a [LLM-based human language interpreter](/configuration/multimedia.html#llm-based-interpreters) to be configured as the default interpreter.
+It requires a [LLM-based human language interpreter]({{base}}/configuration/multimedia.html#llm-based-interpreters) to be configured as the default interpreter.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
 
 Upon sending a message, it is processed by the LLM and the response is displayed in the chat feed.
@@ -24,5 +24,5 @@ The <f7-icon f7="gear_alt_fill" /> icon in the bottom right corner provides acce
 
 To use the Chat interface, you must configure the following on your openHAB server:
 
-1. **Compatible Interpreter**: You need a [LLM-based HLI service](/configuration/multimedia.html#llm-based-interpreters) service, such as [Google Gemini]({{base}}/addons/bindings/gemini/).
+1. **Compatible Interpreter**: You need a [LLM-based HLI service]({{base}}/configuration/multimedia.html#llm-based-interpreters) service, such as [Google Gemini](/addons/bindings/gemini/).
 1. **Default Interpreter**: Configure this HLI service as your default interpreter in _System Settings_ → _Voice_.
