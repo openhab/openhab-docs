@@ -320,7 +320,7 @@ LLM-based HLIs operate on three main concepts:
 To support back-and-forth discussions and multi-turn interactions, openHAB stores the conversation history and provides it to the LLM for continued processing.
 
 Conversations can optionally be persistent across restarts and sessions.
-The maximum number of messages stored in the conversation history is configurable via the **Conversation History Limit** (`conversationHistoryLimit`) setting under in _System Settings_ → _Voice_.
+The maximum number of messages stored in the conversation history is configurable via the **Conversation History Limit** (`conversationHistoryLimit`) setting under _System Settings_ → _Voice_.
 
 Conversations can be managed through the console:
 
@@ -366,7 +366,7 @@ stop the <item name>
 refresh the <item name>
 ```
 
-For an exact overview of the built-in grammer, you can refer to its [definition in the source code](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.voice/src/main/java/org/openhab/core/voice/internal/text/interpreter/StandardInterpreter.java#L92).
+For an exact overview of the built-in grammar, you can refer to its [definition in the source code](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.voice/src/main/java/org/openhab/core/voice/internal/text/interpreter/StandardInterpreter.java#L92).
 
 ##### Target Item
 
@@ -383,7 +383,7 @@ But the `turn off tv` phrase now detects a collision because of two matching Ite
 
 ###### Name prevalence
 
-One way you can solve this is by using the name prevalence, Items with start with other Items names take prevalence over them.
+One way you can solve this is by using the name prevalence: Items whose names start with other Item names take prevalence over them.
 
 If the Switch Item has the name `tv` and the Dimmer Item the name `tv_brightness` there will be no collisions between them and therefore the `OFF` command will target the Switch Item.
 
@@ -471,7 +471,7 @@ openhab> openhab:voice interpret turn on the light
 The following command allows specifying the interpreter (e.g. `gemini`) and conversation to use as well as the LLM tools to provide:
 
 ```text
-openhab> openhab:voice interpret --hli gemini --conversation conv-1 --llm-tools get-item-state,send-item-command turn on the kitchen light
+openhab> openhab:voice interpret --hli gemini --conversation conv-1 --llm-tools get-date-time,item-get-state,item-send-command turn on the kitchen light
 ```
 
 In case of interpretation error, the error message will be said using the default voice and default audio sink.
