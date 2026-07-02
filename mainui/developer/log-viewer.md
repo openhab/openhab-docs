@@ -9,6 +9,11 @@ title: Developer Tools - Log Viewer
 Main UI provides an integrated log viewer that allows to view the logs of the openHAB server.
 It provides filtering and highlighting capabilities, as well as download and copy options.
 
+You can open the log viewer from **Developer Tools** or toggle it as a persistent bottom pane from any Main UI page.
+Click the `square_list` icon in the upper right corner, next to the developer sidebar icon, or press <kbd>Shift</kbd><kbd>Alt</kbd><kbd>L</kbd>.
+The pane remains visible while you navigate between pages.
+When it is open, press <kbd>Shift</kbd><kbd>Alt</kbd><kbd>F</kbd> to maximize or restore it.
+
 As the log viewer is using WebSockets to receive log messages, some restrictions apply:
 
 - Fancy firewall rules or proxies may block the WebSocket connection.
