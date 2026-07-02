@@ -18,7 +18,7 @@ Users with the administrator role can use the left panel menu to access:
 - [**Add-on Store**](addons)<br>
   openHAB can and has to be extended via add-ons. Add-ons include bindings, automation, persistence and much more. Visit the store to discover all available add-ons.
 - [**Developer Tools**](developer)<br>
-  Special functions including creation of custom widgets and block libraries as well as the developer sidebar.
+  Special functions including creation of custom widgets and block libraries as well as the developer sidebar and integrated log viewer.
 - [**Help & About**](about)<br>
   The about page shows general information of your openHAB configuration and allows to configure some client related configuration.
 
