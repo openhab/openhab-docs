@@ -66,10 +66,23 @@ cp $resourcefolder/openhab-addons/bundles/org.openhab.binding.zigbee/org.openhab
 #mv org.openhab.binding.zwave openhab-addons/bundles
 
 echo_process "Fetching feature.xml file from the snapshot repository..."
-# Getting all possibly relevant xml files
-wget -r -l 2 -npdH -A '*features.xml' -P "$resourcefolder/jfrog-files" "https://openhab.jfrog.io/openhab/libs-snapshot/org/openhab/distro/openhab-addons/"
-# Copy the latest feature file into the finally used feature.xml
-cp `ls .external-resources/jfrog-files/openhab-addons-*-features.xml | sort | tail -1` .external-resources/jfrog-files/feature.xml
+mkdir -p "$resourcefolder/jfrog-files"
+cd "$resourcefolder/jfrog-files"
+# 1. Download the root metadata to find the latest snapshot version (e.g., 5.2.0-SNAPSHOT)
+wget -q -O root-metadata.xml "https://openhab.jfrog.io/openhab/libs-snapshot/org/openhab/distro/openhab-addons/maven-metadata.xml"
+LATEST_VERSION=$(grep -oPm1 "(?<=<latest>)[^<]+" root-metadata.xml)
+# 2. Download the version's metadata to get the exact latest timestamped filename
+wget -q -O version-metadata.xml "https://openhab.jfrog.io/openhab/libs-snapshot/org/openhab/distro/openhab-addons/${LATEST_VERSION}/maven-metadata.xml"
+TIMESTAMP=$(grep -oPm1 "(?<=<timestamp>)[^<]+" version-metadata.xml)
+BUILD_NUMBER=$(grep -oPm1 "(?<=<buildNumber>)[^<]+" version-metadata.xml)
+BASE_VERSION=${LATEST_VERSION%-SNAPSHOT}
+# 3. Construct the direct URL to the exact latest features XML file
+LATEST_FILE="openhab-addons-${BASE_VERSION}-${TIMESTAMP}-${BUILD_NUMBER}-features.xml"
+wget -q "https://openhab.jfrog.io/openhab/libs-snapshot/org/openhab/distro/openhab-addons/${LATEST_VERSION}/${LATEST_FILE}"
+# 4. Clean up and rename to the expected feature.xml target
+mv "$LATEST_FILE" feature.xml
+rm root-metadata.xml version-metadata.xml
+cd -
 
 echo_process "Running Maven.... "
 mvn clean
