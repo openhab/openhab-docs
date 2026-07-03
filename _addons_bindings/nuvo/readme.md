@@ -648,7 +648,8 @@ when
     Item music_Music_Album received update
 then
     if (music_Music_Album.state.toString() != "") {
-        sendCommand(nuvo_system_sendcmd, source + "DISPLINES0,0,0,\"\",\"" + music_Music_Album.state.toString + "\",\"" + artistName + "\",\"" + trackName + "\"")
+        albumName = music_Music_Album.state.toString
+        sendCommand(nuvo_system_sendcmd, source + "DISPLINES0,0,0,\"\",\"" + albumName + "\",\"" + artistName + "\",\"" + trackName + "\"")
     }
 end
 
@@ -657,7 +658,8 @@ when
     Item music_Music_Artist received update
 then
     if (music_Music_Artist.state.toString() != "") {
-        sendCommand(nuvo_system_sendcmd, source + "DISPLINES0,0,0,\"\",\"" + music_Music_Artist.state.toString + "\",\"" + artistName + "\",\"" + trackName + "\"")
+        artistName = music_Music_Artist.state.toString
+        sendCommand(nuvo_system_sendcmd, source + "DISPLINES0,0,0,\"\",\"" + albumName + "\",\"" + artistName + "\",\"" + trackName + "\"")
     }
 end
 
@@ -666,7 +668,8 @@ when
     Item music_Music_Track received update
 then
     if (music_Music_Track.state.toString() != "") {
-        sendCommand(nuvo_system_sendcmd, source + "DISPLINES0,0,0,\"\",\"" + music_Music_Track.state.toString + "\",\"" + artistName + "\",\"" + trackName + "\"")
+        trackName = music_Music_Track.state.toString
+        sendCommand(nuvo_system_sendcmd, source + "DISPLINES0,0,0,\"\",\"" + albumName + "\",\"" + artistName + "\",\"" + trackName + "\"")
     }
 end
 

@@ -4,6 +4,7 @@ label: WorxLandroid
 title: WorxLandroid - Bindings
 type: binding
 description: "This is the binding for Worx Landroid robotic lawn mowers."
+logo: images/addons/worxlandroid.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # WorxLandroid Binding
+
+<AddonLogo />
 
 
 This is the binding for Worx Landroid robotic lawn mowers.

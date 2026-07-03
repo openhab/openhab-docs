@@ -4,6 +4,7 @@ label: Ntfy
 title: Ntfy - Bindings
 type: binding
 description: "The Ntfy binding enables openHAB to publish notifications to Ntfy-compatible servers (for example [ntfy.sh](https://ntfy.sh) or a self-hosted ntfy-compatible endpoint)."
+logo: images/addons/ntfy.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Ntfy Binding
+
+<AddonLogo />
 
 The Ntfy binding enables openHAB to publish notifications to Ntfy-compatible servers (for example [ntfy.sh](https://ntfy.sh) or a self-hosted ntfy-compatible endpoint).
 

@@ -4,6 +4,7 @@ label: LinkPlay
 title: LinkPlay - Bindings
 type: binding
 description: "This binding integrates audio devices based on the LinkPlay platform."
+logo: images/addons/linkplay.png
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # LinkPlay Binding
+
+<AddonLogo />
 
 This binding integrates audio devices based on the LinkPlay platform.
 LinkPlay is a popular Wi-Fi audio module used by many manufacturers to enable streaming capabilities in their speakers and audio devices.

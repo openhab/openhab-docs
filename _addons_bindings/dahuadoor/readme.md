@@ -4,6 +4,7 @@ label: DahuaDoor
 title: DahuaDoor - Bindings
 type: binding
 description: "This binding integrates Dahua VTO Villastation door controllers with openHAB, enabling doorbell notifications, camera snapshots, and remote door control."
+logo: images/addons/dahuadoor.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # DahuaDoor Binding
+
+<AddonLogo />
 
 This binding integrates Dahua VTO Villastation door controllers with openHAB, enabling doorbell notifications, camera snapshots, and remote door control.
 
