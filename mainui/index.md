@@ -35,7 +35,7 @@ Pressing the key combination <kbd>Alt</kbd><kbd>Shift</kbd><kbd>M</kbd> on your 
 
 This section attempts to highlight some of Main UI's "special" features by linking to their respective documentation:
 
-- [Chat]({{base}}/mainui/chat.html): An interactive chat interface to converse with LLM-based voice assistants and control items.
+- [Chat]({{base}}/mainui/chat.html): An interactive chat interface to converse with LLM-based voice assistants and control Items.
 - [Developer Sidebar Search]({{base}}/mainui/developer/sidebar.html#developer-sidebar-search): Provides a universal search across nearly all UI-configurable entities (i.e. Items, rules etc.).
 - [Web Audio Sink]({{base}}/mainui/about.html#web-audio-sink) support: Allows the openHAB server to play audio through the browser on Main UI clients.
 - [UI Command Item]({{base}}/mainui/about.html#ui-command-item): Allows the openHAB server to control Main UI, e.g. navigate to UI pages or display a notification.
