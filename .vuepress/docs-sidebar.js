@@ -138,6 +138,7 @@ module.exports = [
     collapsable: false,
     children: [
       ['mainui/', 'Overview'],
+      ['mainui/chat', 'Chat'],
       { title: 'Settings',
         path: '/docs/mainui/settings/',
         children: [
@@ -158,7 +159,8 @@ module.exports = [
         path: '/docs/mainui/developer/',
         children: [
           ['mainui/developer/sidebar', 'Developer Sidebar'],
-          ['mainui/developer/widgets', 'Widgets']
+          ['mainui/developer/widgets', 'Widgets'],
+          ['mainui/developer/log-viewer', 'Log Viewer']
         ]
       },
       ['mainui/about', 'Help & About'],
