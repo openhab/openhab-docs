@@ -7,7 +7,7 @@ title: Standard Triggers
 
 This page describes the standard triggers for [rules](./rules.md).
 
-OpenHAB comes with a set of standard triggers.
+openHAB comes with a set of standard triggers.
 This is a short presentation of these triggers and their configuration.
 Standard triggers in openHAB are built-in mechanisms that initiate rule execution based on specific events or conditions.
 They provide a way to automate actions without the need for custom scripting, making them accessible and easy to use.
@@ -136,7 +136,7 @@ This trigger fires when a matching `Event` appears on the event bus.
 
 | Parameter   | Description                                                                                                                                                                                                                                                                                                                                                                             |
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `[topic]`   | The topic to match, as a file-system style glob (`*`, `**`, `?`, and `{}` operators).<br><br>Example filters:<br>Item events: `openhab/items/\*/`<br>Channel events: `openhab/channels/\*/triggered`<br>Thing events: `openhab/things/\*\*`                                                                                                                                             |
+| `[topic]`   | The topic to match, as a file-system style glob (`*`, `**`, `?`, and `{}` operators).<br><br>Example filters:<br>Item events: `openhab/items/*/`<br>Channel events: `openhab/channels/*/triggered`<br>Thing events: `openhab/things/**`                                                                                                                                                 |
 | `[source]`  | A string that represents the entity that caused the event.                                                                                                                                                                                                                                                                                                                              |
 | `[types]`   | `ItemCommandEvent`, `ItemStateEvent`, `ItemStateChangedEvent`, `GroupItemStateChangedEvent`, `ItemAddedEvent`, `ItemRemovedEvent`, `ThingAddedEvent`, `ThingRemovedEvent`, `ThingStatusInfoChangedEvent`, `ThingStatusInfoEvent`, `ThingUpdatedEvent`, etc. A non-exhaustive list can be found [in the Javadocs](https://www.openhab.org/javadoc/latest/org/openhab/core/events/event). |
 | `[payload]` | A [regular expression](https://en.wikipedia.org/wiki/Regular_expression) to match against the actual event data.                                                                                                                                                                                                                                                                        |

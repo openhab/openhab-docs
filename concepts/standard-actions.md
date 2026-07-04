@@ -7,7 +7,7 @@ title: Standard Actions
 
 This page describes the standard actions for [rules](./rules.md).
 
-OpenHAB comes with a set of standard actions.
+openHAB comes with a set of standard actions.
 These are built-in mechanisms that perform actions on behalf of rules.
 
 ## Actions Structure

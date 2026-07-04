@@ -60,7 +60,7 @@ In both cases, the rule has no triggers and no conditions.
 
 Now that we know the concept of rule triggers, let's look at them in more depth.
 Triggers define those events that, when they occur, cause the rule to run.
-OpenHAB has a set of [standard triggers with specific definitions](./standard-triggers.md).
+openHAB has a set of [standard triggers with specific definitions](./standard-triggers.md).
 
 These are the categories of rules that can be used to trigger a rule:
 
@@ -196,7 +196,7 @@ Please keep in mind that rule engines provided by separately installed automatio
 
 With triggers, we have the _When \_\_t\_\_ happens* part completed, so next up is the *if \_\_c\_\__ part.
 This part can limit when a rule can run by adding one or more condition(s).
-OpenHAB has a set of [standard conditions with specific definitions](./standard-conditions.md).
+openHAB has a set of [standard conditions with specific definitions](./standard-conditions.md).
 
 Available types of conditions include:
 
@@ -213,7 +213,7 @@ The only restriction is a script condition's last executed line of code must res
 
 Once a rule has triggered, and all conditions have been met, the rule will execute one or more actions.
 These are what makes the rule actually _do something_.
-OpenHAB has a set of [standard actions with specific definitions](./standard-actions.md).
+openHAB has a set of [standard actions with specific definitions](./standard-actions.md).
 
 ### Scripts
 

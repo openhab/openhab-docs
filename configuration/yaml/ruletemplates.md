@@ -87,7 +87,7 @@ ruleTemplates:
 |:---------------------|:--------:|:--------------------------------------------------------------------------------------------------------------------------|
 | `<template_uid>`     |    ☑     | The UID of the rule template being defined.                                                                               |
 | `label`              |    ☑     | The rule template name/label.                                                                                             |
-| `description`        |    ☐     | The description the resulting rules.                                                                                      |
+| `description`        |    ☐     | The description of the resulting rules.                                                                                   |
 | `tags`               |    ☐     | A list of tags to associate with the resulting rules.                                                                     |
 | `visibility`         |    ☐     | Determines if the resulting rules will be visible in the UI. Rarely used, defaults to `VISIBLE`.                          |
 | `configDescriptions` |    ☑     | Specify configuration description parameters, one for each placeholder used in the template.                              |
@@ -289,10 +289,10 @@ ruleTemplates:
 
 #### Example Results
 
-Rule templates can be instantiated to rules using rule stubs, `Rule` objects that only contain the UID, label and placeholders configuration.
+Rule templates can be instantiated to rules using rule stubs, `Rule` objects that only contain the rule UID, template UID, label and placeholders configuration.
 Here are examples of rule stubs for the example rule templates, and the resulting rules.
 
-##### Stub `light-on`
+##### Stub for `light-on`
 
 ```yaml
 version: 1
@@ -304,7 +304,7 @@ rules:
       lightItem: DemoSwitch
 ```
 
-##### Resulting Rule `light-on`
+##### Resulting Rule from `light-on`
 
 ```yaml
 version: 1
@@ -326,7 +326,7 @@ rules:
         type: SendCommand
 ```
 
-##### Stub `welcome`
+##### Stub for `welcome`
 
 ```yaml
 version: 1
@@ -334,6 +334,7 @@ rules:
   welcome-stub:
     template: welcome
     label: Welcome Generated Rule
+    config:
       startTime: 09:00
       endTime: 17:30
       sayText: "Welcome visitor, please feel the heat"
@@ -342,7 +343,7 @@ rules:
       heatingItem: ControlSignal
 ```
 
-##### Resulting Rule `welcome`
+##### Resulting Rule from `welcome`
 
 ```yaml
 version: 1
@@ -402,7 +403,7 @@ rules:
         type: Say
 ```
 
-##### Stub `light-control`
+##### Stub for `light-control`
 
 ```yaml
 version: 1
@@ -418,7 +419,7 @@ rules:
       sensor_item: DemoSensor
 ```
 
-##### Resulting Rule `light-control`
+##### Resulting Rule from `light-control`
 
 ```yaml
 version: 1

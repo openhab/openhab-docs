@@ -76,7 +76,7 @@ rules:
 
 #### Trigger Types
 
-OpenHAB can be extended in various ways, so other trigger types than those listed here can be valid in a particular installation.
+openHAB can be extended in various ways, so other trigger types than those listed here can be valid in a particular installation.
 Here is a list of standard trigger types that exist in any installation.
 The standard trigger types have been given simplified aliases for convenience, but can also be used with their "full ID".
 
@@ -110,7 +110,7 @@ The standard trigger types have been given simplified aliases for convenience, b
 
 #### Condition Types
 
-OpenHAB can be extended in various ways, so other condition types than those listed here can be valid in a particular installation.
+openHAB can be extended in various ways, so other condition types than those listed here can be valid in a particular installation.
 Here is a list of standard condition types that exist in any installation.
 The standard condition types have been given simplified aliases for convenience, but can also be used with their "full ID".
 
@@ -141,7 +141,7 @@ The standard condition types have been given simplified aliases for convenience,
 
 #### Action Types
 
-OpenHAB can be extended in various ways, so other action types than those listed here can be valid in a particular installation.
+openHAB can be extended in various ways, so other action types than those listed here can be valid in a particular installation.
 Here is a list of standard action types that exist in any installation.
 The standard action types have been given simplified aliases for convenience, but can also be used with their "full ID".
 

@@ -7,7 +7,7 @@ title: Standard Conditions
 
 This page describes the standard conditions for [rules](./rules.md).
 
-OpenHAB comes with a set of standard conditions.
+openHAB comes with a set of standard conditions.
 These are built-in mechanisms that decide if a rule should be executed when triggered.
 
 ## Conditions Structure
