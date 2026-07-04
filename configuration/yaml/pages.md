@@ -55,15 +55,14 @@ pages:
 
 YAML pages support the following component names for the page type you are defining:
 
-| Component        | Description                                                                                                                                                          |
-|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `oh-layout-page` | [Layout Pages]({{base}}/ui/layout-pages.html)  are used in the main web user interface to display widgets in an organized manner (responsive or fixed-grid layouts). |
-| `oh-tabs-page`   | [Tabbed Pages]({{base}}/ui/tabbed-pages.html) to create composite pages that display other Pages in tabs.                                                            |
-| `oh-map-page`    | [Map Pages]({{base}}/ui/map-pages.html) displays fixed markers or Location items on a map; supports markers and circle markers.                                      |
-| `oh-plan-page`   | [Floorplan Pages]({{base}}/ui/floorplan-pages.html) displays markers or elements over a custom image background with zoom and pan.                                   |
-| `oh-chart-page`  | [Chart Pages]({{base}}/ui/chart-pages.html) display historical values in a full-screen chart.                                                                        |
-
-The `oh-home-page` component is not supported for file-based YAML pages.
+| Component        | Description                                                                                                                                                         |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `oh-home-page`   | The Home Page is a unique page that configures how the default page is displayed when the main openHAB URL is accessed.                                             |
+| `oh-layout-page` | [Layout Pages]({{base}}/ui/layout-pages.html) are used in the main web user interface to display widgets in an organized manner (responsive or fixed-grid layouts). |
+| `oh-tabs-page`   | [Tabbed Pages]({{base}}/ui/tabbed-pages.html) to create composite pages that display other Pages in tabs.                                                           |
+| `oh-map-page`    | [Map Pages]({{base}}/ui/map-pages.html) displays fixed markers or Location items on a map; supports markers and circle markers.                                     |
+| `oh-plan-page`   | [Floorplan Pages]({{base}}/ui/floorplan-pages.html) displays markers or elements over a custom image background with zoom and pan.                                  |
+| `oh-chart-page`  | [Chart Pages]({{base}}/ui/chart-pages.html) display historical values in a full-screen chart.                                                                       |
 
 ### Example
 
@@ -118,6 +117,19 @@ pages:
 
 ### Notes
 
-- Pages can be copy-pasted from the Main UI YAML representation, then wrapped under `version: 1` and `pages:`.
+- Pages can be copy-pasted directly from the Main UI Code tab representation without any modifications, as its output already includes the required `version:` and `pages:` structure.
 - When creating a file-based page manually, use the page UID as the map key.
 - Unlike some other YAML entities, page content is mostly component-driven, so the useful keys under `config` and `slots` depend on the selected component.
+
+### Special Cases for Home & Overview Pages
+
+The `home` and `overview` pages are unique system configurations that require extra consideration when defining them via files:
+
+- **The `home` Page:** This is the default page shown when opening your openHAB URL, which subsequently redirects to `/overview/`.
+  It specifies the structure of the default landing page (such as defining the displayed Overview, Locations, Equipment, and Properties tabs) rather than holding actual UI controls.
+  To use a file-based version, it **must** use the literal UID `home` and it must use `oh-home-page` as its component type.
+  Because UIDs must be unique, any existing UI-managed page with the UID `home` must be deleted first for the file-based configuration to load.
+  Be sure to copy its definition beforehand if you want to preserve your layout.
+- **The `overview` Page:** This page sits inside the "Overview" tab of the home page and uses an `oh-layout-page` component.
+  Much like the home page, it relies on the fixed UID `overview`.
+  Only one instance can exist across the system; therefore, an existing UI-managed `overview` page must be deleted before your file-based one will be accepted. Be sure to copy the UI page definition beforehand if you want to preserve its contents.
