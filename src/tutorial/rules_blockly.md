@@ -190,7 +190,7 @@ Change the value to "0".
 ![initialize tcomp](images/blockly-function-tcomp.png)
 
 Now we will add an if statement to compare the times.
-We have two conditions to we will use the cog to add an "else if" to the if statement to.
+We have two conditions so we will use the cog to add an "else if" to the if statement.
 You can find the "if" block under "Logic".
 
 ![if statement](images/blockly-function-if.png)
