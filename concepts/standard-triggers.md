@@ -24,11 +24,11 @@ These configuration parameters and a brief description of what values they expec
 
 This trigger fires when the system time matches the time or date and time specified by the `DateTimeType` `Item`.
 
-| Parameter  | Description                                                                   |
-|------------|-------------------------------------------------------------------------------|
-| `itemName` | The name of the `DateTimeType` `Item`.                                        |
-| `timeOnly` | Whether only the time of the `Item` should be compared, or the date and time. |
-| `[offset]` | The offset in seconds to add to the time of the `Item` state (optional).      |
+| Parameter    | Description                                                                                        |
+|--------------|----------------------------------------------------------------------------------------------------|
+| `itemName`   | The name of the `DateTimeType` `Item`.                                                             |
+| `[timeOnly]` | Whether only the time of the `Item` should be compared, or the date and time. Defaults to `false`. |
+| `[offset]`   | The offset in seconds to add to the time of the `Item` state (optional).                           |
 
 ### `timer.GenericCronTrigger`
 

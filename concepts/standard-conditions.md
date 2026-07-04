@@ -98,11 +98,11 @@ This condition verifies that the provided script returns `true`.
 
 This condition verifies that the status of the specified `Thing` fulfills the requirements.
 
-| Parameter  | Description                                                             |
-|------------|-------------------------------------------------------------------------|
-| `thingUID` | The UID of the `Thing`.                                                 |
-| `operator` | The evaluation operator, either `=` or `!=`.                            |
-| `status`   | The status to compare with.                                             |
+| Parameter  | Description                                                                                                                               |
+|------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| `thingUID` | The UID of the `Thing`.                                                                                                                   |
+| `operator` | The evaluation operator, either `=` or `!=`.                                                                                              |
+| `status`   | The status to compare with. Valid statuses are `UNINITIALIZED`, `INITIALIZING`, `UNKNOWN`, `ONLINE`, `OFFLINE`, `REMOVING` and `REMOVED`. |
 
 ### `core.TimeOfDayCondition`
 

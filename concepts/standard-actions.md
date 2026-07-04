@@ -22,10 +22,10 @@ These configuration parameters and a brief description of what values they expec
 
 This action enables or disables one or more specified `Rule`s.
 
-| Parameter  | Description                                                                             |
-|------------|-----------------------------------------------------------------------------------------|
-| `ruleUIDs` | The `List` of rule UIDs of the `Rule`s to enable or disable.                            |
-| `enable`   | The boolean value that decides if the rule(s) should be enabled or disabled.            |
+| Parameter  | Description                                                                  |
+|------------|------------------------------------------------------------------------------|
+| `ruleUIDs` | The `List` of rule UIDs of the `Rule`s to enable or disable.                 |
+| `enable`   | The boolean value that decides if the rule(s) should be enabled or disabled. |
 
 ### `core.RunRuleAction`
 
@@ -40,45 +40,45 @@ This action runs one or more specified `Rule`s.
 
 This action sends a `Command` to an `Item`.
 
-| Parameter  | Description                                                                             |
-|------------|-----------------------------------------------------------------------------------------|
-| `itemName` | The name of the `Item`.                                                                 |
-| `command`  | The `Command` to send.                                                                  |
+| Parameter  | Description             |
+|------------|-------------------------|
+| `itemName` | The name of the `Item`. |
+| `command`  | The `Command` to send.  |
 
 ### `core.ItemStateUpdateAction`
 
 This action updates the `State` of an `Item`.
 
-| Parameter  | Description                                                                             |
-|------------|-----------------------------------------------------------------------------------------|
-| `itemName` | The name of the `Item`.                                                                 |
-| `state`    | The `State` to set.                                                                     |
+| Parameter  | Description             |
+|------------|-------------------------|
+| `itemName` | The name of the `Item`. |
+| `state`    | The `State` to set.     |
 
 ### `media.PlayAction`
 
 This action plays an audio file.
 
-| Parameter   | Description                                                                             |
-|-------------|-----------------------------------------------------------------------------------------|
-| `sound`     | The filename of the file from the `sounds` folder.                                      |
-| `[sink]`    | The ID of the audio sink to use. Leave out to use the default.                          |
-| `[volume]`  | The volume to be used. Leave out to use the default.                                    |
+| Parameter  | Description                                                    |
+|------------|----------------------------------------------------------------|
+| `sound`    | The filename of the file from the `sounds` folder.             |
+| `[sink]`   | The ID of the audio sink to use. Leave out to use the default. |
+| `[volume]` | The volume to be used. Leave out to use the default.           |
 
 ### `media.SayAction`
 
 This action uses the voice system to say the specified text.
 
-| Parameter   | Description                                                                             |
-|-------------|-----------------------------------------------------------------------------------------|
-| `text`      | The text to say.                                                                        |
-| `[sink]`    | The ID of the voice to use. Leave out to use the default.                               |
-| `[volume]`  | The volume to be used. Leave out to use the default.                                    |
+| Parameter  | Description                                                    |
+|------------|----------------------------------------------------------------|
+| `text`     | The text to say.                                               |
+| `[sink]`   | The ID of the audio sink to use. Leave out to use the default. |
+| `[volume]` | The volume to be used. Leave out to use the default.           |
 
 ### `script.ScriptAction`
 
 This action executes the provided script.
 
-| Parameter | Description                                                             |
-|-----------|-------------------------------------------------------------------------|
-| `type`    | The code/MIME-type for the scripting language.                          |
-| `script`  | The script content to execute.                                          |
+| Parameter | Description                                    |
+|-----------|------------------------------------------------|
+| `type`    | The code/MIME-type for the scripting language. |
+| `script`  | The script content to execute.                 |
