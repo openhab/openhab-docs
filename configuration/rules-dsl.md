@@ -630,7 +630,7 @@ var DecimalType parsedResult = new DecimalType(Long.parseLong(hex_code, 16))
 var myTemperature = 20|°C
 
 // get units in text
-var myUnits = myTemperature.getUnit.toString  // gives "°C"
+var myUnits = myTemperature.unit.toString  // gives "°C"
 
 // convert a quantity state into a different unit:
 var fahrenheit = myTemperature.toUnit("°F")   // will contain quantity 68°F
@@ -1035,7 +1035,7 @@ It may be necessary to guard against concurrency.
 ```java
 import java.util.concurrent.locks.ReentrantLock
 
-val ReentrantLock lock  = new ReentrantLock
+val lock = new ReentrantLock
 
 rule ConcurrentCode
 when
@@ -1087,7 +1087,7 @@ try {
     var temperature = transformRaw("JSONPATH", "$.temperature", jsonstring)
 }
 catch(TransformationException e) {
-    logError("Error", "Some bad stuff happened in my rule: " + e.getMessage)
+    logError("Error", "Some bad stuff happened in my rule: " + e.message)
 }
 finally {
     // always runs even if there was an error, good place for cleanup
@@ -1186,7 +1186,7 @@ rule "Start wake up light on sunrise"
 when
     Channel "astro:sun:home:rise#event" triggered
 then
-    switch(receivedEvent) {
+    switch receivedEvent {
         case "START": {
             Light.sendCommand(ON)
         }
