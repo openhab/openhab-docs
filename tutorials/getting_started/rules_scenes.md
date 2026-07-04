@@ -114,7 +114,19 @@ Use the following block and add the _scene id_ to the block to call the scene
 Save it and that's it.
 :::
 
-::: tab JS
+::: tab Groovy
+
+```groovy
+var ruleManagerBundleContext = org.osgi.framework.FrameworkUtil.getBundle(org.openhab.core.automation.RuleManager).bundleContext
+var ruleManagerServiceReference = ruleManagerBundleContext.getServiceReference(org.openhab.core.automation.RuleManager)
+var ruleManager = ruleManagerBundleContext.getService(ruleManagerServiceReference)
+ruleManager.runNow("scene_office_dimmed_light")
+ruleManagerBundleContext.ungetService(ruleManagerServiceReference)
+```
+
+:::
+
+::: tab JS&nbsp;Scripting
 
 ```javascript
  rules.runRule('scene_office_dimmed_light', {});
@@ -127,7 +139,7 @@ Save it and that's it.
 rules[“id”] gives you the rule object for the given id, which supports the [trigger method](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Rules/Rule.html#trigger-instance_method) (aliased as run).
 
 ```ruby
-  rules["scene_id"].run
+  rules["scene_office_dimmed_light"].run
 ```
 
 ::::
