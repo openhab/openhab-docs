@@ -72,15 +72,7 @@ Example:
 import java.net.URI
 ```
 
-A few default imports are already done, so classes from these packages do not need to be explicitly imported:
-
-```java
-org.openhab.core.items
-org.openhab.core.persistence
-org.openhab.core.library.types
-org.openhab.core.library.items
-org.openhab.model.script.actions
-```
+Some [implicit imports](#implicit-imports) are already done, so classes from these packages do not need to be explicitly imported.
 
 The **Variable Declarations** section can be used to declare variables that should be accessible to all rules in this file.
 You can declare variables with or without initial values and modifiable or read-only.
@@ -821,49 +813,51 @@ This includes implicit imports, which can be used without explicit import statem
 The following imports are implicit and can be used directly:
 
 ```java
-import static org.openhab.core.model.script.actions.BusEvent.*;
-import static org.openhab.core.model.script.actions.Exec.*;
-import static org.openhab.core.model.script.actions.HTTP.*;
-import static org.openhab.core.model.script.actions.Log.*;
-import static org.openhab.core.model.script.actions.Ping.*;
-import static org.openhab.core.model.script.actions.Transformation.*;
-import static org.openhab.core.model.script.actions.ScriptExecution.*;
-import static org.openhab.core.model.script.ScriptServiceUtil.*;
 import static java.net.URLEncoder.*;
-import static org.openhab.core.model.script.actions.CoreUtil.*;
-import static org.openhab.core.library.unit.ImperialUnits.*;
-import static org.openhab.core.library.unit.MetricPrefix.*;
-import static org.openhab.core.library.unit.SIUnits.*;
-import static org.openhab.core.library.unit.Units.*;
-import static org.openhab.core.library.unit.BinaryPrefix.*;
-import static java.time.temporal.ChronoUnit.*;
 import static java.time.DayOfWeek.*;
 import static java.time.Duration.*;
 import static java.time.Month.*;
 import static java.time.ZoneId.*;
 import static java.time.ZonedDateTime.*;
+import static java.time.temporal.ChronoUnit.*;
+import static org.openhab.core.library.unit.BinaryPrefix.*;
+import static org.openhab.core.library.unit.ImperialUnits.*;
+import static org.openhab.core.library.unit.MetricPrefix.*;
+import static org.openhab.core.library.unit.SIUnits.*;
+import static org.openhab.core.library.unit.Units.*;
+import static org.openhab.core.model.script.ScriptServiceUtil.*;
+import static org.openhab.core.model.script.actions.BusEvent.*;
+import static org.openhab.core.model.script.actions.CoreUtil.*;
+import static org.openhab.core.model.script.actions.Exec.*;
+import static org.openhab.core.model.script.actions.HTTP.*;
+import static org.openhab.core.model.script.actions.Log.*;
+import static org.openhab.core.model.script.actions.Ping.*;
+import static org.openhab.core.model.script.actions.ScriptExecution.*;
+import static org.openhab.core.model.script.actions.Transformation.*;
 
-import org.openhab.core.library.unit.*;
-import org.openhab.core.library.types.*;
-import org.openhab.core.library.items.*;
-import org.openhab.core.types.TimeSeries;
-import org.openhab.core.items.*;
-import org.openhab.core.things.*;
-import org.openhab.core.thing.link.ItemChannelLink;
-import org.openhab.core.thing.link.ItemChannelLinkRegistry;
-import org.openhab.core.persistence.*;
-import org.openhab.core.persistence.extensions.PersistenceExtensions.RiemannType;
-import org.openhab.core.model.script.actions.*;
 import java.time.*;
 import java.time.format.*;
 import java.time.temporal.*;
 import java.util.regex.*;
 import java.util.Locale;
 import java.util.TimeZone;
+
 import javax.measure.quantity.*;
+
+import org.openhab.core.items.*;
+import org.openhab.core.library.items.*;
+import org.openhab.core.library.types.*;
+import org.openhab.core.library.unit.*;
+import org.openhab.core.model.script.actions.*;
 import org.openhab.core.model.script.lib.Channels;
 import org.openhab.core.model.script.lib.Items;
 import org.openhab.core.model.script.lib.Rules;
+import org.openhab.core.persistence.*;
+import org.openhab.core.persistence.extensions.PersistenceExtensions.RiemannType;
+import org.openhab.core.thing.*;
+import org.openhab.core.thing.link.ItemChannelLink;
+import org.openhab.core.thing.link.ItemChannelLinkRegistry;
+import org.openhab.core.types.TimeSeries;
 ```
 
 In addition, all registered `org.openhab.core.model.script.engine.action.ActionService` implementations are statically imported with wildcards (`.*`).
