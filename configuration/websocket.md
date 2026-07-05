@@ -16,6 +16,7 @@ WebSockets are available on the same ports as the REST API, usually port 8080 fo
 The connection is established by connecting to `ws[s]://{URL}:{PORT}/ws/{ADAPTER_ID}`.
 
 To prevent unauthorized use of the connection, an access token has to be sent with the initial request.
+If _Implicit User Role_ is enabled in _System Settings_ → _API Security_, no access token is required for WebSocket endpoints that do not require administration rights.
 There are two options to send the access token:
 
 1. Through the `Sec-WebSocket-Protocol` header:<br>
@@ -289,7 +290,8 @@ The Log WebSocket API allows subscription to openHAB log events.
 It supports retrieving log history and streaming live logs with customizable filters.
 
 The Log WebSocket is available at `ws[s]://{URL}:{PORT}/ws/logs`.
-Authentication is handled as [described above](#establishing-a-connection).
+Authentication is handled as [described above](#establishing-a-connection), requiring administrative rights to connect.
+Anonymous users or logged-in users without the administrator role are not allowed to connect to the log WebSocket.
 
 ### Protocol Workflow
 
