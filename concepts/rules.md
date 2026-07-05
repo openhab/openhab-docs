@@ -59,7 +59,8 @@ In both cases, the rule has no triggers and no conditions.
 ## Triggers
 
 Now that we know the concept of rule triggers, let's look at them in more depth.
-Triggers define those events that, when they occur, causes the rule to run.
+Triggers define those events that, when they occur, cause the rule to run.
+openHAB has a set of [standard triggers with specific definitions](./standard-triggers.md).
 
 These are the categories of rules that can be used to trigger a rule:
 
@@ -195,9 +196,7 @@ Please keep in mind that rule engines provided by separately installed automatio
 
 With triggers, we have the _When \_\_t\_\_ happens* part completed, so next up is the *if \_\_c\_\__ part.
 This part can limit when a rule can run by adding one or more condition(s).
-
-Conditions as a separately definable part of a rule are supported by some rule engines.
-In situations where the rule engine does not support conditions, you can implement your conditions using an `if`-statement in the rule action.
+openHAB has a set of [standard conditions with specific definitions](./standard-conditions.md).
 
 Available types of conditions include:
 
@@ -210,7 +209,13 @@ Available types of conditions include:
 The script condition is the most universal one, as you can choose one of the many available script/rule languages to build any condition you can think of.
 The only restriction is a script condition's last executed line of code must result in a boolean (i.e. `true` or `false`).
 
-## Scripts
+## Actions
+
+Once a rule has triggered, and all conditions have been met, the rule will execute one or more actions.
+These are what makes the rule actually _do something_.
+openHAB has a set of [standard actions with specific definitions](./standard-actions.md).
+
+### Scripts
 
 Unfortunately the term "Script" is overloaded in openHAB, and has multiple meanings based on the context:
 
@@ -226,7 +231,7 @@ Unfortunately the term "Script" is overloaded in openHAB, and has multiple meani
 
 These rule docs mainly refer to the first two meanings when talking about scripts.
 
-## Script Actions
+### Script Actions
 
 Script Actions are an action that allow you to run logic written in one of the available automation/rule languages, e.g. JavaScript, Rules DSL, Blockly.
 
