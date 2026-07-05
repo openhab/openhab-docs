@@ -4,6 +4,7 @@ label: Google Gemini
 title: Google Gemini - Bindings
 type: binding
 description: "The openHAB Google Gemini Binding allows openHAB to communicate with the Gemini family of large language models (LLM) from Google."
+logo: images/addons/gemini.svg
 install: auto
 ---
 
@@ -12,6 +13,8 @@ install: auto
 {% include base.html %}
 
 # Google Gemini Binding
+
+<AddonLogo />
 
 The openHAB Google Gemini Binding allows openHAB to communicate with the Gemini family of large language models (LLM) from Google.
 
