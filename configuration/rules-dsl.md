@@ -1038,7 +1038,7 @@ then
     lock.lock
     try {
         // do stuff
-    } finally{
+    } finally {
         lock.unlock
     }
 end
