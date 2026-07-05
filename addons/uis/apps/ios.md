@@ -67,7 +67,7 @@ Example:
 
 This is the secondary connection to your openHAB instance, a fully qualified URL with an IP or host is required.
 If using the openHAB cloud service, leave this as the default setting of `https://myopenhab.org`.
-When set to the public cloud, the app will also register for push notifications (as long as credentials are correct)
+When set to the public cloud, the app will also register for push notifications (as long as credentials are correct).
 
 The [Local URL](#local-url) will be used as the primary connection, and if that fails or is not reachable, falls back to the remote URL.
 

@@ -549,7 +549,7 @@ val hour = (MyDateTimeItem.state as DateTimeType).getZonedDateTime(ZoneId.system
 
 A Dimmer Item carries a **PercentType**.
 PercentType can be cast to and treated like a java.lang.Number, where Number represents any type of numerical value.
-The Rules language supports doing mathematical and logical operations with Numbers
+The Rules language supports doing mathematical and logical operations with numbers.
 The Number Object supports methods for getting primitive versions of that Number if needed.
 
 ```java
