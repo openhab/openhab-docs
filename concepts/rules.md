@@ -511,13 +511,13 @@ actions:
 ::: tab DSL
 
 ```java
-rule "Play music on arrival, but only on afternoon"
+rule "Play music on arrival, but only on afternoon" uid = "Music-on-arrival" [ Music ]
 when
     Item Presence received command ON
+but only if
+    Time is between 13:00 and 18:00
 then
-    if(now.isAfter(now.withHour(13)) && now.isBefore(now.withHour(18))) {
-      Soundbar.sendCommand(ON)
-    }
+    Soundbar.sendCommand(ON)
 end
 ```
 
