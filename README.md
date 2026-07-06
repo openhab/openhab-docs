@@ -27,7 +27,7 @@ This happens mostly once a day. Afterwards your change is included in the next b
 
 ## Contributing to the Documentation
 
-The documentation is a community effort, so everyone is welcome to suggest changes, add new sections and fix bugs.
+The documentation is a community effort, so everyone is welcome to suggest changes, add new sections, and fix bugs.
 This is done exactly the same way as for the code repositories, simply through pull requests against this repo.
 When editing a page through the _"Edit this page on GitHub"_ link on the website, you will be given the opportunity to create a pull request directly from GitHub.
 Please read our [contribution guidelines](.github/CONTRIBUTING.md) and try to follow them as best as you can before submitting a change for review —
@@ -108,8 +108,9 @@ rvm install ruby-3.3.11
 Next, you can build & serve the documentation preview:
 
 ```shell script
-npm install           # This needs to be run once for initialization
-npm run serve-preview
+npm install                     # This needs to be run once for initialization
+npm run fetch-external-content  # Optional: Fetch external content (add-ons, ecosystem, etc.) locally
+npm run serve-preview           # Build and serve the local preview
 ```
 
 The local preview is available under the following URLs:
@@ -141,33 +142,23 @@ So we are saving time for everyone by keeping those files at their original loca
 
 #### Snapshot Documentation: [next.openhab.org](https://next.openhab.org/docs/)
 
-We have set up our [build server](https://ci.openhab.org/view/Documentation/) to do the magic automatically.
-There are several triggers (mostly time-based), which will then _gather the external contents_ and move them to our [final](https://github.com/openhab/openhab-docs/tree/final) branch.
-You can find this migrated external content in the _final_ branch for example under the following paths:
+We use a GitHub Actions workflow and a Ruby-based pipeline to automatically gather external content and prepare the documentation for deployment:
 
-- `_addons_*`
-- `_ecosystem`
-- `addons/uis/apps/*`
+- **External Content Gathering**:
+  The script [fetch-external-content.rb](scripts/fetch-external-content.rb) pulls and clones external repositories (like openhab-distro, openhab-addons, openhab-webui, openhabian, mobile apps, etc.), fetches add-on descriptions and features XML, processes the markdown documentation, and populates the `addons` and `docs` folders.
 
-You can even have a look at how this works in detail.
-The external content is updated by the following toolchain:
+- **Documentation Preparation**:
+  The script [prepare-docs.rb](fscripts/prepare-docs.rb) processes the documentation directory, copies pages from `src` to `docs`, and handles placeholder pages.
 
-- `update-external-resources.sh` → `pom.xml` → `process_addons.groovy` + `process_thing_types.groovy`
+These scripts are integrated into the [Update Final Branch Docs](.github/workflows/update_final_branch_docs.yml) GitHub Actions workflow.
+This workflow:
 
-Everything that gets updated in the _main_ branch will be also merged over to the _final_ branch automatically.
-Afterwards, we will redeploy the website with the latest content from the _final_ branch at regular intervals.
+1. Runs automatically on pushes to the `main` branch, or on a nightly cron schedule.
+1. Clones both the `main` and `final` branches.
+1. Runs the Ruby pipeline (`ruby scripts/fetch-external-content.rb` and `ruby scripts/prepare-docs.rb --no-clean --no-placeholders`).
+1. Commits the updated documentation and assets to the `final` branch.
 
-##### Build triggers investigated
-
-There are two triggers available currently.
-The `merge docs` job is triggered after something has been added to the _main_ branch of this repository.
-The `gather external docs` job is started with a **successful** build of the openhab-distribution.
-A successful distribution build will include all the latest changes that have been made to external sources like add-ons.
-So when a distribution build is successful, it will trigger the gathering of all external sources.
-
-When one of these jobs is finished, it will then notify our website hosting service to start a new website build.
-This is recognised due to new commits in the final branch of this repository.
-The new build will include all the latest changes in the code repository and in all external repositories.
+Commits pushed to the `final` branch automatically trigger our website hosting service to redeploy the preview/next documentation.
 
 #### Stable Documentation: [www.openhab.org](https://www.openhab.org/docs/)
 
