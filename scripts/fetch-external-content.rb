@@ -89,7 +89,7 @@ def update_external_repositories
   zigbee_target = File.join(RESOURCE_FOLDER, "openhab-addons/bundles/org.openhab.binding.zigbee/README.md")
   if File.exist?(zigbee_readme)
     FileUtils.cp(zigbee_readme, zigbee_target)
-    puts "📋 ✔ Copied Zigbee README to expected location."
+    puts "  ✔ Copied Zigbee README to expected location."
   end
 end
 
@@ -209,6 +209,8 @@ def main
     File.join(BASE_DIR, "docs/ecosystem/google-assistant/images")
   )
 
+  puts "  ✔ Copied ecosystem & apps documentation"
+
   # UI Components Reference Docs
   puts "  Copying UI components reference documentation..."
   ui_components_src = File.join(RESOURCE_FOLDER, "openhab-webui/bundles/org.openhab.ui/doc/components")
@@ -226,7 +228,11 @@ def main
   end
 
   # Classic Iconset
-  IconsetProcessor.generate_classic_doc(RESOURCE_FOLDER, BASE_DIR)
+  IconsetProcessor.process_iconset(
+    src: File.join(RESOURCE_FOLDER, "openhab-webui/bundles"),
+    dst: File.join(BASE_DIR, "docs/configuration/iconsets"),
+    data: File.join(BASE_DIR, "classic_iconset_data")
+  )
 
   puts "  ✔ Copied ecosystem & apps documentation"
 
