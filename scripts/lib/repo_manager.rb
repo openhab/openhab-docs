@@ -33,7 +33,7 @@ module RepoManager
       run_git_cmd("git", "-C", target_dir, "pull", "-q")
       puts "  ✔ Updated repository '#{name}'"
     else
-      puts "📥Cloning repository '#{name}' (branch: #{branch})..."
+      puts "  Cloning repository '#{name}' (branch: #{branch})..."
       # Ensure parent directory exists
       FileUtils.mkdir_p(File.dirname(target_dir))
       # Clone the repository quietly
