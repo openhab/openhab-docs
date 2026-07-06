@@ -1,0 +1,79 @@
+name: Update Final Branch Docs
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Checkout final branch
+        uses: actions/checkout@v4
+        with:
+          ref: final
+          path: final-branch
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '.ruby-version'
+          bundler-cache: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run fetch-external-content
+        run: npm run fetch-external-content
+
+      - name: Run prepare-docs
+        run: npm run prepare-docs
+
+      - name: Configure Git
+        run: |
+          git config user.name "openhab-bot"
+          git config user.email "bot@openhab.org"
+
+      - name: Commit and push changes to final branch
+        run: |
+          cd final-branch
+          
+          # Remove existing directories in final branch checkout
+          rm -rf docs images addons scripts .vuepress
+          
+          # Copy updated directories from the main branch workspace
+          cp -r ../docs ./
+          cp -r ../images ./
+          cp -r ../addons ./
+          cp -r ../scripts ./
+          cp -r ../.vuepress ./
+          
+          # Stage the changes
+          git add docs images addons scripts .vuepress
+          
+          # Commit and push if there are changes
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Automated docs update from main branch"
+            git push origin final
+          fi
