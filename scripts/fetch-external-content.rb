@@ -209,6 +209,22 @@ def main
     File.join(BASE_DIR, "docs/ecosystem/google-assistant/images")
   )
 
+  # UI Components Reference Docs
+  puts "  Copying UI components reference documentation..."
+  ui_components_src = File.join(RESOURCE_FOLDER, "openhab-webui/bundles/org.openhab.ui/doc/components")
+  ui_components_dst = File.join(BASE_DIR, "docs/ui/components")
+  if Dir.exist?(ui_components_src)
+    process_directory(
+      src: ui_components_src,
+      dst: ui_components_dst,
+      source_root: "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/doc/components"
+    ) { |path| !path.to_s.split(File::SEPARATOR).include?("src") }
+
+    puts "    ✔ Copied and processed UI components reference documentation"
+  else
+    warn "    ⚠️ UI components source directory does not exist: #{ui_components_src}"
+  end
+
   # Classic Iconset
   IconsetProcessor.generate_classic_doc(RESOURCE_FOLDER, BASE_DIR)
 

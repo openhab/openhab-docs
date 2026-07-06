@@ -59,6 +59,7 @@ module AddonProcessor
         next unless parts[2] == "ui" && parts[3] == "iconset"
       elsif type == "ui"
         next unless parts[2] == "ui" && parts[3] != "iconset"
+        next if addon_name == "org.openhab.ui"
       else
         next unless parts[2] == type
       end
