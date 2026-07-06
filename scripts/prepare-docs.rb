@@ -8,9 +8,17 @@ require_relative "lib/add_placeholders"
 SRC_ROOT = "src"
 DST_ROOT = "docs"
 
-FileUtils.rm_rf(DST_ROOT)
+clean = !ARGV.include?("--no-clean")
+placeholders = !ARGV.include?("--no-placeholders")
+
+if clean
+  puts "🧹 Cleaning destination directory: #{DST_ROOT}"
+  FileUtils.rm_rf(DST_ROOT)
+end
 
 puts "➡️ Deploying the main documentation pages"
 process_directory src: SRC_ROOT, dst: DST_ROOT, source_root: "https://github.com/openhab/openhab-docs/blob/main/src"
 
-add_placeholder_pages
+if placeholders
+  add_placeholder_pages
+end

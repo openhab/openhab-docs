@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 64 64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="f" x1="29" x2="58" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#82828c" stop-opacity="0" offset="0"/>
+   <stop stop-color="#666e7f" offset=".25"/>
+   <stop stop-color="#666e7f" offset="1"/>
+  </linearGradient>
+  <linearGradient id="g" x1="18.462" x2="8.1831" y1="60.884" y2="53.687" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <linearGradient id="a" x2="0" y1="27.5" y2="3.5" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#82828c" offset="0"/>
+   <stop stop-color="#ccd3e7" offset=".5"/>
+   <stop stop-color="#82828c" offset="1"/>
+  </linearGradient>
+  <linearGradient id="b" x2="0" y1="63.5" y2="61.5" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <linearGradient id="h" x1="45.817" x2="35.538" y1="53.687" y2="60.884" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <linearGradient id="i" x2="0" y1="25" y2="6" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <radialGradient id="c" cx="27" cy="32" r="26.5" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#82828c" offset=".2965"/>
+   <stop stop-color="#ccd3e7" offset=".65"/>
+   <stop stop-color="#82828c" offset="1"/>
+  </radialGradient>
+  <radialGradient id="d" cx="27" cy="32" r="23.5" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#82828c" offset=".5"/>
+   <stop stop-color="#ccd3e7" offset=".7902"/>
+   <stop stop-color="#82828c" offset="1"/>
+  </radialGradient>
+  <radialGradient id="e" cx="27" cy="32" r="10.5" gradientUnits="userSpaceOnUse">
+   <stop offset=".55"/>
+   <stop stop-color="#1a1a1a" offset="1"/>
+  </radialGradient>
+ </defs>
+ <path d="m6.68 62.5 3.65-11.88 12.77 3.64-7.32 8.24z" fill="url(#g)"/>
+ <path d="m10.67 51.23 11.53 3.29-6.65 7.48h-8.2l3.32-10.77m-0.67-1.23-4 13h10l8-9-14-4z" fill="#666e7f"/>
+ <path d="m38.22 62.5-7.32-8.24 12.77-3.64 3.65 11.88z" fill="url(#h)"/>
+ <path d="m43.33 51.23 3.32 10.77h-8.2l-6.64-7.48 11.52-3.29m0.67-1.23-14 4 8 9h10l-4-13z" fill="#666e7f"/>
+ <path d="m1.5 61.5h17v2h-17z" fill="url(#b)"/>
+ <path d="m18 62v1h-16v-1h16m1-1h-18v3h18v-3z" fill="#666e7f"/>
+ <path d="m35.5 61.5h17v2h-17z" fill="url(#b)"/>
+ <path d="m52 62v1h-16v-1h16m1-1h-18v3h18v-3z" fill="#666e7f"/>
+ <path d="m57 6v19h-27v-19h27m1-1h-29v21h29v-21z" fill="url(#f)"/>
+ <path d="M27,58.5C12.39,58.5,0.5,46.61,0.5,32S12.39,5.5,27,5.5S53.5,17.39,53.5,32S41.61,58.5,27,58.5z" fill="url(#c)"/>
+ <path d="m27 6c14.34 0 26 11.66 26 26s-11.66 26-26 26-26-11.66-26-26 11.66-26 26-26m0-1c-14.91 0-27 12.09-27 27s12.09 27 27 27 27-12.09 27-27-12.09-27-27-27z" fill="#666e7f"/>
+ <path d="M27,55.5C14.04,55.5,3.5,44.96,3.5,32S14.04,8.5,27,8.5S50.5,19.04,50.5,32S39.96,55.5,27,55.5z" fill="url(#d)"/>
+ <path d="m27 9c12.68 0 23 10.32 23 23s-10.32 23-23 23-23-10.32-23-23 10.32-23 23-23m0-1c-13.25 0-24 10.75-24 24s10.75 24 24 24 24-10.75 24-24-10.75-24-24-24z" fill="#666e7f"/>
+ <path d="M27,42.5c-5.79,0-10.5-4.71-10.5-10.5S21.21,21.5,27,21.5S37.5,26.21,37.5,32S32.79,42.5,27,42.5z" fill="url(#e)"/>
+ <path d="m27 22c5.51 0 10 4.49 10 10s-4.49 10-10 10-10-4.49-10-10 4.49-10 10-10m0-1c-6.08 0-11 4.92-11 11s4.92 11 11 11 11-4.92 11-11-4.92-11-11-11z" fill="#191919"/>
+ <circle cx="27" cy="32" r="2.5" fill="#d8bb41" stroke="#484e59" stroke-miterlimit="10"/>
+ <path d="m57.5 3.5h6v24h-6z" fill="url(#a)"/>
+ <path d="m63 4v23h-5v-23h5m1-1h-7v25h7v-25z" fill="#666e7f"/>
+ <path d="M27,6c10.85,0,19.98,8.04,22.76,19H57V6H27z" fill="url(#i)"/>
+</svg>

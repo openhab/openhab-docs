@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 64 64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="a" cx="16.333" cy="15.167" r="43.668" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#6c9ac2" offset="0"/>
+   <stop stop-color="#005096" offset="1"/>
+  </radialGradient>
+ </defs>
+ <path d="m2.5 2.5h59v59h-59z" fill="#ececed"/>
+ <path d="M61,3v58H3V3H61 M62,2H2v60h60V2L62,2z" fill="#9b9c9e"/>
+ <path d="m5 5h54v54h-54z" fill="url(#a)"/>
+ <g fill="#ececed">
+  <path d="m15 3h1v58h-1z"/>
+  <path d="m7 3h1v58h-1z" opacity=".25"/>
+  <path d="m12 3h1v58h-1z" opacity=".25"/>
+  <path d="m18 3h1v58h-1z" opacity=".25"/>
+  <path d="m23 3h1v58h-1z" opacity=".25"/>
+  <path d="m29 3h1v58h-1z" opacity=".25"/>
+  <path d="m34 3h1v58h-1z" opacity=".25"/>
+  <path d="m40 3h1v58h-1z" opacity=".25"/>
+  <path d="m45 3h1v58h-1z" opacity=".25"/>
+  <path d="m51 3h1v58h-1z" opacity=".25"/>
+  <path d="m56 3h1v58h-1z" opacity=".25"/>
+  <path d="m26 3h1v58h-1z"/>
+  <path d="m48 3h1v58h-1z"/>
+  <path d="m37 3h1v58h-1z"/>
+  <path d="m3 48h58v1h-58z"/>
+  <path d="m3 37h58v1h-58z"/>
+  <path d="m3 26h58v1h-58z"/>
+  <path d="m3 15h58v1h-58z"/>
+  <g stroke-width=".99999">
+   <path d="m15.5 13.378h1.5v3h-3z"/>
+   <path d="m26.5 13.378h1.5001v3h-3z"/>
+   <path d="m37.5 13.378h1.5001v3h-3z"/>
+   <path d="m48.5 13.378h1.5002v3h-3z"/>
+   <path d="m15.5 24.378h1.4999v3h-3z"/>
+   <path d="m26.5 24.378h1.5v3h-3z"/>
+   <path d="m37.5 24.378h1.5001v3h-3z"/>
+   <path d="m48.5 24.378h1.5001v3h-3z"/>
+   <path d="m15.5 35.378h1.4998v3h-3z"/>
+   <path d="m26.5 35.378h1.4999v3h-3z"/>
+   <path d="m35.378 37.5h3.6218v3h-3z"/>
+   <path d="m46.378 37.5h3.6219v3h-3z"/>
+   <path d="m15.5 46.378h1.4998v3h-3z"/>
+   <path d="m26.5 46.378h1.4998v3h-3z"/>
+   <path d="m37.5 46.378h1.4999v3h-3z"/>
+   <path d="m48.5 46.378h1.5v3h-3z"/>
+  </g>
+ </g>
+</svg>

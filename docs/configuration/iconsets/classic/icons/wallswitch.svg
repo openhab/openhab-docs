@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 64 64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" x1="54.364" x2="9.636" y1="9.636" y2="54.364" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f8f5e5" offset="0"/>
+   <stop stop-color="#cac7b9" offset="1"/>
+  </linearGradient>
+  <linearGradient id="c" x2="0" y1="15" y2="49" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#4e493f" offset="0"/>
+   <stop stop-color="#3b3732" offset=".7677"/>
+  </linearGradient>
+  <linearGradient id="b" x1="49.344" x2="14.656" y1="42.014" y2="21.986" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+ </defs>
+ <path d="m16 7h32c4.97 0 9 4.03 9 9v32c0 4.97-4.03 9-9 9h-32c-4.97 0-9-4.03-9-9v-32c0-4.97 4.03-9 9-9z" fill="url(#a)" stroke="#7c715e" stroke-miterlimit="10" stroke-width=".25"/>
+ <path d="m44 49h-24c-2.76 0-5-2.24-5-5v-24c0-2.76 2.24-5 5-5h24c2.76 0 5 2.24 5 5v24c0 2.76-2.24 5-5 5" fill="url(#c)"/>
+ <path d="m21 16h22c2.76 0 5 2.24 5 5v22c0 2.76-2.24 5-5 5h-22c-2.76 0-5-2.24-5-5v-22c0-2.76 2.24-5 5-5z" fill="url(#b)" stroke="#7c715e" stroke-miterlimit="10" stroke-width=".25"/>
+</svg>

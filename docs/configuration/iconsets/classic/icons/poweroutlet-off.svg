@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 64 64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <circle id="f" cx="32" cy="32" r="14"/>
+  <clipPath id="b">
+   <use xlink:href="#f"/>
+  </clipPath>
+  <linearGradient id="d" x2="0" y1="15" y2="49" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#4e493f" offset="0"/>
+   <stop stop-color="#3b3732" offset=".7677"/>
+  </linearGradient>
+  <linearGradient id="e" x2="0" y1="46" y2="18" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f8f5e5" offset="0"/>
+   <stop stop-color="#cac7b9" offset="1"/>
+  </linearGradient>
+  <linearGradient id="a" x2="0" y1="57" y2="7" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#cac7b9" offset="0"/>
+   <stop stop-color="#f8f5e5" offset="1"/>
+  </linearGradient>
+  <linearGradient id="c" x2="0" y1="48" y2="16" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+ </defs>
+ <path d="m16 7h32c4.97 0 9 4.03 9 9v32c0 4.97-4.03 9-9 9h-32c-4.97 0-9-4.03-9-9v-32c0-4.97 4.03-9 9-9z" fill="url(#a)" stroke="#7c715e" stroke-miterlimit="10" stroke-width=".25"/>
+ <path d="m44 49h-24c-2.76 0-5-2.24-5-5v-24c0-2.76 2.24-5 5-5h24c2.76 0 5 2.24 5 5v24c0 2.76-2.24 5-5 5" fill="url(#d)"/>
+ <path d="m21 16h22c2.76 0 5 2.24 5 5v22c0 2.76-2.24 5-5 5h-22c-2.76 0-5-2.24-5-5v-22c0-2.76 2.24-5 5-5z" fill="url(#c)" stroke="#7c715e" stroke-miterlimit="10" stroke-width=".25"/>
+ <circle cx="32" cy="32" r="14" fill="url(#e)"/>
+ <g fill="#1a171b">
+  <circle cx="26.91" cy="32" r="1.91"/>
+  <circle cx="37.09" cy="32" r="1.91"/>
+ </g>
+ <g fill="#8c8c8c">
+  <path d="m31.36 19.27h1.27v2.55h-1.27z"/>
+  <path d="m31.36 42.18h1.27v2.55h-1.27z"/>
+ </g>
+ <g clip-path="url(#b)">
+  <path d="m17.23 33.14h4.09v13.64h-4.09z" fill="#ccbeae"/>
+  <path d="m20.82 33.64v12.64h-3.09v-12.64h3.09m1-1h-5.09v14.64h5.09v-14.64z" fill="#a59988"/>
+  <path d="m17.23 17.23h4.09v13.64h-4.09z" fill="#ccbeae"/>
+  <path d="m20.82 17.73v12.64h-3.09v-12.64h3.09m1-1h-5.09v14.64h5.09v-14.64z" fill="#a59988"/>
+ </g>
+ <g clip-path="url(#b)">
+  <path d="m42.68 17.23h4.09v13.64h-4.09z" fill="#ccbeae"/>
+  <path d="m46.27 17.73v12.64h-3.09v-12.64h3.09m1-1h-5.09v14.64h5.09v-14.64z" fill="#a59988"/>
+  <path d="m42.68 33.14h4.09v13.64h-4.09z" fill="#ccbeae"/>
+  <path d="m46.27 33.64v12.64h-3.09v-12.64h3.09m1-1h-5.09v14.64h5.09v-14.64z" fill="#a59988"/>
+ </g>
+ <circle cx="32" cy="32" r="14" fill="none" stroke="#5e5549" stroke-miterlimit="10" stroke-width=".5"/>
+ <circle cx="44.5" cy="19.5" r="1.5" fill="#f00"/>
+</svg>

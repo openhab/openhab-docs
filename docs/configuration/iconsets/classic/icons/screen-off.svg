@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 64 64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="a" x1="30" x2="34" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#82828c" offset="0"/>
+   <stop stop-color="#ccd3e7" offset=".5"/>
+   <stop stop-color="#82828c" offset="1"/>
+  </linearGradient>
+  <linearGradient id="c" x1="16" x2="48" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+  <linearGradient id="b" x1="19.005" x2="44.995" y1="53.508" y2="8.4917" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#505050" offset="0"/>
+   <stop stop-color="#787878" offset="1"/>
+  </linearGradient>
+ </defs>
+ <path d="m30 36h4v16h-4z" fill="url(#a)"/>
+ <path d="m16 52h32v2h-32z" fill="url(#c)"/>
+ <path d="m2 14h60v34h-60z" fill="#212121"/>
+ <path d="m6 16h52v30h-52z" fill="url(#b)"/>
+</svg>
