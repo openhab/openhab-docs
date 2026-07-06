@@ -17,12 +17,12 @@ jobs:
 
     steps:
       - name: Checkout main branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: main
 
       - name: Checkout final branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: final
           path: final-branch
@@ -34,10 +34,10 @@ jobs:
           bundler-cache: false
 
       - name: Run fetch-external-content
-        run: npm run fetch-external-content
+        run: ruby scripts/fetch-external-content
 
       - name: Run prepare-docs
-        run: npm run prepare-docs
+        run: ruby scripts/prepare-docs
 
       - name: Configure Git
         run: |
@@ -65,6 +65,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Automated docs update from main branch"
+            git commit -m "[ci] Automated docs update from main branch & fetch-external-content"
             git push origin final
           fi
