@@ -86,6 +86,15 @@ module AddonProcessor
       # Copy doc/, cfg/, images/, and icons/ if they exist
       ["doc", "cfg", "images", "icons"].each do |sub_dir|
         source_sub = File.join(addon_path, sub_dir)
+        if id == "zwave" && sub_dir == "doc"
+          zwave_things_md = File.join(source_sub, "thing.md")
+          if File.exist?(zwave_things_md)
+            target_doc_dir = File.join(target_dir, "doc")
+            FileUtils.mkdir_p(target_doc_dir)
+            FileUtils.cp(zwave_things_md, File.join(target_doc_dir, "thing.md"))
+          end
+          next
+        end
         if Dir.exist?(source_sub)
           FileUtils.cp_r(source_sub, target_dir)
         end
