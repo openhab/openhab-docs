@@ -1,0 +1,170 @@
+---
+id: sensorcommunity
+label: SensorCommunity
+title: SensorCommunity - Bindings
+type: binding
+description: "Binding for the [Sensor.Community](https://sensor.community/)."
+logo: images/addons/sensorcommunity.svg
+install: manual
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sensorcommunity/README.md
+meta:
+  - property: og:title
+    content: "SensorCommunity - Bindings"
+  - property: og:description
+    content: "Binding for the Sensor.Community."
+---
+
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+# SensorCommunity Binding
+
+<AddonLogo />
+
+Binding for the [Sensor.Community](https://sensor.community/).
+The community provides instructions to build sensors on your own and they can be integrated into the database.
+With this binding you can integrate your sensor, a sensor nearby or even any sensors you want into openHAB.
+
+## Supported Things
+
+Following sensor things are supported
+
+| Name               | Thing Type ID | Description                                              |
+|--------------------|---------------|----------------------------------------------------------|
+| Particulate Sensor | particulate   | Sensor to measure Particulate Matter (PM)                |
+| Conditions Sensor  | conditions    | Sensor to measure Temperature and Humidity conditions    |
+| Noise Sensor       | noise         | Sensor to measure noise on location                      |
+| Radiation Sensor   | radiation     | Sensor to measure radiation on location                  |
+
+## Discovery
+
+There's no auto discovery. See Thing configuration how to setup a Sensor.
+
+## Thing Configuration
+
+Choose either a local IP address of your personal owned sensor _or_ a sensor id of an external one.
+
+| Parameter         | Description                                                                   | Default   |
+|-------------------|-------------------------------------------------------------------------------|-----------|
+| ipAddress         | Local IP address of your personal owned sensor                                | N/A       |
+| sensorid          | Sensor ID obtained from <https://deutschland.maps.sensor.community/>          | N/A       |
+| conversionFactor  | Sensor specific conversion factor to transform counts per minute to Sievert   | 0.00136   |
+
+`conversionFactor` is only relevant for `radiation` sensors to convert the decay count per minute into Sievert per hour.
+Default value fits to _EcoCurious Si22G_.
+Check your datasheet and configure it if needed.
+
+### Local Sensor
+
+Please check in your browser if you can access your sensor with your local IP address.
+
+![Sensor.Community Logo](./doc/local-sensor.png)
+
+### External Sensor
+
+Perform the following steps to get the appropriate Sensor ID
+
+- Go to to [Sensor.Community map](https://deutschland.maps.sensor.community/)
+- Choose your desired value in bottom list - now only the Sensors are displayed which are supporting this
+- Click on your / any Sensor and the ID is displayed in the top right corner. Note: Sensor ID is just the number without beginning hash #
+- Enter this Sensor ID into the Thing configuration
+
+![Sensor.Community Logo](./doc/SensorCommunity-Map.png)
+
+## Channels
+
+### Particulate Sensor
+
+| Channel ID | Item Type      | Description                                                                                                                         |
+|------------|----------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| pm25       | Number:Density | [Ultrafine particulates](https://en.wikipedia.org/wiki/Particulates#Size,_shape_and_solubility_matter) microgram per cubic meter    |
+| pm100      | Number:Density | [Coarse particulate matter](https://en.wikipedia.org/wiki/Particulates#Size,_shape_and_solubility_matter) microgram per cubic meter |
+
+### Conditions Sensor
+
+| Channel ID   | Item Type            | Description                                                      |
+|--------------|----------------------|------------------------------------------------------------------|
+| temperature  | Number:Temperature   | current temperature                                              |
+| humidity     | Number:Dimensionless | current humidity percent                                         |
+| pressure     | Number:Pressure      | Atmospheric Pressure (not supported by all sensors)              |
+| pressure-sea | Number:Pressure      | Atmospheric Pressure on sea level (not supported by all sensors) |
+
+### Noise Sensor
+
+| Channel ID           | Item Type            | Description                                          |
+|----------------------|----------------------|------------------------------------------------------|
+| noise-eq             | Number:Dimensionless | Average noise in db                                  |
+| noise-min            | Number:Dimensionless | Minimum noise covered in the last 2.5 minutes in db  |
+| noise-main           | Number:Dimensionless | Maximum noise covered in the last 2.5 minutes in db  |
+
+### Radiation Sensor
+
+| Channel ID            | Item Type                         | Description                                          |
+|-----------------------|-----------------------------------|------------------------------------------------------|
+| radiation             | Number:RadiationDoseRate          | Radiation measure in micro-Sievert per hour          |
+| radiation-level       | Number                            | Severity level of radiation dose                     |
+| counts-per-minute     | Number                            | Number of decay events in one minute                 |
+| hv-pulses             | Number                            | Number of high voltage pulses in measurement period  |
+
+The `radiation level` shows 5 severity levels
+
+- 0 = Normal (radiation < 0.15 μSv/h)
+- 1 = Elevated (radiation < 0.4 μSv/h)
+- 2 = High (radiation < 1 μSv/h)
+- 3 = Action Level (radiation < 100 μSv/h)
+- 4 = Dangerous (radiation >= 100 μSv/h)
+
+The `hv-pulses` shows the high voltage pulses generated by the sensor in the last measurement period.
+If these values are deviating too much from period to period it's an indication of a hardware problem.
+
+## Full Example
+
+### Things
+
+sensorcommunity.things
+
+```java
+Thing sensorcommunity:particulate:pm_sensor   "PM Sensor"         [ ipAddress=192.168.178.50 ]
+Thing sensorcommunity:conditions:cond_sensor  "Condition Sensor"  [ sensorid=28843 ]
+Thing sensorcommunity:noise:noise_sensor      "Noise Sensor"      [ sensorid=39745 ]
+```
+
+### Items
+
+sensorcommunity.items
+
+```java
+Number:Density PM_25                "PM2.5"                 { channel="sensorcommunity:particulate:pm_sensor:pm25" }
+Number:Density PM_100               "PM10"                  { channel="sensorcommunity:particulate:pm_sensor:pm100" }
+
+Number:Temperature LDI_Temperature  "Temperature"           { channel="sensorcommunity:conditions:cond_sensor:temperature" }
+Number:Dimensionless LDI_Humidity   "Humidity"              { channel="sensorcommunity:conditions:cond_sensor:humidity" }
+Number:Pressure LDI_Pressure        "Atmospheric Pressure"  { channel="sensorcommunity:conditions:cond_sensor:pressure" }
+Number:Pressure LDI_PressureSea     "Pressure sea level"    { channel="sensorcommunity:conditions:cond_sensor:pressure-sea" }
+
+Number:Dimensionless LDI_NoiseEQ    "Noise EQ"              { channel="sensorcommunity:noise:noise_sensor:noise-eq" }
+Number:Dimensionless LDI_NoiseMin   "Noise min"             { channel="sensorcommunity:noise:noise_sensor:noise-min" }
+Number:Dimensionless LDI_NoiseMax   "Noise max"             { channel="sensorcommunity:noise:noise_sensor:noise-max" }
+```
+
+### Sitemap
+
+SensorCommunity.sitemap
+
+```perl
+sitemap SensorCommunity label="SensorCommunity" {
+        Text item=PM_25                     label="Particulate Matter 2.5 [%.1f %unit%]"
+        Text item=PM_100                    label="Particulate Matter 10 [%.1f %unit%]"
+
+        Text item=LDI_Temperature           label="Temperature [%d %unit%]"
+        Text item=LDI_Humidity              label="Humidity [%d %unit%]"
+        Text item=LDI_Pressure              label="Atmospheric Pressure [%d %unit%]"
+        Text item=LDI_PressureSea           label="Atmospheric Pressure sea [%d %unit%]"
+
+        Text item=LDI_NoiseEQ               label="Noise avg [%.1f %unit%]"
+        Text item=LDI_NoiseMin              label="Noise min [%.1f %unit%]"
+        Text item=LDI_NoiseMax              label="Noise max [%.1f %unit%]"
+}
+```
+
+
+<EditPageLink/>
