@@ -44,10 +44,9 @@ jobs:
           git config --global user.name "openhab-bot"
           git config --global user.email "bot@openhab.org"
 
-      - name: Commit and push changes to final branch
+      - name: Update files in final branch
+        working-directory: final-branch
         run: |
-          cd final-branch
-          
           # Remove existing directories in final branch checkout
           rm -rf docs images addons scripts .vuepress
           
@@ -60,11 +59,23 @@ jobs:
           
           # Stage the changes
           git add docs images addons scripts .vuepress
-          
-          # Commit and push if there are changes
+
+      - name: Commit and push if changed
+        id: commit_push
+        working-directory: final-branch
+        run: |
           if git diff --cached --quiet; then
+            echo "committed=false" >> $GITHUB_OUTPUT
             echo "No changes to commit"
           else
             git commit -m "[ci] Automated docs update from main branch & fetch-external-content"
             git push origin final
+            echo "committed=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Trigger Netlify build for next.openhab.org
+        if: steps.commit_push.outputs.committed == 'true'
+        env:
+          NETLIFY_HOOK: ${{ secrets.NETLIFY_HOOK }}
+        run: |
+          curl -i -X POST "https://api.netlify.com/build_hooks/$NETLIFY_HOOK"
