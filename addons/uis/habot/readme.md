@@ -5,7 +5,7 @@ title: HABot - UIs
 type: ui
 description: "HABot is a chatbot for [openHAB](https://openhab.org), running inside the openHAB runtime with no dependency; it can run offline and keep your data out of third-party clouds, but works very well remotely if served from an openHAB Cloud instance (like [myopenhab.org](https://www.myopenhab.org))."
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.uis.habot/README.md
+source: https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui.habot/README.md
 meta:
   - property: og:title
     content: "HABot - UIs"

@@ -6,7 +6,7 @@ type: voice
 description: "Vosk STT Service uses [vosk-api](https://github.com/alphacep/vosk-api) to perform offline speech-to-text in openHAB."
 logo: images/addons/voskstt.png
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voices.voskstt/README.md
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.voskstt/README.md
 meta:
   - property: og:title
     content: "Vosk Speech-to-Text - Voices"

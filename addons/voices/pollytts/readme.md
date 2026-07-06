@@ -6,7 +6,7 @@ type: voice
 description: "PollyTTS is a voice service utilizing the Internet based text-to-speech (TTS) service [Amazon Polly](https://aws.amazon.com/polly/)."
 logo: images/addons/pollytts.png
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voices.pollytts/README.md
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.pollytts/README.md
 meta:
   - property: og:title
     content: "Polly Text-to-Speech - Voices"

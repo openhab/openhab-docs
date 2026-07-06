@@ -5,7 +5,7 @@ title: Pico Text-to-Speech - Voices
 type: voice
 description: "The Pico Text-to-Speech (TTS) service uses the TTS binary from SVOX for producing spoken text."
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voices.picotts/README.md
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.picotts/README.md
 meta:
   - property: og:title
     content: "Pico Text-to-Speech - Voices"

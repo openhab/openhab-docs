@@ -6,7 +6,7 @@ type: persistence
 description: "The [MapDB](https://mapdb.org/) persistence service is based on a simple key-value store that only saves the last value."
 logo: images/addons/mapdb.svg
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.persistences.mapdb/README.md
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.persistence.mapdb/README.md
 meta:
   - property: og:title
     content: "MapDB Persistence - Persistence Services"

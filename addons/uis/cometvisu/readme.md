@@ -6,7 +6,7 @@ type: ui
 description: "This adds a backend for the web based visualization CometVisu <https://www.cometvisu.org>."
 logo: images/addons/cometvisu.png
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.uis.cometvisu/README.md
+source: https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui.cometvisu/README.md
 meta:
   - property: og:title
     content: "CometVisu Backend for openHAB - UIs"

@@ -6,7 +6,7 @@ type: voice
 description: "This voice service allows you to use [Piper](https://github.com/OHF-Voice/piper1-gpl) as your TTS service in openHAB."
 logo: images/addons/pipertts.svg
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voices.pipertts/README.md
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.pipertts/README.md
 meta:
   - property: og:title
     content: "Piper Text-to-Speech - Voices"

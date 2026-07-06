@@ -6,7 +6,7 @@ type: ui
 description: "The Basic UI is a web interface based on Material Design Lite from Google."
 logo: images/addons/basic.png
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.uis.basic/README.md
+source: https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui.basic/README.md
 meta:
   - property: og:title
     content: "Basic UI - UIs"

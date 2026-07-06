@@ -6,7 +6,7 @@ type: voice
 description: "The macOS Text-to-Speech (TTS) service uses the macOS 'say' command for producing spoken text."
 logo: images/addons/mactts.svg
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voices.mactts/README.md
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.mactts/README.md
 meta:
   - property: og:title
     content: "macOS Text-to-Speech - Voices"

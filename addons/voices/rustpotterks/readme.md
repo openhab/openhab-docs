@@ -6,7 +6,7 @@ type: voice
 description: "This voice service allows you to use the open source library Rustpotter as your keyword spotter in openHAB."
 logo: images/addons/rustpotterks.png
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voices.rustpotterks/README.md
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.rustpotterks/README.md
 meta:
   - property: og:title
     content: "Rustpotter Keyword Spotter - Voices"

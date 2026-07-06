@@ -6,7 +6,7 @@ type: persistence
 description: "The [rrd4j](https://github.com/rrd4j/rrd4j) persistence service is based on a round-robin database."
 logo: images/addons/rrd4j.svg
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.persistences.rrd4j/README.md
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.persistence.rrd4j/README.md
 meta:
   - property: og:title
     content: "RRD4J Persistence - Persistence Services"

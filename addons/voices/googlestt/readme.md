@@ -6,7 +6,7 @@ type: voice
 description: "Google Cloud STT Service uses the non-free Google Cloud Speech-to-Text API to transcript audio data to text."
 logo: images/addons/googlestt.png
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voices.googlestt/README.md
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.googlestt/README.md
 meta:
   - property: og:title
     content: "Google Cloud Speech-to-Text - Voices"

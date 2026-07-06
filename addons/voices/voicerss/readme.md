@@ -6,7 +6,7 @@ type: voice
 description: "VoiceRSS is an Internet based TTS service hosted at <https://api.voicerss.org>."
 logo: images/addons/voicerss.png
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voices.voicerss/README.md
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.voicerss/README.md
 meta:
   - property: og:title
     content: "VoiceRSS Text-to-Speech - Voices"

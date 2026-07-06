@@ -6,7 +6,7 @@ type: persistence
 description: "This service allows you to persist state updates using the MongoDB database."
 logo: images/addons/mongodb.svg
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.persistences.mongodb/README.md
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.persistence.mongodb/README.md
 meta:
   - property: og:title
     content: "MongoDB Persistence - Persistence Services"

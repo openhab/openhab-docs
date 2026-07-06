@@ -5,7 +5,7 @@ title: HABPanel - UIs
 type: ui
 description: "HABPanel is a lightweight dashboard interface for openHAB."
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.uis.habpanel/README.md
+source: https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui.habpanel/README.md
 meta:
   - property: og:title
     content: "HABPanel - UIs"
