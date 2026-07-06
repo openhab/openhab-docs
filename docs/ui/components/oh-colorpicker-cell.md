@@ -5,11 +5,6 @@ label: Colorpicker Cell
 description: A cell expanding to a color picker
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-colorpicker-cell.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-colorpicker-cell - Colorpicker Cell"
-  - property: og:description
-    content: A cell expanding to a color picker
 ---
 
 # oh-colorpicker-cell - Colorpicker Cell
@@ -355,5 +350,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

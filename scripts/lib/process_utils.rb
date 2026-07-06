@@ -154,7 +154,7 @@ def process_markdown(indir, file, outdir, source, outfile = nil)
       line.gsub!(%r{https?://(?:www\.)?openhab\.org/docs/}, "/docs/")
 
       # Log these replacements as they indicate issues in the source that should be fixed
-      log_replace.call(%r{https?://docs\.openhab\.org/addons/uis/habpanel/readme\.html}, "/docs/configuration/habpanel.html")
+      log_replace.call(%r{https?://docs\.openhab\.org/addons/uis/habpanel/readme\.html}, "/docs/ui/habpanel/habpanel.html")
       log_replace.call(%r{https?://docs\.openhab\.org/addons/uis/basic/readme\.html}, "/addons/ui/basic/")
       log_replace.call(%r{https?://docs\.openhab\.org/addons/(.*)/(.*)/readme\.html}, '/addons/\1/\2/')
       log_replace.call(%r{https?://docs\.openhab\.org/}, "/docs/")
@@ -204,10 +204,11 @@ end
 # @param src [String, Pathname] the source directory to copy from
 # @param dst [String, Pathname] the destination directory to copy to
 # @param source_root [String, nil] the GitHub URL prefix used for edit links
+# @param process_md [Boolean] whether to process markdown files (true) or just copy them directly (false)
 # @yield [Pathname] an optional block to filter which files to process (receives the Pathname of each file)
 # @yieldreturn [Boolean] whether to process the file (true) or skip it (false)
 #
-def process_directory(src:, dst:, source_root: nil, &block)
+def process_directory(src:, dst:, source_root: nil, process_md: true, &block)
   source = Pathname(src)
   destination = Pathname(dst)
   pattern = source / "**" / "*"
@@ -228,7 +229,7 @@ def process_directory(src:, dst:, source_root: nil, &block)
                     File.join(source_root, relative.to_s).tr("\\", "/") # Ensure URL uses forward slashes
                   end
 
-    if path.extname.downcase == ".md"
+    if path.extname.downcase == ".md" && process_md
       verbose "   ➡️ #{relative}"
       # Pathname objects can usually be passed to methods expecting strings
       process_markdown(path.dirname.to_s, path.basename.to_s, output_dir.to_s, source_path)

@@ -5,11 +5,6 @@ label: Cell
 description: A regular or expandable cell
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-cell.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-cell - Cell"
-  - property: og:description
-    content: A regular or expandable cell
 ---
 
 # oh-cell - Cell
@@ -369,5 +364,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

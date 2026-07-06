@@ -5,16 +5,11 @@ label: Knob Card
 description: Display a knob in a card to visualize and control a quantifiable item
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-knob-card.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-knob-card - Knob Card"
-  - property: og:description
-    content: Display a knob in a card to visualize and control a quantifiable item
 ---
 
 # oh-knob-card - Knob & Rounded Slider Card
 
-![](./images/oh-knob/header.png)
+![](images/oh-knob/header.png)
 
 [[toc]]
 
@@ -268,5 +263,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

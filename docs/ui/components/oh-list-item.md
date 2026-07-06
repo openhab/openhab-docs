@@ -5,11 +5,6 @@ label: List Item
 description: A list item
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-list-item.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-list-item - List Item"
-  - property: og:description
-    content: A list item
 ---
 
 # oh-list-item - List Item
@@ -353,5 +348,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

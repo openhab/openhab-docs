@@ -5,11 +5,6 @@ label: Floor Plan Marker
 description: A marker on a floor plan
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-plan-marker.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-plan-marker - Floor Plan Marker"
-  - property: og:description
-    content: A marker on a floor plan
 ---
 
 # oh-plan-marker - Floor Plan Marker
@@ -50,7 +45,7 @@ A marker on a floor plan
 </PropBlock>
 <PropBlock type="TEXT" name="visible" label="Visibility">
   <PropDescription>
-    Enter an expression to dynamically show the marker, see <a class="external text-color-blue" target="_blank" href="/docs/ui/building-pages.html#widgets-definition-usage">Building Pages: <code>visible</code></a>
+    Enter an expression to dynamically show the marker, see <a class="external text-color-blue" target="_blank" href="https://www.openhab.org/docs/ui/building-pages.html#widgets-definition-usage">Building Pages: <code>visible</code></a>
   </PropDescription>
 </PropBlock>
 </PropGroup>
@@ -448,5 +443,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

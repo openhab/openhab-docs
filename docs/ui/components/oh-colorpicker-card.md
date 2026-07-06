@@ -5,11 +5,6 @@ label: Color Picker Card
 description: Display a color picker in a card
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-colorpicker-card.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-colorpicker-card - Color Picker Card"
-  - property: og:description
-    content: Display a color picker in a card
 ---
 
 # oh-colorpicker-card - Color Picker Card
@@ -144,5 +139,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

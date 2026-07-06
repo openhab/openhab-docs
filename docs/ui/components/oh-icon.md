@@ -5,11 +5,6 @@ label: Icon
 description: Display an openHAB icon
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-icon.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-icon - Icon"
-  - property: og:description
-    content: Display an openHAB icon
 ---
 
 # oh-icon - Icon
@@ -335,5 +330,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

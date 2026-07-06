@@ -5,11 +5,6 @@ label: Tooltip
 description: Reference documentation for the oh-chart-tooltip component
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart-tooltip.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-chart-tooltip - Tooltip"
-  - property: og:description
-    content: Reference documentation for the oh-chart-tooltip component
 ---
 
 # oh-chart-tooltip - Tooltip
@@ -110,5 +105,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

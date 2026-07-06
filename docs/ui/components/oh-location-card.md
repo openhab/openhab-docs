@@ -5,11 +5,6 @@ label: Location Card
 description: A card showing model items in a certain location
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-location-card.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-location-card - Location Card"
-  - property: og:description
-    content: A card showing model items in a certain location
 ---
 
 # oh-location-card - Location Card
@@ -170,5 +165,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

@@ -5,11 +5,6 @@ label: Gauge Card
 description: Display a read-only gauge in a card to visualize a quantifiable item
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-gauge-card.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-gauge-card - Gauge Card"
-  - property: og:description
-    content: Display a read-only gauge in a card to visualize a quantifiable item
 ---
 
 # oh-gauge-card - Gauge Card
@@ -417,5 +412,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

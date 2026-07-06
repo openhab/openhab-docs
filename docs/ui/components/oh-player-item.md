@@ -5,11 +5,6 @@ label: Player List Item
 description: Display player controls in a list
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-player-item.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-player-item - Player List Item"
-  - property: og:description
-    content: Display player controls in a list
 ---
 
 # oh-player-item - Player List Item
@@ -152,5 +147,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

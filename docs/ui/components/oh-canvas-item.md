@@ -5,11 +5,6 @@ label: Canvas Item
 description: Specific attributes to display widgets on a canvas.
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-canvas-item.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-canvas-item - Canvas Item"
-  - property: og:description
-    content: Specific attributes to display widgets on a canvas.
 ---
 
 # oh-canvas-item - Canvas Item
@@ -99,5 +94,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

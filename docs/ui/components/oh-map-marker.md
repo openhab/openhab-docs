@@ -5,11 +5,6 @@ label: Map Marker
 description: An icon on a map
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-map-marker.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-map-marker - Map Marker"
-  - property: og:description
-    content: An icon on a map
 ---
 
 # oh-map-marker - Map Marker
@@ -318,5 +313,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

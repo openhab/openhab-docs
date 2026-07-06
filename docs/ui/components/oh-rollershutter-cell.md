@@ -5,11 +5,6 @@ label: Rollershutter Cell
 description: A cell expanding to rollershutter controls
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-rollershutter-cell.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-rollershutter-cell - Rollershutter Cell"
-  - property: og:description
-    content: A cell expanding to rollershutter controls
 ---
 
 # oh-rollershutter-cell - Rollershutter Cell
@@ -387,5 +382,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

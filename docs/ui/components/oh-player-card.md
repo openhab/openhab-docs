@@ -5,11 +5,6 @@ label: Player Card
 description: Display player controls in a card
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-player-card.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-player-card - Player Card"
-  - property: og:description
-    content: Display player controls in a card
 ---
 
 # oh-player-card - Player Card
@@ -147,5 +142,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

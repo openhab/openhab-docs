@@ -5,11 +5,6 @@ label: Stepper
 description: Stepper control, allows to input a number or decrement/increment it using buttons
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-stepper.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-stepper - Stepper"
-  - property: og:description
-    content: Stepper control, allows to input a number or decrement/increment it using buttons
 ---
 
 # oh-stepper - Stepper
@@ -169,5 +164,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

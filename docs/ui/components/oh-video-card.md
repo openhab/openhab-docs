@@ -5,11 +5,6 @@ label: Video Card
 description: Display a video (URL or URL from String item) in a card
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-video-card.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-video-card - Video Card"
-  - property: og:description
-    content: Display a video (URL or URL from String item) in a card
 ---
 
 # oh-video-card - Video Card
@@ -185,5 +180,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

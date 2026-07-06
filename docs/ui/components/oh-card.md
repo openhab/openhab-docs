@@ -5,11 +5,6 @@ label: Card
 description: The basic structure of all card widgets, providing title and footer and requiring a content slot
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-card.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-card - Card"
-  - property: og:description
-    content: The basic structure of all card widgets, providing title and footer and requiring a content slot
 ---
 
 # oh-card - Card
@@ -549,5 +544,3 @@ slots:
             config:
               text: Footer
 ```
-
-<EditPageLink/>

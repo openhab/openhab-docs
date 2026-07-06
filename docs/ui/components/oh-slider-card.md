@@ -5,11 +5,6 @@ label: Slider Card
 description: Display a slider in a card to control an item
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-slider-card.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-slider-card - Slider Card"
-  - property: og:description
-    content: Display a slider in a card to control an item
 ---
 
 # oh-slider-card - Slider Card
@@ -191,5 +186,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

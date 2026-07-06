@@ -5,11 +5,6 @@ label: Property Card
 description: A card showing model items related to a certain property
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-property-card.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-property-card - Property Card"
-  - property: og:description
-    content: A card showing model items related to a certain property
 ---
 
 # oh-property-card - Property Card
@@ -138,5 +133,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

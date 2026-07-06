@@ -5,11 +5,6 @@ label: Swiper
 description: Swiper control, allows to display multiple swipeable slides
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-swiper.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-swiper - Swiper"
-  - property: og:description
-    content: Swiper control, allows to display multiple swipeable slides
 ---
 
 # oh-swiper - Swiper
@@ -104,5 +99,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>

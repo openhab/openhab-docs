@@ -5,11 +5,6 @@ label: Cartesian Grid
 description: Reference documentation for the oh-chart-grid component
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart-grid.md
 prev: /docs/ui/components/
-meta:
-  - property: og:title
-    content: "oh-chart-grid - Cartesian Grid"
-  - property: og:description
-    content: Reference documentation for the oh-chart-grid component
 ---
 
 # oh-chart-grid - Cartesian Grid
@@ -115,5 +110,3 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
-
-<EditPageLink/>
