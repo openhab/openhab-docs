@@ -19,7 +19,8 @@ project.pbxproj
 .vscode
 
 # Built docs
+addons
 docs
-addons/integrations
 vuepress
+
 .DS_Store
