@@ -51,8 +51,16 @@ module AddonProcessor
     Dir.foreach(src_bundles_dir) do |addon_name|
       next if addon_name == "." || addon_name == ".."
 
-      # Match the type in package name
-      next unless addon_name.include?(type)
+      # Match the type in package name structure (org.openhab.<type>...)
+      parts = addon_name.split(".")
+      next unless parts[0] == "org" && parts[1] == "openhab"
+      if type == "iconset"
+        next unless parts[2] == "ui" && parts[3] == "iconset"
+      elsif type == "ui"
+        next unless parts[2] == "ui" && parts[3] != "iconset"
+      else
+        next unless parts[2] == type
+      end
 
       addon_path = File.join(src_bundles_dir, addon_name)
       next unless Dir.exist?(addon_path)
