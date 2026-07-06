@@ -78,4 +78,4 @@ jobs:
         env:
           NETLIFY_HOOK: ${{ secrets.NETLIFY_HOOK }}
         run: |
-          curl -i -X POST "https://api.netlify.com/build_hooks/$NETLIFY_HOOK"
+          curl -X POST -d {} "https://api.netlify.com/build_hooks/$NETLIFY_HOOK"
