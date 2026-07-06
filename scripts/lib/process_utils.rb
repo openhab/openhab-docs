@@ -65,6 +65,9 @@ def process_markdown(indir, file, outdir, source, outfile = nil)
             outdir_parts[1] = "binding" if outdir_parts[1] == "bindings"
             outdir_parts[1] = "transform" if outdir_parts[1] == "transformations"
             outdir_parts[1] = "io" if outdir_parts[1] == "integrations"
+            outdir_parts[1] = "persistence" if outdir_parts[1] == "persistences"
+            outdir_parts[1] = "voice" if outdir_parts[1] == "voices"
+            outdir_parts[1] = "ui" if outdir_parts[1] == "uis"
             if outdir_parts[0] == "addons"
               addon_type = outdir_parts[1]
               addon = outdir_parts[2]
