@@ -54,6 +54,7 @@ module AddonProcessor
       # Match the type in package name structure (org.openhab.<type>...)
       parts = addon_name.split(".")
       next unless parts[0] == "org" && parts[1] == "openhab"
+
       if type == "iconset"
         next unless parts[2] == "ui" && parts[3] == "iconset"
       elsif type == "ui"
@@ -187,7 +188,6 @@ module AddonProcessor
     # Arguments: features, dest_addons_dir, images_dir, src_bundles_dir, type, dest_folder_name, suffix, lblremoves, pkgremoves
     process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "automation", "automation", " - Automation", [], ["org.openhab.automation."])
     process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "binding", "bindings", " - Bindings", [" Binding"], ["org.openhab.binding."])
-    process_addon_type(features, dest_addons_dir, images_dir, webui_bundles_dir, "iconset", "iconsets", " - Icon Sets", [], ["org.openhab.ui.iconset."])
     process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "io", "integrations", " - System Integrations", [" Service"], ["org.openhab.io."])
     process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "persistence", "persistences", " - Persistence Services", [/\\s*Persistence\\s*$/], ["org.openhab.persistence."])
     process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "transform", "transformations", " - Transformation Services", [" Transformation Service"], ["org.openhab.transform."])

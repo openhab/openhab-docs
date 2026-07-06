@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 require "fileutils"
+require "csv"
 
 require_relative "lib/repo_manager"
 require_relative "lib/jfrog_fetcher"
 require_relative "lib/addon_processor"
 require_relative "lib/thing_types_processor"
 require_relative "lib/process_utils"
+require_relative "lib/iconset_processor"
 
 BASE_DIR = File.expand_path("..", File.dirname(__FILE__))
 RESOURCE_FOLDER = File.join(BASE_DIR, ".external-resources")
@@ -208,10 +210,7 @@ def main
   )
 
   # Classic Iconset
-  copy_dir_safe(
-    File.join(RESOURCE_FOLDER, "openhab-webui/bundles/org.openhab.ui.iconset.classic/src/main/resources/icons"),
-    File.join(BASE_DIR, "addons/iconsets/classic/icons")
-  )
+  IconsetProcessor.generate_classic_doc(RESOURCE_FOLDER, BASE_DIR)
 
   puts "  ✔ Copied ecosystem & apps documentation"
 
