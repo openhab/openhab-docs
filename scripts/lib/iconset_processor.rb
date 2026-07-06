@@ -2,82 +2,79 @@
 
 require "csv"
 require "fileutils"
+require "pathname"
 
 # IconsetProcessor generates VuePress-compatible iconset documentation.
-#
-# It scans the source SVGs, parses categories CSVs, and generates
-# configuration page structure for classic icons.
 module IconsetProcessor
-  def self.generate_classic_doc(resource_folder, base_dir)
-    puts "  Generating Classic Iconset documentation..."
+  # Re-generate an iconset's documentation
+  #
+  # - Load the list of icons from the original iconset
+  # - Load the categories from the CSV files
+  # - Generate a markdown file with the list of icons and their categories
+  # - Copy the icons to the `${dst}/classic/icons` folder.
+  #
+  # @param src [Pathname, String] the path to the original iconsets (e.g. ".vuepress/openhab-docs/_addons_iconsets")
+  # @param dst [Pathname, String] the path to the output directory (e.g. "docs/configuration/iconsets")
+  # @param data [Pathname, String] the path to the CSV data files (e.g. ".vuepress/openhab-docs/_data")
+  #
+  def self.process_iconset(src:, dst:, data:)
+    puts "  Processing Classic iconset..."
 
-    icons_src_dir = File.join(resource_folder, "openhab-webui/bundles/org.openhab.ui.iconset.classic/src/main/resources/icons")
-    data_dir = File.join(base_dir, "classic_iconset_data")
-    out_dir = File.join(base_dir, "docs/configuration/iconsets/classic")
+    iconset = "classic"
+    src = Pathname(src)
+    data = Pathname(data)
+    dst = Pathname(dst)
 
-    unless Dir.exist?(icons_src_dir)
-      warn "    ⚠️ Classic iconset source directory does not exist: #{icons_src_dir}"
+    icons_path = src / iconset / "src/main/resources/icons"
+    unless Dir.exist?(icons_path)
+      alt_path = src / "org.openhab.ui.iconset.#{iconset}" / "src/main/resources/icons"
+      icons_path = alt_path if Dir.exist?(alt_path)
+    end
+
+    unless Dir.exist?(icons_path)
+      warn "    ⚠️ Classic iconset source directory does not exist: #{icons_path}"
       return
     end
 
-    icons_list = []
-    Dir.glob(File.join(icons_src_dir, "*.svg")) do |path|
-      icons_list.push(File.basename(path))
-    end
+    icons_list = icons_path.glob("*.svg").map { |path| path.basename.to_s }
 
     categories_channels = {}
-    categories_places = []
-    categories_thing = []
+    CSV.foreach(data / "categories.csv", headers: true) do |row|
+      # Using a standard loop over compact Ruby shorthands for better clarity
+      type = row["type"]
+      name = row["name"]
 
-    categories_csv = File.join(data_dir, "categories.csv")
-    if File.exist?(categories_csv)
-      CSV.foreach(categories_csv, headers: true) do |cat|
-        categories_channels[cat[0]] = [] unless categories_channels.include?(cat[0])
-        categories_channels[cat[0]].push(cat[1])
-      end
+      categories_channels[type] ||= []
+      categories_channels[type] << name
     end
 
-    categories_places_csv = File.join(data_dir, "categories_places.csv")
-    if File.exist?(categories_places_csv)
-      CSV.foreach(categories_places_csv, headers: true) do |cat|
-        categories_places.push(cat[0])
-      end
-    end
+    categories_places = CSV.foreach(data / "categories_places.csv", headers: true).map { |row| row["name"] }
 
-    categories_things_csv = File.join(data_dir, "categories_things.csv")
-    categories_thing_csv = File.join(data_dir, "categories_thing.csv")
-    thing_csv_path = File.exist?(categories_things_csv) ? categories_things_csv : categories_thing_csv
+    thing_csv = data / "categories_thing.csv"
+    thing_csv = data / "categories_things.csv" unless File.exist?(thing_csv)
+    categories_thing = CSV.foreach(thing_csv, headers: true).map { |row| row["name"] }
 
-    if File.exist?(thing_csv_path)
-      CSV.foreach(thing_csv_path, headers: true) do |cat|
-        categories_thing.push(cat[0])
-      end
-    end
-
-    FileUtils.mkdir_p(out_dir)
-    File.open(File.join(out_dir, "readme.md"), "w+") do |f|
+    iconset_readme = dst / iconset / "readme.md"
+    iconset_readme.dirname.mkpath
+    iconset_readme.open("w+") do |f|
       f.puts "---"
       f.puts "title: Icons"
       f.puts "categories:"
+
       f.puts "  channels:"
-      categories_channels.each do |k, c|
-        f.puts "    #{k}:"
-        c.each do |i|
-          f.puts "    - #{i.downcase}"
-        end
+      categories_channels.each do |type, channels|
+        f.puts "    #{type}:"
+        channels.each { |channel| f.puts "      - #{channel.downcase}" }
       end
 
       f.puts "  places:"
-      categories_places.each do |i|
-        f.puts "  - #{i.downcase}"
-      end
+      categories_places.each { |place| f.puts "    - #{place.downcase}" }
+
       f.puts "  things:"
-      categories_thing.each do |i|
-        f.puts "  - #{i.downcase}"
-      end
+      categories_thing.each { |thing| f.puts "    - #{thing.downcase}" }
 
       f.puts "---"
-      f.puts
+      f.puts # Blank line
       f.puts "# Icons"
       f.puts
       f.puts "These are the classic icons from Eclipse SmartHome."
@@ -87,12 +84,15 @@ module IconsetProcessor
       f.puts "<IconsetDisplay icons=\"#{icons_list.join(",")}\"/>"
     end
 
-    puts "    ✔ File written in #{out_dir}/readme.md"
+    puts "    ✔ File written in #{iconset_readme}"
 
-    # Copy to docs/configuration/iconsets/classic/icons
-    docs_icons_dir = File.join(out_dir, "icons")
-    FileUtils.mkdir_p(docs_icons_dir)
-    FileUtils.cp_r(File.join(icons_src_dir, "."), docs_icons_dir)
-    puts "    ✔ Icons copied to #{docs_icons_dir}"
+    # Copy to destination iconset folder
+    dest_dir = dst / iconset
+    FileUtils.cp_r(icons_path, dest_dir)
+
+    puts "    ✔ Icons copied to #{dest_dir / "icons"}"
+
+    puts "  ✔ Processed Classic iconset"
   end
 end
+
