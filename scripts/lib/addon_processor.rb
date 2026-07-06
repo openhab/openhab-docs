@@ -86,6 +86,15 @@ module AddonProcessor
       # Copy doc/, cfg/, images/, and icons/ if they exist
       ["doc", "cfg", "images", "icons"].each do |sub_dir|
         source_sub = File.join(addon_path, sub_dir)
+        if id == "zwave" && sub_dir == "doc"
+          zwave_things_md = File.join(source_sub, "thing.md")
+          if File.exist?(zwave_things_md)
+            target_doc_dir = File.join(target_dir, "doc")
+            FileUtils.mkdir_p(target_doc_dir)
+            FileUtils.cp(zwave_things_md, File.join(target_doc_dir, "thing.md"))
+          end
+          next
+        end
         if Dir.exist?(source_sub)
           FileUtils.cp_r(source_sub, target_dir)
         end
@@ -190,13 +199,13 @@ module AddonProcessor
     process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "automation", "automation", " - Automation", [], ["org.openhab.automation."])
     process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "binding", "bindings", " - Bindings", [" Binding"], ["org.openhab.binding."])
     process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "io", "integrations", " - System Integrations", [" Service"], ["org.openhab.io."])
-    process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "persistence", "persistences", " - Persistence Services", [/\\s*Persistence\\s*$/], ["org.openhab.persistence."])
+    process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "persistence", "persistence", " - Persistence Services", [/\\s*Persistence\\s*$/], ["org.openhab.persistence."])
     process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "transform", "transformations", " - Transformation Services", [" Transformation Service"], ["org.openhab.transform."])
-    process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "voice", "voices", " - Voices", [], ["org.openhab.voice."])
+    process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "voice", "voice", " - Voices", [], ["org.openhab.voice."])
 
     # UI bundles from webui repo
     # Note: Maven POM has excludes for ui-docs: iconset, org.openhab.ui.iconset.classic, cordova, src
     # Here we only process bundles under openhab-webui/bundles containing 'org.openhab.ui.' but excluding iconset.
-    process_addon_type(features, dest_addons_dir, images_dir, webui_bundles_dir, "ui", "uis", " - UIs", [], ["org.openhab.ui."])
+    process_addon_type(features, dest_addons_dir, images_dir, webui_bundles_dir, "ui", "ui", " - UIs", [], ["org.openhab.ui."])
   end
 end
