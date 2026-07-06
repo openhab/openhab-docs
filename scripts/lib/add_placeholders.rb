@@ -8,8 +8,8 @@ def add_placeholder_pages
   puts "➡️ Adding placeholder pages for preview"
 
   pages = [
-    "docs/addons/integrations/homekit",
-    "docs/addons/integrations/openhabcloud",
+    "addons/integrations/homekit",
+    "addons/integrations/openhabcloud",
     "docs/apps/android.md",
     "docs/apps/garmin",
     "docs/apps/sailfishos",

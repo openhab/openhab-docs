@@ -220,8 +220,8 @@ module.exports = [
     children: [
       ['ecosystem/alexa/', 'Amazon Alexa'],
       ['ecosystem/google-assistant/', 'Google Assistant'],
-      ['addons/integrations/homekit/', 'Apple HomeKit'],
-      ['addons/integrations/openhabcloud/', 'openHAB Cloud'],
+      ['../addons/integrations/homekit/', 'Apple HomeKit'],
+      ['../addons/integrations/openhabcloud/', 'openHAB Cloud'],
     ]
   },
   {
