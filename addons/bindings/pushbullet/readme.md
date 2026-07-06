@@ -1,0 +1,120 @@
+---
+id: pushbullet
+label: Pushbullet
+title: Pushbullet - Bindings
+type: binding
+description: "This binding allows you to notify supported devices using the [Pushbullet API](https://docs.pushbullet.com)."
+logo: images/addons/pushbullet.png
+install: manual
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pushbullet/README.md
+meta:
+  - property: og:title
+    content: "Pushbullet - Bindings"
+  - property: og:description
+    content: "This binding allows you to notify supported devices using the Pushbullet API."
+---
+
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+# Pushbullet Binding
+
+<AddonLogo />
+
+This binding allows you to notify supported devices using the [Pushbullet API](https://docs.pushbullet.com).
+To get started, [create an account](#creating-an-account) and [obtain an access token](#obtaining-an-access-token).
+
+## Supported Things
+
+| Thing | Type  | Description               |
+| ----- | ----- | ------------------------- |
+| bot   | Thing | Bot to send messages with |
+
+## Thing Configuration
+
+### `bot`
+
+| Parameter | Required | Description                                          |
+| --------- | :------: | ---------------------------------------------------- |
+| token     |   Yes    | Access token obtained from the account settings page |
+
+## Channels
+
+Currently the binding does not support any channels.
+
+## Rule Action
+
+This binding includes rule actions for sending notes.
+Three different actions are available:
+
+- `sendPushbulletNote(String recipient, String message)`
+- `sendPushbulletNote(String recipient, String title, String message)`
+- `sendPushbulletLink(String recipient, String url)`
+- `sendPushbulletLink(String recipient, String title, String message, String url)`
+- `sendPushbulletFile(String recipient, String content)`
+- `sendPushbulletFile(String recipient, String title, String message, String content)`
+- `sendPushbulletFile(String recipient, String title, String message, String content, String fileName)`
+
+Since there is a separate rule action instance for each `bot` Thing, retrieve it through `getActions(scope, thingUID)`.
+The first parameter must be `pushbullet` and the second is the full Thing UID of the bot that should be used.
+Once this action instance is retrieved, invoke the action method on it.
+
+The recipient can be an email address, a channel tag, or `null`.
+If not specified or improperly formatted, the note is broadcast to all of the user account's devices.
+
+The file content can be an image URL, a local file path, or an Image item state.
+
+The file name is used in the upload link and how it appears in the push message for non-image content.
+If not specified, it is automatically determined from the image URL or file path.
+For Image item state content, it defaults to `image.jpg`.
+
+For the `sendPushbulletNote` action, parameter `message` is required.
+Likewise, for `sendPushbulletLink`, `url` and for `sendPushbulletFile`, `content` parameters are required.
+Any other parameters for these actions are optional and can be set to `null`.
+
+## Full Example
+
+demo.things:
+
+```java
+Thing pushbullet:bot:r2d2 [ token="<ACCESS_TOKEN>" ]
+
+```
+
+demo.rules
+
+```java
+val actions = getActions("pushbullet", "pushbullet:bot:r2d2")
+// push a note
+actions.sendPushbulletNote("someone@example.com", "Note Example", "This is the pushed note.")
+// push a link
+actions.sendPushbulletLink("someone@example.com", "Link Example", "This is the pushed link", "https://example.com")
+// push a file
+actions.sendPushbulletFile("someone@example.com", "File Example", "This is the pushed file", "https://example.com/image.png")
+actions.sendPushbulletFile("someone@example.com", null, null, "/path/to/somefile.pdf", "document.pdf")
+// use toFullString method to push the content of an Image item
+actions.sendPushbulletFile("someone@example.com", ImageItem.state.toFullString)
+```
+
+## Creating an Account
+
+A Pushbullet account is linked to either a Google or Facebook account.
+
+- Go to the [Pushbullet](https://www.pushbullet.com) website.
+- Select either "Sign up with Google" or "Sign up with Facebook".
+- Complete the signup process as guided by the Pushbullet website.
+
+## Obtaining an Access Token
+
+An access token is linked to a Pushbullet account.
+
+- Go to your [Pushbullet account settings](https://www.pushbullet.com/#settings/account) page.
+- Click "Create Access Token".
+- Copy the created access token.
+
+## Rate Limits
+
+As of 2024, free accounts are [limited](https://docs.pushbullet.com/#limits) to 500 pushes per month.
+Exceeding this limit will result in a warning message being logged indicating when your account rate limit will reset.
+
+
+<EditPageLink/>
