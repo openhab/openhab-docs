@@ -31,10 +31,16 @@ def add_placeholder_pages
 
   # Using a standard loop for better clarity and explicit logic at a glance
   pages.each do |path|
-    puts "  ➡️ #{path}"
-
     # Determine if we are writing a specific .md file or a folder's readme
     target_file = (path.extname == ".md") ? path : path.join("readme.md")
+
+    # If target file exists and is not a placeholder, skip it
+    if target_file.exist?
+      puts "    ⏭ Skipping placeholder for #{path} (content is present)"
+      next
+    end
+
+    puts "    ✔ Adding placeholder for #{path}"
 
     # Ensure the parent directory exists
     target_file.dirname.mkpath
