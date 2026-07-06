@@ -19,6 +19,7 @@ project.pbxproj
 .vscode
 
 # Built docs
+.vuepress/thing-types.json
 addons
 docs
 vuepress
