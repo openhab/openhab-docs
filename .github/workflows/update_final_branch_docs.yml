@@ -41,8 +41,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "openhab-bot"
-          git config user.email "bot@openhab.org"
+          git config --global user.name "openhab-bot"
+          git config --global user.email "bot@openhab.org"
 
       - name: Commit and push changes to final branch
         run: |
