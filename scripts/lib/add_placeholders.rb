@@ -15,7 +15,7 @@ def add_placeholder_pages
     "docs/apps/sailfishos",
     "docs/configuration/habpanel",
     "docs/configuration/iconsets/classic",
-    "docs/ui/components",
+    "docs/ui/components/index.md",
     "docs/ui/habpanel",
     "docs/ui/habpanel/habpanel.md",
     "docs/ui/habot",
