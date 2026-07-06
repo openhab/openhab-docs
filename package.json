@@ -6,6 +6,7 @@
   "scripts": {
     "postinstall": "npm dedupe && npm prune",
     "prepare-docs": "ruby scripts/prepare-docs.rb",
+    "fetch-external-content": "ruby scripts/fetch-external-content.rb",
     "build-only": "vuepress build .",
     "build-preview": "npm run prepare-docs && npm run build-only",
     "preserve-preview": "npm run build-preview",

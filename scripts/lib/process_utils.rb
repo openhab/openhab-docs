@@ -10,7 +10,7 @@ def verbose(message)
 end
 
 # This function converts a "source" file to something looking good in VuePress
-def process_markdown(indir, file, outdir, source)
+def process_markdown(indir, file, outdir, source, outfile = nil)
   in_frontmatter = false
   frontmatter_processed = false
   has_source = false
@@ -18,7 +18,7 @@ def process_markdown(indir, file, outdir, source)
   og_description = "a vendor and technology agnostic open source automation software for your home"
 
   input_path = Pathname.new(indir) / file
-  output_path = Pathname.new(outdir) / file
+  output_path = Pathname.new(outdir) / (outfile || file)
   input_path_str = input_path.to_s
 
   unless input_path.exist?
@@ -58,6 +58,10 @@ def process_markdown(indir, file, outdir, source)
           elsif !has_source
             # Try to determine the source
             outdir_parts = outdir.split("/")
+            addons_idx = outdir_parts.index("addons")
+            if addons_idx
+              outdir_parts = outdir_parts[addons_idx..-1]
+            end
             outdir_parts[1] = "binding" if outdir_parts[1] == "bindings"
             outdir_parts[1] = "transform" if outdir_parts[1] == "transformations"
             outdir_parts[1] = "io" if outdir_parts[1] == "integrations"
