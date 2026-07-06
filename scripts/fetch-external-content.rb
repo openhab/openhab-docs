@@ -134,12 +134,12 @@ def main
   # HABPanel Config Docs
   copy_file_safe(
     File.join(RESOURCE_FOLDER, "openhab-webui/bundles/org.openhab.ui.habpanel/doc/habpanel.md"),
-    File.join(BASE_DIR, "docs/configuration/habpanel.md"),
+    File.join(BASE_DIR, "docs/ui/habpanel/habpanel.md"),
     "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui.habpanel/doc/habpanel.md"
   )
   copy_dir_safe(
     File.join(RESOURCE_FOLDER, "openhab-webui/bundles/org.openhab.ui.habpanel/doc/images"),
-    File.join(BASE_DIR, "docs/configuration/images")
+    File.join(BASE_DIR, "docs/ui/habpanel/images")
   )
 
   # openHABian Install Docs (excluding NEWSLOG.md)
@@ -219,10 +219,10 @@ def main
     process_directory(
       src: ui_components_src,
       dst: ui_components_dst,
-      source_root: "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/doc/components"
+      source_root: "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/doc/components",
     ) { |path| !path.to_s.split(File::SEPARATOR).include?("src") }
 
-    puts "    ✔ Copied and processed UI components reference documentation"
+    puts "    ✔ Copied UI components reference documentation"
   else
     warn "    ⚠️ UI components source directory does not exist: #{ui_components_src}"
   end
