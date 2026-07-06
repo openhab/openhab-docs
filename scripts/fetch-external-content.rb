@@ -2,14 +2,11 @@
 
 require "fileutils"
 
-# Ensure we can load files from scripts/lib
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib"))
-
-require "repo_manager"
-require "jfrog_fetcher"
-require "addon_processor"
-require "thing_types_processor"
-require "process_utils"
+require_relative "lib/repo_manager"
+require_relative "lib/jfrog_fetcher"
+require_relative "lib/addon_processor"
+require_relative "lib/thing_types_processor"
+require_relative "lib/process_utils"
 
 BASE_DIR = File.expand_path("..", File.dirname(__FILE__))
 RESOURCE_FOLDER = File.join(BASE_DIR, ".external-resources")
