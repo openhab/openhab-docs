@@ -5,6 +5,11 @@ label: Canvas Layer
 description: Layer for grouping widgets in canvas
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-canvas-layer.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-canvas-layer - Canvas Layer"
+  - property: og:description
+    content: Layer for grouping widgets in canvas
 ---
 
 # oh-canvas-layer - Canvas Layer
@@ -114,3 +119,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

@@ -5,6 +5,11 @@ label: Category Axis
 description: Reference documentation for the oh-category-axis component
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-category-axis.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-category-axis - Category Axis"
+  - property: og:description
+    content: Reference documentation for the oh-category-axis component
 ---
 
 # oh-category-axis - Category Axis
@@ -174,3 +179,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

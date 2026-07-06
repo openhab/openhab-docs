@@ -2,6 +2,11 @@
 title: Component Reference
 description: Index of all components defined in openHAB's main UI
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/src/index.md
+meta:
+  - property: og:title
+    content: "Component Reference"
+  - property: og:description
+    content: Index of all components defined in openHAB's main UI
 ---
 
 # Component Reference
@@ -151,3 +156,5 @@ Refer to the [`oh-card` Style](./oh-card.html#style) documentation to learn abou
 | [`oh-property-card`](./oh-property-card.html) |  [Property Card](./oh-property-card.html) | A card showing model items related to a certain property |
 
 
+
+<EditPageLink/>

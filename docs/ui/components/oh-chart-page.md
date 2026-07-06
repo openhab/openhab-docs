@@ -5,6 +5,11 @@ label: Chart Page
 description: Visualize historical series
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-chart-page.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-chart-page - Chart Page"
+  - property: og:description
+    content: Visualize historical series
 ---
 
 # oh-chart-page - Chart Page
@@ -157,3 +162,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

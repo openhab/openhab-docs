@@ -5,6 +5,11 @@ label: Layout Grid Block
 description: A block in a grid layout
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-block.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-block - Layout Grid Block"
+  - property: og:description
+    content: A block in a grid layout
 ---
 
 # oh-block - Layout Grid Block
@@ -39,7 +44,7 @@ Use the [f7-block](https://v5.framework7.io/vue/block.html), [f7-row](https://v5
 * These components are based upon the corresponding [Framework 7 (v5) block control](https://v5.framework7.io/docs/block.html).
 * Component styles are applied by the [Framework 7 CSS variables](https://v5.framework7.io/docs/block.html#css-variables).
 Not all styles are implemented/available for use in this customised version of the control.
-For guidance on how to customise styles see the [CSS Styles](https://openhab.org/docs/ui/building-pages.html#css-variables) section.
+For guidance on how to customise styles see the [CSS Styles](/docs/ui/building-pages.html#css-variables) section.
 
 ::: tip
 Grid is not a table!
@@ -130,3 +135,5 @@ masonry: []
 ## Community Resources
 
 * Got a cool example from the Community pages?  Use the GitHub edit page link to add links to this page!
+
+<EditPageLink/>

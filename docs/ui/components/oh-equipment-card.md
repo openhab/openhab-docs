@@ -5,6 +5,11 @@ label: Equipment Class Card
 description: A card showing model items belonging to a certain equipment class
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-equipment-card.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-equipment-card - Equipment Class Card"
+  - property: og:description
+    content: A card showing model items belonging to a certain equipment class
 ---
 
 # oh-equipment-card - Equipment Class Card
@@ -133,3 +138,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

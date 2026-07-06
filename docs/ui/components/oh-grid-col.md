@@ -5,6 +5,11 @@ label: Layout Grid Column
 description: A column in a grid layout
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-grid-col.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-grid-col - Layout Grid Column"
+  - property: og:description
+    content: A column in a grid layout
 ---
 
 # oh-grid-col - Layout Grid Column
@@ -258,3 +263,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

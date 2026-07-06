@@ -5,6 +5,11 @@ label: Canvas Layout
 description: Position widgets on a canvas layout with arbitrary position and size down to pixel resolution
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-canvas-layout.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-canvas-layout - Canvas Layout"
+  - property: og:description
+    content: Position widgets on a canvas layout with arbitrary position and size down to pixel resolution
 ---
 
 # oh-canvas-layout - Canvas Layout
@@ -178,3 +183,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

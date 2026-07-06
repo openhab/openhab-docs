@@ -5,6 +5,11 @@ label: Widget Context
 description: Non-rendered component with functions, constants, and local variables for widgets
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-context.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-context - Widget Context"
+  - property: og:description
+    content: Non-rendered component with functions, constants, and local variables for widgets
 ---
 
 # oh-context - Widget Context
@@ -40,7 +45,7 @@ Non-rendered component with functions, constants, and scoped variables for widge
 </PropBlock>
 <PropBlock type="TEXT" name="variables" label="Widget Variables">
   <PropDescription>
-    Object with key:variable default value pairs. Variables are available to expressions in all child components via the <code>vars</code> object and take precedence over variables with the same name from higher contexts.<br />Variables are evaluated once before the widget is displayed the first time . Their values can only be changed by other component variable actions (e.g. <a class="external text-color-blue" target="_blank" href="https://www.openhab.org/docs/ui/components/oh-button.html#action-variable">oh-button</a>)
+    Object with key:variable default value pairs. Variables are available to expressions in all child components via the <code>vars</code> object and take precedence over variables with the same name from higher contexts.<br />Variables are evaluated once before the widget is displayed the first time . Their values can only be changed by other component variable actions (e.g. <a class="external text-color-blue" target="_blank" href="/docs/ui/components/oh-button.html#action-variable">oh-button</a>)
   </PropDescription>
 </PropBlock>
 </PropGroup>
@@ -99,3 +104,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

@@ -5,6 +5,11 @@ label: Fixed Grid Layout
 description: Arranges widgets on a grid of squares with user-defined sizes
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-grid-layout.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-grid-layout - Fixed Grid Layout"
+  - property: og:description
+    content: Arranges widgets on a grid of squares with user-defined sizes
 ---
 
 # oh-grid-layout - Fixed Grid Layout
@@ -141,3 +146,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

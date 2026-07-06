@@ -5,6 +5,11 @@ label: Button
 description: Button performing an action
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-button.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-button - Button"
+  - property: og:description
+    content: Button performing an action
 ---
 
 # oh-button - Button
@@ -20,7 +25,7 @@ Button performing an action
 ## Usage / reference documents
 
 * The `oh-button` component is based upon the [Framework 7 Vue button control (`f7-button`)](https://v5.framework7.io/vue/button.html).
-* Component styles are applied by the [Framework 7 CSS variables](https://v5.framework7.io/docs/button.html#css-variables).  For guidance on how to customise styles see the [CSS Styles](https://openhab.org/docs/ui/building-pages.html#css-variables) section.
+* Component styles are applied by the [Framework 7 CSS variables](https://v5.framework7.io/docs/button.html#css-variables).  For guidance on how to customise styles see the [CSS Styles](/docs/ui/building-pages.html#css-variables) section.
 * Use the [`f7-segmented`](#f7-segmented) wrapper component to group buttons together.  Buttons with the property  `active: true` set will be highlighted/marked as selected.
 
 ## Configuration
@@ -1220,7 +1225,7 @@ slots:
               text: Documentation (same window)
               fill: true
               action: url
-              actionUrl: https://www.openhab.org/docs/
+              actionUrl: /docs/
               actionUrlSameWindow: treu
               style:
                 width: 300px
@@ -1249,3 +1254,5 @@ TBA
 ![Big Ol' Grid O' Buttons](./images/oh-button/bogob.png)
 
 [BoGoB: Big Ol' Grid O' Buttons](https://community.openhab.org/t/bogob-big-ol-grid-o-buttons-is-this-even-possible-yes-yes-it-is/115343/7) - using the `oh-button` and `oh-repeater` objects together with YAML arrays to create large grids of buttons (emulating remote control operation).
+
+<EditPageLink/>

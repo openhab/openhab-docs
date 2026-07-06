@@ -220,7 +220,6 @@ def main
       src: ui_components_src,
       dst: ui_components_dst,
       source_root: "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/doc/components",
-      process_md: false
     ) { |path| !path.to_s.split(File::SEPARATOR).include?("src") }
 
     puts "    ✔ Copied UI components reference documentation"

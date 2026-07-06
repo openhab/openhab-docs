@@ -5,6 +5,11 @@ label: Swiper Card
 description: Display a swiper allowing to browse slides, in a card
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-swiper-card.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-swiper-card - Swiper Card"
+  - property: og:description
+    content: Display a swiper allowing to browse slides, in a card
 ---
 
 # oh-swiper-card - Swiper Card
@@ -131,3 +136,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

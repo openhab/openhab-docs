@@ -208,7 +208,7 @@ end
 # @yield [Pathname] an optional block to filter which files to process (receives the Pathname of each file)
 # @yieldreturn [Boolean] whether to process the file (true) or skip it (false)
 #
-def process_directory(src:, dst:, source_root: nil, process_md: true, &block)
+def process_directory(src:, dst:, source_root: nil, &block)
   source = Pathname(src)
   destination = Pathname(dst)
   pattern = source / "**" / "*"
@@ -229,7 +229,7 @@ def process_directory(src:, dst:, source_root: nil, process_md: true, &block)
                     File.join(source_root, relative.to_s).tr("\\", "/") # Ensure URL uses forward slashes
                   end
 
-    if path.extname.downcase == ".md" && process_md
+    if path.extname.downcase == ".md"
       verbose "   ➡️ #{relative}"
       # Pathname objects can usually be passed to methods expecting strings
       process_markdown(path.dirname.to_s, path.basename.to_s, output_dir.to_s, source_path)

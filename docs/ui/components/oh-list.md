@@ -5,6 +5,11 @@ label: List
 description: List control, hosts list items
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-list.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-list - List"
+  - property: og:description
+    content: List control, hosts list items
 ---
 
 # oh-list - List
@@ -99,3 +104,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

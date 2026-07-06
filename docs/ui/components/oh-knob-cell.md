@@ -5,11 +5,16 @@ label: Knob Cell
 description: A cell expanding to a knob control
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-knob-cell.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-knob-cell - Knob Cell"
+  - property: og:description
+    content: A cell expanding to a knob control
 ---
 
 # oh-knob-cell - Knob & Rounded Slider Cell
 
-![](images/oh-knob/header.png)
+![](./images/oh-knob/header.png)
 
 [[toc]]
 
@@ -473,3 +478,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

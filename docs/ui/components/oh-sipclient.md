@@ -5,6 +5,11 @@ label: SIP Client
 description: Use SIP over WebSocket to start and answer calls
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-sipclient.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-sipclient - SIP Client"
+  - property: og:description
+    content: Use SIP over WebSocket to start and answer calls
 ---
 
 # oh-sipclient - SIP Client
@@ -226,3 +231,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

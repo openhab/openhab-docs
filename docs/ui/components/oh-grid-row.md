@@ -5,6 +5,11 @@ label: Layout Grid Row
 description: A row in a grid layout
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-grid-row.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-grid-row - Layout Grid Row"
+  - property: og:description
+    content: A row in a grid layout
 ---
 
 # oh-grid-row - Layout Grid Row
@@ -78,3 +83,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

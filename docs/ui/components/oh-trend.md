@@ -5,6 +5,11 @@ label: Trend line
 description: Trend line to display the overall recent evolution of an item
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-trend.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-trend - Trend line"
+  - property: og:description
+    content: Trend line to display the overall recent evolution of an item
 ---
 
 # oh-trend - Trend line
@@ -120,3 +125,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

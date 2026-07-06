@@ -5,6 +5,11 @@ label: Floor plan
 description: Displays markers on an image overlay
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-plan-page.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-plan-page - Floor plan"
+  - property: og:description
+    content: Displays markers on an image overlay
 ---
 
 # oh-plan-page - Floor plan
@@ -154,3 +159,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

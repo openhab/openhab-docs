@@ -5,6 +5,11 @@ label: Repeater
 description: Iterate over an array and repeat the children components in the default slot
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-repeater.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-repeater - Repeater"
+  - property: og:description
+    content: Iterate over an array and repeat the children components in the default slot
 ---
 
 # oh-repeater - Repeater
@@ -183,3 +188,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

@@ -5,11 +5,16 @@ label: Knob
 description: Knob control, allow to change a number value on a circular track
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-knob.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-knob - Knob"
+  - property: og:description
+    content: Knob control, allow to change a number value on a circular track
 ---
 
 # oh-knob - Knob & Rounded Slider
 
-![](images/oh-knob/header.png)
+![](./images/oh-knob/header.png)
 
 [[toc]]
 
@@ -240,3 +245,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>

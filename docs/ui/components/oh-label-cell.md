@@ -5,6 +5,11 @@ label: Label Cell
 description: A cell with a big label to show a short item state value
 source: https://github.com/openhab/openhab-webui/edit/main/bundles/org.openhab.ui/doc/components/oh-label-cell.md
 prev: /docs/ui/components/
+meta:
+  - property: og:title
+    content: "oh-label-cell - Label Cell"
+  - property: og:description
+    content: A cell with a big label to show a short item state value
 ---
 
 # oh-label-cell - Label Cell
@@ -380,3 +385,5 @@ slots
 - [Community Post 1](https://community.openhab.org/t/12345)
 - [Community Post 2](https://community.openhab.org/t/23456)
 -->
+
+<EditPageLink/>
