@@ -210,6 +210,12 @@ def main
     File.join(BASE_DIR, "docs/ecosystem/google-assistant/images")
   )
 
+  # Classic Iconset
+  copy_dir_safe(
+    File.join(RESOURCE_FOLDER, "openhab-webui/bundles/org.openhab.ui.iconset.classic/src/main/resources/icons"),
+    File.join(BASE_DIR, "addons/iconsets/classic/icons")
+  )
+
   puts "  ✔ Copied ecosystem & apps documentation"
 
   puts "✔ External content pipeline completed successfully!"
