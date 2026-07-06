@@ -9,15 +9,21 @@ require "repo_manager"
 require "jfrog_fetcher"
 require "addon_processor"
 require "thing_types_processor"
+require "process_utils"
 
 BASE_DIR = File.expand_path("..", File.dirname(__FILE__))
 RESOURCE_FOLDER = File.join(BASE_DIR, ".external-resources")
 
-def copy_file_safe(src, dst)
+def copy_file_safe(src, dst, source_url = nil)
   if File.exist?(src)
     FileUtils.mkdir_p(File.dirname(dst))
-    FileUtils.cp(src, dst)
-    puts "    ✔ Copied #{File.basename(src)} -> #{dst}"
+    if File.extname(src).downcase == ".md" && source_url
+      process_markdown(File.dirname(src), File.basename(src), File.dirname(dst), source_url, File.basename(dst))
+      puts "    ✔ Processed #{File.basename(src)} -> #{dst}"
+    else
+      FileUtils.cp(src, dst)
+      puts "    ✔ Copied #{File.basename(src)} -> #{dst}"
+    end
   else
     warn "    ⚠️ Source file does not exist: #{src}"
   end
@@ -33,7 +39,7 @@ def copy_dir_safe(src, dst)
   end
 end
 
-def copy_glob_safe(pattern, dst_dir, exclude_fn = nil)
+def copy_glob_safe(pattern, dst_dir, exclude_fn = nil, source_url_fn = nil)
   Dir.glob(pattern).each do |file|
     next if File.directory?(file)
     next if exclude_fn && exclude_fn.call(file)
@@ -42,7 +48,14 @@ def copy_glob_safe(pattern, dst_dir, exclude_fn = nil)
     target_file = File.join(dst_dir, relative_path)
 
     FileUtils.mkdir_p(File.dirname(target_file))
-    FileUtils.cp(file, target_file)
+    if File.extname(file).downcase == ".md" && source_url_fn
+      source_url = source_url_fn.call(relative_path)
+      process_markdown(File.dirname(file), File.basename(file), File.dirname(target_file), source_url, File.basename(target_file))
+      puts "    ✔ Processed #{File.basename(file)} -> #{target_file}"
+    else
+      FileUtils.cp(file, target_file)
+      puts "    ✔ Copied #{File.basename(file)} -> #{target_file}"
+    end
   end
   puts "    ✔ Copied glob #{pattern} -> #{dst_dir}"
 end
@@ -103,13 +116,27 @@ def main
     File.join(BASE_DIR, "images")
   )
 
+  # Preprocess all generated addon readme files
+  puts "  Processing add-on readme files..."
+  Dir.glob(File.join(BASE_DIR, "addons/**/*.md")).each do |file|
+    next if File.basename(file) != "readme.md"
+
+    dir = File.dirname(file)
+    temp_readme = File.join(dir, "readme_raw.md")
+    FileUtils.mv(file, temp_readme)
+    process_markdown(dir, "readme_raw.md", dir, nil, "readme.md")
+    File.delete(temp_readme)
+  end
+  puts "  ✔ Processed add-on readme files"
+
   # 5. Inline Ecosystem and Apps copying/renaming
   puts "  Copying ecosystem & apps documentation..."
 
   # HABPanel Config Docs
   copy_file_safe(
     File.join(RESOURCE_FOLDER, "openhab-webui/bundles/org.openhab.ui.habpanel/doc/habpanel.md"),
-    File.join(BASE_DIR, "docs/configuration/habpanel.md")
+    File.join(BASE_DIR, "docs/configuration/habpanel.md"),
+    "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui.habpanel/doc/habpanel.md"
   )
   copy_dir_safe(
     File.join(RESOURCE_FOLDER, "openhab-webui/bundles/org.openhab.ui.habpanel/doc/images"),
@@ -120,7 +147,8 @@ def main
   copy_glob_safe(
     File.join(RESOURCE_FOLDER, "openhabian/docs/*.md"),
     File.join(BASE_DIR, "docs/installation"),
-    lambda { |f| File.basename(f) == "NEWSLOG.md" }
+    lambda { |f| File.basename(f) == "NEWSLOG.md" },
+    lambda { |fn| "https://github.com/openhab/openhabian/blob/main/docs/#{fn}" }
   )
   copy_dir_safe(
     File.join(RESOURCE_FOLDER, "openhabian/docs/images"),
@@ -130,7 +158,8 @@ def main
   # Android Docs
   copy_file_safe(
     File.join(RESOURCE_FOLDER, "openhab-android/docs/USAGE.md"),
-    File.join(BASE_DIR, "docs/apps/android.md")
+    File.join(BASE_DIR, "docs/apps/android.md"),
+    "https://github.com/openhab/openhab-android/blob/main/docs/USAGE.md"
   )
   copy_dir_safe(
     File.join(RESOURCE_FOLDER, "openhab-android/docs/images"),
@@ -140,7 +169,8 @@ def main
   # Garmin Docs
   copy_file_safe(
     File.join(RESOURCE_FOLDER, "openhab-garmin/docs/USAGE.md"),
-    File.join(BASE_DIR, "docs/apps/garmin/readme.md")
+    File.join(BASE_DIR, "docs/apps/garmin/readme.md"),
+    "https://github.com/openhab/openhab-garmin/blob/main/docs/USAGE.md"
   )
   copy_dir_safe(
     File.join(RESOURCE_FOLDER, "openhab-garmin/docs/images"),
@@ -150,7 +180,8 @@ def main
   # SailfishOS Docs
   copy_file_safe(
     File.join(RESOURCE_FOLDER, "openhab-sailfishos/docs/USAGE.md"),
-    File.join(BASE_DIR, "docs/apps/sailfishos/readme.md")
+    File.join(BASE_DIR, "docs/apps/sailfishos/readme.md"),
+    "https://github.com/openhab/openhab-sailfishos/blob/main/docs/USAGE.md"
   )
   copy_dir_safe(
     File.join(RESOURCE_FOLDER, "openhab-sailfishos/docs/images"),
@@ -160,7 +191,8 @@ def main
   # Alexa Docs
   copy_file_safe(
     File.join(RESOURCE_FOLDER, "openhab-alexa/docs/USAGE.md"),
-    File.join(BASE_DIR, "docs/ecosystem/alexa/readme.md")
+    File.join(BASE_DIR, "docs/ecosystem/alexa/readme.md"),
+    "https://github.com/openhab/openhab-alexa/blob/main/docs/USAGE.md"
   )
   copy_dir_safe(
     File.join(RESOURCE_FOLDER, "openhab-alexa/docs/images"),
@@ -170,7 +202,8 @@ def main
   # Google Assistant Docs
   copy_file_safe(
     File.join(RESOURCE_FOLDER, "openhab-google-assistant/docs/USAGE.md"),
-    File.join(BASE_DIR, "docs/ecosystem/google-assistant/readme.md")
+    File.join(BASE_DIR, "docs/ecosystem/google-assistant/readme.md"),
+    "https://github.com/openhab/openhab-google-assistant/blob/main/docs/USAGE.md"
   )
   copy_dir_safe(
     File.join(RESOURCE_FOLDER, "openhab-google-assistant/docs/images"),
