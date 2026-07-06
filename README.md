@@ -67,6 +67,19 @@ Adjust as required.
 
 Use of the component can be found in `tutorials/getting_started/rules_basic.md`, if you find it easier to refer to an example.
 
+### Inline Framework7 Icons
+
+When documenting Main UI, it might prove useful to show how specific buttons look like.
+As Main UI is based on [Framework7](https://framework7.io/), it is mostly relying on Framework7 icons.
+
+To make it easier to use these icons in the documentation, a Vue component called `F7Icon` has been created.
+Using it is outside "regular Markdown syntax", which is why it is explained here.
+Here is an example of the syntax:
+
+```vue
+<f7-icon f7="square_list" />
+```
+
 ### How to build the documentation locally
 
 It is possible to build a preview version of the documentation on your local machine.
