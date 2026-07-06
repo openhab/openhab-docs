@@ -34,10 +34,10 @@ jobs:
           bundler-cache: false
 
       - name: Run fetch-external-content
-        run: ruby scripts/fetch-external-content
+        run: ruby scripts/fetch-external-content.rb
 
       - name: Run prepare-docs
-        run: ruby scripts/prepare-docs
+        run: ruby scripts/prepare-docs.rb --no-clean --no-placeholders
 
       - name: Configure Git
         run: |
