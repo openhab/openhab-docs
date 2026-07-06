@@ -1,3 +1,7 @@
+[build.environment]
+  MISE_RUBY_COMPILE = "false"
+
 [[redirects]]
   from = "/"
   to = "/docs"
+

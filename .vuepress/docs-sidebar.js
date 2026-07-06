@@ -221,7 +221,6 @@ module.exports = [
       ['ecosystem/alexa/', 'Amazon Alexa'],
       ['ecosystem/google-assistant/', 'Google Assistant'],
       ['../addons/integrations/homekit/', 'Apple HomeKit'],
-      // ['ecosystem/ifttt/', 'IFTTT'], // Temporary remove until service gets reactivated
       ['../addons/integrations/openhabcloud/', 'openHAB Cloud'],
     ]
   },
