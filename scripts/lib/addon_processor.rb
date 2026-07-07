@@ -197,10 +197,10 @@ module AddonProcessor
 
     # Arguments: features, dest_addons_dir, images_dir, src_bundles_dir, type, dest_folder_name, suffix, lblremoves, pkgremoves
     process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "automation", "automation", " - Automation", [], ["org.openhab.automation."])
-    process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "binding", "bindings", " - Bindings", [" Binding"], ["org.openhab.binding."])
-    process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "io", "integrations", " - System Integrations", [" Service"], ["org.openhab.io."])
+    process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "binding", "binding", " - Bindings", [" Binding"], ["org.openhab.binding."])
+    process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "io", "integration", " - System Integrations", [" Service"], ["org.openhab.io."])
     process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "persistence", "persistence", " - Persistence Services", [/\\s*Persistence\\s*$/], ["org.openhab.persistence."])
-    process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "transform", "transformations", " - Transformation Services", [" Transformation Service"], ["org.openhab.transform."])
+    process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "transform", "transformation", " - Transformation Services", [" Transformation Service"], ["org.openhab.transform."])
     process_addon_type(features, dest_addons_dir, images_dir, addons_bundles_dir, "voice", "voice", " - Voices", [], ["org.openhab.voice."])
 
     # UI bundles from webui repo
