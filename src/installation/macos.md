@@ -1,5 +1,4 @@
 ---
-layout: documentation
 title: openHAB on macOS
 ---
 
@@ -81,8 +80,26 @@ Choose between the latest stable or milestone release:
 ::: tip Note
 Installing any openHAB package will automatically install the latest OpenJDK 21 build from Homebrew as well.
 
-Also included is the `openhab-cli` tool (as known from the Linux packages), which provides easy access to the console, backup and restore functionality etc.
-Running `openhab-cli` in the terminal will list all available commands.
+Also included is the `openhab-cli` tool (as known from the Deb/Rpm Linux packages), which provides easy access to the console, backup and restore functionality, etc.
+Running `openhab-cli` in the terminal will list all available commands:
+
+```shell
+$ openhab-cli
+
+Usage:  openhab-cli command [options]
+
+Possible commands:
+  backup [--full] [filename]   -- Stores the current configuration of openHAB.
+  clean-cache                  -- Cleans the openHAB temporary folders.
+  console                      -- Opens the openHAB console.
+  info                         -- Displays distribution information.
+  restore [--textconfig] [--uiconfig] filename
+                               -- Restores openHAB configuration from a backup.
+  showlogs                     -- Displays the log messages of openHAB.
+  start [--debug]              -- Starts openHAB in the terminal.
+  status                       -- Checks to see if openHAB is running.
+  stop                         -- Stops any running instance of openHAB.
+```
 :::
 
 When you choose to install an add-on, openHAB will download it from the internet on request.
@@ -105,10 +122,25 @@ To verify its checksum:
   echo "39009119897f4b6e997c85e323aea9f7af3ee7a4e1f9df82ef0bc6d9b417abd1 /opt/homebrew/opt/openhab-milestone/libexec/addons/openhab-addons-5.1.0.M2.kar" | sha256sum -c -
 ```
 
+#### File Locations
+
+| Description           | Path                                                               |
+|-----------------------|--------------------------------------------------------------------|
+| openHAB application   | `$(brew --prefix)/opt/[openhab\|openhab-milestone]/libexec`        |
+| openHAB add-ons       | `$(brew --prefix)/opt/[openhab\|openhab-milestone]/libexec/addons` |
+| openHAB configuration | `$(brew --prefix)/etc/openhab`                                     |
+| openHAB userdata      | `$(brew --prefix)/var/lib/openhab`                                 |
+| openHAB logs          | `$(brew --prefix)/var/log/openhab`                                 |
+| openHAB backups       | `$(brew --prefix)/var/lib/openhab/backups`                         |
+| service configuration | `$(brew --prefix)/etc/default/[openhab\|openhab-milestone]`        |
+| environment variables | `$(brew --prefix)/etc/openhab/.env`                                |
+
+`[openhab|openhab-milestone]` depends on the release channel of the installed package, so either `openhab` or `openhab-milestone`.
+
 #### Preventing automatic upgrade of openHAB
 
 To prevent unexpected breakage by accidentally updating openHAB, it's recommended to only manually upgrade to the newest version.
-This can be achieved by pinning the openHAB package version.
+This can be achieved by pinning the openHAB package version:
 
 ```shell
 brew pin openhab
@@ -116,7 +148,7 @@ brew pin openhab
 brew pin openhab-milestone
 ```
 
-To enable automatic upgrade of openHAB again, remove the pinning.
+To enable (automatic) upgrades of openHAB again, remove the pinning:
 
 ```shell
 brew unpin openhab
@@ -124,7 +156,7 @@ brew unpin openhab
 brew unpin openhab-milestone
 ```
 
-It is also possible to list all pinned packages.
+It is also possible to list all pinned packages:
 
 ```shell
 brew list --pinned
@@ -143,7 +175,7 @@ If the permission is not granted, openHAB will not be able to connect to your lo
 
 #### Launching openHAB
 
-Type the name of installed package (i.e. `openhab` or `openhab-milestone`) in the terminal to start openHAB.
+Type the name of installed package (i.e. `openhab` or `openhab-milestone`) in the terminal to start openHAB:
 
 ```shell
 openhab
@@ -172,23 +204,6 @@ To exit, use '<ctrl-d>' or 'logout'.
 openhab>
 ```
 
-#### Installing a specific version
-
-Homebrew, unfortunately, does not support having multiple versions of the same package natively, but anyway, we've made it possible to install older versions of openHAB.
-Our CI servers automatically tag the stable package versions with the release number, so you can use the following Git command to have Homebrew install a specific stable version.
-
-```shell
-git -C $(brew --prefix)/Library/Taps/openhab/homebrew-openhab checkout v5.0 Formula/openhab.rb
-```
-
-The above command will check out the `v5.0` tagged version of the `openhab` package, thus installing the latest openHAB `v5.0.x` release.
-
-To revert to the latest stable version, you can use the following command.
-
-```shell
-git -C $(brew --prefix)/Library/Taps/openhab/homebrew-openhab checkout main && git -C $(brew --prefix)/Library/Taps/openhab/homebrew-openhab pull
-```
-
 #### Running as a service
 
 The easiest way of running openHAB is to run it as a Homebrew service.
@@ -209,17 +224,15 @@ The following commands help manage the service:
 #### Updating openHAB
 
 openHAB can easily be updated through Homebrew.
-First, the package version needs to be unpinned so that Homebrew can update the package.
+First, the package version needs to be unpinned so that Homebrew can update the package:
 
 ```shell
-brew unpin openjdk@21
-
 brew unpin openhab
 # OR #
 brew unpin openhab-milestone
 ```
 
-Next, the package can be updated.
+Next, the package can be upgraded:
 
 ```shell
 brew upgrade
@@ -235,6 +248,34 @@ Backup and restore of openHAB can be performed through the `openhab-cli` tool.
 openhab-cli backup /path/to/backup.zip
 openhab-cli restore /path/to/backup.zip
 ```
+
+#### Installing a specific version
+
+Homebrew, unfortunately, does not support having multiple versions of the same package natively, but anyway, we've made it possible to install older versions of openHAB.
+Our CI servers automatically tag the stable package versions with the release number, so you can use the following Git command to have Homebrew install a specific stable version.
+
+```shell
+git -C $(brew --prefix)/Library/Taps/openhab/homebrew-openhab checkout v5.0 Formula/openhab.rb
+```
+
+The above command will check out the `v5.0` tagged version of the `openhab` package, thus installing the latest openHAB `v5.0.x` release.
+
+To revert to the latest stable version, you can use the following command.
+
+```shell
+git -C $(brew --prefix)/Library/Taps/openhab/homebrew-openhab checkout main && git -C $(brew --prefix)/Library/Taps/openhab/homebrew-openhab pull
+```
+
+#### Troubleshooting
+
+##### Apache Felix File Install
+
+```text
+... [WARN ] [org.apache.felix.fileinstall] - /usr/share/openhab/addons does not exist, please create it.
+... [ERROR] [org.apache.felix.fileinstall] - Cannot create folder /var/lib/openhab/tmp/bundles. Is the folder write-protected?
+```
+
+When observing log messages like the above on startup, ensure proper `felix.fileinstall.dir` and `felix.fileinstall.tmpdir` are set in `/opt/homebrew/var/lib/openhab/config/org/apache/felix/fileinstall/*.config`.
 
 ### Manual Installation
 
@@ -303,7 +344,7 @@ From inside openHAB's root directory (e.g. `~/openhab/), run openHAB's startup s
 The first run may take a while to process, wait until the `openhab>` prompt appears.
 See [Package Install: Launching openHAB](#launching-openhab) for an example.
 
-Without closing the terminal, open your favorite web browser and type the following URL: `http://localhost:8080`, you should see the openHAB welcome screen, and you're all set to [using openHAB]({{base}}/tutorial/first_steps.html).
+Without closing the terminal, open your favorite web browser and type the following URL: `http://localhost:8080`, you should see the openHAB welcome screen, and you're all set to [using openHAB](/docs/tutorial/first_steps.html).
 If you installed openHAB on a different device, replace localhost with the IP address of the device.
 
 #### Updating openHAB
