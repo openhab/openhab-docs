@@ -37,7 +37,7 @@ jobs:
         run: ruby scripts/fetch-external-content.rb
 
       - name: Run prepare-docs
-        run: ruby scripts/prepare-docs.rb --no-clean --no-placeholders
+        run: ruby scripts/prepare-docs.rb --no-placeholders
 
       - name: Configure Git
         run: |
@@ -49,14 +49,14 @@ jobs:
         run: |
           # Remove existing directories in final branch checkout
           rm -rf docs images addons scripts .vuepress
-          
+
           # Copy updated directories from the main branch workspace
           cp -r ../docs ./
           cp -r ../images ./
           cp -r ../addons ./
           cp -r ../scripts ./
           cp -r ../.vuepress ./
-          
+
           # Stage the changes
           git add docs images addons scripts .vuepress
 
