@@ -100,6 +100,7 @@ Possible commands:
   status                       -- Checks to see if openHAB is running.
   stop                         -- Stops any running instance of openHAB.
 ```
+
 :::
 
 When you choose to install an add-on, openHAB will download it from the internet on request.
