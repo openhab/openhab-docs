@@ -144,6 +144,14 @@ To put a page on the Sidebar, open the _Sidebar & Visibility_ option in a Page's
 
 **Sidebar order** allows to reorder the sidebar menu, choose an integer for each page on the sidebar, the lower values will make the page higher in the menu.
 
+### Hiding the Sidebar for Kiosk / Wall Displays
+
+For dedicated kiosk or wall‑mounted displays running Main UI, the persistent left menu/sidebar is often not desirable.
+To directly open a page without the sidebar visible, Main UI accepts the URL parameter `hideLeftPanel=true`.
+For example: `https://<openhab_host>/overview/?hideLeftPanel=true`.
+This hides the sidebar and allows the page to use the full width of the display, which is ideal for unattended devices such as Raspberry Pi systems running Chromium in kiosk mode where no manual interaction is possible.
+Because this behavior is controlled purely through the URL, normal desktop browsing sessions remain unaffected.
+
 ## Additional Properties
 
 You can put additional properties on a page's root component config which will influence its display.
