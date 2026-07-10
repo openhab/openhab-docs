@@ -111,7 +111,7 @@ It allows using regex and optional parts to make it more dynamic.
 
 This is a basic grammar example:
 
-```BNF
+```bnf
 root ::= (light_switch | light_state | tv_channel) "."
 light_switch ::= "turn the light " ("on" | "off")
 light_state ::= "set light to " ("high" | "low")
@@ -187,7 +187,7 @@ Configure the grammar options.
 
 #### Grammar Example
 
-```gbnf
+```bnf
 # Grammar should define a root expression that should end with a dot.
 root     ::= " " command "."
 # Alternative command expression to expand into the root.
