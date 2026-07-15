@@ -93,6 +93,27 @@ def update_external_repositories
   end
 end
 
+def fetch_openhab_js_types
+  pom_path = File.join(RESOURCE_FOLDER, "openhab-addons/bundles/org.openhab.automation.jsscripting/pom.xml")
+  unless File.exist?(pom_path)
+    warn "  ⚠️ JS Scripting POM not found at #{pom_path}"
+    return
+  end
+
+  pom_content = File.read(pom_path)
+  version_match = pom_content.match(/<ohjs.version>(.*?)<\/ohjs.version>/)
+  unless version_match
+    warn "  ⚠️ Could not find <ohjs.version> in JS Scripting POM"
+    return
+  end
+
+  ohjs_version = version_match[1].strip
+  puts "  Found openhab-js version in POM: #{ohjs_version}"
+
+  dest_path = File.join(BASE_DIR, "addons/automation/jsscripting/res/openhab.d.ts")
+  download_github_release_asset("openhab/openhab-js", ohjs_version, "openhab.d.ts", dest_path)
+end
+
 def main
   puts "Starting fetch external content pipeline..."
 
@@ -127,6 +148,9 @@ def main
     File.delete(temp_readme)
   end
   puts "  ✔ Processed add-on readme files"
+
+  # 4b. Fetch openhab.d.ts definitions based on JS Scripting POM version
+  fetch_openhab_js_types
 
   # 5. Inline Ecosystem and Apps copying/renaming
   puts "  Copying ecosystem & apps documentation..."
