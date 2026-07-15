@@ -6165,6 +6165,11 @@
     "label": "Paradox Zone"
   },
   {
+    "bindingId": "peblar",
+    "id": "peblar:charger",
+    "label": "Peblar EV Charger"
+  },
+  {
     "bindingId": "pegelonline",
     "id": "pegelonline:station",
     "label": "Measurement Station"
