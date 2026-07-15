@@ -15,13 +15,13 @@ project.pbxproj
 *.iml
 .idea
 
-#vscode
+# VS Code
 .vscode
 
 # Built docs
 .vuepress/thing-types.json
-addons
-docs
+/addons
+/docs
 vuepress
 
 .DS_Store
