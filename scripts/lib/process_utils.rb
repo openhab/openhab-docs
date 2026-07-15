@@ -2,6 +2,8 @@
 
 require "fileutils"
 require "pathname"
+require "net/http"
+require "uri"
 
 ADDONS_REPO_BRANCH = "main"
 
@@ -270,4 +272,34 @@ module UI
     color_code = COLORS.fetch(color_name, 37) # Default to white
     "\e[#{color_code}m#{text}\e[0m"
   end
+end
+
+def download_github_release_asset(repo, tag, asset_name, dest_path)
+  url = "https://github.com/#{repo}/releases/download/#{tag}/#{asset_name}"
+  puts "  Fetching #{asset_name} from GitHub release #{tag}..."
+
+  uri = URI(url)
+  limit = 5
+  while limit > 0
+    response = Net::HTTP.get_response(uri)
+    case response
+    when Net::HTTPSuccess
+      FileUtils.mkdir_p(File.dirname(dest_path))
+      File.write(dest_path, response.body)
+      puts "  ✔ Saved #{asset_name} to #{dest_path}"
+      return true
+    when Net::HTTPRedirection
+      location = response['location']
+      uri = URI(location)
+      limit -= 1
+    when Net::HTTPNotFound
+      warn "  ⚠️ Asset #{asset_name} not found in release #{tag} (HTTP 404)"
+      return false
+    else
+      warn "  ⚠️ HTTP Error: #{response.code} #{response.message} for #{url}"
+      return false
+    end
+  end
+  warn "  ⚠️ Too many redirects trying to download #{asset_name}"
+  false
 end
