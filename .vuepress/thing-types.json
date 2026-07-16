@@ -6005,6 +6005,11 @@
     "label": "One Call API Historical data"
   },
   {
+    "bindingId": "openweathermap",
+    "id": "openweathermap:onecall-forecast",
+    "label": "One Call Forecast"
+  },
+  {
     "bindingId": "openwebnet",
     "id": "openwebnet:bus_alarm_system",
     "label": "Alarm System"
