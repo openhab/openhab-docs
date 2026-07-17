@@ -148,7 +148,7 @@ module AddonProcessor
         "label" => label,
         "title" => "#{label}#{suffix}",
         "type" => type,
-        "description" => "\"#{description}\""
+        "description" => description
       }
 
       if logo_svg
@@ -176,7 +176,7 @@ module AddonProcessor
 
       addon_logo_tag = (logo_svg || logo_png) ? "\n\n<AddonLogo />" : ""
       # to_yaml adds "---\n" at the start, we want to remove that and add our own "---" at the start and end
-      front_matter_str = front_matter.to_yaml.sub(/\A---\s*\n/, "").strip
+      front_matter_str = front_matter.to_yaml(line_width: -1).sub(/\A---\s*\n/, "").strip
 
       final_content = <<~MARKDOWN
         ---
