@@ -3,7 +3,7 @@ id: solarforecast
 label: SolarForecast
 title: SolarForecast - Bindings
 type: binding
-description: "This binding provides data from solar forecast services."
+description: '"This binding provides data from solar forecast services."'
 logo: images/addons/solarforecast.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.solarforecast/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "SolarForecast - Bindings"
   - property: og:description
-    content: "This binding provides data from solar forecast services."
+    content: '"This binding provides data from solar forecast services."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

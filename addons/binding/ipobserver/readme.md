@@ -3,7 +3,8 @@ id: ipobserver
 label: IpObserver
 title: IpObserver - Bindings
 type: binding
-description: "This binding is for any weather station that sends data to an IP Observer module."
+description: '"This binding is for any weather station that sends data to an IP Observer
+  module."'
 logo: images/addons/ipobserver.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ipobserver/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "IpObserver - Bindings"
   - property: og:description
-    content: "This binding is for any weather station that sends data to an IP Observer module."
+    content: '"This binding is for any weather station that sends data to an IP Observer
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

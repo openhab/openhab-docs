@@ -3,7 +3,8 @@ id: comfoair
 label: ComfoAir
 title: ComfoAir - Bindings
 type: binding
-description: "This binding allows to monitor and control Zehnder ComfoAir serial controlled ventilation systems via RS232 serial connection."
+description: '"This binding allows to monitor and control Zehnder ComfoAir serial
+  controlled ventilation systems via RS232 serial connection."'
 logo: images/addons/comfoair.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.comfoair/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "ComfoAir - Bindings"
   - property: og:description
-    content: "This binding allows to monitor and control Zehnder ComfoAir serial controlled ventilation systems via RS232 serial connection."
+    content: '"This binding allows to monitor and control Zehnder ComfoAir serial
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

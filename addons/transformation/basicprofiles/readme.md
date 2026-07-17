@@ -3,14 +3,14 @@ id: basicprofiles
 label: Basic Profiles
 title: Basic Profiles - Transformation Services
 type: transform
-description: "This bundle provides a list of useful profiles:"
+description: '"This bundle provides a list of useful profiles:"'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.basicprofiles/README.md
 meta:
   - property: og:title
     content: "Basic Profiles - Transformation Services"
   - property: og:description
-    content: "This bundle provides a list of useful profiles:"
+    content: '"This bundle provides a list of useful profiles:"'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

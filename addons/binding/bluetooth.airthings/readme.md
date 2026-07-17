@@ -3,7 +3,8 @@ id: bluetooth.airthings
 label: Airthings
 title: Airthings - Bindings
 type: binding
-description: "This extension adds support for [Airthings](https://www.airthings.com) indoor air quality monitor sensors."
+description: '"This extension adds support for [Airthings](https://www.airthings.com)
+  indoor air quality monitor sensors."'
 logo: images/addons/bluetooth.airthings.png
 install: manual
 prev: ../bluetooth/
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Airthings - Bindings"
   - property: og:description
-    content: "This extension adds support for Airthings indoor air quality monitor sensors."
+    content: '"This extension adds support for Airthings
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

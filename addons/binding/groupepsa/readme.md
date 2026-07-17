@@ -3,7 +3,8 @@ id: groupepsa
 label: Groupe PSA
 title: Groupe PSA - Bindings
 type: binding
-description: "Binding to retrieve information via the Groupe PSA Web API for cars from Opel, Peugeot, Citroen, DS and Vauxhall."
+description: '"Binding to retrieve information via the Groupe PSA Web API for cars
+  from Opel, Peugeot, Citroen, DS and Vauxhall."'
 logo: images/addons/groupepsa.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.groupepsa/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Groupe PSA - Bindings"
   - property: og:description
-    content: "Binding to retrieve information via the Groupe PSA Web API for cars from Opel, Peugeot, Citroen, DS and Vauxhall."
+    content: '"Binding to retrieve information via the Groupe PSA Web API for cars
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

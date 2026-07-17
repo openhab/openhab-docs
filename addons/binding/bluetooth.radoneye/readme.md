@@ -3,7 +3,8 @@ id: bluetooth.radoneye
 label: radoneye
 title: radoneye - Bindings
 type: binding
-description: "This extension adds support for [RadonEye](http://radonftlab.com/radon-sensor-product/radon-detector/rd200/) radon bluetooth detector."
+description: '"This extension adds support for [RadonEye](http://radonftlab.com/radon-sensor-product/radon-detector/rd200/)
+  radon bluetooth detector."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.radoneye/README.md
 prev: ../bluetooth/
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "radoneye - Bindings"
   - property: og:description
-    content: "This extension adds support for RadonEye radon bluetooth detector."
+    content: '"This extension adds support for RadonEye
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

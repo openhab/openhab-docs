@@ -3,7 +3,7 @@ id: sonos
 label: Sonos
 title: Sonos - Bindings
 type: binding
-description: "This binding integrates the [Sonos Multi-Room Audio system](https://www.sonos.com)."
+description: '"This binding integrates the [Sonos Multi-Room Audio system](https://www.sonos.com)."'
 logo: images/addons/sonos.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sonos/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Sonos - Bindings"
   - property: og:description
-    content: "This binding integrates the Sonos Multi-Room Audio system."
+    content: '"This binding integrates the Sonos Multi-Room Audio system."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,9 @@ id: zwavejs
 label: Z-Wave JS
 title: Z-Wave JS - Bindings
 type: binding
-description: "The `zwavejs` binding integrates Z-Wave JS with openHAB, allowing you to control and monitor Z-Wave devices using the Z-Wave JS web service (part of Z-Wave JS UI)."
+description: '"The `zwavejs` binding integrates Z-Wave JS with openHAB, allowing you
+  to control and monitor Z-Wave devices using the Z-Wave JS web service (part of Z-Wave
+  JS UI)."'
 logo: images/addons/zwavejs.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.zwavejs/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "Z-Wave JS - Bindings"
   - property: og:description
-    content: "The `zwavejs` binding integrates Z-Wave JS with openHAB, allowing you to control and monitor Z-Wave devices using the Z-Wave JS web service (part of Z-Wave JS UI)."
+    content: '"The `zwavejs` binding integrates Z-Wave JS with openHAB, allowing you
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,8 @@ id: voskstt
 label: Vosk Speech-to-Text
 title: Vosk Speech-to-Text - Voices
 type: voice
-description: "Vosk STT Service uses [vosk-api](https://github.com/alphacep/vosk-api) to perform offline speech-to-text in openHAB."
+description: '"Vosk STT Service uses [vosk-api](https://github.com/alphacep/vosk-api)
+  to perform offline speech-to-text in openHAB."'
 logo: images/addons/voskstt.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.voskstt/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Vosk Speech-to-Text - Voices"
   - property: og:description
-    content: "Vosk STT Service uses vosk-api to perform offline speech-to-text in openHAB."
+    content: '"Vosk STT Service uses vosk-api
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

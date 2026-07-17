@@ -3,7 +3,8 @@ id: emby
 label: Emby
 title: Emby - Bindings
 type: binding
-description: "The **Emby Binding** integrates [Emby](https://emby.media/), a personal media server, with openHAB."
+description: '"The **Emby Binding** integrates [Emby](https://emby.media/), a personal
+  media server, with openHAB."'
 logo: images/addons/emby.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.emby/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Emby - Bindings"
   - property: og:description
-    content: "The **Emby Binding** integrates Emby, a personal media server, with openHAB."
+    content: '"The **Emby Binding** integrates Emby, a personal
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

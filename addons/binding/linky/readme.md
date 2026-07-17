@@ -3,7 +3,8 @@ id: linky
 label: Linky
 title: Linky - Bindings
 type: binding
-description: "This binding enables the exploitation of electricity consumption data, mainly for the French market."
+description: '"This binding enables the exploitation of electricity consumption data,
+  mainly for the French market."'
 logo: images/addons/linky.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.linky/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Linky - Bindings"
   - property: og:description
-    content: "This binding enables the exploitation of electricity consumption data, mainly for the French market."
+    content: '"This binding enables the exploitation of electricity consumption data,
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

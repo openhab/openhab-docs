@@ -3,7 +3,7 @@ id: helios
 label: Helios
 title: Helios - Bindings
 type: binding
-description: "This binding integrates the Helios door/videophone system (<https://www.2n.cz>)."
+description: '"This binding integrates the Helios door/videophone system (<https://www.2n.cz>)."'
 logo: images/addons/helios.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.helios/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Helios - Bindings"
   - property: og:description
-    content: "This binding integrates the Helios door/videophone system (<https://www.2n.cz>)."
+    content: '"This binding integrates the Helios door/videophone system (<https://www.2n.cz>)."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

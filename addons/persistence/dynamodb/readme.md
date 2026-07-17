@@ -3,7 +3,8 @@ id: dynamodb
 label: Amazon DynamoDB Persistence
 title: Amazon DynamoDB Persistence - Persistence Services
 type: persistence
-description: "This service allows you to persist state updates using the [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) database."
+description: '"This service allows you to persist state updates using the [Amazon
+  DynamoDB](https://aws.amazon.com/dynamodb/) database."'
 logo: images/addons/dynamodb.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.persistence.dynamodb/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Amazon DynamoDB Persistence - Persistence Services"
   - property: og:description
-    content: "This service allows you to persist state updates using the Amazon DynamoDB database."
+    content: '"This service allows you to persist state updates using the Amazon
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

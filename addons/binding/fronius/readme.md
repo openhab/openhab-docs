@@ -3,7 +3,8 @@ id: fronius
 label: Fronius
 title: Fronius - Bindings
 type: binding
-description: "This binding uses the [Fronius Solar API V1](https://www.fronius.com/en/solar-energy/installers-partners/technical-data/all-products/system-monitoring/open-interfaces/fronius-solar-api-json-) to obtain data from Fronius devices."
+description: '"This binding uses the [Fronius Solar API V1](https://www.fronius.com/en/solar-energy/installers-partners/technical-data/all-products/system-monitoring/open-interfaces/fronius-solar-api-json-)
+  to obtain data from Fronius devices."'
 logo: images/addons/fronius.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.fronius/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Fronius - Bindings"
   - property: og:description
-    content: "This binding uses the Fronius Solar API V1 to obtain data from Fronius devices."
+    content: '"This binding uses the Fronius Solar API V1
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

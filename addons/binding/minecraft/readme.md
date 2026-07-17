@@ -3,7 +3,9 @@ id: minecraft
 label: Minecraft
 title: Minecraft - Bindings
 type: binding
-description: "This binding integrates Minecraft with openHAB through the [spigot plugin](https://github.com/ibaton/bukkit-openhab-plugin/releases/download/1.5/OHMinecraft.jar) ([sources](https://github.com/ibaton/bukkit-openhab-plugin/tree/master))."
+description: '"This binding integrates Minecraft with openHAB through the [spigot
+  plugin](https://github.com/ibaton/bukkit-openhab-plugin/releases/download/1.5/OHMinecraft.jar)
+  ([sources](https://github.com/ibaton/bukkit-openhab-plugin/tree/master))."'
 logo: images/addons/minecraft.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.minecraft/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "Minecraft - Bindings"
   - property: og:description
-    content: "This binding integrates Minecraft with openHAB through the spigot plugin (sources)."
+    content: '"This binding integrates Minecraft with openHAB through the spigot
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

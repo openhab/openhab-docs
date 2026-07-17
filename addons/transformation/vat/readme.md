@@ -3,14 +3,15 @@ id: vat
 label: VAT
 title: VAT - Transformation Services
 type: transform
-description: "The VAT Transformation Service adds VAT (Value-Added Tax) to a given input amount."
+description: '"The VAT Transformation Service adds VAT (Value-Added Tax) to a given
+  input amount."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.vat/README.md
 meta:
   - property: og:title
     content: "VAT - Transformation Services"
   - property: og:description
-    content: "The VAT Transformation Service adds VAT (Value-Added Tax) to a given input amount."
+    content: '"The VAT Transformation Service adds VAT (Value-Added Tax) to a given
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

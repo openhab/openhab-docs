@@ -3,7 +3,7 @@ id: bosesoundtouch
 label: Bose SoundTouch
 title: Bose SoundTouch - Bindings
 type: binding
-description: "This binding supports the Bose SoundTouch multiroom system."
+description: '"This binding supports the Bose SoundTouch multiroom system."'
 logo: images/addons/bosesoundtouch.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bosesoundtouch/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Bose SoundTouch - Bindings"
   - property: og:description
-    content: "This binding supports the Bose SoundTouch multiroom system."
+    content: '"This binding supports the Bose SoundTouch multiroom system."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

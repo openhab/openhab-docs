@@ -3,14 +3,16 @@ id: radiobrowser
 label: Radio Browser
 title: Radio Browser - Bindings
 type: binding
-description: "Radio Browser is a community driven database of internet radio and TV stations, that has an open API that is free for all to use and has multiple servers to ensure up time is high."
+description: '"Radio Browser is a community driven database of internet radio and
+  TV stations, that has an open API that is free for all to use and has multiple servers
+  to ensure up time is high."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.radiobrowser/README.md
 meta:
   - property: og:title
     content: "Radio Browser - Bindings"
   - property: og:description
-    content: "Radio Browser is a community driven database of internet radio and TV stations, that has an open API that is free for all to use and has multiple servers to ensure up time is high."
+    content: '"Radio Browser is a community driven database of internet radio and
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

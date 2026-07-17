@@ -3,14 +3,14 @@ id: ventaair
 label: VentaAir
 title: VentaAir - Bindings
 type: binding
-description: "This binding is for air humidifiers from Venta Air."
+description: '"This binding is for air humidifiers from Venta Air."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ventaair/README.md
 meta:
   - property: og:title
     content: "VentaAir - Bindings"
   - property: og:description
-    content: "This binding is for air humidifiers from Venta Air."
+    content: '"This binding is for air humidifiers from Venta Air."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

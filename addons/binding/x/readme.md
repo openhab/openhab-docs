@@ -3,14 +3,15 @@ id: x
 label: X
 title: X - Bindings
 type: binding
-description: "The X (formerly known as Twitter) binding lets your home post messages (up to 280 characters), send direct messages, and post with media."
+description: '"The X (formerly known as Twitter) binding lets your home post messages
+  (up to 280 characters), send direct messages, and post with media."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.x/README.md
 meta:
   - property: og:title
     content: "X - Bindings"
   - property: og:description
-    content: "The X (formerly known as Twitter) binding lets your home post messages (up to 280 characters), send direct messages, and post with media."
+    content: '"The X (formerly known as Twitter) binding lets your home post messages
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

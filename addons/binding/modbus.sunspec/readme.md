@@ -3,7 +3,7 @@ id: modbus.sunspec
 label: SunSpec
 title: SunSpec - Bindings
 type: binding
-description: "This extension adds support for the SunSpec protocol."
+description: '"This extension adds support for the SunSpec protocol."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.modbus.sunspec/README.md
 prev: ../modbus/
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "SunSpec - Bindings"
   - property: og:description
-    content: "This extension adds support for the SunSpec protocol."
+    content: '"This extension adds support for the SunSpec protocol."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,14 +3,14 @@ id: bin2json
 label: Binary to JSON
 title: Binary to JSON - Transformation Services
 type: transform
-description: "Transforms input using the Java Binary Block Parser (JBBP) syntax."
+description: '"Transforms input using the Java Binary Block Parser (JBBP) syntax."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.bin2json/README.md
 meta:
   - property: og:title
     content: "Binary to JSON - Transformation Services"
   - property: og:description
-    content: "Transforms input using the Java Binary Block Parser (JBBP) syntax."
+    content: '"Transforms input using the Java Binary Block Parser (JBBP) syntax."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,8 @@ id: scale
 label: Scale
 title: Scale - Transformation Services
 type: transform
-description: "The Scale Transformation Service is an easy-to-use tool that helps with the discretization of numeric inputs."
+description: '"The Scale Transformation Service is an easy-to-use tool that helps
+  with the discretization of numeric inputs."'
 logo: images/addons/scale.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.scale/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Scale - Transformation Services"
   - property: og:description
-    content: "The Scale Transformation Service is an easy-to-use tool that helps with the discretization of numeric inputs."
+    content: '"The Scale Transformation Service is an easy-to-use tool that helps
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

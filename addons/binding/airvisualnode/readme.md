@@ -3,7 +3,8 @@ id: airvisualnode
 label: AirVisual Node
 title: AirVisual Node - Bindings
 type: binding
-description: "This is an openHAB binding for the [AirVisual Node Air Quality Monitor](https://airvisual.com/node) (also known as IQAir AirVisual Pro)."
+description: '"This is an openHAB binding for the [AirVisual Node Air Quality Monitor](https://airvisual.com/node)
+  (also known as IQAir AirVisual Pro)."'
 logo: images/addons/airvisualnode.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.airvisualnode/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "AirVisual Node - Bindings"
   - property: og:description
-    content: "This is an openHAB binding for the AirVisual Node Air Quality Monitor (also known as IQAir AirVisual Pro)."
+    content: '"This is an openHAB binding for the AirVisual Node Air Quality Monitor
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

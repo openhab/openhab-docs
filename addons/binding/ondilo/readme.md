@@ -3,7 +3,9 @@ id: ondilo
 label: Ondilo
 title: Ondilo - Bindings
 type: binding
-description: "This binding integrates Ondilo ICO pool monitoring devices with openHAB, allowing you to monitor and automate your pool environment using openHAB’s rules and UI."
+description: '"This binding integrates Ondilo ICO pool monitoring devices with openHAB,
+  allowing you to monitor and automate your pool environment using openHAB’s rules
+  and UI."'
 logo: images/addons/ondilo.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ondilo/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "Ondilo - Bindings"
   - property: og:description
-    content: "This binding integrates Ondilo ICO pool monitoring devices with openHAB, allowing you to monitor and automate your pool environment using openHAB’s rules and UI."
+    content: '"This binding integrates Ondilo ICO pool monitoring devices with openHAB,
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

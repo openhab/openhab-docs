@@ -3,7 +3,10 @@ id: pihole
 label: Pi-hole
 title: Pi-hole - Bindings
 type: binding
-description: "The Pi-hole Binding is a bridge between openHAB and Pi-hole, enabling users to integrate Pi-hole statistics and controls into their home automation setup. Pi-hole is a DNS-based ad blocker that can run on a variety of platforms, including Raspberry Pi."
+description: '"The Pi-hole Binding is a bridge between openHAB and Pi-hole, enabling
+  users to integrate Pi-hole statistics and controls into their home automation setup.
+  Pi-hole is a DNS-based ad blocker that can run on a variety of platforms, including
+  Raspberry Pi."'
 logo: images/addons/pihole.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pihole/README.md
@@ -11,7 +14,7 @@ meta:
   - property: og:title
     content: "Pi-hole - Bindings"
   - property: og:description
-    content: "The Pi-hole Binding is a bridge between openHAB and Pi-hole, enabling users to integrate Pi-hole statistics and controls into their home automation setup. Pi-hole is a DNS-based ad blocker that can run on a variety of platforms, including Raspberry Pi."
+    content: '"The Pi-hole Binding is a bridge between openHAB and Pi-hole, enabling
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

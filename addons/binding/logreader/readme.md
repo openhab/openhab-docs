@@ -3,7 +3,9 @@ id: logreader
 label: Log Reader
 title: Log Reader - Bindings
 type: binding
-description: "This binding reads and analyzes log files. Search patterns are fully configurable, therefore different kind of log files should be possible to monitor by this binding."
+description: '"This binding reads and analyzes log files. Search patterns are fully
+  configurable, therefore different kind of log files should be possible to monitor
+  by this binding."'
 logo: images/addons/logreader.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.logreader/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "Log Reader - Bindings"
   - property: og:description
-    content: "This binding reads and analyzes log files. Search patterns are fully configurable, therefore different kind of log files should be possible to monitor by this binding."
+    content: '"This binding reads and analyzes log files. Search patterns are fully
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

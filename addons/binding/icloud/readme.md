@@ -3,7 +3,9 @@ id: icloud
 label: iCloud
 title: iCloud - Bindings
 type: binding
-description: "The Apple [iCloud](https://www.apple.com/icloud/) is used to retrieve data such as the battery level or current location of one or multiple Apple devices connected to an iCloud account."
+description: '"The Apple [iCloud](https://www.apple.com/icloud/) is used to retrieve
+  data such as the battery level or current location of one or multiple Apple devices
+  connected to an iCloud account."'
 logo: images/addons/icloud.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.icloud/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "iCloud - Bindings"
   - property: og:description
-    content: "The Apple iCloud is used to retrieve data such as the battery level or current location of one or multiple Apple devices connected to an iCloud account."
+    content: '"The Apple iCloud is used to retrieve
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,14 +3,14 @@ id: smgw
 label: PPC SMGW
 title: PPC SMGW - Bindings
 type: binding
-description: "The PPC SMGW binding adds support for PPC Smart Meter Gateways."
+description: '"The PPC SMGW binding adds support for PPC Smart Meter Gateways."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.smgw/README.md
 meta:
   - property: og:title
     content: "PPC SMGW - Bindings"
   - property: og:description
-    content: "The PPC SMGW binding adds support for PPC Smart Meter Gateways."
+    content: '"The PPC SMGW binding adds support for PPC Smart Meter Gateways."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

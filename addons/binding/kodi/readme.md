@@ -3,7 +3,9 @@ id: kodi
 label: Kodi
 title: Kodi - Bindings
 type: binding
-description: "[Kodi](https://kodi.tv) (formerly known as XBMC) is a free and open source (GPL) software media center for playing videos, music, pictures, games, and more."
+description: '"[Kodi](https://kodi.tv) (formerly known as XBMC) is a free and open
+  source (GPL) software media center for playing videos, music, pictures, games, and
+  more."'
 logo: images/addons/kodi.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.kodi/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "Kodi - Bindings"
   - property: og:description
-    content: "Kodi (formerly known as XBMC) is a free and open source (GPL) software media center for playing videos, music, pictures, games, and more."
+    content: '"Kodi (formerly known as XBMC) is a free and open
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

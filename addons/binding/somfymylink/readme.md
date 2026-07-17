@@ -3,14 +3,15 @@ id: somfymylink
 label: Somfy myLink
 title: Somfy myLink - Bindings
 type: binding
-description: "This binding supports the [Somfy myLink](https://www.somfysystems.com/en-us/products/1811403/mylink-) device for control of Somfy RTS blinds/shades."
+description: '"This binding supports the [Somfy myLink](https://www.somfysystems.com/en-us/products/1811403/mylink-)
+  device for control of Somfy RTS blinds/shades."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.somfymylink/README.md
 meta:
   - property: og:title
     content: "Somfy myLink - Bindings"
   - property: og:description
-    content: "This binding supports the Somfy myLink device for control of Somfy RTS blinds/shades."
+    content: '"This binding supports the Somfy myLink
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

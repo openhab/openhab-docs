@@ -3,14 +3,15 @@ id: ojelectronics
 label: OJElectronics
 title: OJElectronics - Bindings
 type: binding
-description: "With this binding it is possible to connect [OWD5/MWD5 Thermostat](https://ojelectronics.com/floorheating/products/wifi-thermostat-owd5/) of OJ Electronics."
+description: '"With this binding it is possible to connect [OWD5/MWD5 Thermostat](https://ojelectronics.com/floorheating/products/wifi-thermostat-owd5/)
+  of OJ Electronics."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ojelectronics/README.md
 meta:
   - property: og:title
     content: "OJElectronics - Bindings"
   - property: og:description
-    content: "With this binding it is possible to connect OWD5/MWD5 Thermostat of OJ Electronics."
+    content: '"With this binding it is possible to connect OWD5/MWD5 Thermostat
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

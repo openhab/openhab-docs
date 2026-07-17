@@ -3,7 +3,7 @@ id: globalcache
 label: GlobalCache
 title: GlobalCache - Bindings
 type: binding
-description: "The [GlobalCache](https://www.globalcache.com) binding enables communication"
+description: '"The [GlobalCache](https://www.globalcache.com) binding enables communication"'
 logo: images/addons/globalcache.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.globalcache/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "GlobalCache - Bindings"
   - property: og:description
-    content: "The GlobalCache binding enables communication"
+    content: '"The GlobalCache binding enables communication"'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

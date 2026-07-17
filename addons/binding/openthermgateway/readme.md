@@ -3,7 +3,7 @@ id: openthermgateway
 label: OpenTherm Gateway
 title: OpenTherm Gateway - Bindings
 type: binding
-description: "This binding is used to integrate the OpenTherm Gateway into openHAB."
+description: '"This binding is used to integrate the OpenTherm Gateway into openHAB."'
 logo: images/addons/openthermgateway.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.openthermgateway/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "OpenTherm Gateway - Bindings"
   - property: og:description
-    content: "This binding is used to integrate the OpenTherm Gateway into openHAB."
+    content: '"This binding is used to integrate the OpenTherm Gateway into openHAB."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,8 @@ id: tuya
 label: Tuya
 title: Tuya - Bindings
 type: binding
-description: "This add-on connects Tuya Wi-Fi devices with openHAB or compatible systems."
+description: '"This add-on connects Tuya Wi-Fi devices with openHAB or compatible
+  systems."'
 logo: images/addons/tuya.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tuya/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Tuya - Bindings"
   - property: og:description
-    content: "This add-on connects Tuya Wi-Fi devices with openHAB or compatible systems."
+    content: '"This add-on connects Tuya Wi-Fi devices with openHAB or compatible
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

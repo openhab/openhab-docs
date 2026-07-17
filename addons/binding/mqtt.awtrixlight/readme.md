@@ -3,7 +3,8 @@ id: mqtt.awtrixlight
 label: MQTT Awtrix 3
 title: MQTT Awtrix 3 - Bindings
 type: binding
-description: "This binding allows you to control Awtrix 3 (formerly Awtrix Light) LED matrix displays via MQTT."
+description: '"This binding allows you to control Awtrix 3 (formerly Awtrix Light)
+  LED matrix displays via MQTT."'
 logo: images/addons/mqtt.awtrixlight.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mqtt.awtrixlight/README.md
@@ -12,7 +13,7 @@ meta:
   - property: og:title
     content: "MQTT Awtrix 3 - Bindings"
   - property: og:description
-    content: "This binding allows you to control Awtrix 3 (formerly Awtrix Light) LED matrix displays via MQTT."
+    content: '"This binding allows you to control Awtrix 3 (formerly Awtrix Light)
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

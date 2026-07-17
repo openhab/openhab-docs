@@ -3,7 +3,8 @@ id: luxom
 label: Luxom
 title: Luxom - Bindings
 type: binding
-description: "This binding integrates with a <https://luxom.io/> based system through a Luxom IP interface module."
+description: '"This binding integrates with a <https://luxom.io/> based system through
+  a Luxom IP interface module."'
 logo: images/addons/luxom.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.luxom/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Luxom - Bindings"
   - property: og:description
-    content: "This binding integrates with a <https://luxom.io/> based system through a Luxom IP interface module."
+    content: '"This binding integrates with a <https://luxom.io/> based system through
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

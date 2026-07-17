@@ -3,14 +3,15 @@ id: vdr
 label: Video Disk Recorder (VDR)
 title: Video Disk Recorder (VDR) - Bindings
 type: binding
-description: "The Video Disk Recorder (VDR) binding allows openHAB to control your own [Video Disk Recorder](https://www.tvdr.de)."
+description: '"The Video Disk Recorder (VDR) binding allows openHAB to control your
+  own [Video Disk Recorder](https://www.tvdr.de)."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.vdr/README.md
 meta:
   - property: og:title
     content: "Video Disk Recorder (VDR) - Bindings"
   - property: og:description
-    content: "The Video Disk Recorder (VDR) binding allows openHAB to control your own Video Disk Recorder."
+    content: '"The Video Disk Recorder (VDR) binding allows openHAB to control your
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

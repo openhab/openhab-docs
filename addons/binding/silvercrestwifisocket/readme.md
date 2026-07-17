@@ -3,7 +3,8 @@ id: silvercrestwifisocket
 label: Silvercrest Wi-Fi Plug
 title: Silvercrest Wi-Fi Plug - Bindings
 type: binding
-description: "This binding integrates the Silvercrest Wi-Fi Socket SWS-A1 sold by Lidl and the EasyHome Wi-Fi Socket DIS-124 sold by Aldi."
+description: '"This binding integrates the Silvercrest Wi-Fi Socket SWS-A1 sold by
+  Lidl and the EasyHome Wi-Fi Socket DIS-124 sold by Aldi."'
 logo: images/addons/silvercrestwifisocket.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.silvercrestwifisocket/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Silvercrest Wi-Fi Plug - Bindings"
   - property: og:description
-    content: "This binding integrates the Silvercrest Wi-Fi Socket SWS-A1 sold by Lidl and the EasyHome Wi-Fi Socket DIS-124 sold by Aldi."
+    content: '"This binding integrates the Silvercrest Wi-Fi Socket SWS-A1 sold by
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

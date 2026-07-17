@@ -3,7 +3,8 @@ id: magentatv
 label: MagentaTV
 title: MagentaTV - Bindings
 type: binding
-description: "This binding allows controlling the Deutsche Telekom Magenta TV Media Receiver series MR4xx and MR2xx (Telekom NGTV / Huawei Envision platform)."
+description: '"This binding allows controlling the Deutsche Telekom Magenta TV Media
+  Receiver series MR4xx and MR2xx (Telekom NGTV / Huawei Envision platform)."'
 logo: images/addons/magentatv.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.magentatv/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "MagentaTV - Bindings"
   - property: og:description
-    content: "This binding allows controlling the Deutsche Telekom Magenta TV Media Receiver series MR4xx and MR2xx (Telekom NGTV / Huawei Envision platform)."
+    content: '"This binding allows controlling the Deutsche Telekom Magenta TV Media
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

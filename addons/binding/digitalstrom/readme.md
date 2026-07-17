@@ -3,7 +3,7 @@ id: digitalstrom
 label: digitalSTROM
 title: digitalSTROM - Bindings
 type: binding
-description: "This binding integrates the [digitalSTROM-System](https://www.digitalstrom.de/)."
+description: '"This binding integrates the [digitalSTROM-System](https://www.digitalstrom.de/)."'
 logo: images/addons/digitalstrom.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.digitalstrom/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "digitalSTROM - Bindings"
   - property: og:description
-    content: "This binding integrates the digitalSTROM-System."
+    content: '"This binding integrates the digitalSTROM-System."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

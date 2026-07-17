@@ -3,14 +3,16 @@ id: powermax
 label: Powermax
 title: Powermax - Bindings
 type: binding
-description: "Visonic produces the Powermax alarm panel series (PowerMax, PowerMax+, PowerMaxExpress, PowerMaxPro and PowerMaxComplete) and the Powermaster alarm series (PowerMaster 10 and PowerMaster 30)."
+description: '"Visonic produces the Powermax alarm panel series (PowerMax, PowerMax+,
+  PowerMaxExpress, PowerMaxPro and PowerMaxComplete) and the Powermaster alarm series
+  (PowerMaster 10 and PowerMaster 30)."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.powermax/README.md
 meta:
   - property: og:title
     content: "Powermax - Bindings"
   - property: og:description
-    content: "Visonic produces the Powermax alarm panel series (PowerMax, PowerMax+, PowerMaxExpress, PowerMaxPro and PowerMaxComplete) and the Powermaster alarm series (PowerMaster 10 and PowerMaster 30)."
+    content: '"Visonic produces the Powermax alarm panel series (PowerMax, PowerMax+,
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

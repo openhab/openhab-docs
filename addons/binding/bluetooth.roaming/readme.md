@@ -3,7 +3,8 @@ id: bluetooth.roaming
 label: Bluetooth Roaming Adapter
 title: Bluetooth Roaming Adapter - Bindings
 type: binding
-description: "This extension adds support for accessing Bluetooth devices from any other configured adapter via a virtual adapter."
+description: '"This extension adds support for accessing Bluetooth devices from any
+  other configured adapter via a virtual adapter."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.roaming/README.md
 prev: ../bluetooth/
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Bluetooth Roaming Adapter - Bindings"
   - property: og:description
-    content: "This extension adds support for accessing Bluetooth devices from any other configured adapter via a virtual adapter."
+    content: '"This extension adds support for accessing Bluetooth devices from any
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

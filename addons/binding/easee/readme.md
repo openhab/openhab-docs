@@ -3,7 +3,8 @@ id: easee
 label: Easee
 title: Easee - Bindings
 type: binding
-description: "The Easee binding can be used to retrieve data from the Easee Cloud API and also to control your wallbox via the Cloud API."
+description: '"The Easee binding can be used to retrieve data from the Easee Cloud
+  API and also to control your wallbox via the Cloud API."'
 logo: images/addons/easee.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.easee/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Easee - Bindings"
   - property: og:description
-    content: "The Easee binding can be used to retrieve data from the Easee Cloud API and also to control your wallbox via the Cloud API."
+    content: '"The Easee binding can be used to retrieve data from the Easee Cloud
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

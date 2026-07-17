@@ -3,7 +3,7 @@ id: fineoffsetweatherstation
 label: Fine Offset Weather Station
 title: Fine Offset Weather Station - Bindings
 type: binding
-description: "This binding is for weather stations manufactured by [Fine Offset](http://www.foshk.com/)."
+description: '"This binding is for weather stations manufactured by [Fine Offset](http://www.foshk.com/)."'
 logo: images/addons/fineoffsetweatherstation.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.fineoffsetweatherstation/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Fine Offset Weather Station - Bindings"
   - property: og:description
-    content: "This binding is for weather stations manufactured by Fine Offset."
+    content: '"This binding is for weather stations manufactured by Fine Offset."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

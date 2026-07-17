@@ -3,7 +3,8 @@ id: hyperion
 label: Hyperion
 title: Hyperion - Bindings
 type: binding
-description: "This binding integrates openHAB with the Hyperion ambient lighting software."
+description: '"This binding integrates openHAB with the Hyperion ambient lighting
+  software."'
 logo: images/addons/hyperion.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.hyperion/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Hyperion - Bindings"
   - property: og:description
-    content: "This binding integrates openHAB with the Hyperion ambient lighting software."
+    content: '"This binding integrates openHAB with the Hyperion ambient lighting
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

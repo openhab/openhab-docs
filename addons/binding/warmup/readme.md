@@ -3,14 +3,15 @@ id: warmup
 label: Warmup
 title: Warmup - Bindings
 type: binding
-description: "This binding integrates [Warmup](https://www.warmup.co.uk) Wi‑Fi–enabled thermostats via the API at <https://my.warmup.com/>."
+description: '"This binding integrates [Warmup](https://www.warmup.co.uk) Wi‑Fi–enabled
+  thermostats via the API at <https://my.warmup.com/>."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.warmup/README.md
 meta:
   - property: og:title
     content: "Warmup - Bindings"
   - property: og:description
-    content: "This binding integrates Warmup Wi‑Fi–enabled thermostats via the API at <https://my.warmup.com/>."
+    content: '"This binding integrates Warmup Wi‑Fi–enabled
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

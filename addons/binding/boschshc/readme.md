@@ -3,7 +3,7 @@ id: boschshc
 label: Bosch Smart Home
 title: Bosch Smart Home - Bindings
 type: binding
-description: "Binding for Bosch Smart Home devices."
+description: '"Binding for Bosch Smart Home devices."'
 logo: images/addons/boschshc.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.boschshc/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Bosch Smart Home - Bindings"
   - property: og:description
-    content: "Binding for Bosch Smart Home devices."
+    content: '"Binding for Bosch Smart Home devices."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

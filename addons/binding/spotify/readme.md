@@ -3,7 +3,8 @@ id: spotify
 label: Spotify
 title: Spotify - Bindings
 type: binding
-description: "This binding implements a bridge to the Spotify Web API and makes it possible to discover Spotify Connect devices available on your Spotify Premium account."
+description: '"This binding implements a bridge to the Spotify Web API and makes it
+  possible to discover Spotify Connect devices available on your Spotify Premium account."'
 logo: images/addons/spotify.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.spotify/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Spotify - Bindings"
   - property: og:description
-    content: "This binding implements a bridge to the Spotify Web API and makes it possible to discover Spotify Connect devices available on your Spotify Premium account."
+    content: '"This binding implements a bridge to the Spotify Web API and makes it
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

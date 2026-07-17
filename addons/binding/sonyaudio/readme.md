@@ -3,7 +3,7 @@ id: sonyaudio
 label: SonyAudio
 title: SonyAudio - Bindings
 type: binding
-description: "This binding integrates the [Sony Audio Control API](https://developer.sony.com/develop/audio-control-api/)."
+description: '"This binding integrates the [Sony Audio Control API](https://developer.sony.com/develop/audio-control-api/)."'
 logo: images/addons/sonyaudio.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sonyaudio/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "SonyAudio - Bindings"
   - property: og:description
-    content: "This binding integrates the Sony Audio Control API."
+    content: '"This binding integrates the Sony Audio Control API."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

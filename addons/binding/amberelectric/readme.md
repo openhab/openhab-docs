@@ -3,7 +3,10 @@ id: amberelectric
 label: Amber Electric
 title: Amber Electric - Bindings
 type: binding
-description: "A binding that supports the Australian energy retailer Amber's API (<https://www.amber.com.au/>) and provides data on the current pricing for buying and selling power, as well as the current level of renewables in the Australian National Electricity Market (NEM)."
+description: '"A binding that supports the Australian energy retailer Amber''s API
+  (<https://www.amber.com.au/>) and provides data on the current pricing for buying
+  and selling power, as well as the current level of renewables in the Australian
+  National Electricity Market (NEM)."'
 logo: images/addons/amberelectric.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.amberelectric/README.md
@@ -11,7 +14,7 @@ meta:
   - property: og:title
     content: "Amber Electric - Bindings"
   - property: og:description
-    content: "A binding that supports the Australian energy retailer Amber's API (<https://www.amber.com.au/>) and provides data on the current pricing for buying and selling power, as well as the current level of renewables in the Australian National Electricity Market (NEM)."
+    content: '"A binding that supports the Australian energy retailer Amber''s API
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

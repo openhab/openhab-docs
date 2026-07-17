@@ -3,7 +3,7 @@ id: huesync
 label: hueSync
 title: hueSync - Bindings
 type: binding
-description: "<!-- markdownlint-disable MD033 -->"
+description: '"<!-- markdownlint-disable MD033 -->"'
 logo: images/addons/huesync.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.huesync/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "hueSync - Bindings"
   - property: og:description
-    content: "<!-- markdownlint-disable MD033 -->"
+    content: '"<!-- markdownlint-disable MD033 -->"'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

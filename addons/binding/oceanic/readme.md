@@ -3,7 +3,8 @@ id: oceanic
 label: Oceanic
 title: Oceanic - Bindings
 type: binding
-description: "This binding integrates the Oceanic water softener and management system (<www.oceanic.be>, also distributed by Syr in Germany at <www.syr.de>)."
+description: '"This binding integrates the Oceanic water softener and management system
+  (<www.oceanic.be>, also distributed by Syr in Germany at <www.syr.de>)."'
 logo: images/addons/oceanic.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.oceanic/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Oceanic - Bindings"
   - property: og:description
-    content: "This binding integrates the Oceanic water softener and management system (<www.oceanic.be>, also distributed by Syr in Germany at <www.syr.de>)."
+    content: '"This binding integrates the Oceanic water softener and management system
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

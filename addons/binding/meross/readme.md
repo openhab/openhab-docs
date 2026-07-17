@@ -3,7 +3,7 @@ id: meross
 label: Meross
 title: Meross - Bindings
 type: binding
-description: "This binding integrates **Meross**&reg; devices."
+description: '"This binding integrates **Meross**&reg; devices."'
 logo: images/addons/meross.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.meross/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Meross - Bindings"
   - property: og:description
-    content: "This binding integrates **Meross**&reg; devices."
+    content: '"This binding integrates **Meross**&reg; devices."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: mqtt
 label: MQTT Things and Channels
 title: MQTT Things and Channels - Bindings
 type: binding
-description: "This binding supports generic MQTT devices."
+description: '"This binding supports generic MQTT devices."'
 logo: images/addons/mqtt.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mqtt/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "MQTT Things and Channels - Bindings"
   - property: og:description
-    content: "This binding supports generic MQTT devices."
+    content: '"This binding supports generic MQTT devices."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

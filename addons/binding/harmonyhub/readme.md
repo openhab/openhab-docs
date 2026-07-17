@@ -3,7 +3,8 @@ id: harmonyhub
 label: Logitech Harmony Hub
 title: Logitech Harmony Hub - Bindings
 type: binding
-description: "The Harmony Hub binding is used to enable communication between openHAB and multiple Logitech Harmony Hub devices."
+description: '"The Harmony Hub binding is used to enable communication between openHAB
+  and multiple Logitech Harmony Hub devices."'
 logo: images/addons/harmonyhub.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.harmonyhub/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Logitech Harmony Hub - Bindings"
   - property: og:description
-    content: "The Harmony Hub binding is used to enable communication between openHAB and multiple Logitech Harmony Hub devices."
+    content: '"The Harmony Hub binding is used to enable communication between openHAB
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

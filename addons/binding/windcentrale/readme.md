@@ -3,7 +3,7 @@ id: windcentrale
 label: Windcentrale
 title: Windcentrale - Bindings
 type: binding
-description: "This binding is used to display the details of Windcentrale windmills."
+description: '"This binding is used to display the details of Windcentrale windmills."'
 logo: images/addons/windcentrale.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.windcentrale/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Windcentrale - Bindings"
   - property: og:description
-    content: "This binding is used to display the details of Windcentrale windmills."
+    content: '"This binding is used to display the details of Windcentrale windmills."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

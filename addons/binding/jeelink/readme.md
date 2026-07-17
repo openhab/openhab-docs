@@ -3,7 +3,7 @@ id: jeelink
 label: JeeLink
 title: JeeLink - Bindings
 type: binding
-description: "This binding integrates JeeLink USB RF receivers and LaCrosseGateways."
+description: '"This binding integrates JeeLink USB RF receivers and LaCrosseGateways."'
 logo: images/addons/jeelink.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.jeelink/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "JeeLink - Bindings"
   - property: og:description
-    content: "This binding integrates JeeLink USB RF receivers and LaCrosseGateways."
+    content: '"This binding integrates JeeLink USB RF receivers and LaCrosseGateways."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

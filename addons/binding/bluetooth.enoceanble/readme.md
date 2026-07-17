@@ -3,7 +3,7 @@ id: bluetooth.enoceanble
 label: EnOcean BLE
 title: EnOcean BLE - Bindings
 type: binding
-description: "This binding adds support for the"
+description: '"This binding adds support for the"'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.enoceanble/README.md
 prev: ../bluetooth/
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "EnOcean BLE - Bindings"
   - property: og:description
-    content: "This binding adds support for the"
+    content: '"This binding adds support for the"'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

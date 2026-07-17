@@ -3,14 +3,15 @@ id: serial
 label: Serial
 title: Serial - Bindings
 type: binding
-description: "The Serial binding allows openHAB to communicate over serial ports attached to the openHAB server and TCP sockets."
+description: '"The Serial binding allows openHAB to communicate over serial ports
+  attached to the openHAB server and TCP sockets."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.serial/README.md
 meta:
   - property: og:title
     content: "Serial - Bindings"
   - property: og:description
-    content: "The Serial binding allows openHAB to communicate over serial ports attached to the openHAB server and TCP sockets."
+    content: '"The Serial binding allows openHAB to communicate over serial ports
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

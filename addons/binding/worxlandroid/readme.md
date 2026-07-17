@@ -3,7 +3,7 @@ id: worxlandroid
 label: WorxLandroid
 title: WorxLandroid - Bindings
 type: binding
-description: "This is the binding for Worx Landroid robotic lawn mowers."
+description: '"This is the binding for Worx Landroid robotic lawn mowers."'
 logo: images/addons/worxlandroid.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.worxlandroid/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "WorxLandroid - Bindings"
   - property: og:description
-    content: "This is the binding for Worx Landroid robotic lawn mowers."
+    content: '"This is the binding for Worx Landroid robotic lawn mowers."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

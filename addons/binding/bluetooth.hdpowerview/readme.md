@@ -3,7 +3,8 @@ id: bluetooth.hdpowerview
 label: Hunter Douglas (Luxaflex) PowerView for Bluetooth
 title: Hunter Douglas (Luxaflex) PowerView for Bluetooth - Bindings
 type: binding
-description: "This is an openHAB binding for Bluetooth for [Hunter Douglas PowerView](https://www.hunterdouglas.com/operating-systems/motorized/powerview-motorization/overview) motorized shades via Bluetooth Low Energy (BLE)."
+description: '"This is an openHAB binding for Bluetooth for [Hunter Douglas PowerView](https://www.hunterdouglas.com/operating-systems/motorized/powerview-motorization/overview)
+  motorized shades via Bluetooth Low Energy (BLE)."'
 logo: images/addons/bluetooth.hdpowerview.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.hdpowerview/README.md
@@ -12,7 +13,7 @@ meta:
   - property: og:title
     content: "Hunter Douglas (Luxaflex) PowerView for Bluetooth - Bindings"
   - property: og:description
-    content: "This is an openHAB binding for Bluetooth for Hunter Douglas PowerView motorized shades via Bluetooth Low Energy (BLE)."
+    content: '"This is an openHAB binding for Bluetooth for Hunter Douglas PowerView
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

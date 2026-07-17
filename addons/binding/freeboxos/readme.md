@@ -3,7 +3,8 @@ id: freeboxos
 label: FreeboxOS
 title: FreeboxOS - Bindings
 type: binding
-description: "Free is a French telecom operator providing advanced equipments to manage your broadband access."
+description: '"Free is a French telecom operator providing advanced equipments to
+  manage your broadband access."'
 logo: images/addons/freeboxos.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.freeboxos/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "FreeboxOS - Bindings"
   - property: og:description
-    content: "Free is a French telecom operator providing advanced equipments to manage your broadband access."
+    content: '"Free is a French telecom operator providing advanced equipments to
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

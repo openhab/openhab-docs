@@ -3,7 +3,7 @@ id: ring
 label: Ring
 title: Ring - Bindings
 type: binding
-description: "This is an experimental binding to the Ring.com API."
+description: '"This is an experimental binding to the Ring.com API."'
 logo: images/addons/ring.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ring/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Ring - Bindings"
   - property: og:description
-    content: "This is an experimental binding to the Ring.com API."
+    content: '"This is an experimental binding to the Ring.com API."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

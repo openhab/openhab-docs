@@ -3,7 +3,9 @@ id: nest
 label: Nest
 title: Nest - Bindings
 type: binding
-description: "The Nest binding integrates devices by [Nest](https://store.google.com/category/connected_home) using the [Smart Device Management](https://developers.google.com/nest/device-access/api) (SDM) API."
+description: '"The Nest binding integrates devices by [Nest](https://store.google.com/category/connected_home)
+  using the [Smart Device Management](https://developers.google.com/nest/device-access/api)
+  (SDM) API."'
 logo: images/addons/nest.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.nest/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "Nest - Bindings"
   - property: og:description
-    content: "The Nest binding integrates devices by Nest(https://store.google.com/category/connected_home) using the Smart Device Management (SDM) API."
+    content: '"The Nest binding integrates devices by Nest(https://store.google.com/category/connected_home)
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

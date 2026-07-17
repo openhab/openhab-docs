@@ -3,14 +3,14 @@ id: seneye
 label: Seneye
 title: Seneye - Bindings
 type: binding
-description: "This binding integrates the [Seneye aquarium monitoring system](https://www.seneye.com)."
+description: '"This binding integrates the [Seneye aquarium monitoring system](https://www.seneye.com)."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.seneye/README.md
 meta:
   - property: og:title
     content: "Seneye - Bindings"
   - property: og:description
-    content: "This binding integrates the Seneye aquarium monitoring system."
+    content: '"This binding integrates the Seneye aquarium monitoring system."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

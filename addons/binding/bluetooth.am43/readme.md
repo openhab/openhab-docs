@@ -3,7 +3,7 @@ id: bluetooth.am43
 label: AM43
 title: AM43 - Bindings
 type: binding
-description: "This extension adds support for [AM43 Blind Drive Motors](https://www.a-okmotors.com/am-43/)."
+description: '"This extension adds support for [AM43 Blind Drive Motors](https://www.a-okmotors.com/am-43/)."'
 logo: images/addons/bluetooth.am43.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.am43/README.md
@@ -12,7 +12,7 @@ meta:
   - property: og:title
     content: "AM43 - Bindings"
   - property: og:description
-    content: "This extension adds support for AM43 Blind Drive Motors."
+    content: '"This extension adds support for AM43 Blind Drive Motors."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

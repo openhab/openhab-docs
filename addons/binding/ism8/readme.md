@@ -3,7 +3,7 @@ id: ism8
 label: Ism8
 title: Ism8 - Bindings
 type: binding
-description: "_This binding can receive measurements from a Wolf heating system._"
+description: '"_This binding can receive measurements from a Wolf heating system._"'
 logo: images/addons/ism8.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ism8/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Ism8 - Bindings"
   - property: og:description
-    content: "_This binding can receive measurements from a Wolf heating system._"
+    content: '"_This binding can receive measurements from a Wolf heating system._"'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

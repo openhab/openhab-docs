@@ -3,7 +3,7 @@ id: modbus
 label: Modbus
 title: Modbus - Bindings
 type: binding
-description: "This binding supports generic Modbus TCP and serial slave devices."
+description: '"This binding supports generic Modbus TCP and serial slave devices."'
 logo: images/addons/modbus.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.modbus/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Modbus - Bindings"
   - property: og:description
-    content: "This binding supports generic Modbus TCP and serial slave devices."
+    content: '"This binding supports generic Modbus TCP and serial slave devices."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

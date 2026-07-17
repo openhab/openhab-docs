@@ -3,7 +3,8 @@ id: bluetooth.govee
 label: Govee
 title: Govee - Bindings
 type: binding
-description: "This extension adds support for [Govee](https://www.govee.com/) Bluetooth Devices."
+description: '"This extension adds support for [Govee](https://www.govee.com/) Bluetooth
+  Devices."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.govee/README.md
 prev: ../bluetooth/
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Govee - Bindings"
   - property: og:description
-    content: "This extension adds support for Govee Bluetooth Devices."
+    content: '"This extension adds support for Govee Bluetooth
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

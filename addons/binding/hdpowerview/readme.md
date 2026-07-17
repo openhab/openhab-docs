@@ -3,7 +3,8 @@ id: hdpowerview
 label: Hunter Douglas (Luxaflex) PowerView
 title: Hunter Douglas (Luxaflex) PowerView - Bindings
 type: binding
-description: "This is an openHAB binding for [Hunter Douglas PowerView](https://www.hunterdouglas.com/operating-systems/motorized/powerview-motorization/overview) motorized shades via their PowerView hub."
+description: '"This is an openHAB binding for [Hunter Douglas PowerView](https://www.hunterdouglas.com/operating-systems/motorized/powerview-motorization/overview)
+  motorized shades via their PowerView hub."'
 logo: images/addons/hdpowerview.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.hdpowerview/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Hunter Douglas (Luxaflex) PowerView - Bindings"
   - property: og:description
-    content: "This is an openHAB binding for Hunter Douglas PowerView motorized shades via their PowerView hub."
+    content: '"This is an openHAB binding for Hunter Douglas PowerView
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

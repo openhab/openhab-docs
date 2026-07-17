@@ -3,7 +3,8 @@ id: radiothermostat
 label: Radio Thermostat
 title: Radio Thermostat - Bindings
 type: binding
-description: "This binding connects Radio Thermostat/3M Filtrete models CT30, CT50/3M50, CT80, etc. with built-in Wi-Fi module to openHAB."
+description: '"This binding connects Radio Thermostat/3M Filtrete models CT30, CT50/3M50,
+  CT80, etc. with built-in Wi-Fi module to openHAB."'
 logo: images/addons/radiothermostat.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.radiothermostat/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Radio Thermostat - Bindings"
   - property: og:description
-    content: "This binding connects Radio Thermostat/3M Filtrete models CT30, CT50/3M50, CT80, etc. with built-in Wi-Fi module to openHAB."
+    content: '"This binding connects Radio Thermostat/3M Filtrete models CT30, CT50/3M50,
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

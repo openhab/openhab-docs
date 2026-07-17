@@ -3,14 +3,14 @@ id: nzwateralerts
 label: NZ Water Alerts
 title: NZ Water Alerts - Bindings
 type: binding
-description: "Get Water Alert Levels for cities in New Zealand."
+description: '"Get Water Alert Levels for cities in New Zealand."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.nzwateralerts/README.md
 meta:
   - property: og:title
     content: "NZ Water Alerts - Bindings"
   - property: og:description
-    content: "Get Water Alert Levels for cities in New Zealand."
+    content: '"Get Water Alert Levels for cities in New Zealand."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

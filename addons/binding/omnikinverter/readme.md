@@ -3,14 +3,14 @@ id: omnikinverter
 label: Omnik Inverter
 title: Omnik Inverter - Bindings
 type: binding
-description: "This binding reads metrics from Omnik Solar Inverters."
+description: '"This binding reads metrics from Omnik Solar Inverters."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.omnikinverter/README.md
 meta:
   - property: og:title
     content: "Omnik Inverter - Bindings"
   - property: og:description
-    content: "This binding reads metrics from Omnik Solar Inverters."
+    content: '"This binding reads metrics from Omnik Solar Inverters."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,8 @@ id: livisismarthome
 label: LIVISI SmartHome
 title: LIVISI SmartHome - Bindings
 type: binding
-description: "The binding integrates the [LIVISI (RWE/innogy) SmartHome](https://www.livisi.de) system into openHAB."
+description: '"The binding integrates the [LIVISI (RWE/innogy) SmartHome](https://www.livisi.de)
+  system into openHAB."'
 logo: images/addons/livisismarthome.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.livisismarthome/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "LIVISI SmartHome - Bindings"
   - property: og:description
-    content: "The binding integrates the LIVISI (RWE/innogy) SmartHome system into openHAB."
+    content: '"The binding integrates the LIVISI (RWE/innogy) SmartHome
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

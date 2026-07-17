@@ -3,7 +3,8 @@ id: mqtt.espmilighthub
 label: EspMilightHub
 title: EspMilightHub - Bindings
 type: binding
-description: "This binding allows an open source ESP8266-based bridge to automatically find and add Milight globes."
+description: '"This binding allows an open source ESP8266-based bridge to automatically
+  find and add Milight globes."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mqtt.espmilighthub/README.md
 prev: ../mqtt/
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "EspMilightHub - Bindings"
   - property: og:description
-    content: "This binding allows an open source ESP8266-based bridge to automatically find and add Milight globes."
+    content: '"This binding allows an open source ESP8266-based bridge to automatically
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

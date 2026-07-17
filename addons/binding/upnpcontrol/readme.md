@@ -3,7 +3,8 @@ id: upnpcontrol
 label: UPnP Control
 title: UPnP Control - Bindings
 type: binding
-description: "This binding acts as a UPnP control point to control UPnP AV media servers and media renderers as defined by the [UPnP Forum](https://openconnectivity.org/developer/specifications/upnp-resources/upnp/)."
+description: '"This binding acts as a UPnP control point to control UPnP AV media
+  servers and media renderers as defined by the [UPnP Forum](https://openconnectivity.org/developer/specifications/upnp-resources/upnp/)."'
 logo: images/addons/upnpcontrol.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.upnpcontrol/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "UPnP Control - Bindings"
   - property: og:description
-    content: "This binding acts as a UPnP control point to control UPnP AV media servers and media renderers as defined by the UPnP Forum."
+    content: '"This binding acts as a UPnP control point to control UPnP AV media
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

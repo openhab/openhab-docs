@@ -3,7 +3,8 @@ id: casokitchen
 label: CasoKitchen
 title: CasoKitchen - Bindings
 type: binding
-description: "Provides access towards CASO Smart Kitchen devices which are connected within the [CASO Control App](https://www.casocontrol.de/)."
+description: '"Provides access towards CASO Smart Kitchen devices which are connected
+  within the [CASO Control App](https://www.casocontrol.de/)."'
 logo: images/addons/casokitchen.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.casokitchen/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "CasoKitchen - Bindings"
   - property: og:description
-    content: "Provides access towards CASO Smart Kitchen devices which are connected within the CASO Control App."
+    content: '"Provides access towards CASO Smart Kitchen devices which are connected
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

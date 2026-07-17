@@ -3,14 +3,14 @@ id: ephemeris
 label: Ephemeris
 title: Ephemeris - Bindings
 type: binding
-description: "The Ephemeris Binding makes the bridge with Ephemeris core actions."
+description: '"The Ephemeris Binding makes the bridge with Ephemeris core actions."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ephemeris/README.md
 meta:
   - property: og:title
     content: "Ephemeris - Bindings"
   - property: og:description
-    content: "The Ephemeris Binding makes the bridge with Ephemeris core actions."
+    content: '"The Ephemeris Binding makes the bridge with Ephemeris core actions."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

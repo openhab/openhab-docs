@@ -3,7 +3,8 @@ id: dwdunwetter
 label: DWD Unwetter
 title: DWD Unwetter - Bindings
 type: binding
-description: "Binding to retrieve the Weather Warnings of the 'Deutscher Wetterdienstes' from the [DWD Geoserver](https://maps.dwd.de/geoserver/web/)."
+description: '"Binding to retrieve the Weather Warnings of the ''Deutscher Wetterdienstes''
+  from the [DWD Geoserver](https://maps.dwd.de/geoserver/web/)."'
 logo: images/addons/dwdunwetter.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.dwdunwetter/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "DWD Unwetter - Bindings"
   - property: og:description
-    content: "Binding to retrieve the Weather Warnings of the 'Deutscher Wetterdienstes' from the DWD Geoserver."
+    content: '"Binding to retrieve the Weather Warnings of the ''Deutscher Wetterdienstes''
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: jrubyscripting
 label: JRuby Scripting
 title: JRuby Scripting - Automation
 type: automation
-description: "This add-on provides Ruby scripting language for automation rules."
+description: '"This add-on provides Ruby scripting language for automation rules."'
 logo: images/addons/jrubyscripting.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.automation.jrubyscripting/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "JRuby Scripting - Automation"
   - property: og:description
-    content: "This add-on provides Ruby scripting language for automation rules."
+    content: '"This add-on provides Ruby scripting language for automation rules."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: homematic
 label: Homematic
 title: Homematic - Bindings
 type: binding
-description: "This is the binding for the [eQ-3 Homematic Solution](https://eq-3.de/)."
+description: '"This is the binding for the [eQ-3 Homematic Solution](https://eq-3.de/)."'
 logo: images/addons/homematic.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.homematic/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Homematic - Bindings"
   - property: og:description
-    content: "This is the binding for the eQ-3 Homematic Solution."
+    content: '"This is the binding for the eQ-3 Homematic Solution."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

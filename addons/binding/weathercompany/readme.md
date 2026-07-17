@@ -3,14 +3,15 @@ id: weathercompany
 label: The Weather Company
 title: The Weather Company - Bindings
 type: binding
-description: "Provides 5-day weather forecast and _Personal Weather Station_ (PWS) current"
+description: '"Provides 5-day weather forecast and _Personal Weather Station_ (PWS)
+  current"'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.weathercompany/README.md
 meta:
   - property: og:title
     content: "The Weather Company - Bindings"
   - property: og:description
-    content: "Provides 5-day weather forecast and _Personal Weather Station_ (PWS) current"
+    content: '"Provides 5-day weather forecast and _Personal Weather Station_ (PWS)
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

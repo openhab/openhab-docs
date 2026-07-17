@@ -3,7 +3,8 @@ id: homie
 label: Homie Convention
 title: Homie Convention - Bindings
 type: binding
-description: "Devices that follow the [Homie convention](https://homieiot.github.io/) 3.x and 4.x are auto-discovered and represented by this binding and the Homie Thing."
+description: '"Devices that follow the [Homie convention](https://homieiot.github.io/)
+  3.x and 4.x are auto-discovered and represented by this binding and the Homie Thing."'
 logo: images/addons/homie.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.homie/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Homie Convention - Bindings"
   - property: og:description
-    content: "Devices that follow the Homie convention 3.x and 4.x are auto-discovered and represented by this binding and the Homie Thing."
+    content: '"Devices that follow the Homie convention
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

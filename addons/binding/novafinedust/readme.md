@@ -3,14 +3,14 @@ id: novafinedust
 label: NovaFineDust
 title: NovaFineDust - Bindings
 type: binding
-description: "This binding is for the fine dust sensor (PM Sensor) from Nova Fitness."
+description: '"This binding is for the fine dust sensor (PM Sensor) from Nova Fitness."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.novafinedust/README.md
 meta:
   - property: og:title
     content: "NovaFineDust - Bindings"
   - property: og:description
-    content: "This binding is for the fine dust sensor (PM Sensor) from Nova Fitness."
+    content: '"This binding is for the fine dust sensor (PM Sensor) from Nova Fitness."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

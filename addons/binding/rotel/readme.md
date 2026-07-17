@@ -3,14 +3,16 @@ id: rotel
 label: Rotel
 title: Rotel - Bindings
 type: binding
-description: "This binding can be used to control a Rotel audio device like a surround processor, a surround receiver, a stereo preamplifier, an integrated amplifier, a CD player or a tuner."
+description: '"This binding can be used to control a Rotel audio device like a surround
+  processor, a surround receiver, a stereo preamplifier, an integrated amplifier,
+  a CD player or a tuner."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.rotel/README.md
 meta:
   - property: og:title
     content: "Rotel - Bindings"
   - property: og:description
-    content: "This binding can be used to control a Rotel audio device like a surround processor, a surround receiver, a stereo preamplifier, an integrated amplifier, a CD player or a tuner."
+    content: '"This binding can be used to control a Rotel audio device like a surround
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

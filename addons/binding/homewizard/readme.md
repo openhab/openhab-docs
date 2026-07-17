@@ -3,7 +3,8 @@ id: homewizard
 label: HomeWizard
 title: HomeWizard - Bindings
 type: binding
-description: "The HomeWizard binding provides access to several HomeWizard devices by using the local API of those devices."
+description: '"The HomeWizard binding provides access to several HomeWizard devices
+  by using the local API of those devices."'
 logo: images/addons/homewizard.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.homewizard/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "HomeWizard - Bindings"
   - property: og:description
-    content: "The HomeWizard binding provides access to several HomeWizard devices by using the local API of those devices."
+    content: '"The HomeWizard binding provides access to several HomeWizard devices
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

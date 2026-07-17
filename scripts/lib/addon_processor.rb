@@ -2,6 +2,7 @@
 
 require "rexml/document"
 require "fileutils"
+require "yaml"
 
 # AddonProcessor processes external add-on repositories (openhab-addons and openhab-webui).
 #
@@ -49,7 +50,7 @@ module AddonProcessor
     end
 
     Dir.foreach(src_bundles_dir) do |addon_name|
-      next if addon_name == "." || addon_name == ".."
+      next if [".", ".."].include?(addon_name)
 
       # Match the type in package name structure (org.openhab.<type>...)
       parts = addon_name.split(".")
@@ -84,7 +85,7 @@ module AddonProcessor
       FileUtils.mkdir_p(target_dir)
 
       # Copy doc/, cfg/, images/, and icons/ if they exist
-      ["doc", "cfg", "images", "icons"].each do |sub_dir|
+      %w[doc cfg images icons].each do |sub_dir|
         source_sub = File.join(addon_path, sub_dir)
         if id == "zwave" && sub_dir == "doc"
           zwave_things_md = File.join(source_sub, "thing.md")
@@ -95,9 +96,7 @@ module AddonProcessor
           end
           next
         end
-        if Dir.exist?(source_sub)
-          FileUtils.cp_r(source_sub, target_dir)
-        end
+        FileUtils.cp_r(source_sub, target_dir) if Dir.exist?(source_sub)
       end
 
       # Look for README.md (case-insensitive)
@@ -109,16 +108,17 @@ module AddonProcessor
 
       # Read and parse readme
       readme_text = File.read(readme_src)
+      existing_front_matter, readme_text = split_front_matter(readme_text)
 
       # Determine label from first level 1 header
       label = nil
       readme_text.each_line do |line|
-        if line.start_with?("#")
-          label = line.gsub("#", "").strip
-          lblremoves.each { |remove| label = label.gsub(Regexp.new(remove), "") }
-          label = label.strip
-          break
-        end
+        next unless line.start_with?("#")
+
+        label = line.gsub("#", "").strip
+        lblremoves.each { |remove| label = label.gsub(Regexp.new(remove), "") }
+        label = label.strip
+        break
       end
 
       if label.nil? || label.empty?
@@ -143,7 +143,7 @@ module AddonProcessor
       end
 
       # Build frontmatter hash
-      front = {
+      front_matter = {
         "id" => id,
         "label" => label,
         "title" => "#{label}#{suffix}",
@@ -152,9 +152,9 @@ module AddonProcessor
       }
 
       if logo_svg
-        front["logo"] = "images/addons/#{id}.svg"
+        front_matter["logo"] = "images/addons/#{id}.svg"
       elsif logo_png
-        front["logo"] = "images/addons/#{id}.png"
+        front_matter["logo"] = "images/addons/#{id}.png"
       end
 
       # Find install type from features list
@@ -165,10 +165,9 @@ module AddonProcessor
       end
 
       install_attrs = feature_entry ? feature_entry[1] : { "install" => "manual" }
-      front.merge!(install_attrs)
-
-      # Build frontmatter block
-      frontmatter_str = "---\n" + front.map { |k, v| "#{k}: #{v}" }.join("\n") + "\n---\n\n"
+      front_matter.merge!(install_attrs)
+      # Existing front matter from the readme takes precedence if it exists
+      front_matter.merge!(existing_front_matter) if existing_front_matter.is_a?(Hash)
 
       # Re-format readme content: remove first heading and replace with custom template
       first_h1_match = readme_text.match(/^# .*/)
@@ -176,9 +175,15 @@ module AddonProcessor
       text_without_heading = first_h1_match ? readme_text.sub(heading, "") : readme_text
 
       addon_logo_tag = (logo_svg || logo_png) ? "\n\n<AddonLogo />" : ""
+      # to_yaml adds "---\n" at the start, we want to remove that and add our own "---" at the start and end
+      front_matter_str = front_matter.to_yaml.sub(/\A---\s*\n/, "").strip
 
       final_content = <<~MARKDOWN
-        #{frontmatter_str}<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+        ---
+        #{front_matter_str}
+        ---
+
+        <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
         #{heading}#{addon_logo_tag}#{text_without_heading}
       MARKDOWN
@@ -190,6 +195,23 @@ module AddonProcessor
     end
 
     puts "  ✔ Processed add-on type: #{type} -> #{dest_folder_name}"
+  end
+
+  def self.split_front_matter(content)
+    match = content.match(/\A---\s*\n(?<front_matter>.*?)^---\s*$\n?(?<content>.*)/m)
+
+    if match
+      front_matter_str = match[:front_matter]
+      begin
+        front_matter = YAML.safe_load(front_matter_str) || {}
+      rescue Psych::Exception => e
+        warn "  ⚠️ Failed to parse front matter YAML: #{e.message}"
+        front_matter = {}
+      end
+      [front_matter, match[:content]]
+    else
+      [nil, content]
+    end
   end
 
   def self.process_all(distro_features_path, snapshot_features_path, addons_bundles_dir, webui_bundles_dir, dest_addons_dir, images_dir)

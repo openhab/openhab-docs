@@ -3,7 +3,8 @@ id: opensprinkler
 label: OpenSprinkler
 title: OpenSprinkler - Bindings
 type: binding
-description: "This binding allows good and flexible control over your OpenSprinkler devices."
+description: '"This binding allows good and flexible control over your OpenSprinkler
+  devices."'
 logo: images/addons/opensprinkler.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.opensprinkler/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "OpenSprinkler - Bindings"
   - property: og:description
-    content: "This binding allows good and flexible control over your OpenSprinkler devices."
+    content: '"This binding allows good and flexible control over your OpenSprinkler
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

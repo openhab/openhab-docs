@@ -3,14 +3,15 @@ id: systeminfo
 label: Systeminfo
 title: Systeminfo - Bindings
 type: binding
-description: "The Systeminfo binding provides operating system and hardware information, including:"
+description: '"The Systeminfo binding provides operating system and hardware information,
+  including:"'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.systeminfo/README.md
 meta:
   - property: og:title
     content: "Systeminfo - Bindings"
   - property: og:description
-    content: "The Systeminfo binding provides operating system and hardware information, including:"
+    content: '"The Systeminfo binding provides operating system and hardware information,
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

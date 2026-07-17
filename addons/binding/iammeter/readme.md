@@ -3,7 +3,9 @@ id: iammeter
 label: Iammeter
 title: Iammeter - Bindings
 type: binding
-description: "[Iammeter](https://www.iammeter.com) provides real-time readings of single-phase (WEM3080, WEM3162) and three-phase (WEM3080T) meters from IAMMETER over Wi-Fi."
+description: '"[Iammeter](https://www.iammeter.com) provides real-time readings of
+  single-phase (WEM3080, WEM3162) and three-phase (WEM3080T) meters from IAMMETER
+  over Wi-Fi."'
 logo: images/addons/iammeter.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.iammeter/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "Iammeter - Bindings"
   - property: og:description
-    content: "Iammeter provides real-time readings of single-phase (WEM3080, WEM3162) and three-phase (WEM3080T) meters from IAMMETER over Wi-Fi."
+    content: '"Iammeter provides real-time readings of
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

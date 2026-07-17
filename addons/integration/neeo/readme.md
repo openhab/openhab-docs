@@ -3,7 +3,8 @@ id: neeo
 label: openHAB NEEO Integration
 title: openHAB NEEO Integration - System Integrations
 type: io
-description: "This integration will allow openHAB things/items to be exposed to the NEEO Brain and allow the NEEO smart remote to control them."
+description: '"This integration will allow openHAB things/items to be exposed to the
+  NEEO Brain and allow the NEEO smart remote to control them."'
 logo: images/addons/neeo.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.integration.neeo/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "openHAB NEEO Integration - System Integrations"
   - property: og:description
-    content: "This integration will allow openHAB things/items to be exposed to the NEEO Brain and allow the NEEO smart remote to control them."
+    content: '"This integration will allow openHAB things/items to be exposed to the
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

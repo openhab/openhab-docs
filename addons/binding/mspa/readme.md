@@ -3,7 +3,8 @@ id: mspa
 label: MSpa
 title: MSpa - Bindings
 type: binding
-description: "Connect your MSpa Pools with openHAB if you have them connected to your MSpa-Link IOS or Android app."
+description: '"Connect your MSpa Pools with openHAB if you have them connected to
+  your MSpa-Link IOS or Android app."'
 logo: images/addons/mspa.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mspa/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "MSpa - Bindings"
   - property: og:description
-    content: "Connect your MSpa Pools with openHAB if you have them connected to your MSpa-Link IOS or Android app."
+    content: '"Connect your MSpa Pools with openHAB if you have them connected to
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

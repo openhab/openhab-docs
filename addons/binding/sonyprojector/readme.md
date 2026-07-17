@@ -3,7 +3,7 @@ id: sonyprojector
 label: SonyProjector
 title: SonyProjector - Bindings
 type: binding
-description: "This binding can be used to control Sony projectors through:"
+description: '"This binding can be used to control Sony projectors through:"'
 logo: images/addons/sonyprojector.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sonyprojector/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "SonyProjector - Bindings"
   - property: og:description
-    content: "This binding can be used to control Sony projectors through:"
+    content: '"This binding can be used to control Sony projectors through:"'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: bluelink
 label: Bluelink (Hyundai/Kia/Genesis)
 title: Bluelink (Hyundai/Kia/Genesis) - Bindings
 type: binding
-description: "This binding integrates these telematics systems for connected vehicles:"
+description: '"This binding integrates these telematics systems for connected vehicles:"'
 logo: images/addons/bluelink.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluelink/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Bluelink (Hyundai/Kia/Genesis) - Bindings"
   - property: og:description
-    content: "This binding integrates these telematics systems for connected vehicles:"
+    content: '"This binding integrates these telematics systems for connected vehicles:"'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

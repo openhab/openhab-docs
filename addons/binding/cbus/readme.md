@@ -3,14 +3,14 @@ id: cbus
 label: C-Bus
 title: C-Bus - Bindings
 type: binding
-description: "This is the binding for the [Clipsal C-Bus System](https://www.clipsal.com/products/c-bus-control-and-management-system)."
+description: '"This is the binding for the [Clipsal C-Bus System](https://www.clipsal.com/products/c-bus-control-and-management-system)."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.cbus/README.md
 meta:
   - property: og:title
     content: "C-Bus - Bindings"
   - property: og:description
-    content: "This is the binding for the Clipsal C-Bus System."
+    content: '"This is the binding for the Clipsal C-Bus System."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

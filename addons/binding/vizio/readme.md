@@ -3,7 +3,7 @@ id: vizio
 label: Vizio
 title: Vizio - Bindings
 type: binding
-description: "This binding connects Vizio TVs to openHAB."
+description: '"This binding connects Vizio TVs to openHAB."'
 logo: images/addons/vizio.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.vizio/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Vizio - Bindings"
   - property: og:description
-    content: "This binding connects Vizio TVs to openHAB."
+    content: '"This binding connects Vizio TVs to openHAB."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

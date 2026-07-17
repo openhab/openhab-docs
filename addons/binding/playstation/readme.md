@@ -3,14 +3,15 @@ id: playstation
 label: Sony PlayStation
 title: Sony PlayStation - Bindings
 type: binding
-description: "This binding allows you to monitor the on/off status and which application is currently running on your PlayStation 4."
+description: '"This binding allows you to monitor the on/off status and which application
+  is currently running on your PlayStation 4."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.playstation/README.md
 meta:
   - property: og:title
     content: "Sony PlayStation - Bindings"
   - property: og:description
-    content: "This binding allows you to monitor the on/off status and which application is currently running on your PlayStation 4."
+    content: '"This binding allows you to monitor the on/off status and which application
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

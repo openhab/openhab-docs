@@ -3,14 +3,15 @@ id: flume
 label: Flume
 title: Flume - Bindings
 type: binding
-description: "This binding will interface with the cloud API to retrieve water usage from your [Flume](https://flumewater.com/) water monitor."
+description: '"This binding will interface with the cloud API to retrieve water usage
+  from your [Flume](https://flumewater.com/) water monitor."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.flume/README.md
 meta:
   - property: og:title
     content: "Flume - Bindings"
   - property: og:description
-    content: "This binding will interface with the cloud API to retrieve water usage from your Flume water monitor."
+    content: '"This binding will interface with the cloud API to retrieve water usage
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

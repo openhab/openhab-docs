@@ -3,7 +3,8 @@ id: webexteams
 label: Webex Teams
 title: Webex Teams - Bindings
 type: binding
-description: "The Webex Teams binding lets you send messages to [Webex Teams](https://web.webex.com/) users and rooms via rule actions."
+description: '"The Webex Teams binding lets you send messages to [Webex Teams](https://web.webex.com/)
+  users and rooms via rule actions."'
 logo: images/addons/webexteams.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.webexteams/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Webex Teams - Bindings"
   - property: og:description
-    content: "The Webex Teams binding lets you send messages to Webex Teams users and rooms via rule actions."
+    content: '"The Webex Teams binding lets you send messages to Webex Teams
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,14 +3,14 @@ id: sensibo
 label: Sensibo
 title: Sensibo - Bindings
 type: binding
-description: "This binding integrates the Sensibo Sky air conditioner remote control."
+description: '"This binding integrates the Sensibo Sky air conditioner remote control."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sensibo/README.md
 meta:
   - property: og:title
     content: "Sensibo - Bindings"
   - property: og:description
-    content: "This binding integrates the Sensibo Sky air conditioner remote control."
+    content: '"This binding integrates the Sensibo Sky air conditioner remote control."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

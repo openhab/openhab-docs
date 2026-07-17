@@ -3,7 +3,7 @@ id: doorbird
 label: Doorbird
 title: Doorbird - Bindings
 type: binding
-description: "Binding for Doorbird D101 and D210x video doorbells."
+description: '"Binding for Doorbird D101 and D210x video doorbells."'
 logo: images/addons/doorbird.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.doorbird/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Doorbird - Bindings"
   - property: og:description
-    content: "Binding for Doorbird D101 and D210x video doorbells."
+    content: '"Binding for Doorbird D101 and D210x video doorbells."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: herzborg
 label: Herzborg
 title: Herzborg - Bindings
 type: binding
-description: "This binding supports smart curtain motors by Herzborg (<http://www.herzborg.com/pro_list.aspx?TypeID=1>)"
+description: '"This binding supports smart curtain motors by Herzborg (<http://www.herzborg.com/pro_list.aspx?TypeID=1>)"'
 logo: images/addons/herzborg.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.herzborg/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Herzborg - Bindings"
   - property: og:description
-    content: "This binding supports smart curtain motors by Herzborg (<http://www.herzborg.com/pro_list.aspx?TypeID=1>)"
+    content: '"This binding supports smart curtain motors by Herzborg (<http://www.herzborg.com/pro_list.aspx?TypeID=1>)"'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

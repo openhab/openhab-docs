@@ -3,14 +3,15 @@ id: rme
 label: RME
 title: RME - Bindings
 type: binding
-description: "This binding is for the RME RainManager rain water pump and management system"
+description: '"This binding is for the RME RainManager rain water pump and management
+  system"'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.rme/README.md
 meta:
   - property: og:title
     content: "RME - Bindings"
   - property: og:description
-    content: "This binding is for the RME RainManager rain water pump and management system"
+    content: '"This binding is for the RME RainManager rain water pump and management
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

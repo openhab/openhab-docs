@@ -3,7 +3,11 @@ id: zigbee
 label: ZigBee
 title: ZigBee - Bindings
 type: binding
-description: "The ZigBee binding supports an interface to a wireless ZigBee home automation network and allows ZigBee devices from numerous manufacturers to be used without a system specific gateway. It should be compatible with a broad range of devices that implement and meet the Zigbee standards including lights, alarms, switches, sensors, etc."
+description: '"The ZigBee binding supports an interface to a wireless ZigBee home
+  automation network and allows ZigBee devices from numerous manufacturers to be used
+  without a system specific gateway. It should be compatible with a broad range of
+  devices that implement and meet the Zigbee standards including lights, alarms, switches,
+  sensors, etc."'
 logo: images/addons/zigbee.png
 install: manual
 source: https://github.com/openhab/org.openhab.binding.zigbee/blob/main/org.openhab.binding.zigbee/README.md
@@ -11,7 +15,7 @@ meta:
   - property: og:title
     content: "ZigBee - Bindings"
   - property: og:description
-    content: "The ZigBee binding supports an interface to a wireless ZigBee home automation network and allows ZigBee devices from numerous manufacturers to be used without a system specific gateway. It should be compatible with a broad range of devices that implement and meet the Zigbee standards including lights, alarms, switches, sensors, etc."
+    content: '"The ZigBee binding supports an interface to a wireless ZigBee home
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,14 +3,14 @@ id: vektiva
 label: Vektiva
 title: Vektiva - Bindings
 type: binding
-description: "This binding allows control of [Vektiva](https://vektiva.com) products."
+description: '"This binding allows control of [Vektiva](https://vektiva.com) products."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.vektiva/README.md
 meta:
   - property: og:title
     content: "Vektiva - Bindings"
   - property: og:description
-    content: "This binding allows control of Vektiva products."
+    content: '"This binding allows control of Vektiva products."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

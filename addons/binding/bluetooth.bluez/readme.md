@@ -3,7 +3,7 @@ id: bluetooth.bluez
 label: Bluetooth BlueZ Adapter
 title: Bluetooth BlueZ Adapter - Bindings
 type: binding
-description: "This extension supports Bluetooth access via BlueZ and DBus on Linux."
+description: '"This extension supports Bluetooth access via BlueZ and DBus on Linux."'
 logo: images/addons/bluetooth.bluez.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.bluez/README.md
@@ -12,7 +12,7 @@ meta:
   - property: og:title
     content: "Bluetooth BlueZ Adapter - Bindings"
   - property: og:description
-    content: "This extension supports Bluetooth access via BlueZ and DBus on Linux."
+    content: '"This extension supports Bluetooth access via BlueZ and DBus on Linux."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

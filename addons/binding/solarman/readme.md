@@ -3,14 +3,15 @@ id: solarman
 label: Solarman Logger
 title: Solarman Logger - Bindings
 type: binding
-description: "Binding used to communicate with Solarman (IGEN-Tech) v5 based solar inverter data loggers in direct-mode over the local network."
+description: '"Binding used to communicate with Solarman (IGEN-Tech) v5 based solar
+  inverter data loggers in direct-mode over the local network."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.solarman/README.md
 meta:
   - property: og:title
     content: "Solarman Logger - Bindings"
   - property: og:description
-    content: "Binding used to communicate with Solarman (IGEN-Tech) v5 based solar inverter data loggers in direct-mode over the local network."
+    content: '"Binding used to communicate with Solarman (IGEN-Tech) v5 based solar
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

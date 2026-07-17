@@ -3,7 +3,8 @@ id: jellyfin
 label: Jellyfin
 title: Jellyfin - Bindings
 type: binding
-description: "This is the binding for [Jellyfin](https://jellyfin.org), the volunteer built media solution that puts you in control of your media."
+description: '"This is the binding for [Jellyfin](https://jellyfin.org), the volunteer
+  built media solution that puts you in control of your media."'
 logo: images/addons/jellyfin.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.jellyfin/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Jellyfin - Bindings"
   - property: og:description
-    content: "This is the binding for Jellyfin, the volunteer built media solution that puts you in control of your media."
+    content: '"This is the binding for Jellyfin, the volunteer
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

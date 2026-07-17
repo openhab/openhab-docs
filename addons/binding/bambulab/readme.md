@@ -3,7 +3,7 @@ id: bambulab
 label: BambuLab
 title: BambuLab - Bindings
 type: binding
-description: "This addon supports connecting with BambuLab 3D printers in local mode."
+description: '"This addon supports connecting with BambuLab 3D printers in local mode."'
 logo: images/addons/bambulab.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bambulab/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "BambuLab - Bindings"
   - property: og:description
-    content: "This addon supports connecting with BambuLab 3D printers in local mode."
+    content: '"This addon supports connecting with BambuLab 3D printers in local mode."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

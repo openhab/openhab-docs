@@ -3,7 +3,8 @@ id: pythonscripting
 label: Python Scripting
 title: Python Scripting - Automation
 type: automation
-description: "This add-on provides support for Python 3 that can be used as a scripting language within automation rules."
+description: '"This add-on provides support for Python 3 that can be used as a scripting
+  language within automation rules."'
 logo: images/addons/pythonscripting.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.automation.pythonscripting/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Python Scripting - Automation"
   - property: og:description
-    content: "This add-on provides support for Python 3 that can be used as a scripting language within automation rules."
+    content: '"This add-on provides support for Python 3 that can be used as a scripting
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

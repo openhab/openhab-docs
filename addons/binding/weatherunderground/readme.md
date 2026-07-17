@@ -3,7 +3,8 @@ id: weatherunderground
 label: Weather Underground
 title: Weather Underground - Bindings
 type: binding
-description: "This binding uses the [Weather Underground service](https://www.wunderground.com/weather/api/) for providing weather information for any location worldwide."
+description: '"This binding uses the [Weather Underground service](https://www.wunderground.com/weather/api/)
+  for providing weather information for any location worldwide."'
 logo: images/addons/weatherunderground.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.weatherunderground/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Weather Underground - Bindings"
   - property: og:description
-    content: "This binding uses the Weather Underground service for providing weather information for any location worldwide."
+    content: '"This binding uses the Weather Underground service
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

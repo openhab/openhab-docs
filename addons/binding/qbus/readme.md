@@ -3,7 +3,8 @@ id: qbus
 label: Qbus
 title: Qbus - Bindings
 type: binding
-description: "This binding for [Qbus](https://qbus.be) communicates with all controllers of the Qbus home automation system."
+description: '"This binding for [Qbus](https://qbus.be) communicates with all controllers
+  of the Qbus home automation system."'
 logo: images/addons/qbus.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.qbus/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Qbus - Bindings"
   - property: og:description
-    content: "This binding for Qbus communicates with all controllers of the Qbus home automation system."
+    content: '"This binding for Qbus communicates with all controllers
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,9 @@ id: homekit
 label: HomeKit
 title: HomeKit - Bindings
 type: binding
-description: "This binding allows pairing with HomeKit accessories and **imports** their services as channel groups and their respective service- characteristics as channels."
+description: '"This binding allows pairing with HomeKit accessories and **imports**
+  their services as channel groups and their respective service- characteristics as
+  channels."'
 logo: images/addons/homekit.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.homekit/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "HomeKit - Bindings"
   - property: og:description
-    content: "This binding allows pairing with HomeKit accessories and **imports** their services as channel groups and their respective service- characteristics as channels."
+    content: '"This binding allows pairing with HomeKit accessories and **imports**
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

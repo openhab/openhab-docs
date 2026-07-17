@@ -3,7 +3,8 @@ id: km200
 label: KM200
 title: KM200 - Bindings
 type: binding
-description: "The KM200 Binding is communicating with a [Buderus Logamatic web KM200 / KM100 / KM50](https://www.buderus.de/de/produkte/catalogue/alle-produkte/7719_gateway-logamatic-web-km200-km100-km50)."
+description: '"The KM200 Binding is communicating with a [Buderus Logamatic web KM200
+  / KM100 / KM50](https://www.buderus.de/de/produkte/catalogue/alle-produkte/7719_gateway-logamatic-web-km200-km100-km50)."'
 logo: images/addons/km200.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.km200/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "KM200 - Bindings"
   - property: og:description
-    content: "The KM200 Binding is communicating with a Buderus Logamatic web KM200 / KM100 / KM50(https://www.buderus.de/de/produkte/catalogue/alle-produkte/7719_gateway-logamatic-web-km200-km100-km50)."
+    content: '"The KM200 Binding is communicating with a Buderus Logamatic web KM200
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

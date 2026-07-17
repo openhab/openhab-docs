@@ -3,7 +3,8 @@ id: ecoflow
 label: EcoFlow
 title: EcoFlow - Bindings
 type: binding
-description: "This binding provides integration for power stations and micro inverters made by EcoFlow (<https://www.ecoflow.com/>)."
+description: '"This binding provides integration for power stations and micro inverters
+  made by EcoFlow (<https://www.ecoflow.com/>)."'
 logo: images/addons/ecoflow.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ecoflow/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "EcoFlow - Bindings"
   - property: og:description
-    content: "This binding provides integration for power stations and micro inverters made by EcoFlow (<https://www.ecoflow.com/>)."
+    content: '"This binding provides integration for power stations and micro inverters
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

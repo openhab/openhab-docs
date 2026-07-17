@@ -3,7 +3,7 @@ id: viessmann
 label: Viessmann
 title: Viessmann - Bindings
 type: binding
-description: "This binding connects Viessmann devices via the new Viessmann API."
+description: '"This binding connects Viessmann devices via the new Viessmann API."'
 logo: images/addons/viessmann.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.viessmann/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Viessmann - Bindings"
   - property: og:description
-    content: "This binding connects Viessmann devices via the new Viessmann API."
+    content: '"This binding connects Viessmann devices via the new Viessmann API."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

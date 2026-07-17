@@ -3,7 +3,8 @@ id: tankerkoenig
 label: Tankerkönig
 title: Tankerkönig - Bindings
 type: binding
-description: "The binding uses the Tankerkönig API <https://www.tankerkoenig.de> for collecting gas price data of German gas stations."
+description: '"The binding uses the Tankerkönig API <https://www.tankerkoenig.de>
+  for collecting gas price data of German gas stations."'
 logo: images/addons/tankerkoenig.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tankerkoenig/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Tankerkönig - Bindings"
   - property: og:description
-    content: "The binding uses the Tankerkönig API <https://www.tankerkoenig.de> for collecting gas price data of German gas stations."
+    content: '"The binding uses the Tankerkönig API <https://www.tankerkoenig.de>
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

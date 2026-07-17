@@ -3,7 +3,9 @@ id: goecharger
 label: go-e Charger
 title: go-e Charger - Bindings
 type: binding
-description: "This Binding controls and reads data from the [go-e Charger](https://go-e.co/), which is a mobile wallbox for charging EVs and has an open REST API for reading data and configuration."
+description: '"This Binding controls and reads data from the [go-e Charger](https://go-e.co/),
+  which is a mobile wallbox for charging EVs and has an open REST API for reading
+  data and configuration."'
 logo: images/addons/goecharger.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.goecharger/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "go-e Charger - Bindings"
   - property: og:description
-    content: "This Binding controls and reads data from the go-e Charger, which is a mobile wallbox for charging EVs and has an open REST API for reading data and configuration."
+    content: '"This Binding controls and reads data from the go-e Charger,
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

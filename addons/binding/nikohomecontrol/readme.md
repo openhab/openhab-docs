@@ -3,7 +3,7 @@ id: nikohomecontrol
 label: Niko Home Control
 title: Niko Home Control - Bindings
 type: binding
-description: "**Upgrade notice for Niko Home Control II and openHAB 2.5.3 or later**:"
+description: '"**Upgrade notice for Niko Home Control II and openHAB 2.5.3 or later**:"'
 logo: images/addons/nikohomecontrol.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.nikohomecontrol/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Niko Home Control - Bindings"
   - property: og:description
-    content: "**Upgrade notice for Niko Home Control II and openHAB 2.5.3 or later**:"
+    content: '"**Upgrade notice for Niko Home Control II and openHAB 2.5.3 or later**:"'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,8 @@ id: foobot
 label: Foobot
 title: Foobot - Bindings
 type: binding
-description: "This binding fetches the Indoor Air Quality data of each of your Foobot devices from the Foobot cloud service."
+description: '"This binding fetches the Indoor Air Quality data of each of your Foobot
+  devices from the Foobot cloud service."'
 logo: images/addons/foobot.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.foobot/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Foobot - Bindings"
   - property: og:description
-    content: "This binding fetches the Indoor Air Quality data of each of your Foobot devices from the Foobot cloud service."
+    content: '"This binding fetches the Indoor Air Quality data of each of your Foobot
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

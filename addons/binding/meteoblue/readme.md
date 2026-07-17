@@ -3,7 +3,7 @@ id: meteoblue
 label: meteoblue
 title: meteoblue - Bindings
 type: binding
-description: "The meteoblue binding uses the [meteoblue weather service](https://content.meteoblue.com/en/content/view/full/4511)"
+description: '"The meteoblue binding uses the [meteoblue weather service](https://content.meteoblue.com/en/content/view/full/4511)"'
 logo: images/addons/meteoblue.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.meteoblue/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "meteoblue - Bindings"
   - property: og:description
-    content: "The meteoblue binding uses the meteoblue weather service"
+    content: '"The meteoblue binding uses the meteoblue weather service"'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,9 @@ id: energenie
 label: Gembird energenie
 title: Gembird energenie - Bindings
 type: binding
-description: "This binding integrates the Gembird energenie range of power extenders by using the Energenie Data Exchange Protocol and power reading devices through HTTP interface."
+description: '"This binding integrates the Gembird energenie range of power extenders
+  by using the Energenie Data Exchange Protocol and power reading devices through
+  HTTP interface."'
 logo: images/addons/energenie.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.energenie/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "Gembird energenie - Bindings"
   - property: og:description
-    content: "This binding integrates the Gembird energenie range of power extenders by using the Energenie Data Exchange Protocol and power reading devices through HTTP interface."
+    content: '"This binding integrates the Gembird energenie range of power extenders
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

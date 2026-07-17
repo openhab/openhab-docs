@@ -3,7 +3,8 @@ id: roborock
 label: Roborock
 title: Roborock - Bindings
 type: binding
-description: "This binding is used to control Roborock robot vacuum cleaner products implementing the Roborock protocol."
+description: '"This binding is used to control Roborock robot vacuum cleaner products
+  implementing the Roborock protocol."'
 logo: images/addons/roborock.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.roborock/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Roborock - Bindings"
   - property: og:description
-    content: "This binding is used to control Roborock robot vacuum cleaner products implementing the Roborock protocol."
+    content: '"This binding is used to control Roborock robot vacuum cleaner products
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

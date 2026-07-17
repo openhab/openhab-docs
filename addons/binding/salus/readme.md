@@ -3,14 +3,15 @@ id: salus
 label: Salus
 title: Salus - Bindings
 type: binding
-description: "The Salus Binding facilitates seamless integration between openHAB and [Salus Cloud](https://eu.salusconnect.io/)."
+description: '"The Salus Binding facilitates seamless integration between openHAB
+  and [Salus Cloud](https://eu.salusconnect.io/)."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.salus/README.md
 meta:
   - property: og:title
     content: "Salus - Bindings"
   - property: og:description
-    content: "The Salus Binding facilitates seamless integration between openHAB and Salus Cloud."
+    content: '"The Salus Binding facilitates seamless integration between openHAB
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

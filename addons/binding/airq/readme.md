@@ -3,7 +3,8 @@ id: airq
 label: air-Q
 title: air-Q - Bindings
 type: binding
-description: "The air-Q Binding integrates the air analyzer [air-Q](http://www.air-q.com) device into the openHAB system."
+description: '"The air-Q Binding integrates the air analyzer [air-Q](http://www.air-q.com)
+  device into the openHAB system."'
 logo: images/addons/airq.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.airq/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "air-Q - Bindings"
   - property: og:description
-    content: "The air-Q Binding integrates the air analyzer air-Q device into the openHAB system."
+    content: '"The air-Q Binding integrates the air analyzer air-Q
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

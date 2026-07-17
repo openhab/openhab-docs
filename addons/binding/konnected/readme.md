@@ -3,7 +3,7 @@ id: konnected
 label: Konnected
 title: Konnected - Bindings
 type: binding
-description: "This binding is for interacting with a [Konnected Alarm Panel](https://konnected.io/)."
+description: '"This binding is for interacting with a [Konnected Alarm Panel](https://konnected.io/)."'
 logo: images/addons/konnected.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.konnected/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Konnected - Bindings"
   - property: og:description
-    content: "This binding is for interacting with a Konnected Alarm Panel."
+    content: '"This binding is for interacting with a Konnected Alarm Panel."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

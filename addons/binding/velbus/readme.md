@@ -3,7 +3,9 @@ id: velbus
 label: Velbus
 title: Velbus - Bindings
 type: binding
-description: "The Velbus binding integrates with a [Velbus](https://www.velbus.eu/) system through a Velbus configuration module (VMBRSUSB, VMB1USB or VMB1RS) or a network connection (TCP/IP)."
+description: '"The Velbus binding integrates with a [Velbus](https://www.velbus.eu/)
+  system through a Velbus configuration module (VMBRSUSB, VMB1USB or VMB1RS) or a
+  network connection (TCP/IP)."'
 logo: images/addons/velbus.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.velbus/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "Velbus - Bindings"
   - property: og:description
-    content: "The Velbus binding integrates with a Velbus system through a Velbus configuration module (VMBRSUSB, VMB1USB or VMB1RS) or a network connection (TCP/IP)."
+    content: '"The Velbus binding integrates with a Velbus
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

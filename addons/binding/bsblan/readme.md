@@ -3,7 +3,8 @@ id: bsblan
 label: BSB-LAN
 title: BSB-LAN - Bindings
 type: binding
-description: "This binding uses the REST API of [BSB-LPB-PPS-LAN](https://github.com/fredlcore/BSB-LAN) to obtain data from the device."
+description: '"This binding uses the REST API of [BSB-LPB-PPS-LAN](https://github.com/fredlcore/BSB-LAN)
+  to obtain data from the device."'
 logo: images/addons/bsblan.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bsblan/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "BSB-LAN - Bindings"
   - property: og:description
-    content: "This binding uses the REST API of BSB-LPB-PPS-LAN to obtain data from the device."
+    content: '"This binding uses the REST API of BSB-LPB-PPS-LAN
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

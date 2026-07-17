@@ -3,7 +3,8 @@ id: dolbycp
 label: DolbyCP
 title: DolbyCP - Bindings
 type: binding
-description: "This binding is intended to connect to a _Dolby Digital Cinema Processor CP750_."
+description: '"This binding is intended to connect to a _Dolby Digital Cinema Processor
+  CP750_."'
 logo: images/addons/dolbycp.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.dolbycp/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "DolbyCP - Bindings"
   - property: og:description
-    content: "This binding is intended to connect to a _Dolby Digital Cinema Processor CP750_."
+    content: '"This binding is intended to connect to a _Dolby Digital Cinema Processor
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: feed
 label: Feed
 title: Feed - Bindings
 type: binding
-description: "This binding allows you to integrate feeds in the openHAB environment."
+description: '"This binding allows you to integrate feeds in the openHAB environment."'
 logo: images/addons/feed.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.feed/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Feed - Bindings"
   - property: og:description
-    content: "This binding allows you to integrate feeds in the openHAB environment."
+    content: '"This binding allows you to integrate feeds in the openHAB environment."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

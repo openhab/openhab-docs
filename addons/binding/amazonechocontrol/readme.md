@@ -3,7 +3,8 @@ id: amazonechocontrol
 label: Amazon Echo Control
 title: Amazon Echo Control - Bindings
 type: binding
-description: "This binding can control Amazon Echo devices (Alexa) and Smarthome devices connected through Alexa or a skill."
+description: '"This binding can control Amazon Echo devices (Alexa) and Smarthome
+  devices connected through Alexa or a skill."'
 logo: images/addons/amazonechocontrol.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.amazonechocontrol/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Amazon Echo Control - Bindings"
   - property: og:description
-    content: "This binding can control Amazon Echo devices (Alexa) and Smarthome devices connected through Alexa or a skill."
+    content: '"This binding can control Amazon Echo devices (Alexa) and Smarthome
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

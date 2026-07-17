@@ -3,7 +3,8 @@ id: http
 label: HTTP
 title: HTTP - Bindings
 type: binding
-description: "This binding allows using HTTP to bring external data into openHAB or execute HTTP requests on commands."
+description: '"This binding allows using HTTP to bring external data into openHAB
+  or execute HTTP requests on commands."'
 logo: images/addons/http.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.http/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "HTTP - Bindings"
   - property: og:description
-    content: "This binding allows using HTTP to bring external data into openHAB or execute HTTP requests on commands."
+    content: '"This binding allows using HTTP to bring external data into openHAB
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

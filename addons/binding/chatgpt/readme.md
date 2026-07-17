@@ -3,7 +3,9 @@ id: chatgpt
 label: ChatGPT
 title: ChatGPT - Bindings
 type: binding
-description: "The openHAB ChatGPT Binding allows openHAB to communicate with the ChatGPT language model provided by OpenAI and manage openHAB system via [Function calling](https://platform.openai.com/docs/guides/function-calling)."
+description: '"The openHAB ChatGPT Binding allows openHAB to communicate with the
+  ChatGPT language model provided by OpenAI and manage openHAB system via [Function
+  calling](https://platform.openai.com/docs/guides/function-calling)."'
 logo: images/addons/chatgpt.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.chatgpt/README.md
@@ -11,7 +13,7 @@ meta:
   - property: og:title
     content: "ChatGPT - Bindings"
   - property: og:description
-    content: "The openHAB ChatGPT Binding allows openHAB to communicate with the ChatGPT language model provided by OpenAI and manage openHAB system via Function calling."
+    content: '"The openHAB ChatGPT Binding allows openHAB to communicate with the
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

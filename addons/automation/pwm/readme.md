@@ -3,7 +3,7 @@ id: pwm
 label: Pulse Width Modulation (PWM) Automation
 title: Pulse Width Modulation (PWM) Automation - Automation
 type: automation
-description: "This automation module implements [Pulse Width Modulation (PWM)](https://en.wikipedia.org/wiki/Pulse-width_modulation)."
+description: '"This automation module implements [Pulse Width Modulation (PWM)](https://en.wikipedia.org/wiki/Pulse-width_modulation)."'
 logo: images/addons/pwm.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.automation.pwm/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Pulse Width Modulation (PWM) Automation - Automation"
   - property: og:description
-    content: "This automation module implements Pulse Width Modulation (PWM)(https://en.wikipedia.org/wiki/Pulse-width_modulation)."
+    content: '"This automation module implements Pulse Width Modulation (PWM)(https://en.wikipedia.org/wiki/Pulse-width_modulation)."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

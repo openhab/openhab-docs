@@ -3,7 +3,7 @@ id: tesla
 label: Tesla
 title: Tesla - Bindings
 type: binding
-description: "This binding integrates [Tesla Electrical Vehicles](https://www.tesla.com)."
+description: '"This binding integrates [Tesla Electrical Vehicles](https://www.tesla.com)."'
 logo: images/addons/tesla.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tesla/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Tesla - Bindings"
   - property: og:description
-    content: "This binding integrates Tesla Electrical Vehicles."
+    content: '"This binding integrates Tesla Electrical Vehicles."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

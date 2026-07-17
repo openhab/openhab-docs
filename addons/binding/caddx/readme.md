@@ -3,7 +3,8 @@ id: caddx
 label: Caddx
 title: Caddx - Bindings
 type: binding
-description: "The Caddx binding is used for communicating with the Caddx alarm panels. Also known as Interlogix."
+description: '"The Caddx binding is used for communicating with the Caddx alarm panels.
+  Also known as Interlogix."'
 logo: images/addons/caddx.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.caddx/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Caddx - Bindings"
   - property: og:description
-    content: "The Caddx binding is used for communicating with the Caddx alarm panels. Also known as Interlogix."
+    content: '"The Caddx binding is used for communicating with the Caddx alarm panels.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

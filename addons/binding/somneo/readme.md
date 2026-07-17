@@ -3,7 +3,7 @@ id: somneo
 label: Philips Somneo
 title: Philips Somneo - Bindings
 type: binding
-description: "This binding integrates Philips Somneo HF367X into openHAB."
+description: '"This binding integrates Philips Somneo HF367X into openHAB."'
 logo: images/addons/somneo.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.somneo/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Philips Somneo - Bindings"
   - property: og:description
-    content: "This binding integrates Philips Somneo HF367X into openHAB."
+    content: '"This binding integrates Philips Somneo HF367X into openHAB."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

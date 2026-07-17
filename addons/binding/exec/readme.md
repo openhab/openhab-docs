@@ -3,7 +3,8 @@ id: exec
 label: Exec
 title: Exec - Bindings
 type: binding
-description: "This binding integrates the possibility to execute arbitrary shell commands."
+description: '"This binding integrates the possibility to execute arbitrary shell
+  commands."'
 logo: images/addons/exec.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.exec/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Exec - Bindings"
   - property: og:description
-    content: "This binding integrates the possibility to execute arbitrary shell commands."
+    content: '"This binding integrates the possibility to execute arbitrary shell
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

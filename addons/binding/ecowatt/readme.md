@@ -3,7 +3,8 @@ id: ecowatt
 label: Ecowatt
 title: Ecowatt - Bindings
 type: binding
-description: "This binding uses the Ecowatt API to expose clear signals to adopt the right gestures and to ensure a good supply of electricity for all in France."
+description: '"This binding uses the Ecowatt API to expose clear signals to adopt
+  the right gestures and to ensure a good supply of electricity for all in France."'
 logo: images/addons/ecowatt.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ecowatt/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "Ecowatt - Bindings"
   - property: og:description
-    content: "This binding uses the Ecowatt API to expose clear signals to adopt the right gestures and to ensure a good supply of electricity for all in France."
+    content: '"This binding uses the Ecowatt API to expose clear signals to adopt
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

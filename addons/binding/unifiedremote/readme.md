@@ -3,14 +3,14 @@ id: unifiedremote
 label: UnifiedRemote
 title: UnifiedRemote - Bindings
 type: binding
-description: "This binding integrates the [Unified Remote Server](https://www.unifiedremote.com/)."
+description: '"This binding integrates the [Unified Remote Server](https://www.unifiedremote.com/)."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.unifiedremote/README.md
 meta:
   - property: og:title
     content: "UnifiedRemote - Bindings"
   - property: og:description
-    content: "This binding integrates the Unified Remote Server."
+    content: '"This binding integrates the Unified Remote Server."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

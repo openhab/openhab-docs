@@ -3,7 +3,8 @@ id: enturno
 label: EnturNo
 title: EnturNo - Bindings
 type: binding
-description: "This binding gets Norwegian public transport real-time (estimated) data from the [Entur.org API](https://developer.entur.org/pages-intro-overview)."
+description: '"This binding gets Norwegian public transport real-time (estimated)
+  data from the [Entur.org API](https://developer.entur.org/pages-intro-overview)."'
 logo: images/addons/enturno.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.enturno/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "EnturNo - Bindings"
   - property: og:description
-    content: "This binding gets Norwegian public transport real-time (estimated) data from the Entur.org API."
+    content: '"This binding gets Norwegian public transport real-time (estimated)
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

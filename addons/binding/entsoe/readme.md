@@ -3,7 +3,8 @@ id: entsoe
 label: ENTSO-E
 title: ENTSO-E - Bindings
 type: binding
-description: "This binding fetches day-ahead energy spot prices from ENTSO-E, the European Network of Transmission System Operators for Electricity."
+description: '"This binding fetches day-ahead energy spot prices from ENTSO-E, the
+  European Network of Transmission System Operators for Electricity."'
 logo: images/addons/entsoe.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.entsoe/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "ENTSO-E - Bindings"
   - property: og:description
-    content: "This binding fetches day-ahead energy spot prices from ENTSO-E, the European Network of Transmission System Operators for Electricity."
+    content: '"This binding fetches day-ahead energy spot prices from ENTSO-E, the
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

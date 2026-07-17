@@ -3,14 +3,15 @@ id: whisperstt
 label: Whisper Speech-to-Text
 title: Whisper Speech-to-Text - Voices
 type: voice
-description: "Whisper STT Service uses [whisper.cpp](https://github.com/ggerganov/whisper.cpp) to perform offline speech-to-text in openHAB."
+description: '"Whisper STT Service uses [whisper.cpp](https://github.com/ggerganov/whisper.cpp)
+  to perform offline speech-to-text in openHAB."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.whisperstt/README.md
 meta:
   - property: og:title
     content: "Whisper Speech-to-Text - Voices"
   - property: og:description
-    content: "Whisper STT Service uses whisper.cpp to perform offline speech-to-text in openHAB."
+    content: '"Whisper STT Service uses whisper.cpp
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: openweathermap
 label: OpenWeatherMap
 title: OpenWeatherMap - Bindings
 type: binding
-description: "This binding integrates the [OpenWeatherMap weather API](https://openweathermap.org/api)."
+description: '"This binding integrates the [OpenWeatherMap weather API](https://openweathermap.org/api)."'
 logo: images/addons/openweathermap.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.openweathermap/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "OpenWeatherMap - Bindings"
   - property: og:description
-    content: "This binding integrates the OpenWeatherMap weather API."
+    content: '"This binding integrates the OpenWeatherMap weather API."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,14 +3,15 @@ id: smhi
 label: Smhi
 title: Smhi - Bindings
 type: binding
-description: "This binding gets hourly and daily forecast from SMHI - the Swedish Meteorological and Hydrological Institute."
+description: '"This binding gets hourly and daily forecast from SMHI - the Swedish
+  Meteorological and Hydrological Institute."'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.smhi/README.md
 meta:
   - property: og:title
     content: "Smhi - Bindings"
   - property: og:description
-    content: "This binding gets hourly and daily forecast from SMHI - the Swedish Meteorological and Hydrological Institute."
+    content: '"This binding gets hourly and daily forecast from SMHI - the Swedish
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

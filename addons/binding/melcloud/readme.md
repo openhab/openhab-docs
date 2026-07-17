@@ -3,7 +3,7 @@ id: melcloud
 label: MELCloud
 title: MELCloud - Bindings
 type: binding
-description: "This is an openHAB binding for [Mitsubishi MELCloud](https://www.melcloud.com/)."
+description: '"This is an openHAB binding for [Mitsubishi MELCloud](https://www.melcloud.com/)."'
 logo: images/addons/melcloud.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.melcloud/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "MELCloud - Bindings"
   - property: og:description
-    content: "This is an openHAB binding for Mitsubishi MELCloud."
+    content: '"This is an openHAB binding for Mitsubishi MELCloud."'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

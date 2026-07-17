@@ -3,7 +3,8 @@ id: irobot
 label: iRobot
 title: iRobot - Bindings
 type: binding
-description: "This binding provides integration of products by iRobot company (<https://www.irobot.com/>). It is currently developed"
+description: '"This binding provides integration of products by iRobot company (<https://www.irobot.com/>).
+  It is currently developed"'
 logo: images/addons/irobot.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.irobot/README.md
@@ -11,7 +12,7 @@ meta:
   - property: og:title
     content: "iRobot - Bindings"
   - property: og:description
-    content: "This binding provides integration of products by iRobot company (<https://www.irobot.com/>). It is currently developed"
+    content: '"This binding provides integration of products by iRobot company (<https://www.irobot.com/>).
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
