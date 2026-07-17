@@ -3,8 +3,7 @@ id: tasmotaplug
 label: TasmotaPlug
 title: TasmotaPlug - Bindings
 type: binding
-description: '"This binding connects Tasmota flashed smart plugs with 1, 2, 3 or 4
-  relay channels to openHAB."'
+description: "This binding connects Tasmota flashed smart plugs with 1, 2, 3 or 4 relay channels to openHAB."
 logo: images/addons/tasmotaplug.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tasmotaplug/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "TasmotaPlug - Bindings"
   - property: og:description
-    content: '"This binding connects Tasmota flashed smart plugs with 1, 2, 3 or 4
+    content: "This binding connects Tasmota flashed smart plugs with 1, 2, 3 or 4 relay channels to openHAB."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

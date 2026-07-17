@@ -3,7 +3,7 @@ id: cometvisu
 label: CometVisu Backend for openHAB
 title: CometVisu Backend for openHAB - UIs
 type: ui
-description: '"This adds a backend for the web based visualization CometVisu <https://www.cometvisu.org>."'
+description: "This adds a backend for the web based visualization CometVisu <https://www.cometvisu.org>."
 logo: images/addons/cometvisu.png
 install: manual
 source: https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui.cometvisu/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "CometVisu Backend for openHAB - UIs"
   - property: og:description
-    content: '"This adds a backend for the web based visualization CometVisu <https://www.cometvisu.org>."'
+    content: "This adds a backend for the web based visualization CometVisu <https://www.cometvisu.org>."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

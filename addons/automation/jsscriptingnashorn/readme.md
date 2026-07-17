@@ -3,8 +3,7 @@ id: jsscriptingnashorn
 label: JavaScript Scripting (Nashorn)
 title: JavaScript Scripting (Nashorn) - Automation
 type: automation
-description: '"This add-on allows you to use your older ECMAScript 5.1 code on newer
-  Java versions until the code is migrated to ECMAScript 2021+."'
+description: "This add-on allows you to use your older ECMAScript 5.1 code on newer Java versions until the code is migrated to ECMAScript 2021+."
 logo: images/addons/jsscriptingnashorn.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.automation.jsscriptingnashorn/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "JavaScript Scripting (Nashorn) - Automation"
   - property: og:description
-    content: '"This add-on allows you to use your older ECMAScript 5.1 code on newer
+    content: "This add-on allows you to use your older ECMAScript 5.1 code on newer Java versions until the code is migrated to ECMAScript 2021+."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

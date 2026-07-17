@@ -3,14 +3,14 @@ id: pirateweather
 label: Pirate Weather
 title: Pirate Weather - Bindings
 type: binding
-description: '"This binding integrates the [Pirate Weather API](https://pirate-weather.apiable.io/)."'
+description: "This binding integrates the [Pirate Weather API](https://pirate-weather.apiable.io/)."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pirateweather/README.md
 meta:
   - property: og:title
     content: "Pirate Weather - Bindings"
   - property: og:description
-    content: '"This binding integrates the Pirate Weather API."'
+    content: "This binding integrates the Pirate Weather API."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

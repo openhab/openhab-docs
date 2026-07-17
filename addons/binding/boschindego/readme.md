@@ -3,7 +3,7 @@ id: boschindego
 label: Bosch Indego
 title: Bosch Indego - Bindings
 type: binding
-description: '"This is the Binding for Bosch Indego Connect lawn mowers."'
+description: "This is the Binding for Bosch Indego Connect lawn mowers."
 logo: images/addons/boschindego.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.boschindego/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Bosch Indego - Bindings"
   - property: og:description
-    content: '"This is the Binding for Bosch Indego Connect lawn mowers."'
+    content: "This is the Binding for Bosch Indego Connect lawn mowers."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

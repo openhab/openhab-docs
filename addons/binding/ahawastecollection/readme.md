@@ -3,10 +3,7 @@ id: ahawastecollection
 label: aha Waste Collection
 title: aha Waste Collection - Bindings
 type: binding
-description: '"This binding provides information about the upcoming waste collection
-  dates for places, that are served by aha, the waste collection company for the region
-  of Hannover. The values are retrieved from the online aha waste collection schedule
-  available at: [aha Abfuhrkalender](https://www.aha-region.de/abholtermine/abfuhrkalender)."'
+description: "This binding provides information about the upcoming waste collection dates for places, that are served by aha, the waste collection company for the region of Hannover. The values are retrieved from the online aha waste collection schedule available at: [aha Abfuhrkalender](https://www.aha-region.de/abholtermine/abfuhrkalender)."
 logo: images/addons/ahawastecollection.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ahawastecollection/README.md
@@ -14,7 +11,7 @@ meta:
   - property: og:title
     content: "aha Waste Collection - Bindings"
   - property: og:description
-    content: '"This binding provides information about the upcoming waste collection
+    content: "This binding provides information about the upcoming waste collection dates for places, that are served by aha, the waste collection company for the region of Hannover. The values are retrieved from the online aha waste collection schedule available at: aha Abfuhrkalender."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

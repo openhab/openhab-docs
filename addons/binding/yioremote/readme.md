@@ -3,16 +3,14 @@ id: yioremote
 label: YIOremote
 title: YIOremote - Bindings
 type: binding
-description: '"This binding controls a YIO Remote/Dock setup. YIO Remote/Dock is a
-  smart-home solution that includes an IP‑based remote. More information is available
-  at [yio-remote.com](https://www.yio-remote.com/) or in the [community forum](https://community.yio-remote.com/)."'
+description: "This binding controls a YIO Remote/Dock setup. YIO Remote/Dock is a smart-home solution that includes an IP‑based remote. More information is available at [yio-remote.com](https://www.yio-remote.com/) or in the [community forum](https://community.yio-remote.com/)."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.yioremote/README.md
 meta:
   - property: og:title
     content: "YIOremote - Bindings"
   - property: og:description
-    content: '"This binding controls a YIO Remote/Dock setup. YIO Remote/Dock is a
+    content: "This binding controls a YIO Remote/Dock setup. YIO Remote/Dock is a smart-home solution that includes an IP‑based remote. More information is available at yio-remote.com or in the community forum."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: enigma2
 label: Enigma2
 title: Enigma2 - Bindings
 type: binding
-description: '"The binding integrates Enigma2 devices."'
+description: "The binding integrates Enigma2 devices."
 logo: images/addons/enigma2.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.enigma2/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Enigma2 - Bindings"
   - property: og:description
-    content: '"The binding integrates Enigma2 devices."'
+    content: "The binding integrates Enigma2 devices."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

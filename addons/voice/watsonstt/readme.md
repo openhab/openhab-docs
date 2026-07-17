@@ -3,8 +3,7 @@ id: watsonstt
 label: IBM Watson Speech-to-Text
 title: IBM Watson Speech-to-Text - Voices
 type: voice
-description: '"Watson STT Service uses the non-free IBM Watson Speech-to-Text API
-  to transcript audio data to text."'
+description: "Watson STT Service uses the non-free IBM Watson Speech-to-Text API to transcript audio data to text."
 logo: images/addons/watsonstt.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.watsonstt/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "IBM Watson Speech-to-Text - Voices"
   - property: og:description
-    content: '"Watson STT Service uses the non-free IBM Watson Speech-to-Text API
+    content: "Watson STT Service uses the non-free IBM Watson Speech-to-Text API to transcript audio data to text."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

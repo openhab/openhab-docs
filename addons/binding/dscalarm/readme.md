@@ -3,9 +3,7 @@ id: dscalarm
 label: DSC Alarm
 title: DSC Alarm - Bindings
 type: binding
-description: '"The DSC PowerSeries Alarm System is a popular do-it-yourself home security
-  system, which can be monitored and controlled remotely through a standard web-browser
-  or mobile device."'
+description: "The DSC PowerSeries Alarm System is a popular do-it-yourself home security system, which can be monitored and controlled remotely through a standard web-browser or mobile device."
 logo: images/addons/dscalarm.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.dscalarm/README.md
@@ -13,7 +11,7 @@ meta:
   - property: og:title
     content: "DSC Alarm - Bindings"
   - property: og:description
-    content: '"The DSC PowerSeries Alarm System is a popular do-it-yourself home security
+    content: "The DSC PowerSeries Alarm System is a popular do-it-yourself home security system, which can be monitored and controlled remotely through a standard web-browser or mobile device."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

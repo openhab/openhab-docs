@@ -3,8 +3,7 @@ id: haassohnpelletstove
 label: Haas+Sohn Pellet Stove
 title: Haas+Sohn Pellet Stove - Bindings
 type: binding
-description: '"This binding communicates with a Haas+Sohn pellet stove through the
-  optional Wi‑Fi module."'
+description: "This binding communicates with a Haas+Sohn pellet stove through the optional Wi‑Fi module."
 logo: images/addons/haassohnpelletstove.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.haassohnpelletstove/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Haas+Sohn Pellet Stove - Bindings"
   - property: og:description
-    content: '"This binding communicates with a Haas+Sohn pellet stove through the
+    content: "This binding communicates with a Haas+Sohn pellet stove through the optional Wi‑Fi module."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

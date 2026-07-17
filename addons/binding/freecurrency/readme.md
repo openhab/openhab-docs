@@ -3,8 +3,7 @@ id: freecurrency
 label: Freecurrency
 title: Freecurrency - Bindings
 type: binding
-description: '"The Freecurrency binding connects [Freecurrency API](https://freecurrencyapi.com)
-  to openHAB."'
+description: "The Freecurrency binding connects [Freecurrency API](https://freecurrencyapi.com) to openHAB."
 logo: images/addons/freecurrency.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.freecurrency/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Freecurrency - Bindings"
   - property: og:description
-    content: '"The Freecurrency binding connects Freecurrency API
+    content: "The Freecurrency binding connects Freecurrency API to openHAB."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

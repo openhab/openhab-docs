@@ -3,7 +3,7 @@ id: flicbutton
 label: Flic Button
 title: Flic Button - Bindings
 type: binding
-description: '"openHAB binding for using [Flic Buttons](https://flic.io/)"'
+description: "openHAB binding for using [Flic Buttons](https://flic.io/)"
 logo: images/addons/flicbutton.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.flicbutton/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Flic Button - Bindings"
   - property: og:description
-    content: '"openHAB binding for using Flic Buttons"'
+    content: "openHAB binding for using Flic Buttons"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

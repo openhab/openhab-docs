@@ -3,8 +3,7 @@ id: twilio
 label: Twilio
 title: Twilio - Bindings
 type: binding
-description: '"This binding integrates with the [Twilio](https://www.twilio.com/)
-  cloud communications platform."'
+description: "This binding integrates with the [Twilio](https://www.twilio.com/) cloud communications platform."
 logo: images/addons/twilio.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.twilio/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Twilio - Bindings"
   - property: og:description
-    content: '"This binding integrates with the Twilio
+    content: "This binding integrates with the Twilio cloud communications platform."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

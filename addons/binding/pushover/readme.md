@@ -3,8 +3,7 @@ id: pushover
 label: Pushover
 title: Pushover - Bindings
 type: binding
-description: '"This binding allows you to notify mobile devices using the [Pushover
-  REST API](https://pushover.net/api)."'
+description: "This binding allows you to notify mobile devices using the [Pushover REST API](https://pushover.net/api)."
 logo: images/addons/pushover.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pushover/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Pushover - Bindings"
   - property: og:description
-    content: '"This binding allows you to notify mobile devices using the Pushover
+    content: "This binding allows you to notify mobile devices using the Pushover REST API."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

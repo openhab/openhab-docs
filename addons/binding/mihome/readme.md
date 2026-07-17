@@ -3,8 +3,7 @@ id: mihome
 label: Xiaomi Mi Smart Home
 title: Xiaomi Mi Smart Home - Bindings
 type: binding
-description: '"This binding allows your openHAB to communicate with the Xiaomi Smart
-  Home Suite."'
+description: "This binding allows your openHAB to communicate with the Xiaomi Smart Home Suite."
 logo: images/addons/mihome.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mihome/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Xiaomi Mi Smart Home - Bindings"
   - property: og:description
-    content: '"This binding allows your openHAB to communicate with the Xiaomi Smart
+    content: "This binding allows your openHAB to communicate with the Xiaomi Smart Home Suite."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

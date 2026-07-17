@@ -3,15 +3,14 @@ id: senseenergy
 label: SenseEnergy
 title: SenseEnergy - Bindings
 type: binding
-description: '"This binding supports the Sense Energy monitor (sense.com) which can
-  be used to provide accurate energy usage statistics in the home."'
+description: "This binding supports the Sense Energy monitor (sense.com) which can be used to provide accurate energy usage statistics in the home."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.senseenergy/README.md
 meta:
   - property: og:title
     content: "SenseEnergy - Bindings"
   - property: og:description
-    content: '"This binding supports the Sense Energy monitor (sense.com) which can
+    content: "This binding supports the Sense Energy monitor (sense.com) which can be used to provide accurate energy usage statistics in the home."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

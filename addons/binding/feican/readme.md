@@ -3,8 +3,7 @@ id: feican
 label: Feican
 title: Feican - Bindings
 type: binding
-description: '"This binding adds support for the Feican Wi-Fi version of the smart
-  light LED Bulb, the WiFi RGBW Bulb."'
+description: "This binding adds support for the Feican Wi-Fi version of the smart light LED Bulb, the WiFi RGBW Bulb."
 logo: images/addons/feican.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.feican/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Feican - Bindings"
   - property: og:description
-    content: '"This binding adds support for the Feican Wi-Fi version of the smart
+    content: "This binding adds support for the Feican Wi-Fi version of the smart light LED Bulb, the WiFi RGBW Bulb."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

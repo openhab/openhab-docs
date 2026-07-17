@@ -3,7 +3,7 @@ id: dlinksmarthome
 label: D-Link Smart Home
 title: D-Link Smart Home - Bindings
 type: binding
-description: '"A binding for D-Link Smart Home devices."'
+description: "A binding for D-Link Smart Home devices."
 logo: images/addons/dlinksmarthome.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.dlinksmarthome/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "D-Link Smart Home - Bindings"
   - property: og:description
-    content: '"A binding for D-Link Smart Home devices."'
+    content: "A binding for D-Link Smart Home devices."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,15 +3,14 @@ id: serialbutton
 label: Serial Button
 title: Serial Button - Bindings
 type: binding
-description: '"This is a binding for probably one of the simplest devices possible:
-  a simple push button which shorts two pins on a serial port."'
+description: "This is a binding for probably one of the simplest devices possible: a simple push button which shorts two pins on a serial port."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.serialbutton/README.md
 meta:
   - property: og:title
     content: "Serial Button - Bindings"
   - property: og:description
-    content: '"This is a binding for probably one of the simplest devices possible:
+    content: "This is a binding for probably one of the simplest devices possible: a simple push button which shorts two pins on a serial port."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

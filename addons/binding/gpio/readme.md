@@ -3,7 +3,7 @@ id: gpio
 label: GPIO
 title: GPIO - Bindings
 type: binding
-description: '"This binding adds GPIO support via the pigpiod daemon to openHAB."'
+description: "This binding adds GPIO support via the pigpiod daemon to openHAB."
 logo: images/addons/gpio.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.gpio/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "GPIO - Bindings"
   - property: og:description
-    content: '"This binding adds GPIO support via the pigpiod daemon to openHAB."'
+    content: "This binding adds GPIO support via the pigpiod daemon to openHAB."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

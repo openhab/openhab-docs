@@ -3,8 +3,7 @@ id: wolfsmartset
 label: Wolf Smartset
 title: Wolf Smartset - Bindings
 type: binding
-description: '"This binding communicates with the <www.wolf-smartset.de> API and provides
-  values readonly."'
+description: "This binding communicates with the <www.wolf-smartset.de> API and provides values readonly."
 logo: images/addons/wolfsmartset.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.wolfsmartset/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Wolf Smartset - Bindings"
   - property: og:description
-    content: '"This binding communicates with the <www.wolf-smartset.de> API and provides
+    content: "This binding communicates with the <www.wolf-smartset.de> API and provides values readonly."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

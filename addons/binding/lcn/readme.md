@@ -3,8 +3,7 @@ id: lcn
 label: LCN
 title: LCN - Bindings
 type: binding
-description: '"[Local Control Network (LCN)](https://www.lcn.eu) is a building automation
-  system."'
+description: "[Local Control Network (LCN)](https://www.lcn.eu) is a building automation system."
 logo: images/addons/lcn.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.lcn/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "LCN - Bindings"
   - property: og:description
-    content: '"Local Control Network (LCN) is a building automation
+    content: "Local Control Network (LCN) is a building automation system."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

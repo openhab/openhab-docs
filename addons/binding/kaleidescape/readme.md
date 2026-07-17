@@ -3,8 +3,7 @@ id: kaleidescape
 label: Kaleidescape
 title: Kaleidescape - Bindings
 type: binding
-description: '"This binding now makes it possible to easily integrate almost all of
-  the capabilities of the Kaleidescape control protocol into openHAB."'
+description: "This binding now makes it possible to easily integrate almost all of the capabilities of the Kaleidescape control protocol into openHAB."
 logo: images/addons/kaleidescape.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.kaleidescape/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Kaleidescape - Bindings"
   - property: og:description
-    content: '"This binding now makes it possible to easily integrate almost all of
+    content: "This binding now makes it possible to easily integrate almost all of the capabilities of the Kaleidescape control protocol into openHAB."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

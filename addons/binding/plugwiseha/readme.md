@@ -3,8 +3,7 @@ id: plugwiseha
 label: PlugwiseHA
 title: PlugwiseHA - Bindings
 type: binding
-description: '"The Plugwise Home Automation binding adds support to openHAB for the
-  [Plugwise Home Automation ecosystem](https://www.plugwise.com/en_US/adam_zone_control)."'
+description: "The Plugwise Home Automation binding adds support to openHAB for the [Plugwise Home Automation ecosystem](https://www.plugwise.com/en_US/adam_zone_control)."
 logo: images/addons/plugwiseha.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.plugwiseha/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "PlugwiseHA - Bindings"
   - property: og:description
-    content: '"The Plugwise Home Automation binding adds support to openHAB for the
+    content: "The Plugwise Home Automation binding adds support to openHAB for the Plugwise Home Automation ecosystem(https://www.plugwise.com/en_US/adam_zone_control)."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

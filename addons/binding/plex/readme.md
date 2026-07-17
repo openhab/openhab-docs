@@ -3,8 +3,7 @@ id: plex
 label: PLEX
 title: PLEX - Bindings
 type: binding
-description: '"This binding can read information from multiple PLEX players connected
-  to a PLEX server."'
+description: "This binding can read information from multiple PLEX players connected to a PLEX server."
 logo: images/addons/plex.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.plex/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "PLEX - Bindings"
   - property: og:description
-    content: '"This binding can read information from multiple PLEX players connected
+    content: "This binding can read information from multiple PLEX players connected to a PLEX server."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

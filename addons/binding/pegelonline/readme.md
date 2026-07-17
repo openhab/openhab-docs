@@ -3,7 +3,7 @@ id: pegelonline
 label: PegelOnline
 title: PegelOnline - Bindings
 type: binding
-description: '"Binding to observe water levels from German rivers."'
+description: "Binding to observe water levels from German rivers."
 logo: images/addons/pegelonline.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pegelonline/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "PegelOnline - Bindings"
   - property: og:description
-    content: '"Binding to observe water levels from German rivers."'
+    content: "Binding to observe water levels from German rivers."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

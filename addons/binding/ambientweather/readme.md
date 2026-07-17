@@ -3,8 +3,7 @@ id: ambientweather
 label: Ambient Weather
 title: Ambient Weather - Bindings
 type: binding
-description: '"The Ambient Weather binding integrates weather station data that''s
-  stored on the Ambient Weather online service."'
+description: "The Ambient Weather binding integrates weather station data that's stored on the Ambient Weather online service."
 logo: images/addons/ambientweather.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ambientweather/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Ambient Weather - Bindings"
   - property: og:description
-    content: '"The Ambient Weather binding integrates weather station data that''s
+    content: "The Ambient Weather binding integrates weather station data that's stored on the Ambient Weather online service."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

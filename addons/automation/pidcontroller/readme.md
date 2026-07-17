@@ -3,8 +3,7 @@ id: pidcontroller
 label: PID Controller Automation
 title: PID Controller Automation - Automation
 type: automation
-description: '"This automation implements a [PID](https://en.wikipedia.org/wiki/PID_controller)-T1
-  controller for openHAB."'
+description: "This automation implements a [PID](https://en.wikipedia.org/wiki/PID_controller)-T1 controller for openHAB."
 logo: images/addons/pidcontroller.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.automation.pidcontroller/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "PID Controller Automation - Automation"
   - property: og:description
-    content: '"This automation implements a PID(https://en.wikipedia.org/wiki/PID_controller)-T1
+    content: "This automation implements a PID(https://en.wikipedia.org/wiki/PID_controller)-T1 controller for openHAB."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,8 +3,7 @@ id: iotawatt
 label: IoTaWatt
 title: IoTaWatt - Bindings
 type: binding
-description: '"This binding integrates [IoTaWatt™ Open WiFi Electric Power Monitor](https://iotawatt.com/)
-  into openHAB."'
+description: "This binding integrates [IoTaWatt™ Open WiFi Electric Power Monitor](https://iotawatt.com/) into openHAB."
 logo: images/addons/iotawatt.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.iotawatt/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "IoTaWatt - Bindings"
   - property: og:description
-    content: '"This binding integrates IoTaWatt™ Open WiFi Electric Power Monitor
+    content: "This binding integrates IoTaWatt™ Open WiFi Electric Power Monitor into openHAB."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

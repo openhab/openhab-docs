@@ -3,8 +3,7 @@ id: renault
 label: Renault
 title: Renault - Bindings
 type: binding
-description: '"This binding allows MyRenault App. users to get battery status and
-  other data from their cars."'
+description: "This binding allows MyRenault App. users to get battery status and other data from their cars."
 logo: images/addons/renault.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.renault/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Renault - Bindings"
   - property: og:description
-    content: '"This binding allows MyRenault App. users to get battery status and
+    content: "This binding allows MyRenault App. users to get battery status and other data from their cars."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,9 +3,7 @@ id: yamahareceiver
 label: Yamaha Receiver
 title: Yamaha Receiver - Bindings
 type: binding
-description: '"This binding connects openHAB with Yamaha receivers of product lines
-  CX-A5000, RX-A860, RX-A30xx, RX-A20xx, RX-A10xx, RX-Vxxx, RX-Z7, DSP-Z7, RX-S600,
-  RX-S601D, HTR-xxxx."'
+description: "This binding connects openHAB with Yamaha receivers of product lines CX-A5000, RX-A860, RX-A30xx, RX-A20xx, RX-A10xx, RX-Vxxx, RX-Z7, DSP-Z7, RX-S600, RX-S601D, HTR-xxxx."
 logo: images/addons/yamahareceiver.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.yamahareceiver/README.md
@@ -13,7 +11,7 @@ meta:
   - property: og:title
     content: "Yamaha Receiver - Bindings"
   - property: og:description
-    content: '"This binding connects openHAB with Yamaha receivers of product lines
+    content: "This binding connects openHAB with Yamaha receivers of product lines CX-A5000, RX-A860, RX-A30xx, RX-A20xx, RX-A10xx, RX-Vxxx, RX-Z7, DSP-Z7, RX-S600, RX-S601D, HTR-xxxx."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

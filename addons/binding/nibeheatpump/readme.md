@@ -3,8 +3,7 @@ id: nibeheatpump
 label: Nibe Heatpump
 title: Nibe Heatpump - Bindings
 type: binding
-description: '"The Nibe Heatpump binding is used to get live data from Nibe heat pumps
-  without using an expensive MODBUS40 adapter."'
+description: "The Nibe Heatpump binding is used to get live data from Nibe heat pumps without using an expensive MODBUS40 adapter."
 logo: images/addons/nibeheatpump.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.nibeheatpump/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Nibe Heatpump - Bindings"
   - property: og:description
-    content: '"The Nibe Heatpump binding is used to get live data from Nibe heat pumps
+    content: "The Nibe Heatpump binding is used to get live data from Nibe heat pumps without using an expensive MODBUS40 adapter."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

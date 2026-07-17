@@ -3,8 +3,7 @@ id: denonmarantz
 label: Denon / Marantz
 title: Denon / Marantz - Bindings
 type: binding
-description: '"This binding integrates Denon & Marantz AV receivers by using either
-  Telnet or a (undocumented) HTTP API."'
+description: "This binding integrates Denon & Marantz AV receivers by using either Telnet or a (undocumented) HTTP API."
 logo: images/addons/denonmarantz.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.denonmarantz/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Denon / Marantz - Bindings"
   - property: og:description
-    content: '"This binding integrates Denon & Marantz AV receivers by using either
+    content: "This binding integrates Denon & Marantz AV receivers by using either Telnet or a (undocumented) HTTP API."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

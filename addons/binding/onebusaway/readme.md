@@ -3,8 +3,7 @@ id: onebusaway
 label: OneBusAway
 title: OneBusAway - Bindings
 type: binding
-description: '"[OneBusAway](https://onebusaway.org/) is an open source, real-time,
-  transit-information service."'
+description: "[OneBusAway](https://onebusaway.org/) is an open source, real-time, transit-information service."
 logo: images/addons/onebusaway.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.onebusaway/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "OneBusAway - Bindings"
   - property: og:description
-    content: '"OneBusAway is an open source, real-time,
+    content: "OneBusAway is an open source, real-time, transit-information service."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,15 +3,14 @@ id: adorne
 label: Adorne
 title: Adorne - Bindings
 type: binding
-description: '"The Adorne Binding integrates [Adorne Wi-Fi ready devices](https://www.legrand.us/adorne/products/wireless-whole-house-lighting-controls.aspx)
-  (switches, dimmers, outlets) from [Legrand](https://legrand.com/)."'
+description: "The Adorne Binding integrates [Adorne Wi-Fi ready devices](https://www.legrand.us/adorne/products/wireless-whole-house-lighting-controls.aspx) (switches, dimmers, outlets) from [Legrand](https://legrand.com/)."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.adorne/README.md
 meta:
   - property: og:title
     content: "Adorne - Bindings"
   - property: og:description
-    content: '"The Adorne Binding integrates Adorne Wi-Fi ready devices
+    content: "The Adorne Binding integrates Adorne Wi-Fi ready devices (switches, dimmers, outlets) from Legrand."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

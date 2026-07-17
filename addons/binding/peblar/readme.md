@@ -3,15 +3,14 @@ id: peblar
 label: Peblar
 title: Peblar - Bindings
 type: binding
-description: '"This binding integrates the [Peblar EV Charger](https://www.peblar.com)
-  via its local REST API."'
+description: "This binding integrates the [Peblar EV Charger](https://www.peblar.com) via its local REST API."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.peblar/README.md
 meta:
   - property: og:title
     content: "Peblar - Bindings"
   - property: og:description
-    content: '"This binding integrates the Peblar EV Charger
+    content: "This binding integrates the Peblar EV Charger via its local REST API."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

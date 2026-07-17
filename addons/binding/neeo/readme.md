@@ -3,7 +3,7 @@ id: neeo
 label: NEEO
 title: NEEO - Bindings
 type: binding
-description: '"This binding will discover and control a NEEO Brain/Remote combination."'
+description: "This binding will discover and control a NEEO Brain/Remote combination."
 logo: images/addons/neeo.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.neeo/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "NEEO - Bindings"
   - property: og:description
-    content: '"This binding will discover and control a NEEO Brain/Remote combination."'
+    content: "This binding will discover and control a NEEO Brain/Remote combination."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

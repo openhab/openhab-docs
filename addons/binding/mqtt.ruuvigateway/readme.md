@@ -3,8 +3,7 @@ id: mqtt.ruuvigateway
 label: Ruuvi Gateway MQTT
 title: Ruuvi Gateway MQTT - Bindings
 type: binding
-description: '"This binding allows integration of Ruuvi sensors via MQTT data, as
-  collected by [Ruuvi Gateway](https://ruuvi.com/gateway/)."'
+description: "This binding allows integration of Ruuvi sensors via MQTT data, as collected by [Ruuvi Gateway](https://ruuvi.com/gateway/)."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mqtt.ruuvigateway/README.md
 prev: ../mqtt/
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Ruuvi Gateway MQTT - Bindings"
   - property: og:description
-    content: '"This binding allows integration of Ruuvi sensors via MQTT data, as
+    content: "This binding allows integration of Ruuvi sensors via MQTT data, as collected by Ruuvi Gateway."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

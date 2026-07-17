@@ -3,8 +3,7 @@ id: airquality
 label: Air Quality
 title: Air Quality - Bindings
 type: binding
-description: '"This binding uses the [AQIcn.org service](https://aqicn.org) for providing
-  air quality information for any location worldwide."'
+description: "This binding uses the [AQIcn.org service](https://aqicn.org) for providing air quality information for any location worldwide."
 logo: images/addons/airquality.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.airquality/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Air Quality - Bindings"
   - property: og:description
-    content: '"This binding uses the AQIcn.org service for providing
+    content: "This binding uses the AQIcn.org service for providing air quality information for any location worldwide."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,15 +3,14 @@ id: pixometer
 label: Pixometer
 title: Pixometer - Bindings
 type: binding
-description: '"This binding connects to the pixometer API, which can manage your meter
-  readings through a native smartphone app."'
+description: "This binding connects to the pixometer API, which can manage your meter readings through a native smartphone app."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pixometer/README.md
 meta:
   - property: og:title
     content: "Pixometer - Bindings"
   - property: og:description
-    content: '"This binding connects to the pixometer API, which can manage your meter
+    content: "This binding connects to the pixometer API, which can manage your meter readings through a native smartphone app."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

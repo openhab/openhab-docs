@@ -3,7 +3,7 @@ id: metofficedatahub
 label: Met Office DataHub
 title: Met Office DataHub - Bindings
 type: binding
-description: '"This binding is for the UK Based Met Office Data Hub, weather service."'
+description: "This binding is for the UK Based Met Office Data Hub, weather service."
 logo: images/addons/metofficedatahub.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.metofficedatahub/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Met Office DataHub - Bindings"
   - property: og:description
-    content: '"This binding is for the UK Based Met Office Data Hub, weather service."'
+    content: "This binding is for the UK Based Met Office Data Hub, weather service."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

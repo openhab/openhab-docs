@@ -3,8 +3,7 @@ id: mielecloud
 label: Miele Cloud
 title: Miele Cloud - Bindings
 type: binding
-description: '"This binding integrates [Miele@home](https://www.miele.de/brand/smarthome-42801.htm)
-  appliances via a cloud connection."'
+description: "This binding integrates [Miele@home](https://www.miele.de/brand/smarthome-42801.htm) appliances via a cloud connection."
 logo: images/addons/mielecloud.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mielecloud/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Miele Cloud - Bindings"
   - property: og:description
-    content: '"This binding integrates Miele@home
+    content: "This binding integrates Miele@home appliances via a cloud connection."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

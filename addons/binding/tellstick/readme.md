@@ -3,8 +3,7 @@ id: tellstick
 label: Tellstick
 title: Tellstick - Bindings
 type: binding
-description: '"This is an openHAB binding for Tellstick devices produced by Telldus,
-  a Swedish company based in Lund."'
+description: "This is an openHAB binding for Tellstick devices produced by Telldus, a Swedish company based in Lund."
 logo: images/addons/tellstick.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tellstick/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Tellstick - Bindings"
   - property: og:description
-    content: '"This is an openHAB binding for Tellstick devices produced by Telldus,
+    content: "This is an openHAB binding for Tellstick devices produced by Telldus, a Swedish company based in Lund."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

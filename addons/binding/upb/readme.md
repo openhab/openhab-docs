@@ -3,8 +3,7 @@ id: upb
 label: UPB
 title: UPB - Bindings
 type: binding
-description: '"Universal Powerline Bus (UPB) is a protocol for communication over
-  household electrical wiring."'
+description: "Universal Powerline Bus (UPB) is a protocol for communication over household electrical wiring."
 logo: images/addons/upb.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.upb/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "UPB - Bindings"
   - property: og:description
-    content: '"Universal Powerline Bus (UPB) is a protocol for communication over
+    content: "Universal Powerline Bus (UPB) is a protocol for communication over household electrical wiring."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

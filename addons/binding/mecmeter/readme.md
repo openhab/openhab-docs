@@ -3,8 +3,7 @@ id: mecmeter
 label: MecMeter
 title: MecMeter - Bindings
 type: binding
-description: '"This binding reads data from MEC power meter for providing electrical
-  information for the electric circuit."'
+description: "This binding reads data from MEC power meter for providing electrical information for the electric circuit."
 logo: images/addons/mecmeter.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mecmeter/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "MecMeter - Bindings"
   - property: og:description
-    content: '"This binding reads data from MEC power meter for providing electrical
+    content: "This binding reads data from MEC power meter for providing electrical information for the electric circuit."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: androiddebugbridge
 label: Android Debug Bridge
 title: Android Debug Bridge - Bindings
 type: binding
-description: '":::warning"'
+description: ":::warning"
 logo: images/addons/androiddebugbridge.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.androiddebugbridge/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Android Debug Bridge - Bindings"
   - property: og:description
-    content: '":::warning"'
+    content: ":::warning"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

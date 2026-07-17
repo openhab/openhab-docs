@@ -3,7 +3,7 @@ id: modbus.sungrow
 label: Modbus Sungrow
 title: Modbus Sungrow - Bindings
 type: binding
-description: '"This binding integrates the Sungrow inverters into openHAB."'
+description: "This binding integrates the Sungrow inverters into openHAB."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.modbus.sungrow/README.md
 prev: ../modbus/
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Modbus Sungrow - Bindings"
   - property: og:description
-    content: '"This binding integrates the Sungrow inverters into openHAB."'
+    content: "This binding integrates the Sungrow inverters into openHAB."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

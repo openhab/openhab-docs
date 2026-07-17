@@ -3,7 +3,7 @@ id: astro
 label: Astro
 title: Astro - Bindings
 type: binding
-description: '"The Astro binding is used for calculating"'
+description: "The Astro binding is used for calculating"
 logo: images/addons/astro.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.astro/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Astro - Bindings"
   - property: og:description
-    content: '"The Astro binding is used for calculating"'
+    content: "The Astro binding is used for calculating"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

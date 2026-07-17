@@ -3,8 +3,7 @@ id: digiplex
 label: Digiplex/EVO
 title: Digiplex/EVO - Bindings
 type: binding
-description: '"This binding provides integration with Digiplex/EVO alarm systems from
-  [Paradox](https://paradox.com)."'
+description: "This binding provides integration with Digiplex/EVO alarm systems from [Paradox](https://paradox.com)."
 logo: images/addons/digiplex.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.digiplex/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Digiplex/EVO - Bindings"
   - property: og:description
-    content: '"This binding provides integration with Digiplex/EVO alarm systems from
+    content: "This binding provides integration with Digiplex/EVO alarm systems from Paradox."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

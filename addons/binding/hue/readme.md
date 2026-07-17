@@ -3,27 +3,28 @@ id: hue
 label: Philips Hue
 title: Philips Hue - Bindings
 type: binding
-description: '"This binding integrates the [Philips Hue Lighting system](https://www.meethue.com)."'
+description: "This binding integrates the [Philips Hue Lighting system](https://www.meethue.com)."
 logo: images/addons/hue.png
 install: manual
-children:
-- - doc/readme_v1
-  - Configuration API v1
-- - doc/readme_v2
-  - Configuration API v2
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.hue/README.md
 meta:
   - property: og:title
     content: "Philips Hue - Bindings"
   - property: og:description
-    content: '"This binding integrates the Philips Hue Lighting system."'
+    content: "This binding integrates the Philips Hue Lighting system."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # Philips Hue Binding
 
-<AddonLogo />
+<AddonLogo />---
+children:
+  - ["doc/readme_v1", "Configuration API v1"]
+  - ["doc/readme_v2", "Configuration API v2"]
+---
+
+
 
 This binding integrates the [Philips Hue Lighting system](https://www.meethue.com).
 The integration happens through the Hue Bridge, which acts as an IP gateway to the Zigbee devices.

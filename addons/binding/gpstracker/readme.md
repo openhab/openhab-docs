@@ -3,8 +3,7 @@ id: gpstracker
 label: GPSTracker
 title: GPSTracker - Bindings
 type: binding
-description: '"This binding allows you to connect mobile GPS tracker applications
-  to openHAB and process GPS location reports."'
+description: "This binding allows you to connect mobile GPS tracker applications to openHAB and process GPS location reports."
 logo: images/addons/gpstracker.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.gpstracker/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "GPSTracker - Bindings"
   - property: og:description
-    content: '"This binding allows you to connect mobile GPS tracker applications
+    content: "This binding allows you to connect mobile GPS tracker applications to openHAB and process GPS location reports."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

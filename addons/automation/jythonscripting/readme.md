@@ -3,10 +3,7 @@ id: jythonscripting
 label: Jython Scripting
 title: Jython Scripting - Automation
 type: automation
-description: '"This add-on provides [Jython](https://www.jython.org/) 2.7 that can
-  be used as a scripting language within automation rules and which eliminates the
-  need to download Jython and create `EXTRA_JAVA_OPTS` entries for `bootclasspath`,
-  `python.home` and `python.path`."'
+description: "This add-on provides [Jython](https://www.jython.org/) 2.7 that can be used as a scripting language within automation rules and which eliminates the need to download Jython and create `EXTRA_JAVA_OPTS` entries for `bootclasspath`, `python.home` and `python.path`."
 logo: images/addons/jythonscripting.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.automation.jythonscripting/README.md
@@ -14,7 +11,7 @@ meta:
   - property: og:title
     content: "Jython Scripting - Automation"
   - property: og:description
-    content: '"This add-on provides Jython 2.7 that can
+    content: "This add-on provides Jython 2.7 that can be used as a scripting language within automation rules and which eliminates the need to download Jython and create `EXTRA_JAVA_OPTS` entries for `bootclasspath`, `python.home` and `python.path`."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,8 +3,7 @@ id: tivo
 label: TiVo
 title: TiVo - Bindings
 type: binding
-description: '"This binding controls a [TiVo](https://www.tivo.com/) Digital Video
-  Recorder (DVR) that supports the TiVo TCP Control Protocol v1.1 (see TiVo_TCP_Network_Remote_Control_Protocol.pdf)."'
+description: "This binding controls a [TiVo](https://www.tivo.com/) Digital Video Recorder (DVR) that supports the TiVo TCP Control Protocol v1.1 (see TiVo_TCP_Network_Remote_Control_Protocol.pdf)."
 logo: images/addons/tivo.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tivo/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "TiVo - Bindings"
   - property: og:description
-    content: '"This binding controls a TiVo Digital Video
+    content: "This binding controls a TiVo Digital Video Recorder (DVR) that supports the TiVo TCP Control Protocol v1.1 (see TiVo_TCP_Network_Remote_Control_Protocol.pdf)."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

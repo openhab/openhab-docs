@@ -3,7 +3,7 @@ id: froniuswattpilot
 label: Fronius Wattpilot
 title: Fronius Wattpilot - Bindings
 type: binding
-description: '"This binding integrates the [Fronius Wattpilot EV charging stations](https://www.fronius.com/en-gb/uk/solar-energy/installers-partners/products-solutions/residential-energy-solutions/e-mobility-and-photovoltaic-residential/wattpilot-ev-charging-solution-for-homes)"'
+description: "This binding integrates the [Fronius Wattpilot EV charging stations](https://www.fronius.com/en-gb/uk/solar-energy/installers-partners/products-solutions/residential-energy-solutions/e-mobility-and-photovoltaic-residential/wattpilot-ev-charging-solution-for-homes)"
 logo: images/addons/froniuswattpilot.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.froniuswattpilot/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Fronius Wattpilot - Bindings"
   - property: og:description
-    content: '"This binding integrates the Fronius Wattpilot EV charging stations"'
+    content: "This binding integrates the Fronius Wattpilot EV charging stations"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

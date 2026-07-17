@@ -3,8 +3,7 @@ id: nuvo
 label: Nuvo Grand Concerto & Essentia G
 title: Nuvo Grand Concerto & Essentia G - Bindings
 type: binding
-description: '"This binding can be used to control the Nuvo Grand Concerto or Essentia
-  G whole house multi-zone amplifier."'
+description: "This binding can be used to control the Nuvo Grand Concerto or Essentia G whole house multi-zone amplifier."
 logo: images/addons/nuvo.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.nuvo/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Nuvo Grand Concerto & Essentia G - Bindings"
   - property: og:description
-    content: '"This binding can be used to control the Nuvo Grand Concerto or Essentia
+    content: "This binding can be used to control the Nuvo Grand Concerto or Essentia G whole house multi-zone amplifier."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,8 +3,7 @@ id: meater
 label: MEATER
 title: MEATER - Bindings
 type: binding
-description: '"This is an openHAB binding for the MEATER probe, MEATER® is a trademark
-  of Apption Labs™ Limited. A Traeger Company."'
+description: "This is an openHAB binding for the MEATER probe, MEATER® is a trademark of Apption Labs™ Limited. A Traeger Company."
 logo: images/addons/meater.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.meater/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "MEATER - Bindings"
   - property: og:description
-    content: '"This is an openHAB binding for the MEATER probe, MEATER® is a trademark
+    content: "This is an openHAB binding for the MEATER probe, MEATER® is a trademark of Apption Labs™ Limited. A Traeger Company."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

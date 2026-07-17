@@ -3,8 +3,7 @@ id: bluetooth.daikinmadoka
 label: DaikinMadoka
 title: DaikinMadoka - Bindings
 type: binding
-description: '"This extension implements communication with Daikin Madoka BRC1H thermostat
-  over Bluetooth Low Energy (BLE) communication protocol."'
+description: "This extension implements communication with Daikin Madoka BRC1H thermostat over Bluetooth Low Energy (BLE) communication protocol."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.daikinmadoka/README.md
 prev: ../bluetooth/
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "DaikinMadoka - Bindings"
   - property: og:description
-    content: '"This extension implements communication with Daikin Madoka BRC1H thermostat
+    content: "This extension implements communication with Daikin Madoka BRC1H thermostat over Bluetooth Low Energy (BLE) communication protocol."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,8 +3,7 @@ id: vitotronic
 label: Vitotronic
 title: Vitotronic - Bindings
 type: binding
-description: '"Viessmann heating systems with Vitotronic has an optolink Interface
-  for maintenance."'
+description: "Viessmann heating systems with Vitotronic has an optolink Interface for maintenance."
 logo: images/addons/vitotronic.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.vitotronic/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Vitotronic - Bindings"
   - property: og:description
-    content: '"Viessmann heating systems with Vitotronic has an optolink Interface
+    content: "Viessmann heating systems with Vitotronic has an optolink Interface for maintenance."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

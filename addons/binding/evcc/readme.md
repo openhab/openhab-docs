@@ -3,8 +3,7 @@ id: evcc
 label: evcc
 title: evcc - Bindings
 type: binding
-description: '"This binding integrates [evcc](https://evcc.io), an extensible **E**lectric
-  **V**ehicle **C**harge **C**ontroller and home energy management system."'
+description: "This binding integrates [evcc](https://evcc.io), an extensible **E**lectric **V**ehicle **C**harge **C**ontroller and home energy management system."
 logo: images/addons/evcc.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.evcc/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "evcc - Bindings"
   - property: og:description
-    content: '"This binding integrates evcc, an extensible **E**lectric
+    content: "This binding integrates evcc, an extensible **E**lectric **V**ehicle **C**harge **C**ontroller and home energy management system."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

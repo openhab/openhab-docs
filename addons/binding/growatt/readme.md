@@ -3,7 +3,7 @@ id: growatt
 label: Growatt
 title: Growatt - Bindings
 type: binding
-description: '"This binding supports the integration of Growatt solar inverters."'
+description: "This binding supports the integration of Growatt solar inverters."
 logo: images/addons/growatt.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.growatt/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Growatt - Bindings"
   - property: og:description
-    content: '"This binding supports the integration of Growatt solar inverters."'
+    content: "This binding supports the integration of Growatt solar inverters."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

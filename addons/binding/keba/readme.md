@@ -3,7 +3,7 @@ id: keba
 label: Keba
 title: Keba - Bindings
 type: binding
-description: '"This binding integrates the [Keba KeContact EV Charging Stations](https://www.keba.com)."'
+description: "This binding integrates the [Keba KeContact EV Charging Stations](https://www.keba.com)."
 logo: images/addons/keba.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.keba/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Keba - Bindings"
   - property: og:description
-    content: '"This binding integrates the Keba KeContact EV Charging Stations."'
+    content: "This binding integrates the Keba KeContact EV Charging Stations."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

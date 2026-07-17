@@ -3,8 +3,7 @@ id: lgtvserial
 label: LG TV Serial
 title: LG TV Serial - Bindings
 type: binding
-description: '"This binding controls LG TVs, monitors and projectors that have an
-  RS-232C control port."'
+description: "This binding controls LG TVs, monitors and projectors that have an RS-232C control port."
 logo: images/addons/lgtvserial.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.lgtvserial/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "LG TV Serial - Bindings"
   - property: og:description
-    content: '"This binding controls LG TVs, monitors and projectors that have an
+    content: "This binding controls LG TVs, monitors and projectors that have an RS-232C control port."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

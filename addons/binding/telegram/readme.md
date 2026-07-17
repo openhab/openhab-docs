@@ -3,8 +3,7 @@ id: telegram
 label: Telegram
 title: Telegram - Bindings
 type: binding
-description: '"The Telegram binding allows sending and receiving messages to and from
-  Telegram clients (<https://telegram.org>), by using the Telegram Bot API."'
+description: "The Telegram binding allows sending and receiving messages to and from Telegram clients (<https://telegram.org>), by using the Telegram Bot API."
 logo: images/addons/telegram.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.telegram/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Telegram - Bindings"
   - property: og:description
-    content: '"The Telegram binding allows sending and receiving messages to and from
+    content: "The Telegram binding allows sending and receiving messages to and from Telegram clients (<https://telegram.org>), by using the Telegram Bot API."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

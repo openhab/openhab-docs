@@ -3,7 +3,7 @@ id: bluetooth
 label: Bluetooth
 title: Bluetooth - Bindings
 type: binding
-description: '"This binding supports generic Bluetooth devices."'
+description: "This binding supports generic Bluetooth devices."
 logo: images/addons/bluetooth.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Bluetooth - Bindings"
   - property: og:description
-    content: '"This binding supports generic Bluetooth devices."'
+    content: "This binding supports generic Bluetooth devices."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

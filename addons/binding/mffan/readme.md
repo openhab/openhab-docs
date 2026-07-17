@@ -3,15 +3,14 @@ id: mffan
 label: MfFan
 title: MfFan - Bindings
 type: binding
-description: '"This binding is used to enable communications between openHAB and ''Modern
-  Forms'' or ''WAC Lighting'' WIFI connected, smart, ceiling fans."'
+description: "This binding is used to enable communications between openHAB and 'Modern Forms' or 'WAC Lighting' WIFI connected, smart, ceiling fans."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mffan/README.md
 meta:
   - property: og:title
     content: "MfFan - Bindings"
   - property: og:description
-    content: '"This binding is used to enable communications between openHAB and ''Modern
+    content: "This binding is used to enable communications between openHAB and 'Modern Forms' or 'WAC Lighting' WIFI connected, smart, ceiling fans."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

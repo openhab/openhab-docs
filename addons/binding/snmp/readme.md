@@ -3,14 +3,14 @@ id: snmp
 label: SNMP
 title: SNMP - Bindings
 type: binding
-description: '"This binding integrates the Simple Network Management Protocol (SNMP)."'
+description: "This binding integrates the Simple Network Management Protocol (SNMP)."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.snmp/README.md
 meta:
   - property: og:title
     content: "SNMP - Bindings"
   - property: og:description
-    content: '"This binding integrates the Simple Network Management Protocol (SNMP)."'
+    content: "This binding integrates the Simple Network Management Protocol (SNMP)."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

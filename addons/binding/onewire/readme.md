@@ -3,14 +3,14 @@ id: onewire
 label: OneWire
 title: OneWire - Bindings
 type: binding
-description: '"The OneWire binding integrates OneWire (also spelled 1-Wire) devices."'
+description: "The OneWire binding integrates OneWire (also spelled 1-Wire) devices."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.onewire/README.md
 meta:
   - property: og:title
     content: "OneWire - Bindings"
   - property: og:description
-    content: '"The OneWire binding integrates OneWire (also spelled 1-Wire) devices."'
+    content: "The OneWire binding integrates OneWire (also spelled 1-Wire) devices."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

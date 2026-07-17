@@ -3,8 +3,7 @@ id: sleepiq
 label: SleepIQ
 title: SleepIQ - Bindings
 type: binding
-description: '"This binding integrates with the SleepIQ system from Select Comfort
-  for Sleep Number beds."'
+description: "This binding integrates with the SleepIQ system from Select Comfort for Sleep Number beds."
 logo: images/addons/sleepiq.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sleepiq/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "SleepIQ - Bindings"
   - property: og:description
-    content: '"This binding integrates with the SleepIQ system from Select Comfort
+    content: "This binding integrates with the SleepIQ system from Select Comfort for Sleep Number beds."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

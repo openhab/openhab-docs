@@ -3,15 +3,14 @@ id: volvooncall
 label: VolvoOnCall
 title: VolvoOnCall - Bindings
 type: binding
-description: '"This binding integrates the [Volvo On Call](https://www.volvocars.com/intl/own/connectivity/volvo-on-call)
-  compatible vehicles."'
+description: "This binding integrates the [Volvo On Call](https://www.volvocars.com/intl/own/connectivity/volvo-on-call) compatible vehicles."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.volvooncall/README.md
 meta:
   - property: og:title
     content: "VolvoOnCall - Bindings"
   - property: og:description
-    content: '"This binding integrates the Volvo On Call
+    content: "This binding integrates the Volvo On Call compatible vehicles."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

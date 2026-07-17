@@ -3,7 +3,7 @@ id: solax
 label: Solax
 title: Solax - Bindings
 type: binding
-description: '"This is a binding for Solax solar power inverters."'
+description: "This is a binding for Solax solar power inverters."
 logo: images/addons/solax.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.solax/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Solax - Bindings"
   - property: og:description
-    content: '"This is a binding for Solax solar power inverters."'
+    content: "This is a binding for Solax solar power inverters."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

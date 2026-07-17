@@ -3,8 +3,7 @@ id: speedtest
 label: Speedtest
 title: Speedtest - Bindings
 type: binding
-description: '"The Speedtest Binding can be used to perform a network speed test for
-  your openHAB instance."'
+description: "The Speedtest Binding can be used to perform a network speed test for your openHAB instance."
 logo: images/addons/speedtest.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.speedtest/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Speedtest - Bindings"
   - property: og:description
-    content: '"The Speedtest Binding can be used to perform a network speed test for
+    content: "The Speedtest Binding can be used to perform a network speed test for your openHAB instance."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

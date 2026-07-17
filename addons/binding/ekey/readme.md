@@ -3,8 +3,7 @@ id: ekey
 label: ekey
 title: ekey - Bindings
 type: binding
-description: '"This binding connects to [ekey](https://ekey.net/) converter UDP (CV-LAN)
-  using the RARE/MULTI/HOME protocols."'
+description: "This binding connects to [ekey](https://ekey.net/) converter UDP (CV-LAN) using the RARE/MULTI/HOME protocols."
 logo: images/addons/ekey.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ekey/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "ekey - Bindings"
   - property: og:description
-    content: '"This binding connects to ekey converter UDP (CV-LAN)
+    content: "This binding connects to ekey converter UDP (CV-LAN) using the RARE/MULTI/HOME protocols."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

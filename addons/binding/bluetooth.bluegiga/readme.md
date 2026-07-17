@@ -3,8 +3,7 @@ id: bluetooth.bluegiga
 label: Bluetooth BlueGiga Adapter
 title: Bluetooth BlueGiga Adapter - Bindings
 type: binding
-description: '"This extension supports Bluetooth access via a BlueGiga (BLED112) USB
-  dongle."'
+description: "This extension supports Bluetooth access via a BlueGiga (BLED112) USB dongle."
 logo: images/addons/bluetooth.bluegiga.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.bluegiga/README.md
@@ -13,7 +12,7 @@ meta:
   - property: og:title
     content: "Bluetooth BlueGiga Adapter - Bindings"
   - property: og:description
-    content: '"This extension supports Bluetooth access via a BlueGiga (BLED112) USB
+    content: "This extension supports Bluetooth access via a BlueGiga (BLED112) USB dongle."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

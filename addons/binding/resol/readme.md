@@ -3,16 +3,14 @@ id: resol
 label: Resol
 title: Resol - Bindings
 type: binding
-description: '"Resol Binding connects to Solar and System Controllers of RESOL - Elektronische
-  Regelungen GmbH, also including branded versions from Viessmann, SOLEX, COSMO, SOLTEX,
-  DeDietrich and many more."'
+description: "Resol Binding connects to Solar and System Controllers of RESOL - Elektronische Regelungen GmbH, also including branded versions from Viessmann, SOLEX, COSMO, SOLTEX, DeDietrich and many more."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.resol/README.md
 meta:
   - property: og:title
     content: "Resol - Bindings"
   - property: og:description
-    content: '"Resol Binding connects to Solar and System Controllers of RESOL - Elektronische
+    content: "Resol Binding connects to Solar and System Controllers of RESOL - Elektronische Regelungen GmbH, also including branded versions from Viessmann, SOLEX, COSMO, SOLTEX, DeDietrich and many more."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: nuki
 label: Nuki
 title: Nuki - Bindings
 type: binding
-description: '"This is the binding for the [Nuki Smart Lock](https://nuki.io)."'
+description: "This is the binding for the [Nuki Smart Lock](https://nuki.io)."
 logo: images/addons/nuki.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.nuki/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Nuki - Bindings"
   - property: og:description
-    content: '"This is the binding for the Nuki Smart Lock."'
+    content: "This is the binding for the Nuki Smart Lock."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

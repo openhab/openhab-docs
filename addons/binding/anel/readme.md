@@ -3,7 +3,7 @@ id: anel
 label: Anel NET-PwrCtrl
 title: Anel NET-PwrCtrl - Bindings
 type: binding
-description: '"Monitor and control Anel NET-PwrCtrl devices."'
+description: "Monitor and control Anel NET-PwrCtrl devices."
 logo: images/addons/anel.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.anel/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Anel NET-PwrCtrl - Bindings"
   - property: og:description
-    content: '"Monitor and control Anel NET-PwrCtrl devices."'
+    content: "Monitor and control Anel NET-PwrCtrl devices."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

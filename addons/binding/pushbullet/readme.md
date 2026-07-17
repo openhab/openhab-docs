@@ -3,8 +3,7 @@ id: pushbullet
 label: Pushbullet
 title: Pushbullet - Bindings
 type: binding
-description: '"This binding allows you to notify supported devices using the [Pushbullet
-  API](https://docs.pushbullet.com)."'
+description: "This binding allows you to notify supported devices using the [Pushbullet API](https://docs.pushbullet.com)."
 logo: images/addons/pushbullet.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pushbullet/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Pushbullet - Bindings"
   - property: og:description
-    content: '"This binding allows you to notify supported devices using the Pushbullet
+    content: "This binding allows you to notify supported devices using the Pushbullet API."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

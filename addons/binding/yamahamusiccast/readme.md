@@ -3,8 +3,7 @@ id: yamahamusiccast
 label: Yamaha MusicCast
 title: Yamaha MusicCast - Bindings
 type: binding
-description: '"Binding to control Yamaha models via their MusicCast protocol (aka
-  Yamaha Extended Control)."'
+description: "Binding to control Yamaha models via their MusicCast protocol (aka Yamaha Extended Control)."
 logo: images/addons/yamahamusiccast.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.yamahamusiccast/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Yamaha MusicCast - Bindings"
   - property: og:description
-    content: '"Binding to control Yamaha models via their MusicCast protocol (aka
+    content: "Binding to control Yamaha models via their MusicCast protocol (aka Yamaha Extended Control)."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

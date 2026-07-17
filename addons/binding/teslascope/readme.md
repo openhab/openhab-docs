@@ -3,7 +3,7 @@ id: teslascope
 label: Teslascope
 title: Teslascope - Bindings
 type: binding
-description: '"This binding integrates [Tesla Electric Vehicles](https://www.tesla.com)."'
+description: "This binding integrates [Tesla Electric Vehicles](https://www.tesla.com)."
 logo: images/addons/teslascope.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.teslascope/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Teslascope - Bindings"
   - property: og:description
-    content: '"This binding integrates Tesla Electric Vehicles."'
+    content: "This binding integrates Tesla Electric Vehicles."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

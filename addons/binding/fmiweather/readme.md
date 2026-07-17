@@ -3,8 +3,7 @@ id: fmiweather
 label: FMI Weather
 title: FMI Weather - Bindings
 type: binding
-description: '"This binding integrates to [the Finnish Meteorological Institute (FMI)
-  Open Data API](https://en.ilmatieteenlaitos.fi/open-data)."'
+description: "This binding integrates to [the Finnish Meteorological Institute (FMI) Open Data API](https://en.ilmatieteenlaitos.fi/open-data)."
 logo: images/addons/fmiweather.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.fmiweather/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "FMI Weather - Bindings"
   - property: og:description
-    content: '"This binding integrates to the Finnish Meteorological Institute (FMI)
+    content: "This binding integrates to the Finnish Meteorological Institute (FMI) Open Data API."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

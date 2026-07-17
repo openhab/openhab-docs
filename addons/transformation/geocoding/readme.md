@@ -3,7 +3,7 @@ id: geocoding
 label: Geocoding Profile
 title: Geocoding Profile - Transformation Services
 type: transform
-description: '"Transformation to convert"'
+description: "Transformation to convert"
 logo: images/addons/geocoding.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.geocoding/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Geocoding Profile - Transformation Services"
   - property: og:description
-    content: '"Transformation to convert"'
+    content: "Transformation to convert"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

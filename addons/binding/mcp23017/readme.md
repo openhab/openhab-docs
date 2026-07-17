@@ -3,8 +3,7 @@ id: mcp23017
 label: MCP23017
 title: MCP23017 - Bindings
 type: binding
-description: '"This binding allows you to have native access for MCP23017 I/O expander
-  on I2C bus."'
+description: "This binding allows you to have native access for MCP23017 I/O expander on I2C bus."
 logo: images/addons/mcp23017.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mcp23017/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "MCP23017 - Bindings"
   - property: og:description
-    content: '"This binding allows you to have native access for MCP23017 I/O expander
+    content: "This binding allows you to have native access for MCP23017 I/O expander on I2C bus."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

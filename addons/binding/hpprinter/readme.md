@@ -3,8 +3,7 @@ id: hpprinter
 label: HP Printer
 title: HP Printer - Bindings
 type: binding
-description: '"This binding supports [HP Printers](https://store.hp.com/us/en/cv/printers),
-  which are reachable through IP on the local network."'
+description: "This binding supports [HP Printers](https://store.hp.com/us/en/cv/printers), which are reachable through IP on the local network."
 logo: images/addons/hpprinter.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.hpprinter/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "HP Printer - Bindings"
   - property: og:description
-    content: '"This binding supports HP Printers,
+    content: "This binding supports HP Printers, which are reachable through IP on the local network."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

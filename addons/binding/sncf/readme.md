@@ -3,15 +3,14 @@ id: sncf
 label: SNCF
 title: SNCF - Bindings
 type: binding
-description: '"The SNCF binding provides real-time data(*) for each train, bus, tramway...
-  station in France."'
+description: "The SNCF binding provides real-time data(*) for each train, bus, tramway... station in France."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sncf/README.md
 meta:
   - property: og:title
     content: "SNCF - Bindings"
   - property: og:description
-    content: '"The SNCF binding provides real-time data(*) for each train, bus, tramway...
+    content: "The SNCF binding provides real-time data(*) for each train, bus, tramway... station in France."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

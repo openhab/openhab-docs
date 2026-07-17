@@ -3,8 +3,7 @@ id: fenecon
 label: FENECON
 title: FENECON - Bindings
 type: binding
-description: '"The FENECON Binding integrates the [FENECON energy storage system](https://fenecon.de/)
-  device into the openHAB system via [REST-API](https://docs.fenecon.de/de/fems/fems-app/App_REST-JSON_Lesezugriff.html)."'
+description: "The FENECON Binding integrates the [FENECON energy storage system](https://fenecon.de/) device into the openHAB system via [REST-API](https://docs.fenecon.de/de/fems/fems-app/App_REST-JSON_Lesezugriff.html)."
 logo: images/addons/fenecon.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.fenecon/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "FENECON - Bindings"
   - property: og:description
-    content: '"The FENECON Binding integrates the FENECON energy storage system
+    content: "The FENECON Binding integrates the FENECON energy storage system device into the openHAB system via REST-API(https://docs.fenecon.de/de/fems/fems-app/App_REST-JSON_Lesezugriff.html)."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

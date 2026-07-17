@@ -3,7 +3,7 @@ id: wemo
 label: Belkin WeMo
 title: Belkin WeMo - Bindings
 type: binding
-description: '"This binding integrates the [Belkin WeMo Family](https://www.belkin.com/us/Products/c/home-automation/)."'
+description: "This binding integrates the [Belkin WeMo Family](https://www.belkin.com/us/Products/c/home-automation/)."
 logo: images/addons/wemo.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.wemo/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Belkin WeMo - Bindings"
   - property: og:description
-    content: '"This binding integrates the Belkin WeMo Family."'
+    content: "This binding integrates the Belkin WeMo Family."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

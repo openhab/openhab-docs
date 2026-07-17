@@ -3,8 +3,7 @@ id: nikobus
 label: Nikobus
 title: Nikobus - Bindings
 type: binding
-description: '"This binding allows openHAB to interact with the Nikobus home automation
-  system."'
+description: "This binding allows openHAB to interact with the Nikobus home automation system."
 logo: images/addons/nikobus.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.nikobus/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Nikobus - Bindings"
   - property: og:description
-    content: '"This binding allows openHAB to interact with the Nikobus home automation
+    content: "This binding allows openHAB to interact with the Nikobus home automation system."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

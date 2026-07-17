@@ -3,15 +3,14 @@ id: mideaac
 label: Midea AC
 title: Midea AC - Bindings
 type: binding
-description: '"This binding integrates Air Conditioners (type AC) and Dehumidifiers
-  that use the Midea protocol. Midea is an OEM for many brands."'
+description: "This binding integrates Air Conditioners (type AC) and Dehumidifiers that use the Midea protocol. Midea is an OEM for many brands."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mideaac/README.md
 meta:
   - property: og:title
     content: "Midea AC - Bindings"
   - property: og:description
-    content: '"This binding integrates Air Conditioners (type AC) and Dehumidifiers
+    content: "This binding integrates Air Conditioners (type AC) and Dehumidifiers that use the Midea protocol. Midea is an OEM for many brands."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

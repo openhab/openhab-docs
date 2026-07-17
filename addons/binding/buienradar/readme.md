@@ -3,8 +3,7 @@ id: buienradar
 label: Buienradar
 title: Buienradar - Bindings
 type: binding
-description: '"The Buienradar Binding periodically (5 minute intervals) retrieves
-  rainfall predictions from the Dutch [buienradar.nl webservice API.](https://www.buienradar.nl/overbuienradar/gratis-weerdata)."'
+description: "The Buienradar Binding periodically (5 minute intervals) retrieves rainfall predictions from the Dutch [buienradar.nl webservice API.](https://www.buienradar.nl/overbuienradar/gratis-weerdata)."
 logo: images/addons/buienradar.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.buienradar/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Buienradar - Bindings"
   - property: og:description
-    content: '"The Buienradar Binding periodically (5 minute intervals) retrieves
+    content: "The Buienradar Binding periodically (5 minute intervals) retrieves rainfall predictions from the Dutch buienradar.nl webservice API.."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

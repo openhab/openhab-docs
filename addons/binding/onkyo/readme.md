@@ -3,7 +3,7 @@ id: onkyo
 label: Onkyo
 title: Onkyo - Bindings
 type: binding
-description: '"This binding integrates the Onkyo AV receivers."'
+description: "This binding integrates the Onkyo AV receivers."
 logo: images/addons/onkyo.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.onkyo/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Onkyo - Bindings"
   - property: og:description
-    content: '"This binding integrates the Onkyo AV receivers."'
+    content: "This binding integrates the Onkyo AV receivers."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

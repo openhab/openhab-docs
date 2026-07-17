@@ -3,7 +3,7 @@ id: pentair
 label: Pentair
 title: Pentair - Bindings
 type: binding
-description: '"This is an openHAB binding for a Pentair Pool System."'
+description: "This is an openHAB binding for a Pentair Pool System."
 logo: images/addons/pentair.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pentair/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Pentair - Bindings"
   - property: og:description
-    content: '"This is an openHAB binding for a Pentair Pool System."'
+    content: "This is an openHAB binding for a Pentair Pool System."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

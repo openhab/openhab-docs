@@ -3,7 +3,7 @@ id: visualcrossing
 label: VisualCrossing
 title: VisualCrossing - Bindings
 type: binding
-description: '"VisualCrossing Binding provides integration with VisualCrossing API"'
+description: "VisualCrossing Binding provides integration with VisualCrossing API"
 logo: images/addons/visualcrossing.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.visualcrossing/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "VisualCrossing - Bindings"
   - property: og:description
-    content: '"VisualCrossing Binding provides integration with VisualCrossing API"'
+    content: "VisualCrossing Binding provides integration with VisualCrossing API"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

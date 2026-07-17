@@ -3,7 +3,7 @@ id: iaqualink
 label: iAquaLink
 title: iAquaLink - Bindings
 type: binding
-description: '"This binding supports:"'
+description: "This binding supports:"
 logo: images/addons/iaqualink.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.iaqualink/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "iAquaLink - Bindings"
   - property: og:description
-    content: '"This binding supports:"'
+    content: "This binding supports:"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

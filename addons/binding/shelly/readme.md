@@ -3,8 +3,7 @@ id: shelly
 label: Shelly
 title: Shelly - Bindings
 type: binding
-description: '"This Binding integrates [Shelly devices](https://shelly.cloud) developed
-  by Allterco."'
+description: "This Binding integrates [Shelly devices](https://shelly.cloud) developed by Allterco."
 logo: images/addons/shelly.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.shelly/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Shelly - Bindings"
   - property: og:description
-    content: '"This Binding integrates Shelly devices developed
+    content: "This Binding integrates Shelly devices developed by Allterco."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

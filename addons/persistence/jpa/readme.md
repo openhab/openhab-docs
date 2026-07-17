@@ -3,8 +3,7 @@ id: jpa
 label: Java Persistence API (JPA) Persistence
 title: Java Persistence API (JPA) Persistence - Persistence Services
 type: persistence
-description: '"This service allows you to persist state updates using an SQL or NoSQL
-  database through the [Java Persistence API](https://en.wikipedia.org/wiki/Java_Persistence_API)."'
+description: "This service allows you to persist state updates using an SQL or NoSQL database through the [Java Persistence API](https://en.wikipedia.org/wiki/Java_Persistence_API)."
 logo: images/addons/jpa.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.persistence.jpa/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Java Persistence API (JPA) Persistence - Persistence Services"
   - property: og:description
-    content: '"This service allows you to persist state updates using an SQL or NoSQL
+    content: "This service allows you to persist state updates using an SQL or NoSQL database through the Java Persistence API(https://en.wikipedia.org/wiki/Java_Persistence_API)."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

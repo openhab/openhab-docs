@@ -3,8 +3,7 @@ id: danfossairunit
 label: DanfossAirUnit
 title: DanfossAirUnit - Bindings
 type: binding
-description: '"This binding supports controlling and monitoring Danfoss Air heat recovery
-  ventilation units via Ethernet connection."'
+description: "This binding supports controlling and monitoring Danfoss Air heat recovery ventilation units via Ethernet connection."
 logo: images/addons/danfossairunit.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.danfossairunit/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "DanfossAirUnit - Bindings"
   - property: og:description
-    content: '"This binding supports controlling and monitoring Danfoss Air heat recovery
+    content: "This binding supports controlling and monitoring Danfoss Air heat recovery ventilation units via Ethernet connection."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,9 +3,7 @@ id: souliss
 label: Souliss
 title: Souliss - Bindings
 type: binding
-description: '"[Souliss](https://souliss.github.io/) is a networking framework for
-  Arduino and compatible boards, designed to let you easily build a smart home distributed
-  over multiple boards via Ethernet, Wi‑Fi, wireless point‑to‑point, and RS‑485 bus."'
+description: "[Souliss](https://souliss.github.io/) is a networking framework for Arduino and compatible boards, designed to let you easily build a smart home distributed over multiple boards via Ethernet, Wi‑Fi, wireless point‑to‑point, and RS‑485 bus."
 logo: images/addons/souliss.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.souliss/README.md
@@ -13,7 +11,7 @@ meta:
   - property: og:title
     content: "Souliss - Bindings"
   - property: og:description
-    content: '"Souliss is a networking framework for
+    content: "Souliss is a networking framework for Arduino and compatible boards, designed to let you easily build a smart home distributed over multiple boards via Ethernet, Wi‑Fi, wireless point‑to‑point, and RS‑485 bus."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

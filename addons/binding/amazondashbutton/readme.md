@@ -3,9 +3,7 @@ id: amazondashbutton
 label: Amazon Dash Button
 title: Amazon Dash Button - Bindings
 type: binding
-description: '"The [Amazon Dash Button](https://www.amazon.com/Dash-Buttons/b?node=10667898011)
-  is a cheap and small Wi-Fi connected device to order products from Amazon with the
-  simple press of a button."'
+description: "The [Amazon Dash Button](https://www.amazon.com/Dash-Buttons/b?node=10667898011) is a cheap and small Wi-Fi connected device to order products from Amazon with the simple press of a button."
 logo: images/addons/amazondashbutton.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.amazondashbutton/README.md
@@ -13,7 +11,7 @@ meta:
   - property: og:title
     content: "Amazon Dash Button - Bindings"
   - property: og:description
-    content: '"The Amazon Dash Button(https://www.amazon.com/Dash-Buttons/b?node=10667898011)
+    content: "The Amazon Dash Button(https://www.amazon.com/Dash-Buttons/b?node=10667898011) is a cheap and small Wi-Fi connected device to order products from Amazon with the simple press of a button."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

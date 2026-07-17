@@ -3,7 +3,7 @@ id: pioneeravr
 label: Pioneer AVR
 title: Pioneer AVR - Bindings
 type: binding
-description: '"This binding integrates Pioneer AVRs."'
+description: "This binding integrates Pioneer AVRs."
 logo: images/addons/pioneeravr.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pioneeravr/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Pioneer AVR - Bindings"
   - property: og:description
-    content: '"This binding integrates Pioneer AVRs."'
+    content: "This binding integrates Pioneer AVRs."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,8 +3,7 @@ id: etherrain
 label: Etherrain
 title: Etherrain - Bindings
 type: binding
-description: '"The Etherrain binding is used to control a sprinkler controller from
-  Quicksmart:"'
+description: "The Etherrain binding is used to control a sprinkler controller from Quicksmart:"
 logo: images/addons/etherrain.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.etherrain/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Etherrain - Bindings"
   - property: og:description
-    content: '"The Etherrain binding is used to control a sprinkler controller from
+    content: "The Etherrain binding is used to control a sprinkler controller from Quicksmart:"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

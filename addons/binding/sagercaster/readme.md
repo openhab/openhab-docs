@@ -3,15 +3,14 @@ id: sagercaster
 label: Sager Weathercaster
 title: Sager Weathercaster - Bindings
 type: binding
-description: '"The Sager Weathercaster is a scientific instrument for accurate prediction
-  of the weather."'
+description: "The Sager Weathercaster is a scientific instrument for accurate prediction of the weather."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sagercaster/README.md
 meta:
   - property: og:title
     content: "Sager Weathercaster - Bindings"
   - property: og:description
-    content: '"The Sager Weathercaster is a scientific instrument for accurate prediction
+    content: "The Sager Weathercaster is a scientific instrument for accurate prediction of the weather."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

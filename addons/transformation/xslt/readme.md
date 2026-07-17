@@ -3,15 +3,14 @@ id: xslt
 label: XSLT
 title: XSLT - Transformation Services
 type: transform
-description: '"Transforms input using the XML Stylesheet Language for Transformations
-  (XSLT)."'
+description: "Transforms input using the XML Stylesheet Language for Transformations (XSLT)."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.xslt/README.md
 meta:
   - property: og:title
     content: "XSLT - Transformation Services"
   - property: og:description
-    content: '"Transforms input using the XML Stylesheet Language for Transformations
+    content: "Transforms input using the XML Stylesheet Language for Transformations (XSLT)."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: linktap
 label: LinkTap
 title: LinkTap - Bindings
 type: binding
-description: '"This binding is for [Link-Tap](https://www.link-tap.com/) devices."'
+description: "This binding is for [Link-Tap](https://www.link-tap.com/) devices."
 logo: images/addons/linktap.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.linktap/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "LinkTap - Bindings"
   - property: og:description
-    content: '"This binding is for Link-Tap devices."'
+    content: "This binding is for Link-Tap devices."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

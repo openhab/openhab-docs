@@ -3,7 +3,7 @@ id: hydrawise
 label: Hydrawise
 title: Hydrawise - Bindings
 type: binding
-description: '"![API Key](./doc/logo.png)"'
+description: "![API Key](./doc/logo.png)"
 logo: images/addons/hydrawise.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.hydrawise/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Hydrawise - Bindings"
   - property: og:description
-    content: '"!API Key(doc/logo.png)"'
+    content: "!API Key(doc/logo.png)"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

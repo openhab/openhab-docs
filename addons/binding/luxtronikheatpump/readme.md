@@ -3,15 +3,14 @@ id: luxtronikheatpump
 label: LuxtronikHeatpump
 title: LuxtronikHeatpump - Bindings
 type: binding
-description: '"This binding gives the possibility to integrate any Heatpump that is
-  based on the Luxtronik 2 contol unit of Alpha Innotec. This includes heatpumps of:"'
+description: "This binding gives the possibility to integrate any Heatpump that is based on the Luxtronik 2 contol unit of Alpha Innotec. This includes heatpumps of:"
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.luxtronikheatpump/README.md
 meta:
   - property: og:title
     content: "LuxtronikHeatpump - Bindings"
   - property: og:description
-    content: '"This binding gives the possibility to integrate any Heatpump that is
+    content: "This binding gives the possibility to integrate any Heatpump that is based on the Luxtronik 2 contol unit of Alpha Innotec. This includes heatpumps of:"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

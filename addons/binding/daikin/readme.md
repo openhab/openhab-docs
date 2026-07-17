@@ -3,8 +3,7 @@ id: daikin
 label: Daikin
 title: Daikin - Bindings
 type: binding
-description: '"The Daikin binding allows you to control your Daikin air conditioning
-  units with openHAB."'
+description: "The Daikin binding allows you to control your Daikin air conditioning units with openHAB."
 logo: images/addons/daikin.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.daikin/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Daikin - Bindings"
   - property: og:description
-    content: '"The Daikin binding allows you to control your Daikin air conditioning
+    content: "The Daikin binding allows you to control your Daikin air conditioning units with openHAB."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

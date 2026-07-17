@@ -3,8 +3,7 @@ id: kvv
 label: KVV
 title: KVV - Bindings
 type: binding
-description: '"Adds support for the public API of Karlsruher Verkehrsverbund (public
-  transport system in Karlsruhe, Germany)."'
+description: "Adds support for the public API of Karlsruher Verkehrsverbund (public transport system in Karlsruhe, Germany)."
 logo: images/addons/kvv.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.kvv/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "KVV - Bindings"
   - property: og:description
-    content: '"Adds support for the public API of Karlsruher Verkehrsverbund (public
+    content: "Adds support for the public API of Karlsruher Verkehrsverbund (public transport system in Karlsruhe, Germany)."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

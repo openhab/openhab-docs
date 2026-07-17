@@ -3,8 +3,7 @@ id: milight
 label: Milight/Easybulb/Limitless
 title: Milight/Easybulb/Limitless - Bindings
 type: binding
-description: '"This binding is for using your Milight, Easybulb or LimitlessLed bulbs
-  and the iBox."'
+description: "This binding is for using your Milight, Easybulb or LimitlessLed bulbs and the iBox."
 logo: images/addons/milight.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.milight/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Milight/Easybulb/Limitless - Bindings"
   - property: og:description
-    content: '"This binding is for using your Milight, Easybulb or LimitlessLed bulbs
+    content: "This binding is for using your Milight, Easybulb or LimitlessLed bulbs and the iBox."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,8 +3,7 @@ id: smsmodem
 label: SMSModem
 title: SMSModem - Bindings
 type: binding
-description: '"This binding connects to a USB serial GSM modem (or a network exposed
-  one, see ser2net) and allows openHAB to send and receive SMS through it."'
+description: "This binding connects to a USB serial GSM modem (or a network exposed one, see ser2net) and allows openHAB to send and receive SMS through it."
 logo: images/addons/smsmodem.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.smsmodem/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "SMSModem - Bindings"
   - property: og:description
-    content: '"This binding connects to a USB serial GSM modem (or a network exposed
+    content: "This binding connects to a USB serial GSM modem (or a network exposed one, see ser2net) and allows openHAB to send and receive SMS through it."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

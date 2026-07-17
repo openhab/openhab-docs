@@ -3,9 +3,7 @@ id: mpd
 label: MPD
 title: MPD - Bindings
 type: binding
-description: '"[Music Player Daemon (MPD)](https://www.musicpd.org/) is a flexible,
-  powerful, server-side application for playing music. Through plugins and libraries
-  it can play a variety of sound files while being controlled by its network protocol."'
+description: "[Music Player Daemon (MPD)](https://www.musicpd.org/) is a flexible, powerful, server-side application for playing music. Through plugins and libraries it can play a variety of sound files while being controlled by its network protocol."
 logo: images/addons/mpd.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mpd/README.md
@@ -13,7 +11,7 @@ meta:
   - property: og:title
     content: "MPD - Bindings"
   - property: og:description
-    content: '"Music Player Daemon (MPD) is a flexible,
+    content: "Music Player Daemon (MPD) is a flexible, powerful, server-side application for playing music. Through plugins and libraries it can play a variety of sound files while being controlled by its network protocol."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

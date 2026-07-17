@@ -3,8 +3,7 @@ id: lametrictime
 label: LaMetric
 title: LaMetric - Bindings
 type: binding
-description: '"The LaMetric binding allows to connect openHAB to LaMetric Time connected
-  clock devices, providing following features:"'
+description: "The LaMetric binding allows to connect openHAB to LaMetric Time connected clock devices, providing following features:"
 logo: images/addons/lametrictime.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.lametrictime/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "LaMetric - Bindings"
   - property: og:description
-    content: '"The LaMetric binding allows to connect openHAB to LaMetric Time connected
+    content: "The LaMetric binding allows to connect openHAB to LaMetric Time connected clock devices, providing following features:"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

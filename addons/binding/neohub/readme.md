@@ -3,8 +3,7 @@ id: neohub
 label: NeoHub
 title: NeoHub - Bindings
 type: binding
-description: '"This is a binding for integrating [Heatmiser](https://www.heatmiser.com)
-  room and underfloor heating control products."'
+description: "This is a binding for integrating [Heatmiser](https://www.heatmiser.com) room and underfloor heating control products."
 logo: images/addons/neohub.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.neohub/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "NeoHub - Bindings"
   - property: og:description
-    content: '"This is a binding for integrating Heatmiser
+    content: "This is a binding for integrating Heatmiser room and underfloor heating control products."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,14 +3,14 @@ id: frenchgovtenergydata
 label: French Government Energy Data
 title: French Government Energy Data - Bindings
 type: binding
-description: '"This binding provides regulated electricity prices in France."'
+description: "This binding provides regulated electricity prices in France."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.frenchgovtenergydata/README.md
 meta:
   - property: og:title
     content: "French Government Energy Data - Bindings"
   - property: og:description
-    content: '"This binding provides regulated electricity prices in France."'
+    content: "This binding provides regulated electricity prices in France."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

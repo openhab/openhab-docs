@@ -3,9 +3,7 @@ id: intesis
 label: Intesis
 title: Intesis - Bindings
 type: binding
-description: '"This binding connects to WiFi [IntesisHome](https://www.intesis.com/products/cloud-solutions/ac-cloud-control)
-  devices using their local REST Api and to [IntesisBox](https://www.intesis.com/products/ac-interfaces/wifi-gateways)
-  devices using TCP connection."'
+description: "This binding connects to WiFi [IntesisHome](https://www.intesis.com/products/cloud-solutions/ac-cloud-control) devices using their local REST Api and to [IntesisBox](https://www.intesis.com/products/ac-interfaces/wifi-gateways) devices using TCP connection."
 logo: images/addons/intesis.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.intesis/README.md
@@ -13,7 +11,7 @@ meta:
   - property: og:title
     content: "Intesis - Bindings"
   - property: og:description
-    content: '"This binding connects to WiFi IntesisHome
+    content: "This binding connects to WiFi IntesisHome devices using their local REST Api and to IntesisBox devices using TCP connection."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

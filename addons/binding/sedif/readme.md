@@ -3,8 +3,7 @@ id: sedif
 label: Sedif
 title: Sedif - Bindings
 type: binding
-description: '"This binding enables you to retrieve water consumption data for consumers
-  in the Île-de-France region of France."'
+description: "This binding enables you to retrieve water consumption data for consumers in the Île-de-France region of France."
 logo: images/addons/sedif.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sedif/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Sedif - Bindings"
   - property: og:description
-    content: '"This binding enables you to retrieve water consumption data for consumers
+    content: "This binding enables you to retrieve water consumption data for consumers in the Île-de-France region of France."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,8 +3,7 @@ id: modbus.lambda
 label: Lambda Heat Pump
 title: Lambda Heat Pump - Bindings
 type: binding
-description: '"This extension adds support for the Lambda Heat Pump modbus protocol
-  as provided by"'
+description: "This extension adds support for the Lambda Heat Pump modbus protocol as provided by"
 logo: images/addons/modbus.lambda.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.modbus.lambda/README.md
@@ -13,7 +12,7 @@ meta:
   - property: og:title
     content: "Lambda Heat Pump - Bindings"
   - property: og:description
-    content: '"This extension adds support for the Lambda Heat Pump modbus protocol
+    content: "This extension adds support for the Lambda Heat Pump modbus protocol as provided by"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

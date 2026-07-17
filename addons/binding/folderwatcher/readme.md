@@ -3,8 +3,7 @@ id: folderwatcher
 label: FolderWatcher
 title: FolderWatcher - Bindings
 type: binding
-description: '"This binding is intended to monitor a local folder, FTP and S3 bucket
-  and their subfolders and notify of new files."'
+description: "This binding is intended to monitor a local folder, FTP and S3 bucket and their subfolders and notify of new files."
 logo: images/addons/folderwatcher.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.folderwatcher/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "FolderWatcher - Bindings"
   - property: og:description
-    content: '"This binding is intended to monitor a local folder, FTP and S3 bucket
+    content: "This binding is intended to monitor a local folder, FTP and S3 bucket and their subfolders and notify of new files."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

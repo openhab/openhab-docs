@@ -3,8 +3,7 @@ id: meteostick
 label: Meteostick
 title: Meteostick - Bindings
 type: binding
-description: '"This is the binding for the [Meteostick](https://www.smartbedded.com/wiki/index.php/Meteostick)
-  weather receiver dongle."'
+description: "This is the binding for the [Meteostick](https://www.smartbedded.com/wiki/index.php/Meteostick) weather receiver dongle."
 logo: images/addons/meteostick.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.meteostick/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Meteostick - Bindings"
   - property: og:description
-    content: '"This is the binding for the Meteostick
+    content: "This is the binding for the Meteostick weather receiver dongle."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

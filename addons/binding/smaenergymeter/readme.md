@@ -3,8 +3,7 @@ id: smaenergymeter
 label: SMA Energy Meter
 title: SMA Energy Meter - Bindings
 type: binding
-description: '"This Binding is used to display the measured values of a SMA Energy
-  Meter device."'
+description: "This Binding is used to display the measured values of a SMA Energy Meter device."
 logo: images/addons/smaenergymeter.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.smaenergymeter/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "SMA Energy Meter - Bindings"
   - property: og:description
-    content: '"This Binding is used to display the measured values of a SMA Energy
+    content: "This Binding is used to display the measured values of a SMA Energy Meter device."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

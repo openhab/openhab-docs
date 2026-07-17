@@ -3,8 +3,7 @@ id: miio
 label: Xiaomi Wifi Devices (Mi IO)
 title: Xiaomi Wifi Devices (Mi IO) - Bindings
 type: binding
-description: '"This binding is used to control Xiaomi products implementing the Mi
-  IO protocol."'
+description: "This binding is used to control Xiaomi products implementing the Mi IO protocol."
 logo: images/addons/miio.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.miio/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Xiaomi Wifi Devices (Mi IO) - Bindings"
   - property: og:description
-    content: '"This binding is used to control Xiaomi products implementing the Mi
+    content: "This binding is used to control Xiaomi products implementing the Mi IO protocol."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

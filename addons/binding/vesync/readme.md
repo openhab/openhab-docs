@@ -3,15 +3,14 @@ id: vesync
 label: VeSync
 title: VeSync - Bindings
 type: binding
-description: '"Its current support is for the Air Purifiers & Humidifiers branded
-  as Levoit which utilise the VeSync app based on the V2 protocol."'
+description: "Its current support is for the Air Purifiers & Humidifiers branded as Levoit which utilise the VeSync app based on the V2 protocol."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.vesync/README.md
 meta:
   - property: og:title
     content: "VeSync - Bindings"
   - property: og:description
-    content: '"Its current support is for the Air Purifiers & Humidifiers branded
+    content: "Its current support is for the Air Purifiers & Humidifiers branded as Levoit which utilise the VeSync app based on the V2 protocol."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

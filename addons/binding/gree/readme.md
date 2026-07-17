@@ -3,8 +3,7 @@ id: gree
 label: GREE
 title: GREE - Bindings
 type: binding
-description: '"This binding integrates Air Conditioners that use the GREE protocol
-  (GREE, Sinclair and others)."'
+description: "This binding integrates Air Conditioners that use the GREE protocol (GREE, Sinclair and others)."
 logo: images/addons/gree.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.gree/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "GREE - Bindings"
   - property: og:description
-    content: '"This binding integrates Air Conditioners that use the GREE protocol
+    content: "This binding integrates Air Conditioners that use the GREE protocol (GREE, Sinclair and others)."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

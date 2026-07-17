@@ -3,8 +3,7 @@ id: irtrans
 label: IRtrans
 title: IRtrans - Bindings
 type: binding
-description: '"This binding integrates infrared receivers and blasters manufactured
-  by IRtrans <www.irtrans.de>"'
+description: "This binding integrates infrared receivers and blasters manufactured by IRtrans <www.irtrans.de>"
 logo: images/addons/irtrans.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.irtrans/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "IRtrans - Bindings"
   - property: og:description
-    content: '"This binding integrates infrared receivers and blasters manufactured
+    content: "This binding integrates infrared receivers and blasters manufactured by IRtrans <www.irtrans.de>"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

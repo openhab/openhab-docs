@@ -3,8 +3,7 @@ id: dmx
 label: DMX
 title: DMX - Bindings
 type: binding
-description: '"The DMX binding integrates DMX devices. There are different output
-  devices supported as well as Dimmers and Chasers."'
+description: "The DMX binding integrates DMX devices. There are different output devices supported as well as Dimmers and Chasers."
 logo: images/addons/dmx.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.dmx/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "DMX - Bindings"
   - property: og:description
-    content: '"The DMX binding integrates DMX devices. There are different output
+    content: "The DMX binding integrates DMX devices. There are different output devices supported as well as Dimmers and Chasers."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

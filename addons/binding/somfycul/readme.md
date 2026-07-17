@@ -3,15 +3,14 @@ id: somfycul
 label: SomfyCUL
 title: SomfyCUL - Bindings
 type: binding
-description: '"This binding supports controlling [Somfy RTS Rollershutters](https://www.somfysystems.com/en-us/products/rolling-shutters)
-  via CUL sticks."'
+description: "This binding supports controlling [Somfy RTS Rollershutters](https://www.somfysystems.com/en-us/products/rolling-shutters) via CUL sticks."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.somfycul/README.md
 meta:
   - property: og:title
     content: "SomfyCUL - Bindings"
   - property: og:description
-    content: '"This binding supports controlling Somfy RTS Rollershutters
+    content: "This binding supports controlling Somfy RTS Rollershutters via CUL sticks."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

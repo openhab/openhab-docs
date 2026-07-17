@@ -3,8 +3,7 @@ id: elroconnects
 label: ELRO Connects
 title: ELRO Connects - Bindings
 type: binding
-description: '"The ELRO Connects binding provides integration with the [ELRO Connects](https://www.elro.eu/en/smart-home)
-  smart home system."'
+description: "The ELRO Connects binding provides integration with the [ELRO Connects](https://www.elro.eu/en/smart-home) smart home system."
 logo: images/addons/elroconnects.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.elroconnects/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "ELRO Connects - Bindings"
   - property: og:description
-    content: '"The ELRO Connects binding provides integration with the ELRO Connects
+    content: "The ELRO Connects binding provides integration with the ELRO Connects smart home system."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

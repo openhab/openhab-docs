@@ -3,7 +3,7 @@ id: millheat
 label: Millheat
 title: Millheat - Bindings
 type: binding
-description: '"This binding integrates Mill Wi-Fi enabled panel heaters. See <https://www.millheat.com/mill-wifi/>"'
+description: "This binding integrates Mill Wi-Fi enabled panel heaters. See <https://www.millheat.com/mill-wifi/>"
 logo: images/addons/millheat.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.millheat/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Millheat - Bindings"
   - property: og:description
-    content: '"This binding integrates Mill Wi-Fi enabled panel heaters. See <https://www.millheat.com/mill-wifi/>"'
+    content: "This binding integrates Mill Wi-Fi enabled panel heaters. See <https://www.millheat.com/mill-wifi/>"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

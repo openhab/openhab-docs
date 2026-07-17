@@ -3,9 +3,7 @@ id: ihc
 label: IHC / ELKO
 title: IHC / ELKO - Bindings
 type: binding
-description: '"This binding is for the ''Intelligent Home Control'' building automation
-  system originally made by LK, but now owned by Schneider Electric and sold as ''IHC
-  Intelligent Home Control'' or ''ELKO living system'' depending of the country."'
+description: "This binding is for the 'Intelligent Home Control' building automation system originally made by LK, but now owned by Schneider Electric and sold as 'IHC Intelligent Home Control' or 'ELKO living system' depending of the country."
 logo: images/addons/ihc.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ihc/README.md
@@ -13,7 +11,7 @@ meta:
   - property: og:title
     content: "IHC / ELKO - Bindings"
   - property: og:description
-    content: '"This binding is for the ''Intelligent Home Control'' building automation
+    content: "This binding is for the 'Intelligent Home Control' building automation system originally made by LK, but now owned by Schneider Electric and sold as 'IHC Intelligent Home Control' or 'ELKO living system' depending of the country."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

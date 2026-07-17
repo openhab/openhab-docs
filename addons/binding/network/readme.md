@@ -3,8 +3,7 @@ id: network
 label: Network
 title: Network - Bindings
 type: binding
-description: '"This binding allows checking whether a device is currently available
-  on the network."'
+description: "This binding allows checking whether a device is currently available on the network."
 logo: images/addons/network.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.network/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Network - Bindings"
   - property: og:description
-    content: '"This binding allows checking whether a device is currently available
+    content: "This binding allows checking whether a device is currently available on the network."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

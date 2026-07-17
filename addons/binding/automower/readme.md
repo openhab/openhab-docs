@@ -3,7 +3,7 @@ id: automower
 label: Automower
 title: Automower - Bindings
 type: binding
-description: '"This is the binding for [Husqvarna Automower® robotic lawn mowers](https://www.husqvarna.com/uk/products/robotic-lawn-mowers/)."'
+description: "This is the binding for [Husqvarna Automower® robotic lawn mowers](https://www.husqvarna.com/uk/products/robotic-lawn-mowers/)."
 logo: images/addons/automower.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.automower/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Automower - Bindings"
   - property: og:description
-    content: '"This is the binding for Husqvarna Automower® robotic lawn mowers."'
+    content: "This is the binding for Husqvarna Automower® robotic lawn mowers."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

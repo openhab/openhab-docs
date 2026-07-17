@@ -3,15 +3,14 @@ id: sinope
 label: Sinopé
 title: Sinopé - Bindings
 type: binding
-description: '"The integration happens through the Sinopé (GT150) bridge, which acts
-  as an IP gateway to the Sinopé devices on the 916 Mhz ISM band."'
+description: "The integration happens through the Sinopé (GT150) bridge, which acts as an IP gateway to the Sinopé devices on the 916 Mhz ISM band."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sinope/README.md
 meta:
   - property: og:title
     content: "Sinopé - Bindings"
   - property: og:description
-    content: '"The integration happens through the Sinopé (GT150) bridge, which acts
+    content: "The integration happens through the Sinopé (GT150) bridge, which acts as an IP gateway to the Sinopé devices on the 916 Mhz ISM band."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,15 +3,14 @@ id: siemenshvac
 label: SiemensHVAC
 title: SiemensHVAC - Bindings
 type: binding
-description: '"This binding provides support for the Siemens HVAC controller ecosystem,
-  and the Web Gateway interface OZW672."'
+description: "This binding provides support for the Siemens HVAC controller ecosystem, and the Web Gateway interface OZW672."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.siemenshvac/README.md
 meta:
   - property: og:title
     content: "SiemensHVAC - Bindings"
   - property: og:description
-    content: '"This binding provides support for the Siemens HVAC controller ecosystem,
+    content: "This binding provides support for the Siemens HVAC controller ecosystem, and the Web Gateway interface OZW672."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

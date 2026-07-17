@@ -3,8 +3,7 @@ id: tado
 label: tado°
 title: tado° - Bindings
 type: binding
-description: '"The binding integrates tado° devices as shown in the [tado° official
-  website](https://www.tado.com)."'
+description: "The binding integrates tado° devices as shown in the [tado° official website](https://www.tado.com)."
 logo: images/addons/tado.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tado/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "tado° - Bindings"
   - property: og:description
-    content: '"The binding integrates tado° devices as shown in the tado° official
+    content: "The binding integrates tado° devices as shown in the tado° official website."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

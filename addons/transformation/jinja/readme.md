@@ -3,7 +3,7 @@ id: jinja
 label: Jinja
 title: Jinja - Transformation Services
 type: transform
-description: '"Transforms a value using a Jinja template."'
+description: "Transforms a value using a Jinja template."
 logo: images/addons/jinja.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.jinja/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Jinja - Transformation Services"
   - property: og:description
-    content: '"Transforms a value using a Jinja template."'
+    content: "Transforms a value using a Jinja template."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

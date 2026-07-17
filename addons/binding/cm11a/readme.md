@@ -3,8 +3,7 @@ id: cm11a
 label: Cm11a (X10 controller)
 title: Cm11a (X10 controller) - Bindings
 type: binding
-description: '"The cm11a is a serial computer interface that allows a computer to
-  control attached X10 modules."'
+description: "The cm11a is a serial computer interface that allows a computer to control attached X10 modules."
 logo: images/addons/cm11a.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.cm11a/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Cm11a (X10 controller) - Bindings"
   - property: og:description
-    content: '"The cm11a is a serial computer interface that allows a computer to
+    content: "The cm11a is a serial computer interface that allows a computer to control attached X10 modules."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

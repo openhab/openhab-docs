@@ -3,15 +3,14 @@ id: prowl
 label: Prowl
 title: Prowl - Bindings
 type: binding
-description: '"This binding integrates the [Prowl](https://www.prowlapp.com) iOS push
-  service."'
+description: "This binding integrates the [Prowl](https://www.prowlapp.com) iOS push service."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.prowl/README.md
 meta:
   - property: og:title
     content: "Prowl - Bindings"
   - property: og:description
-    content: '"This binding integrates the Prowl iOS push
+    content: "This binding integrates the Prowl iOS push service."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

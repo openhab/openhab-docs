@@ -3,9 +3,7 @@ id: mimictts
 label: Mimic Text-to-Speech
 title: Mimic Text-to-Speech - Voices
 type: voice
-description: '"Mimic (version 3 and above) is an offline open source Text-To-speech
-  engine designed by Mycroft A.I. for the eponym Vocal Assistant, that provides multiple
-  voices, available in different languages and variants."'
+description: "Mimic (version 3 and above) is an offline open source Text-To-speech engine designed by Mycroft A.I. for the eponym Vocal Assistant, that provides multiple voices, available in different languages and variants."
 logo: images/addons/mimictts.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.mimictts/README.md
@@ -13,7 +11,7 @@ meta:
   - property: og:title
     content: "Mimic Text-to-Speech - Voices"
   - property: og:description
-    content: '"Mimic (version 3 and above) is an offline open source Text-To-speech
+    content: "Mimic (version 3 and above) is an offline open source Text-To-speech engine designed by Mycroft A.I. for the eponym Vocal Assistant, that provides multiple voices, available in different languages and variants."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

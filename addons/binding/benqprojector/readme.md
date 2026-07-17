@@ -3,8 +3,7 @@ id: benqprojector
 label: BenQ Projector
 title: BenQ Projector - Bindings
 type: binding
-description: '"This binding is compatible with BenQ projectors that support the control
-  protocol via the built-in Ethernet port, serial port or USB to serial adapter."'
+description: "This binding is compatible with BenQ projectors that support the control protocol via the built-in Ethernet port, serial port or USB to serial adapter."
 logo: images/addons/benqprojector.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.benqprojector/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "BenQ Projector - Bindings"
   - property: og:description
-    content: '"This binding is compatible with BenQ projectors that support the control
+    content: "This binding is compatible with BenQ projectors that support the control protocol via the built-in Ethernet port, serial port or USB to serial adapter."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

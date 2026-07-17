@@ -3,7 +3,7 @@ id: samsungtv
 label: Samsung TV
 title: Samsung TV - Bindings
 type: binding
-description: '"This binding integrates the [Samsung TV''s](https://www.samsung.com)."'
+description: "This binding integrates the [Samsung TV's](https://www.samsung.com)."
 logo: images/addons/samsungtv.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.samsungtv/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Samsung TV - Bindings"
   - property: og:description
-    content: '"This binding integrates the Samsung TV''s."'
+    content: "This binding integrates the Samsung TV's."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

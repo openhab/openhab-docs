@@ -3,8 +3,7 @@ id: bluetooth.generic
 label: Generic Bluetooth Device
 title: Generic Bluetooth Device - Bindings
 type: binding
-description: '"This binding adds support for devices that expose [Bluetooth Generic
-  Attributes (GATT)](https://www.bluetooth.com/specifications/gatt/)"'
+description: "This binding adds support for devices that expose [Bluetooth Generic Attributes (GATT)](https://www.bluetooth.com/specifications/gatt/)"
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.generic/README.md
 prev: ../bluetooth/
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Generic Bluetooth Device - Bindings"
   - property: og:description
-    content: '"This binding adds support for devices that expose Bluetooth Generic
+    content: "This binding adds support for devices that expose Bluetooth Generic Attributes (GATT)"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: lgthinq
 label: LG ThinQ
 title: LG ThinQ - Bindings
 type: binding
-description: '"This binding was developed to integrate the LG ThinQ API with openHAB."'
+description: "This binding was developed to integrate the LG ThinQ API with openHAB."
 logo: images/addons/lgthinq.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.lgthinq/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "LG ThinQ - Bindings"
   - property: og:description
-    content: '"This binding was developed to integrate the LG ThinQ API with openHAB."'
+    content: "This binding was developed to integrate the LG ThinQ API with openHAB."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

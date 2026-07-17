@@ -3,7 +3,7 @@ id: meteofrance
 label: Meteo France
 title: Meteo France - Bindings
 type: binding
-description: '"This binding provides information made available by Meteo France:"'
+description: "This binding provides information made available by Meteo France:"
 logo: images/addons/meteofrance.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.meteofrance/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Meteo France - Bindings"
   - property: og:description
-    content: '"This binding provides information made available by Meteo France:"'
+    content: "This binding provides information made available by Meteo France:"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

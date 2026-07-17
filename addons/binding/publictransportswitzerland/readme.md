@@ -3,8 +3,7 @@ id: publictransportswitzerland
 label: Public Transport Switzerland
 title: Public Transport Switzerland - Bindings
 type: binding
-description: '"Connects to the Swiss Public Transport API to provide real-time public
-  transport information. See the [Swiss Public Transport API documentation](https://transport.opendata.ch/)."'
+description: "Connects to the Swiss Public Transport API to provide real-time public transport information. See the [Swiss Public Transport API documentation](https://transport.opendata.ch/)."
 logo: images/addons/publictransportswitzerland.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.publictransportswitzerland/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Public Transport Switzerland - Bindings"
   - property: og:description
-    content: '"Connects to the Swiss Public Transport API to provide real-time public
+    content: "Connects to the Swiss Public Transport API to provide real-time public transport information. See the Swiss Public Transport API documentation."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

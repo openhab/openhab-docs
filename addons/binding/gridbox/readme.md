@@ -3,19 +3,14 @@ id: gridbox
 label: GridBox
 title: GridBox - Bindings
 type: binding
-description: '"The [Viessmann GridBox](https://www.viessmann.de/de/produkte/energiemanagement/gridbox.html)/[E.ON
-  Home Box](https://shop.eon.de/p/e.on-home-box-home-energy-management-system_EL1006651)
-  is an energy management device which gathers information about produced and consumed
-  electrical power from compatible energy meters, photovoltaic inverters, batteries,
-  heat pumps, EV charging stations, etc., and steers the connected components to increase
-  the self-consumption rate and efficiency of the system."'
+description: "The [Viessmann GridBox](https://www.viessmann.de/de/produkte/energiemanagement/gridbox.html)/[E.ON Home Box](https://shop.eon.de/p/e.on-home-box-home-energy-management-system_EL1006651) is an energy management device which gathers information about produced and consumed electrical power from compatible energy meters, photovoltaic inverters, batteries, heat pumps, EV charging stations, etc., and steers the connected components to increase the self-consumption rate and efficiency of the system."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.gridbox/README.md
 meta:
   - property: og:title
     content: "GridBox - Bindings"
   - property: og:description
-    content: '"The Viessmann GridBox/E.ON
+    content: "The Viessmann GridBox/E.ON Home Box(https://shop.eon.de/p/e.on-home-box-home-energy-management-system_EL1006651) is an energy management device which gathers information about produced and consumed electrical power from compatible energy meters, photovoltaic inverters, batteries, heat pumps, EV charging stations, etc., and steers the connected components to increase the self-consumption rate and efficiency of the system."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

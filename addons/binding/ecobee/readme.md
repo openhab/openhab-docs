@@ -3,8 +3,7 @@ id: ecobee
 label: Ecobee
 title: Ecobee - Bindings
 type: binding
-description: '"[Ecobee Inc.](https://www.ecobee.com/)  of Toronto, Canada, sells a
-  range of Wi-Fi"'
+description: "[Ecobee Inc.](https://www.ecobee.com/)  of Toronto, Canada, sells a range of Wi-Fi"
 logo: images/addons/ecobee.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ecobee/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Ecobee - Bindings"
   - property: og:description
-    content: '"Ecobee Inc.  of Toronto, Canada, sells a
+    content: "Ecobee Inc.  of Toronto, Canada, sells a range of Wi-Fi"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

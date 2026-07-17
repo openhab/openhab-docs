@@ -3,8 +3,7 @@ id: ecovacs
 label: Ecovacs
 title: Ecovacs - Bindings
 type: binding
-description: '"This binding provides integration for vacuum cleaning / mopping robots
-  made by Ecovacs (<https://www.ecovacs.com/>)."'
+description: "This binding provides integration for vacuum cleaning / mopping robots made by Ecovacs (<https://www.ecovacs.com/>)."
 logo: images/addons/ecovacs.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ecovacs/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Ecovacs - Bindings"
   - property: og:description
-    content: '"This binding provides integration for vacuum cleaning / mopping robots
+    content: "This binding provides integration for vacuum cleaning / mopping robots made by Ecovacs (<https://www.ecovacs.com/>)."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

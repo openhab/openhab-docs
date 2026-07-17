@@ -3,15 +3,14 @@ id: phc
 label: PHC
 title: PHC - Bindings
 type: binding
-description: '"This binding allows you to integrate modules (at the moment AM, EM,
-  JRM and DIM) of PHC without the PHC control (STM) in openHAB."'
+description: "This binding allows you to integrate modules (at the moment AM, EM, JRM and DIM) of PHC without the PHC control (STM) in openHAB."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.phc/README.md
 meta:
   - property: og:title
     content: "PHC - Bindings"
   - property: og:description
-    content: '"This binding allows you to integrate modules (at the moment AM, EM,
+    content: "This binding allows you to integrate modules (at the moment AM, EM, JRM and DIM) of PHC without the PHC control (STM) in openHAB."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

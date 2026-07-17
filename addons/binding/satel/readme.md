@@ -3,16 +3,14 @@ id: satel
 label: Satel Integra Alarm System
 title: Satel Integra Alarm System - Bindings
 type: binding
-description: '"The Satel Integra Alarm System allows openHAB to connect to your alarm
-  system via TCP/IP network with ETHM-1/ETHM-1 Plus module installed, or via RS-232
-  serial port with INT-RS/INT-RS Plus module installed."'
+description: "The Satel Integra Alarm System allows openHAB to connect to your alarm system via TCP/IP network with ETHM-1/ETHM-1 Plus module installed, or via RS-232 serial port with INT-RS/INT-RS Plus module installed."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.satel/README.md
 meta:
   - property: og:title
     content: "Satel Integra Alarm System - Bindings"
   - property: og:description
-    content: '"The Satel Integra Alarm System allows openHAB to connect to your alarm
+    content: "The Satel Integra Alarm System allows openHAB to connect to your alarm system via TCP/IP network with ETHM-1/ETHM-1 Plus module installed, or via RS-232 serial port with INT-RS/INT-RS Plus module installed."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

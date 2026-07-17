@@ -3,15 +3,14 @@ id: smartmeter
 label: SmartMeter
 title: SmartMeter - Bindings
 type: binding
-description: '"This binding retrieves and reads SML messages (PUSH) and supports IEC
-  62056-21 modes A,B,C (PULL) and D (PUSH)."'
+description: "This binding retrieves and reads SML messages (PUSH) and supports IEC 62056-21 modes A,B,C (PULL) and D (PUSH)."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.smartmeter/README.md
 meta:
   - property: og:title
     content: "SmartMeter - Bindings"
   - property: og:description
-    content: '"This binding retrieves and reads SML messages (PUSH) and supports IEC
+    content: "This binding retrieves and reads SML messages (PUSH) and supports IEC 62056-21 modes A,B,C (PULL) and D (PUSH)."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

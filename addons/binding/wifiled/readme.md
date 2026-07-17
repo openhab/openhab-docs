@@ -3,14 +3,14 @@ id: wifiled
 label: WiFi LED
 title: WiFi LED - Bindings
 type: binding
-description: '"This binding is used to control LED strips connected via Wi‑Fi."'
+description: "This binding is used to control LED strips connected via Wi‑Fi."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.wifiled/README.md
 meta:
   - property: og:title
     content: "WiFi LED - Bindings"
   - property: og:description
-    content: '"This binding is used to control LED strips connected via Wi‑Fi."'
+    content: "This binding is used to control LED strips connected via Wi‑Fi."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

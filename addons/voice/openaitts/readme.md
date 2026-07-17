@@ -3,15 +3,14 @@ id: openaitts
 label: OpenAI Text-to-Speech
 title: OpenAI Text-to-Speech - Voices
 type: voice
-description: '"The OpenAI TTS (Text-to-Speech) add-on for openHAB allows you to integrate
-  OpenAI''s Text-to-Speech capabilities into your openHAB system."'
+description: "The OpenAI TTS (Text-to-Speech) add-on for openHAB allows you to integrate OpenAI's Text-to-Speech capabilities into your openHAB system."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.openaitts/README.md
 meta:
   - property: og:title
     content: "OpenAI Text-to-Speech - Voices"
   - property: og:description
-    content: '"The OpenAI TTS (Text-to-Speech) add-on for openHAB allows you to integrate
+    content: "The OpenAI TTS (Text-to-Speech) add-on for openHAB allows you to integrate OpenAI's Text-to-Speech capabilities into your openHAB system."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

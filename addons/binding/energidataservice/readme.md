@@ -3,8 +3,7 @@ id: energidataservice
 label: Energi Data Service
 title: Energi Data Service - Bindings
 type: binding
-description: '"This binding integrates electricity prices from the Danish Energi Data
-  Service (''Open energy data from Energinet to society'')."'
+description: "This binding integrates electricity prices from the Danish Energi Data Service ('Open energy data from Energinet to society')."
 logo: images/addons/energidataservice.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.energidataservice/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Energi Data Service - Bindings"
   - property: og:description
-    content: '"This binding integrates electricity prices from the Danish Energi Data
+    content: "This binding integrates electricity prices from the Danish Energi Data Service ('Open energy data from Energinet to society')."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,8 +3,7 @@ id: knx
 label: KNX
 title: KNX - Bindings
 type: binding
-description: '"The openHAB KNX binding allows to connect to [KNX Home Automation](https://www.knx.org/)
-  installations."'
+description: "The openHAB KNX binding allows to connect to [KNX Home Automation](https://www.knx.org/) installations."
 logo: images/addons/knx.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.knx/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "KNX - Bindings"
   - property: og:description
-    content: '"The openHAB KNX binding allows to connect to KNX Home Automation
+    content: "The openHAB KNX binding allows to connect to KNX Home Automation installations."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

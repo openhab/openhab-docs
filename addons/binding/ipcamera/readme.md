@@ -3,9 +3,7 @@ id: ipcamera
 label: IP Camera
 title: IP Camera - Bindings
 type: binding
-description: '"This binding allows you to use most IP cameras in openHAB and has many
-  hidden features, so please take the time to read through this guide to learn different
-  ways to work with cameras that you may not know about."'
+description: "This binding allows you to use most IP cameras in openHAB and has many hidden features, so please take the time to read through this guide to learn different ways to work with cameras that you may not know about."
 logo: images/addons/ipcamera.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ipcamera/README.md
@@ -13,7 +11,7 @@ meta:
   - property: og:title
     content: "IP Camera - Bindings"
   - property: og:description
-    content: '"This binding allows you to use most IP cameras in openHAB and has many
+    content: "This binding allows you to use most IP cameras in openHAB and has many hidden features, so please take the time to read through this guide to learn different ways to work with cameras that you may not know about."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

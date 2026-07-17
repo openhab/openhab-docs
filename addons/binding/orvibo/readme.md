@@ -3,7 +3,7 @@ id: orvibo
 label: Orvibo
 title: Orvibo - Bindings
 type: binding
-description: '"This binding integrates Orvibo devices that communicate using UDP."'
+description: "This binding integrates Orvibo devices that communicate using UDP."
 logo: images/addons/orvibo.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.orvibo/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Orvibo - Bindings"
   - property: og:description
-    content: '"This binding integrates Orvibo devices that communicate using UDP."'
+    content: "This binding integrates Orvibo devices that communicate using UDP."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

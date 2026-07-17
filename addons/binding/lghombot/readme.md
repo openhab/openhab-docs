@@ -3,7 +3,7 @@ id: lghombot
 label: LG HomBot
 title: LG HomBot - Bindings
 type: binding
-description: '"The binding integrates a modified LG HomBot VR6260 based vacuum robots."'
+description: "The binding integrates a modified LG HomBot VR6260 based vacuum robots."
 logo: images/addons/lghombot.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.lghombot/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "LG HomBot - Bindings"
   - property: og:description
-    content: '"The binding integrates a modified LG HomBot VR6260 based vacuum robots."'
+    content: "The binding integrates a modified LG HomBot VR6260 based vacuum robots."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

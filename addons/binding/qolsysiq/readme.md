@@ -3,15 +3,14 @@ id: qolsysiq
 label: Qolsys IQ
 title: Qolsys IQ - Bindings
 type: binding
-description: '"This binding directly controls a [Qolsys IQ](https://qolsys.com/security/)
-  security panel."'
+description: "This binding directly controls a [Qolsys IQ](https://qolsys.com/security/) security panel."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.qolsysiq/README.md
 meta:
   - property: og:title
     content: "Qolsys IQ - Bindings"
   - property: og:description
-    content: '"This binding directly controls a Qolsys IQ
+    content: "This binding directly controls a Qolsys IQ security panel."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

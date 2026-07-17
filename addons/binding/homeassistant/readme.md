@@ -3,8 +3,7 @@ id: homeassistant
 label: Home Assistant
 title: Home Assistant - Bindings
 type: binding
-description: '"Devices that use [Home Assistant MQTT Discovery](https://www.home-assistant.io/integrations/mqtt/#mqtt-discovery)
-  are automatically configured with this binding."'
+description: "Devices that use [Home Assistant MQTT Discovery](https://www.home-assistant.io/integrations/mqtt/#mqtt-discovery) are automatically configured with this binding."
 logo: images/addons/homeassistant.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.homeassistant/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Home Assistant - Bindings"
   - property: og:description
-    content: '"Devices that use Home Assistant MQTT Discovery(https://www.home-assistant.io/integrations/mqtt/#mqtt-discovery)
+    content: "Devices that use Home Assistant MQTT Discovery(https://www.home-assistant.io/integrations/mqtt/#mqtt-discovery) are automatically configured with this binding."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

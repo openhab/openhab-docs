@@ -3,8 +3,7 @@ id: awattar
 label: aWATTar
 title: aWATTar - Bindings
 type: binding
-description: '"This binding provides access to the hourly prices for electricity for
-  the German and Austrian provider aWATTar."'
+description: "This binding provides access to the hourly prices for electricity for the German and Austrian provider aWATTar."
 logo: images/addons/awattar.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.awattar/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "aWATTar - Bindings"
   - property: og:description
-    content: '"This binding provides access to the hourly prices for electricity for
+    content: "This binding provides access to the hourly prices for electricity for the German and Austrian provider aWATTar."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

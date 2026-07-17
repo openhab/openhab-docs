@@ -3,8 +3,7 @@ id: myuplink
 label: myUplink
 title: myUplink - Bindings
 type: binding
-description: '"The myUplink binding is used to get ''live data'' from from Nibe heat
-  pumps without plugging any custom devices into your heat pump."'
+description: "The myUplink binding is used to get 'live data' from from Nibe heat pumps without plugging any custom devices into your heat pump."
 logo: images/addons/myuplink.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.myuplink/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "myUplink - Bindings"
   - property: og:description
-    content: '"The myUplink binding is used to get ''live data'' from from Nibe heat
+    content: "The myUplink binding is used to get 'live data' from from Nibe heat pumps without plugging any custom devices into your heat pump."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

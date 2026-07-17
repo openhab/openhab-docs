@@ -3,8 +3,7 @@ id: neato
 label: Neato
 title: Neato - Bindings
 type: binding
-description: '"This binding connects openHAB to the Neato cloud (where you log in
-  and manage your Neato devices)."'
+description: "This binding connects openHAB to the Neato cloud (where you log in and manage your Neato devices)."
 logo: images/addons/neato.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.neato/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Neato - Bindings"
   - property: og:description
-    content: '"This binding connects openHAB to the Neato cloud (where you log in
+    content: "This binding connects openHAB to the Neato cloud (where you log in and manage your Neato devices)."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

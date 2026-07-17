@@ -3,8 +3,7 @@ id: avmfritz
 label: AVM FRITZ!
 title: AVM FRITZ! - Bindings
 type: binding
-description: '"The binding integrates AVM FRITZ!Boxes with a special focus on the
-  AHA ([AVM Home Automation](https://fritz.com/produkte/smart-home/)) features."'
+description: "The binding integrates AVM FRITZ!Boxes with a special focus on the AHA ([AVM Home Automation](https://fritz.com/produkte/smart-home/)) features."
 logo: images/addons/avmfritz.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.avmfritz/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "AVM FRITZ! - Bindings"
   - property: og:description
-    content: '"The binding integrates AVM FRITZ!Boxes with a special focus on the
+    content: "The binding integrates AVM FRITZ!Boxes with a special focus on the AHA (AVM Home Automation) features."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

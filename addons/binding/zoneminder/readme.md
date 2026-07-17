@@ -3,7 +3,7 @@ id: zoneminder
 label: ZoneMinder
 title: ZoneMinder - Bindings
 type: binding
-description: '"Supports the ZoneMinder video surveillance system."'
+description: "Supports the ZoneMinder video surveillance system."
 logo: images/addons/zoneminder.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.zoneminder/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "ZoneMinder - Bindings"
   - property: og:description
-    content: '"Supports the ZoneMinder video surveillance system."'
+    content: "Supports the ZoneMinder video surveillance system."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

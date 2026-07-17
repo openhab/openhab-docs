@@ -3,8 +3,7 @@ id: basic
 label: Basic UI
 title: Basic UI - UIs
 type: ui
-description: '"The Basic UI is a web interface based on Material Design Lite from
-  Google."'
+description: "The Basic UI is a web interface based on Material Design Lite from Google."
 logo: images/addons/basic.png
 install: manual
 source: https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui.basic/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "Basic UI - UIs"
   - property: og:description
-    content: '"The Basic UI is a web interface based on Material Design Lite from
+    content: "The Basic UI is a web interface based on Material Design Lite from Google."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

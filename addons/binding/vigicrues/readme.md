@@ -3,15 +3,14 @@ id: vigicrues
 label: VigiCrues
 title: VigiCrues - Bindings
 type: binding
-description: '"This binding allows you to get data regarding water flow and water
-  height on major French rivers."'
+description: "This binding allows you to get data regarding water flow and water height on major French rivers."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.vigicrues/README.md
 meta:
   - property: og:title
     content: "VigiCrues - Bindings"
   - property: og:description
-    content: '"This binding allows you to get data regarding water flow and water
+    content: "This binding allows you to get data regarding water flow and water height on major French rivers."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

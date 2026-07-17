@@ -3,7 +3,7 @@ id: govee
 label: Govee Lan-API
 title: Govee Lan-API - Bindings
 type: binding
-description: '"![govee](./doc/govee-lights.png)"'
+description: "![govee](./doc/govee-lights.png)"
 logo: images/addons/govee.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.govee/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Govee Lan-API - Bindings"
   - property: og:description
-    content: '"!govee(doc/govee-lights.png)"'
+    content: "!govee(doc/govee-lights.png)"
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

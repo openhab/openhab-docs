@@ -3,14 +3,14 @@ id: wlanthermo
 label: WlanThermo
 title: WlanThermo - Bindings
 type: binding
-description: '"This binding add support for the WlanThermo BBQ Thermometer."'
+description: "This binding add support for the WlanThermo BBQ Thermometer."
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.wlanthermo/README.md
 meta:
   - property: og:title
     content: "WlanThermo - Bindings"
   - property: og:description
-    content: '"This binding add support for the WlanThermo BBQ Thermometer."'
+    content: "This binding add support for the WlanThermo BBQ Thermometer."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,8 +3,7 @@ id: heliosventilation
 label: HeliosVentilation
 title: HeliosVentilation - Bindings
 type: binding
-description: '"This is the binding for Helios Ventilation Systems KWL EC 200/300/500
-  Pro."'
+description: "This is the binding for Helios Ventilation Systems KWL EC 200/300/500 Pro."
 logo: images/addons/heliosventilation.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.heliosventilation/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "HeliosVentilation - Bindings"
   - property: og:description
-    content: '"This is the binding for Helios Ventilation Systems KWL EC 200/300/500
+    content: "This is the binding for Helios Ventilation Systems KWL EC 200/300/500 Pro."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

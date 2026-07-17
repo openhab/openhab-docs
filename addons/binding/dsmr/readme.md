@@ -3,8 +3,7 @@ id: dsmr
 label: DSMR
 title: DSMR - Bindings
 type: binding
-description: '"The DSMR-binding is targeted towards Dutch, Belgium, Luxembourger and
-  Austrian users having a smart meter (Dutch: ''Slimme meter'')."'
+description: "The DSMR-binding is targeted towards Dutch, Belgium, Luxembourger and Austrian users having a smart meter (Dutch: 'Slimme meter')."
 logo: images/addons/dsmr.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.dsmr/README.md
@@ -12,7 +11,7 @@ meta:
   - property: og:title
     content: "DSMR - Bindings"
   - property: og:description
-    content: '"The DSMR-binding is targeted towards Dutch, Belgium, Luxembourger and
+    content: "The DSMR-binding is targeted towards Dutch, Belgium, Luxembourger and Austrian users having a smart meter (Dutch: 'Slimme meter')."
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
