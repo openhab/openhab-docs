@@ -3,7 +3,7 @@ id: sunsynk
 label: SunSynk
 title: SunSynk - Bindings
 type: binding
-description: "This binding integrates the [Sun Synk Connect web services](https://www.sunsynk.net/)."
+description: This binding integrates the [Sun Synk Connect web services](https://www.sunsynk.net/).
 logo: images/addons/sunsynk.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sunsynk/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "SunSynk - Bindings"
   - property: og:description
-    content: "This binding integrates the Sun Synk Connect web services."
+    content: This binding integrates the Sun Synk Connect web services.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: dali
 label: DALI
 title: DALI - Bindings
 type: binding
-description: "This binding supports controlling devices on a DALI bus (Digital Addressable Lighting Interface) via a [daliserver](https://github.com/onitake/daliserver) connection."
+description: This binding supports controlling devices on a DALI bus (Digital Addressable Lighting Interface) via a [daliserver](https://github.com/onitake/daliserver) connection.
 logo: images/addons/dali.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.dali/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "DALI - Bindings"
   - property: og:description
-    content: "This binding supports controlling devices on a DALI bus (Digital Addressable Lighting Interface) via a daliserver connection."
+    content: This binding supports controlling devices on a DALI bus (Digital Addressable Lighting Interface) via a daliserver connection.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,14 +3,14 @@ id: broadlinkthermostat
 label: Broadlink Thermostat
 title: Broadlink Thermostat - Bindings
 type: binding
-description: "The binding integrates devices based on broadlink controllers."
+description: The binding integrates devices based on broadlink controllers.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.broadlinkthermostat/README.md
 meta:
   - property: og:title
     content: "Broadlink Thermostat - Bindings"
   - property: og:description
-    content: "The binding integrates devices based on broadlink controllers."
+    content: The binding integrates devices based on broadlink controllers.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

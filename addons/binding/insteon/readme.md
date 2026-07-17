@@ -3,7 +3,7 @@ id: insteon
 label: Insteon
 title: Insteon - Bindings
 type: binding
-description: "Insteon is a proprietary home automation system that enables light switches, lights, thermostats, leak sensors, remote controls, motion sensors, and other electrically powered devices to interoperate through power lines, radio frequency (RF) communications, or both (dual-band)"
+description: Insteon is a proprietary home automation system that enables light switches, lights, thermostats, leak sensors, remote controls, motion sensors, and other electrically powered devices to interoperate through power lines, radio frequency (RF) communications, or both (dual-band)
 logo: images/addons/insteon.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.insteon/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Insteon - Bindings"
   - property: og:description
-    content: "Insteon is a proprietary home automation system that enables light switches, lights, thermostats, leak sensors, remote controls, motion sensors, and other electrically powered devices to interoperate through power lines, radio frequency (RF) communications, or both (dual-band)"
+    content: Insteon is a proprietary home automation system that enables light switches, lights, thermostats, leak sensors, remote controls, motion sensors, and other electrically powered devices to interoperate through power lines, radio frequency (RF) communications, or both (dual-band)
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

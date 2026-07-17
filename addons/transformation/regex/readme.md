@@ -3,7 +3,7 @@ id: regex
 label: Regex
 title: Regex - Transformation Services
 type: transform
-description: "Transforms a source string based on a regular expression (regex) search pattern into a defined result string."
+description: Transforms a source string based on a regular expression (regex) search pattern into a defined result string.
 logo: images/addons/regex.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.regex/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Regex - Transformation Services"
   - property: og:description
-    content: "Transforms a source string based on a regular expression (regex) search pattern into a defined result string."
+    content: Transforms a source string based on a regular expression (regex) search pattern into a defined result string.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

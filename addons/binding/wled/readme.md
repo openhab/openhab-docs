@@ -3,7 +3,7 @@ id: wled
 label: WLED
 title: WLED - Bindings
 type: binding
-description: "This binding allows you to auto discover and use LED strings based on the WLED project:"
+description: 'This binding allows you to auto discover and use LED strings based on the WLED project:'
 logo: images/addons/wled.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.wled/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "WLED - Bindings"
   - property: og:description
-    content: "This binding allows you to auto discover and use LED strings based on the WLED project:"
+    content: 'This binding allows you to auto discover and use LED strings based on the WLED project:'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

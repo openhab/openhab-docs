@@ -3,7 +3,7 @@ id: tplinksmarthome
 label: TP-Link Smart Home
 title: TP-Link Smart Home - Bindings
 type: binding
-description: "This binding adds support to control TP-Link Smart Home Devices from your local openHAB system."
+description: This binding adds support to control TP-Link Smart Home Devices from your local openHAB system.
 logo: images/addons/tplinksmarthome.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tplinksmarthome/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "TP-Link Smart Home - Bindings"
   - property: og:description
-    content: "This binding adds support to control TP-Link Smart Home Devices from your local openHAB system."
+    content: This binding adds support to control TP-Link Smart Home Devices from your local openHAB system.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

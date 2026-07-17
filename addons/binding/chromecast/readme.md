@@ -3,7 +3,7 @@ id: chromecast
 label: Chromecast
 title: Chromecast - Bindings
 type: binding
-description: "The binding integrates Google Chromecast streaming devices."
+description: The binding integrates Google Chromecast streaming devices.
 logo: images/addons/chromecast.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.chromecast/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Chromecast - Bindings"
   - property: og:description
-    content: "The binding integrates Google Chromecast streaming devices."
+    content: The binding integrates Google Chromecast streaming devices.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

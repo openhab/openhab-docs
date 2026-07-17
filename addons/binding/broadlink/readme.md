@@ -3,7 +3,7 @@ id: broadlink
 label: Broadlink
 title: Broadlink - Bindings
 type: binding
-description: "This binding supports sending infrared (IR) and radio frequency (RF) commands using a range of devices for made by (and occasionally OEM licensed from) [Broadlink](https://www.ibroadlink.com/)."
+description: This binding supports sending infrared (IR) and radio frequency (RF) commands using a range of devices for made by (and occasionally OEM licensed from) [Broadlink](https://www.ibroadlink.com/).
 logo: images/addons/broadlink.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.broadlink/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Broadlink - Bindings"
   - property: og:description
-    content: "This binding supports sending infrared (IR) and radio frequency (RF) commands using a range of devices for made by (and occasionally OEM licensed from) Broadlink."
+    content: This binding supports sending infrared (IR) and radio frequency (RF) commands using a range of devices for made by (and occasionally OEM licensed from) Broadlink.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: bticinosmarther
 label: BTicinoSmarther
 title: BTicinoSmarther - Bindings
 type: binding
-description: "The BTicino Smarther binding implements a bridge to the Legrand/BTicino Smarther v2.0 API and allows you to control your BTicino Smarther chronothermostat units with openHAB, making it possible to discover Smarther units connected to your Legrand/BTicino Smarther account."
+description: The BTicino Smarther binding implements a bridge to the Legrand/BTicino Smarther v2.0 API and allows you to control your BTicino Smarther chronothermostat units with openHAB, making it possible to discover Smarther units connected to your Legrand/BTicino Smarther account.
 logo: images/addons/bticinosmarther.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bticinosmarther/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "BTicinoSmarther - Bindings"
   - property: og:description
-    content: "The BTicino Smarther binding implements a bridge to the Legrand/BTicino Smarther v2.0 API and allows you to control your BTicino Smarther chronothermostat units with openHAB, making it possible to discover Smarther units connected to your Legrand/BTicino Smarther account."
+    content: The BTicino Smarther binding implements a bridge to the Legrand/BTicino Smarther v2.0 API and allows you to control your BTicino Smarther chronothermostat units with openHAB, making it possible to discover Smarther units connected to your Legrand/BTicino Smarther account.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

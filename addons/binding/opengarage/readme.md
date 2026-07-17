@@ -3,7 +3,7 @@ id: opengarage
 label: OpenGarage
 title: OpenGarage - Bindings
 type: binding
-description: "The OpenGarage binding allows you to control an OpenGarage controller (<https://opensprinkler.com/product/opengarage/>) using openHAB."
+description: The OpenGarage binding allows you to control an OpenGarage controller (<https://opensprinkler.com/product/opengarage/>) using openHAB.
 logo: images/addons/opengarage.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.opengarage/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "OpenGarage - Bindings"
   - property: og:description
-    content: "The OpenGarage binding allows you to control an OpenGarage controller (<https://opensprinkler.com/product/opengarage/>) using openHAB."
+    content: The OpenGarage binding allows you to control an OpenGarage controller (<https://opensprinkler.com/product/opengarage/>) using openHAB.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

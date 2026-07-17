@@ -3,7 +3,7 @@ id: guntamatic
 label: Guntamatic
 title: Guntamatic - Bindings
 type: binding
-description: "The Guntamatic Binding can be used to monitor and control [Guntamatic Heating Systems](https://www.guntamatic.com/en/)."
+description: The Guntamatic Binding can be used to monitor and control [Guntamatic Heating Systems](https://www.guntamatic.com/en/).
 logo: images/addons/guntamatic.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.guntamatic/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Guntamatic - Bindings"
   - property: og:description
-    content: "The Guntamatic Binding can be used to monitor and control Guntamatic Heating Systems."
+    content: The Guntamatic Binding can be used to monitor and control Guntamatic Heating Systems.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

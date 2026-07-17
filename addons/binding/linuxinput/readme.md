@@ -3,7 +3,7 @@ id: linuxinput
 label: Linux Input
 title: Linux Input - Bindings
 type: binding
-description: "This binding allows to you use a keyboard to control your openHAB instance."
+description: This binding allows to you use a keyboard to control your openHAB instance.
 logo: images/addons/linuxinput.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.linuxinput/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Linux Input - Bindings"
   - property: og:description
-    content: "This binding allows to you use a keyboard to control your openHAB instance."
+    content: This binding allows to you use a keyboard to control your openHAB instance.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

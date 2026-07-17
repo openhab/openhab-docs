@@ -3,14 +3,14 @@ id: tr064
 label: TR-064
 title: TR-064 - Bindings
 type: binding
-description: "This binding brings support for internet gateway devices that support the TR-064 protocol (e.g. the AVM FritzBox family of routers)."
+description: This binding brings support for internet gateway devices that support the TR-064 protocol (e.g. the AVM FritzBox family of routers).
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tr064/README.md
 meta:
   - property: og:title
     content: "TR-064 - Bindings"
   - property: og:description
-    content: "This binding brings support for internet gateway devices that support the TR-064 protocol (e.g. the AVM FritzBox family of routers)."
+    content: This binding brings support for internet gateway devices that support the TR-064 protocol (e.g. the AVM FritzBox family of routers).
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

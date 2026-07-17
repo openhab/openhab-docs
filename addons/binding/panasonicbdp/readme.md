@@ -3,7 +3,7 @@ id: panasonicbdp
 label: Panasonic Blu-ray Player
 title: Panasonic Blu-ray Player - Bindings
 type: binding
-description: "This binding connects Panasonic Blu-ray players from 2011/2012 and UHD Blu-ray players from 2018 to openHAB."
+description: This binding connects Panasonic Blu-ray players from 2011/2012 and UHD Blu-ray players from 2018 to openHAB.
 logo: images/addons/panasonicbdp.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.panasonicbdp/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Panasonic Blu-ray Player - Bindings"
   - property: og:description
-    content: "This binding connects Panasonic Blu-ray players from 2011/2012 and UHD Blu-ray players from 2018 to openHAB."
+    content: This binding connects Panasonic Blu-ray players from 2011/2012 and UHD Blu-ray players from 2018 to openHAB.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

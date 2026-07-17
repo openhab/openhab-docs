@@ -3,14 +3,14 @@ id: onewiregpio
 label: OneWire GPIO
 title: OneWire GPIO - Bindings
 type: binding
-description: "This binding reads temperature values from OneWire bus sensors connected to the GPIO bus on a Raspberry Pi."
+description: This binding reads temperature values from OneWire bus sensors connected to the GPIO bus on a Raspberry Pi.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.onewiregpio/README.md
 meta:
   - property: og:title
     content: "OneWire GPIO - Bindings"
   - property: og:description
-    content: "This binding reads temperature values from OneWire bus sensors connected to the GPIO bus on a Raspberry Pi."
+    content: This binding reads temperature values from OneWire bus sensors connected to the GPIO bus on a Raspberry Pi.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

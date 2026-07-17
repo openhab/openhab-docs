@@ -3,7 +3,7 @@ id: mqtt.fpp
 label: FPP
 title: FPP - Bindings
 type: binding
-description: "Binding to control Falcon Player (FPP) devices using MQTT and HTTP. Status messages are received over MQTT and commands are sent via HTTP."
+description: Binding to control Falcon Player (FPP) devices using MQTT and HTTP. Status messages are received over MQTT and commands are sent via HTTP.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mqtt.fpp/README.md
 prev: ../mqtt/
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "FPP - Bindings"
   - property: og:description
-    content: "Binding to control Falcon Player (FPP) devices using MQTT and HTTP. Status messages are received over MQTT and commands are sent via HTTP."
+    content: Binding to control Falcon Player (FPP) devices using MQTT and HTTP. Status messages are received over MQTT and commands are sent via HTTP.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

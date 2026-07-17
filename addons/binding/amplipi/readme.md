@@ -3,7 +3,7 @@ id: amplipi
 label: AmpliPi
 title: AmpliPi - Bindings
 type: binding
-description: "This binding supports the multi-room audio system [AmpliPi](http://www.amplipi.com/) from [MicroNova](http://www.micro-nova.com/)."
+description: This binding supports the multi-room audio system [AmpliPi](http://www.amplipi.com/) from [MicroNova](http://www.micro-nova.com/).
 logo: images/addons/amplipi.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.amplipi/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "AmpliPi - Bindings"
   - property: og:description
-    content: "This binding supports the multi-room audio system AmpliPi from MicroNova."
+    content: This binding supports the multi-room audio system AmpliPi from MicroNova.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

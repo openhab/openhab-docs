@@ -3,7 +3,7 @@ id: airgradient
 label: AirGradient
 title: AirGradient - Bindings
 type: binding
-description: "AirGradient provides open source and open hardware air quality monitors."
+description: AirGradient provides open source and open hardware air quality monitors.
 logo: images/addons/airgradient.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.airgradient/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "AirGradient - Bindings"
   - property: og:description
-    content: "AirGradient provides open source and open hardware air quality monitors."
+    content: AirGradient provides open source and open hardware air quality monitors.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

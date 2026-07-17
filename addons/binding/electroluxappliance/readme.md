@@ -3,14 +3,14 @@ id: electroluxappliance
 label: Electrolux Appliance
 title: Electrolux Appliance - Bindings
 type: binding
-description: "This is a binding for Electrolux appliances."
+description: This is a binding for Electrolux appliances.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.electroluxappliance/README.md
 meta:
   - property: og:title
     content: "Electrolux Appliance - Bindings"
   - property: og:description
-    content: "This is a binding for Electrolux appliances."
+    content: This is a binding for Electrolux appliances.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

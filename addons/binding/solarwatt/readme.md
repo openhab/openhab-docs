@@ -3,7 +3,7 @@ id: solarwatt
 label: Solarwatt
 title: Solarwatt - Bindings
 type: binding
-description: "Binding to query a [solarwatt](https://www.solarwatt.de/) [energy manager](https://www.solarwatt.de/energie-management/energymanager) and read the values of all attached devices."
+description: Binding to query a [solarwatt](https://www.solarwatt.de/) [energy manager](https://www.solarwatt.de/energie-management/energymanager) and read the values of all attached devices.
 logo: images/addons/solarwatt.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.solarwatt/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Solarwatt - Bindings"
   - property: og:description
-    content: "Binding to query a solarwatt energy manager and read the values of all attached devices."
+    content: Binding to query a solarwatt energy manager and read the values of all attached devices.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

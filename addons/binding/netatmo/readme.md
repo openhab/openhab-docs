@@ -3,7 +3,7 @@ id: netatmo
 label: Netatmo
 title: Netatmo - Bindings
 type: binding
-description: "The Netatmo binding integrates the following Netatmo products:"
+description: 'The Netatmo binding integrates the following Netatmo products:'
 logo: images/addons/netatmo.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.netatmo/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Netatmo - Bindings"
   - property: og:description
-    content: "The Netatmo binding integrates the following Netatmo products:"
+    content: 'The Netatmo binding integrates the following Netatmo products:'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: squeezebox
 label: Squeezebox
 title: Squeezebox - Bindings
 type: binding
-description: "This binding integrates the [Logitech Media Server](https://www.mysqueezebox.com) and compatible Squeeze players."
+description: This binding integrates the [Logitech Media Server](https://www.mysqueezebox.com) and compatible Squeeze players.
 logo: images/addons/squeezebox.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.squeezebox/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Squeezebox - Bindings"
   - property: og:description
-    content: "This binding integrates the Logitech Media Server and compatible Squeeze players."
+    content: This binding integrates the Logitech Media Server and compatible Squeeze players.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

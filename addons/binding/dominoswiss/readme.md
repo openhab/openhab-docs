@@ -3,7 +3,7 @@ id: dominoswiss
 label: Dominoswiss
 title: Dominoswiss - Bindings
 type: binding
-description: "This binding allows the control of rollershutters, using an eGate as gateway and Dominoswiss radio receivers."
+description: This binding allows the control of rollershutters, using an eGate as gateway and Dominoswiss radio receivers.
 logo: images/addons/dominoswiss.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.dominoswiss/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Dominoswiss - Bindings"
   - property: og:description
-    content: "This binding allows the control of rollershutters, using an eGate as gateway and Dominoswiss radio receivers."
+    content: This binding allows the control of rollershutters, using an eGate as gateway and Dominoswiss radio receivers.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

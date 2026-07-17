@@ -3,14 +3,14 @@ id: plclogo
 label: PLCLogo
 title: PLCLogo - Bindings
 type: binding
-description: "This binding provides native support for Siemens LOGO! PLC devices."
+description: This binding provides native support for Siemens LOGO! PLC devices.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.plclogo/README.md
 meta:
   - property: og:title
     content: "PLCLogo - Bindings"
   - property: og:description
-    content: "This binding provides native support for Siemens LOGO! PLC devices."
+    content: This binding provides native support for Siemens LOGO! PLC devices.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

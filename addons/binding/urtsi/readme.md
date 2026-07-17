@@ -3,7 +3,7 @@ id: urtsi
 label: Somfy URTSI II
 title: Somfy URTSI II - Bindings
 type: binding
-description: "The addressable Universal RTS Interface II (URTSI II) can be used to communicate between home automation or other third-party systems and Somfy’s RTS motors and controls."
+description: The addressable Universal RTS Interface II (URTSI II) can be used to communicate between home automation or other third-party systems and Somfy’s RTS motors and controls.
 logo: images/addons/urtsi.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.urtsi/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Somfy URTSI II - Bindings"
   - property: og:description
-    content: "The addressable Universal RTS Interface II (URTSI II) can be used to communicate between home automation or other third-party systems and Somfy’s RTS motors and controls."
+    content: The addressable Universal RTS Interface II (URTSI II) can be used to communicate between home automation or other third-party systems and Somfy’s RTS motors and controls.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

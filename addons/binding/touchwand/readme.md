@@ -3,14 +3,14 @@ id: touchwand
 label: TouchWand
 title: TouchWand - Bindings
 type: binding
-description: "TouchWand Wanderfull™ Hub basic is a plug & play Z-Wave based controller that uses Wi-Fi and Bluetooth to easily connect all smart home components."
+description: TouchWand Wanderfull™ Hub basic is a plug & play Z-Wave based controller that uses Wi-Fi and Bluetooth to easily connect all smart home components.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.touchwand/README.md
 meta:
   - property: og:title
     content: "TouchWand - Bindings"
   - property: og:description
-    content: "TouchWand Wanderfull™ Hub basic is a plug & play Z-Wave based controller that uses Wi-Fi and Bluetooth to easily connect all smart home components."
+    content: TouchWand Wanderfull™ Hub basic is a plug & play Z-Wave based controller that uses Wi-Fi and Bluetooth to easily connect all smart home components.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

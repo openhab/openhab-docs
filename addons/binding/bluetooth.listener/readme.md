@@ -3,7 +3,7 @@ id: bluetooth.listener
 label: Listener
 title: Listener - Bindings
 type: binding
-description: "Bluetooth extension that supports receiving broadcasted data."
+description: Bluetooth extension that supports receiving broadcasted data.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.listener/README.md
 prev: ../bluetooth/
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Listener - Bindings"
   - property: og:description
-    content: "Bluetooth extension that supports receiving broadcasted data."
+    content: Bluetooth extension that supports receiving broadcasted data.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

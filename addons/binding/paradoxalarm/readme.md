@@ -3,7 +3,7 @@ id: paradoxalarm
 label: Paradox Alarm System
 title: Paradox Alarm System - Bindings
 type: binding
-description: "This binding is intended to provide basic support for Paradox Alarm system."
+description: This binding is intended to provide basic support for Paradox Alarm system.
 logo: images/addons/paradoxalarm.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.paradoxalarm/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Paradox Alarm System - Bindings"
   - property: og:description
-    content: "This binding is intended to provide basic support for Paradox Alarm system."
+    content: This binding is intended to provide basic support for Paradox Alarm system.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

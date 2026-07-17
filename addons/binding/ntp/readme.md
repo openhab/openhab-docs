@@ -3,7 +3,7 @@ id: ntp
 label: NTP
 title: NTP - Bindings
 type: binding
-description: "The NTP binding displays the local date and time, updated from an NTP server."
+description: The NTP binding displays the local date and time, updated from an NTP server.
 logo: images/addons/ntp.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ntp/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "NTP - Bindings"
   - property: og:description
-    content: "The NTP binding displays the local date and time, updated from an NTP server."
+    content: The NTP binding displays the local date and time, updated from an NTP server.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

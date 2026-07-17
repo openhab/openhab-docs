@@ -3,14 +3,14 @@ id: elerotransmitterstick
 label: Elero Transmitter Stick
 title: Elero Transmitter Stick - Bindings
 type: binding
-description: "Allows to control Elero rollershutters through a connected Elero Transmitter Stick."
+description: Allows to control Elero rollershutters through a connected Elero Transmitter Stick.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.elerotransmitterstick/README.md
 meta:
   - property: og:title
     content: "Elero Transmitter Stick - Bindings"
   - property: og:description
-    content: "Allows to control Elero rollershutters through a connected Elero Transmitter Stick."
+    content: Allows to control Elero rollershutters through a connected Elero Transmitter Stick.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

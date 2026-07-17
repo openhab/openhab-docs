@@ -3,7 +3,7 @@ id: tibber
 label: Tibber
 title: Tibber - Bindings
 type: binding
-description: "The Tibber Binding retrieves `prices` from the [Tibber API](https://developer.tibber.com)."
+description: The Tibber Binding retrieves `prices` from the [Tibber API](https://developer.tibber.com).
 logo: images/addons/tibber.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tibber/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Tibber - Bindings"
   - property: og:description
-    content: "The Tibber Binding retrieves `prices` from the Tibber API."
+    content: The Tibber Binding retrieves `prices` from the Tibber API.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

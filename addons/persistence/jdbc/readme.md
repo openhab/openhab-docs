@@ -3,7 +3,7 @@ id: jdbc
 label: JDBC Persistence
 title: JDBC Persistence - Persistence Services
 type: persistence
-description: "This service writes and reads item states to and from a number of relational database systems that support [Java Database Connectivity (JDBC)](https://en.wikipedia.org/wiki/Java_Database_Connectivity)."
+description: This service writes and reads item states to and from a number of relational database systems that support [Java Database Connectivity (JDBC)](https://en.wikipedia.org/wiki/Java_Database_Connectivity).
 logo: images/addons/jdbc.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.persistence.jdbc/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "JDBC Persistence - Persistence Services"
   - property: og:description
-    content: "This service writes and reads item states to and from a number of relational database systems that support Java Database Connectivity (JDBC)(https://en.wikipedia.org/wiki/Java_Database_Connectivity)."
+    content: This service writes and reads item states to and from a number of relational database systems that support Java Database Connectivity (JDBC)(https://en.wikipedia.org/wiki/Java_Database_Connectivity).
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

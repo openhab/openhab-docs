@@ -3,14 +3,14 @@ id: yamlcomposer
 label: YAML Composer
 title: YAML Composer - System Integrations
 type: io
-description: "YAML Composer introduces extended YAML features that make openHAB configuration more modular, reusable, and maintainable. These features let you structure configuration as composable building blocks rather than large, repetitive files."
+description: YAML Composer introduces extended YAML features that make openHAB configuration more modular, reusable, and maintainable. These features let you structure configuration as composable building blocks rather than large, repetitive files.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.integration.yamlcomposer/README.md
 meta:
   - property: og:title
     content: "YAML Composer - System Integrations"
   - property: og:description
-    content: "YAML Composer introduces extended YAML features that make openHAB configuration more modular, reusable, and maintainable. These features let you structure configuration as composable building blocks rather than large, repetitive files."
+    content: YAML Composer introduces extended YAML features that make openHAB configuration more modular, reusable, and maintainable. These features let you structure configuration as composable building blocks rather than large, repetitive files.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

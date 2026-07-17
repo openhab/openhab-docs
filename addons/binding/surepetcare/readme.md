@@ -3,14 +3,14 @@ id: surepetcare
 label: Sure Petcare
 title: Sure Petcare - Bindings
 type: binding
-description: "This binding integrates with the Sure Petcare API, supporting cloud‑connected pet/cat flaps, feeders, and waterstations."
+description: This binding integrates with the Sure Petcare API, supporting cloud‑connected pet/cat flaps, feeders, and waterstations.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.surepetcare/README.md
 meta:
   - property: og:title
     content: "Sure Petcare - Bindings"
   - property: og:description
-    content: "This binding integrates with the Sure Petcare API, supporting cloud‑connected pet/cat flaps, feeders, and waterstations."
+    content: This binding integrates with the Sure Petcare API, supporting cloud‑connected pet/cat flaps, feeders, and waterstations.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

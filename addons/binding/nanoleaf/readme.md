@@ -3,7 +3,7 @@ id: nanoleaf
 label: Nanoleaf
 title: Nanoleaf - Bindings
 type: binding
-description: "This binding integrates the [Nanoleaf Light Panels](https://nanoleaf.me/en/consumer-led-lighting/products/smarter-series/nanoleaf-light-panels-smarter-kit/)."
+description: This binding integrates the [Nanoleaf Light Panels](https://nanoleaf.me/en/consumer-led-lighting/products/smarter-series/nanoleaf-light-panels-smarter-kit/).
 logo: images/addons/nanoleaf.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.nanoleaf/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Nanoleaf - Bindings"
   - property: og:description
-    content: "This binding integrates the Nanoleaf Light Panels."
+    content: This binding integrates the Nanoleaf Light Panels.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

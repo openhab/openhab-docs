@@ -3,7 +3,7 @@ id: math
 label: Math
 title: Math - Transformation Services
 type: transform
-description: "Transforms the input by applying simple math on it."
+description: Transforms the input by applying simple math on it.
 logo: images/addons/math.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.math/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Math - Transformation Services"
   - property: og:description
-    content: "Transforms the input by applying simple math on it."
+    content: Transforms the input by applying simple math on it.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

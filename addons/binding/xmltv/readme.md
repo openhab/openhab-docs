@@ -3,14 +3,14 @@ id: xmltv
 label: XMLTV
 title: XMLTV - Bindings
 type: binding
-description: "XMLTV is an XML-based file format for describing TV listings."
+description: XMLTV is an XML-based file format for describing TV listings.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.xmltv/README.md
 meta:
   - property: og:title
     content: "XMLTV - Bindings"
   - property: og:description
-    content: "XMLTV is an XML-based file format for describing TV listings."
+    content: XMLTV is an XML-based file format for describing TV listings.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

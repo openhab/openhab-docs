@@ -3,7 +3,7 @@ id: influxdb
 label: InfluxDB (0.9 and newer) Persistence
 title: InfluxDB (0.9 and newer) Persistence - Persistence Services
 type: persistence
-description: "This service allows you to persist and query states using the [InfluxDB](https://www.influxdata.com/products/influxdb-overview/) and [InfluxDB 2.0](https://v2.docs.influxdata.com/v2.0/) time series database. The persisted values can be queried from within openHAB."
+description: This service allows you to persist and query states using the [InfluxDB](https://www.influxdata.com/products/influxdb-overview/) and [InfluxDB 2.0](https://v2.docs.influxdata.com/v2.0/) time series database. The persisted values can be queried from within openHAB.
 logo: images/addons/influxdb.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.persistence.influxdb/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "InfluxDB (0.9 and newer) Persistence - Persistence Services"
   - property: og:description
-    content: "This service allows you to persist and query states using the InfluxDB and InfluxDB 2.0 time series database. The persisted values can be queried from within openHAB."
+    content: This service allows you to persist and query states using the InfluxDB and InfluxDB 2.0 time series database. The persisted values can be queried from within openHAB.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

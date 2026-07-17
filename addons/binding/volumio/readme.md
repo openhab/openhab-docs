@@ -3,7 +3,7 @@ id: volumio
 label: Volumio
 title: Volumio - Bindings
 type: binding
-description: "This binding integrates the open-source Music Player [Volumio](https://www.volumio.com)."
+description: This binding integrates the open-source Music Player [Volumio](https://www.volumio.com).
 logo: images/addons/volumio.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.volumio/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Volumio - Bindings"
   - property: og:description
-    content: "This binding integrates the open-source Music Player Volumio."
+    content: This binding integrates the open-source Music Player Volumio.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

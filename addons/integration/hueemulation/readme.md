@@ -3,14 +3,14 @@ id: hueemulation
 label: openHAB Hue Emulation
 title: openHAB Hue Emulation - System Integrations
 type: io
-description: "Hue Emulation exposes openHAB items as Philips Hue lights to Hue API-compatible applications like Amazon Echos, Google Homes, or any other Hue-compatible application."
+description: Hue Emulation exposes openHAB items as Philips Hue lights to Hue API-compatible applications like Amazon Echos, Google Homes, or any other Hue-compatible application.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.integration.hueemulation/README.md
 meta:
   - property: og:title
     content: "openHAB Hue Emulation - System Integrations"
   - property: og:description
-    content: "Hue Emulation exposes openHAB items as Philips Hue lights to Hue API-compatible applications like Amazon Echos, Google Homes, or any other Hue-compatible application."
+    content: Hue Emulation exposes openHAB items as Philips Hue lights to Hue API-compatible applications like Amazon Echos, Google Homes, or any other Hue-compatible application.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

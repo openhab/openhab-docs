@@ -3,7 +3,7 @@ id: sensebox
 label: senseBox
 title: senseBox - Bindings
 type: binding
-description: "The senseBox binding integrates environment data from the [senseBox](https://sensebox.de/)"
+description: The senseBox binding integrates environment data from the [senseBox](https://sensebox.de/)
 logo: images/addons/sensebox.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sensebox/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "senseBox - Bindings"
   - property: og:description
-    content: "The senseBox binding integrates environment data from the senseBox"
+    content: The senseBox binding integrates environment data from the senseBox
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

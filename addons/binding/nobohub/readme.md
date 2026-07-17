@@ -3,7 +3,7 @@ id: nobohub
 label: NoboHub
 title: NoboHub - Bindings
 type: binding
-description: "This binding controls the Glen Dimplex Nobø Hub using the <a href='https://www.glendimplex.se/media/15650/nobo-hub-api-v-1-1-integration-for-advanced-users.pdf'>Nobø Hub API v1.1</a>."
+description: This binding controls the Glen Dimplex Nobø Hub using the <a href='https://www.glendimplex.se/media/15650/nobo-hub-api-v-1-1-integration-for-advanced-users.pdf'>Nobø Hub API v1.1</a>.
 logo: images/addons/nobohub.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.nobohub/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "NoboHub - Bindings"
   - property: og:description
-    content: "This binding controls the Glen Dimplex Nobø Hub using the <a href='https://www.glendimplex.se/media/15650/nobo-hub-api-v-1-1-integration-for-advanced-users.pdf'>Nobø Hub API v1.1</a>."
+    content: This binding controls the Glen Dimplex Nobø Hub using the <a href='https://www.glendimplex.se/media/15650/nobo-hub-api-v-1-1-integration-for-advanced-users.pdf'>Nobø Hub API v1.1</a>.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

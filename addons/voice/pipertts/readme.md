@@ -3,7 +3,7 @@ id: pipertts
 label: Piper Text-to-Speech
 title: Piper Text-to-Speech - Voices
 type: voice
-description: "This voice service allows you to use [Piper](https://github.com/OHF-Voice/piper1-gpl) as your TTS service in openHAB."
+description: This voice service allows you to use [Piper](https://github.com/OHF-Voice/piper1-gpl) as your TTS service in openHAB.
 logo: images/addons/pipertts.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.pipertts/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Piper Text-to-Speech - Voices"
   - property: og:description
-    content: "This voice service allows you to use Piper as your TTS service in openHAB."
+    content: This voice service allows you to use Piper as your TTS service in openHAB.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

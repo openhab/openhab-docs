@@ -3,7 +3,7 @@ id: mercedesme
 label: MercedesMe
 title: MercedesMe - Bindings
 type: binding
-description: "This binding provides access to your Mercedes Benz vehicle like _Mercedes Me_ Smartphone App."
+description: This binding provides access to your Mercedes Benz vehicle like _Mercedes Me_ Smartphone App.
 logo: images/addons/mercedesme.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mercedesme/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "MercedesMe - Bindings"
   - property: og:description
-    content: "This binding provides access to your Mercedes Benz vehicle like _Mercedes Me_ Smartphone App."
+    content: This binding provides access to your Mercedes Benz vehicle like _Mercedes Me_ Smartphone App.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

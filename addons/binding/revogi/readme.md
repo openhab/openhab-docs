@@ -3,14 +3,14 @@ id: revogi
 label: Revogi
 title: Revogi - Bindings
 type: binding
-description: "This binding is written to control Revogi devices."
+description: This binding is written to control Revogi devices.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.revogi/README.md
 meta:
   - property: og:title
     content: "Revogi - Bindings"
   - property: og:description
-    content: "This binding is written to control Revogi devices."
+    content: This binding is written to control Revogi devices.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

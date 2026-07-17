@@ -3,7 +3,7 @@ id: groheondus
 label: GROHE ONDUS
 title: GROHE ONDUS - Bindings
 type: binding
-description: "The GROHE ONDUS Binding provides access to data collected by a GROHE ONDUS appliance, such as a [GROHE Sense Guard](https://www.grohe.de/de_de/smarthome/grohe-sense-guard/)."
+description: The GROHE ONDUS Binding provides access to data collected by a GROHE ONDUS appliance, such as a [GROHE Sense Guard](https://www.grohe.de/de_de/smarthome/grohe-sense-guard/).
 logo: images/addons/groheondus.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.groheondus/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "GROHE ONDUS - Bindings"
   - property: og:description
-    content: "The GROHE ONDUS Binding provides access to data collected by a GROHE ONDUS appliance, such as a GROHE Sense Guard(https://www.grohe.de/de_de/smarthome/grohe-sense-guard/)."
+    content: The GROHE ONDUS Binding provides access to data collected by a GROHE ONDUS appliance, such as a GROHE Sense Guard(https://www.grohe.de/de_de/smarthome/grohe-sense-guard/).
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

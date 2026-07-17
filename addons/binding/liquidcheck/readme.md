@@ -3,7 +3,7 @@ id: liquidcheck
 label: LiquidCheck
 title: LiquidCheck - Bindings
 type: binding
-description: "This binding is for the Liquid-Check device from SI-Elektronik GmbH which can be used to measure level and content of tanks."
+description: This binding is for the Liquid-Check device from SI-Elektronik GmbH which can be used to measure level and content of tanks.
 logo: images/addons/liquidcheck.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.liquidcheck/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "LiquidCheck - Bindings"
   - property: og:description
-    content: "This binding is for the Liquid-Check device from SI-Elektronik GmbH which can be used to measure level and content of tanks."
+    content: This binding is for the Liquid-Check device from SI-Elektronik GmbH which can be used to measure level and content of tanks.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

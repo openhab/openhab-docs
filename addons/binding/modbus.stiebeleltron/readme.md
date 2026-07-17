@@ -3,7 +3,7 @@ id: modbus.stiebeleltron
 label: Stiebel Eltron ISG
 title: Stiebel Eltron ISG - Bindings
 type: binding
-description: "This extension adds support for the Stiebel Eltron Modbus protocol."
+description: This extension adds support for the Stiebel Eltron Modbus protocol.
 logo: images/addons/modbus.stiebeleltron.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.modbus.stiebeleltron/README.md
@@ -12,7 +12,7 @@ meta:
   - property: og:title
     content: "Stiebel Eltron ISG - Bindings"
   - property: og:description
-    content: "This extension adds support for the Stiebel Eltron Modbus protocol."
+    content: This extension adds support for the Stiebel Eltron Modbus protocol.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

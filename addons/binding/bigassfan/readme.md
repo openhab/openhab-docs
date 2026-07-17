@@ -3,7 +3,7 @@ id: bigassfan
 label: BigAssFan
 title: BigAssFan - Bindings
 type: binding
-description: "The [BigAssFan](https://www.bigassfans.com/) binding is used to enable communication between openHAB and Big Ass Fans' Haiku family of residential fans and lights that implement the SenseME technology."
+description: The [BigAssFan](https://www.bigassfans.com/) binding is used to enable communication between openHAB and Big Ass Fans' Haiku family of residential fans and lights that implement the SenseME technology.
 logo: images/addons/bigassfan.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bigassfan/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "BigAssFan - Bindings"
   - property: og:description
-    content: "The BigAssFan binding is used to enable communication between openHAB and Big Ass Fans' Haiku family of residential fans and lights that implement the SenseME technology."
+    content: The BigAssFan binding is used to enable communication between openHAB and Big Ass Fans' Haiku family of residential fans and lights that implement the SenseME technology.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

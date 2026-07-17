@@ -3,7 +3,7 @@ id: alarmdecoder
 label: Alarm Decoder
 title: Alarm Decoder - Bindings
 type: binding
-description: "The [Alarm Decoder](https://www.alarmdecoder.com) from Nu Tech Software Solutions is a hardware adapter that interfaces with Ademco/Honeywell and DSC alarm panels."
+description: The [Alarm Decoder](https://www.alarmdecoder.com) from Nu Tech Software Solutions is a hardware adapter that interfaces with Ademco/Honeywell and DSC alarm panels.
 logo: images/addons/alarmdecoder.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.alarmdecoder/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Alarm Decoder - Bindings"
   - property: og:description
-    content: "The Alarm Decoder from Nu Tech Software Solutions is a hardware adapter that interfaces with Ademco/Honeywell and DSC alarm panels."
+    content: The Alarm Decoder from Nu Tech Software Solutions is a hardware adapter that interfaces with Ademco/Honeywell and DSC alarm panels.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

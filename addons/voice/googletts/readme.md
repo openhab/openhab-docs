@@ -3,7 +3,7 @@ id: googletts
 label: Google Cloud Text-to-Speech
 title: Google Cloud Text-to-Speech - Voices
 type: voice
-description: "Google Cloud TTS Service uses the non-free Google Cloud Text-to-Speech API to convert text or Speech Synthesis Markup Language (SSML) input into audio data of natural human speech."
+description: Google Cloud TTS Service uses the non-free Google Cloud Text-to-Speech API to convert text or Speech Synthesis Markup Language (SSML) input into audio data of natural human speech.
 logo: images/addons/googletts.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.googletts/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Google Cloud Text-to-Speech - Voices"
   - property: og:description
-    content: "Google Cloud TTS Service uses the non-free Google Cloud Text-to-Speech API to convert text or Speech Synthesis Markup Language (SSML) input into audio data of natural human speech."
+    content: Google Cloud TTS Service uses the non-free Google Cloud Text-to-Speech API to convert text or Speech Synthesis Markup Language (SSML) input into audio data of natural human speech.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

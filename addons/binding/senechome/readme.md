@@ -3,14 +3,14 @@ id: senechome
 label: Senec Home
 title: Senec Home - Bindings
 type: binding
-description: "Binding to request status information from Senec Home Batteries to allow home automation decisions based on your current energy management."
+description: Binding to request status information from Senec Home Batteries to allow home automation decisions based on your current energy management.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.senechome/README.md
 meta:
   - property: og:title
     content: "Senec Home - Bindings"
   - property: og:description
-    content: "Binding to request status information from Senec Home Batteries to allow home automation decisions based on your current energy management."
+    content: Binding to request status information from Senec Home Batteries to allow home automation decisions based on your current energy management.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

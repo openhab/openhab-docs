@@ -3,7 +3,7 @@ id: fsinternetradio
 label: FS Internet Radio
 title: FS Internet Radio - Bindings
 type: binding
-description: "This binding integrates internet radios based on the [Frontier Silicon chipset](https://www.frontiersmart.com/)."
+description: This binding integrates internet radios based on the [Frontier Silicon chipset](https://www.frontiersmart.com/).
 logo: images/addons/fsinternetradio.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.fsinternetradio/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "FS Internet Radio - Bindings"
   - property: og:description
-    content: "This binding integrates internet radios based on the Frontier Silicon chipset."
+    content: This binding integrates internet radios based on the Frontier Silicon chipset.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

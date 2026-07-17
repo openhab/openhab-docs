@@ -3,7 +3,7 @@ id: lgwebos
 label: LG webOS
 title: LG webOS - Bindings
 type: binding
-description: "The binding integrates LG WebOS based smart TVs."
+description: The binding integrates LG WebOS based smart TVs.
 logo: images/addons/lgwebos.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.lgwebos/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "LG webOS - Bindings"
   - property: og:description
-    content: "The binding integrates LG WebOS based smart TVs."
+    content: The binding integrates LG WebOS based smart TVs.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

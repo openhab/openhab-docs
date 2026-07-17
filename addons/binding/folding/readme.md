@@ -3,7 +3,7 @@ id: folding
 label: Folding@home
 title: Folding@home - Bindings
 type: binding
-description: "Binding for the [Folding@home](https://folding.stanford.edu/) distributed computing software."
+description: Binding for the [Folding@home](https://folding.stanford.edu/) distributed computing software.
 logo: images/addons/folding.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.folding/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Folding@home - Bindings"
   - property: og:description
-    content: "Binding for the Folding@home distributed computing software."
+    content: Binding for the Folding@home distributed computing software.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

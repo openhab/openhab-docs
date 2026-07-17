@@ -3,7 +3,7 @@ id: androidtv
 label: AndroidTV
 title: AndroidTV - Bindings
 type: binding
-description: "This binding is designed to emulate different protocols to interact with the AndroidTV platform."
+description: This binding is designed to emulate different protocols to interact with the AndroidTV platform.
 logo: images/addons/androidtv.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.androidtv/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "AndroidTV - Bindings"
   - property: og:description
-    content: "This binding is designed to emulate different protocols to interact with the AndroidTV platform."
+    content: This binding is designed to emulate different protocols to interact with the AndroidTV platform.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

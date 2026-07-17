@@ -3,7 +3,7 @@ id: ftpupload
 label: FTP Upload
 title: FTP Upload - Bindings
 type: binding
-description: "This binding can be used to receive image files from FTP clients."
+description: This binding can be used to receive image files from FTP clients.
 logo: images/addons/ftpupload.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ftpupload/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "FTP Upload - Bindings"
   - property: og:description
-    content: "This binding can be used to receive image files from FTP clients."
+    content: This binding can be used to receive image files from FTP clients.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

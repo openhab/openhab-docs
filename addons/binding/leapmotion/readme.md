@@ -3,7 +3,7 @@ id: leapmotion
 label: Leap Motion
 title: Leap Motion - Bindings
 type: binding
-description: "The [Leap Motion](https://www.leapmotion.com/) controller is a gesture sensoring device that uses stereoscopic cameras and is connected through USB."
+description: The [Leap Motion](https://www.leapmotion.com/) controller is a gesture sensoring device that uses stereoscopic cameras and is connected through USB.
 logo: images/addons/leapmotion.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.leapmotion/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Leap Motion - Bindings"
   - property: og:description
-    content: "The Leap Motion controller is a gesture sensoring device that uses stereoscopic cameras and is connected through USB."
+    content: The Leap Motion controller is a gesture sensoring device that uses stereoscopic cameras and is connected through USB.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

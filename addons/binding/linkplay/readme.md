@@ -3,7 +3,7 @@ id: linkplay
 label: LinkPlay
 title: LinkPlay - Bindings
 type: binding
-description: "This binding integrates audio devices based on the LinkPlay platform."
+description: This binding integrates audio devices based on the LinkPlay platform.
 logo: images/addons/linkplay.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.linkplay/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "LinkPlay - Bindings"
   - property: og:description
-    content: "This binding integrates audio devices based on the LinkPlay platform."
+    content: This binding integrates audio devices based on the LinkPlay platform.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

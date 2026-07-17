@@ -3,14 +3,14 @@ id: teslapowerwall
 label: TeslaPowerwall
 title: TeslaPowerwall - Bindings
 type: binding
-description: "This binding enables the capture of key data from a Tesla Powerwall 2 into openHAB."
+description: This binding enables the capture of key data from a Tesla Powerwall 2 into openHAB.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.teslapowerwall/README.md
 meta:
   - property: og:title
     content: "TeslaPowerwall - Bindings"
   - property: og:description
-    content: "This binding enables the capture of key data from a Tesla Powerwall 2 into openHAB."
+    content: This binding enables the capture of key data from a Tesla Powerwall 2 into openHAB.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

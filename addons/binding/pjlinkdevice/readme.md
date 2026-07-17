@@ -3,14 +3,14 @@ id: pjlinkdevice
 label: PJLink
 title: PJLink - Bindings
 type: binding
-description: "This binding allows you to control devices with [PJLink](https://pjlink.jbmia.or.jp/english/) support."
+description: This binding allows you to control devices with [PJLink](https://pjlink.jbmia.or.jp/english/) support.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pjlinkdevice/README.md
 meta:
   - property: og:title
     content: "PJLink - Bindings"
   - property: og:description
-    content: "This binding allows you to control devices with PJLink support."
+    content: This binding allows you to control devices with PJLink support.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

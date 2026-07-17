@@ -3,7 +3,7 @@ id: enocean
 label: EnOcean
 title: EnOcean - Bindings
 type: binding
-description: "The EnOcean binding connects openHAB to the EnOcean ecosystem."
+description: The EnOcean binding connects openHAB to the EnOcean ecosystem.
 logo: images/addons/enocean.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.enocean/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "EnOcean - Bindings"
   - property: og:description
-    content: "The EnOcean binding connects openHAB to the EnOcean ecosystem."
+    content: The EnOcean binding connects openHAB to the EnOcean ecosystem.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

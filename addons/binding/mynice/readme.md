@@ -3,7 +3,7 @@ id: mynice
 label: MyNice
 title: MyNice - Bindings
 type: binding
-description: "This binding implements the support of the IT4Wifi module through the NHK protocol and enables management of Nice gates actuators."
+description: This binding implements the support of the IT4Wifi module through the NHK protocol and enables management of Nice gates actuators.
 logo: images/addons/mynice.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mynice/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "MyNice - Bindings"
   - property: og:description
-    content: "This binding implements the support of the IT4Wifi module through the NHK protocol and enables management of Nice gates actuators."
+    content: This binding implements the support of the IT4Wifi module through the NHK protocol and enables management of Nice gates actuators.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

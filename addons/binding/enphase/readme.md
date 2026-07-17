@@ -3,7 +3,7 @@ id: enphase
 label: Enphase
 title: Enphase - Bindings
 type: binding
-description: "This is the binding for the [Enphase](https://enphase.com/) Envoy Solar Panel gateway."
+description: This is the binding for the [Enphase](https://enphase.com/) Envoy Solar Panel gateway.
 logo: images/addons/enphase.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.enphase/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Enphase - Bindings"
   - property: og:description
-    content: "This is the binding for the Enphase Envoy Solar Panel gateway."
+    content: This is the binding for the Enphase Envoy Solar Panel gateway.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

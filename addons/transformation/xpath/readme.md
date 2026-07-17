@@ -3,14 +3,14 @@ id: xpath
 label: XPath
 title: XPath - Transformation Services
 type: transform
-description: "Transforms an [XML](https://www.w3.org/XML/) input using an [XPath](https://www.w3.org/TR/xpath/#section-Expressions) expression."
+description: Transforms an [XML](https://www.w3.org/XML/) input using an [XPath](https://www.w3.org/TR/xpath/#section-Expressions) expression.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.xpath/README.md
 meta:
   - property: og:title
     content: "XPath - Transformation Services"
   - property: og:description
-    content: "Transforms an XML input using an XPath(https://www.w3.org/TR/xpath/#section-Expressions) expression."
+    content: Transforms an XML input using an XPath(https://www.w3.org/TR/xpath/#section-Expressions) expression.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

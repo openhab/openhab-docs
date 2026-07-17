@@ -3,14 +3,14 @@ id: rollershutterposition
 label: Rollershutter Position Emulation Profile Service
 title: Rollershutter Position Emulation Profile Service - Transformation Services
 type: transform
-description: "The Rollershutter Position emulates an absolute position setting for Rollershutter devices which only support basic UP/DOWN/STOP commands."
+description: The Rollershutter Position emulates an absolute position setting for Rollershutter devices which only support basic UP/DOWN/STOP commands.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.rollershutterposition/README.md
 meta:
   - property: og:title
     content: "Rollershutter Position Emulation Profile Service - Transformation Services"
   - property: og:description
-    content: "The Rollershutter Position emulates an absolute position setting for Rollershutter devices which only support basic UP/DOWN/STOP commands."
+    content: The Rollershutter Position emulates an absolute position setting for Rollershutter devices which only support basic UP/DOWN/STOP commands.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

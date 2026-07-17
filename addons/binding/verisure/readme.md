@@ -3,7 +3,7 @@ id: verisure
 label: Verisure
 title: Verisure - Bindings
 type: binding
-description: "This is an openHAB binding for Verisure Smart Alarms by Verisure Securitas."
+description: This is an openHAB binding for Verisure Smart Alarms by Verisure Securitas.
 logo: images/addons/verisure.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.verisure/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Verisure - Bindings"
   - property: og:description
-    content: "This is an openHAB binding for Verisure Smart Alarms by Verisure Securitas."
+    content: This is an openHAB binding for Verisure Smart Alarms by Verisure Securitas.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

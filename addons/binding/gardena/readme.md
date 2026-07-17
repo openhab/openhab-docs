@@ -3,7 +3,7 @@ id: gardena
 label: Gardena
 title: Gardena - Bindings
 type: binding
-description: "This is the binding for [Gardena smart system](https://www.gardena.com/smart)."
+description: This is the binding for [Gardena smart system](https://www.gardena.com/smart).
 logo: images/addons/gardena.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.gardena/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Gardena - Bindings"
   - property: og:description
-    content: "This is the binding for Gardena smart system."
+    content: This is the binding for Gardena smart system.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: somfytahoma
 label: Somfy Tahoma
 title: Somfy Tahoma - Bindings
 type: binding
-description: "This binding integrates the"
+description: This binding integrates the
 logo: images/addons/somfytahoma.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.somfytahoma/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Somfy Tahoma - Bindings"
   - property: og:description
-    content: "This binding integrates the"
+    content: This binding integrates the
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

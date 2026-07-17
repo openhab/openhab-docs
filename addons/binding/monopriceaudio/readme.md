@@ -3,7 +3,7 @@ id: monopriceaudio
 label: Monoprice Whole House Audio
 title: Monoprice Whole House Audio - Bindings
 type: binding
-description: "This binding can be used to control the following types of whole house multi-zone amplifier systems:"
+description: 'This binding can be used to control the following types of whole house multi-zone amplifier systems:'
 logo: images/addons/monopriceaudio.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.monopriceaudio/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Monoprice Whole House Audio - Bindings"
   - property: og:description
-    content: "This binding can be used to control the following types of whole house multi-zone amplifier systems:"
+    content: 'This binding can be used to control the following types of whole house multi-zone amplifier systems:'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

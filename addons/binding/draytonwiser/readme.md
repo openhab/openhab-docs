@@ -3,7 +3,7 @@ id: draytonwiser
 label: Drayton Wiser
 title: Drayton Wiser - Bindings
 type: binding
-description: "This binding integrates the [Drayton Wiser Smart Heating System](https://wiser.draytoncontrols.co.uk/)."
+description: This binding integrates the [Drayton Wiser Smart Heating System](https://wiser.draytoncontrols.co.uk/).
 logo: images/addons/draytonwiser.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.draytonwiser/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Drayton Wiser - Bindings"
   - property: og:description
-    content: "This binding integrates the Drayton Wiser Smart Heating System."
+    content: This binding integrates the Drayton Wiser Smart Heating System.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

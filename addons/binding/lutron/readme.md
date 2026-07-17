@@ -3,7 +3,7 @@ id: lutron
 label: Lutron
 title: Lutron - Bindings
 type: binding
-description: "This binding integrates with [Lutron](https://www.lutron.com) lighting control and home automation systems."
+description: This binding integrates with [Lutron](https://www.lutron.com) lighting control and home automation systems.
 logo: images/addons/lutron.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.lutron/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Lutron - Bindings"
   - property: og:description
-    content: "This binding integrates with Lutron lighting control and home automation systems."
+    content: This binding integrates with Lutron lighting control and home automation systems.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

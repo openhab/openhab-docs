@@ -3,14 +3,14 @@ id: inmemory
 label: InMemory Persistence
 title: InMemory Persistence - Persistence Services
 type: persistence
-description: "The InMemory persistence service provides volatile storage, i.e., it is cleared on shutdown."
+description: The InMemory persistence service provides volatile storage, i.e., it is cleared on shutdown.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.persistence.inmemory/README.md
 meta:
   - property: og:title
     content: "InMemory Persistence - Persistence Services"
   - property: og:description
-    content: "The InMemory persistence service provides volatile storage, i.e., it is cleared on shutdown."
+    content: The InMemory persistence service provides volatile storage, i.e., it is cleared on shutdown.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

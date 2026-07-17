@@ -3,14 +3,14 @@ id: wundergroundupdatereceiver
 label: Wunderground Update Receiver
 title: Wunderground Update Receiver - Bindings
 type: binding
-description: "Many personal weather stations or similar devices are only capable of submitting measurements to the wunderground.com update site."
+description: Many personal weather stations or similar devices are only capable of submitting measurements to the wunderground.com update site.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.wundergroundupdatereceiver/README.md
 meta:
   - property: og:title
     content: "Wunderground Update Receiver - Bindings"
   - property: og:description
-    content: "Many personal weather stations or similar devices are only capable of submitting measurements to the wunderground.com update site."
+    content: Many personal weather stations or similar devices are only capable of submitting measurements to the wunderground.com update site.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: asuswrt
 label: Asuswrt
 title: Asuswrt - Bindings
 type: binding
-description: "This binding adds support to read information from ASUS-Routers (Copyright © ASUS)."
+description: This binding adds support to read information from ASUS-Routers (Copyright © ASUS).
 logo: images/addons/asuswrt.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.asuswrt/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Asuswrt - Bindings"
   - property: og:description
-    content: "This binding adds support to read information from ASUS-Routers (Copyright © ASUS)."
+    content: This binding adds support to read information from ASUS-Routers (Copyright © ASUS).
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: echonetlite
 label: EchonetLite
 title: EchonetLite - Bindings
 type: binding
-description: "This binding supports devices that make use of the [Echonet Lite specification](https://echonet.jp/spec_v113_lite_en/)."
+description: This binding supports devices that make use of the [Echonet Lite specification](https://echonet.jp/spec_v113_lite_en/).
 logo: images/addons/echonetlite.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.echonetlite/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "EchonetLite - Bindings"
   - property: og:description
-    content: "This binding supports devices that make use of the Echonet Lite specification(https://echonet.jp/spec_v113_lite_en/)."
+    content: This binding supports devices that make use of the Echonet Lite specification(https://echonet.jp/spec_v113_lite_en/).
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

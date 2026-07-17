@@ -3,7 +3,7 @@ id: ipp
 label: IPP
 title: IPP - Bindings
 type: binding
-description: "This binding integrates printers, which implement the Internet Printing protocol (IPP). This is the successor of the CUPS binding."
+description: This binding integrates printers, which implement the Internet Printing protocol (IPP). This is the successor of the CUPS binding.
 logo: images/addons/ipp.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ipp/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "IPP - Bindings"
   - property: og:description
-    content: "This binding integrates printers, which implement the Internet Printing protocol (IPP). This is the successor of the CUPS binding."
+    content: This binding integrates printers, which implement the Internet Printing protocol (IPP). This is the successor of the CUPS binding.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

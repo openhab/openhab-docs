@@ -3,7 +3,7 @@ id: omnilink
 label: HAI by Leviton OmniLink
 title: HAI by Leviton OmniLink - Bindings
 type: binding
-description: "This binding integrates the [Omni and Lumina](https://www.leviton.com/en/products/security-automation/automation-av-controllers/omni-security-systems) line of home automation systems."
+description: This binding integrates the [Omni and Lumina](https://www.leviton.com/en/products/security-automation/automation-av-controllers/omni-security-systems) line of home automation systems.
 logo: images/addons/omnilink.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.omnilink/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "HAI by Leviton OmniLink - Bindings"
   - property: og:description
-    content: "This binding integrates the Omni and Lumina line of home automation systems."
+    content: This binding integrates the Omni and Lumina line of home automation systems.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

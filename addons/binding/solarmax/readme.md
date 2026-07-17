@@ -3,14 +3,14 @@ id: solarmax
 label: SolarMax
 title: SolarMax - Bindings
 type: binding
-description: "This binding supports SolarMax PV inverters."
+description: This binding supports SolarMax PV inverters.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.solarmax/README.md
 meta:
   - property: og:title
     content: "SolarMax - Bindings"
   - property: og:description
-    content: "This binding supports SolarMax PV inverters."
+    content: This binding supports SolarMax PV inverters.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

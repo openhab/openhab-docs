@@ -3,7 +3,7 @@ id: dirigera
 label: DIRIGERA
 title: DIRIGERA - Bindings
 type: binding
-description: "Binding supporting the DIRIGERA Gateway from IKEA."
+description: Binding supporting the DIRIGERA Gateway from IKEA.
 logo: images/addons/dirigera.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.dirigera/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "DIRIGERA - Bindings"
   - property: og:description
-    content: "Binding supporting the DIRIGERA Gateway from IKEA."
+    content: Binding supporting the DIRIGERA Gateway from IKEA.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: icalendar
 label: iCalendar
 title: iCalendar - Bindings
 type: binding
-description: "This binding is intended to use a web-based iCal calendar as an event trigger or presence switch."
+description: This binding is intended to use a web-based iCal calendar as an event trigger or presence switch.
 logo: images/addons/icalendar.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.icalendar/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "iCalendar - Bindings"
   - property: og:description
-    content: "This binding is intended to use a web-based iCal calendar as an event trigger or presence switch."
+    content: This binding is intended to use a web-based iCal calendar as an event trigger or presence switch.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

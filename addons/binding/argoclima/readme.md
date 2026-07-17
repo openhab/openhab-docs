@@ -3,7 +3,7 @@ id: argoclima
 label: ArgoClima
 title: ArgoClima - Bindings
 type: binding
-description: "The binding provides support for [ArgoClima](https://argoclima.com/en/) Wi-Fi-enabled air conditioning devices which use _Argo Web APP_ for control."
+description: The binding provides support for [ArgoClima](https://argoclima.com/en/) Wi-Fi-enabled air conditioning devices which use _Argo Web APP_ for control.
 logo: images/addons/argoclima.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.argoclima/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "ArgoClima - Bindings"
   - property: og:description
-    content: "The binding provides support for ArgoClima Wi-Fi-enabled air conditioning devices which use _Argo Web APP_ for control."
+    content: The binding provides support for ArgoClima Wi-Fi-enabled air conditioning devices which use _Argo Web APP_ for control.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

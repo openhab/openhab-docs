@@ -3,7 +3,7 @@ id: solaredge
 label: SolarEdge
 title: SolarEdge - Bindings
 type: binding
-description: "The SolarEdge binding retrieves live data from SolarEdge inverters via the central web API."
+description: The SolarEdge binding retrieves live data from SolarEdge inverters via the central web API.
 logo: images/addons/solaredge.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.solaredge/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "SolarEdge - Bindings"
   - property: og:description
-    content: "The SolarEdge binding retrieves live data from SolarEdge inverters via the central web API."
+    content: The SolarEdge binding retrieves live data from SolarEdge inverters via the central web API.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

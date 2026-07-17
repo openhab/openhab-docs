@@ -3,14 +3,14 @@ id: regoheatpump
 label: RegoHeatPump
 title: RegoHeatPump - Bindings
 type: binding
-description: "The Rego heat pump binding supports:"
+description: 'The Rego heat pump binding supports:'
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.regoheatpump/README.md
 meta:
   - property: og:title
     content: "RegoHeatPump - Bindings"
   - property: og:description
-    content: "The Rego heat pump binding supports:"
+    content: 'The Rego heat pump binding supports:'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

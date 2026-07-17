@@ -3,7 +3,7 @@ id: modbus.kermi
 label: Kermi Heat pump
 title: Kermi Heat pump - Bindings
 type: binding
-description: "Integrates the X-Center Device (X-Center Pro) of Kermi Heat pump."
+description: Integrates the X-Center Device (X-Center Pro) of Kermi Heat pump.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.modbus.kermi/README.md
 prev: ../modbus/
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Kermi Heat pump - Bindings"
   - property: og:description
-    content: "Integrates the X-Center Device (X-Center Pro) of Kermi Heat pump."
+    content: Integrates the X-Center Device (X-Center Pro) of Kermi Heat pump.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

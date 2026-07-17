@@ -3,7 +3,7 @@ id: atlona
 label: Atlona
 title: Atlona - Bindings
 type: binding
-description: "This binding integrates [Atlona](https://www.atlona.com) AT-UHD-PRO3 or AT-PRO3HD HDBaseT matrix switches into your openHAB installation."
+description: This binding integrates [Atlona](https://www.atlona.com) AT-UHD-PRO3 or AT-PRO3HD HDBaseT matrix switches into your openHAB installation.
 logo: images/addons/atlona.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.atlona/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Atlona - Bindings"
   - property: og:description
-    content: "This binding integrates Atlona AT-UHD-PRO3 or AT-PRO3HD HDBaseT matrix switches into your openHAB installation."
+    content: This binding integrates Atlona AT-UHD-PRO3 or AT-PRO3HD HDBaseT matrix switches into your openHAB installation.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

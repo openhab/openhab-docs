@@ -3,7 +3,7 @@ id: mystrom
 label: myStrom
 title: myStrom - Bindings
 type: binding
-description: "This extension adds support for the myStrom devices."
+description: This extension adds support for the myStrom devices.
 logo: images/addons/mystrom.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mystrom/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "myStrom - Bindings"
   - property: og:description
-    content: "This extension adds support for the myStrom devices."
+    content: This extension adds support for the myStrom devices.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

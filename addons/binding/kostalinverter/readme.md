@@ -3,7 +3,7 @@ id: kostalinverter
 label: Kostal Inverter
 title: Kostal Inverter - Bindings
 type: binding
-description: "Scrapes the web interface of the inverter for the metrics of the supported channels below."
+description: Scrapes the web interface of the inverter for the metrics of the supported channels below.
 logo: images/addons/kostalinverter.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.kostalinverter/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Kostal Inverter - Bindings"
   - property: og:description
-    content: "Scrapes the web interface of the inverter for the metrics of the supported channels below."
+    content: Scrapes the web interface of the inverter for the metrics of the supported channels below.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

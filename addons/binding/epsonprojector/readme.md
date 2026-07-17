@@ -3,7 +3,7 @@ id: epsonprojector
 label: Epson Projector
 title: Epson Projector - Bindings
 type: binding
-description: "This binding is compatible with Epson projectors that support the ESC/VP21 protocol over the built-in network (Ethernet or Wi-Fi) port, serial port or USB to serial adapter."
+description: This binding is compatible with Epson projectors that support the ESC/VP21 protocol over the built-in network (Ethernet or Wi-Fi) port, serial port or USB to serial adapter.
 logo: images/addons/epsonprojector.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.epsonprojector/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Epson Projector - Bindings"
   - property: og:description
-    content: "This binding is compatible with Epson projectors that support the ESC/VP21 protocol over the built-in network (Ethernet or Wi-Fi) port, serial port or USB to serial adapter."
+    content: This binding is compatible with Epson projectors that support the ESC/VP21 protocol over the built-in network (Ethernet or Wi-Fi) port, serial port or USB to serial adapter.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

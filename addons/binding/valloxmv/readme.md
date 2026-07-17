@@ -3,14 +3,14 @@ id: valloxmv
 label: ValloxMV
 title: ValloxMV - Bindings
 type: binding
-description: "This binding connects to the web interface of the Vallox MV series of ventilation units."
+description: This binding connects to the web interface of the Vallox MV series of ventilation units.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.valloxmv/README.md
 meta:
   - property: og:title
     content: "ValloxMV - Bindings"
   - property: og:description
-    content: "This binding connects to the web interface of the Vallox MV series of ventilation units."
+    content: This binding connects to the web interface of the Vallox MV series of ventilation units.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

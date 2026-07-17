@@ -3,7 +3,7 @@ id: tradfri
 label: TRÅDFRI
 title: TRÅDFRI - Bindings
 type: binding
-description: "This binding integrates the IKEA TRÅDFRI gateway and devices connected to it (such as dimmable LED bulbs)."
+description: This binding integrates the IKEA TRÅDFRI gateway and devices connected to it (such as dimmable LED bulbs).
 logo: images/addons/tradfri.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tradfri/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "TRÅDFRI - Bindings"
   - property: og:description
-    content: "This binding integrates the IKEA TRÅDFRI gateway and devices connected to it (such as dimmable LED bulbs)."
+    content: This binding integrates the IKEA TRÅDFRI gateway and devices connected to it (such as dimmable LED bulbs).
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

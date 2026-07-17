@@ -3,7 +3,7 @@ id: homeconnect
 label: Home Connect
 title: Home Connect - Bindings
 type: binding
-description: "The binding integrates the [Home Connect](https://www.home-connect.com/) system into openHAB."
+description: The binding integrates the [Home Connect](https://www.home-connect.com/) system into openHAB.
 logo: images/addons/homeconnect.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.homeconnect/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Home Connect - Bindings"
   - property: og:description
-    content: "The binding integrates the Home Connect system into openHAB."
+    content: The binding integrates the Home Connect system into openHAB.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

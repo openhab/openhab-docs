@@ -3,7 +3,7 @@ id: deconz
 label: deCONZ
 title: deCONZ - Bindings
 type: binding
-description: "The Zigbee binding currently does not support the Dresden Elektronik Raspbee and ConBee Zigbee dongles."
+description: The Zigbee binding currently does not support the Dresden Elektronik Raspbee and ConBee Zigbee dongles.
 logo: images/addons/deconz.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.deconz/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "deCONZ - Bindings"
   - property: og:description
-    content: "The Zigbee binding currently does not support the Dresden Elektronik Raspbee and ConBee Zigbee dongles."
+    content: The Zigbee binding currently does not support the Dresden Elektronik Raspbee and ConBee Zigbee dongles.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

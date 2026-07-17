@@ -3,14 +3,14 @@ id: tplinkrouter
 label: tplinkrouter
 title: tplinkrouter - Bindings
 type: binding
-description: "The tplinkrouter Binding allows monitoring and controlling TP-Link routers."
+description: The tplinkrouter Binding allows monitoring and controlling TP-Link routers.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tplinkrouter/README.md
 meta:
   - property: og:title
     content: "tplinkrouter - Bindings"
   - property: og:description
-    content: "The tplinkrouter Binding allows monitoring and controlling TP-Link routers."
+    content: The tplinkrouter Binding allows monitoring and controlling TP-Link routers.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

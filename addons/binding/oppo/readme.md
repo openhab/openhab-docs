@@ -3,7 +3,7 @@ id: oppo
 label: Oppo Blu-ray player
 title: Oppo Blu-ray player - Bindings
 type: binding
-description: "This binding can be used to control the Oppo UDP-203/205 or BDP-83/93/95/103/105 Blu-ray player."
+description: This binding can be used to control the Oppo UDP-203/205 or BDP-83/93/95/103/105 Blu-ray player.
 logo: images/addons/oppo.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.oppo/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Oppo Blu-ray player - Bindings"
   - property: og:description
-    content: "This binding can be used to control the Oppo UDP-203/205 or BDP-83/93/95/103/105 Blu-ray player."
+    content: This binding can be used to control the Oppo UDP-203/205 or BDP-83/93/95/103/105 Blu-ray player.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

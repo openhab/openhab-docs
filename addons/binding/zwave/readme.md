@@ -3,7 +3,7 @@ id: zwave
 label: ZWave
 title: ZWave - Bindings
 type: binding
-description: "The ZWave binding supports an interface to a wireless Z-Wave home automation network."
+description: The ZWave binding supports an interface to a wireless Z-Wave home automation network.
 logo: images/addons/zwave.svg
 install: auto
 source: https://github.com/openhab/org.openhab.binding.zwave/blob/main/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "ZWave - Bindings"
   - property: og:description
-    content: "The ZWave binding supports an interface to a wireless Z-Wave home automation network."
+    content: The ZWave binding supports an interface to a wireless Z-Wave home automation network.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

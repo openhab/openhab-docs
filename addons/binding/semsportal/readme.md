@@ -3,7 +3,7 @@ id: semsportal
 label: SEMSPortal
 title: SEMSPortal - Bindings
 type: binding
-description: "This binding can help you include statistics of your SEMS / GoodWe solar panel installation into openHAB."
+description: This binding can help you include statistics of your SEMS / GoodWe solar panel installation into openHAB.
 logo: images/addons/semsportal.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.semsportal/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "SEMSPortal - Bindings"
   - property: og:description
-    content: "This binding can help you include statistics of your SEMS / GoodWe solar panel installation into openHAB."
+    content: This binding can help you include statistics of your SEMS / GoodWe solar panel installation into openHAB.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

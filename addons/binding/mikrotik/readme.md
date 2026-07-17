@@ -3,7 +3,7 @@ id: mikrotik
 label: Mikrotik RouterOS
 title: Mikrotik RouterOS - Bindings
 type: binding
-description: "This binding integrates [Mikrotik](https://mikrotik.com/) [RouterOS](https://help.mikrotik.com/docs/display/ROS/RouterOS)"
+description: This binding integrates [Mikrotik](https://mikrotik.com/) [RouterOS](https://help.mikrotik.com/docs/display/ROS/RouterOS)
 logo: images/addons/mikrotik.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mikrotik/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Mikrotik RouterOS - Bindings"
   - property: og:description
-    content: "This binding integrates Mikrotik RouterOS"
+    content: This binding integrates Mikrotik RouterOS
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

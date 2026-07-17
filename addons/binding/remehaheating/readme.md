@@ -3,14 +3,14 @@ id: remehaheating
 label: RemehaHeating
 title: RemehaHeating - Bindings
 type: binding
-description: "This binding integrates Remeha Home heating systems with openHAB."
+description: This binding integrates Remeha Home heating systems with openHAB.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.remehaheating/README.md
 meta:
   - property: og:title
     content: "RemehaHeating - Bindings"
   - property: og:description
-    content: "This binding integrates Remeha Home heating systems with openHAB."
+    content: This binding integrates Remeha Home heating systems with openHAB.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

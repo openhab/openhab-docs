@@ -3,14 +3,14 @@ id: synopanalyzer
 label: Synop Analyzer
 title: Synop Analyzer - Bindings
 type: binding
-description: "This binding downloads and interprets SYNOP weather observation messages."
+description: This binding downloads and interprets SYNOP weather observation messages.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.synopanalyzer/README.md
 meta:
   - property: og:title
     content: "Synop Analyzer - Bindings"
   - property: og:description
-    content: "This binding downloads and interprets SYNOP weather observation messages."
+    content: This binding downloads and interprets SYNOP weather observation messages.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: haywardomnilogic
 label: Hayward OmniLogic
 title: Hayward OmniLogic - Bindings
 type: binding
-description: "The Hayward OmniLogic binding integrates the OmniLogic pool controller using the Hayward API."
+description: The Hayward OmniLogic binding integrates the OmniLogic pool controller using the Hayward API.
 logo: images/addons/haywardomnilogic.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.haywardomnilogic/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Hayward OmniLogic - Bindings"
   - property: og:description
-    content: "The Hayward OmniLogic binding integrates the OmniLogic pool controller using the Hayward API."
+    content: The Hayward OmniLogic binding integrates the OmniLogic pool controller using the Hayward API.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

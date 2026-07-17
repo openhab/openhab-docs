@@ -3,7 +3,7 @@ id: coolmasternet
 label: CoolMasterNet
 title: CoolMasterNet - Bindings
 type: binding
-description: "The CoolMasterNet binding is used to control [CoolMasterNet HVAC bridge devices](https://coolautomation.com/products/coolmasternet/), using the 'ASCII I/F' plaintext TCP control protocol."
+description: The CoolMasterNet binding is used to control [CoolMasterNet HVAC bridge devices](https://coolautomation.com/products/coolmasternet/), using the 'ASCII I/F' plaintext TCP control protocol.
 logo: images/addons/coolmasternet.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.coolmasternet/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "CoolMasterNet - Bindings"
   - property: og:description
-    content: "The CoolMasterNet binding is used to control CoolMasterNet HVAC bridge devices, using the 'ASCII I/F' plaintext TCP control protocol."
+    content: The CoolMasterNet binding is used to control CoolMasterNet HVAC bridge devices, using the 'ASCII I/F' plaintext TCP control protocol.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

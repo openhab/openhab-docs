@@ -3,7 +3,7 @@ id: ntfy
 label: Ntfy
 title: Ntfy - Bindings
 type: binding
-description: "The Ntfy binding enables openHAB to publish notifications to Ntfy-compatible servers (for example [ntfy.sh](https://ntfy.sh) or a self-hosted ntfy-compatible endpoint)."
+description: The Ntfy binding enables openHAB to publish notifications to Ntfy-compatible servers (for example [ntfy.sh](https://ntfy.sh) or a self-hosted ntfy-compatible endpoint).
 logo: images/addons/ntfy.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ntfy/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Ntfy - Bindings"
   - property: og:description
-    content: "The Ntfy binding enables openHAB to publish notifications to Ntfy-compatible servers (for example ntfy.sh or a self-hosted ntfy-compatible endpoint)."
+    content: The Ntfy binding enables openHAB to publish notifications to Ntfy-compatible servers (for example ntfy.sh or a self-hosted ntfy-compatible endpoint).
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

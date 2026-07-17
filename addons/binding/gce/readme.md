@@ -3,7 +3,7 @@ id: gce
 label: GCE
 title: GCE - Bindings
 type: binding
-description: "This binding aims to handle various GCE Electronics equipments."
+description: This binding aims to handle various GCE Electronics equipments.
 logo: images/addons/gce.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.gce/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "GCE - Bindings"
   - property: og:description
-    content: "This binding aims to handle various GCE Electronics equipments."
+    content: This binding aims to handle various GCE Electronics equipments.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

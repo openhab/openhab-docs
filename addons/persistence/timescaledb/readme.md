@@ -3,7 +3,7 @@ id: timescaledb
 label: TimescaleDB Persistence
 title: TimescaleDB Persistence - Persistence Services
 type: persistence
-description: "This service persists and queries openHAB item states using [TimescaleDB](https://www.timescale.com/), a time-series database built on PostgreSQL."
+description: This service persists and queries openHAB item states using [TimescaleDB](https://www.timescale.com/), a time-series database built on PostgreSQL.
 logo: images/addons/timescaledb.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.persistence.timescaledb/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "TimescaleDB Persistence - Persistence Services"
   - property: og:description
-    content: "This service persists and queries openHAB item states using TimescaleDB, a time-series database built on PostgreSQL."
+    content: This service persists and queries openHAB item states using TimescaleDB, a time-series database built on PostgreSQL.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: sensorcommunity
 label: SensorCommunity
 title: SensorCommunity - Bindings
 type: binding
-description: "Binding for the [Sensor.Community](https://sensor.community/)."
+description: Binding for the [Sensor.Community](https://sensor.community/).
 logo: images/addons/sensorcommunity.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sensorcommunity/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "SensorCommunity - Bindings"
   - property: og:description
-    content: "Binding for the Sensor.Community."
+    content: Binding for the Sensor.Community.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

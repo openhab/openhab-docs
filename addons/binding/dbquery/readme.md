@@ -3,7 +3,7 @@ id: dbquery
 label: DBQuery
 title: DBQuery - Bindings
 type: binding
-description: "This binding allows creating items from the result of native database queries."
+description: This binding allows creating items from the result of native database queries.
 logo: images/addons/dbquery.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.dbquery/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "DBQuery - Bindings"
   - property: og:description
-    content: "This binding allows creating items from the result of native database queries."
+    content: This binding allows creating items from the result of native database queries.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

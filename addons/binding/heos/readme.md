@@ -3,7 +3,7 @@ id: heos
 label: Denon HEOS
 title: Denon HEOS - Bindings
 type: binding
-description: "This binding supports the HEOS system from Denon."
+description: This binding supports the HEOS system from Denon.
 logo: images/addons/heos.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.heos/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Denon HEOS - Bindings"
   - property: og:description
-    content: "This binding supports the HEOS system from Denon."
+    content: This binding supports the HEOS system from Denon.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

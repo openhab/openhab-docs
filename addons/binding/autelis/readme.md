@@ -3,7 +3,7 @@ id: autelis
 label: Autelis Pool Control
 title: Autelis Pool Control - Bindings
 type: binding
-description: "Autelis manufactures a network enabled pool interface for many popular pool systems."
+description: Autelis manufactures a network enabled pool interface for many popular pool systems.
 logo: images/addons/autelis.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.autelis/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Autelis Pool Control - Bindings"
   - property: og:description
-    content: "Autelis manufactures a network enabled pool interface for many popular pool systems."
+    content: Autelis manufactures a network enabled pool interface for many popular pool systems.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

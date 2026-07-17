@@ -3,7 +3,7 @@ id: energyforecast
 label: Energy Forecast
 title: Energy Forecast - Bindings
 type: binding
-description: "Binding provides AI price forecast 48h / 96h beyond day-ahead pricing with [Energy Forecast Service](https://www.energyforecast.de/)."
+description: Binding provides AI price forecast 48h / 96h beyond day-ahead pricing with [Energy Forecast Service](https://www.energyforecast.de/).
 logo: images/addons/energyforecast.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.energyforecast/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Energy Forecast - Bindings"
   - property: og:description
-    content: "Binding provides AI price forecast 48h / 96h beyond day-ahead pricing with Energy Forecast Service."
+    content: Binding provides AI price forecast 48h / 96h beyond day-ahead pricing with Energy Forecast Service.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

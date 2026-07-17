@@ -3,14 +3,14 @@ id: xmppclient
 label: XMPPClient
 title: XMPPClient - Bindings
 type: binding
-description: "The XMPPClient binding provides support for sending and receiving XMPP (Jabber) messages."
+description: The XMPPClient binding provides support for sending and receiving XMPP (Jabber) messages.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.xmppclient/README.md
 meta:
   - property: og:title
     content: "XMPPClient - Bindings"
   - property: og:description
-    content: "The XMPPClient binding provides support for sending and receiving XMPP (Jabber) messages."
+    content: The XMPPClient binding provides support for sending and receiving XMPP (Jabber) messages.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

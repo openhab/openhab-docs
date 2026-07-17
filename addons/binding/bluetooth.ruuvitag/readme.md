@@ -3,7 +3,7 @@ id: bluetooth.ruuvitag
 label: Ruuvi Tag / Ruuvi Air
 title: Ruuvi Tag / Ruuvi Air - Bindings
 type: binding
-description: "This extension adds support for [Ruuvi Tag](https://ruuvi.com/) and [Ruuvi Air](https://ruuvi.com/) sensor beacons."
+description: This extension adds support for [Ruuvi Tag](https://ruuvi.com/) and [Ruuvi Air](https://ruuvi.com/) sensor beacons.
 logo: images/addons/bluetooth.ruuvitag.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.ruuvitag/README.md
@@ -12,7 +12,7 @@ meta:
   - property: og:title
     content: "Ruuvi Tag / Ruuvi Air - Bindings"
   - property: og:description
-    content: "This extension adds support for Ruuvi Tag and Ruuvi Air sensor beacons."
+    content: This extension adds support for Ruuvi Tag and Ruuvi Air sensor beacons.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: yeelight
 label: Yeelight
 title: Yeelight - Bindings
 type: binding
-description: "This binding integrates the [Yeelight Lighting Product](https://www.yeelight.com/)."
+description: This binding integrates the [Yeelight Lighting Product](https://www.yeelight.com/).
 logo: images/addons/yeelight.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.yeelight/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Yeelight - Bindings"
   - property: og:description
-    content: "This binding integrates the Yeelight Lighting Product."
+    content: This binding integrates the Yeelight Lighting Product.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

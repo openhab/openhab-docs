@@ -3,7 +3,7 @@ id: mail
 label: Mail
 title: Mail - Bindings
 type: binding
-description: "The Mail binding provides support for sending mails from rules."
+description: The Mail binding provides support for sending mails from rules.
 logo: images/addons/mail.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mail/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Mail - Bindings"
   - property: og:description
-    content: "The Mail binding provides support for sending mails from rules."
+    content: The Mail binding provides support for sending mails from rules.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

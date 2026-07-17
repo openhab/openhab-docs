@@ -3,7 +3,7 @@ id: rfxcom
 label: RFXCOM
 title: RFXCOM - Bindings
 type: binding
-description: "This binding integrates large number of sensors and actuators from several different manufactures through [RFXCOM transceivers](http://www.rfxcom.com)."
+description: This binding integrates large number of sensors and actuators from several different manufactures through [RFXCOM transceivers](http://www.rfxcom.com).
 logo: images/addons/rfxcom.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.rfxcom/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "RFXCOM - Bindings"
   - property: og:description
-    content: "This binding integrates large number of sensors and actuators from several different manufactures through RFXCOM transceivers."
+    content: This binding integrates large number of sensors and actuators from several different manufactures through RFXCOM transceivers.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

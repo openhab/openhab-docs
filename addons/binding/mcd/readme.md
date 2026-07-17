@@ -3,7 +3,7 @@ id: mcd
 label: MCD
 title: MCD - Bindings
 type: binding
-description: "This binding allows you to send sensor events from your openHAB environment to the cloud application Managing Care Digital (MCD) by [C&S Computer und Software GmbH](https://www.managingcare.de/)."
+description: This binding allows you to send sensor events from your openHAB environment to the cloud application Managing Care Digital (MCD) by [C&S Computer und Software GmbH](https://www.managingcare.de/).
 logo: images/addons/mcd.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mcd/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "MCD - Bindings"
   - property: og:description
-    content: "This binding allows you to send sensor events from your openHAB environment to the cloud application Managing Care Digital (MCD) by C&S Computer und Software GmbH."
+    content: This binding allows you to send sensor events from your openHAB environment to the cloud application Managing Care Digital (MCD) by C&S Computer und Software GmbH.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

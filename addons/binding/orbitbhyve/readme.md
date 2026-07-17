@@ -3,7 +3,7 @@ id: orbitbhyve
 label: Orbit B-hyve
 title: Orbit B-hyve - Bindings
 type: binding
-description: "This is the binding for the [Orbit B-hyve](https://bhyve.orbitonline.com/) Wi‑Fi sprinklers."
+description: This is the binding for the [Orbit B-hyve](https://bhyve.orbitonline.com/) Wi‑Fi sprinklers.
 logo: images/addons/orbitbhyve.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.orbitbhyve/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Orbit B-hyve - Bindings"
   - property: og:description
-    content: "This is the binding for the Orbit B-hyve Wi‑Fi sprinklers."
+    content: This is the binding for the Orbit B-hyve Wi‑Fi sprinklers.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

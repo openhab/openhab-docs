@@ -3,7 +3,7 @@ id: matter
 label: Matter
 title: Matter - Bindings
 type: binding
-description: "The Matter Binding for openHAB allows seamless integration with Matter-compatible devices."
+description: The Matter Binding for openHAB allows seamless integration with Matter-compatible devices.
 logo: images/addons/matter.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.matter/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Matter - Bindings"
   - property: og:description
-    content: "The Matter Binding for openHAB allows seamless integration with Matter-compatible devices."
+    content: The Matter Binding for openHAB allows seamless integration with Matter-compatible devices.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

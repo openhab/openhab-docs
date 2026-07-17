@@ -3,7 +3,7 @@ id: openhabcloud
 label: openHAB Cloud Connector
 title: openHAB Cloud Connector - System Integrations
 type: io
-description: "The openHAB Cloud Connector allows connecting the local openHAB runtime to a remote [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/master/README.md) instance, such as [myopenHAB.org](https://www.myopenHAB.org), which is an instance of the"
+description: The openHAB Cloud Connector allows connecting the local openHAB runtime to a remote [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/master/README.md) instance, such as [myopenHAB.org](https://www.myopenHAB.org), which is an instance of the
 logo: images/addons/openhabcloud.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.integration.openhabcloud/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "openHAB Cloud Connector - System Integrations"
   - property: og:description
-    content: "The openHAB Cloud Connector allows connecting the local openHAB runtime to a remote openHAB Cloud instance, such as myopenHAB.org, which is an instance of the"
+    content: The openHAB Cloud Connector allows connecting the local openHAB runtime to a remote openHAB Cloud instance, such as myopenHAB.org, which is an instance of the
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

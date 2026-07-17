@@ -3,14 +3,14 @@ id: webthing
 label: WebThing
 title: WebThing - Bindings
 type: binding
-description: "The WebThing binding supports an interface to smart home device supporting the Web Thing API."
+description: The WebThing binding supports an interface to smart home device supporting the Web Thing API.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.webthing/README.md
 meta:
   - property: og:title
     content: "WebThing - Bindings"
   - property: og:description
-    content: "The WebThing binding supports an interface to smart home device supporting the Web Thing API."
+    content: The WebThing binding supports an interface to smart home device supporting the Web Thing API.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: exec
 label: Exec
 title: Exec - Transformation Services
 type: transform
-description: "Transforms an input string using an external program."
+description: Transforms an input string using an external program.
 logo: images/addons/exec.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.exec/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Exec - Transformation Services"
   - property: og:description
-    content: "Transforms an input string using an external program."
+    content: Transforms an input string using an external program.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

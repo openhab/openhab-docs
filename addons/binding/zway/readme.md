@@ -3,7 +3,7 @@ id: zway
 label: Z-Way
 title: Z-Way - Bindings
 type: binding
-description: "Z-Way is a software to configure and control a Z-Wave network."
+description: Z-Way is a software to configure and control a Z-Wave network.
 logo: images/addons/zway.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.zway/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Z-Way - Bindings"
   - property: og:description
-    content: "Z-Way is a software to configure and control a Z-Wave network."
+    content: Z-Way is a software to configure and control a Z-Wave network.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

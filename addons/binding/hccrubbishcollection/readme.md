@@ -3,7 +3,7 @@ id: hccrubbishcollection
 label: HCC Rubbish Collection
 title: HCC Rubbish Collection - Bindings
 type: binding
-description: "A Hamilton City Council (NZ) _'Fight the Landfill'_ binding."
+description: A Hamilton City Council (NZ) _'Fight the Landfill'_ binding.
 logo: images/addons/hccrubbishcollection.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.hccrubbishcollection/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "HCC Rubbish Collection - Bindings"
   - property: og:description
-    content: "A Hamilton City Council (NZ) _'Fight the Landfill'_ binding."
+    content: A Hamilton City Council (NZ) _'Fight the Landfill'_ binding.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

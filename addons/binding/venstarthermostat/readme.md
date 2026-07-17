@@ -3,14 +3,14 @@ id: venstarthermostat
 label: Venstar Thermostat
 title: Venstar Thermostat - Bindings
 type: binding
-description: "The Venstar Thermostat binding supports an interface to Wi‑Fi enabled ColorTouch and Explorer thermostats manufactured by [Venstar](https://www.venstar.com)."
+description: The Venstar Thermostat binding supports an interface to Wi‑Fi enabled ColorTouch and Explorer thermostats manufactured by [Venstar](https://www.venstar.com).
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.venstarthermostat/README.md
 meta:
   - property: og:title
     content: "Venstar Thermostat - Bindings"
   - property: og:description
-    content: "The Venstar Thermostat binding supports an interface to Wi‑Fi enabled ColorTouch and Explorer thermostats manufactured by Venstar."
+    content: The Venstar Thermostat binding supports an interface to Wi‑Fi enabled ColorTouch and Explorer thermostats manufactured by Venstar.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

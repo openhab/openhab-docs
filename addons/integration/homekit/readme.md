@@ -3,7 +3,7 @@ id: homekit
 label: HomeKit Add-on
 title: HomeKit Add-on - System Integrations
 type: io
-description: "This is an add-on that exposes your openHAB system as a bridge over the HomeKit protocol."
+description: This is an add-on that exposes your openHAB system as a bridge over the HomeKit protocol.
 logo: images/addons/homekit.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.integration.homekit/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "HomeKit Add-on - System Integrations"
   - property: og:description
-    content: "This is an add-on that exposes your openHAB system as a bridge over the HomeKit protocol."
+    content: This is an add-on that exposes your openHAB system as a bridge over the HomeKit protocol.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

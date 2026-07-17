@@ -3,7 +3,7 @@ id: airparif
 label: AirParif
 title: AirParif - Bindings
 type: binding
-description: "This binding uses the [AirParif service](https://www.airparif.fr/) for providing air quality information for Paris and departments of the Ile-de-France."
+description: This binding uses the [AirParif service](https://www.airparif.fr/) for providing air quality information for Paris and departments of the Ile-de-France.
 logo: images/addons/airparif.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.airparif/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "AirParif - Bindings"
   - property: og:description
-    content: "This binding uses the AirParif service for providing air quality information for Paris and departments of the Ile-de-France."
+    content: This binding uses the AirParif service for providing air quality information for Paris and departments of the Ile-de-France.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

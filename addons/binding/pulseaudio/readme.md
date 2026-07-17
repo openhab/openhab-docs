@@ -3,7 +3,7 @@ id: pulseaudio
 label: PulseAudio
 title: PulseAudio - Bindings
 type: binding
-description: "This binding integrates PulseAudio devices."
+description: This binding integrates PulseAudio devices.
 logo: images/addons/pulseaudio.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pulseaudio/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "PulseAudio - Bindings"
   - property: og:description
-    content: "This binding integrates PulseAudio devices."
+    content: This binding integrates PulseAudio devices.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

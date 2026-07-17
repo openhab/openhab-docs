@@ -3,7 +3,7 @@ id: generacmobilelink
 label: Generac MobileLink
 title: Generac MobileLink - Bindings
 type: binding
-description: "This binding communicates with the Generac MobileLink API and reports on the status of Generac manufactured generators, including versions resold under the brands Eaton, Honeywell and Siemens."
+description: This binding communicates with the Generac MobileLink API and reports on the status of Generac manufactured generators, including versions resold under the brands Eaton, Honeywell and Siemens.
 logo: images/addons/generacmobilelink.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.generacmobilelink/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Generac MobileLink - Bindings"
   - property: og:description
-    content: "This binding communicates with the Generac MobileLink API and reports on the status of Generac manufactured generators, including versions resold under the brands Eaton, Honeywell and Siemens."
+    content: This binding communicates with the Generac MobileLink API and reports on the status of Generac manufactured generators, including versions resold under the brands Eaton, Honeywell and Siemens.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

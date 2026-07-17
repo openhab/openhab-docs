@@ -3,7 +3,7 @@ id: atmofrance
 label: Atmo France
 title: Atmo France - Bindings
 type: binding
-description: "This binding uses the [Atmo France service](https://www.atmo-france.org/) for providing air quality and pollens information in France."
+description: This binding uses the [Atmo France service](https://www.atmo-france.org/) for providing air quality and pollens information in France.
 logo: images/addons/atmofrance.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.atmofrance/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Atmo France - Bindings"
   - property: og:description
-    content: "This binding uses the Atmo France service for providing air quality and pollens information in France."
+    content: This binding uses the Atmo France service for providing air quality and pollens information in France.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

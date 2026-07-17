@@ -3,7 +3,7 @@ id: metrics
 label: Metrics
 title: Metrics - System Integrations
 type: io
-description: "The Metrics service provides:"
+description: 'The Metrics service provides:'
 logo: images/addons/metrics.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.integration.metrics/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Metrics - System Integrations"
   - property: og:description
-    content: "The Metrics service provides:"
+    content: 'The Metrics service provides:'
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

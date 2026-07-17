@@ -3,7 +3,7 @@ id: modbus.e3dc
 label: Hager / E3DC Power Plants
 title: Hager / E3DC Power Plants - Bindings
 type: binding
-description: "Integrates the Home Power Plants from E3/DC GmbH into openHAB."
+description: Integrates the Home Power Plants from E3/DC GmbH into openHAB.
 logo: images/addons/modbus.e3dc.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.modbus.e3dc/README.md
@@ -12,7 +12,7 @@ meta:
   - property: og:title
     content: "Hager / E3DC Power Plants - Bindings"
   - property: og:description
-    content: "Integrates the Home Power Plants from E3/DC GmbH into openHAB."
+    content: Integrates the Home Power Plants from E3/DC GmbH into openHAB.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

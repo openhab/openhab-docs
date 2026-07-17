@@ -3,7 +3,7 @@ id: lirc
 label: LIRC
 title: LIRC - Bindings
 type: binding
-description: "This binding integrates infrared transceivers through [LIRC](https://www.lirc.org) or [WinLIRC](http://winlirc.sourceforge.net)."
+description: This binding integrates infrared transceivers through [LIRC](https://www.lirc.org) or [WinLIRC](http://winlirc.sourceforge.net).
 logo: images/addons/lirc.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.lirc/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "LIRC - Bindings"
   - property: og:description
-    content: "This binding integrates infrared transceivers through LIRC or WinLIRC."
+    content: This binding integrates infrared transceivers through LIRC or WinLIRC.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

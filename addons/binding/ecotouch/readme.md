@@ -3,7 +3,7 @@ id: ecotouch
 label: EcoTouch
 title: EcoTouch - Bindings
 type: binding
-description: "The openHAB EcoTouch binding allows interaction with a [Waterkotte](https://www.waterkotte.de/) heat pump."
+description: The openHAB EcoTouch binding allows interaction with a [Waterkotte](https://www.waterkotte.de/) heat pump.
 logo: images/addons/ecotouch.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ecotouch/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "EcoTouch - Bindings"
   - property: og:description
-    content: "The openHAB EcoTouch binding allows interaction with a Waterkotte heat pump."
+    content: The openHAB EcoTouch binding allows interaction with a Waterkotte heat pump.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

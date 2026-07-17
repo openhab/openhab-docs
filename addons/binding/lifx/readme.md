@@ -3,7 +3,7 @@ id: lifx
 label: LIFX
 title: LIFX - Bindings
 type: binding
-description: "This binding integrates the [LIFX LED Lights](https://www.lifx.com/)."
+description: This binding integrates the [LIFX LED Lights](https://www.lifx.com/).
 logo: images/addons/lifx.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.lifx/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "LIFX - Bindings"
   - property: og:description
-    content: "This binding integrates the LIFX LED Lights."
+    content: This binding integrates the LIFX LED Lights.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

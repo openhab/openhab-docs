@@ -3,7 +3,7 @@ id: bluetooth.blukii
 label: Blukii
 title: Blukii - Bindings
 type: binding
-description: "This extension adds support for [Blukii](https://www.blukii.com/) Sensor Beacons."
+description: This extension adds support for [Blukii](https://www.blukii.com/) Sensor Beacons.
 logo: images/addons/bluetooth.blukii.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.blukii/README.md
@@ -12,7 +12,7 @@ meta:
   - property: og:title
     content: "Blukii - Bindings"
   - property: og:description
-    content: "This extension adds support for Blukii Sensor Beacons."
+    content: This extension adds support for Blukii Sensor Beacons.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

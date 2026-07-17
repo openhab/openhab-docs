@@ -3,7 +3,7 @@ id: voicerss
 label: VoiceRSS Text-to-Speech
 title: VoiceRSS Text-to-Speech - Voices
 type: voice
-description: "VoiceRSS is an Internet based TTS service hosted at <https://api.voicerss.org>."
+description: VoiceRSS is an Internet based TTS service hosted at <https://api.voicerss.org>.
 logo: images/addons/voicerss.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.voicerss/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "VoiceRSS Text-to-Speech - Voices"
   - property: og:description
-    content: "VoiceRSS is an Internet based TTS service hosted at <https://api.voicerss.org>."
+    content: VoiceRSS is an Internet based TTS service hosted at <https://api.voicerss.org>.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

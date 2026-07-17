@@ -3,7 +3,7 @@ id: bondhome
 label: Bond Home
 title: Bond Home - Bindings
 type: binding
-description: "This binding connects the [Bond Home](https://bondhome.io/) Bridge to openHAB using the [BOND V2 Local HTTP API](http://docs-local.appbond.com)."
+description: This binding connects the [Bond Home](https://bondhome.io/) Bridge to openHAB using the [BOND V2 Local HTTP API](http://docs-local.appbond.com).
 logo: images/addons/bondhome.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bondhome/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Bond Home - Bindings"
   - property: og:description
-    content: "This binding connects the Bond Home Bridge to openHAB using the BOND V2 Local HTTP API."
+    content: This binding connects the Bond Home Bridge to openHAB using the BOND V2 Local HTTP API.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

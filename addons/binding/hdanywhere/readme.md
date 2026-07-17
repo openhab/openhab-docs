@@ -3,7 +3,7 @@ id: hdanywhere
 label: HDanywhere
 title: HDanywhere - Bindings
 type: binding
-description: "This binding integrates with [HDanywhere](https://www.hdanywhere.co.uk) HDMI matrices."
+description: This binding integrates with [HDanywhere](https://www.hdanywhere.co.uk) HDMI matrices.
 logo: images/addons/hdanywhere.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.hdanywhere/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "HDanywhere - Bindings"
   - property: og:description
-    content: "This binding integrates with HDanywhere HDMI matrices."
+    content: This binding integrates with HDanywhere HDMI matrices.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

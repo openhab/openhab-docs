@@ -3,7 +3,7 @@ id: modbus.studer
 label: Studer
 title: Studer - Bindings
 type: binding
-description: "This extension adds support for the Studer protocol."
+description: This extension adds support for the Studer protocol.
 logo: images/addons/modbus.studer.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.modbus.studer/README.md
@@ -12,7 +12,7 @@ meta:
   - property: og:title
     content: "Studer - Bindings"
   - property: og:description
-    content: "This extension adds support for the Studer protocol."
+    content: This extension adds support for the Studer protocol.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

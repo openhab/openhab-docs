@@ -3,7 +3,7 @@ id: openwebnet
 label: OpenWebNet (BTicino/Legrand)
 title: OpenWebNet (BTicino/Legrand) - Bindings
 type: binding
-description: "This binding integrates **BTicino / Legrand** **MyHOME &reg; - BUS/SCS** and **MyHOME &reg; Radio - Zigbee** wireless devices using the [OpenWebNet](https://en.wikipedia.org/wiki/OpenWebNet) protocol."
+description: This binding integrates **BTicino / Legrand** **MyHOME &reg; - BUS/SCS** and **MyHOME &reg; Radio - Zigbee** wireless devices using the [OpenWebNet](https://en.wikipedia.org/wiki/OpenWebNet) protocol.
 logo: images/addons/openwebnet.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.openwebnet/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "OpenWebNet (BTicino/Legrand) - Bindings"
   - property: og:description
-    content: "This binding integrates **BTicino / Legrand** **MyHOME &reg; - BUS/SCS** and **MyHOME &reg; Radio - Zigbee** wireless devices using the OpenWebNet protocol."
+    content: This binding integrates **BTicino / Legrand** **MyHOME &reg; - BUS/SCS** and **MyHOME &reg; Radio - Zigbee** wireless devices using the OpenWebNet protocol.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

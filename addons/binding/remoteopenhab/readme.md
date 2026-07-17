@@ -3,14 +3,14 @@ id: remoteopenhab
 label: Remote openHAB
 title: Remote openHAB - Bindings
 type: binding
-description: "The Remote openHAB binding allows to communicate with remote openHAB servers."
+description: The Remote openHAB binding allows to communicate with remote openHAB servers.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.remoteopenhab/README.md
 meta:
   - property: og:title
     content: "Remote openHAB - Bindings"
   - property: og:description
-    content: "The Remote openHAB binding allows to communicate with remote openHAB servers."
+    content: The Remote openHAB binding allows to communicate with remote openHAB servers.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

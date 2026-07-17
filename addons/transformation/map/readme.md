@@ -3,7 +3,7 @@ id: map
 label: Map
 title: Map - Transformation Services
 type: transform
-description: "Transforms the input by mapping it to another string."
+description: Transforms the input by mapping it to another string.
 logo: images/addons/map.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.map/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Map - Transformation Services"
   - property: og:description
-    content: "Transforms the input by mapping it to another string."
+    content: Transforms the input by mapping it to another string.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

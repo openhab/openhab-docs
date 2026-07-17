@@ -3,7 +3,7 @@ id: networkupstools
 label: Network UPS Tools
 title: Network UPS Tools - Bindings
 type: binding
-description: "The primary goal of the [Network UPS Tools](https://networkupstools.org/) (NUT) project is to provide support for power devices, such as uninterruptible power supplies (UPS), Power Distribution Units and Solar Controllers."
+description: The primary goal of the [Network UPS Tools](https://networkupstools.org/) (NUT) project is to provide support for power devices, such as uninterruptible power supplies (UPS), Power Distribution Units and Solar Controllers.
 logo: images/addons/networkupstools.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.networkupstools/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Network UPS Tools - Bindings"
   - property: og:description
-    content: "The primary goal of the Network UPS Tools (NUT) project is to provide support for power devices, such as uninterruptible power supplies (UPS), Power Distribution Units and Solar Controllers."
+    content: The primary goal of the Network UPS Tools (NUT) project is to provide support for power devices, such as uninterruptible power supplies (UPS), Power Distribution Units and Solar Controllers.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

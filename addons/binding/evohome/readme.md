@@ -3,7 +3,7 @@ id: evohome
 label: evohome
 title: evohome - Bindings
 type: binding
-description: "This binding integrates the Honeywell evohome system."
+description: This binding integrates the Honeywell evohome system.
 logo: images/addons/evohome.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.evohome/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "evohome - Bindings"
   - property: og:description
-    content: "This binding integrates the Honeywell evohome system."
+    content: This binding integrates the Honeywell evohome system.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

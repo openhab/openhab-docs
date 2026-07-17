@@ -3,7 +3,7 @@ id: deutschebahn
 label: Deutsche Bahn
 title: Deutsche Bahn - Bindings
 type: binding
-description: "The Deutsche Bahn Binding provides the latest timetable information for all trains that arrive or depart at a specific train station, including live information for delays and changes in timetable."
+description: The Deutsche Bahn Binding provides the latest timetable information for all trains that arrive or depart at a specific train station, including live information for delays and changes in timetable.
 logo: images/addons/deutschebahn.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.deutschebahn/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Deutsche Bahn - Bindings"
   - property: og:description
-    content: "The Deutsche Bahn Binding provides the latest timetable information for all trains that arrive or depart at a specific train station, including live information for delays and changes in timetable."
+    content: The Deutsche Bahn Binding provides the latest timetable information for all trains that arrive or depart at a specific train station, including live information for delays and changes in timetable.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

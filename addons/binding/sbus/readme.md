@@ -3,14 +3,14 @@ id: sbus
 label: Sbus
 title: Sbus - Bindings
 type: binding
-description: "This binding integrates Sbus-compatible hardware with openHAB, allowing control and monitoring over UDP networks."
+description: This binding integrates Sbus-compatible hardware with openHAB, allowing control and monitoring over UDP networks.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sbus/README.md
 meta:
   - property: og:title
     content: "Sbus - Bindings"
   - property: og:description
-    content: "This binding integrates Sbus-compatible hardware with openHAB, allowing control and monitoring over UDP networks."
+    content: This binding integrates Sbus-compatible hardware with openHAB, allowing control and monitoring over UDP networks.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: wiz
 label: WiZ
 title: WiZ - Bindings
 type: binding
-description: "This binding integrates [WiZ Connected](https://www.wizconnected.com/en-US/) smart devices."
+description: This binding integrates [WiZ Connected](https://www.wizconnected.com/en-US/) smart devices.
 logo: images/addons/wiz.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.wiz/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "WiZ - Bindings"
   - property: og:description
-    content: "This binding integrates WiZ Connected smart devices."
+    content: This binding integrates WiZ Connected smart devices.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

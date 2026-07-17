@@ -3,7 +3,7 @@ id: freeathome
 label: ABB/Busch-free@home Smart Home
 title: ABB/Busch-free@home Smart Home - Bindings
 type: binding
-description: "openHAB ABB/Busch-free@home binding based on the offical free@home local API."
+description: openHAB ABB/Busch-free@home binding based on the offical free@home local API.
 logo: images/addons/freeathome.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.freeathome/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "ABB/Busch-free@home Smart Home - Bindings"
   - property: og:description
-    content: "openHAB ABB/Busch-free@home binding based on the offical free@home local API."
+    content: openHAB ABB/Busch-free@home binding based on the offical free@home local API.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

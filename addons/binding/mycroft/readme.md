@@ -3,7 +3,7 @@ id: mycroft
 label: Mycroft
 title: Mycroft - Bindings
 type: binding
-description: "This binding connects to Mycroft A.I. in order to control it or react to events by listening on the message bus."
+description: This binding connects to Mycroft A.I. in order to control it or react to events by listening on the message bus.
 logo: images/addons/mycroft.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mycroft/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Mycroft - Bindings"
   - property: og:description
-    content: "This binding connects to Mycroft A.I. in order to control it or react to events by listening on the message bus."
+    content: This binding connects to Mycroft A.I. in order to control it or react to events by listening on the message bus.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

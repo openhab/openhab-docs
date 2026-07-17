@@ -3,14 +3,14 @@ id: tacmi
 label: TA C.M.I.
 title: TA C.M.I. - Bindings
 type: binding
-description: "This binding makes use of the CAN over Ethernet feature of the C.M.I. from Technische Alternative."
+description: This binding makes use of the CAN over Ethernet feature of the C.M.I. from Technische Alternative.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tacmi/README.md
 meta:
   - property: og:title
     content: "TA C.M.I. - Bindings"
   - property: og:description
-    content: "This binding makes use of the CAN over Ethernet feature of the C.M.I. from Technische Alternative."
+    content: This binding makes use of the CAN over Ethernet feature of the C.M.I. from Technische Alternative.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -3,7 +3,7 @@ id: dwdpollenflug
 label: DWD Pollenflug
 title: DWD Pollenflug - Bindings
 type: binding
-description: "The 'Deutsche Wetterdienst' (DWD) reports the current pollen count index for Germany on a daily base and a forecast for tomorrow and the day after tomorrow."
+description: The 'Deutsche Wetterdienst' (DWD) reports the current pollen count index for Germany on a daily base and a forecast for tomorrow and the day after tomorrow.
 logo: images/addons/dwdpollenflug.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.dwdpollenflug/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "DWD Pollenflug - Bindings"
   - property: og:description
-    content: "The 'Deutsche Wetterdienst' (DWD) reports the current pollen count index for Germany on a daily base and a forecast for tomorrow and the day after tomorrow."
+    content: The 'Deutsche Wetterdienst' (DWD) reports the current pollen count index for Germany on a daily base and a forecast for tomorrow and the day after tomorrow.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

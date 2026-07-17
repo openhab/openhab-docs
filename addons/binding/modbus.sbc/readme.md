@@ -3,7 +3,7 @@ id: modbus.sbc
 label: Modbus Saia Burgess Controls
 title: Modbus Saia Burgess Controls - Bindings
 type: binding
-description: "This binding interfaces the energy meter series ALD1 by Saia Burgess Controls (SBC) via Modbus."
+description: This binding interfaces the energy meter series ALD1 by Saia Burgess Controls (SBC) via Modbus.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.modbus.sbc/README.md
 prev: ../modbus/
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Modbus Saia Burgess Controls - Bindings"
   - property: og:description
-    content: "This binding interfaces the energy meter series ALD1 by Saia Burgess Controls (SBC) via Modbus."
+    content: This binding interfaces the energy meter series ALD1 by Saia Burgess Controls (SBC) via Modbus.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

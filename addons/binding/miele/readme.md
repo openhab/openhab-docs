@@ -3,7 +3,7 @@ id: miele
 label: Miele@home
 title: Miele@home - Bindings
 type: binding
-description: "This binding integrates Miele@home appliances."
+description: This binding integrates Miele@home appliances.
 logo: images/addons/miele.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.miele/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Miele@home - Bindings"
   - property: og:description
-    content: "This binding integrates Miele@home appliances."
+    content: This binding integrates Miele@home appliances.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

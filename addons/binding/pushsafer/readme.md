@@ -3,14 +3,14 @@ id: pushsafer
 label: Pushsafer
 title: Pushsafer - Bindings
 type: binding
-description: "This binding allows you to notify mobile devices using the [Pushsafer API](https://www.pushsafer.com/pushapi)."
+description: This binding allows you to notify mobile devices using the [Pushsafer API](https://www.pushsafer.com/pushapi).
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pushsafer/README.md
 meta:
   - property: og:title
     content: "Pushsafer - Bindings"
   - property: og:description
-    content: "This binding allows you to notify mobile devices using the Pushsafer API."
+    content: This binding allows you to notify mobile devices using the Pushsafer API.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

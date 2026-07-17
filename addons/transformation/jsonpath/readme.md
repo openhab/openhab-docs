@@ -3,7 +3,7 @@ id: jsonpath
 label: JsonPath
 title: JsonPath - Transformation Services
 type: transform
-description: "Extracts values from a JSON string using a [JsonPath](https://github.com/jayway/JsonPath#jayway-jsonpath) expression."
+description: Extracts values from a JSON string using a [JsonPath](https://github.com/jayway/JsonPath#jayway-jsonpath) expression.
 logo: images/addons/jsonpath.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.transformation.jsonpath/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "JsonPath - Transformation Services"
   - property: og:description
-    content: "Extracts values from a JSON string using a JsonPath(https://github.com/jayway/JsonPath#jayway-jsonpath) expression."
+    content: Extracts values from a JSON string using a JsonPath(https://github.com/jayway/JsonPath#jayway-jsonpath) expression.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

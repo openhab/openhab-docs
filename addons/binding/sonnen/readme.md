@@ -3,7 +3,7 @@ id: sonnen
 label: Sonnen
 title: Sonnen - Bindings
 type: binding
-description: "The binding for sonnen communicates with a sonnen battery."
+description: The binding for sonnen communicates with a sonnen battery.
 logo: images/addons/sonnen.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.sonnen/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Sonnen - Bindings"
   - property: og:description
-    content: "The binding for sonnen communicates with a sonnen battery."
+    content: The binding for sonnen communicates with a sonnen battery.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

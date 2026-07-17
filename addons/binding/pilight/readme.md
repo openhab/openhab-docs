@@ -3,14 +3,14 @@ id: pilight
 label: pilight
 title: pilight - Bindings
 type: binding
-description: "The pilight binding allows openHAB to communicate with a [pilight](https://www.pilight.org/) instance running pilight version 6.0 or greater."
+description: The pilight binding allows openHAB to communicate with a [pilight](https://www.pilight.org/) instance running pilight version 6.0 or greater.
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.pilight/README.md
 meta:
   - property: og:title
     content: "pilight - Bindings"
   - property: og:description
-    content: "The pilight binding allows openHAB to communicate with a pilight instance running pilight version 6.0 or greater."
+    content: The pilight binding allows openHAB to communicate with a pilight instance running pilight version 6.0 or greater.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

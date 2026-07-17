@@ -3,7 +3,7 @@ id: anthem
 label: Anthem
 title: Anthem - Bindings
 type: binding
-description: "The binding allows control of Anthem AV processors over an IP connection to the processor."
+description: The binding allows control of Anthem AV processors over an IP connection to the processor.
 logo: images/addons/anthem.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.anthem/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Anthem - Bindings"
   - property: og:description
-    content: "The binding allows control of Anthem AV processors over an IP connection to the processor."
+    content: The binding allows control of Anthem AV processors over an IP connection to the processor.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

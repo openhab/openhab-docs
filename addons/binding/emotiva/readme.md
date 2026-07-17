@@ -3,7 +3,7 @@ id: emotiva
 label: Emotiva
 title: Emotiva - Bindings
 type: binding
-description: "This binding integrates Emotiva AV processors by using the Emotiva Network Remote Control protocol."
+description: This binding integrates Emotiva AV processors by using the Emotiva Network Remote Control protocol.
 logo: images/addons/emotiva.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.emotiva/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Emotiva - Bindings"
   - property: og:description
-    content: "This binding integrates Emotiva AV processors by using the Emotiva Network Remote Control protocol."
+    content: This binding integrates Emotiva AV processors by using the Emotiva Network Remote Control protocol.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
