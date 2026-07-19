@@ -4,6 +4,7 @@ label: Peblar
 title: Peblar - Bindings
 type: binding
 description: This binding integrates the [Peblar EV Charger](https://www.peblar.com) via its local REST API.
+logo: images/addons/peblar.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.peblar/README.md
 meta:
@@ -16,6 +17,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # Peblar Binding
+
+<AddonLogo />
 
 This binding integrates the [Peblar EV Charger](https://www.peblar.com) via its local REST API.
 It requires firmware **1.6 or newer** and the local API enabled in the charger web interface under **Settings → API**.
