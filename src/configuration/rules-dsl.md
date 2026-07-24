@@ -1143,7 +1143,7 @@ then
 end
 
 // increase the counter at midnight
-rule "Increase counter"
+rule "Increase counter" [Schedule]
 when
     Time cron "0 0 0 * * ?"
 then
@@ -1151,7 +1151,7 @@ then
 end
 
 // tell the number of days either at noon or if a button is pressed
-rule "Announce number of days up"
+rule "Announce number of days up" [Schedule]
 when
     Time is noon or
     Item AnnounceButton received command ON
