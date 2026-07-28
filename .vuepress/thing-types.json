@@ -7456,6 +7456,11 @@
   },
   {
     "bindingId": "shelly",
+    "id": "shelly:shellybluws90",
+    "label": "Ecowitt WS90 Weather Station"
+  },
+  {
+    "bindingId": "shelly",
     "id": "shelly:shellybulb",
     "label": "Shelly Bulb"
   },
