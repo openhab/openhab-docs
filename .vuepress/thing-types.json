@@ -7821,6 +7821,11 @@
   },
   {
     "bindingId": "shelly",
+    "id": "shelly:shellyplusflood",
+    "label": "Shelly Plus Flood"
+  },
+  {
+    "bindingId": "shelly",
     "id": "shelly:shellyplusht",
     "label": "ShellyPlus H&T"
   },
