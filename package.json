@@ -33,7 +33,7 @@
     "vuepress": "^1.9.10",
     "vuepress-plugin-container": "^2.1.4",
     "vuepress-plugin-tabs": "^0.3.0",
-    "webpack-serve": "^3.2.0"
+    "webpack-serve": "^4.0.0"
   },
   "overrides": {
     "vue": "=2.6.14",
