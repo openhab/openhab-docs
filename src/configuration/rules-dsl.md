@@ -499,6 +499,8 @@ val contactNum = if (MyContactItem.state == OPEN) 1 else 0
 
 A DateTime Item carries a **DateTimeType**, which internally holds a Java `ZonedDateTime` object.
 
+`ZoneId` refers to class [java.time.ZoneId](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/ZoneId.html), `zoneId` calls method [ScriptServiceUtil.getZoneId()](https://www.openhab.org/javadoc/latest/org/openhab/core/model/script/scriptserviceutil#getZoneId()).
+
 ```java
 // Get epoch from DateTimeType
 val Number epoch = (MyDateTimeItem.state as DateTimeType).instant.toEpochMilli
@@ -507,7 +509,7 @@ val Number epoch = (MyDateTimeItem.state as DateTimeType).instant.toEpochMilli
 val Number nowEpoch = now.toInstant.toEpochMilli
 
 // Convert DateTimeType to Java ZonedDateTime
-val javaZonedDateTime = (MyDateTimeItem.state as DateTimeType).getZonedDateTime(ZoneId.systemDefault)
+val javaZonedDateTime = (MyDateTimeItem.state as DateTimeType).getZonedDateTime(zoneId)
 
 // Convert Java ZonedDateTime to DateTimeType
 val DateTimeType date = new DateTimeType(now)
@@ -542,7 +544,7 @@ if(now.toInstant.isBefore((MyDateTimeItem.state as DateTimeType).instant)) ...
 if(now.toInstant.isAfter((MyDateTimeItem.state as DateTimeType).instant)) ...
 
 // Get the hour in the day from a DateTimeType
-val hour = (MyDateTimeItem.state as DateTimeType).getZonedDateTime(ZoneId.systemDefault).hour
+val hour = (MyDateTimeItem.state as DateTimeType).getZonedDateTime(zoneId).hour
 ```
 
 ##### Dimmer Item
