@@ -176,7 +176,7 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
   Note that `*` is NOT a wildcard match character in this context.
 - `!<groupName>*` all members of this group, but not the group itself, to be excluded from persistence defined by the other elements in this comma-separated `<itemList>`.
 The entries are additive.
-This means if one Item appears in more than one `<itemlist>` either directly or indirectly (e.g. `*` which includes all Items or as a member of a Group used in `<groupName>*`), all the strategies strategies listed on all those lines apply to that Item.
+This means if one Item appears in more than one `<itemlist>` either directly or indirectly (e.g. `*` which includes all Items or as a member of a Group used in `<groupName>*`), all the strategies listed on all those lines apply to that Item.
 In the same way, an Item defined by a `!<itemName>` or `!<groupName>*` will be excluded after all additive rules have been applied.
 
 For each `<itemlist>`, you need to define one or more strategies to apply.
@@ -248,6 +248,29 @@ Items {
 ```
 
 It is usually not necessary to restore all Items since there is a good chance that they are no longer accurate (switches may have been toggled, sensor values are likely to have changed), and the restoration may result in unwanted rule actions.
+
+If you want to persist all Items but restore only some of them, combine a store-all entry with a second entry that applies `restoreOnStartup` to the members of a single group.
+Since entries are additive, the members of the group are persisted by the first entry like all other Items, but they are the only ones restored after a restart:
+
+```java
+Items {
+  * : strategy = everyChange
+  gRestore* : strategy = restoreOnStartup
+}
+```
+
+Note that the group entry deliberately carries no store strategy: its members are already stored through the `*` entry, and a store strategy listed in several entries matching the same Item is applied once per entry, storing the Item multiple times.
+
+If the group entry is to carry store strategies of its own, keep the entries disjoint instead by excluding the group from the store-all entry:
+
+```java
+Items {
+  *, !gRestore* : strategy = everyChange
+  gRestore* : strategy = everyChange, restoreOnStartup
+}
+```
+
+Here every Item matches exactly one entry, so nothing is stored twice.
 
 ## Persistence Extensions in Scripts and Rules
 
