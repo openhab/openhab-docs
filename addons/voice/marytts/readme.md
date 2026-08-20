@@ -3,7 +3,7 @@ id: marytts
 label: Mary Text-to-Speech
 title: Mary Text-to-Speech - Voices
 type: voice
-description: The Mary Text-to-Speech (TTS) service is a pure Java implementation of a TTS service, which uses the [MaryTTS](http://mary.dfki.de/) project of DFKI.
+description: The Mary Text-to-Speech (TTS) service is a pure Java implementation of a TTS service, which uses the [MaryTTS](https://mary.opendfki.de/) project of DFKI.
 logo: images/addons/marytts.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.voice.marytts/README.md
@@ -20,7 +20,7 @@ meta:
 
 <AddonLogo />
 
-The Mary Text-to-Speech (TTS) service is a pure Java implementation of a TTS service, which uses the [MaryTTS](http://mary.dfki.de/) project of DFKI.
+The Mary Text-to-Speech (TTS) service is a pure Java implementation of a TTS service, which uses the [MaryTTS](https://mary.opendfki.de/) project of DFKI.
 
 While it provides good quality results, it must be noted that it is too heavy-weight for most embedded hardware like a Raspberry Pi. When using this service, you should be running openHAB on some real server instead.
 
