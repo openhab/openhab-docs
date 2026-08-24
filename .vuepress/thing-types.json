@@ -7636,6 +7636,11 @@
   },
   {
     "bindingId": "shelly",
+    "id": "shelly:shellyprorgbwwpm",
+    "label": "Shelly Pro RGBWW"
+  },
+  {
+    "bindingId": "shelly",
     "id": "shelly:shellyplus1",
     "label": "ShellyPlus 1"
   },
