@@ -94,22 +94,43 @@ var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/your/sc
 
 ### HTTP Actions
 
+#### GET
+
 - `sendHttpGetRequest(String url)`: Sends a GET-HTTP request and returns the result as a String
-- `sendHttpGetRequest(String url, Map<String, String> headers, int timeout)`: Sends a GET-HTTP request with the given request headers, and timeout in ms, and returns the result as a String
-- `sendHttpPutRequest(String url)`: Sends a PUT-HTTP request and returns the result as a String
-- `sendHttpPutRequest(String url, String contentType, String content)`: Sends a PUT-HTTP request with the given content and returns the result as a String
-- `sendHttpPutRequest(String url, String contentType, String content, Map<String, String> headers, int timeout)`: Sends a PUT-HTTP request with the given content, request headers, and timeout in ms, and returns the result as a String
+- `sendHttpGetRequest(String url, Map<String, String> headers, int timeout)`: Sends a GET-HTTP request with the given request headers and timeout in ms, and returns the result as a String
+
+#### POST
+
 - `sendHttpPostRequest(String url)`: Sends a POST-HTTP request and returns the result as a String
 - `sendHttpPostRequest(String url, String contentType, String content)`: Sends a POST-HTTP request with the given content and returns the result as a String
 - `sendHttpPostRequest(String url, String contentType, String content, Map<String, String> headers, int timeout)`: Sends a POST-HTTP request with the given content, request headers, and timeout in ms, and returns the result as a String
+
+#### PUT
+
+- `sendHttpPutRequest(String url)`: Sends a PUT-HTTP request and returns the result as a String
+- `sendHttpPutRequest(String url, String contentType, String content)`: Sends a PUT-HTTP request with the given content and returns the result as a String
+- `sendHttpPutRequest(String url, String contentType, String content, Map<String, String> headers, int timeout)`: Sends a PUT-HTTP request with the given content, request headers, and timeout in ms, and returns the result as a String
+
+#### PATCH
+
+- `sendHttpPatchRequest(String url)`: Sends a PATCH-HTTP request and returns the result as a String
+- `sendHttpPatchRequest(String url, String contentType, String content)`: Sends a PATCH-HTTP request with the given content and returns the result as a String
+- `sendHttpPatchRequest(String url, String contentType, String content, Map<String, String> headers, int timeout)`: Sends a PATCH-HTTP request with the given content, request headers, and timeout in ms, and returns the result as a String
+
+#### DELETE
+
 - `sendHttpDeleteRequest(String url)`: Sends a DELETE-HTTP request and returns the result as a String
-- `sendHttpDeleteRequest(String url, Map<String, String> headers, int timeout)`: Sends a DELETE-HTTP request with the given request headers, and timeout in ms, and returns the result as a String
+- `sendHttpDeleteRequest(String url, Map<String, String> headers, int timeout)`: Sends a DELETE-HTTP request with the given request headers and timeout in ms, and returns the result as a String
+
+#### Image Download
+
 - `setImage(String itemName, String url)`: Downloads an image from a URL and updates the Image item's state with it. Returns `true` if successful, `false` otherwise
 - `setImage(String itemName, String url, int timeout)`: Downloads an image from a URL with a specified timeout in milliseconds and updates the Image item's state with it. Returns `true` if successful, `false` otherwise
 - `setImage(String itemName, String url, long maxContentLength, int timeout)`: Downloads an image from a URL with a specified maximum content length in bytes and timeout in milliseconds, and updates the Image item's state with it. Returns `true` if successful, `false` otherwise. Use negative values for `maxContentLength` to ignore size limits
 
 ::: tip Note
-All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpPostRequest(String url, String contentType, String content, int timeout)`
+For HTTP requests without headers, an optional `timeout` parameter (in ms) can be appended as the last argument, e.g., `sendHttpGetRequest(String url, int timeout)` or `sendHttpPostRequest(String url, String contentType, String content, int timeout)`.
+Requests with `headers` already incorporate `timeout` as part of their method signature.
 :::
 
 For example:
