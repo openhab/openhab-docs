@@ -6121,8 +6121,38 @@
   },
   {
     "bindingId": "oppo",
+    "id": "oppo:bdp-103",
+    "label": "OPPO BDP-103 Blu-ray Player"
+  },
+  {
+    "bindingId": "oppo",
+    "id": "oppo:bdp-105",
+    "label": "OPPO BDP-105 Blu-ray Player"
+  },
+  {
+    "bindingId": "oppo",
+    "id": "oppo:bdp-83",
+    "label": "OPPO BDP-83 Blu-ray Player"
+  },
+  {
+    "bindingId": "oppo",
+    "id": "oppo:bdp-93",
+    "label": "OPPO BDP-93/95 Blu-ray Player"
+  },
+  {
+    "bindingId": "oppo",
     "id": "oppo:player",
-    "label": "Oppo Blu-ray Player"
+    "label": "OPPO Blu-ray Player"
+  },
+  {
+    "bindingId": "oppo",
+    "id": "oppo:udp-203",
+    "label": "OPPO UDP-203 Blu-ray Player"
+  },
+  {
+    "bindingId": "oppo",
+    "id": "oppo:udp-205",
+    "label": "OPPO UDP-205 Blu-ray Player"
   },
   {
     "bindingId": "orbitbhyve",
