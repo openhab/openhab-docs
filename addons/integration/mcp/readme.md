@@ -4,6 +4,7 @@ label: openHAB MCP Server
 title: openHAB MCP Server - System Integrations
 type: io
 description: The openHAB MCP add-on lets AI assistants — Claude Desktop, Claude Code, ChatGPT, and other [Model Context Protocol](https://modelcontextprotocol.io) (MCP) clients read and control your openHAB smart home.
+logo: images/addons/mcp.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.integration.mcp/README.md
 meta:
@@ -16,6 +17,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # openHAB MCP Server
+
+<AddonLogo />
 
 The openHAB MCP add-on lets AI assistants — Claude Desktop, Claude Code, ChatGPT, and other [Model Context Protocol](https://modelcontextprotocol.io) (MCP) clients read and control your openHAB smart home.
 
