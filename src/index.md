@@ -121,8 +121,8 @@ If you have a strong preference towards a particular platform, then that platfor
 You can install openHAB on your desktop computer for evaluation purposes if you already have any of these systems available for use, but we recommend using a dedicated system in the long run.
 If you feel serious about home automation it is better to start with a dedicated system right away.
 
-If you have no strong preference, get a [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) with 2 GB and a 16 GB SD card and install [openHABian]({{base}}/installation/openhabian.html) for the best experience.
-A RPi 2 or 3 is fine, too, but a RPi 4 with 8GB of RAM is overkill, as are larger SD cards.
+If you have no strong preference, get a [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) with a minimum of 2 and no more than 4 GB of RAM and an 'Endurance' labelled type of SD card and install [openHABian]({{base}}/installation/openhabian.html) for the best experience.
+A RPi 2 or 3 with just 1GB of RAM is not really sufficient to run openHAB 5 but 8GB of RAM is overkill, as are large SD cards.
 
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB ecosystem in a box and easily capable of automating your entire home.
 Please be aware of two potential limitations of Raspberry Pis:
