@@ -246,7 +246,7 @@ end
 def get_sub_addons(parent_addon_path)
   sub_addons = []
   parent_addon_name = parent_addon_path.basename
-  parent_addon_path.dirname.glob("#{parent_addon_name}.*/readme.md") do |sub_readme|
+  parent_addon_path.dirname.glob("#{parent_addon_name}.*/index.md") do |sub_readme|
     sub_addon_id = sub_readme.dirname.basename.to_s
     header_line = sub_readme.each_line.find { |line| line.start_with?("# ") }
     next unless header_line

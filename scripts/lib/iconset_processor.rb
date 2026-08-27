@@ -54,7 +54,7 @@ module IconsetProcessor
     thing_csv = data / "categories_things.csv" unless File.exist?(thing_csv)
     categories_thing = CSV.foreach(thing_csv, headers: true).map { |row| row["name"] }
 
-    iconset_readme = dst / iconset / "readme.md"
+    iconset_readme = dst / iconset / "index.md"
     iconset_readme.dirname.mkpath
     iconset_readme.open("w+") do |f|
       f.puts "---"
