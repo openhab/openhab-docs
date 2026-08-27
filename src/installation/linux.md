@@ -59,12 +59,7 @@ The easy step by step instruction can be found [here](openhabian.html).
 Installation through a package repository is the recommended choice. You can select the appropriate installation instructions by expanding from the apt or yum instructions.
 Alternatively resort to the [manual installation approach](#manual-installation).
 
-
-
-
 #### Apt Based Systems
-
-
 
 First, add the openHAB repository key to your package manager (note `/usr/share/keyrings` may already exist):
 
@@ -168,12 +163,7 @@ To get a list of all available versions you can use
 apt list -a openhab
 ```
 
-
-
-
 #### Yum or Dnf Based Systems
-
-
 
 The RPM repo information should be defined inside a file, make a new file at `/etc/yum.repos.d/openhab.repo` with the following contents depending on your choice of release.
 You may add all three to the same file, but make sure the desired repo is is set to `enabled=1`:
@@ -231,12 +221,7 @@ If you plan on disconnecting your machine from the internet, then you will want 
 sudo yum install openhab-addons
 ```
 
-
-
-
 #### Arch Linux
-
-
 
 The Arch User Repository ([AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository)) is a community-driven repository for Arch users.
 
@@ -268,12 +253,7 @@ sudo pacman -U openhab3-3.0.0.M4-1-any.pkg.tar.zst
 
 If everything went well, you can start openHAB and register it to be automatically executed at system startup.
 
-
-
-
 Systems based on **sysVinit** (e.g. Ubuntu 14.x, Debian Wheezy and older):
-
-
 
 ```shell
 sudo /etc/init.d/openhab start
@@ -282,12 +262,7 @@ sudo /etc/init.d/openhab status
 sudo update-rc.d openhab defaults
 ```
 
-
-
-
 Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
-
-
 
 ```shell
 sudo systemctl start openhab.service
@@ -296,9 +271,6 @@ sudo systemctl status openhab.service
 sudo systemctl daemon-reload
 sudo systemctl enable openhab.service
 ```
-
-
-
 
 The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
 
@@ -313,12 +285,7 @@ If you're new to openHAB, then you should checkout the [beginner's tutorial](/tu
 openHAB will run as a service in the background.
 The most important commands to control the openHAB service are given below.
 
-
-
-
 Systems based on **sysVinit** (e.g. Ubuntu 14.x, Debian Wheezy and older):
-
-
 
   ```shell
   # Learn about the current service status
@@ -334,12 +301,7 @@ Systems based on **sysVinit** (e.g. Ubuntu 14.x, Debian Wheezy and older):
   sudo update-rc.d openhab defaults
   ```
 
-
-
-
 Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
-
-
 
   ```shell
   # Learn about the current service status
@@ -358,9 +320,6 @@ Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and ne
   sudo systemctl daemon-reload
   sudo systemctl enable openhab.service
   ```
-
-
-
 
 #### Command Line Interface (CLI)
 
@@ -390,12 +349,7 @@ This is especially important if you are working with the latest snapshot as chan
 Your personal configuration will be retained on upgrades.
 We still recommend a backup before each upgrade.
 
-
-
-
 Apt Based Systems
-
-
 
 Upgrading is as easy as:
 
@@ -418,12 +372,7 @@ Once you know which version you want, you can upgrade/downgrade to it by using t
 sudo apt-get install openhab=3.0.0-1
 ```
 
-
-
-
 Yum or Dnf Based Systems
-
-
 
 Upgrading is as easy as: (you can use `dnf` instead of `yum` for systems that support it)
 
@@ -444,39 +393,23 @@ Once you know which version you want, you can upgrade/downgrade to it by using t
 sudo yum install openhab-3.0.0-1
 ```
 
-
-
-
 #### Uninstall
 
 To uninstall openHAB and get rid of all related files managed by the package manager, make a backup, then uninstall openHAB and remove the repository:
 
-
-
-
 Apt Based Systems
-
-
 
 ```shell
 sudo apt-get purge openhab*
 sudo rm /etc/apt/sources.list.d/openhab.list
 ```
 
-
-
-
 Yum or Dnf Based Systems
-
-
 
 ```shell
 sudo yum remove openhab*
 sudo rm /etc/yum.repos.d/openhab.repo
 ```
-
-
-
 
 ### Manual Installation
 
