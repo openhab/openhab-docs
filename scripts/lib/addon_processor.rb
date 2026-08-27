@@ -14,7 +14,7 @@ require "yaml"
 # 4. Cleans target directories and recursively copies config, documentation, and image assets.
 # 5. Formats each add-on README: extracts the title, logo, and description; merges Karaf
 #    installation status; generates VuePress YAML frontmatter; and writes the resulting
-#    readme.md file.
+#    index.md file.
 #
 # It is called by fetch-external-docs.rb to process and place add-on documentations.
 module AddonProcessor
@@ -188,8 +188,8 @@ module AddonProcessor
         #{heading}#{addon_logo_tag}#{text_without_heading}
       MARKDOWN
 
-      # Write to target as lowercase readme.md
-      File.write(File.join(target_dir, "readme.md"), final_content)
+      # Write to target as index.md
+      File.write(File.join(target_dir, "index.md"), final_content)
 
       puts "    ✔ Processed addon: #{dest_folder_name}/#{id}"
     end
