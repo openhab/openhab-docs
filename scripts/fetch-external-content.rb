@@ -139,12 +139,12 @@ def main
   # Preprocess all generated addon readme files
   puts "  Processing add-on readme files..."
   Dir.glob(File.join(BASE_DIR, "addons/**/*.md")).each do |file|
-    next if File.basename(file) != "readme.md"
+    next if File.basename(file) != "index.md"
 
     dir = File.dirname(file)
     temp_readme = File.join(dir, "readme_raw.md")
     FileUtils.mv(file, temp_readme)
-    process_markdown(dir, "readme_raw.md", dir, nil, "readme.md")
+    process_markdown(dir, "readme_raw.md", dir, nil, "index.md")
     File.delete(temp_readme)
   end
   puts "  ✔ Processed add-on readme files"
@@ -192,7 +192,7 @@ def main
   # Garmin Docs
   copy_file_safe(
     File.join(RESOURCE_FOLDER, "openhab-garmin/docs/USAGE.md"),
-    File.join(BASE_DIR, "docs/apps/garmin/readme.md"),
+    File.join(BASE_DIR, "docs/apps/garmin/index.md"),
     "https://github.com/openhab/openhab-garmin/blob/main/docs/USAGE.md"
   )
   copy_dir_safe(
@@ -203,7 +203,7 @@ def main
   # SailfishOS Docs
   copy_file_safe(
     File.join(RESOURCE_FOLDER, "openhab-sailfishos/docs/USAGE.md"),
-    File.join(BASE_DIR, "docs/apps/sailfishos/readme.md"),
+    File.join(BASE_DIR, "docs/apps/sailfishos/index.md"),
     "https://github.com/openhab/openhab-sailfishos/blob/main/docs/USAGE.md"
   )
   copy_dir_safe(
@@ -214,7 +214,7 @@ def main
   # Alexa Docs
   copy_file_safe(
     File.join(RESOURCE_FOLDER, "openhab-alexa/docs/USAGE.md"),
-    File.join(BASE_DIR, "docs/ecosystem/alexa/readme.md"),
+    File.join(BASE_DIR, "docs/ecosystem/alexa/index.md"),
     "https://github.com/openhab/openhab-alexa/blob/main/docs/USAGE.md"
   )
   copy_dir_safe(
@@ -225,7 +225,7 @@ def main
   # Google Assistant Docs
   copy_file_safe(
     File.join(RESOURCE_FOLDER, "openhab-google-assistant/docs/USAGE.md"),
-    File.join(BASE_DIR, "docs/ecosystem/google-assistant/readme.md"),
+    File.join(BASE_DIR, "docs/ecosystem/google-assistant/index.md"),
     "https://github.com/openhab/openhab-google-assistant/blob/main/docs/USAGE.md"
   )
   copy_dir_safe(

@@ -30,3 +30,5 @@
 1. Step 7
 
    ![connectlinky-myelectricaldata-step3b](connectlinky-myelectricaldata-step3b.png)
+
+<EditPageLink/>

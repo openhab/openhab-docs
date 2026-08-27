@@ -22,3 +22,5 @@
 1. Step 5
 
    ![connectlinky-enedis-step3](connectlinky-enedis-step3.png)
+
+<EditPageLink/>
