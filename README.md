@@ -54,7 +54,7 @@ Using it is outside "regular Markdown syntax", which is why it is explained here
 Here is an example of the syntax:
 
 ```vue
-<InlineImage alt="Select button" height="1.2em" :src="require('./images/select-button.png')" />
+<InlineImage alt="Select button" height="1.2em" src="./images/select-button.png" />
 ```
 
 This component will transform into a regular HTML `<img>` element, so any valid `<img>` attributes can be used here too.

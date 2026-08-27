@@ -3,7 +3,7 @@ layout: documentation
 title:  Adding Things - Intermediate
 ---
 
-Previous: [Adding Things - Simple]({{base}}/tutorial/things_simple.html)
+Previous: [Adding Things - Simple](/tutorial/things_simple.html)
 
 # Adding Things - Intermediate
 

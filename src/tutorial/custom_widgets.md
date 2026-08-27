@@ -9,7 +9,7 @@ As mentioned on the previous page, MainUI allows for the creation of custom widg
 These custom widgets can be reused for multiple Items in a given openHAB setup, and better still they can be shared with the community.
 A growing number of very impressive custom widgets have been posted to [Add-ons -> UI on the forum](https://community.openhab.org/c/add-ons/uis/30).
 This page provides just a few examples of custom widgets with an emphasis on the overall approach to developing your own.
-For a comprehensive reference on creating widgets, please see the [Building Pages]({{base}}/ui/building-pages.html) guide in the docs.
+For a comprehensive reference on creating widgets, please see the [Building Pages](/ui/building-pages.html) guide in the docs.
 
 [[toc]]
 
@@ -332,7 +332,7 @@ Once created, apply the custom widget to the Equipment Group Item in the model b
 
 It is also possible to create widgets that are dynamically populated from the model.
 This is particularly useful to present a functional widget, such as one widget to control all the lights in the house.
-For this, the [oh-repeater]({{base}}/ui/components/oh-repeater.html) component is very useful.
+For this, the [oh-repeater](/ui/components/oh-repeater.html) component is very useful.
 This component allows one to set up a loop to iterate over a bunch of things, such as all the Items with a given semantic properties tag, and create a widget element for each one.
 
 For example, here is a widget that shows all the Items with a Switch and Light tag, filtering out those that have "Christmas" in the name unless the TisTheSeason Switch is ON.
@@ -399,7 +399,7 @@ Clicking on it will bring up a configuration page that allows you to configure t
 You can build the widgets here, but it's more flexible to create custom widgets and add them to this page.
 
 A full description on how to build the page is beyond the scope of this tutorial.
-See the [Layout Pages docs]({{base}}/ui/layout-pages.html) for details.
+See the [Layout Pages docs](/ui/layout-pages.html) for details.
 
 You will be presented with a page similar to the following.
 
@@ -460,4 +460,4 @@ The above configuration is set for all the columns, and consequently each card w
 
 You can create any number of additional pages as desired.
 Layout Pages like the Overview tab on the Overview Page are not the only types of pages that can be created.
-[Chart pages]({{base}}/ui/chart-pages.html), [Floorplan pages]({{base}}/ui/floorplan-pages.html), [Map pages]({{base}}/ui/map-pages.html), and [Tabbed pages]({{base}}/ui/tabbed-pages.html) are also available.
+[Chart pages](/ui/chart-pages.html), [Floorplan pages](/ui/floorplan-pages.html), [Map pages](/ui/map-pages.html), and [Tabbed pages](/ui/tabbed-pages.html) are also available.

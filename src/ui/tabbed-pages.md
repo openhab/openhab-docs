@@ -23,5 +23,5 @@ Using the black context menu, you can reorder or remove existing tabs.
 
 As you can see in the screenshot above, navigating through the tabs of tabbed pages is done through a toolbar on the bottom.
 
-However, it is also possible to programatically navigate between the tabs, e.g. when using the [UI Command Item]({{base}}/mainui/about.html#ui-command-item) or the [actions of cloud notifications](/addons/integrations/openhabcloud/#title-tag-reference-id-media-attachments-actions)
+However, it is also possible to programatically navigate between the tabs, e.g. when using the [UI Command Item](/mainui/about.html#ui-command-item) or the [actions of cloud notifications](/addons/integrations/openhabcloud/#title-tag-reference-id-media-attachments-actions)
 This is done by providing the index of the tab in the route, e.g. assuming the UID of the tabbed page in the above example is `MyTabbedPage`, you can navigate to the "Isometric View" tab using the route `/page/MyTabbedPage/0`, to the "Kitchen Picture" tab using `/page/MyTabbedPage/1` and to the "Plan" tab using `/pages/MyTabbedPage/2`.

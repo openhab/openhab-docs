@@ -79,7 +79,7 @@ This is an approximation of the integral of a continuous function represented by
 
 Some statistical values using time-weighted averages (Riemann sum, average, variance, deviation) have an extra parameter representing the approximation type for the calculation.
 Possible values are `left`, `right`, `trapezoidal` or `midpoint`.
-For more information, see: [Time-weighted calculations - Riemann Sums]({{base}}/configuration/persistence.html#time-weighted-calculations-riemann-sums)
+For more information, see: [Time-weighted calculations - Riemann Sums](/configuration/persistence.html#time-weighted-calculations-riemann-sums)
 
 In the case of the following two functions the block changes its appearance by replacing the time with an option to chose if the equal value should be skipped or not:
 

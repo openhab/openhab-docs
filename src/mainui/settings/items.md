@@ -11,7 +11,7 @@ Items can be linked to the channels of a Thing to control and read data from a d
 Items have a state are used through events.
 Items can also be used to store information that is just used by your openHAB system itself.
 
-There is an [Items concepts page]({{base}}/concepts/items.html) that explains the idea of Items in detail.
+There is an [Items concepts page](/concepts/items.html) that explains the idea of Items in detail.
 
 On these pages you can manage all the Items you have added to your system:
 

@@ -27,7 +27,7 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
 
 1. Item and Sitemap Labels
 
-    Transformations used in the [state/value part]({{base}}/configuration/items.html#state-transformation) of labels are applied **on the fly**.
+    Transformations used in the [state/value part](/configuration/items.html#state-transformation) of labels are applied **on the fly**.
     While the **transformed value** will (for example) be visible on a Sitemap, the **original value** is stored in the Item.
 
     The following example shows various Transformation services used in the state part of an Item's label.
@@ -38,13 +38,13 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
     Number  Livingroom_Temperature_F "Temperature [JS(convert-C-to-F.js):%s °F]"   {/*Some Binding*/}
     ```
 
-    Usage of Transformations in the [label parameter of Sitemap elements]({{base}}/ui/sitemaps.html#element-type-text) works the same way.
+    Usage of Transformations in the [label parameter of Sitemap elements](/ui/sitemaps.html#element-type-text) works the same way.
 
     When creating an Item through the UI, the content of the `[]` brackets has to be put into the `pattern` field of the State Description Item metadata.
 
 1. Rules
 
-    Transformations can also be [used in rules]({{base}}/configuration/rules-dsl.html#transformations) to transform/translate/convert data.
+    Transformations can also be [used in rules](/configuration/rules-dsl.html#transformations) to transform/translate/convert data.
     The following shows three Rules DSL examples:
 
     ```java
@@ -58,7 +58,7 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
     Profiles can be used to control the data that is passed between channels of a Thing and Items.
     Transformations can be used in profiles to transform data, both from channel to Item and from Item to channel.
     The distinction from using transformations on Item labels is, that with profiles data is transformed **as it passes through the channel** rather than **on the fly** and the transformed value will be stored in the Item.
-    See [profile documentation]({{base}}/configuration/items.html#profiles) for more details.
+    See [profile documentation](/configuration/items.html#profiles) for more details.
 
 1. Channels
 

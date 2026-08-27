@@ -39,7 +39,7 @@ You can use arithmetic or string operations etc., the [conditional (ternary) ope
 - `user` returns an object with information about the logged-in user:
   The name (`user.name`) and an array of the assigned roles for the user (`user.roles`).
 - `translation` is method that provides access to the I18n translation system. All translations from the [`common` module](https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/assets/i18n/common/en.json),
-  [`about` module](https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/assets/i18n/about/en.json) and translation for all [semantic tags]({{base}}/tutorial/model.html#introduction-to-the-ontology-and-relationships)
+  [`about` module](https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/assets/i18n/about/en.json) and translation for all [semantic tags](/tutorial/model.html#introduction-to-the-ontology-and-relationships)
   are available. For example: `translation('home.locations.title')`, `translation('Floor')`. `t` is available as a shortcut: `t('home.locations.title')`.
 
 ## Variables
@@ -337,5 +337,5 @@ Subtract one week from the state of `DateTime` and return a relative time repres
 
 ## Debugging Expressions
 
-Expressions can be tested in the Widgets Expression Tester found in the [Developer Sidebar]({{base}}/mainui/developer/sidebar.html#developer-sidebar)
+Expressions can be tested in the Widgets Expression Tester found in the [Developer Sidebar](/mainui/developer/sidebar.html#developer-sidebar)
 (<kbd>Shift</kbd><kbd>Alt</kbd><kbd>D</kbd>).

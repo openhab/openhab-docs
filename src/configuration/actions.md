@@ -33,7 +33,7 @@ As a general rule, is better to call `MyItem.sendCommand(command)` and `MyItem.p
 ### Audio & Voice Actions
 
 The framework supports several multimedia actions.
-They can be found in the article about [openHAB multimedia]({{base}}/configuration/multimedia.html).
+They can be found in the article about [openHAB multimedia](/configuration/multimedia.html).
 
 ### Logging Actions
 
@@ -48,7 +48,7 @@ They can be found in the article about [openHAB multimedia]({{base}}/configurati
 - **Concatenation Example:** `logDebug("Lighting", "This is a string concatenation:" + Light.name)`
 - **Arguments Example:** `logWarn("Alarm", "The {} window has been open for {} hours!", Window.name, timeOpen)`
 
-One can configure whether specific log entries are logged out and where they get logged to (e.g. to a separate file) by [editing the logger configuration]({{base}}/administration/logging.html).
+One can configure whether specific log entries are logged out and where they get logged to (e.g. to a separate file) by [editing the logger configuration](/administration/logging.html).
 
 ### Exec Actions
 
@@ -208,9 +208,9 @@ The Timer object supports the following methods:
 `getThingStatusInfo(String thingUID)`: Gets status information of the given thing identified by `thingUID`.
 
 The result is of type `ThingStatusInfo`.
-It contains [Thing Status]({{base}}/concepts/things.html), [Status Details]({{base}}/concepts/things.html) and [Status Description]({{base}}/concepts/things.html).
-Refer to [Thing Status API]({{base}}/concepts/things.html) for how to get those information.
-If you just want to know the status, you can use `thingStatusInfo.getStatus().toString()` and the result will be one of the values in [Thing Status]({{base}}/concepts/things.html).
+It contains [Thing Status](/concepts/things.html), [Status Details](/concepts/things.html) and [Status Description](/concepts/things.html).
+Refer to [Thing Status API](/concepts/things.html) for how to get those information.
+If you just want to know the status, you can use `thingStatusInfo.getStatus().toString()` and the result will be one of the values in [Thing Status](/concepts/things.html).
 
 > If the thing is removed or it's not added yet, it'll return null.
 
@@ -242,7 +242,7 @@ if ((thingStatusInfo !== null) && (thingStatusInfo.getStatus().toString() == "ON
 
 ### openHAB Subsystem Actions
 
-openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, scripts.
+openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules](/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, scripts.
 
 - `callScript(String scriptName)`: Calls a script which must be located in the `$OPENHAB_CONF/scripts` folder. `callScript` returns the value of the last expression of the script.
 
@@ -254,7 +254,7 @@ Any reference to a class that would normally need to be imported in a .rules fil
 
 - `transform(String type, String function, String value)`: Applies a transformation of a given type with some function to a value and returns the transformed value as a String or the original value if the transformation failed.
 
-See [Transformations]({{base}}/configuration/transformations.html#usage) for available transformations and their usage.
+See [Transformations](/configuration/transformations.html#usage) for available transformations and their usage.
 
 ## Cloud Notification Actions
 

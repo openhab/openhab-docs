@@ -7,7 +7,7 @@ title: Rules DSL
 
 "Rules" are used for automating processes: Each rule can be triggered, which invokes a script that performs any kinds of tasks, e.g. turn on lights by modifying your items, do mathematical calculations, start timers etcetera.
 
-Note that there is also a visual way of programming openHAB rules, which may be more suitable for beginners. Its documentation can be found in the [Blockly Reference section]({{base}}/configuration/blockly/)
+Note that there is also a visual way of programming openHAB rules, which may be more suitable for beginners. Its documentation can be found in the [Blockly Reference section](/configuration/blockly/)
 
 openHAB has a highly integrated, lightweight but yet powerful rule engine called _Rules DSL_ included.
 On this page you will learn how to leverage its functionality to do _real_ home automation.
@@ -45,7 +45,7 @@ Choose `Rule DSL` and enter a rule like it is described below in this article.
 
 ### IDE Support
 
-The [openHAB VS Code Extension]({{base}}/configuration/editors.html#openhab-vs-code-extension) offers support for rules building.
+The [openHAB VS Code Extension](/configuration/editors.html#openhab-vs-code-extension) offers support for rules building.
 It includes syntax checks and coloring, validation with error markers, content assist (Ctrl+Space) incl. templates etc.
 This makes the creation of rules very easy!
 Check out the editors page for more information and additional editor possibilities.
@@ -138,13 +138,13 @@ Item <item> changed [from <state>] [to <state>]
 A simplistic explanation of the differences between `command` and `update` can be found in the article about [openHAB core actions](/docs/configuration/actions.html#event-bus-actions).
 
 When using the `received command` trigger, the Rule might trigger **before** the Item's state is updated.
-Therefore, if the Rule needs to know what the command was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedCommand` instead of `<ItemName>.state`.
+Therefore, if the Rule needs to know what the command was, use the [implicit variable](/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedCommand` instead of `<ItemName>.state`.
 
 ### Member of Triggers
 
 As with Item based event-based triggers discussed above, you can listen for commands, status updates, or status changes on the members of a given Group.
 You can also decide whether you want to catch only a specific command/status or any.
-All of the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) get populated using the Item that caused the event.
+All of the [implicit variables](/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) get populated using the Item that caused the event.
 The implicit variables `triggeringItem` and `triggeringItemName` are populated with the Item and the item name that caused the Rule to trigger.
 The implicit variables `triggeringGroup` and `triggeringGroupName` are populated with the Group and the group name specified in the trigger, whose member caused the Rule to trigger.
 
@@ -278,7 +278,7 @@ The following wildcards may be used in `thingUID` to match multiple Things:
 
 For example, `chromecast:*` will trigger on all `chromecast` Things and `*` will trigger on all things.
 
-If the Rule needs to know what the triggering thing was, or access a string value of the previous or new status, use the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `triggeringThing`, `previousThingStatus` or `newThingStatus` to access the information.
+If the Rule needs to know what the triggering thing was, or access a string value of the previous or new status, use the [implicit variables](/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `triggeringThing`, `previousThingStatus` or `newThingStatus` to access the information.
 
 Refer to [Thing Status Action](/docs/configuration/actions.html#thing-status-action) to find how to get the new thing status details or description in the script.
 
@@ -309,7 +309,7 @@ The `*` and `?` wildcards are allowed in the `triggerChannel` and behave the sam
 When a binding provides such channels, you can find the needed information in the corresponding binding documentation.
 There is no generic list of possible values for `triggerEvent`,
 The `triggerEvent`(s) available depend upon the specific implementation details of the binding.
-If the Rule needs to know what the received event or the triggering channel was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedEvent` or `triggeringChannel` to access the information.
+If the Rule needs to know what the received event or the triggering channel was, use the [implicit variable](/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedEvent` or `triggeringChannel` to access the information.
 
 Example:
 
@@ -334,11 +334,11 @@ To be able to do something useful with the scripts, openHAB provides access to
 
 - all defined items, so that you can easily access them by their name
 - all enumerated states/commands, e.g. `ON, OFF, DOWN, INCREASE` etc.
-- all [standard actions]({{base}}/configuration/actions.html) to make something happen
-- [persistence extensions]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules) to work with persisted item states
-- [multimedia actions]({{base}}/configuration/multimedia.html) to work with audio, voice and text
+- all [standard actions](/configuration/actions.html) to make something happen
+- [persistence extensions](/configuration/persistence.html#persistence-extensions-in-scripts-and-rules) to work with persisted item states
+- [multimedia actions](/configuration/multimedia.html) to work with audio, voice and text
 - thing actions, see documentation for the specific binding
-- access to a [cache]({{base}}/configuration/jsr223.html#dsl) that can preserve values accross rules and rule executions
+- access to a [cache](/configuration/jsr223.html#dsl) that can preserve values accross rules and rule executions
 
 Combining these features, you can easily write code like:
 
@@ -356,7 +356,7 @@ Two commands can change the value or state of an Item within rules:
 - `MyItem.postUpdate(<new_state>)` - Change the status of an Item without causing any implicit actions. Can be used to reflect changes that may be caused by other means.
 - `MyItem.sendCommand(<new_state>)` - Change the status of an Item and trigger potential further actions, e.g. send a command to the linked device/binding.
 
-In relation to [event-based rule triggers]({{base}}/configuration/rules-dsl.html#event-based-triggers) the manipulator commands `sendCommand` and `postUpdate` act differently.
+In relation to [event-based rule triggers](/configuration/rules-dsl.html#event-based-triggers) the manipulator commands `sendCommand` and `postUpdate` act differently.
 The following table summarizes the impact of the two manipulator commands on the rule execution due to the used trigger:
 
 | Command \ Rule Trigger   | `received update` | `received command` | `changed` |
@@ -414,7 +414,7 @@ Often it is desired to calculate other values from Item states or to compare Ite
 
 In openHAB, every item carries a state.
 The state of an Item is an Object itself and can be accessed with `MyItem.state`.
-A complete and up-to-date list of item types are currently allowed in openHAB and the command types each item can accept is given in the [openHab documentation for items]({{base}}/concepts/items.html).
+A complete and up-to-date list of item types are currently allowed in openHAB and the command types each item can accept is given in the [openHab documentation for items](/concepts/items.html).
 To use the state of an Item in rules it is often necessary to know what type of state the Item is carrying and how to convert it into types that can be used in such operations.
 Conversely, to use the result of a calculation to modify the state of an item may require its transformation into a suitable type.
 
@@ -429,7 +429,7 @@ Therefore the following are all valid commands one can send to a Color Item:
 - `MyColorItem.sendCommand(new HSBType(new DecimalType(123), new PercentType(45), new PercentType(67)))`
 
 An alternative way to command or update the state of an item is through the use of specially formatted strings.
-The section in the [item documentation on formatting]({{base}}/concepts/items.html#state-and-command-type-formatting) details the requirements for the formatting.
+The section in the [item documentation on formatting](/concepts/items.html#state-and-command-type-formatting) details the requirements for the formatting.
 
 Even though many Items accept commands and updates of various different types, each stores its state internally using only one type.
 The Color Item from the example above will accept various command types, but will only return an HSBType.
@@ -448,7 +448,7 @@ There are two ways to discover these methods:
 
 #### Working with Item States: Conversions
 
-_Reminder: For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation]({{base}}/concepts/items.html)._
+_Reminder: For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation](/concepts/items.html)._
 
 Below a **non-exhaustive** list of some more common conversions.
 The interested reader is encouraged to also visit the [forum](https://community.openhab.org) where many more examples can be found.

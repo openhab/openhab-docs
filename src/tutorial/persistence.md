@@ -42,7 +42,7 @@ The good news here is that if you don't know what you may want to use persistenc
 Each persistence add-on comes with it's own suggested persistence strategy.
 See the documentation for the specific persistence add-on for what the suggested strategy is.
 The suggested strategy will not be applied automatically, but will be suggested when configuring through the UI.
-See the [Persistence docs]({{base}}/configuration/persistence.html) for full documentation, and see the installation page for the method you used to install openHAB for a table listing file locations.
+See the [Persistence docs](/configuration/persistence.html) for full documentation, and see the installation page for the method you used to install openHAB for a table listing file locations.
 If you wish to configure persistence through configuration files, at a high level, you will create a file in `$OH_CONF/persistence` with the name of the add-on and a .persist extension (e.g. `influxdb.persist`).
 Edit the file per the docs to define the strategies.
 

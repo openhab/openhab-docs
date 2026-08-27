@@ -110,13 +110,13 @@ After you get openHAB set up and running, there are a few additional setup steps
 
 - Configure a network share on your openHAB host system using [Linux Samba Share](linux.html#network-sharing) for easier remote editing of configuration files.
 
-- Install [Visual Studio Code](https://code.visualstudio.com/Download) and the [openHAB VS Code Extension]({{base}}/configuration/editors.html#openhab-vs-code-extension) on your local machine, to manage your (remote) configuration files.
+- Install [Visual Studio Code](https://code.visualstudio.com/Download) and the [openHAB VS Code Extension](/configuration/editors.html#openhab-vs-code-extension) on your local machine, to manage your (remote) configuration files.
     The openHAB VS Code Extension comes with built-in support for the openHAB syntax and elements.
 
 ## Getting started
 
 With the openHAB distribution up and running, you should now continue with
-the [Beginner Tutorial]({{base}}/tutorial)
+the [Beginner Tutorial](/tutorial)
 or by working on your own configuration.
 
 ## Help

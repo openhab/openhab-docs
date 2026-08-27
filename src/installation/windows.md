@@ -15,14 +15,14 @@ This page is structured as follows:
 
 ### Before you start
 
-Please be sure you have installed the required supporting applications as described in [Prerequisites]({{base}}/installation/index.html#prerequisites).
+Please be sure you have installed the required supporting applications as described in [Prerequisites](/installation/index.html#prerequisites).
 
 ### Set the `JAVA_HOME` System Environment Variable in Windows
 
 Note: If you have installed Java 21, you may skip this step because the JAVA_HOME environment variable was created during installation.
 
 - Navigate to: Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
-- Create a New System Variable named JAVA_HOME (or update the existing one) to match the installation directory of the Java Platform chosen and installed in the step [Prerequisites]({{base}}/installation/index.html#prerequisites).
+- Create a New System Variable named JAVA_HOME (or update the existing one) to match the installation directory of the Java Platform chosen and installed in the step [Prerequisites](/installation/index.html#prerequisites).
 
 ![JAVA_HOME](images/JAVA_HOME.png)
 
@@ -194,7 +194,7 @@ Assuming a successful install, you will now have various folders inside `C:\open
 
 You can:
 
-- continue reading the [Additional steps]({{base}}/installation/index.md#additional-steps) section of the Installation overview
+- continue reading the [Additional steps](/installation/index.md#additional-steps) section of the Installation overview
 - read more about how to handle basic maintenance tasks, in the section below
 
 ## Maintenance

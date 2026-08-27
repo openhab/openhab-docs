@@ -35,12 +35,12 @@ Some often used subpages can also be accessed directly via the menu sidebar.
   The data may be retrieved at a later time, for example to restore your system after startup, or to prepare graphs for display on a UI.
 
 Next to the entity, the count of that entity is shown.
-The Things count is not the number of configured Things, but the number of Things waiting in the [Inbox]({{base}}/tutorial/things_simple.html#accept-the-light-bulb-things).
+The Things count is not the number of configured Things, but the number of Things waiting in the [Inbox](/tutorial/things_simple.html#accept-the-light-bulb-things).
 
 ### Automation
 
 openHAB provides rules, scenes and scripts as well as a schedule overview to automate your home.
-See [What's the Difference Between a Rule, Script, and Schedule?]({{base}}/tutorial/rules_introduction.html#what-s-the-difference-between-a-rule-script-and-schedule) to learn more about the different options.
+See [What's the Difference Between a Rule, Script, and Schedule?](/tutorial/rules_introduction.html#what-s-the-difference-between-a-rule-script-and-schedule) to learn more about the different options.
 
 - [**Rules**](rules)<br>
   Rules are essential for home automation:
@@ -64,7 +64,7 @@ This section lists the installed add-ons and provides direct access to the add-o
 ![log-level.png](../images/log-level.png)
 
 The standard log level is `INFO` but to track down an issue it might be necessary to increase the log-level upon request.
-For more information see [Logging in openHAB]({{base}}/administration/logging.html).
+For more information see [Logging in openHAB](/administration/logging.html).
 
 ### Dirty Handling
 

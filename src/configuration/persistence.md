@@ -20,7 +20,7 @@ Please refer to the [available persistence service add-on](/addons/#persistence)
 You should configure a default persistence service even if you have only one persistence add-on installed.
 The default persistence service is used to provide data for the UI charting features and rules (you may choose to use another persistence service in either of these, configured on a case-by-case basis).
 
-To select a default persistence service via UI, refer to the [Main UI docs]({{base}}/mainui/settings/persistence.html).
+To select a default persistence service via UI, refer to the [Main UI docs](/mainui/settings/persistence.html).
 
 ## Persistence Configuration
 
@@ -29,7 +29,7 @@ The information below allows you to determine which Item states are persisted, w
 Persistence Strategies are configured:
 
 - in a file named `<persistenceservice>.persist` (fill-in your persistence add-on name, e.g. `rrd4j.persist`), stored in `$OPENHAB_CONF/persistence`.
-- from the UI, refer to the [Main UI docs]({{base}}/mainui/settings/persistence.html).
+- from the UI, refer to the [Main UI docs](/mainui/settings/persistence.html).
 
 As usual, it is possible to combine both types of configuration, i.e. use the UI for one and a file for another persistence service.
 It is not possible to configure the same persistence service via UI and file.
@@ -73,7 +73,7 @@ As a result mixing `forecast` strategy with other strategies is not recommended 
 #### Cron Persistence Triggers
 
 openHAB uses [Quartz](https://www.quartz-scheduler.org/documentation) for time-related cron events.
-See the [Rules article]({{base}}/configuration/rules-dsl.html#time-based-triggers) for more information.
+See the [Rules article](/configuration/rules-dsl.html#time-based-triggers) for more information.
 
 ### Filters
 

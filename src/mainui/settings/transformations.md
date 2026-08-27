@@ -11,7 +11,7 @@ Transformations can be used in many different instances including links between 
 
 The different available transformation methods must be individually installed via the **Transformations** tab of the add-on store.
 
-To learn more about transformations, read the [transformation docs]({{base}}/configuration/transformations.html).
+To learn more about transformations, read the [transformation docs](/configuration/transformations.html).
 
 On this page you can manage all the transformations you have added to your system:
 

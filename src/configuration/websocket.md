@@ -229,7 +229,7 @@ The reception is acknowledged with the filter that is applied:
 ## Audio PCM WebSocket API (`ADAPTER_ID` = `audio-pcm`)
 
 The Audio PCM WebSocket API allows for low-latency bidirectional transmission of raw PCM audio data between openHAB and a client.
-The WebSocket API allows connecting to openHAB's dialog processor remotely, refer to [Voice Assistant]({{base}}/configuration/multimedia.html#voice-assistant) for setup.
+The WebSocket API allows connecting to openHAB's dialog processor remotely, refer to [Voice Assistant](/configuration/multimedia.html#voice-assistant) for setup.
 
 The Audio PCM WebSocket is available at `ws[s]://{URL}:{PORT}/ws/audio-pcm`.
 Authentication is handled as [described above](#establishing-a-connection).

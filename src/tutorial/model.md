@@ -30,7 +30,7 @@ Just don't put `AllLights` into your model.
 
 This section gives an example of one way to model your home with locations and equipment descriptions.
 The semantic model, when set up correctly, will allow openHAB to turn all lights off in the kitchen when asked, as the framework can understand the kitchen location and what items are lights in that location.
-Once created, a model allows one to use [Semantics Actions]({{base}}/configuration/actions.html#semantics) in Rules to e.g. determine the Location of an Item or the related Equipment.
+Once created, a model allows one to use [Semantics Actions](/configuration/actions.html#semantics) in Rules to e.g. determine the Location of an Item or the related Equipment.
 This will help one create, generalize, and simplify Rules based on patterns and purpose.
 
 [[toc]]
@@ -286,7 +286,7 @@ The list of Items can be filtered by using the search box at the top of the list
 One can search by Item name, Item Label, or Item type (e.g. show all the Switch Items).
 
 At the bottom of this page there is a blue "+" icon which when clicked allows the creation of an Item.
-Clicking on this offers two options: "Add Items from textual definition" which allows one to import one or more Items based on the [textual configuration syntax]({{base}}/configuration/items.html), and "Add Item" which allows the creation of the UI by filling in a form.
+Clicking on this offers two options: "Add Items from textual definition" which allows one to import one or more Items based on the [textual configuration syntax](/configuration/items.html), and "Add Item" which allows the creation of the UI by filling in a form.
 
 ![Create Item Form](images/create_item.png)
 

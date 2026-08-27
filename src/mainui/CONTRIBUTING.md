@@ -39,8 +39,8 @@ Inside these comments, the UI allows the following features:
   **Please consider that when adding or changing links inside the UI-shown content section!**
   If you want to make sure you don't break anything, never change links without actually testing the consequences in Main UI.
 
-- Link to other documentation pages by using links starting with ``{{base}}`` (recommended) or `/docs`, e.g.
-  `[Inbox]({{base}}/tutorial/things_simple.html#accept-the-light-bulb-things)`
+- Link to other documentation pages by using links starting with ```` (recommended) or `/docs`, e.g.
+  `[Inbox](/tutorial/things_simple.html#accept-the-light-bulb-things)`
 
 The following is not supported:
 

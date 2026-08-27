@@ -93,7 +93,7 @@ if not chosen (unclick the person icon), it will automatically send the notifica
 By activating the header title option, the block will allow setting a title for the notification.
 
 By activating the icon option, the block will allow attaching an icon to the message.
-To see all icons that can be used, see the table [openHAB icons]({{base}}/configuration/icons.html).
+To see all icons that can be used, see the table [openHAB icons](/configuration/icons.html).
 
 ![blockly-notification-icon-title.png](../images/blockly/blockly-notification-icon-title-block.png)
 
@@ -140,7 +140,7 @@ Therefore, when clicking on the action-option by default, it will bring up the f
 
 ![blockly-notification-action.png](../images/blockly/blockly-notifications-oneclick.png)
 
-For convenience, it automatically connects a "send command" block to the notification block which requires to be configured (it can be replaced by [open / call Page Block]({{base}}/configuration/blockly/rules-blockly-notifications.html#actions-open-call-page) instead later on):
+For convenience, it automatically connects a "send command" block to the notification block which requires to be configured (it can be replaced by [open / call Page Block](/configuration/blockly/rules-blockly-notifications.html#actions-open-call-page) instead later on):
 
 - The command to be sent, e.g. "ON" or "OFF"
 - the Item to send the command to, e.g. "My Light Switch"

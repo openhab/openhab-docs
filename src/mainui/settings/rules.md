@@ -11,7 +11,7 @@ Rules can be as simple as a directive to turn on a single light at a given time 
 
 Community made Rule Templates can also be added to your system from the **Automation** tab of the add-on store.
 
-There is a [rules concepts page]({{base}}/concepts/rules.html) that explains the idea of rules in detail, and a comprehensive introduction to rules in the [rules tutorial]({{base}}/tutorial/rules_basic.html).
+There is a [rules concepts page](/concepts/rules.html) that explains the idea of rules in detail, and a comprehensive introduction to rules in the [rules tutorial](/tutorial/rules_basic.html).
 
 On this page you can manage all the basic rules you have added to your system:
 
@@ -52,4 +52,4 @@ After selecting one or multiple rules three options appear in the footer to allo
 these rules.
 Press "Done" to return back to the normal list view.
 
-To add a rule press the plus icon ![add rule](../images/plus.png) in the lower right corner and follow the [rules tutorial]({{base}}/tutorial/rules_basic.html#create-the-rule).
+To add a rule press the plus icon ![add rule](../images/plus.png) in the lower right corner and follow the [rules tutorial](/tutorial/rules_basic.html#create-the-rule).
