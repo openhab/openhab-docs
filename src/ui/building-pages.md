@@ -119,7 +119,7 @@ However, it's important to know that there are limitations and sometimes editing
 
 Besides, there are several options that virtually all widgets in layout pages, map pages and plan pages accept, all of which are not currently available in the config sheet:
 
-- `visible`: You can specify a `false` boolean to this option to hide the widget. This powerful feature, combined with [widget expressions](widget-expressions-variables.html), allows you to dynamically show widgets or even entire sections (if you use it on layout widgets containing other widgets), depending on the state of your items
+- `visible`: You can specify a `false` boolean to this option to hide the widget. This powerful feature, combined with [widget expressions](widget-expressions-variables.html), allows you to dynamically show widgets or even entire sections (if you use it on layout widgets containing other widgets), depending on the state of your items.
 Example: `visible: =items.TV_Powered.state === 'ON' && items.TV_Input.state === 'HDMI1'`
 - `visibleTo`: This accepts an array of strings like `role:administrator`, `role:user`, or `user:<userid>`, allowing the widget to be only visible to specific users or those with a certain role.
 Example: `visibleTo: ["user:scott", "role:administrator"]`
@@ -168,7 +168,7 @@ When configuring a widget, you will encounter options related to actions (usuall
 
 These action options allow you to configure the interactivity within your pages, as well as the relation between them, in an extensive way. You can navigate to another page, display additional controls, popups and other modals, send commands to items every time a widget allows you to choose an action.
 For instance, a floor plan marker might either open another page in a popup, or toggle an item.
-Configuring the action type reveal more options in the action sheet:
+Configuring the action type reveals more options in the action sheet:
 
 ![Action Configuration](./images/widget_action_configuration.png)
 
