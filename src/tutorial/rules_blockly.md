@@ -13,7 +13,7 @@ As you recall from the previous page, one type of condition is Script Condition 
 Choosing either of those presents you with a choice of language to use.
 
 This tutorial is not going to be a full tutorial on how to write code in Blockly.
-See the [**Blockly Reference**]({{base}}/configuration/blockly/index.html) for a detailed tutorial and reference for doing that.
+See the [**Blockly Reference**](/configuration/blockly/index.html) for a detailed tutorial and reference for doing that.
 Instead it's a higher level example of building a rule step-by-step using Blockly.
 
 ![rule add script action dialog](images/rule-add-action-dialog.png)
@@ -30,7 +30,7 @@ It even allows you to learn how write your own JavaScript by looking at the code
 If you have been around kids you may be familiar with [Scratch](https://scratch.mit.edu/).
 Blockly is a similar environment customized for writing openHAB scripts.
 
-For those who do better with video, there are a few videos introducing Blockly on the openHAB [Youtube feed]({{base}}/configuration/blockly/index.html#blockly-youtube-tutorials)
+For those who do better with video, there are a few videos introducing Blockly on the openHAB [Youtube feed](/configuration/blockly/index.html#blockly-youtube-tutorials)
 
 A typical Blockly script might look something like this:
 
@@ -273,7 +273,7 @@ So what is one to do when it doesn't work as expected?
 - Add logging and make sure to log out meaningful information such as the values of variables.
 Look in the "Text" category for operations to combine strings together for logging.
 
-- Watch the logs for errors, your log statements, and relevant events  (see the [Blockly Reference]({{base}}/configuration/blockly/index.html) on how to easily access log information)
+- Watch the logs for errors, your log statements, and relevant events  (see the [Blockly Reference](/configuration/blockly/index.html) on how to easily access log information)
 
 - When asking for help on the forum, don't _just_ post a screenshot of the blocks.
 Also post the code the blocks generate or, even better back out of the script to the rule and post the contents of the "Code" tab which gives the helpers on the forum the full picture.

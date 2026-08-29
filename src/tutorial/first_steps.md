@@ -51,7 +51,7 @@ After finishing the wizard you will get a welcome message and be redirected to y
 You'll be automatically logged into your dashboard using your administrator when the setup wizard is completed.
 openHAB doesn't require you to sign in, but you can only access the settings if you're logged in as an administrator.
 
-Currently the only way to add additional users or manage existing ones (including changing passwords and attributing roles) is with the [Console]({{base}}/administration/console.html).
+Currently the only way to add additional users or manage existing ones (including changing passwords and attributing roles) is with the [Console](/administration/console.html).
 
 ## Modify Settings
 

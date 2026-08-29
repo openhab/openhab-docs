@@ -58,11 +58,11 @@ YAML pages support the following component names for the page type you are defin
 | Component        | Description                                                                                                                                                         |
 |------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `oh-home-page`   | The Home Page is a unique page that configures how the default page is displayed when the main openHAB URL is accessed.                                             |
-| `oh-layout-page` | [Layout Pages]({{base}}/ui/layout-pages.html) are used in the main web user interface to display widgets in an organized manner (responsive or fixed-grid layouts). |
-| `oh-tabs-page`   | [Tabbed Pages]({{base}}/ui/tabbed-pages.html) to create composite pages that display other Pages in tabs.                                                           |
-| `oh-map-page`    | [Map Pages]({{base}}/ui/map-pages.html) displays fixed markers or Location items on a map; supports markers and circle markers.                                     |
-| `oh-plan-page`   | [Floorplan Pages]({{base}}/ui/floorplan-pages.html) displays markers or elements over a custom image background with zoom and pan.                                  |
-| `oh-chart-page`  | [Chart Pages]({{base}}/ui/chart-pages.html) display historical values in a full-screen chart.                                                                       |
+| `oh-layout-page` | [Layout Pages](/ui/layout-pages.html) are used in the main web user interface to display widgets in an organized manner (responsive or fixed-grid layouts). |
+| `oh-tabs-page`   | [Tabbed Pages](/ui/tabbed-pages.html) to create composite pages that display other Pages in tabs.                                                           |
+| `oh-map-page`    | [Map Pages](/ui/map-pages.html) displays fixed markers or Location items on a map; supports markers and circle markers.                                     |
+| `oh-plan-page`   | [Floorplan Pages](/ui/floorplan-pages.html) displays markers or elements over a custom image background with zoom and pan.                                  |
+| `oh-chart-page`  | [Chart Pages](/ui/chart-pages.html) display historical values in a full-screen chart.                                                                       |
 
 ### Example
 

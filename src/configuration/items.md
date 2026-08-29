@@ -28,14 +28,14 @@ There are two methods for defining Items:
 1. Through text `.items` files located in the `$OPENHAB_CONF/items` folder.
     Files here must have the extension `.items`; you may create as many `.items` files as needed.
     However, each Item must be unique across all `.items` files.
-    Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installation's folder structure.
+    Refer to the [installation docs](/installation/index.html) to determine your specific installation's folder structure.
 
 **Assumptions for UI:**
 The examples below assume that the user is using a text editor to create a `.items` file.
 While the way of defining an Item using the graphical, interactive UI is different, the elements and the nature of an Item definition are identical using either method.
 
 **Editor Recommendation:**
-It's recommended to edit `.items` files using one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
+It's recommended to edit `.items` files using one of the [openHAB supporting editors](/configuration/editors.html).
 Doing so will provide you with full IDE support including features such as syntax checking, and context assistance.
 
 ## Item Definition and Syntax
@@ -102,7 +102,7 @@ Available Item types are:
 | Switch                   | Typically used for lights (on/off)                                 | OnOff, Refresh                                      |
 
 More details about all of the available Item types and their commands are available under Concepts, see:
-[Item Types Overview]({{base}}/concepts/items.html)
+[Item Types Overview](/concepts/items.html)
 
 To learn about the technical internals of the individual Item types, please refer to:
 [Javadoc on Generic Item and its subclasses](https://www.openhab.org/javadoc/latest/org/openhab/core/items/genericitem)
@@ -188,7 +188,7 @@ Two naming schemes are established in the community for Group names:
 ### Label
 
 Label text is used to describe an Item in a human-readable way.
-Graphical UIs will display the label text when the Item is included, e.g. in Basic UI in a [Sitemap]({{base}}/ui/sitemaps.html) definition.
+Graphical UIs will display the label text when the Item is included, e.g. in Basic UI in a [Sitemap](/ui/sitemaps.html) definition.
 Some I/O services (e.g. the Amazon Alexa skill) also use the label to match an external voice command to an Item.
 
 In textual configurations the label, in quotation marks, appears next to the optional [state presentation](#state-presentation) field in square brackets (see below).
@@ -198,7 +198,7 @@ The label for the Item in the following example is "Temperature" and the optiona
 Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]"
 ```
 
-Channel labels can be overwritten by Item definitions and Item labels can be overwritten in [Sitemaps]({{base}}/ui/sitemaps.html#element-types).
+Channel labels can be overwritten by Item definitions and Item labels can be overwritten in [Sitemaps](/ui/sitemaps.html#element-types).
 
 ### State
 
@@ -218,7 +218,7 @@ This section provides information about what a user can expect regarding the beh
 - A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
     The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 
-_N.B._  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
+_N.B._  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started](/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
 
 #### Command vs. Status
 
@@ -226,7 +226,7 @@ Users should bear in mind the difference between an Item used to send a command 
 This distinction may seem obvious, but it can be a little confusing when an Item appears not to reflect the correct status of a Thing.
 
 For example, let's say you have a Switch Item that is used to turn on a light.
-You insert this Item into a [sitemap]({{base}}/configuration/sitemaps).
+You insert this Item into a [sitemap](/configuration/sitemaps).
 You call up the sitemap and switch on the light using the UI.
 The switch icon changes from red to green, but you notice that the light does not turn on.
 What happened?
@@ -451,7 +451,7 @@ For example:
   - Maintenance Group → All battery states → Individual battery states in percentage
   - Further examples: all lights, all room temperatures, combined power consumption
 
-These relationships can be exploited in [Sitemaps]({{base}}/ui/sitemaps.html) or in [automation rules]({{base}}/configuration/rules-dsl.html) to navigate through the hierarchically organized Items or to perform computations and updates on subsets of similar Items.
+These relationships can be exploited in [Sitemaps](/ui/sitemaps.html) or in [automation rules](/configuration/rules-dsl.html) to navigate through the hierarchically organized Items or to perform computations and updates on subsets of similar Items.
 
 **Example:**
 
@@ -550,7 +550,7 @@ The last Group counts all members of it matching the given regular expression, h
 
 Tags added to an Item definition allow a user to characterize the specific nature of the Item beyond its basic Item type.
 Tags can then be used by add-ons to interact with Items in context-sensitive ways.
-Tags are used by the [Semantic Model]({{base}}/tutorial/model.html).
+Tags are used by the [Semantic Model](/tutorial/model.html).
 The `"Light"` example below maps the item to the Semantic Model.
 
 Example:
@@ -600,7 +600,7 @@ The Binding of an Item is given in the last part of the Item definition between 
 Number:Temperature Livingroom_Temperature "Temperature [%.1f °C]" {channel="..."}
 ```
 
-openHAB introduces the concept of [Things and Channels]({{base}}/concepts/things.html).
+openHAB introduces the concept of [Things and Channels](/concepts/things.html).
 Each Thing has one or more Channels, and Items are linked to one or more Channels.
 There are two different kinds of channels:
 
@@ -824,7 +824,7 @@ You have an Item called `Bedroom_Light` that is connected to a Hue lamp
 Color Bedroom_Light { channel="hue:0210:1:bulb1:color" }
 ```
 
-and a [Rule]({{base}}/configuration/rules-dsl.html) to toggle this light with a serial button:
+and a [Rule](/configuration/rules-dsl.html) to toggle this light with a serial button:
 
 ```java
 when

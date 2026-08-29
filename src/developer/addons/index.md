@@ -5,8 +5,6 @@ title: Add-ons
 
 # Developing an Add-on
 
-{:.no_toc}
-
 An add-on is an extension to openHAB that integrates external components like software services or hardware devices.
 Depending on their use-case they have different types:
 

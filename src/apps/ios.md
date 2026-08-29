@@ -277,7 +277,7 @@ There are several types of actions available:
 - `command`: Sends a command to an Item by using the following syntax: `command:$itemName:$commandString` where `$itemName` is the name of the Item and `$commandString` is the command to be sent.
 - `ui`: Controls the UI in two possible ways:
   - `ui:$path` where `$path` is either `/basicui/app?...` for navigating sitemaps (using the native renderer) or `/some/absolute/path` for navigating (using the web view).
-  - `ui:$commandItemSyntax` where `$commandItemSyntax` is the same syntax as used for the [UI Command Item]({{base}}/mainui/about.html#ui-command-item).
+  - `ui:$commandItemSyntax` where `$commandItemSyntax` is the same syntax as used for the [UI Command Item](/mainui/about.html#ui-command-item).
 - `http:` or `https:`: Opens the fully qualified URL in an embedded browser on the device.
 - `rule`: Runs a rule by using the following syntax: `rule:$ruleId:$prop1Key=$prop1Value,$prop2Key=$prop2Value,...` where `$ruleId` is the id of the rule, and optional properties to send to the rule are in the format `name=value` separated by commas. Most rules can omit the properties.
 - `app`: Launches a native app when possible using the following syntax: `app:android=$appId,ios=$appId:$path` where `$appId` on Android is a qualified app id like `com.acme.app`, and on iOS is the registered URL scheme along with an optional `$path` like `acme://foo`. Either `android` or `ios` can be omitted if that platform is not used.

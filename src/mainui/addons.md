@@ -16,7 +16,7 @@ The Add-on Store allows you to install and remove many different types of add-on
   - **Scripting Languages** like JavaScript and JRuby.
   - **Technologies** like PID Controller, PWM (pulse width modulation).
   - **Rule Templates** shared by the community to bootstrap your automation.
-  - [**Blockly**]({{base}}/configuration/blockly/) libraries that contain custom blocks written by the community.
+  - [**Blockly**](/configuration/blockly/) libraries that contain custom blocks written by the community.
 - **UI**<br>
   Pre-made UI widgets and other available UIs that work with openHAB.
 - **Other**<br>
@@ -47,7 +47,7 @@ Bindings are used to connect and control hardware and online services.
 This section provides both official bindings from the **openHAB Distribution**, which have been thoroughly reviewed by the maintainers of openHAB, as well as bindings independently released by the community on the **Community Marketplace**.
 If you want to know more about the marketplace, please read the following [Marketplace announcement](https://community.openhab.org/t/announcing-the-community-marketplace/127188).
 
-To learn more how to install add-ons read the [Add-ons tutorial]({{base}}/configuration/addons).
+To learn more how to install add-ons read the [Add-ons tutorial](/configuration/addons).
 
 ## Automation
 
@@ -61,7 +61,7 @@ Automation provides technologies that allow you to write rules and scripts.
   Rule templates can be used when you have a common use case for a rule and for instance need to bootstrap several of them, or share with others how to solve that use case in a configurable manner.
   These will appear in Main UI when you create a new rule, and will present you with the configuration parameters - after the rule is created, the pre-configured rule modules (triggers, conditions, actions) will appear based on your choices.
 
-- **Block Libraries**: Community extensions to the [Blockly]({{base}}/configuration/blockly/) toolbox.<br>
+- **Block Libraries**: Community extensions to the [Blockly](/configuration/blockly/) toolbox.<br>
   These libraries extend the core blockly library with many useful blocks that might else be a bit too specific for the core block library or just fills the gap where a core block is still missing.
   When installed they appear in a separate section beneath the core blocks of the blockly editor.
 

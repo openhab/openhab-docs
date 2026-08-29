@@ -10,7 +10,7 @@ title: Developer Tools - Widgets
 
 Community made Widgets can also be added to your system from the **UI** tab of the add-on store.
 
-Please read [Creating Personal Widgets]({{base}}/ui/personal-widgets.html) to learn about the structure, components and styling of personal widgets.
+Please read [Creating Personal Widgets](/ui/personal-widgets.html) to learn about the structure, components and styling of personal widgets.
 
 ![developer-widgets](../images/developer-widgets.png)
 

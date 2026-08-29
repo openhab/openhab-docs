@@ -5,7 +5,7 @@ title: Things
 
 # Things
 
-[Things]({{base}}/concepts/things.html) represent the physical layer of an openHAB system.
+[Things](/concepts/things.html) represent the physical layer of an openHAB system.
 From a configuration standpoint, Things tell openHAB which **physical entities** (devices, web services, information sources, etc.) are to be managed by the system.
 
 Things are connected to openHAB through [bindings](/addons/#binding).
@@ -13,7 +13,7 @@ In order to add a Thing to the system, you must first identify the appropriate b
 For example, before adding a Thing for a Z-Wave device, the Z-Wave binding must first be installed.
 
 Each Thing provides one or more **Channels** to access its functionality.
-These Channels can be linked to [items]({{base}}/concepts/items.html).
+These Channels can be linked to [items](/concepts/items.html).
 Items are used to control Things and consume their information.
 Ultimately, when Items are linked to Channels on a Thing, they become available to the various user interfaces and to the rules engine.
 
@@ -30,11 +30,11 @@ From start to finish, the process for fully configuring a physical entity repres
 1. Install the binding if it has not already been installed
 1. Define and configure the Thing
 1. Identify the Channels provided by the Thing
-1. [Add Items]({{base}}/configuration/items.html) and link them to the Thing's Channels
-1. At this point Items can be used to control the Thing or consume its information in e.g. [Sitemaps]({{base}}/ui/sitemaps.html) or [Rules]({{base}}/configuration/rules-dsl.html)
+1. [Add Items](/configuration/items.html) and link them to the Thing's Channels
+1. At this point Items can be used to control the Thing or consume its information in e.g. [Sitemaps](/ui/sitemaps.html) or [Rules](/configuration/rules-dsl.html)
 
 There are two methods for defining Things provided by the various bindings:
-through [discovery]({{base}}/concepts/discovery.html) or by manual definition in configuration text files.
+through [discovery](/concepts/discovery.html) or by manual definition in configuration text files.
 
 ::: tip Note
 Some bindings do not fully support auto-discovery, others are hard to manually cover by the file based approach.
@@ -45,7 +45,7 @@ Other bindings (such as the [ZWave](/addons/bindings/zwave/) binding) currently 
 
 ### Defining Things Using Discovery
 
-Things can be added to the system using [discovery]({{base}}/concepts/discovery.html), which allows Things to be discovered automatically if the appropriate binding has been installed and configured.
+Things can be added to the system using [discovery](/concepts/discovery.html), which allows Things to be discovered automatically if the appropriate binding has been installed and configured.
 When a Thing has been discovered, it appears in the discovery inbox.
 Newly discovered Things can be added to the system from the inbox using the UI.
 
@@ -55,7 +55,7 @@ Unlike manually defined Things, if a Thing has configurable properties, these pr
 **Attention:** It has to be noted, that Things and Items added through the UI / discovery to the internal database will **not** be written to configuration files.
 Things and Items definitions can be distributed and mixed among the internal database and manually defined text files.
 
-See the [beginner tutorial]({{base}}/tutorial/things_simple.html) for a step-by-step guide on how to configure Things using discovery.
+See the [beginner tutorial](/tutorial/things_simple.html) for a step-by-step guide on how to configure Things using discovery.
 
 ### Defining Things Using Files
 
@@ -234,7 +234,7 @@ If you decide not to, then the label from the referenced channel type definition
 ### Linking Items
 
 Items can be linked to Channels of discovered or manually defined Things inside UI or inside configuration files.
-For more details about Item definition and usage, please refer to the [Items configuration article]({{base}}/configuration/items.html).
+For more details about Item definition and usage, please refer to the [Items configuration article](/configuration/items.html).
 
 It is important to note, that Channels of discovered Things can also be linked to Items defined in `.items` files.
 In order to link a Thing to an Item in an `.items` file, open the Thing in UI under `Settings → Things`.

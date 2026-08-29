@@ -66,32 +66,32 @@ Cons:
 
 This tutorial presents a series of concepts and steps that build upon one another, so please review the tutorial in the recommended order.
 
-[First Steps]({{base}}/tutorial/first_steps.html): Initial configuration
+[First Steps](/tutorial/first_steps.html): Initial configuration
 
-[Adding Things: Simple]({{base}}/tutorial/things_simple.html): Discovering Things
+[Adding Things: Simple](/tutorial/things_simple.html): Discovering Things
 
-[Adding Things: Intermediate]({{base}}/tutorial/things_intermediate.html): Creating Bridges
+[Adding Things: Intermediate](/tutorial/things_intermediate.html): Creating Bridges
 
-[Adding Things: Advanced]({{base}}/tutorial/things_advanced.html): Manual creation of Things
+[Adding Things: Advanced](/tutorial/things_advanced.html): Manual creation of Things
 
-[Items and the Semantic Model]({{base}}/tutorial/model.html): Creating Items and Putting Them into a Semantic Model
+[Items and the Semantic Model](/tutorial/model.html): Creating Items and Putting Them into a Semantic Model
 
-[Persistence]({{base}}/tutorial/persistence.html): Saving and Retrieving Historic Data
+[Persistence](/tutorial/persistence.html): Saving and Retrieving Historic Data
 
-[Intro to Pages]({{base}}/tutorial/pages_intro.html): Visualizing and Using the Home Automation
+[Intro to Pages](/tutorial/pages_intro.html): Visualizing and Using the Home Automation
 
-[Overview Page]({{base}}/tutorial/auto_overview.html): Automatically Generated Overview Page
+[Overview Page](/tutorial/auto_overview.html): Automatically Generated Overview Page
 
-[Item Widget Customization]({{base}}/tutorial/item_widgets.html): Customize How Items Appear in Cards
+[Item Widget Customization](/tutorial/item_widgets.html): Customize How Items Appear in Cards
 
-[Custom Item Widgets]({{base}}/tutorial/custom_widgets.html): Creating your own widgets
+[Custom Item Widgets](/tutorial/custom_widgets.html): Creating your own widgets
 
 <!--
-[Rules: Simple]({{base}}/tutorial/rules_simple.html): Introduction to rules and a simple example
+[Rules: Simple](/tutorial/rules_simple.html): Introduction to rules and a simple example
 
-[Rules: Intermediate]({{base}}/tutorial/rules_intermediate.html): Rules that involve some scripting
+[Rules: Intermediate](/tutorial/rules_intermediate.html): Rules that involve some scripting
 
-[openHAB Cloud]({{base}}/tutorial/cloud.html): Connecting to the free openHAB Cloud Service
+[openHAB Cloud](/tutorial/cloud.html): Connecting to the free openHAB Cloud Service
 
-[Putting it all Together]({{base}}/tutorial/example.html) Comprehensive Example
+[Putting it all Together](/tutorial/example.html) Comprehensive Example
 -->

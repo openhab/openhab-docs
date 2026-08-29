@@ -74,7 +74,7 @@ You can hide Items from the chart if it is too busy and change many other chart 
 
 Now persistence is starting to pay off!
 
-If you've customized the chart and want to return to the same chart again, you can save it and a new [Chart Page]({{base}}/ui/chart-pages.html) will be created showing those Items with those settings.
+If you've customized the chart and want to return to the same chart again, you can save it and a new [Chart Page](/ui/chart-pages.html) will be created showing those Items with those settings.
 
 ## Customization / Page Configuration
 
@@ -145,7 +145,7 @@ This will open a form with customization options.
 ##### Basic Settings
 
 Instead of using the Item's Label and parent Group as the Title and Subtitle of the card, these can be overridden and manually set.
-[Expressions]({{base}}/ui/widget-expressions-variables.html) can be used to make the Title and Subtitle change based on the states of Items or other conditions.
+[Expressions](/ui/widget-expressions-variables.html) can be used to make the Title and Subtitle change based on the states of Items or other conditions.
 
 By default a background color is chosen based on the semantic tag.
 This default can be overridden here.
@@ -198,4 +198,4 @@ To edit an individual card, or to edit the Page itself, one can switch to show t
 Many actions like reordering the cards and inserting separators will be faster to do through the code.
 
 Any advanced customization of the cards themselves through editing of the code directly is beyond the scope of this tutorial.
-See the [UI Docs]({{base}}/ui/index.html) for a detailed reference.
+See the [UI Docs](/ui/index.html) for a detailed reference.

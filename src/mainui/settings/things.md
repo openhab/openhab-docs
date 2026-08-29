@@ -9,7 +9,7 @@ title: Settings - Things
 **Things** manage the physical layer of the openHAB system and represent individual devices or services.
 The Things that you can add to your system are determined by the bindings that you have installed.
 
-There is a [Things concepts page]({{base}}/concepts/things.html) that explains the idea of Things in detail.
+There is a [Things concepts page](/concepts/things.html) that explains the idea of Things in detail.
 
 On this page, you can manage all the Things you have added to your system:
 
@@ -25,9 +25,9 @@ On this page, you can manage all the Things you have added to your system:
 
 Adding Things via the user interface is described comprehensively in the tutorial section:
 
-- [Adding Things - Simple]({{base}}/tutorial/things_simple.html)
-- [Adding Things - Intermediate]({{base}}/tutorial/things_intermediate.html): Things that are dealing with a binding where the bridge-Thing cannot be automatically discovered.
-- [Adding Things - Advanced]({{base}}/things_advanced.html): Things that do not support automatic discovery.
+- [Adding Things - Simple](/tutorial/things_simple.html)
+- [Adding Things - Intermediate](/tutorial/things_intermediate.html): Things that are dealing with a binding where the bridge-Thing cannot be automatically discovered.
+- [Adding Things - Advanced](/things_advanced.html): Things that do not support automatic discovery.
 
 ## Inbox
 
@@ -37,4 +37,4 @@ It therefore makes a lot of sense to use these features for a smart home solutio
 openHAB bindings can therefore implement discovery services for Things, which provide discovery results.
 All discovery results are put into the Thing inbox from where they can be easily added to openHAB with just a few clicks.
 
-Please read [the tutorial]({{base}}/tutorial/things_simple.html#accept-the-light-bulb-things) to learn how to use the inbox.
+Please read [the tutorial](/tutorial/things_simple.html#accept-the-light-bulb-things) to learn how to use the inbox.

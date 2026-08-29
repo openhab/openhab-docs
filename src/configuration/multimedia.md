@@ -69,7 +69,7 @@ The distribution comes with these options built-in:
 | `enhancedjavasound` | System Speaker (with mp3 support) | This uses the JRE sound drivers plus an additional 3rd party library, which adds support for mp3 files.                                                                                                                                                                                                                                                      |
 | `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is supported by Main UI, Basic UI and HABPanel. |
 
-Please refer to the [Main UI docs]({{base}}/mainui/about.html#web-audio-sink) for setting up web audio in Main UI.
+Please refer to the [Main UI docs](/mainui/about.html#web-audio-sink) for setting up web audio in Main UI.
 
 Additionally, certain bindings register their supported devices as audio sinks, e.g. Sonos speakers.
 
@@ -126,7 +126,7 @@ Just create or edit a rule, add a new action, select "Audio & Voice" and the UI 
 
 ![Audio action setup in the UI](images/rule-play-audio.png)
 
-Visit the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html) to learn how to use audio actions from Blockly.
+Visit the [Blockly docs](/configuration/blockly/rules-blockly-voice-and-multimedia.html) to learn how to use audio actions from Blockly.
 
 #### Examples
 
@@ -140,7 +140,7 @@ playStream("example.com")
 playStream("sonos:PLAY5:kitchen", "example.com")
 ```
 
-You will find more examples in the documentation of the [Automation add-ons](/addons/#automation) and the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html).
+You will find more examples in the documentation of the [Automation add-ons](/addons/#automation) and the [Blockly docs](/configuration/blockly/rules-blockly-voice-and-multimedia.html).
 
 ## Voice
 
@@ -210,7 +210,7 @@ UI-based rules support voice actions as well.
 Just create or edit a rule, add a new action, select "Audio & Voice" and the UI will then guide you trough the setup.
 The presented dialog will look similar to the one shown [above](#actions-2).
 
-Visit the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html) to learn how to use voice actions from Blockly.
+Visit the [Blockly docs](/configuration/blockly/rules-blockly-voice-and-multimedia.html) to learn how to use voice actions from Blockly.
 
 ##### Examples
 
@@ -223,7 +223,7 @@ say("Hello world!", "voicerss:enUS", "sonos:PLAY5:kitchen")
 say("Hello world!", "voicerss:enUS", "sonos:PLAY5:kitchen", new PercentType(25))
 ```
 
-You will find more examples in the documentation of the [Automation add-ons](/addons/#automation) and the [Blockly docs]({{base}}/configuration/blockly/rules-blockly-voice-and-multimedia.html).
+You will find more examples in the documentation of the [Automation add-ons](/addons/#automation) and the [Blockly docs](/configuration/blockly/rules-blockly-voice-and-multimedia.html).
 
 ### Speech-to-Text
 

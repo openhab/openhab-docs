@@ -59,12 +59,7 @@ The easy step by step instruction can be found [here](openhabian.html).
 Installation through a package repository is the recommended choice. You can select the appropriate installation instructions by expanding from the apt or yum instructions.
 Alternatively resort to the [manual installation approach](#manual-installation).
 
-{% include collapsible/start.html %}
-{% include collapsible/heading.html %}
-
 #### Apt Based Systems
-
-{% include collapsible/body.html %}
 
 First, add the openHAB repository key to your package manager (note `/usr/share/keyrings` may already exist):
 
@@ -168,12 +163,7 @@ To get a list of all available versions you can use
 apt list -a openhab
 ```
 
-{% include collapsible/item-end.html %}
-{% include collapsible/heading.html %}
-
 #### Yum or Dnf Based Systems
-
-{% include collapsible/body.html %}
 
 The RPM repo information should be defined inside a file, make a new file at `/etc/yum.repos.d/openhab.repo` with the following contents depending on your choice of release.
 You may add all three to the same file, but make sure the desired repo is is set to `enabled=1`:
@@ -231,12 +221,7 @@ If you plan on disconnecting your machine from the internet, then you will want 
 sudo yum install openhab-addons
 ```
 
-{% include collapsible/item-end.html %}
-{% include collapsible/end.html %}
-
 #### Arch Linux
-
-{% include collapsible/body.html %}
 
 The Arch User Repository ([AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository)) is a community-driven repository for Arch users.
 
@@ -268,12 +253,7 @@ sudo pacman -U openhab3-3.0.0.M4-1-any.pkg.tar.zst
 
 If everything went well, you can start openHAB and register it to be automatically executed at system startup.
 
-{% include collapsible/start.html %}
-{% include collapsible/heading.html %}
-
 Systems based on **sysVinit** (e.g. Ubuntu 14.x, Debian Wheezy and older):
-
-{% include collapsible/body.html %}
 
 ```shell
 sudo /etc/init.d/openhab start
@@ -282,12 +262,7 @@ sudo /etc/init.d/openhab status
 sudo update-rc.d openhab defaults
 ```
 
-{% include collapsible/item-end.html %}
-{% include collapsible/heading.html %}
-
 Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
-
-{% include collapsible/body.html %}
 
 ```shell
 sudo systemctl start openhab.service
@@ -297,14 +272,11 @@ sudo systemctl daemon-reload
 sudo systemctl enable openhab.service
 ```
 
-{% include collapsible/item-end.html %}
-{% include collapsible/end.html %}
-
 The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
 
 You should be able to reach the openHAB Dashboard at `http://openhab-device:8080` at this point.
 Be sure to check whether you need to adjust your [firewall settings](#required-ports-and-firewalls).
-If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorial/first_steps.html)!
+If you're new to openHAB, then you should checkout the [beginner's tutorial](/tutorial/first_steps.html)!
 
 ![The openHAB Dashboard page](images/Home_Openhab_3.png)
 
@@ -313,12 +285,7 @@ If you're new to openHAB, then you should checkout the [beginner's tutorial]({{b
 openHAB will run as a service in the background.
 The most important commands to control the openHAB service are given below.
 
-{% include collapsible/start.html %}
-{% include collapsible/heading.html %}
-
 Systems based on **sysVinit** (e.g. Ubuntu 14.x, Debian Wheezy and older):
-
-{% include collapsible/body.html %}
 
   ```shell
   # Learn about the current service status
@@ -334,12 +301,7 @@ Systems based on **sysVinit** (e.g. Ubuntu 14.x, Debian Wheezy and older):
   sudo update-rc.d openhab defaults
   ```
 
-{% include collapsible/item-end.html %}
-{% include collapsible/heading.html %}
-
 Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
-
-{% include collapsible/body.html %}
 
   ```shell
   # Learn about the current service status
@@ -359,12 +321,9 @@ Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and ne
   sudo systemctl enable openhab.service
   ```
 
-{% include collapsible/item-end.html %}
-{% include collapsible/end.html %}
-
 #### Command Line Interface (CLI)
 
-After installing openHAB, a shortcut named `openhab-cli` provides access to the openHAB-specific commands (such as [backup, restore](#backup-and-restore), and [console]({{base}}/administration/console.html)).
+After installing openHAB, a shortcut named `openhab-cli` provides access to the openHAB-specific commands (such as [backup, restore](#backup-and-restore), and [console](/administration/console.html)).
 To use the shortcuts in a terminal, simply type `openhab-cli` followed by the command.
 For example:
 
@@ -390,12 +349,7 @@ This is especially important if you are working with the latest snapshot as chan
 Your personal configuration will be retained on upgrades.
 We still recommend a backup before each upgrade.
 
-{% include collapsible/start.html %}
-{% include collapsible/heading.html %}
-
 Apt Based Systems
-
-{% include collapsible/body.html %}
 
 Upgrading is as easy as:
 
@@ -418,12 +372,7 @@ Once you know which version you want, you can upgrade/downgrade to it by using t
 sudo apt-get install openhab=3.0.0-1
 ```
 
-{% include collapsible/item-end.html %}
-{% include collapsible/heading.html %}
-
 Yum or Dnf Based Systems
-
-{% include collapsible/body.html %}
 
 Upgrading is as easy as: (you can use `dnf` instead of `yum` for systems that support it)
 
@@ -444,39 +393,23 @@ Once you know which version you want, you can upgrade/downgrade to it by using t
 sudo yum install openhab-3.0.0-1
 ```
 
-{% include collapsible/item-end.html %}
-{% include collapsible/end.html %}
-
 #### Uninstall
 
 To uninstall openHAB and get rid of all related files managed by the package manager, make a backup, then uninstall openHAB and remove the repository:
 
-{% include collapsible/start.html %}
-{% include collapsible/heading.html %}
-
 Apt Based Systems
-
-{% include collapsible/body.html %}
 
 ```shell
 sudo apt-get purge openhab*
 sudo rm /etc/apt/sources.list.d/openhab.list
 ```
 
-{% include collapsible/item-end.html %}
-{% include collapsible/heading.html %}
-
 Yum or Dnf Based Systems
-
-{% include collapsible/body.html %}
 
 ```shell
 sudo yum remove openhab*
 sudo rm /etc/yum.repos.d/openhab.repo
 ```
-
-{% include collapsible/item-end.html %}
-{% include collapsible/end.html %}
 
 ### Manual Installation
 
@@ -724,7 +657,7 @@ Execute the following command in one session or have both files separated in ses
 
 You could even set up an SSH configuration (in Putty or similar) to automatically connect and execute the commands every time you start working on your setup.
 
-With openHAB you can also [use the openHAB console]({{base}}/administration/logging.html#karaf-console) to have a colored glance at the logging information.
+With openHAB you can also [use the openHAB console](/administration/logging.html#karaf-console) to have a colored glance at the logging information.
 
 ## Recommended Additional Setup Steps
 
@@ -762,11 +695,11 @@ setcap 'cap_net_raw,cap_net_admin=+eip cap_net_bind_service=+ep' $(realpath /usr
 
 ### Network Sharing
 
-openHAB depends on configuration files and folders with custom content (details in [Configuration]({{base}}/configuration/index.html) articles).
+openHAB depends on configuration files and folders with custom content (details in [Configuration](/configuration/index.html) articles).
 Because your openHAB installation most probably is stored on a remote device, being able to easily access and modify these files from your local PC or Mac is important.
 Therefore setting up a [Samba](https://en.wikipedia.org/wiki/Samba_%28software%29) network share is **highly recommended**.
 
-The [openHAB VS Code Extension]({{base}}/configuration/editors.html#openhab-vs-code-extension) software does also depend on a mounted share to access the openHAB configuration files.
+The [openHAB VS Code Extension](/configuration/editors.html#openhab-vs-code-extension) software does also depend on a mounted share to access the openHAB configuration files.
 
 We will now guide you through the Samba network shares setup process.
 Start by installing Samba.
@@ -879,7 +812,7 @@ Be sure to use the actual host name instead of `openhab-device`.
 When asked, authenticate with the username "openhab" and the chosen password.
 If you are not able to connect, try with the IP of your device (e.g. `smb://openhab@192.168.0.2` or `\\192.168.0.2`).
 
-If everything went well, you are set and ready to start [configuring]({{base}}/configuration/index.html) your openHAB system.
+If everything went well, you are set and ready to start [configuring](/configuration/index.html) your openHAB system.
 
 ### Required Ports and Firewalls
 

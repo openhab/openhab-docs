@@ -16,7 +16,7 @@ One can also set the "Default Stand Alone Widget" and "Default Cell Widget" to c
 Many portions of a widget can be configured to change dynamically based on the states of Items.
 This can be a powerful way to combine multiple Items into one widget (e.g. an oh-label widget showing the current state of a garage door that sends a command to a Switch Item to trigger the garage door opener when the widget is clicked).
 Common things one might use an expression for are to change an icon or color based on the state of an Item, to hide a widget entirely if an Item isn't in a given state, or to change the colors of the widget elements.
-For full details on expressions see the [Expressions docs]({{base}}/ui/widget-expressions-variables.html).
+For full details on expressions see the [Expressions docs](/ui/widget-expressions-variables.html).
 
 Note that when working with Units of Measurement, the state of the Item needs to be parsed into a number for comparisons.
 For example -
@@ -76,11 +76,11 @@ If it fails to allow the interactions desired, or doesn't look the way you desir
 To change how the Item appears in the automatically generated parts of the Overview Page, set the "Default List Widget".
 You can do so from the Model settings page or from the Item's settings page by clicking on "Add Metadata".
 
-See the [UI docs]({{base}}/ui/building-pages.html) for details on how to create custom widgets.
+See the [UI docs](/ui/building-pages.html) for details on how to create custom widgets.
 There is some discussion on this on the next page of this tutorial as well.
 
 There are a number of widget types to choose from for a List Widget.
-See the [widget reference docs]({{base}}/ui/components/index.html) for details.
+See the [widget reference docs](/ui/components/index.html) for details.
 Pay particular attention to the Standard Widget Library (List Items) section.
 
 Note that some customization fields are only shown when the "Show advanced" checkbox is checked.
@@ -109,7 +109,7 @@ When this metadata is defined, it will be used by default everywhere in MainUI.
 Field | What it does
 -|-
 Read Only | A toggle that when set tells MainUI the Item is not controllable (e.g. a Switch used to represent a sensor state) so a text/label widget will be used instead of a toggle.
-Pattern | Defines the pattern used to display the state. This is where you will define the transformation and any other formatting information using the same [syntax used by sitemaps]({{base}}/configuration/items.html#state-presentation). Everything that can go between the `[ ]` in an Item label as described by that doc (excluding the `[ ]` themselves) can go here.
+Pattern | Defines the pattern used to display the state. This is where you will define the transformation and any other formatting information using the same [syntax used by sitemaps](/configuration/items.html#state-presentation). Everything that can go between the `[ ]` in an Item label as described by that doc (excluding the `[ ]` themselves) can go here.
 Min/Max/Step | Hints to MainUI used for slider, setpoint, and knob type widgets.
 Options | Can be used with Actions (see below) to provide a mapping between the state of the Item and a command to issue.
 
@@ -129,4 +129,4 @@ By default the action will usually be "Analyze item(s)", which will open up a ch
 But there are many other Actions that can be performed.
 Some example use cases might be to pop up a weather widget when clicking on the Item with the outside temp on a page, combining Items into one widget when the sensor and actuator are separate (e.g. a garage door), etc.
 
-See the [UI Docs for Actions]({{base}}/ui/building-pages.html#actions) for details on all of the Actions that can be performed.
+See the [UI Docs for Actions](/ui/building-pages.html#actions) for details on all of the Actions that can be performed.

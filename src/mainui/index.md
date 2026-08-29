@@ -9,7 +9,7 @@ title: Main UI
 Since openHAB 3.0, the so-called "Main UI" is the primary web user interface of openHAB.
 It allows you to configure openHAB system, and provides a user interface for monitoring and control of your smart home.
 
-If you are new to openHAB, please refer to the [Getting Started guide]({{base}}/tutorial/), which is introducing you to Main UI by using it to set up openHAB.
+If you are new to openHAB, please refer to the [Getting Started guide](/tutorial/), which is introducing you to Main UI by using it to set up openHAB.
 
 All users can use the left panel menu to access:
 
@@ -35,7 +35,7 @@ Pressing the key combination <kbd>Alt</kbd><kbd>Shift</kbd><kbd>M</kbd> on your 
 
 This section attempts to highlight some of Main UI's "special" features by linking to their respective documentation:
 
-- [Chat]({{base}}/mainui/chat.html): An interactive chat interface to converse with LLM-based voice assistants and control Items.
-- [Developer Sidebar Search]({{base}}/mainui/developer/sidebar.html#developer-sidebar-search): Provides a universal search across nearly all UI-configurable entities (i.e. Items, rules etc.).
-- [Web Audio Sink]({{base}}/mainui/about.html#web-audio-sink) support: Allows the openHAB server to play audio through the browser on Main UI clients.
-- [UI Command Item]({{base}}/mainui/about.html#ui-command-item): Allows the openHAB server to control Main UI, e.g. navigate to UI pages or display a notification.
+- [Chat](/mainui/chat.html): An interactive chat interface to converse with LLM-based voice assistants and control Items.
+- [Developer Sidebar Search](/mainui/developer/sidebar.html#developer-sidebar-search): Provides a universal search across nearly all UI-configurable entities (i.e. Items, rules etc.).
+- [Web Audio Sink](/mainui/about.html#web-audio-sink) support: Allows the openHAB server to play audio through the browser on Main UI clients.
+- [UI Command Item](/mainui/about.html#ui-command-item): Allows the openHAB server to control Main UI, e.g. navigate to UI pages or display a notification.

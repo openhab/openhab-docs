@@ -97,14 +97,14 @@ For subsequent audio playback the above is not required anymore and the audio is
 Please also note that you cannot address a particular web audio-enabled device.
 When you play a sound on web audio, it will be played on all devices where web audio is enabled.
 
-Web audio sinks can be used for example on wall-mounted tablets to make announcements using a [text-to-speech (TTS) engine]({{base}}/configuration/multimedia.html#text-to-speech) and play notification or alarm sounds.
+Web audio sinks can be used for example on wall-mounted tablets to make announcements using a [text-to-speech (TTS) engine](/configuration/multimedia.html#text-to-speech) and play notification or alarm sounds.
 
-For more information about audio sinks as well as audio and voice actions, please refer to the [multimedia configuration docs]({{base}}/configuration/multimedia.html), where you will also find examples including UI-based rules and Blockly.
+For more information about audio sinks as well as audio and voice actions, please refer to the [multimedia configuration docs](/configuration/multimedia.html), where you will also find examples including UI-based rules and Blockly.
 
 ### Testing Web Audio
 
 To test if it works play some static content that comes with openHAB in the /sounds dir using an openHAB console command.
-Use [openHABs console]({{base}}/administration/console.html#using-the-console) or just run the following from the Linux shell:
+Use [openHABs console](/administration/console.html#using-the-console) or just run the following from the Linux shell:
 
 > openhab-cli console
 
@@ -119,13 +119,13 @@ If you play `doorbell.mp3` your dog will then probably play its own barking audi
 
 Here are some useful actions available to rules in which you can specify webaudio as sink, see:
 
-- [playSound]({{base}}/configuration/multimedia.html#actions-2)
+- [playSound](/configuration/multimedia.html#actions-2)
 
 ```text
 playSound("webaudio", "barking.mp3")
 ```
 
-- [say]({{base}}/configuration/multimedia.html#actions-3)
+- [say](/configuration/multimedia.html#actions-3)
 
 ```text
 say("Hello world!", "voicerss:enUS", "webaudio")
@@ -155,7 +155,7 @@ Currently, the supported commands are:
   Navigate to a given `$path`, e.g. `navigate:/locations` to navigate to the **Locations** tab of the home page or `navigate:/page/my_custom_page` to navigate to a page with the ID `my_custom_page`.
   For example, you can use this to open a video camera page of the door automatically when the doorbell is rung.
 - `popup:$target`, `popover:$target` and `sheet:$target`:
-  Open a `$target`, which can be a page (`$target` is `page:` + a page ID), a custom widget (`$target` is `widget:` + widget ID) or any [`oh-` component]({{base}}/ui/components/) (`$target` is the component name), in a popup, popover or sheet.
+  Open a `$target`, which can be a page (`$target` is `page:` + a page ID), a custom widget (`$target` is `widget:` + widget ID) or any [`oh-` component](/ui/components/) (`$target` is the component name), in a popup, popover or sheet.
 
   For example, to open `oh-clock-card` inside a popup, send `popup:oh-clock-card` to the UI command Item.
 - `notification:$text:$title:$subtitle:$titleRight:$closeTimeout`:

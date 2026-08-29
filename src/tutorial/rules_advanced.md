@@ -18,8 +18,8 @@ openHAB comes with the following languages to choose from:
 
 | Language                                           | Details                                                                                                                                                             | Intended Audience       |
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
-| [Blockly]({{base}}/configuration/blockly/)         | See the previous page                                                                                                                                               | Non-developers          |
-| [Rules DSL]({{base}}/configuration/rules-dsl.html) | A programming language developed specifically for openHAB based on [Xbase](https://eclipse.dev/Xtext/documentation/305_xbase.html#xbase-language-ref-introduction). | Long time openHAB users |
+| [Blockly](/configuration/blockly/)         | See the previous page                                                                                                                                               | Non-developers          |
+| [Rules DSL](/configuration/rules-dsl.html) | A programming language developed specifically for openHAB based on [Xbase](https://eclipse.dev/Xtext/documentation/305_xbase.html#xbase-language-ref-introduction). | Long time openHAB users |
 
 In addition to these default choices, one can install a number of different languages as an Automation add-on.
 Such diverse languages as [JavaScript](/addons/automation/jsscripting/), [Ruby](/addons/automation/jrubyscripting), [Python](/addons/automation/jythonscripting/), [Groovy](/addons/automation/groovyscripting/), Java, and more are available with more to come.

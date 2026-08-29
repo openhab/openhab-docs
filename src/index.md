@@ -77,51 +77,51 @@ The following table gives a top-level description of the most important concepts
 | Concepts | Meaning | More Information |
 | --- | --- | --- |
 | Bindings | are the openHAB component that provides the interface to interact electronically with devices | _see below_ |
-| Things | are the first openHAB (software) generated representation of your devices | [click for more info on Things]({{base}}/concepts/things.html) |
+| Things | are the first openHAB (software) generated representation of your devices | [click for more info on Things](/concepts/things.html) |
 | Channels | are the openHAB (software) connection between “Things” and “Items” (see below) | _see below_ |
-| Items | are the openHAB (software) generated representation of information about the devices | [click for more info on Items]({{base}}/concepts/items.html) |
-| Rules | that perform automatic actions (in its simplest form: if "this" happens, openHAB will do "that") | [click for more info on Rules]({{base}}/configuration/rules-dsl.html) |
-| Pages | is the openHAB (software) generated user interface (web site) that presents information and allows for interactions | [click for more info on Pages]({{base}}/tutorial/pages_intro.html) |
+| Items | are the openHAB (software) generated representation of information about the devices | [click for more info on Items](/concepts/items.html) |
+| Rules | that perform automatic actions (in its simplest form: if "this" happens, openHAB will do "that") | [click for more info on Rules](/configuration/rules-dsl.html) |
+| Pages | is the openHAB (software) generated user interface (web site) that presents information and allows for interactions | [click for more info on Pages](/tutorial/pages_intro.html) |
 
 While the table above gives an overview, please remember that it is incomplete and a simplification of openHAB for the sake of this overview.
 More elements will be introduced in later chapters of the documentation.
-All the above [Concepts]({{base}}/concepts/index.html) are explained in more depth on other pages that can be accessed either through the sidebar or the links in the table above.
+All the above [Concepts](/concepts/index.html) are explained in more depth on other pages that can be accessed either through the sidebar or the links in the table above.
 
 ### Channels
 
-Channels are the logical link between a [Thing]({{base}}/concepts/things.html) and an [Item]({{base}}/concepts/items.html).
-Channels originate from [Things]({{base}}/concepts/things.html) definition and define how your [Thing]({{base}}/concepts/things.html) can communicate with [Item]({{base}}/concepts/items.html) (and vice versa).
-You will create channels when defining your [Thing]({{base}}/concepts/things.html).
+Channels are the logical link between a [Thing](/concepts/things.html) and an [Item](/concepts/items.html).
+Channels originate from [Things](/concepts/things.html) definition and define how your [Thing](/concepts/things.html) can communicate with [Item](/concepts/items.html) (and vice versa).
+You will create channels when defining your [Thing](/concepts/things.html).
 
-During the definition of your [Thing]({{base}}/concepts/things) you will identify the channel to which your [Item]({{base}}/concepts/items.html) will be linked.
-These two steps ensure that openHAB can transmit the information from the [Thing]({{base}}/concepts/things.html) to the [Item]({{base}}/concepts/items.html) (and vice versa).
+During the definition of your [Thing](/concepts/things) you will identify the channel to which your [Item](/concepts/items.html) will be linked.
+These two steps ensure that openHAB can transmit the information from the [Thing](/concepts/things.html) to the [Item](/concepts/items.html) (and vice versa).
 
 ### Bindings
 
 Bindings are software packages that are installed by the user in openHAB.
-The main purpose of Bindings is to establish the connection between your device and your [Thing]({{base}}/concepts/things.html).
-Bindings communicate with your device and translate all commands to and from openHAB between your device and your [Thing]({{base}}/concepts/things.html).
+The main purpose of Bindings is to establish the connection between your device and your [Thing](/concepts/things.html).
+Bindings communicate with your device and translate all commands to and from openHAB between your device and your [Thing](/concepts/things.html).
 
 Bindings are provided in the [Add-on section](https://www.openhab.org/addons/) of this website.
 Here you will find a searchable list of several hundred bindings to support as many devices as possible.
 New bindings are regularly added as developers integrate more devices into openHAB.
 
-For each binding, detailed instructions and examples are provided that include guidance on configuration (if any) of the binding itself, the definition of [Things]({{base}}/concepts/things.html) supported by this binding and the Channels these [Things]({{base}}/concepts/things) provide.
-In most cases, the description also contains a fully worked out example that includes a definition of [Things]({{base}}/concepts/things) and its Channels, [Items]({{base}}/concepts/items.html) linked to those Channels and the use of these [Items]({{base}}/concepts/items.html) in a user interface page.
+For each binding, detailed instructions and examples are provided that include guidance on configuration (if any) of the binding itself, the definition of [Things](/concepts/things.html) supported by this binding and the Channels these [Things](/concepts/things) provide.
+In most cases, the description also contains a fully worked out example that includes a definition of [Things](/concepts/things) and its Channels, [Items](/concepts/items.html) linked to those Channels and the use of these [Items](/concepts/items.html) in a user interface page.
 
 ## While You Are Getting Started
 
-To all newcomers: please read the section [New User Tutorial]({{base}}/tutorial).
+To all newcomers: please read the section [New User Tutorial](/tutorial).
 That section provides you with step-by-step instructions for your first easy setup.
 
 openHAB runs on most popular platforms such as Linux, Windows and macOS and on almost any hardware ranging from Raspberry Pis to desktop computers and server PCs.
-You can find specific installation instructions for these and other platforms in the [Installation Overview]({{base}}/installation/index.html) article.
+You can find specific installation instructions for these and other platforms in the [Installation Overview](/installation/index.html) article.
 If you have a strong preference towards a particular platform, then that platform is probably your best choice.
 
 You can install openHAB on your desktop computer for evaluation purposes if you already have any of these systems available for use, but we recommend using a dedicated system in the long run.
 If you feel serious about home automation it is better to start with a dedicated system right away.
 
-If you have no strong preference, get a [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) with a minimum of 2 and no more than 4 GB of RAM and an 'Endurance' labelled type of SD card and install [openHABian]({{base}}/installation/openhabian.html) for the best experience.
+If you have no strong preference, get a [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) with a minimum of 2 and no more than 4 GB of RAM and an 'Endurance' labelled type of SD card and install [openHABian](/installation/openhabian.html) for the best experience.
 A RPi 2 or 3 with just 1GB of RAM is not really sufficient to run openHAB 5 but 8GB of RAM is overkill, as are large SD cards.
 
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB ecosystem in a box and easily capable of automating your entire home.
@@ -131,10 +131,10 @@ You will want to have two GB for that to work smoothly.
 Running Raspberries off the internal SD card only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions (infamous 'wearout').
 When you choose to deploy openHABian, it'll use the ZRAM feature to mitigate.
 
-Once you have openHAB up and running, the [Configuration]({{base}}/configuration/index.html) article contains everything you need to know to get your openHAB installation talking to different devices around your home.
+Once you have openHAB up and running, the [Configuration](/configuration/index.html) article contains everything you need to know to get your openHAB installation talking to different devices around your home.
 
 You will quickly discover that you may want to learn more about Things, Channels, Items, and more.
-To do so, we highly recommend that you read the next chapter titled [Concepts]({{base}}/concepts/index.html).
+To do so, we highly recommend that you read the next chapter titled [Concepts](/concepts/index.html).
 It provides more in-depth descriptions of Things, Items, Bindings, etc. that will help you as you dive deeper into openHAB.
 
 The amount of information provided can be overwhelming but don't hesitate to return here to lookup infos.
@@ -193,4 +193,4 @@ openHAB is highly modular software that can be extended through "Add-ons".
 Add-ons give openHAB a wide array of capabilities, from User Interfaces, to the ability to interact with a large and growing number of physical Things.
 Add-ons may come from the openHAB distribution or from other external sources.
 
-If you are new to openHAB, we suggest you continue to the [Concepts]({{base}}/concepts/index.html) chapter where we introduce many fundamental ideas that are used throughout openHAB.
+If you are new to openHAB, we suggest you continue to the [Concepts](/concepts/index.html) chapter where we introduce many fundamental ideas that are used throughout openHAB.

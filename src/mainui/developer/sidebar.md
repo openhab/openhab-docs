@@ -7,7 +7,7 @@ title: Developer Tools - Developer Sidebar
 
 <!-- START MAINUI SIDEBAR DOC - DO NOT REMOVE -->
 Main UI provides a developer sidebar for administrator user(s), that is accessible from anywhere in the UI.
-The developer sidebar is split into a "**Tools**" section with several useful tools including a [universal search]({{base}}/mainui/developer/sidebar.html#developer-sidebar-search), a widget expression tester,
+The developer sidebar is split into a "**Tools**" section with several useful tools including a [universal search](/mainui/developer/sidebar.html#developer-sidebar-search), a widget expression tester,
 and a "**Help**" section aiming at providing help and useful information regarding configuration and setup.
 <!-- END MAINUI SIDEBAR DOC - DO NOT REMOVE -->
 

@@ -9,7 +9,7 @@ title: Settings - Persistence
 **Persistence** stores data over time.
 The data may be retrieved at a later time, for example to restore your system after startup, or to prepare graphs for display on the UI.
 
-Learn more about persistence in the [persistence docs]({{base}}/configuration/persistence.html).
+Learn more about persistence in the [persistence docs](/configuration/persistence.html).
 
 To change persistence behaviour, this is the page you are looking for!
 
