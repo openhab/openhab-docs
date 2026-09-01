@@ -16361,6 +16361,16 @@
   },
   {
     "bindingId": "zwave",
+    "id": "zwave:shelly_waveprodim1pm_00_000",
+    "label": "Wave Pro Dimmer 1PM The Device is a DIN-rail mountable, one-channel smart dimmer. It can work as a standalone or it can also be operated through Z-WaveÂ® home automation."
+  },
+  {
+    "bindingId": "zwave",
+    "id": "zwave:shelly_waveprodim2pm_00_000",
+    "label": "Wave Pro Dimmer 2PM The Device is a DIN-rail mountable , two-channel smart dimmer. It can work as a standalone or it can also be operated through Z-WaveÂ® home automation"
+  },
+  {
+    "bindingId": "zwave",
     "id": "zwave:shelly_waveshutter_00_000",
     "label": "Wave Shutter Z-WaveTM shutter control with power measurement, 10 A per channel"
   },
@@ -16573,6 +16583,11 @@
     "bindingId": "zwave",
     "id": "zwave:smartly_multiswitch_00_000",
     "label": "FMS01 Multifunction Switch"
+  },
+  {
+    "bindingId": "zwave",
+    "id": "zwave:smartwings_wm25lv_00_000",
+    "label": "WM25LV Motorized Window Treatments"
   },
   {
     "bindingId": "zwave",
