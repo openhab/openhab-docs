@@ -1281,6 +1281,11 @@
   },
   {
     "bindingId": "deconz",
+    "id": "deconz:particulatemattersensor",
+    "label": "Particulate Matter Sensor"
+  },
+  {
+    "bindingId": "deconz",
     "id": "deconz:powersensor",
     "label": "Power Sensor"
   },
