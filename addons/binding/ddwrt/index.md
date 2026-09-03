@@ -67,7 +67,7 @@ Discovery results appear in the openHAB inbox after each device refresh cycle.
 Bridge ddwrt:network:home "Home Network" [ hostnames="router,office-ap,garage-ap" ]
 ```
 
-1. **Wait for discovery** — devices, radios, clients, and firewall rules appear in the inbox
+1. **Wait for discovery** — devices, radios, clients, and DD-WRT firewall rules appear in the inbox
 
 The `hostnames` parameter is a comma-separated list of hostnames or IP addresses.
 Each hostname is connected via SSH and auto-detected during the first refresh cycle.
@@ -269,8 +269,8 @@ When a new randomized MAC appears with the same DHCP hostname, the binding merge
 | uptime                  | DateTime           | RO         | System boot time (updates only on reboot)                        |
 | cpu-load                | Number             | RO         | 1-minute load average                                            |
 | cpu-temp                | Number:Temperature | RO         | CPU temperature                                                  |
-| if-in                   | Number:DataAmount  | RO         | Total bytes received on LAN bridge (br0)                         |
-| if-out                  | Number:DataAmount  | RO         | Total bytes sent on LAN bridge (br0)                             |
+| if-in                   | Number:DataAmount  | RO         | Total bytes received on the LAN or primary network interface     |
+| if-out                  | Number:DataAmount  | RO         | Total bytes sent on the LAN or primary network interface         |
 | reboot                  | Switch             | RW         | Turn ON to reboot the device; automatically resets to OFF        |
 | device-wireless-clients | Number             | RO         | Wireless clients associated with radios on this device           |
 | syslog-connected        | Switch             | RO         | Whether the syslog follower has an active SSH channel            |

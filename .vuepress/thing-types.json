@@ -9201,6 +9201,11 @@
   },
   {
     "bindingId": "tapocontrol",
+    "id": "tapocontrol:HS220",
+    "label": "HS220 Smart Dimmer Switch"
+  },
+  {
+    "bindingId": "tapocontrol",
     "id": "tapocontrol:L510",
     "label": "L510 Series White-Bulb"
   },

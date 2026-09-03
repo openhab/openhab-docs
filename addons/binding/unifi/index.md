@@ -6,6 +6,13 @@ type: binding
 description: The UniFi Binding integrates Ubiquiti UniFi devices into openHAB, covering the UniFi Network, UniFi Protect, and UniFi Access product families.
 logo: images/addons/unifi.svg
 install: manual
+children:
+- - doc/network
+  - UniFi Network
+- - doc/protect
+  - UniFi Protect
+- - doc/access
+  - UniFi Access
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.unifi/README.md
 meta:
   - property: og:title
