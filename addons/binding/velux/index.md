@@ -6,6 +6,15 @@ type: binding
 description: This binding integrates the <B>Velux</B> devices with help of a gateway, the <B>Velux Bridge KLF200</B>, which is able to control 200 actuators.
 logo: images/addons/velux.png
 install: manual
+children:
+- - doc/things
+  - Examples for Things
+- - items
+  - Examples for Items
+- - sitemaps
+  - Examples for Sitemaps
+- - rules
+  - Examples for Rules
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.velux/README.md
 meta:
   - property: og:title

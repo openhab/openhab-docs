@@ -6,6 +6,11 @@ type: binding
 description: This binding enables the exploitation of electricity consumption data, mainly for the French market.
 logo: images/addons/linky.png
 install: manual
+children:
+- - doc/myelectricaldata/index
+  - MyElectricalData
+- - doc/enedis/index
+  - Enedis
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.linky/README.md
 meta:
   - property: og:title

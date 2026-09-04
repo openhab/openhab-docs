@@ -6,6 +6,9 @@ type: binding
 description: This binding integrates with [Lutron](https://www.lutron.com) lighting control and home automation systems.
 logo: images/addons/lutron.png
 install: manual
+children:
+- - doc/leapnotes
+  - Configuring LEAP Authentication
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.lutron/README.md
 meta:
   - property: og:title

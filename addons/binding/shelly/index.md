@@ -6,6 +6,13 @@ type: binding
 description: This Binding integrates [Shelly devices](https://shelly.cloud) developed by Allterco.
 logo: images/addons/shelly.svg
 install: manual
+children:
+- - doc/ShellyManager
+  - Shelly Manager
+- - doc/AdvancedUsers
+  - Advanced Users
+- - doc/UseCaseSmartRoller
+  - Smartify Roller Shutters with openHAB and Shelly
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.shelly/README.md
 meta:
   - property: og:title
