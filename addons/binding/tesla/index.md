@@ -21,7 +21,7 @@ meta:
 <AddonLogo />
 
 This binding integrates [Tesla Electrical Vehicles](https://www.tesla.com).
-The integration happens through the Tesla Owners Remote API.
+The integration happens through the [Tesla FleetAPI](https://developer.tesla.com/docs/fleet-api).
 
 ## Supported Things
 

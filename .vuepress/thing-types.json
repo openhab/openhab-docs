@@ -9292,7 +9292,12 @@
   {
     "bindingId": "tapocontrol",
     "id": "tapocontrol:bridge",
-    "label": "Cloud-Login"
+    "label": "Tapo Cloud Account"
+  },
+  {
+    "bindingId": "tapocontrol",
+    "id": "tapocontrol:camera",
+    "label": "Tapo Camera"
   },
   {
     "bindingId": "tapocontrol",
