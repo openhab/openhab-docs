@@ -74,13 +74,13 @@ The full XML schema for add-on definitions is specified in the [Add-on XSD](http
 
 ### Discovery Methods
 
-The system can scan the network for present devices to determine if it should suggest to install specific addons during setup.
-Optionally, if you want the system to scan the user's network for your addon then you need to include additional `discovery-method` fields.
+The system can scan the network for present devices to determine if it should suggest to install specific add-ons during setup.
+Optionally, if you want the system to scan the user's network for your add-on then you need to include additional `discovery-method` fields.
 
 | XML Element Name       | Description                                                                   | Instances                                          |
 |------------------------|-------------------------------------------------------------------------------|----------------------------------------------------|
 | `discovery-methods`    | Wrapper for `discovery-method` elements (see below).                          | Zero or one instances per file.                    |
-| `discovery-method`     | Complex XML element describing an addon discovery method.                     | Zero or more instances per file.                   |
+| `discovery-method`     | Complex XML element describing an add-on discovery method.                    | Zero or more instances per file.                   |
 | `service-type`         | The type of discovery service (see table below).                              | Mandatory one per `discovery-method`.              |
 | `discovery-parameters` | Wrapper for `discovery-parameter` elements (see below).                       | Zero or one instances per `discovery-method`.      |
 | `discovery-parameter`  | A parameter name and value used for settings of the add-on finder process.    | Zero or more instances per `discovery-parameters`. |

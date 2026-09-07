@@ -56,10 +56,10 @@ This following uses terms "MUST", "MAY", "SHALL", "SHALL NOT", etc. that are def
 
 ### A. Rules for **APPLYING** Core Predefined Semantic Tags
 
-1. Developers MUST apply core predefined tags in their addons where possible.
+1. Developers MUST apply core predefined tags in their add-ons where possible.
 1. Developers MAY hard code the tags in the `thing-type.xml` or apply them dynamically at run time via the Java code.
 1. Developers SHALL NOT apply LOCATION tags either in the `thing-type.xml`, or via the Java code.
-1. Developers SHALL NOT apply customised tags in their addons.
+1. Developers SHALL NOT apply customised tags in their add-ons.
 1. Developers MAY apply a POINT tag without a PROPERTY tag (in cases where a property makes no sense). However, in such a case the developer MAY submit a new PROPERTY tag that fits.
 1. Developers SHALL NOT apply a PROPERTY tag without a POINT tag.
 1. Semantic EQUIPMENT tags MUST be applied at the thing level.

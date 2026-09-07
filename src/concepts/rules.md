@@ -222,7 +222,7 @@ Unfortunately the term "Script" is overloaded in openHAB, and has multiple meani
 - A UI rule consisting only of a single Script Action with the tag "Script".
   - These will appear in a specific "Scripts" section on MainUI.
   - They can be used to reuse code and logic across multiple other rules, one off experimentation to figure something out, create a catalog of examples, or to drive tests for other rules and behaviors.
-- In text based rules, a script is a file that is processed by a script engine, see the [automation addons](/addons/#automation).
+- In text based rules, a script is a file that is processed by a script engine, see the [automation add-ons](/addons/#automation).
   Those scripts can be used to create (multiple) rules, or those are loaded by other script files as libraries.
   <!-- TODO: Update reference to executeCommandLine when the rules docs are reworked -->
 - A script file that is executed on the command line with a script interpreter, e.g. `bash` or `python`, by using the [`executeCommandLine` action](/docs/configuration/actions.html#exec-actions) or the [Exec Binding](/addons/bindings/exec).

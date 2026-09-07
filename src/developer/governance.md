@@ -23,7 +23,7 @@ openHAB is a meritocracy. The more that somebody contributes, the more responsib
 ## Structure
 
 The openHAB project is a big ecosystem of different components.
-While people often think of the runtime + addons when talking about openHAB, there are other parts like openHAB Cloud, the mobile apps, the voice skills, etc. - all in all, there are well over [40 different repos](https://github.com/orgs/openhab/repositories) under the openHAB GitHub organization.
+While people often think of the runtime + add-ons when talking about openHAB, there are other parts like openHAB Cloud, the mobile apps, the voice skills, etc. - all in all, there are well over [40 different repos](https://github.com/orgs/openhab/repositories) under the openHAB GitHub organization.
 
 The different components are mostly maintained independently of each other. Many have their own release cycles and a dedicated maintainer team.
 

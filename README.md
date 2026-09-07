@@ -130,7 +130,7 @@ You can read a bit more below about our external resources and how we get them.
 
 ### Automatically Generated Parts
 
-Those parts include **all** add-on documentation files, no matter if they are from the [openhab-core](https://github.com/openhab/openhab-core) repo, the [openhab-addons](https://github.com/openhab/openhab-core) repo,
+Those parts include **all** add-on documentation files, no matter if they are from the [openhab-core](https://github.com/openhab/openhab-core) repo, the [openhab-addons](https://github.com/openhab/openhab-addons) repo,
 any special binding repos like [org.openhab.binding.zwave](https://github.com/openhab/org.openhab.binding.zwave) or other repos like [openhab-android](https://github.com/openhab/openhab-android).
 
 We are keeping all those files at their original location, because it simply doesn't make sense to keep them here.
