@@ -69,43 +69,43 @@ See section [Discovery](#discovery) for details.
 
 ### Generation 1
 
-| thing-type        | Model                                                  | Vendor ID |
-| ----------------- | ------------------------------------------------------ | --------- |
-| shelly1           | Shelly 1 Single Relay Switch                           | SHSW-1    |
-| shelly1l          | Shelly 1L Single Relay Switch                          | SHSW-L    |
-| shelly1pm         | Shelly Single Relay Switch with integrated Power Meter | SHSW-PM   |
-| shelly2-relay     | Shelly Double Relay Switch in relay mode               | SHSW-21   |
-| shelly2-roller    | Shelly2 in Roller Mode                                 | SHSW-21   |
-| shelly25-relay    | Shelly 2.5 in Relay Switch                             | SHSW-25   |
-| shelly25-roller   | Shelly 2.5 in Roller Mode                              | SHSW-25   |
-| shelly4pro        | Shelly 4x Relay Switch                                 | SHSW-44   |
-| shellydimmer      | Shelly Dimmer                                          | SHDM-1    |
-| shellydimmer2     | Shelly Dimmer2                                         | SHDM-2    |
-| shellyix3         | Shelly ix3                                             | SHIX3-1   |
-| shellyuni         | Shelly UNI, Shelly Plus UNI                            | SHUNI-1   |
-| shellyplug        | Shelly Plug                                            | SHPLG2-1  |
-| shellyplugs       | Shelly Plug-S                                          | SHPLG-S   |
-| shellyem          | Shelly EM with integrated Power Meters                 | SHEM      |
-| shellyem3         | Shelly 3EM with 3 integrated Power Meter               | SHEM-3    |
-| shellyrgbw2-color | Shelly RGBW2 Controller in Color Mode                  | SHRGBW2   |
-| shellyrgbw2-white | Shelly RGBW2 Controller in White Mode                  | SHRGBW2   |
-| shellybulb        | Shelly Bulb (Color and White Mode)                     | SHBLB-1   |
-| shellybulbduo     | Shelly Duo White                                       | SHBDUO-1  |
-| shellybulbduo     | Shelly Duo White G10                                   | SHBDUO-1  |
-| shellycolorbulb   | Shelly Duo Color G10                                   | SHCB-1    |
-| shellyvintage     | Shelly Vintage (White Mode)                            | SHVIN-1   |
-| shellyht          | Shelly Sensor (temperature+humidity)                   | SHHT-1    |
-| shellyflood       | Shelly Flood Sensor                                    | SHWT-1    |
-| shellysmoke       | Shelly Smoke Sensor                                    | SHSM-1    |
-| shellymotion      | Shelly Motion Sensor                                   | SHMOS-01  |
-| shellymotion2     | Shelly Motion Sensor 2                                 | SHMOS-02  |
-| shellygas         | Shelly Gas Sensor                                      | SHGS-1    |
-| shellydw          | Shelly Door/Window                                     | SHDW-1    |
-| shellydw2         | Shelly Door/Window 2                                   | SHDW-2    |
-| shellybutton1     | Shelly Button 1                                        | SHBTN-1   |
-| shellybutton2     | Shelly Button 2                                        | SHBTN-2   |
-| shellysense       | Shelly Motion and IR Controller                        | SHSEN-1   |
-| shellytrv         | Shelly TRV                                             | SHTRV-01  |
+| thing-type        | Model                                                  | Vendor ID           |
+| ----------------- | ------------------------------------------------------ | ------------------- |
+| shelly1           | Shelly 1 Single Relay Switch                           | SHSW-1              |
+| shelly1l          | Shelly 1L Single Relay Switch                          | SHSW-L              |
+| shelly1pm         | Shelly Single Relay Switch with integrated Power Meter | SHSW-PM             |
+| shelly2-relay     | Shelly Double Relay Switch in relay mode               | SHSW-21             |
+| shelly2-roller    | Shelly2 in Roller Mode                                 | SHSW-21             |
+| shelly25-relay    | Shelly 2.5 in Relay Switch                             | SHSW-25             |
+| shelly25-roller   | Shelly 2.5 in Roller Mode                              | SHSW-25             |
+| shelly4pro        | Shelly 4x Relay Switch                                 | SHSW-44             |
+| shellydimmer      | Shelly Dimmer                                          | SHDM-1              |
+| shellydimmer2     | Shelly Dimmer2                                         | SHDM-2              |
+| shellyix3         | Shelly ix3                                             | SHIX3-1             |
+| shellyuni         | Shelly UNI, Shelly Plus UNI                            | SHUNI-1             |
+| shellyplug        | Shelly Plug                                            | SHPLG-1, SHPLG2-1   |
+| shellyplugs       | Shelly Plug-S                                          | SHPLG-S             |
+| shellyplugu1      | Shelly Plug U1                                         | SHPLG-U1, SHPLG-US  |
+| shellyem          | Shelly EM with integrated Power Meters                 | SHEM                |
+| shellyem3         | Shelly 3EM with 3 integrated Power Meter               | SHEM-3              |
+| shellyrgbw2-color | Shelly RGBW2 Controller in Color Mode                  | SHRGBW2             |
+| shellyrgbw2-white | Shelly RGBW2 Controller in White Mode                  | SHRGBW2             |
+| shellybulb-color  | Shelly Bulb in Color Mode                              | SHBLB-1             |
+| shellybulb-white  | Shelly Bulb in White Mode                              | SHBLB-1             |
+| shellybulbduo     | Shelly Duo White / Duo White G10                       | SHBDUO-1            |
+| shellycolorbulb   | Shelly Duo Color G10                                   | SHCB-1              |
+| shellyvintage     | Shelly Vintage (White Mode)                            | SHVIN-1             |
+| shellyht          | Shelly Sensor (temperature+humidity)                   | SHHT-1              |
+| shellyflood       | Shelly Flood Sensor                                    | SHWT-1              |
+| shellysmoke       | Shelly Smoke Sensor                                    | SHSM-01             |
+| shellymotion      | Shelly Motion Sensor, Shelly Motion Sensor 2           | SHMOS-01, SHMOS-02  |
+| shellygas         | Shelly Gas Sensor                                      | SHGS-1              |
+| shellydw          | Shelly Door/Window                                     | SHDW-1              |
+| shellydw2         | Shelly Door/Window 2                                   | SHDW-2              |
+| shellybutton1     | Shelly Button 1                                        | SHBTN-1             |
+| shellybutton2     | Shelly Button 2                                        | SHBTN-2             |
+| shellysense       | Shelly Motion and IR Controller                        | SHSEN-1             |
+| shellytrv         | Shelly TRV                                             | SHTRV-01            |
 
 ### Shelly Plus series (Generation 2+3+4)
 
@@ -143,6 +143,8 @@ See section [Discovery](#discovery) for details.
 | shellyprodm2pm       | Shelly Pro Dimmer 2PM                                    | SPDM-002PE01EU                                                            |
 | shellyplusrgbwpm     | Shelly Plus RGBW PM                                      | SNDC-0D4P10WW                                                             |
 | shellyprorgbwwpm     | Shelly Pro RGBWW PM                                      | SPDC-0D5PE16EU                                                            |
+| shellyplusduobulb    | Shelly Duo Bulb E27 Gen3                                 | S3BL-D010009AEU                                                           |
+| shellypluscolorbulb  | Shelly Multicolor Bulb E27 Gen3                          | S3BL-C010007AEU                                                           |
 | shellywalldisplay    | Shelly Plus Wall Display                                 | SAWD-0A1XX10EU1                                                           |
 | shellyblugw          | Shelly BLU Gateway                                       | SNGW-BT01                                                                 |
 | shellyblugw3         | Shelly BLU Gateway 3                                     | S3GW-1DBT001                                                              |
@@ -1095,7 +1097,7 @@ totalEnergy might reset on restart depending on device type and firmware version
 `Note`:
 totalEnergy might reset on restart depending on device type and firmware version
 
-### Shelly Duo Color (thing-type: shellyduocolor-color)
+### Shelly Duo Color (thing-type: shellycolorbulb)
 
 | Group   | Channel      | Type    | read-only | Description                                                                              |
 | ------- | ------------ | ------- | --------- | ---------------------------------------------------------------------------------------- |
@@ -1225,6 +1227,39 @@ Sending brightness 0 will automatically turn off the channel if it's currently o
 Sending brightness > 0 will automatically turn on the channel if it's currently off.
 You can define 2 items (1 Switch, 1 Number) mapping to the same channel, see example rules.
 
+### Shelly Duo Bulb E27 Gen3 (thing-type: shellyplusduobulb)
+
+| Group   | Channel     | Type   | read-only | Description                                                             |
+| ------- | ----------- | ------ | --------- | ----------------------------------------------------------------------- |
+| control | autoOn      | Number | r/w       | Sets a timer to turn the device ON after every OFF command; in seconds  |
+|         | autoOff     | Number | r/w       | Sets a timer to turn the device OFF after every ON command; in seconds  |
+|         | timerActive | Switch | yes       | ON: An auto-on/off timer is active                                      |
+| white   | temperature | Number:Temperature | r/w | Color temperature in Kelvin: 2700..6500                           |
+|         | brightness  | Dimmer | r/w       | Brightness: 0..100% or 0..100; also controls power (ON/OFF)             |
+
+The Duo Bulb Gen3 is a tunable-white (CCT) bulb only, like the Gen1 Shelly Duo - it has no RGB color output.
+There is no separate power channel: sending brightness 0 turns the bulb off, sending brightness > 0 turns it on.
+
+### Shelly Multicolor Bulb E27 Gen3 (thing-type: shellypluscolorbulb)
+
+| Group   | Channel     | Type   | read-only | Description                                                             |
+| ------- | ----------- | ------ | --------- | ----------------------------------------------------------------------- |
+| control | autoOn      | Number | r/w       | Sets a timer to turn the device ON after every OFF command; in seconds  |
+|         | autoOff     | Number | r/w       | Sets a timer to turn the device OFF after every ON command; in seconds  |
+|         | timerActive | Switch | yes       | ON: An auto-on/off timer is active                                      |
+| color   | hsb         | HSB    | r/w       | Represents the color picker (HSBType), control r/g/b                    |
+|         | full        | String | r/w       | Set Red / Green / Blue and switch mode                                  |
+|         |             |        |           | Valid settings: "red", "green", "blue", "yellow", "white" or "r,g,b"    |
+|         | red         | Dimmer | r/w       | Red brightness: 0..100% or 0..255 (control only the red channel)        |
+|         | green       | Dimmer | r/w       | Green brightness: 0..100% or 0..255 (control only the green channel)    |
+|         | blue        | Dimmer | r/w       | Blue brightness: 0..100% or 0..255 (control only the blue channel)      |
+| white   | temperature | Number:Temperature | r/w | Color temperature in Kelvin: 2700..6500                           |
+|         | brightness  | Dimmer | r/w       | Brightness: 0..100% or 0..100; also controls power (ON/OFF)             |
+
+The Multicolor Bulb Gen3 has both full RGB color output and a tunable white (CCT) mode, like the Gen1 Shelly Color Bulb, but the two modes share the same LEDs: only one is active at a time, and there is no dedicated `mode` channel.
+Sending a color (`color#hsb`, `color#red`/`green`/`blue` or `color#full` with any color other than "white") switches to color mode; sending `color#full="white"` or `white#temperature` switches back to white mode.
+While in color mode `white#temperature` reports UNDEF, because the LEDs don't show a color temperature.
+
 ### Shelly H&T (thing-type: shellyht)
 
 | Group   | Channel      | Type     | read-only | Description                                             |
@@ -1289,7 +1324,7 @@ You have a Motion controlling your light.
 You switch off the light and want to leave the room, but the motion sensor immediately switches light back on.
 Using 'sensorSleepTime' you can suppress motion events while leaving the room (e.g., for 5 seconds) so the light doesn't switch on.
 
-### Shelly Motion 2 (thing-type: shellymotion2)
+### Shelly Motion 2 (thing-type: shellymotion)
 
 | Group   | Channel         | Type     | read-only | Description                                                            |
 | ------- | --------------- | -------- | --------- | ---------------------------------------------------------------------- |

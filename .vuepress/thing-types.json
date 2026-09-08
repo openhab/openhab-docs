@@ -7666,6 +7666,16 @@
   },
   {
     "bindingId": "shelly",
+    "id": "shelly:shellyplusduobulb",
+    "label": "Shelly Duo Bulb E27"
+  },
+  {
+    "bindingId": "shelly",
+    "id": "shelly:shellypluscolorbulb",
+    "label": "Shelly Multicolor Bulb E27"
+  },
+  {
+    "bindingId": "shelly",
     "id": "shelly:shellyplusrgbwpm",
     "label": "Shelly Plus RGBW"
   },
