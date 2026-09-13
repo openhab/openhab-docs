@@ -7891,6 +7891,11 @@
   },
   {
     "bindingId": "shelly",
+    "id": "shelly:shellypluspresence",
+    "label": "Shelly Presence"
+  },
+  {
+    "bindingId": "shelly",
     "id": "shelly:shellydevice",
     "label": "Shelly Device"
   },
