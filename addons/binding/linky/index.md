@@ -7,9 +7,9 @@ description: This binding enables the exploitation of electricity consumption da
 logo: images/addons/linky.png
 install: manual
 children:
-- - doc/myelectricaldata/index
+- - doc/myelectricaldata/
   - MyElectricalData
-- - doc/enedis/index
+- - doc/enedis/
   - Enedis
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.linky/README.md
 meta:
