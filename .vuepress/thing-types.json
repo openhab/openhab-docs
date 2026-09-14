@@ -9851,8 +9851,18 @@
   },
   {
     "bindingId": "tuya",
+    "id": "tuya:tuyaGateway",
+    "label": "Tuya Gateway"
+  },
+  {
+    "bindingId": "tuya",
     "id": "tuya:project",
     "label": "Tuya Cloud Project"
+  },
+  {
+    "bindingId": "tuya",
+    "id": "tuya:tuyaSubDevice",
+    "label": "Tuya Sub-Device"
   },
   {
     "bindingId": "tuya",
