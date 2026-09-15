@@ -148,7 +148,7 @@ rule "Kitchen switch IR rule"
 when
     Item KitchenIRReceiverTelenetPower received update
 then
-    createTimer(now.plusSeconds(5)) [|
+    createTimer(now.plusSeconds(5)) [
         KitchenIRBlasterSamsung.sendCommand("samsung,power")
         ]
 end
