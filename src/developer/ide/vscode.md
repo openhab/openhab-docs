@@ -13,7 +13,7 @@ The following steps will only need to be done once to setup both VSCode and your
 
 1. Install Java Extension Pack for VSCode (<https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack>)
 
-1. Install the Red Hat XML extension (<https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml>) 
+1. Install the Red Hat XML extension (<https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml>)
 
 1. Clone the addons (<https://github.com/openhab/openhab-addons.git> or preferably your own fork) to %BASE%\openhab-addons
 
