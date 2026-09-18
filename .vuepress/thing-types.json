@@ -7841,18 +7841,28 @@
   },
   {
     "bindingId": "shelly",
+    "id": "shelly:shellyprodimmer1pm",
+    "label": "Shelly Pro Dimmer 1PM"
+  },
+  {
+    "bindingId": "shelly",
+    "id": "shelly:shellyprodm2pm",
+    "label": "Shelly Pro Dimmer 2PM"
+  },
+  {
+    "bindingId": "shelly",
+    "id": "shelly:shellyprodimmer10v",
+    "label": "Shelly Pro Dimmer 0/1-10V"
+  },
+  {
+    "bindingId": "shelly",
     "id": "shelly:shellypluswdus",
     "label": "Shelly Plus Dimmer US"
   },
   {
     "bindingId": "shelly",
     "id": "shelly:shellyplus10v",
-    "label": "Shelly Plus Dimmer 10V"
-  },
-  {
-    "bindingId": "shelly",
-    "id": "shelly:shellyplusem",
-    "label": "Shelly Plus EM"
+    "label": "Shelly Plus 0/1-10V Dimmer"
   },
   {
     "bindingId": "shelly",
@@ -7861,8 +7871,13 @@
   },
   {
     "bindingId": "shelly",
-    "id": "shelly:shellyprodm2pm",
-    "label": "Shelly Pro Dimmer 2PM"
+    "id": "shelly:shellyplusdalidimmer",
+    "label": "Shelly Plus DALI Dimmer"
+  },
+  {
+    "bindingId": "shelly",
+    "id": "shelly:shellyplusem",
+    "label": "Shelly Plus EM"
   },
   {
     "bindingId": "shelly",
