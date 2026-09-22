@@ -2095,6 +2095,16 @@
     "label": "EMBY Device"
   },
   {
+    "bindingId": "emerald",
+    "id": "emerald:account",
+    "label": "Emerald Account"
+  },
+  {
+    "bindingId": "emerald",
+    "id": "emerald:hws",
+    "label": "Emerald HWS"
+  },
+  {
     "bindingId": "emotiva",
     "id": "emotiva:processor",
     "label": "Emotiva Processor"
@@ -4155,6 +4165,21 @@
     "label": "LogReader"
   },
   {
+    "bindingId": "loqed",
+    "id": "loqed:account",
+    "label": "LOQED Account"
+  },
+  {
+    "bindingId": "loqed",
+    "id": "loqed:local-bridge",
+    "label": "LOQED Local Bridge"
+  },
+  {
+    "bindingId": "loqed",
+    "id": "loqed:lock",
+    "label": "LOQED Smart Lock"
+  },
+  {
     "bindingId": "loxone",
     "id": "loxone:miniserver",
     "label": "Loxone Miniserver"
@@ -4953,6 +4978,31 @@
     "bindingId": "modbus",
     "id": "modbus:data",
     "label": "Modbus Data"
+  },
+  {
+    "bindingId": "modbus",
+    "id": "modbus:ankersolix-solarbank4",
+    "label": "Anker SOLIX Solarbank 4 E5000 Pro"
+  },
+  {
+    "bindingId": "modbus",
+    "id": "modbus:ankersolix-solarbank",
+    "label": "Anker SOLIX Solarbank Max AC / XE / XE AC"
+  },
+  {
+    "bindingId": "modbus",
+    "id": "modbus:ankersolix-smartmeter-gen2",
+    "label": "Anker SOLIX Smart Meter Gen 2"
+  },
+  {
+    "bindingId": "modbus",
+    "id": "modbus:ankersolix-smartplug",
+    "label": "Anker SOLIX Smart Plug"
+  },
+  {
+    "bindingId": "modbus",
+    "id": "modbus:ankersolix-ev-charger",
+    "label": "Anker SOLIX V1 Smart EV Charger"
   },
   {
     "bindingId": "modbus",
@@ -6143,6 +6193,11 @@
     "bindingId": "oppo",
     "id": "oppo:bdp-93",
     "label": "OPPO BDP-93/95 Blu-ray Player"
+  },
+  {
+    "bindingId": "oppo",
+    "id": "oppo:dv-983h",
+    "label": "OPPO DV-983H DVD Player"
   },
   {
     "bindingId": "oppo",

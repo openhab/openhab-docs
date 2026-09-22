@@ -23,6 +23,7 @@ meta:
 This binding supports generic Modbus TCP and serial slave devices.
 And it has specialist extensions for the following manufacturers products:
 
+- [Modbus Anker SOLIX Binding](../modbus.ankersolix/)
 - [Hager / E3DC Power Plants](../modbus.e3dc/)
 - [Modbus Fox ESS Inverters (Solakon ONE, Avocado 22 Pro, etc.)](../modbus.foxinverter/)
 - [Helios easyControls](../modbus.helioseasycontrols/)

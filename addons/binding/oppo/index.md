@@ -3,7 +3,7 @@ id: oppo
 label: Oppo Blu-ray player
 title: Oppo Blu-ray player - Bindings
 type: binding
-description: This binding can be used to control the OPPO UDP-203/205 or BDP-83/93/95/103/105 Blu-ray player.
+description: This binding can be used to control an OPPO UDP-203/205 & BDP-83/93/95/103/105 Blu-ray player or DV-983H DVD player.
 logo: images/addons/oppo.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.oppo/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Oppo Blu-ray player - Bindings"
   - property: og:description
-    content: This binding can be used to control the OPPO UDP-203/205 or BDP-83/93/95/103/105 Blu-ray player.
+    content: This binding can be used to control an OPPO UDP-203/205 & BDP-83/93/95/103/105 Blu-ray player or DV-983H DVD player.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -20,8 +20,8 @@ meta:
 
 <AddonLogo />
 
-This binding can be used to control the OPPO UDP-203/205 or BDP-83/93/95/103/105 Blu-ray player.
-Almost all features of the various models of this player line are supported by the binding.
+This binding can be used to control an OPPO UDP-203/205 & BDP-83/93/95/103/105 Blu-ray player or DV-983H DVD player.
+Almost all features of the various Blu-ray player models are supported by the binding.
 Please review the notes below for some important usage caveats.
 
 The binding supports three different kinds of connections:
@@ -39,13 +39,14 @@ You can connect it for example to a Raspberry Pi and use [ser2net Linux tool](ht
 
 The supported Thing types are:
 
-- `player` Represents any supported Oppo player; Deprecated.
+- `player` Represents any supported OPPO player; Deprecated.
 - `bdp-83` BDP-83 Blu-ray player
 - `bdp-93` BDP-93 or BDP-95 Blu-ray player
 - `bdp-103` BDP-103 or BDP-103D Blu-ray player
 - `bdp-105` BDP-105 or BDP-105D Blu-ray player
 - `udp-203` UDP-203 UHD Blu-ray player
 - `udp-205` UDP-205 UHD Blu-ray player
+- `dv-983h` DV-983H DVD player; Experimental support with limited functionality.
 
 ## Discovery
 
@@ -75,16 +76,18 @@ Some notes:
 - To restore IP control, you need to physically disconnect the power cable, then power the player back on (the network stack only starts when the player is powered on).
 - All player models can only support one direct IP connection at a time.
 - Using the direct IP connection on the BDP series (83/93/95/103/105) is not recommended; use of serial or serial over IP connections is preferred.
-- If using the direct IP connection on the BDP series the following control channels only work as read-only: Volume, Mute, Time Mode, Repeat Mode, Zoom Mode, OSD Position, Subtitle Shift, HDMI Mode
-- Verbose mode is also not supported while using the direct IP connection on the BDP series.
+- If using the direct IP connection on the BDP series the following control channels only work as read-only: `volume`, `mute`, `time-mode`, `repeat-mode`, `zoom-mode`, `osd-position`, `sub-shift`, `hdmi-mode`
+- Verbose mode is not supported while using the direct IP connection on the BDP series or with the DV-983H.
 - As previously noted, when using verbose mode, the player will send time code messages once per second while playback is ongoing.
 - In non-verbose (the default), the binding will poll the player every 10 seconds to update play time, track and chapter information instead.
 - In order for the direct IP connection to work while the player is turned off, the Device Setup → Standby Mode setting must be set to "Quick Start" or "Network Standby" in the Device Setup menu.
 - Likewise, if the player is turned off, it may not be discoverable by the Binding's discovery scan.
 - Prior to using the binding, ensure that the player's firmware is up to date with the latest available version.
+- Support for the DV-983H DVD Player is experimental and only the `power`, `volume`, `mute`, `control`, `disc-type`, `repeat-mode`, `hdmi-mode` and `remote-button` channels are available. The _mode_ channels are write-only.
 - Available HDMI modes for BDP-83 & BDP-9x: AUTO, SRC, 1080P, 1080I, 720P, SDP, SDI
 - Available HDMI modes for BDP-10x: AUTO, SRC, 4K2K, 1080P, 1080I, 720P, SDP, SDI
 - Available HDMI modes for UDP-20x: AUTO, SRC, UHD_AUTO, UHD24, UHD50, UHD60, 1080P_AUTO, 1080P24, 1080P50, 1080P60, 1080I50, 1080I60, 720P50, 720P60, 576P, 576I, 480P, 480I
+- Available HDMI modes for DV-983H: 1080PAUTO, 1080P50, 1080P60, 1080IAUTO, 1080I50, 1080I60, 720PAUTO, 720P50, 720P60, 576P, 480PAUTO, 480P
 
 - On Linux, you may get an error stating the serial port cannot be opened when the Oppo binding tries to load.
 - You can get around this by adding the `openhab` user to the `dialout` group like this: `usermod -a -G dialout openhab`.
@@ -313,6 +316,15 @@ sitemap oppo label="OPPO Blu-ray" {
 | RLH     | Set resolution to Auto (UDP-20x models only)                                          |
 | AVS     | Display the A/V Sync adjustment menu (UDP-20x models only)                            |
 | GPA     | Gapless Play (UDP-20x models only)                                                    |
+| BMK     | Bookmark (DV-983H only)                                                               |
+| SFD     | Sound field (DV-983H only)                                                            |
+| EQR     | Equalizer mode (DV-983H only)                                                         |
+| CAP     | Capture (DV-983H only)                                                                |
+| BRW     | Disc info browser (DV-983H only)                                                      |
+| N10     | 10+ (DV-983H only)                                                                    |
+| PLP     | Play/Pause (DV-983H only)                                                             |
+| KBD     | Virtual keyboard (DV-983H only)                                                       |
+| SLW     | Slow (DV-983H only)                                                                   |
 
 
 <EditPageLink/>
