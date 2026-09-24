@@ -325,6 +325,16 @@
     "label": "Pentair Pool Controller"
   },
   {
+    "bindingId": "autoblind",
+    "id": "autoblind:hub",
+    "label": "AutoBlind Hub"
+  },
+  {
+    "bindingId": "autoblind",
+    "id": "autoblind:shade",
+    "label": "AutoBlind Shade"
+  },
+  {
     "bindingId": "automower",
     "id": "automower:bridge",
     "label": "Automower® Connect Bridge"
@@ -6488,6 +6498,16 @@
     "bindingId": "plex",
     "id": "plex:player",
     "label": "PLEX Player"
+  },
+  {
+    "bindingId": "plivo",
+    "id": "plivo:account",
+    "label": "Plivo Account"
+  },
+  {
+    "bindingId": "plivo",
+    "id": "plivo:phone",
+    "label": "Plivo Phone Number"
   },
   {
     "bindingId": "plugwise",
