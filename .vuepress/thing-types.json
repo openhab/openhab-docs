@@ -8951,6 +8951,11 @@
   },
   {
     "bindingId": "sonos",
+    "id": "sonos:Roam2",
+    "label": "Roam 2"
+  },
+  {
+    "bindingId": "sonos",
     "id": "sonos:RoamSL",
     "label": "Roam SL"
   },

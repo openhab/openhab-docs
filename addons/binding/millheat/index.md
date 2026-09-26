@@ -3,7 +3,7 @@ id: millheat
 label: Millheat
 title: Millheat - Bindings
 type: binding
-description: This binding integrates Mill Wi-Fi enabled panel heaters. See <https://www.millheat.com/mill-wifi/>
+description: This binding integrates Mill Wi-Fi enabled panel heaters through the Mill cloud service.
 logo: images/addons/millheat.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.millheat/README.md
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: "Millheat - Bindings"
   - property: og:description
-    content: This binding integrates Mill Wi-Fi enabled panel heaters. See <https://www.millheat.com/mill-wifi/>
+    content: This binding integrates Mill Wi-Fi enabled panel heaters through the Mill cloud service.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -20,7 +20,22 @@ meta:
 
 <AddonLogo />
 
-This binding integrates Mill Wi-Fi enabled panel heaters. See <https://www.millheat.com/mill-wifi/>
+This binding integrates Mill Wi-Fi enabled panel heaters through the Mill cloud service.
+See <https://www.millheat.com/mill-wifi/>
+
+> **Breaking change: identifiers are now UUIDs.**
+> Mill retired the cloud service this binding originally used and replaced it with a new one at
+> `api.millnorwaycloud.com`. Homes, rooms and heaters are identified by UUIDs there, and the numeric
+> identifiers issued by the old service have no equivalent. Configurations written for earlier
+> versions of this binding cannot be migrated automatically and will report a configuration error.
+> Delete the old things and run discovery again.
+>
+> The heater `power` parameter has also been removed: the cloud service reports measured power, so
+> the `currentEnergy` channel no longer needs a nominal value. Any leftover `power` setting is
+> ignored.
+
+To control generation 3 Mill devices over the local network instead of through the cloud, see the
+separate local-API binding.
 
 ## Supported Things
 
@@ -33,7 +48,7 @@ This binding supports all Wi-Fi enabled heaters as well as the Wi-Fi socket.
 
 ## Discovery
 
-The binding will discover homes with rooms and heaters.
+The binding will discover homes with rooms and heaters, including houses another account has shared with yours.
 
 To enable discovery, add a Thing of type Mill Heating API and provide your username and password.
 
@@ -45,24 +60,24 @@ See the full example below for how to configure using Thing files.
 
 - `username` = email address used in app
 - `password` = password used in app
-- `refreshInterval` = number of seconds between refresh calls to the server
+- `refreshInterval` = number of seconds between refresh calls to the server.
+  The account is limited to 2500 requests per hour across all clients. Each cycle costs roughly one
+  request per house plus one per room, so the default of 120 seconds leaves ample headroom.
 
 ### Home
 
-- `homeId` = id of home, type number (not string). Use auto discovery to find this value
+- `homeId` = house UUID as issued by the Mill cloud API. Use auto discovery to find this value
 
 ### Room
 
-- `roomId` = id of room, type number (not string). Use auto discovery to find this value
+- `roomId` = room UUID as issued by the Mill cloud API. Use auto discovery to find this value
 
 ### Heater
 
 - `macAddress` = network mac address of device in UPPERCASE.
   This can be found in the app by viewing devices, or you can find it during discovery. Used for heaters connected to a room.
-- `heaterId` = id of device/heater, type number (not string)
+- `heaterId` = device UUID as issued by the Mill cloud API.
   Use auto discovery to find this value. Used to identify independent heaters or heaters connected to a room.
-- `power` = number of watts this heater is consuming when active.
-  Used to provide data for the currentPower channel.
 
 Either `macAddress` or `heaterId` must be specified.
 
@@ -73,7 +88,7 @@ Either `macAddress` or `heaterId` must be specified.
 | Channel                       | Read/write      | Item type           | Description |
 | -------------------           | -------------   | ------------------- | ----------- |
 | vacationMode                  | R/W             | Switch              | Vacation mode active. Note: In order to activate vacation mode, both vacationModeStart and vacationModeEnd must be set to valid values  |
-| vacationModeAdvanced          | R/W             | Switch              | Vacation mode advanced active. Can only be activated after vacation mode is active  |
+| vacationModeAdvanced          | R/W             | Switch              | Vacation mode advanced active. When ON the away temperature of each room is used and `vacationModeTargetTemperature` is ignored. Can only be activated after vacation mode is active  |
 | vacationModeTargetTemperature | R/W             | Number:Temperature  | Temperature to use when activating vacation mode. Note: If advanced vacation mode is set, this temperature is ignored and the away temperature for each room is used instead  |
 | vacationModeStart             | R/W             | DateTime            | Vacation mode start  |
 | vacationModeEnd               | R/W             | DateTime            | Vacation mode end  |
@@ -83,7 +98,7 @@ Either `macAddress` or `heaterId` must be specified.
 | Channel             | Read/write    | Item type             | Description |
 | ------------------- | ------------- | --------------------- | ----------- |
 | currentTemperature  | R             | Number:Temperature    | Measured temperature in your room (if more than one heater then it is the average of all heaters) |
-| currentMode         | R             | String                | Current mode (comfort, away, sleep etc) being active |
+| currentMode         | R             | String                | Current active mode: `comfort`, `sleep`, `away`, `normal`, `always_heating`, `vacation`, `weekly_program` or `off`. While a weekly program is running this reports the mode the program selected |
 | targetTemperature   | R             | Number:Temperature    | Current target temperature for this room (managed by the room program and set by comfort- away- and sleepTemperature) |
 | comfortTemperature  | R/W           | Number:Temperature    | Comfort mode temperature |
 | awayTemperature     | R/W           | Number:Temperature    | Away mode temperature |
@@ -97,11 +112,11 @@ Either `macAddress` or `heaterId` must be specified.
 | ------------------- | ------------- | ------------------ | ----------- |
 | currentTemperature  | R             | Number:Temperature | Measured temperature by this heater |
 | targetTemperature   | R/W           | Number:Temperature | Target temperature for this heater. Channel available only if heater is not connected to a room |
-| currentPower        | R             | Number:Power       | Current power usage in watts. Note that the power attribute of the heater Thing config must be set for this channel to be active  |
+| currentEnergy       | R             | Number:Power       | Measured power usage in watts, as reported by the device |
 | heatingActive       | R             | Switch             | Whether the heater is active/heating  |
-| fanActive           | R/W           | Switch             | Whether the fan (if available) is active (UNTESTED) |
+| fanActive           | R/W           | Switch             | Whether the fan is active, on heater models that have one |
 | independent         | R             | Switch             | Whether this heater is controlled independently or part of a room setup |
-| window              | R             | Contact            | Whether this heater has detected that a window nearby is open/detection of cold air (UNTESTED) |
+| window              | R             | Contact            | Whether this heater has detected that a window nearby is open, or a draught of cold air |
 | masterSwitch        | R/W           | Switch             | Turn heater ON/OFF. Channel available only if heater is not connected to a room |
 
 ## Full Example
@@ -110,9 +125,9 @@ millheat.things:
 
 ```java
 Bridge millheat:account:home "Millheat account" [username="email@address.com",password="topsecret"] {
-    Thing home monaco "Penthouse Monaco" [ homeId=100000000000000 ] // Note: numeric value
-  Thing room office "Office room" [ roomId=200000000000000 ] // Note: numeric value
-  Thing heater office "Office panel heater" [ macAddress="F0XXXXXXXXX", power=900, heaterId=12345 ] // Note: heaterId is a numeric value, macAddress in UPPERCASE
+    Thing home monaco "Penthouse Monaco" [ homeId="e3d10c8d-2e52-452a-a962-924d9bdeeaac" ]
+    Thing room office "Office room" [ roomId="b4fadcf7-b7d0-41c6-8e5e-0539e888aaef" ]
+    Thing heater office "Office panel heater" [ macAddress="F0XXXXXXXXX", heaterId="50f347e4-d884-4f88-9045-bc89fb1f88f8" ] // macAddress in UPPERCASE
 }
 ```
 
