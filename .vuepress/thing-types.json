@@ -3875,6 +3875,16 @@
     "label": "LG HomBot"
   },
   {
+    "bindingId": "lghorizon",
+    "id": "lghorizon:account",
+    "label": "LG Horizon Account"
+  },
+  {
+    "bindingId": "lghorizon",
+    "id": "lghorizon:box",
+    "label": "LG Horizon Set-Top Box"
+  },
+  {
     "bindingId": "lgthinq",
     "id": "lgthinq:air-conditioner-401",
     "label": "Air Conditioner"
@@ -5113,6 +5123,11 @@
     "bindingId": "modbus",
     "id": "modbus:sungrow-inverter",
     "label": "Sungrow Inverter"
+  },
+  {
+    "bindingId": "modbus",
+    "id": "modbus:sungrow-ihome-manager",
+    "label": "Sungrow iHomeManager"
   },
   {
     "bindingId": "modbus",
@@ -6708,6 +6723,46 @@
     "bindingId": "qolsysiq",
     "id": "qolsysiq:zone",
     "label": "Zone"
+  },
+  {
+    "bindingId": "rachio",
+    "id": "rachio:base-station",
+    "label": "Rachio Smart Hose Timer Base Station"
+  },
+  {
+    "bindingId": "rachio",
+    "id": "rachio:cloud",
+    "label": "Rachio Cloud Connector"
+  },
+  {
+    "bindingId": "rachio",
+    "id": "rachio:device",
+    "label": "Rachio Sprinkler Controller"
+  },
+  {
+    "bindingId": "rachio",
+    "id": "rachio:flex-schedule",
+    "label": "Rachio Flex Schedule Rule"
+  },
+  {
+    "bindingId": "rachio",
+    "id": "rachio:schedule",
+    "label": "Rachio Schedule Rule"
+  },
+  {
+    "bindingId": "rachio",
+    "id": "rachio:valve-program",
+    "label": "Rachio Smart Hose Timer Program"
+  },
+  {
+    "bindingId": "rachio",
+    "id": "rachio:valve",
+    "label": "Rachio Smart Hose Timer Valve"
+  },
+  {
+    "bindingId": "rachio",
+    "id": "rachio:zone",
+    "label": "Rachio Sprinkler Zone"
   },
   {
     "bindingId": "radiobrowser",
