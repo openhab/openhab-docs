@@ -5416,6 +5416,11 @@
   },
   {
     "bindingId": "network",
+    "id": "network:httpdevice",
+    "label": "Network Device with HTTP Service"
+  },
+  {
+    "bindingId": "network",
     "id": "network:speedtest",
     "label": "SpeedTest"
   },
