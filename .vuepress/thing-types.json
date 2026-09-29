@@ -275,6 +275,11 @@
     "label": "Asuswrt Router"
   },
   {
+    "bindingId": "atagone",
+    "id": "atagone:thermostat",
+    "label": "ATAG ONE Thermostat"
+  },
+  {
     "bindingId": "atlona",
     "id": "atlona:pro3-44m",
     "label": "Atlona PRO3 4x4 HDBaseT Matrix"
