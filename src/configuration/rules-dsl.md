@@ -512,7 +512,7 @@ val Number nowEpoch = now.toInstant.toEpochMilli
 val javaZonedDateTime = (MyDateTimeItem.state as DateTimeType).getZonedDateTime(zoneId)
 
 // Convert Java ZonedDateTime to DateTimeType
-val DateTimeType date = new DateTimeType(now)
+val date = new DateTimeType(now.plusMinutes(3))
 ```
 
 In certain cases it is needed to convert an epoch timestamp to a human readable and/or store it in a DateTimeType and a DateTime Item.
