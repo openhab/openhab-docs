@@ -324,20 +324,20 @@ Currently the miio binding supports more than 380 different models.
 | Gosund Smart Plug                  | miio:basic       | [cuco.plug.cp1](#cuco-plug-cp1) | Yes          |            |
 | Xiaomi Smart Plug 2 (Wi-Fi)        | miio:basic       | [cuco.plug.v2eur](#cuco-plug-v2eur) | Yes          |            |
 | Mi Smart Antibacterial Humidifier  | miio:basic       | [deerma.humidifier.jsq](#deerma-humidifier-jsq) | Yes          |            |
-| Mi S Smart Humidifer               | miio:basic       | [deerma.humidifier.jsq1](#deerma-humidifier-jsq1) | Yes          |            |
+| Mi Smart Humidifier S              | miio:basic       | [deerma.humidifier.jsq1](#deerma-humidifier-jsq1) | Yes          |            |
 | Xiaomi Smart Humidifier 2          | miio:basic       | [deerma.humidifier.jsq2w](#deerma-humidifier-jsq2w) | Yes          |            |
 | Mi Smart Antibacterial Humidifier  | miio:basic       | [deerma.humidifier.jsq5](#deerma-humidifier-jsq5) | Yes          |            |
 | Mi Smart Humidifer S               | miio:basic       | [deerma.humidifier.jsqs](#deerma-humidifier-jsqs) | Yes          |            |
 | Mi Smart Humidifier                | miio:basic       | [deerma.humidifier.mjjsq](#deerma-humidifier-mjjsq) | Yes          |            |
 | Mi Fresh Air Ventilator A1-150     | miio:basic       | [dmaker.airfresh.a1](#dmaker-airfresh-a1) | Yes          |            |
 | Mi Fresh Air Ventilator            | miio:basic       | [dmaker.airfresh.t2017](#dmaker-airfresh-t2017) | Yes          |            |
-| Mi Smart Standing Fan 2 Lite       | miio:basic       | [dmaker.fan.1c](#dmaker-fan-1c) | Experimental | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| Mi Smart Standing Fan 2 Lite       | miio:basic       | [dmaker.fan.1c](#dmaker-fan-1c) | Yes          |            |
 | Mi Smart Standing Fan 1X           | miio:basic       | [dmaker.fan.p5](#dmaker-fan-p5) | Yes          |            |
-| Mi Smart Standing Fan 1C           | miio:basic       | [dmaker.fan.p8](#dmaker-fan-p8) | Experimental | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| Mi Smart Standing Fan 1C           | miio:basic       | [dmaker.fan.p8](#dmaker-fan-p8) | Yes          |            |
 | Mi Smart Tower Fan                 | miio:basic       | [dmaker.fan.p9](#dmaker-fan-p9) | Yes          |            |
 | Mi Smart Standing Fan 2            | miio:basic       | [dmaker.fan.p10](#dmaker-fan-p10) | Yes          |            |
 | Mi Smart Standing Fan Pro          | miio:basic       | [dmaker.fan.p15](#dmaker-fan-p15) | Yes          | Identified manual actions for execution<br />`action{"did":"off-delay-time-toggle","siid":3,"aiid":1,"in":[]}`<br />Please test and feedback if they are working so they can be linked to a channel. |
-| Mi Smart Standing Fan 2            | miio:basic       | [dmaker.fan.p18](#dmaker-fan-p18) | Experimental | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| Mi Smart Standing Fan 2            | miio:basic       | [dmaker.fan.p18](#dmaker-fan-p18) | Yes          |            |
 | Mi Robot Vacuum Mop 1C STYTJ01ZHM  | miio:basic       | [dreame.vacuum.mc1808](#dreame-vacuum-mc1808) | Yes          |            |
 | Dreame Robot Vacuum-Mop F9         | miio:basic       | [dreame.vacuum.p2008](#dreame-vacuum-p2008) | Experimental | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Dreame Robot Vacuum D9             | miio:basic       | [dreame.vacuum.p2009](#dreame-vacuum-p2009) | Yes          |            |
@@ -391,7 +391,7 @@ Currently the miio binding supports more than 380 different models.
 | Aqara Wall Switch (No Neutral, Double Rocker) | miio:unsupported | lumi.ctrl_neutral2.v1  | No           |            |
 | Xiaomiyoupin Curtain Controller (Wi-Fi) | miio:basic       | [lumi.curtain.hagl05](#lumi-curtain-hagl05) | Experimental | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Aqara Curtain Controller A1        | miio:basic       | [lumi.curtain.hagl08](#lumi-curtain-hagl08) | Yes          |            |
-| Mi Air Purifier virtual            | miio:gateway     | [lumi.gateway.mgl03](#lumi-gateway-mgl03) | Experimental | Used to control the gateway itself. Use the mihome binding to control devices connected to the Xiaomi gateway if you have the developer key. Otherwise this binding provides experimental support for lumi subdevices<br />Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| Mi Smart Home Hub                  | miio:gateway     | [lumi.gateway.mgl03](#lumi-gateway-mgl03) | Experimental | Used to control the gateway itself. Use the mihome binding to control devices connected to the Xiaomi gateway if you have the developer key. Otherwise this binding provides experimental support for lumi subdevices<br />Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Mi smart Home Gateway Hub          | miio:gateway     | [lumi.gateway.mieu01](#lumi-gateway-mieu01) | Yes          | Used to control the gateway itself. Experimental support for controlling lumi subdevices |
 | Mi smart Home Gateway Hub v1       | miio:gateway     | [lumi.gateway.v1](#lumi-gateway-v1) | Experimental | Used to control the gateway itself. Use the mihome binding to control devices connected to the Xiaomi gateway if you have the developer key. Otherwise this binding provides experimental support for lumi subdevices<br />Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Mi smart Home GatewayHub v2        | miio:gateway     | [lumi.gateway.v2](#lumi-gateway-v2) | Experimental | Used to control the gateway itself. Use the mihome binding to control devices connected to the Xiaomi gateway if you have the developer key. Otherwise this binding provides experimental support for lumi subdevices<br />Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
@@ -403,7 +403,7 @@ Currently the miio binding supports more than 380 different models.
 | Aqara Door lock S2 Pro             | miio:lumi        | [lumi.lock.acn03](#lumi-lock-acn03) | Experimental | Needs to have the Xiaomi gateway configured in the binding as bridge.<br />Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Mi Smart Plug (Zigbee)             | miio:lumi        | [lumi.plug.mmeu01](#lumi-plug-mmeu01) | Yes          | Needs to have the Xiaomi gateway configured in the binding as bridge. |
 | Mi Window and Door Sensor          | miio:lumi        | [lumi.sensor_magnet.v2](#lumi-sensor_magnet-v2) | Yes          | Needs to have the Xiaomi gateway configured in the binding as bridge. Note: Won't display the current status. Log only' |
-| Mi Motion Sensor                   | miio:lumi        | [lumi.sensor_motion.aq2](#lumi-sensor_motion-aq2) | Yes          | Needs to have the Xiaomi gateway configured in the binding as bridge.Note: Won't display the current status, nor trigger events. Log only |
+| Aqara Motion Sensor                | miio:lumi        | [lumi.sensor_motion.aq2](#lumi-sensor_motion-aq2) | Yes          | Needs to have the Xiaomi gateway configured in the binding as bridge.Note: Won't display the current status, nor trigger events. Log only |
 | Mi Motion Sensor                   | miio:lumi        | [lumi.sensor_motion.v2](#lumi-sensor_motion-v2) | Yes          | Needs to have the Xiaomi gateway configured in the binding as bridge.Note: Won't display the current status, nor trigger events. Log only |
 | Mi Temperature and Humidity Sensor | miio:lumi        | [lumi.sensor_ht.v1](#lumi-sensor_ht-v1) | Experimental | Needs to have the Xiaomi gateway configured in the binding as bridge.<br />Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Water Leak Sensor                  | miio:lumi        | [lumi.sensor_wleak.aq1](#lumi-sensor_wleak-aq1) | Yes          | Needs to have the Xiaomi gateway configured in the binding as bridge. |
@@ -420,8 +420,8 @@ Currently the miio binding supports more than 380 different models.
 | MR.BOND                            | miio:basic       | [mrbond.airer.m1pro](#mrbond-airer-m1pro) | Experimental | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | MR.BOND                            | miio:basic       | [mrbond.airer.m1s](#mrbond-airer-m1s) | Experimental | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | MR.BOND                            | miio:basic       | [mrbond.airer.m1super](#mrbond-airer-m1super) | Experimental | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
-| WIDETECH WDH330EFW1 Internet Dehumidifier | miio:basic       | [nwt.derh.330ef](#nwt-derh-330ef) | Yes          | Reported to work only when the thing is configured to communicate via the cloud. |
-| WIDETECH WDH318EFW1 Internet Dehumidifier | miio:basic       | [nwt.derh.wdh318efw1](#nwt-derh-wdh318efw1) | Yes          |            |
+| NWT Internet Dehumidifier 30L      | miio:basic       | [nwt.derh.330ef](#nwt-derh-330ef) | Yes          | Reported to work only when the thing is configured to communicate via the cloud. |
+| NWT Internet Dehumidifier 18L      | miio:basic       | [nwt.derh.wdh318efw1](#nwt-derh-wdh318efw1) | Yes          |            |
 | Philips Zhirui Ceiling Lamp Bedroom 40W | miio:basic       | [philips.light.bceiling1](#philips-light-bceiling1) | Experimental | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Philips Zhirui Ceiling Lamp Bedroom 28W | miio:basic       | [philips.light.bceiling2](#philips-light-bceiling2) | Experimental | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Philips ZhiRui E27 bulb            | miio:basic       | [philips.light.bulb](#philips-light-bulb) | Yes          |            |
@@ -490,7 +490,7 @@ Currently the miio binding supports more than 380 different models.
 | Roborock Q5 Pro                    | miio:vacuum      | [roborock.vacuum.a72](#roborock-vacuum-channels) | Yes          |            |
 | Roborock Q8 Max                    | miio:vacuum      | [roborock.vacuum.a73](#roborock-vacuum-channels) | Yes          |            |
 | Roborock P10                       | miio:vacuum      | [roborock.vacuum.a74](#roborock-vacuum-channels) | Yes          |            |
-| Roborock Q Revo                    | miio:vacuum      | [roborock.vacuum.a75](#roborock-vacuum-channels) | Yes          |            |
+| Roborock Qrevo                     | miio:vacuum      | [roborock.vacuum.a75](#roborock-vacuum-channels) | Yes          |            |
 | Roborock G10S Auto                 | miio:vacuum      | [roborock.vacuum.a76](#roborock-vacuum-channels) | Yes          |            |
 | Xiaowa C1                          | miio:vacuum      | [roborock.vacuum.c1](#roborock-vacuum-channels) | Yes          |            |
 | Roborock Xiaowa E Series Vacuum v2 | miio:unsupported | roborock.vacuum.e2     | No           |            |
@@ -569,7 +569,7 @@ Currently the miio binding supports more than 380 different models.
 | Yeelight Smart Bath Heater         | miio:basic       | [yeelink.bhf_light.v2](#yeelink-bhf_light-v2) | Yes          |            |
 | Mi Bedside Lamp                    | miio:basic       | [yeelink.light.bslamp1](#yeelink-light-bslamp1) | Yes          |            |
 | Mi Bedside Lamp 2                  | miio:basic       | [yeelink.light.bslamp2](#yeelink-light-bslamp2) | Yes          |            |
-| Yeelight Bedside Lamp II           | miio:basic       | [yeelink.light.bslamp3](#yeelink-light-bslamp3) | Yes          |            |
+| Yeelight LED Smart Lamp D2         | miio:basic       | [yeelink.light.bslamp3](#yeelink-light-bslamp3) | Yes          |            |
 | Yeelight LED Ceiling Light Pro     | miio:basic       | [yeelink.light.ceila](#yeelink-light-ceila) | Yes          |            |
 | Yeelight Arwen Ceiling Light       | miio:basic       | [yeelink.light.ceilb](#yeelink-light-ceilb) | Yes          |            |
 | Yeelight Ceiling Light             | miio:basic       | [yeelink.light.ceiling1](#yeelink-light-ceiling1) | Yes          |            |
@@ -659,7 +659,7 @@ Currently the miio binding supports more than 380 different models.
 | Xiaomi Smart Air Purifier 4 Compact | miio:basic       | [zhimi.airp.cpa4](#zhimi-airp-cpa4) | Experimental | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Mi Air Purifier 3C                 | miio:basic       | [zhimi.airp.mb4a](#zhimi-airp-mb4a) | Yes          |            |
 | Xiaomi Smart Air Purifier 4        | miio:basic       | [zhimi.airp.mb5](#zhimi-airp-mb5) | Experimental | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
-| Xiaomi Smart Air Purifier 4 Lite   | miio:basic       | [zhimi.airp.rmb1](#zhimi-airp-rmb1) | Experimental | This device may not work with direct connection hence require cloud connection<br />Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| Xiaomi Smart Air Purifier 4 Lite   | miio:basic       | [zhimi.airp.rmb1](#zhimi-airp-rmb1) | Yes          | This device may not work with direct connection hence require cloud connection |
 | Xiaomi Smart Air Purifier 4 Pro    | miio:basic       | [zhimi.airp.vb4](#zhimi-airp-vb4) | Yes          |            |
 | Mi Air Purifier 2 (mini)           | miio:basic       | [zhimi.airpurifier.m1](#zhimi-airpurifier-m1) | Yes          |            |
 | Mi Air Purifier 2                  | miio:basic       | [zhimi.airpurifier.m2](#zhimi-airpurifier-m2) | Yes          |            |
@@ -1036,7 +1036,7 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 | sound                      | Switch               | Notification Sounds                      |            |
 | watertankstatus            | Number               | Watertank Status                         |            |
 
-### Mi S Smart Humidifer  (<a name="deerma-humidifier-jsq1">deerma.humidifier.jsq1</a>) Channels
+### Mi Smart Humidifier S (<a name="deerma-humidifier-jsq1">deerma.humidifier.jsq1</a>) Channels
 
 | Channel                    | Type                 | Description                              | Comment    |
 |----------------------------|----------------------|------------------------------------------|------------|
@@ -2606,7 +2606,7 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 | f_two_position             | Number:Dimensionless | Remote Button - F2 Preset Position       |            |
 | f_three_position           | Number:Dimensionless | Remote Button - F3 Preset Position       |            |
 
-### Mi Air Purifier virtual (<a name="lumi-gateway-mgl03">lumi.gateway.mgl03</a>) Channels
+### Mi Smart Home Hub (<a name="lumi-gateway-mgl03">lumi.gateway.mgl03</a>) Channels
 
 | Channel                    | Type                 | Description                              | Comment    |
 |----------------------------|----------------------|------------------------------------------|------------|
@@ -2733,7 +2733,7 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 |----------------------------|----------------------|------------------------------------------|------------|
 | log                        | String               | Device Log                               | This channel uses cloud to get data. See widget market place for suitable widget to display the data. |
 
-### Mi Motion Sensor (<a name="lumi-sensor_motion-aq2">lumi.sensor_motion.aq2</a>) Channels
+### Aqara Motion Sensor (<a name="lumi-sensor_motion-aq2">lumi.sensor_motion.aq2</a>) Channels
 
 | Channel                    | Type                 | Description                              | Comment    |
 |----------------------------|----------------------|------------------------------------------|------------|
@@ -2913,7 +2913,7 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 | disinfect                  | Switch               | disinfect                                |            |
 | distime                    | Number               | Disinfect Time                           |            |
 
-### WIDETECH WDH330EFW1 Internet Dehumidifier (<a name="nwt-derh-330ef">nwt.derh.330ef</a>) Channels
+### NWT Internet Dehumidifier 30L (<a name="nwt-derh-330ef">nwt.derh.330ef</a>) Channels
 
 | Channel                    | Type                 | Description                              | Comment    |
 |----------------------------|----------------------|------------------------------------------|------------|
@@ -2936,7 +2936,7 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 | timer                      | Number               | Timer - Remaining Time                   |            |
 | timer_setting              | Number               | Timer - Timer Setting                    | Value mapping `["0"="Off","1"="1 Hour","2"="2 Hours","4"="4 Hours","8"="8 Hours","12"="12 Hours"]` |
 
-### WIDETECH WDH318EFW1 Internet Dehumidifier (<a name="nwt-derh-wdh318efw1">nwt.derh.wdh318efw1</a>) Channels
+### NWT Internet Dehumidifier 18L (<a name="nwt-derh-wdh318efw1">nwt.derh.wdh318efw1</a>) Channels
 
 | Channel                    | Type                 | Description                              | Comment    |
 |----------------------------|----------------------|------------------------------------------|------------|
@@ -4606,7 +4606,7 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 | colorflowScene             | String               | Color Flow Scene                         | Value mapping `["sunrise"="Sunrise","sunset"="Sunset","home"="Home","tea_time"="Tea Time","date_night"="Date Night","movie"="Movie","romance"="Romance","night_mode"="Night Mode","candle_flicker"="Candle Flicker","happy_birthday"="Happy Birthday","christmas"="Christmas","disco"="Disco","rgb"="RGB","lsd"="Psychedelic","temp"="Color Temperature Cycle","strobe"="Strobe","strobe_color"="Color Strobe","alarm"="Alarm","police"="Police","police2"="Police 2"]` |
 | name                       | String               | Name                                     |            |
 
-### Yeelight Bedside Lamp II (<a name="yeelink-light-bslamp3">yeelink.light.bslamp3</a>) Channels
+### Yeelight LED Smart Lamp D2 (<a name="yeelink-light-bslamp3">yeelink.light.bslamp3</a>) Channels
 
 | Channel                    | Type                 | Description                              | Comment    |
 |----------------------------|----------------------|------------------------------------------|------------|
@@ -4695,7 +4695,7 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 | ambientBrightness          | Dimmer               | Ambient Brightness                       |            |
 | delayoff                   | Number:Time          | Shutdown Timer                           |            |
 | colorTemperature           | Number               | Color Temperature                        |            |
-| colorMode                  | Number               | Color Mode                               | Note, currently only supporting switching to RGB or CT mode. Value mapping `["0"="Default","2"="CT mode","1"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"]` |
+| colorMode                  | Number               | Color Mode                               | Note, currently only supporting switching to RGB or CT mode, use the nightlightMode channel for Night Light mode. Value mapping `["0"="Default","2"="CT mode","1"="RGB mode","3"="HSV mode","4"="Color Flow mode"]` |
 | name                       | String               | Name                                     |            |
 | ambientPower               | Switch               | Ambient Power                            |            |
 | ambientColor               | Color                | Ambient Color                            |            |
@@ -4703,8 +4703,9 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 | ambientColorflow           | Switch               | Ambient Color Flow                       |            |
 | ambientColorflowScene      | String               | Ambient Color Flow Scene                 | Value mapping `["sunrise"="Sunrise","sunset"="Sunset","home"="Home","tea_time"="Tea Time","date_night"="Date Night","movie"="Movie","romance"="Romance","night_mode"="Night Mode","candle_flicker"="Candle Flicker","happy_birthday"="Happy Birthday","christmas"="Christmas","disco"="Disco","rgb"="RGB","lsd"="Psychedelic","temp"="Color Temperature Cycle","strobe"="Strobe","strobe_color"="Color Strobe","alarm"="Alarm","police"="Police","police2"="Police 2"]` |
 | customScene                | String               | Set Scene                                |            |
-| ambientColorMode           | Number               | Ambient Color Mode                       |            |
+| ambientColorMode           | Number               | Ambient Color Mode                       | Value mapping `["1"="RGB mode","2"="CT mode","3"="HSV mode"]` |
 | nightlightBrightness       | Dimmer               | Nightlight Brightness                    |            |
+| nightlightMode             | Switch               | Night Light Mode                         | Switching off returns the light to CT mode |
 
 ### Yeelight LED Ceiling Ambi Lamp (<a name="yeelink-light-ceiling4-ambi">yeelink.light.ceiling4.ambi</a>) Channels
 
@@ -4793,7 +4794,7 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 | ambientBrightness          | Dimmer               | Ambient Brightness                       |            |
 | delayoff                   | Number:Time          | Shutdown Timer                           |            |
 | colorTemperature           | Number               | Color Temperature                        |            |
-| colorMode                  | Number               | Color Mode                               | Note, currently only supporting switching to RGB or CT mode. Value mapping `["0"="Default","2"="CT mode","1"="RGB mode","3"="HSV mode","4"="Color Flow mode","5"="Night Light mode"]` |
+| colorMode                  | Number               | Color Mode                               | Note, currently only supporting switching to RGB or CT mode, use the nightlightMode channel for Night Light mode. Value mapping `["0"="Default","2"="CT mode","1"="RGB mode","3"="HSV mode","4"="Color Flow mode"]` |
 | name                       | String               | Name                                     |            |
 | ambientPower               | Switch               | Ambient Power                            |            |
 | ambientColor               | Color                | Ambient Color                            |            |
@@ -4801,8 +4802,9 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 | ambientColorflow           | Switch               | Ambient Color Flow                       |            |
 | ambientColorflowScene      | String               | Ambient Color Flow Scene                 | Value mapping `["sunrise"="Sunrise","sunset"="Sunset","home"="Home","tea_time"="Tea Time","date_night"="Date Night","movie"="Movie","romance"="Romance","night_mode"="Night Mode","candle_flicker"="Candle Flicker","happy_birthday"="Happy Birthday","christmas"="Christmas","disco"="Disco","rgb"="RGB","lsd"="Psychedelic","temp"="Color Temperature Cycle","strobe"="Strobe","strobe_color"="Color Strobe","alarm"="Alarm","police"="Police","police2"="Police 2"]` |
 | customScene                | String               | Set Scene                                |            |
-| ambientColorMode           | Number               | Ambient Color Mode                       |            |
+| ambientColorMode           | Number               | Ambient Color Mode                       | Value mapping `["1"="RGB mode","2"="CT mode","3"="HSV mode"]` |
 | nightlightBrightness       | Dimmer               | Nightlight Brightness                    |            |
+| nightlightMode             | Switch               | Night Light Mode                         | Switching off returns the light to CT mode |
 
 ### Yeelight LED Ceiling Ambi Lamp (<a name="yeelink-light-ceiling10-ambi">yeelink.light.ceiling10.ambi</a>) Channels
 
@@ -6818,7 +6820,7 @@ Note, not all the values need to be in the json file, e.g. a subset of the param
 | naturalLevel               | Number               | Natural Level                            |            |
 | move                       | String               | Move Direction                           | Value mapping `[""="None","left"="Left","right"="Right"]` |
 
-### Smartmi Standing Fan 3  (<a name="zhimi-fan-za5">zhimi.fan.za5</a>) Channels
+### Smartmi Standing Fan 3 (<a name="zhimi-fan-za5">zhimi.fan.za5</a>) Channels
 
 | Channel                    | Type                 | Description                              | Comment    |
 |----------------------------|----------------------|------------------------------------------|------------|
@@ -7433,12 +7435,12 @@ Switch sound "Notification Sounds" (G_humidifier) {channel="miio:basic:humidifie
 Number watertankstatus "Watertank Status" (G_humidifier) {channel="miio:basic:humidifier:watertankstatus"}
 ```
 
-### Mi S Smart Humidifer  (deerma.humidifier.jsq1) item file lines
+### Mi Smart Humidifier S (deerma.humidifier.jsq1) item file lines
 
 note: Autogenerated example. Replace the id (humidifier) in the channel with your own. Replace `basic` with `generic` in the Thing UID depending on how your Thing was discovered.
 
 ```java
-Group G_humidifier "Mi S Smart Humidifer " <status>
+Group G_humidifier "Mi Smart Humidifier S" <status>
 Switch power "Power" (G_humidifier) {channel="miio:basic:humidifier:power"}
 Number mode "Mode" (G_humidifier) {channel="miio:basic:humidifier:mode"}
 Number:Dimensionless humidity "Humidity" (G_humidifier) {channel="miio:basic:humidifier:humidity"}
@@ -9192,12 +9194,12 @@ Number:Dimensionless f_two_position "Remote Button - F2 Preset Position" (G_curt
 Number:Dimensionless f_three_position "Remote Button - F3 Preset Position" (G_curtain) {channel="miio:basic:curtain:f_three_position"}
 ```
 
-### Mi Air Purifier virtual (lumi.gateway.mgl03) item file lines
+### Mi Smart Home Hub (lumi.gateway.mgl03) item file lines
 
 note: Autogenerated example. Replace the id (gateway) in the channel with your own. Replace `basic` with `generic` in the Thing UID depending on how your Thing was discovered.
 
 ```java
-Group G_gateway "Mi Air Purifier virtual" <status>
+Group G_gateway "Mi Smart Home Hub" <status>
 Switch telnetEnable "Enable Telnet" (G_gateway) {channel="miio:gateway:gateway:telnetEnable"}
 Number doorbellVol "Doorbell Volume" (G_gateway) {channel="miio:gateway:gateway:doorbellVol"}
 Number gatewayVol "Gateway Volume" (G_gateway) {channel="miio:gateway:gateway:gatewayVol"}
@@ -9355,12 +9357,12 @@ Group G_sensor_magnet "Mi Window and Door Sensor" <status>
 String log "Device Log" (G_sensor_magnet) {channel="miio:lumi:sensor_magnet:log"}
 ```
 
-### Mi Motion Sensor (lumi.sensor_motion.aq2) item file lines
+### Aqara Motion Sensor (lumi.sensor_motion.aq2) item file lines
 
 note: Autogenerated example. Replace the id (sensor_motion) in the channel with your own. Replace `basic` with `generic` in the Thing UID depending on how your Thing was discovered.
 
 ```java
-Group G_sensor_motion "Mi Motion Sensor" <status>
+Group G_sensor_motion "Aqara Motion Sensor" <status>
 String log "Device Log" (G_sensor_motion) {channel="miio:lumi:sensor_motion:log"}
 ```
 
@@ -9577,12 +9579,12 @@ Switch disinfect "disinfect" (G_airer) {channel="miio:basic:airer:disinfect"}
 Number distime "Disinfect Time" (G_airer) {channel="miio:basic:airer:distime"}
 ```
 
-### WIDETECH WDH330EFW1 Internet Dehumidifier (nwt.derh.330ef) item file lines
+### NWT Internet Dehumidifier 30L (nwt.derh.330ef) item file lines
 
 note: Autogenerated example. Replace the id (derh) in the channel with your own. Replace `basic` with `generic` in the Thing UID depending on how your Thing was discovered.
 
 ```java
-Group G_derh "WIDETECH WDH330EFW1 Internet Dehumidifier" <status>
+Group G_derh "NWT Internet Dehumidifier 30L" <status>
 Switch on "Dehumidifier - Power" (G_derh) {channel="miio:basic:derh:on"}
 Number fault "Dehumidifier - Device Fault" (G_derh) {channel="miio:basic:derh:fault"}
 Number mode "Dehumidifier - Mode" (G_derh) {channel="miio:basic:derh:mode"}
@@ -9603,12 +9605,12 @@ Number timer "Timer - Remaining Time" (G_derh) {channel="miio:basic:derh:timer"}
 Number timer_setting "Timer - Timer Setting" (G_derh) {channel="miio:basic:derh:timer_setting"}
 ```
 
-### WIDETECH WDH318EFW1 Internet Dehumidifier (nwt.derh.wdh318efw1) item file lines
+### NWT Internet Dehumidifier 18L (nwt.derh.wdh318efw1) item file lines
 
 note: Autogenerated example. Replace the id (derh) in the channel with your own. Replace `basic` with `generic` in the Thing UID depending on how your Thing was discovered.
 
 ```java
-Group G_derh "WIDETECH WDH318EFW1 Internet Dehumidifier" <status>
+Group G_derh "NWT Internet Dehumidifier 18L" <status>
 Switch power "Power" (G_derh) {channel="miio:basic:derh:power"}
 String mode "Mode" (G_derh) {channel="miio:basic:derh:mode"}
 Number:Dimensionless autohumidity "Auto humidity" (G_derh) {channel="miio:basic:derh:autohumidity"}
@@ -11537,12 +11539,12 @@ String colorflowScene "Color Flow Scene" (G_light) {channel="miio:basic:light:co
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
 
-### Yeelight Bedside Lamp II (yeelink.light.bslamp3) item file lines
+### Yeelight LED Smart Lamp D2 (yeelink.light.bslamp3) item file lines
 
 note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the Thing UID depending on how your Thing was discovered.
 
 ```java
-Group G_light "Yeelight Bedside Lamp II" <status>
+Group G_light "Yeelight LED Smart Lamp D2" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
@@ -11656,6 +11658,7 @@ String ambientColorflowScene "Ambient Color Flow Scene" (G_light) {channel="miio
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
 Number ambientColorMode "Ambient Color Mode" (G_light) {channel="miio:basic:light:ambientColorMode"}
 Dimmer nightlightBrightness "Nightlight Brightness" (G_light) {channel="miio:basic:light:nightlightBrightness"}
+Switch nightlightMode "Night Light Mode" (G_light) {channel="miio:basic:light:nightlightMode"}
 ```
 
 ### Yeelight LED Ceiling Ambi Lamp (yeelink.light.ceiling4.ambi) item file lines
@@ -11775,6 +11778,7 @@ String ambientColorflowScene "Ambient Color Flow Scene" (G_light) {channel="miio
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
 Number ambientColorMode "Ambient Color Mode" (G_light) {channel="miio:basic:light:ambientColorMode"}
 Dimmer nightlightBrightness "Nightlight Brightness" (G_light) {channel="miio:basic:light:nightlightBrightness"}
+Switch nightlightMode "Night Light Mode" (G_light) {channel="miio:basic:light:nightlightMode"}
 ```
 
 ### Yeelight LED Ceiling Ambi Lamp (yeelink.light.ceiling10.ambi) item file lines
@@ -14103,12 +14107,12 @@ Number naturalLevel "Natural Level" (G_fan) {channel="miio:basic:fan:naturalLeve
 String move "Move Direction" (G_fan) {channel="miio:basic:fan:move"}
 ```
 
-### Smartmi Standing Fan 3  (zhimi.fan.za5) item file lines
+### Smartmi Standing Fan 3 (zhimi.fan.za5) item file lines
 
 note: Autogenerated example. Replace the id (fan) in the channel with your own. Replace `basic` with `generic` in the Thing UID depending on how your Thing was discovered.
 
 ```java
-Group G_fan "Smartmi Standing Fan 3 " <status>
+Group G_fan "Smartmi Standing Fan 3" <status>
 Switch on "Fan - Power" (G_fan) {channel="miio:basic:fan:on"}
 Number fan_level "Fan - Fan Level" (G_fan) {channel="miio:basic:fan:fan_level"}
 Switch horizontal_swing "Fan - Horizontal Swing" (G_fan) {channel="miio:basic:fan:horizontal_swing"}

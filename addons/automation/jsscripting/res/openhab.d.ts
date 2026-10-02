@@ -1207,7 +1207,11 @@ export type EventObject = {
 	/**
 	 * original contents of the event including data passed from a calling rule
 	 */
-	raw: any;
+	raw: JavaMap;
+	/**
+	 * the same as 'raw' except that it's a JS object instead of a Java Map, and the keys exist without prefix
+	 */
+	inputs: Record<string, unknown>;
 	/**
 	 * if provided by event: payload of event in Java data types
 	 */
