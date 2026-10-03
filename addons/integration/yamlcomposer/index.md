@@ -20,6 +20,8 @@ children:
   - Templates
 - - doc/packages
   - Packages
+- - doc/dynamic-sources
+  - Dynamic Sources
 - - doc/anchors
   - Anchors and Aliases
 - - doc/merge-keys
@@ -60,6 +62,7 @@ Each feature addresses a different kind of reuse, composition, or abstraction to
 | **Anchors and Aliases (`&name`, `*name`)** | Define small, reusable YAML fragments                     | Static defaults, shared fields                                                                                 |
 | **Merge Keys (`<<:`)**                     | Combine mappings from multiple sources                    | Layer top-level defaults, override flat fields, compose shallow structures                                     |
 | **Deep Merge (`!deep <<:`)**               | Recursively merge nested mappings and list items          | Preserve nested configuration; append tags or lists; apply nested override layers                              |
+| **Dynamic Sources**                        | Query live openHAB Things & Items                         | Auto-generate items from registered Things; react to enable/disable state changes                              |
 
 Each feature has a dedicated documentation page:
 
