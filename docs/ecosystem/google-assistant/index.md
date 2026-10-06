@@ -31,6 +31,11 @@ If you have any issues, questions or an idea for additional features, please tak
 This documentation refers to release [v5.2.0](https://github.com/openhab/openhab-google-assistant/releases/tag/v5.2.0) of [openHAB Google Assistant](https://github.com/openhab/openhab-google-assistant) published on 2026-08-31
 :::
 
+### Unreleased
+
+- Added [`Oven`](#oven) support (`OnOff`, `StartStop`, `TemperatureControl`)
+- Added [`PressureCooker`](#pressurecooker) support (`OnOff`, `StartStop`)
+
 ### v5.2.0
 
 - Internal improvements and dependency updates, no user-facing changes
@@ -319,6 +324,52 @@ String washerCurrentCycleItem   (washerDevice) { ga="washerCurrentCycle" }
 ```
 
 You can configure a dishwasher the same way; just change the group metadata to `ga="Dishwasher"` while keeping the same member tags (`washerPower`, `washerTimerRemaining`, `washerCurrentCycle`).
+
+### Oven
+
+| | |
+|---|---|
+| **Device Type** | [Oven](https://developers.home.google.com/cloud-to-cloud/guides/oven) |
+| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff), [StartStop](https://developers.home.google.com/cloud-to-cloud/traits/startstop), [TemperatureControl](https://developers.home.google.com/cloud-to-cloud/traits/temperaturecontrol) |
+| **Supported Items** | Switch as `Oven` (power only), or Group as `Oven` with at least one of the following members:<br>(optional) Switch as `ovenPower`<br>(optional) Switch as `ovenRunning`<br>(optional) Number as `ovenTemperatureTarget`<br>(optional) Number as `ovenTemperatureAmbient` |
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false`<br>(optional) `useFahrenheit=true/false`<br>(optional) `temperatureRange=min,max` (Celsius, default `0,300`)<br>(optional) `temperatureStep=<number>` (Celsius, default `1`) |
+
+```shell
+Switch { ga="Oven" [ inverted=true ] }
+```
+
+```shell
+Group  ovenDevice { ga="Oven" [ checkState=true ] }
+Switch ovenPowerItem              (ovenDevice) { ga="ovenPower" }
+Switch ovenRunningItem            (ovenDevice) { ga="ovenRunning" }
+Number ovenTemperatureTargetItem  (ovenDevice) { ga="ovenTemperatureTarget" }
+Number ovenTemperatureAmbientItem (ovenDevice) { ga="ovenTemperatureAmbient" }
+```
+
+_Hint: `TemperatureControl` is settable when `ovenTemperatureTarget` is configured; with only `ovenTemperatureAmbient` it is exposed as query-only (read current temperature, no target to set)._
+
+`Cook` and `Timer` traits are not supported yet.
+
+### PressureCooker
+
+| | |
+|---|---|
+| **Device Type** | [PressureCooker](https://developers.home.google.com/cloud-to-cloud/guides/pressurecooker) |
+| **Supported Traits** | [OnOff](https://developers.home.google.com/cloud-to-cloud/traits/onoff), [StartStop](https://developers.home.google.com/cloud-to-cloud/traits/startstop) |
+| **Supported Items** | Switch as `PressureCooker` (power only), or Group as `PressureCooker` with at least one of the following members:<br>(optional) Switch as `pressureCookerPower`<br>(optional) Switch as `pressureCookerRunning` |
+| **Configuration** | (optional) `inverted=true/false`<br>(optional) `checkState=true/false` |
+
+```shell
+Switch { ga="PressureCooker" [ inverted=true ] }
+```
+
+```shell
+Group  pressureCookerDevice { ga="PressureCooker" [ checkState=true ] }
+Switch pressureCookerPowerItem   (pressureCookerDevice) { ga="pressureCookerPower" }
+Switch pressureCookerRunningItem (pressureCookerDevice) { ga="pressureCookerRunning" }
+```
+
+`Cook` and `Timer` traits are not supported yet.
 
 ### Lock
 

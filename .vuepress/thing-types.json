@@ -7881,6 +7881,11 @@
   },
   {
     "bindingId": "shelly",
+    "id": "shelly:shellyplusplugpm",
+    "label": "Shelly Plug PM Gen3"
+  },
+  {
+    "bindingId": "shelly",
     "id": "shelly:shellyplusstrip",
     "label": "ShellyPlus Power Strip"
   },
