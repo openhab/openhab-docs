@@ -3,7 +3,7 @@ id: bluetooth.grundfosalpha
 label: Bluetooth Grundfos Alpha Adapter
 title: Bluetooth Grundfos Alpha Adapter - Bindings
 type: binding
-description: This binding adds support for reading out the data of Grundfos Alpha pumps with a [Grundfos Alpha Reader](https://product-selection.grundfos.com/products/alpha-reader) or [Alpha3 pump](https://product-selection.grundfos.com/products/alpha/alpha3) with built-in Bluetooth.
+description: This binding supports reading data from Grundfos Alpha pumps with a [Grundfos Alpha Reader](https://product-selection.grundfos.com/products/alpha-reader) or [Alpha3 pump](https://product-selection.grundfos.com/products/alpha/alpha3) with built-in Bluetooth.
 logo: images/addons/bluetooth.grundfosalpha.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.bluetooth.grundfosalpha/README.md
@@ -12,7 +12,7 @@ meta:
   - property: og:title
     content: "Bluetooth Grundfos Alpha Adapter - Bindings"
   - property: og:description
-    content: This binding adds support for reading out the data of Grundfos Alpha pumps with a Grundfos Alpha Reader or Alpha3 pump with built-in Bluetooth.
+    content: This binding supports reading data from Grundfos Alpha pumps with a Grundfos Alpha Reader or Alpha3 pump with built-in Bluetooth.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -21,7 +21,7 @@ meta:
 
 <AddonLogo />
 
-This binding adds support for reading out the data of Grundfos Alpha pumps with a [Grundfos Alpha Reader](https://product-selection.grundfos.com/products/alpha-reader) or [Alpha3 pump](https://product-selection.grundfos.com/products/alpha/alpha3) with built-in Bluetooth.
+This binding supports reading data from Grundfos Alpha pumps with a [Grundfos Alpha Reader](https://product-selection.grundfos.com/products/alpha-reader) or [Alpha3 pump](https://product-selection.grundfos.com/products/alpha/alpha3) with built-in Bluetooth.
 
 The reverse engineering of the Alpha Reader protocol was taken from [https://github.com/JsBergbau/AlphaDecoder](https://github.com/JsBergbau/AlphaDecoder).
 

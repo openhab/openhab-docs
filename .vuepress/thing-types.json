@@ -7941,6 +7941,11 @@
   },
   {
     "bindingId": "shelly",
+    "id": "shelly:shellyprocb",
+    "label": "Shelly Pro CB"
+  },
+  {
+    "bindingId": "shelly",
     "id": "shelly:shellypro2",
     "label": "Shelly Pro 2"
   },
