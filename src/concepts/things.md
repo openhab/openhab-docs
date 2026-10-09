@@ -68,10 +68,12 @@ The statuses REMOVING and REMOVED can also be reached from any of the other stat
 ## Status Details
 
 A status is detailed further with a status detail object.
+Each detail other than `NONE` maps to the status shown in the table; `NONE` can be used with any status when no further detail is available.
 The following table lists the different status details for each status:
 
 <table>
-<tr valign="top"><td rowspan="7">UNINITIALIZED</td><td>NONE</td><td>No further status details available.</td></tr>
+<tr valign="top"><td rowspan="8">UNINITIALIZED</td><td>NONE</td><td>No further status details available.</td></tr>
+<tr valign="top">                                  <td>NOT_YET_READY</td><td>The Thing type is not fully loaded yet, so the framework cannot register its handler.</td></tr>
 <tr valign="top">                                  <td>HANDLER_MISSING_ERROR</td><td>The handler cannot be initialized because the responsible binding is not available or started.</td></tr>
 <tr valign="top">                                  <td>HANDLER_REGISTERING_ERROR</td><td>The handler failed in the service registration phase.</td></tr>
 <tr valign="top">                                  <td>HANDLER_CONFIGURATION_PENDING</td><td>The handler is registered but cannot be initialized because of missing configuration parameters.</td></tr>
@@ -82,9 +84,10 @@ The following table lists the different status details for each status:
 <tr valign="top"><td>UNKNOWN</td>                  <td>NONE</td><td>No further status details available.</td></tr>
 <tr valign="top"><td rowspan="2">ONLINE</td>       <td>NONE</td><td>No further status details available.</td></tr>
 <tr valign="top">                                  <td>CONFIGURATION_PENDING</td><td>The Thing is waiting to transfer configuration information to a device. Some bindings need to communicate with the device to make sure the configuration is accepted.</td></tr>
-<tr valign="top"><td rowspan="7">OFFLINE</td>      <td>NONE</td><td>No further status details available.</td></tr>
+<tr valign="top"><td rowspan="8">OFFLINE</td>      <td>NONE</td><td>No further status details available.</td></tr>
 <tr valign="top">                                  <td>COMMUNICATION_ERROR</td><td>Error communicating with the device. This may be only a temporary error.</td></tr>
 <tr valign="top">                                  <td>CONFIGURATION_ERROR</td><td>An issue with the configuration of a Thing prevents communication with the represented device or service. This issue might be solved by reconfiguring the Thing.</td></tr>
+<tr valign="top">                                  <td>AUTHORIZATION_REQUIRED</td><td>The Thing is waiting for the user to complete an interactive authorization step, such as approving access in a web page or pressing a pairing button.</td></tr>
 <tr valign="top">                                  <td>BRIDGE_OFFLINE</td><td>Assuming the Thing to be offline because the corresponding bridge is offline.</td></tr>
 <tr valign="top">                                  <td>FIRMWARE_UPDATING</td><td>The Thing is currently undergoing a firmware update.</td></tr>
 <tr valign="top">                                  <td>DUTY_CYCLE</td><td>The Thing is currently in DUTY_CYCLE state, which means it is blocked for further usage.</td></tr>
