@@ -112,7 +112,7 @@ The `sitemap` element is **mandatory** in a Sitemap definition.
 This element shall be the first line in the sitemap file, and the following code block comprises the entire Sitemap definition.
 
 ```java
-sitemap <sitemapname> [label="<title of the main screen>"] {
+sitemap <sitemapname> [label="<title of the main screen>"] [icon=<iconref>] {
     [all sitemap elements]
 }
 ```
@@ -163,6 +163,7 @@ The following element types may be used in a Sitemap definition file.
 | [Text](#element-type-text)               | Renders an Item as text.                                                                  |
 | [Video](#element-type-video)             | Displays a video stream, given a direct URL.                                              |
 | [Webview](#element-type-webview)         | Displays the content of a webpage.                                                        |
+| [Sitemap](#element-type-sitemap)         | Renders a referenced sitemap nested into the current sitemap.                             |
 
 **Choosing the right element type:**
 Data presented by Sitemap elements will almost always originate from a referenced [Item]({{base}}/configuration/items.html).
@@ -656,6 +657,25 @@ See this [Tutorial](https://community.openhab.org/t/13761/1) for more details.
 - The visibility of multiple Chart objects may be toggled to simulate changing the Chart period; non-visible Chart widgets are NOT generated behind the scenes until they become visible.
 - When charting a group of item, make sure that every label is unique.
 
+### Element Type 'Sitemap'
+
+```java
+Sitemap [item=<itemname>] [name=<sitemapname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>]"
+```
+
+This element will show a link to a sitemap reference by name.
+Clicking the link will navigate into the nested sitemap.
+
+- `sitemapname` if set, a link to the sitemap with that name will shown.
+- `item` if set, the state of the item will be used as the sitemap to link to.
+
+**Example:**
+
+```java
+Sitemap name=myNestedSitemap label="Nested sitemap defined by name"
+Sitemap item=mySitemapItem label="Nested sitemap defined through item"
+```
+
 ## Mappings
 
 Mappings is an optional parameter for the [Switch](#element-type-switch) and [Selection](#element-type-selection) element types.
@@ -944,5 +964,3 @@ Explanation:
 
 - DateTime comparisons are relative to the current time and specified in seconds.
     So the expression `Lights_On_Time > 300` will return true if the DateTime Item is set to a value that's newer than the past 5 minutes (300 seconds).
-
-- Further examples for defining Sitemaps can be found in our [openHAB-Samples](https://github.com/openhab/openhab/wiki/Samples-Sitemap-Definitions) section.
