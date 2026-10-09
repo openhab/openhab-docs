@@ -218,10 +218,10 @@ public void handleCommand(ChannelUID channelUID, Command command) {
                 break;
             // ...
         }
-        statusUpdated(ThingStatus.ONLINE);
+        updateStatus(ThingStatus.ONLINE);
     } catch(DeviceCommunicationException ex) {
         // catch exceptions and handle it in your binding
-        statusUpdated(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR, ex.getMessage());
+        updateStatus(ThingStatusDetail.COMMUNICATION_ERROR, ex.getMessage());
     }
 }
 ```
@@ -322,26 +322,28 @@ If the device or service is not working correctly, the binding should change the
 The status can be updated via an inherited method from the BaseThingHandler class by calling:
 
 ```java
-updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR);
+updateStatus(ThingStatusDetail.COMMUNICATION_ERROR);
 ```
 
-The second argument of the method takes a `ThingStatusDetail` enumeration value, which further specifies the current status situation.
+When a status detail is provided, `BaseThingHandler` derives the corresponding Thing status from it.
+For a status without a detail, call `updateStatus(ThingStatus.ONLINE)` (or pass another `ThingStatus` value).
+Do not pass `ThingStatusDetail.NONE` to the detail-based method; use the status-only method instead.
 A complete list of all thing statuses and thing status details is listed in the [Thing Status](../../concepts/things.html#thing-status) chapter.
 
 The binding should also provide additional status description, if available.
 This description might contain technical information (e.g. an HTTP status code, or any other protocol specific information, which helps to identify the current problem):
 
 ```java
-updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR, "HTTP 403 - Access denied");
+updateStatus(ThingStatusDetail.COMMUNICATION_ERROR, "Connection timed out");
 ```
 
-Some bindings may need to collect further configurations or login credentials through its servlet, hosted by openHAB.
+Some bindings may need users to complete an interactive authorization step through a servlet hosted by openHAB.
 A link can be included in the status description when it starts with `http(s)://<YOUROPENHAB>:<YOURPORT>/` followed by binding-specific path.
 This special string will be converted in Main UI into a clickable link with the same openhab host and port that Main UI is connected to.
 For example:
 
 ```java
-updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.CONFIGURATION_ERROR, "Please login through: http(s)://<YOUROPENHAB>:<YOURPORT>/mybinding/" + getThing().getUID().getId());
+updateStatus(ThingStatusDetail.AUTHORIZATION_REQUIRED, "Please authorize access through: http(s)://<YOUROPENHAB>:<YOURPORT>/mybinding/" + getThing().getUID().getId());
 ```
 
 After the thing is created, the framework calls the `initialize` method of the handler.
