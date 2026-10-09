@@ -570,6 +570,8 @@ Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in 
 - `url` is the default URL from which to retrieve the image, if there is no associated Item or if the associated item's state is not a URL.
 - `refresh` is the refresh period of the image in milliseconds ("60000" for minutely updates).
 
+For security reasons, if `item` is used with with a String Item containing the URL, the URL will only be used when whitelisted in the `org.openhab.sitemap allowedHosts` configuration property (`Settings → System Services → Sitemap`).
+
 **Example:**
 
 ```java
@@ -598,6 +600,8 @@ An embedded and/or protected video is not supported.
 - `item` can refer to a String Item whose state is a URL to a video. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the video if there is no associated Item or if the associated item's state is not a URL.
 - `encoding` should be set to "mjpeg" for an MJPEG video, or "HLS" for an HTTP Live Streaming playlist (file with .m3u8 extension).  If you omit the `encoding` parameter, openHAB will attempt to automatically select the correct format.
+
+For security reasons, if `item` is used with with a String Item containing the URL, the URL will only be used when whitelisted in the `org.openhab.sitemap allowedHosts` configuration property (`Settings → System Services → Sitemap`).
 
 **Example:**
 
@@ -666,8 +670,8 @@ Sitemap [item=<itemname>] [name=<sitemapname>] [label="<labelname>"] [icon=<icon
 This element will show a link to a sitemap reference by name.
 Clicking the link will navigate into the nested sitemap.
 
-- `sitemapname` if set, a link to the sitemap with that name will shown.
-- `item` if set, the state of the item will be used as the sitemap to link to.
+- `name` if set, a link to the sitemap with that name will shown.
+- `item` if this is a String Item, the state of the item will be used as the sitemap name to link to.
 
 **Example:**
 
