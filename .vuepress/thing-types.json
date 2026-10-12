@@ -4706,6 +4706,11 @@
   },
   {
     "bindingId": "mielecloud",
+    "id": "mielecloud:hob_with_vapor_extraction",
+    "label": "@text/thing-type.mielecloud.hob_with_vapor_extraction.label"
+  },
+  {
+    "bindingId": "mielecloud",
     "id": "mielecloud:hood",
     "label": "@text/thing-type.mielecloud.hood.label"
   },
