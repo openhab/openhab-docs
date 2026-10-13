@@ -9685,6 +9685,21 @@
     "label": "Vehicle"
   },
   {
+    "bindingId": "threedprinter",
+    "id": "threedprinter:prusa-link",
+    "label": "Prusa Printer"
+  },
+  {
+    "bindingId": "threedprinter",
+    "id": "threedprinter:klipper",
+    "label": "Klipper Printer"
+  },
+  {
+    "bindingId": "threedprinter",
+    "id": "threedprinter:octoprint",
+    "label": "OctoPrint Printer"
+  },
+  {
     "bindingId": "tibber",
     "id": "tibber:tibberapi",
     "label": "Tibber API"
