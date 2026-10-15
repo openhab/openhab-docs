@@ -6365,6 +6365,36 @@
     "label": "PHC DIM"
   },
   {
+    "bindingId": "philipsair",
+    "id": "philipsair:ac1214-10",
+    "label": "Air Purifier AC1214/10"
+  },
+  {
+    "bindingId": "philipsair",
+    "id": "philipsair:ac2729",
+    "label": "Air Purifier AC2729"
+  },
+  {
+    "bindingId": "philipsair",
+    "id": "philipsair:ac2889-10",
+    "label": "Air Purifier AC2889/10"
+  },
+  {
+    "bindingId": "philipsair",
+    "id": "philipsair:ac3829-10",
+    "label": "Air Purifier AC3829/10"
+  },
+  {
+    "bindingId": "philipsair",
+    "id": "philipsair:coap",
+    "label": "Air Purifier (CoAP)"
+  },
+  {
+    "bindingId": "philipsair",
+    "id": "philipsair:universal",
+    "label": "Air Purifier (HTTP)"
+  },
+  {
     "bindingId": "pihole",
     "id": "pihole:server",
     "label": "Pi-hole Server"
