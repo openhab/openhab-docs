@@ -343,7 +343,7 @@ This special string will be converted in Main UI into a clickable link with the 
 For example:
 
 ```java
-updateStatus(ThingStatusDetail.AUTHORIZATION_REQUIRED, "Please authorize access through: http(s)://<YOUROPENHAB>:<YOURPORT>/mybinding/" + getThing().getUID().getId());
+updateStatus(ThingStatusDetail.AUTHORIZATION_PENDING, "Please authorize access through: http(s)://<YOUROPENHAB>:<YOURPORT>/mybinding/" + getThing().getUID().getId());
 ```
 
 After the thing is created, the framework calls the `initialize` method of the handler.
