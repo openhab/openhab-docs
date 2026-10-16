@@ -330,16 +330,6 @@
     "label": "Pentair Pool Controller"
   },
   {
-    "bindingId": "autoblind",
-    "id": "autoblind:hub",
-    "label": "AutoBlind Hub"
-  },
-  {
-    "bindingId": "autoblind",
-    "id": "autoblind:shade",
-    "label": "AutoBlind Shade"
-  },
-  {
     "bindingId": "automower",
     "id": "automower:bridge",
     "label": "Automower® Connect Bridge"
@@ -5633,6 +5623,16 @@
     "bindingId": "nobohub",
     "id": "nobohub:component",
     "label": "Component"
+  },
+  {
+    "bindingId": "norman",
+    "id": "norman:hub",
+    "label": "Norman Hub"
+  },
+  {
+    "bindingId": "norman",
+    "id": "norman:shade",
+    "label": "Norman Shade"
   },
   {
     "bindingId": "novafinedust",

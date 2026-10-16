@@ -1,25 +1,27 @@
 ---
-id: autoblind
-label: AutoBlind
-title: AutoBlind - Bindings
+id: norman
+label: Norman Smart Motorization
+title: Norman Smart Motorization - Bindings
 type: binding
 description: This binding integrates Norman ShadeAuto motorized shades (manufactured by Nien Made) with openHAB.
 install: manual
-source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.autoblind/README.md
+source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.norman/README.md
 meta:
   - property: og:title
-    content: "AutoBlind - Bindings"
+    content: "Norman Smart Motorization - Bindings"
   - property: og:description
     content: This binding integrates Norman ShadeAuto motorized shades (manufactured by Nien Made) with openHAB.
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-# AutoBlind Binding
+# Norman Smart Motorization Binding
 
 This binding integrates Norman ShadeAuto motorized shades (manufactured by Nien Made) with openHAB.
 It communicates with the ShadeAuto hub over the local network using the hub's HTTP API on port 10123.
 No cloud connection is required.
+
+This is a community-developed binding and is not affiliated with, endorsed by, or supported by Norman or Nien Made.
 
 ## Supported Things
 
@@ -88,33 +90,33 @@ The `hub` bridge exposes the following action:
 Example, calling the action from a rule:
 
 ```java
-val hubActions = getActions("autoblind", "autoblind:hub:myhub")
+val hubActions = getActions("norman", "norman:hub:myhub")
 hubActions.forceRefresh()
 ```
 
 ## Full Example
 
-### autoblind.things
+### norman.things
 
 ```java
-Bridge autoblind:hub:myhub "AutoBlind Hub" [ host="192.168.1.100", pollingInterval=1800 ] {
+Bridge norman:hub:myhub "Norman Hub" [ host="192.168.1.100", pollingInterval=1800 ] {
     Thing shade bedroom "Bedroom Shade" [ peripheralUid=1 ]
     Thing shade livingroom "Living Room Shade" [ peripheralUid=2 ]
 }
 ```
 
-### autoblind.items
+### norman.items
 
 ```java
-Dimmer               BedroomShade_Position     "Bedroom Shade [%d %%]"       { channel="autoblind:shade:myhub:bedroom:position" }
-Number:Dimensionless BedroomShade_Battery      "Bedroom Battery [%d %%]"     { channel="autoblind:shade:myhub:bedroom:battery-level" }
-Switch               BedroomShade_LowBattery   "Bedroom Low Battery"         { channel="autoblind:shade:myhub:bedroom:low-battery" }
+Dimmer               BedroomShade_Position     "Bedroom Shade [%d %%]"       { channel="norman:shade:myhub:bedroom:position" }
+Number:Dimensionless BedroomShade_Battery      "Bedroom Battery [%d %%]"     { channel="norman:shade:myhub:bedroom:battery-level" }
+Switch               BedroomShade_LowBattery   "Bedroom Low Battery"         { channel="norman:shade:myhub:bedroom:low-battery" }
 ```
 
-### autoblind.sitemap
+### norman.sitemap
 
 ```perl
-sitemap autoblind label="AutoBlind" {
+sitemap norman label="Norman" {
     Frame label="Bedroom" {
         Slider item=BedroomShade_Position
         Text item=BedroomShade_Battery
