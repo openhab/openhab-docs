@@ -1005,6 +1005,16 @@
     "label": "Caddx Alarm Zone"
   },
   {
+    "bindingId": "caldav",
+    "id": "caldav:account",
+    "label": "CalDAV Account"
+  },
+  {
+    "bindingId": "caldav",
+    "id": "caldav:calendar",
+    "label": "CalDAV Calendar"
+  },
+  {
     "bindingId": "casokitchen",
     "id": "casokitchen:winecooler-2z",
     "label": "Wine Cooler 2 Zones"
