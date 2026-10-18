@@ -3632,7 +3632,7 @@
   {
     "bindingId": "keba",
     "id": "keba:kecontact",
-    "label": "KeContact EV Charging Station"
+    "label": "KeContact"
   },
   {
     "bindingId": "km200",
@@ -4498,6 +4498,21 @@
     "bindingId": "melcloud",
     "id": "melcloud:heatpumpdevice",
     "label": "Heatpump Device"
+  },
+  {
+    "bindingId": "melcloud",
+    "id": "melcloud:home-account",
+    "label": "MELCloud Home Account"
+  },
+  {
+    "bindingId": "melcloud",
+    "id": "melcloud:ata-unit",
+    "label": "Home Air-to-Air Unit"
+  },
+  {
+    "bindingId": "melcloud",
+    "id": "melcloud:atw-unit",
+    "label": "Home Air-to-Water Unit"
   },
   {
     "bindingId": "melcloud",
