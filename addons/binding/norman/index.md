@@ -4,6 +4,7 @@ label: Norman Smart Motorization
 title: Norman Smart Motorization - Bindings
 type: binding
 description: This binding integrates Norman ShadeAuto motorized shades (manufactured by Nien Made) with openHAB.
+logo: images/addons/norman.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.norman/README.md
 meta:
@@ -16,6 +17,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # Norman Smart Motorization Binding
+
+<AddonLogo />
 
 This binding integrates Norman ShadeAuto motorized shades (manufactured by Nien Made) with openHAB.
 It communicates with the ShadeAuto hub over the local network using the hub's HTTP API on port 10123.
