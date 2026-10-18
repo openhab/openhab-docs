@@ -13,9 +13,9 @@ title: IntelliJ
 
 1. Fork and clone the repositories into a parent directory (Reference `<PARENT_DIR>` from now on for this article). Take only the one(s) you will work on:
 
-    - [openhab addons repository](https://www.github.com/openhab/openhab-addons)
-    - [openhab core repository](https://www.github.com/openhab/openhab-core)
-    - [openhab webui repository](https://www.github.com/openhab/openhab-webui)
+    - [openhab-addons repository](https://www.github.com/openhab/openhab-addons)
+    - [openhab-core repository](https://www.github.com/openhab/openhab-core)
+    - [openhab-webui repository](https://www.github.com/openhab/openhab-webui)
 
 Use the command `git clone https://github.com/<yourgitusername>/openhab-<addons|core|webui>` (replace git user name accordingly).
 
