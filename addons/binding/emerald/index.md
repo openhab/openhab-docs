@@ -4,6 +4,7 @@ label: Emerald
 title: Emerald - Bindings
 type: binding
 description: A binding that supports the Australian brand Emerald's range of Heat Pump Hot Water Services (HWS), providing information and control into openHAB.
+logo: images/addons/emerald.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.emerald/README.md
 meta:
@@ -16,6 +17,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # Emerald Binding
+
+<AddonLogo />
 
 A binding that supports the Australian brand Emerald's range of Heat Pump Hot Water Services (HWS), providing information and control into openHAB.
 
