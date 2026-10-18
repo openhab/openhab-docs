@@ -5715,6 +5715,21 @@
     "label": "Oceanic Water Softener"
   },
   {
+    "bindingId": "ocpp",
+    "id": "ocpp:server",
+    "label": "OCPP Server"
+  },
+  {
+    "bindingId": "ocpp",
+    "id": "ocpp:chargepoint",
+    "label": "OCPP Charge Point"
+  },
+  {
+    "bindingId": "ocpp",
+    "id": "ocpp:connector",
+    "label": "OCPP Connector"
+  },
+  {
     "bindingId": "ojelectronics",
     "id": "ojelectronics:ojcloud",
     "label": "OJ Electronics Cloud"
