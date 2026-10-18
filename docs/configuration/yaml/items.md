@@ -133,6 +133,6 @@ items:
 >
 > - [Item-Channel Link Profile](/docs/configuration/items.html#profiles)
 > - [Script Transformation Profile](/docs/configuration/transformations.html#script-transformation-profile)
-> - List of available [transformation addons](https://www.openhab.org/addons/#transform), most of which support profiles
+> - List of available [transformation add-ons](https://www.openhab.org/addons/#transform), most of which support profiles
 
 <EditPageLink/>
