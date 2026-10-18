@@ -4,6 +4,7 @@ label: Liberty Global Horizon
 title: Liberty Global Horizon - Bindings
 type: binding
 description: The Liberty Global Horizon binding integrates set-top boxes running the **Liberty Global Horizon** platform.
+logo: images/addons/lghorizon.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.lghorizon/README.md
 meta:
@@ -16,6 +17,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # Liberty Global Horizon Binding
+
+<AddonLogo />
 
 The Liberty Global Horizon binding integrates set-top boxes running the **Liberty Global Horizon** platform.
 
