@@ -6,8 +6,10 @@ title: Sitemaps
 # Sitemaps
 
 ::: tip
-Sitemaps have existed since the first versions of openHAB. Therefore you will probably encounter a lot of examples referring to them throughout the documentation and in older community discussions.
+Sitemaps have existed since the first versions of openHAB.
+Therefore you will probably encounter a lot of examples referring to them throughout the documentation and in older community discussions.
 ⚠️ **Keep in mind that the main UI is not currently able to display them**.
+Sitemaps are well suited for quick and simple configuration of a UI for mobile use, but have less capabilities.
 If you are a new user, it's probably a good idea to start [customizing your Overview page first]({{base}}/tutorial/auto_overview.html#customization-page-configuration).
 :::
 
@@ -18,11 +20,17 @@ This page is structured as follows:
 
 [[toc]]
 
-Sitemaps are text files with the `.sitemap` or `.sitemaps` extension, and are stored in the `$OPENHAB_CONF/sitemaps` directory.
-They can contain any number of sitemap definitions since openHAB 5.2.
-Sitemaps follow the syntax described in this article.
+Sitemaps can be defined through the UI, or in text files.
+The UI allows you to use UI controls for definition, or use the syntax of the text formats.
+You can switch between these different representations.
 
-For easy editing of sitemap definition files, we suggest to use one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
+The text definitions can either be using a domain specific language (DSL) or [YAML]({{base}}/configuration/yaml.html).
+All documentation and examples on this page refer to the DSL syntax, but the concepts can be equally applied to other representation formats.
+
+DSL defined sitemaps can be stored in files with the `.sitemap` or `.sitemaps` extension in the `$OPENHAB_CONF/sitemaps` directory.
+They can contain any number of sitemap definitions since openHAB 5.2.
+
+For easy editing of DSL sitemap definition files, we suggest to use one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
 These provide full IDE support for sitemap files, including syntax checking and auto-completion.
 
 The openHAB runtime distribution comes with a demo configuration package containing a sitemap file named [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/main/features/distro-resources/src/main/resources/sitemaps/demo.sitemap).
@@ -112,7 +120,7 @@ The `sitemap` element is **mandatory** in a Sitemap definition.
 This element shall be the first line in the sitemap file, and the following code block comprises the entire Sitemap definition.
 
 ```java
-sitemap <sitemapname> [label="<title of the main screen>"] {
+sitemap <sitemapname> [label="<title of the main screen>"] [icon=<iconref>] {
     [all sitemap elements]
 }
 ```
@@ -163,6 +171,7 @@ The following element types may be used in a Sitemap definition file.
 | [Text](#element-type-text)               | Renders an Item as text.                                                                  |
 | [Video](#element-type-video)             | Displays a video stream, given a direct URL.                                              |
 | [Webview](#element-type-webview)         | Displays the content of a webpage.                                                        |
+| [Sitemap](#element-type-sitemap)         | Renders a referenced sitemap nested into the current sitemap.                             |
 
 **Choosing the right element type:**
 Data presented by Sitemap elements will almost always originate from a referenced [Item]({{base}}/configuration/items.html).
@@ -174,8 +183,6 @@ This provides the flexibility to present Items in the way desired in your home a
 **General remarks on parameters:**
 
 - In the following definitions, parameters in `[square brackets]` are optional.
-
-- Parameters must be supplied in the order shown.
 
 - Common parameters, also known from [items definition]({{base}}/configuration/items.html#item-syntax):
   - `item` defines the name of the Item you want to present (e.g. `Temperature`), [more details]({{base}}/configuration/items.html#item-name).
@@ -209,7 +216,7 @@ sitemap demo label="My home automation" {
 
 UoM = [Units of Measurement]({{base}}/concepts/units-of-measurement.html)
 
-- Additional parameters such as `mappings` and `valuecolor` are described below.
+- Additional parameters such as `mappings`, `valuecolor` and `confirmCmd` are described below.
 
 ### Element Type 'Frame'
 
@@ -254,6 +261,9 @@ Text [item=<itemname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconr
 Presents data as normal text.
 Most Item types can be used; the values can be prepared and reformatted by using string formatters and transformations.
 Please refer to the documentation on [item State Presentation]({{base}}/configuration/items.html#state-presentation) for details.
+
+A Text element can be defined with or without child widgets.
+If defined with child widgets, clicking on the Text element will reveal a new view showing the defined child widgets.
 
 **Example:**
 
@@ -569,6 +579,11 @@ Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in 
 - `url` is the default URL from which to retrieve the image, if there is no associated Item or if the associated item's state is not a URL.
 - `refresh` is the refresh period of the image in milliseconds ("60000" for minutely updates).
 
+For security reasons, if `item` is used with with a String Item containing the URL, the URL will only be used when whitelisted in the `org.openhab.sitemap allowedHosts` configuration property (`Settings → System Services → Sitemap`).
+
+An Image element can be defined with or without child widgets.
+If defined with child widgets, clicking on the Image element will reveal a new view showing the defined child widgets.
+
 **Example:**
 
 ```java
@@ -597,6 +612,8 @@ An embedded and/or protected video is not supported.
 - `item` can refer to a String Item whose state is a URL to a video. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the video if there is no associated Item or if the associated item's state is not a URL.
 - `encoding` should be set to "mjpeg" for an MJPEG video, or "HLS" for an HTTP Live Streaming playlist (file with .m3u8 extension).  If you omit the `encoding` parameter, openHAB will attempt to automatically select the correct format.
+
+For security reasons, if `item` is used with with a String Item containing the URL, the URL will only be used when whitelisted in the `org.openhab.sitemap allowedHosts` configuration property (`Settings → System Services → Sitemap`).
 
 **Example:**
 
@@ -656,6 +673,26 @@ See this [Tutorial](https://community.openhab.org/t/13761/1) for more details.
 - The visibility of multiple Chart objects may be toggled to simulate changing the Chart period; non-visible Chart widgets are NOT generated behind the scenes until they become visible.
 - When charting a group of item, make sure that every label is unique.
 
+### Element Type 'Sitemap'
+
+```java
+Sitemap [item=<itemname>] [name=<sitemapname>] [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>]"
+```
+
+This element type will show a link to a sitemap.
+Clicking the link will navigate into the nested sitemap.
+Note the capital `S` in `Sitemap`, in contrast to the root `sitemap` element.
+
+- `name` if set, a link to the sitemap with that name will shown.
+- `item` if this is a String Item, the state of the Item will be used as the sitemap name to link to.
+
+**Example:**
+
+```java
+Sitemap name=myNestedSitemap label="Nested sitemap defined by name"
+Sitemap item=mySitemapItem label="Nested sitemap defined through item"
+```
+
 ## Mappings
 
 Mappings is an optional parameter for the [Switch](#element-type-switch) and [Selection](#element-type-selection) element types.
@@ -699,6 +736,49 @@ Icons are usable in Switch element but ignored in Selection element.
 In the sixth example above, as there are 2 commands provided separated by a colon, user interface will consider a press and release behavior, the first command (ON in the example) is sent to the item when the button is pressed and the second command (OFF in the example) is sent when the button is finally released.
 This behavior is only applicable for a `Switch` element.
 
+## Command Confirmation Dialog
+
+`confirmCmd` is an optional parameter for element types that can command an Item: [Switch](#element-type-switch), [Slider](#element-type-slider), [Selection](#element-type-selection), [Setpoint](#element-type-setpoint), [Colorpicker](#element-type-colorpicker), [Colortemperaturepicker](#element-type-colortemperaturepicker), [Button](#element-type-button), [Input](#element-type-input) and [Default](#element-type-default) element types.
+If set, a sitemap client UI will open a confirmation dialog when the control defined by the element is used to change the Item's state.
+The user is able to confirm or cancel the change.
+If the user cancels, the state of the Item will not be changed.
+This parameter may not be supported by all sitemap client UIs.
+
+In its basic form the parameter will show a default confirmation message:
+
+```java
+Switch item=DemoSwitch confirmCmd=true
+```
+
+The default message can be set in the sitemap configuration (parameter `commandConfirmDialogMessage`), and will default to `Are you sure?` (translated to your local language).
+
+A specific message for the confirmation dialog can be defined by element:
+
+```java
+Switch item=DemoSwitch confirmCmd=[="Shall I do this?"]
+```
+
+Showing the confirmation dialog can be conditional, defined with rules analogous to rules for [Dynamic Sitemaps](#dynamic-sitemaps).
+The following example will only show a confirmation dialog when the current state of the Item is not `ON`.
+For a `Switch` Item this corresponds to showing the dialog when switching the Item `ON`.
+Note the condition is depending on the current state of the Item, not the target state.
+
+```java
+Switch item=DemoSwitch label="Confirm ON" confirmCmd=[!= ON]
+```
+
+The condition can be more complex and can depend on the state of other Items, for example:
+
+```java
+Slider item=DemoNumber label="Confirm DemoSwitch ON" confirmCmd=[DemoSwitch == ON]
+```
+
+Conditions can also be combined with a custom message:
+
+```java
+Switch item=DemoSwitch confirmCmd=[!= ON="Should I turn it on?"]
+```
+
 ## Dynamic Sitemaps
 
 All Sitemap elements can be configured to be hidden, color highlighted or to have a [dynamic icon]({{base}}/configuration/items.html#dynamic-icons), depending on certain Item states.
@@ -717,7 +797,7 @@ If the parameter is not provided, the default is to display the Item.
 Visibility syntax:
 
 ```java
-visibility=[item_name operator value, item_name operator value AND item_name operator value, ... ]
+visibility=[item_name operator argument, item_name operator argument AND item_name operator argument, ... ]
 ```
 
 You can set as many conditions as you want.
@@ -760,9 +840,9 @@ The icon may be tinted depending on the state as well.
 **Label, Value and Icon Color Syntax:**
 
 ```java
-labelcolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color", ... ]
-valuecolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color", ... ]
-iconcolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color",... ]
+labelcolor=[item_name operator argument = "color", item_name operator argument AND item_name operator argument = "color", ... ]
+valuecolor=[item_name operator argument = "color", item_name operator argument AND item_name operator argument = "color", ... ]
+iconcolor=[item_name operator argument = "color", item_name operator argument AND item_name operator argument = "color",... ]
 ```
 
 You can set as many conditions as you want, along with a color for each condition.
@@ -862,7 +942,7 @@ The `icon` parameter can be used to provide conditional rules.
 Extended icon syntax:
 
 ```java
-icon=[item_name operator value = icon, item_name operator value AND item_name operator value = icon, ... ]
+icon=[item_name operator argument = icon, item_name operator argument AND item_name operator argument = icon, ... ]
 ```
 
 You can set as many conditions as you want, along with a reference to an icon for each condition.
@@ -944,5 +1024,3 @@ Explanation:
 
 - DateTime comparisons are relative to the current time and specified in seconds.
     So the expression `Lights_On_Time > 300` will return true if the DateTime Item is set to a value that's newer than the past 5 minutes (300 seconds).
-
-- Further examples for defining Sitemaps can be found in our [openHAB-Samples](https://github.com/openhab/openhab/wiki/Samples-Sitemap-Definitions) section.
