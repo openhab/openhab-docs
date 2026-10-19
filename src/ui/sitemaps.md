@@ -797,7 +797,7 @@ If the parameter is not provided, the default is to display the Item.
 Visibility syntax:
 
 ```java
-visibility=[item_name operator value, item_name operator value AND item_name operator value, ... ]
+visibility=[item_name operator argument, item_name operator argument AND item_name operator argument, ... ]
 ```
 
 You can set as many conditions as you want.
@@ -840,9 +840,9 @@ The icon may be tinted depending on the state as well.
 **Label, Value and Icon Color Syntax:**
 
 ```java
-labelcolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color", ... ]
-valuecolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color", ... ]
-iconcolor=[item_name operator value = "color", item_name operator value AND item_name operator value = "color",... ]
+labelcolor=[item_name operator argument = "color", item_name operator argument AND item_name operator argument = "color", ... ]
+valuecolor=[item_name operator argument = "color", item_name operator argument AND item_name operator argument = "color", ... ]
+iconcolor=[item_name operator argument = "color", item_name operator argument AND item_name operator argument = "color",... ]
 ```
 
 You can set as many conditions as you want, along with a color for each condition.
@@ -942,7 +942,7 @@ The `icon` parameter can be used to provide conditional rules.
 Extended icon syntax:
 
 ```java
-icon=[item_name operator value = icon, item_name operator value AND item_name operator value = icon, ... ]
+icon=[item_name operator argument = icon, item_name operator argument AND item_name operator argument = icon, ... ]
 ```
 
 You can set as many conditions as you want, along with a reference to an icon for each condition.
