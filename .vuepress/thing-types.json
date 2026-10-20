@@ -10110,6 +10110,26 @@
     "label": "Air Purifier"
   },
   {
+    "bindingId": "transit",
+    "id": "transit:bridge",
+    "label": "Transit Bridge"
+  },
+  {
+    "bindingId": "transit",
+    "id": "transit:stop",
+    "label": "Stop"
+  },
+  {
+    "bindingId": "transit",
+    "id": "transit:routedetails",
+    "label": "Route Details"
+  },
+  {
+    "bindingId": "transit",
+    "id": "transit:tripdetails",
+    "label": "Trip Details"
+  },
+  {
     "bindingId": "tuya",
     "id": "tuya:tuyaGateway",
     "label": "Tuya Gateway"
