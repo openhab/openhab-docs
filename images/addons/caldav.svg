@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   role="img"
+   aria-labelledby="title desc"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="caldav.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.1064453"
+     inkscape:cx="-11.749338"
+     inkscape:cy="211.93998"
+     inkscape:window-width="3440"
+     inkscape:window-height="1351"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <title
+     id="title">CalDAV calendar synchronization</title>
+  <desc
+     id="desc">Blue calendar with orange synchronization arrows. Unofficial project icon.</desc>
+  <rect
+     x="72"
+     y="96"
+     width="368"
+     height="344"
+     rx="40"
+     fill="#fff"
+     id="rect1" />
+  <path
+     d="M112 96h288a40 40 0 0 1 40 40v56H72v-56a40 40 0 0 1 40-40Z"
+     fill="#2980b9"
+     id="path1" />
+  <g
+     fill="none"
+     stroke="#253746"
+     stroke-width="20"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="g2">
+    <rect
+       x="72"
+       y="96"
+       width="368"
+       height="344"
+       rx="40"
+       id="rect2" />
+    <path
+       d="M72 192h368M160 64v64M352 64v64"
+       id="path2" />
+  </g>
+  <g
+     fill="none"
+     stroke="#e87524"
+     stroke-width="24"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="g4"
+     transform="translate(6.7784643,8.5860547)">
+    <path
+       d="m 332,332 c -7.37266,34.1589 -36.06375,59.57962 -70.86193,62.78472 C 226.33988,397.98981 193.48812,378.23751 180,346"
+       id="path4"
+       sodipodi:nodetypes="csc" />
+    <path
+       d="m 154.86793,364.9701 15.78828,-41.06982 41.06982,15.78828"
+       id="path1-4" />
+    <g
+       id="g5"
+       transform="translate(-9.0379523,0.45189762)">
+      <path
+         d="m 180,284 c 7.37266,-34.1589 36.06375,-59.57962 70.86193,-62.78472 C 285.66012,218.01019 318.51188,237.76249 332,270"
+         id="path3"
+         inkscape:label="path3"
+         sodipodi:nodetypes="csc" />
+      <path
+         d="m 355.82719,249.98257 -17.1381,40.52512 -40.52512,-17.1381"
+         id="path1-0" />
+    </g>
+  </g>
+</svg>
