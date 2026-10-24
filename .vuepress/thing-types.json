@@ -696,6 +696,11 @@
   },
   {
     "bindingId": "boschshc",
+    "id": "boschshc:smart-plug-compact-matter",
+    "label": "Compact Smart Plug [+M]"
+  },
+  {
+    "bindingId": "boschshc",
     "id": "boschshc:twinguard",
     "label": "Twinguard"
   },
@@ -2300,6 +2305,11 @@
     "label": "Relay Controller"
   },
   {
+    "bindingId": "enphase",
+    "id": "enphase:battery",
+    "label": "IQ Battery"
+  },
+  {
     "bindingId": "entsoe",
     "id": "entsoe:day-ahead",
     "label": "Day-ahead prices"
@@ -2413,6 +2423,16 @@
     "bindingId": "exec",
     "id": "exec:command",
     "label": "Command"
+  },
+  {
+    "bindingId": "eyeonwater",
+    "id": "eyeonwater:bridge",
+    "label": "EyeOnWater Account Bridge"
+  },
+  {
+    "bindingId": "eyeonwater",
+    "id": "eyeonwater:meter",
+    "label": "EyeOnWater Water Meter"
   },
   {
     "bindingId": "feed",
@@ -13698,6 +13718,11 @@
     "bindingId": "zwave",
     "id": "zwave:ge_59347zwa4011_00_000",
     "label": "59347/ZWA4011 UltraPro 59437/ZW4011 In Wall Switch"
+  },
+  {
+    "bindingId": "zwave",
+    "id": "zwave:ge_76591_01_000",
+    "label": "76591/ZWN4015 Enbrighten Z-Wave 800 Series In-Wall Paddle Switch"
   },
   {
     "bindingId": "zwave",
