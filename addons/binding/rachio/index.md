@@ -4,6 +4,7 @@ label: Rachio
 title: Rachio - Bindings
 type: binding
 description: This binding integrates Rachio irrigation controllers and Smart Hose Timer resources through the Rachio Cloud APIs.
+logo: images/addons/rachio.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.rachio/README.md
 meta:
@@ -16,6 +17,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # Rachio Binding
+
+<AddonLogo />
 
 This binding integrates Rachio irrigation controllers and Smart Hose Timer resources through the Rachio Cloud APIs.
 Use the Rachio app for account setup, device pairing, and detailed schedule or program editing.
