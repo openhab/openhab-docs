@@ -9590,6 +9590,21 @@
     "label": "Plug"
   },
   {
+    "bindingId": "tedee",
+    "id": "tedee:local-bridge",
+    "label": "Tedee Bridge"
+  },
+  {
+    "bindingId": "tedee",
+    "id": "tedee:cloud-bridge",
+    "label": "Tedee Cloud"
+  },
+  {
+    "bindingId": "tedee",
+    "id": "tedee:lock",
+    "label": "Tedee Lock"
+  },
+  {
     "bindingId": "telegram",
     "id": "telegram:telegramBot",
     "label": "Telegram Bot"
@@ -10148,6 +10163,21 @@
     "bindingId": "transit",
     "id": "transit:tripdetails",
     "label": "Trip Details"
+  },
+  {
+    "bindingId": "transit",
+    "id": "transit:networkalerts",
+    "label": "Network Alerts"
+  },
+  {
+    "bindingId": "transit",
+    "id": "transit:journey",
+    "label": "Journey"
+  },
+  {
+    "bindingId": "transit",
+    "id": "transit:vehicles",
+    "label": "Vehicles"
   },
   {
     "bindingId": "tuya",
