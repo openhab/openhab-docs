@@ -4,6 +4,7 @@ label: Tedee for openHAB
 title: Tedee for openHAB - Bindings
 type: binding
 description: 'The Tedee binding integrates Tedee Smart Locks with openHAB through either:'
+logo: images/addons/tedee.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.tedee/README.md
 meta:
@@ -16,6 +17,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # Tedee Binding for openHAB
+
+<AddonLogo />
 
 The Tedee binding integrates Tedee Smart Locks with openHAB through either:
 
