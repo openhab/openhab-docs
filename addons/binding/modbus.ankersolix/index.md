@@ -4,6 +4,7 @@ label: Modbus Anker SOLIX
 title: Modbus Anker SOLIX - Bindings
 type: binding
 description: This binding adds Anker SOLIX device support as a Modbus sub-binding.
+logo: images/addons/modbus.ankersolix.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.modbus.ankersolix/README.md
 prev: ../modbus/
@@ -17,6 +18,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # Modbus Anker SOLIX Binding
+
+<AddonLogo />
 
 This binding adds Anker SOLIX device support as a Modbus sub-binding.
 It currently supports Anker SOLIX devices with officially exposed Modbus profiles.
