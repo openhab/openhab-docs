@@ -4,6 +4,7 @@ label: OCPP
 title: OCPP - Bindings
 type: binding
 description: This binding lets openHAB act as an OCPP 1.6-J central system, so EV chargers (charge points) that speak OCPP connect directly to openHAB — no vendor cloud required.
+logo: images/addons/ocpp.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.ocpp/README.md
 meta:
@@ -16,6 +17,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # OCPP Binding
+
+<AddonLogo />
 
 This binding lets openHAB act as an OCPP 1.6-J central system, so EV chargers (charge points) that speak OCPP connect directly to openHAB — no vendor cloud required.
 It is built on the [ChargeTime OCA-OCPP](https://github.com/ChargeTimeEU/Java-OCA-OCPP) library.

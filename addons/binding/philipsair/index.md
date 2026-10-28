@@ -4,6 +4,7 @@ label: Philips Air Purifier
 title: Philips Air Purifier - Bindings
 type: binding
 description: This binding monitors and controls Philips air purifiers and combined air purifier/humidifiers over the local network.
+logo: images/addons/philipsair.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.philipsair/README.md
 meta:
@@ -16,6 +17,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # Philips Air Purifier Binding
+
+<AddonLogo />
 
 This binding monitors and controls Philips air purifiers and combined air purifier/humidifiers over the local network.
 No cloud account is needed.
