@@ -813,6 +813,7 @@ If an operator is not specified, the operator will default to `==`.
 If you specify an `item_name` but omit the `operator`, put a space between the `item_name` and the `argument` to avoid ambiguous syntax.
 E.g. `visibility=[Temp-1]`, where the `item_name` is `Temp`, the `argument` is `-1` and the operator is implied as `==`, will be rejected, as it could be interpreted to be an `argument` equal to `Temp-1` as well.
 Write `visibility=[Temp -1]` or `visibility=[Temp==-1]` instead.
+If it is meant to be interpreted as an `argument`, put quotes around it: `visibility=["Temp-1"]`.
 
 Valid comparison operators are:
 
