@@ -5,17 +5,17 @@ title: Pages - Introduction
 
 # Introduction to Pages
 
-openHAB 3 introduced a new unified user interface called MainUI.
-Almost everything that can be configured in openHAB can be configured through MainUI.
+openHAB 3 introduced a new unified user interface called Main UI.
+Almost everything that can be configured in openHAB can be configured through Main UI.
 
-In addition to being used for the administration of openHAB, MainUI can serve as the interface presented to the users of your home automation system.
-You can find an example of the MainUI on the [demo page](https://demo.openhab.org/#!/).
+In addition to being used for the administration of openHAB, Main UI can serve as the interface presented to the users of your home automation system.
+You can find an example of the Main UI on the [demo page](https://demo.openhab.org/#!/).
 
 [[toc]]
 
 ## Role Based Access
 
-MainUI presents two different views to users depending on the type of user they log in as.
+Main UI presents two different views to users depending on the type of user they log in as.
 The two types of users are regular users and administrators.
 
 ### Regular Users
@@ -46,16 +46,16 @@ Notice the new Settings and Developer Tools menus are accessible to administrato
 
 Every openHAB deployment is unique.
 Consequently, every administrator of an openHAB instance will need to create a custom interface for the users of their bespoke home automation system.
-openHAB provides a number of options to support this in addition to MainUI Pages.
+openHAB provides a number of options to support this in addition to Main UI Pages.
 
-| Interface                                      | Purpose                                                                                                                                                                     | How the UI is Defined                                                                                                                                                                                                                                                                                                                  | Notes                                          |
-|------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
-| [Pages]({{base}}/ui/index.html)                | Built into MainUI. Allows for a rich set of options to present your home automation.                                                                                        | Can be built automatically through the semantic model as well as customized which includes [Layout Pages]({{base}}/ui/layout-pages.html), [Map Pages]({{base}}/ui/map-pages.html), [Floorplan Pages]({{base}}/ui/floorplan-pages.html), [Tabbed Pages]({{base}}/ui/tabbed-pages.html) and [Chart Pages]({{base}}/ui/chart-pages.html). |                                                |
-| [Sitemaps]({{base}}/ui/sitemaps.html)          | A simple declaritive way to define a simple user interface                                                                                                                  | Created using .sitemap files or through MainUI.                                                                                                                                                                                                                                                                                        | Used by BasicUI and the phone apps by default. |
-| [HABPanel]({{base}}/ui/habpanel/habpanel.html) | UI designed for fixed wall mounted tablets and similar touch screen displays using a blocks interface (e.g. the Windows 10 start menu) with a lot of customization options. | Built graphically though the browser. A number of custom widgets are defined and installable.                                                                                                                                                                                                                                          |                                                |
-| [HABot]({{base}}/ui/habot/)                    | Provides a basic chatbot interface to interact with your home automation through natural langauge.                                                                          | Requires the configuration of the semantic model.                                                                                                                                                                                                                                                                                      |                                                |
+| Interface                                      | Purpose                                                                                                                                                                     | How the UI is Defined                                                                                                                                                                                                                                                                                                                  | Notes                                           |
+|------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| [Pages]({{base}}/ui/index.html)                | Built into Main UI. Allows for a rich set of options to present your home automation.                                                                                       | Can be built automatically through the semantic model as well as customized which includes [Layout Pages]({{base}}/ui/layout-pages.html), [Map Pages]({{base}}/ui/map-pages.html), [Floorplan Pages]({{base}}/ui/floorplan-pages.html), [Tabbed Pages]({{base}}/ui/tabbed-pages.html) and [Chart Pages]({{base}}/ui/chart-pages.html). |                                                 |
+| [Sitemaps]({{base}}/ui/sitemaps.html)          | A simple declaritive way to define a simple user interface                                                                                                                  | Created using .sitemap files or through Main UI.                                                                                                                                                                                                                                                                                       | Used by Basic UI and the phone apps by default. |
+| [HABPanel]({{base}}/ui/habpanel/habpanel.html) | UI designed for fixed wall mounted tablets and similar touch screen displays using a blocks interface (e.g. the Windows 10 start menu) with a lot of customization options. | Built graphically though the browser. A number of custom widgets are defined and installable.                                                                                                                                                                                                                                          |                                                 |
+| [HABot]({{base}}/ui/habot/)                    | Provides a basic chatbot interface to interact with your home automation through natural langauge.                                                                          | Requires the configuration of the semantic model.                                                                                                                                                                                                                                                                                      |                                                 |
 
-Once installed, any non-Pages UI can be accessed in the "Other Apps" menu that pops up when clicking on the square icon in the upper right corner of the MainUI Overview page (the first page you see when first accessing openHAB).
+Once installed, any non-Pages UI can be accessed in the "Other Apps" menu that pops up when clicking on the square icon in the upper right corner of the Main UI Overview page (the first page you see when first accessing openHAB).
 
 ![other apps menu](images/other_apps.png)
 
