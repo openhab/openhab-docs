@@ -810,8 +810,9 @@ Note that `item_name` and `operator` are both optional.
 If `item_name` is not provided, the Item name will default to the current Item.
 If an operator is not specified, the operator will default to `==`.
 
-If you specify an `item_name` but omit the `operator`, pub a space between the `item_name` and the `argument` to avoid ambiguous syntax.
+If you specify an `item_name` but omit the `operator`, put a space between the `item_name` and the `argument` to avoid ambiguous syntax.
 E.g. `visibility=[Temp-1]`, where the `item_name` is `Temp`, the `argument` is `-1` and the operator is implied as `==`, will be rejected, as it could be interpreted to be an `argument` equal to `Temp-1` as well.
+Write `visibility=[Temp -1]` or `visibility=[Temp==-1]` instead.
 
 Valid comparison operators are:
 
