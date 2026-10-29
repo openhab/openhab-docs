@@ -21,6 +21,7 @@ Top-level entries in the YAML file must be unique key-value maps with the follow
 - [ruleTemplates](ruletemplates): openHAB Rule Templates
 - [pages](pages): Main UI Pages
 - [widgets](widgets): Main UI Widgets
+- [Sitemaps](sitemaps): Sitemaps
 
 The YAML files in general must follow the standard YAML syntax, with a few openHAB-specific features:
 
@@ -37,7 +38,7 @@ Notes about entities:
 - Entities may be distributed across multiple files; however, each entity must be fully defined within a single file and uniquely identified across all loaded YAML files.
   For example, Item A can be defined in file1.yaml and Item B in file2.yaml, but Item A must not be defined again in file2.yaml.
   If duplicates exist, the definition from the first loaded file takes precedence.
-- For convenience, YAML files placed in `$OPENHAB_CONF/items/`, `$OPENHAB_CONF/things/`, and `$OPENHAB_CONF/tags/` are also recognized and processed by openHAB.
+- For convenience, YAML files placed in `$OPENHAB_CONF/items/`, `$OPENHAB_CONF/things/`, `$OPENHAB_CONF/tags/` and `$OPENHAB_CONF/sitemaps/` are also recognized and processed by openHAB.
   Unlike the DSL files, YAML files in these directories are not limited to a specific object type; they can contain any supported entities (Things, Items, Tags, etc.).
   For example, a file like `$OPENHAB_CONF/items/myitems.yaml` may define Things and Tags in addition to Items, or even exclusively contain other entities.
   To avoid confusion and maintain clarity, it is recommended to place YAML files containing a mix of different entity types in the `$OPENHAB_CONF/yaml/` directory.
@@ -140,6 +141,9 @@ pages:
     slots:
       default:
         - component: widget:custom-clock-card
+
+sitemaps:
+  
 ```
 
 See the dedicated pages for the supported keys and examples.
