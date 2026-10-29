@@ -11185,6 +11185,11 @@
     "label": "Windcentrale Windmill"
   },
   {
+    "bindingId": "windhager",
+    "id": "windhager:biowin2",
+    "label": "BioWin 2"
+  },
+  {
     "bindingId": "wiz",
     "id": "wiz:color-bulb",
     "label": "WiZ Color Bulb"
