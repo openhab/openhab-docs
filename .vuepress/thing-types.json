@@ -2780,6 +2780,16 @@
     "label": "Zmote IR"
   },
   {
+    "bindingId": "gme",
+    "id": "gme:account",
+    "label": "GME API Account"
+  },
+  {
+    "bindingId": "gme",
+    "id": "gme:pun",
+    "label": "PUN Prices"
+  },
+  {
     "bindingId": "goecharger",
     "id": "goecharger:goe",
     "label": "Go-eCharger"
