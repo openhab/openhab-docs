@@ -11060,6 +11060,16 @@
     "label": "Volumio Device"
   },
   {
+    "bindingId": "volvocars",
+    "id": "volvocars:account",
+    "label": "Volvo Cars Account"
+  },
+  {
+    "bindingId": "volvocars",
+    "id": "volvocars:vehicle",
+    "label": "Volvo Vehicle"
+  },
+  {
     "bindingId": "volvooncall",
     "id": "volvooncall:vocapi",
     "label": "VolvoOnCall API"
