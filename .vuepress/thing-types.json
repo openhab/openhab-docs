@@ -2910,6 +2910,16 @@
     "label": "Harmony Device"
   },
   {
+    "bindingId": "hasslink",
+    "id": "hasslink:server",
+    "label": "Home Assistant Server"
+  },
+  {
+    "bindingId": "hasslink",
+    "id": "hasslink:device",
+    "label": "Home Assistant Device / Entity"
+  },
+  {
     "bindingId": "haywardomnilogic",
     "id": "haywardomnilogic:backyard",
     "label": "Backyard"
