@@ -1020,6 +1020,11 @@
     "label": "CalDAV Calendar"
   },
   {
+    "bindingId": "candy",
+    "id": "candy:bianca",
+    "label": "Candy Bianca Washing Machine"
+  },
+  {
     "bindingId": "casokitchen",
     "id": "casokitchen:winecooler-2z",
     "label": "Wine Cooler 2 Zones"
@@ -5258,6 +5263,11 @@
     "bindingId": "monopriceaudio",
     "id": "monopriceaudio:xantech",
     "label": "Xantech 8x8 Amplifier"
+  },
+  {
+    "bindingId": "motionblinds",
+    "id": "motionblinds:wifi-motor",
+    "label": "Wi-Fi Motor"
   },
   {
     "bindingId": "mpd",
