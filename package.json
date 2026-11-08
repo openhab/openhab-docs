@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "npm dedupe && npm prune",
-    "prepare-docs": "ruby prepare-docs.rb",
+    "prepare-docs": "ruby scripts/prepare-docs.rb",
+    "fetch-external-content": "ruby scripts/fetch-external-content.rb",
     "build-only": "vuepress build .",
     "build-preview": "npm run prepare-docs && npm run build-only",
     "preserve-preview": "npm run build-preview",
@@ -26,6 +27,7 @@
   "homepage": "https://github.com/openhab/openhab-docs#readme",
   "dependencies": {
     "cross-env": "^7.0.3",
+    "framework7-icons": "^5.0.5",
     "null-loader": "^4.0.1",
     "vue-tabs-component": "^1.5.0",
     "vuepress": "^1.9.10",

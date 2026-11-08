@@ -13,6 +13,6 @@ jobs:
     with:
       base_source_repository: openhab-alexa
       base_source_ref: ${{ github.event.client_payload.ref }}
-      base_folder: _addons_ios/alexa-skill
+      base_folder: _ecosystem/alexa-skill
       doc_base_file: USAGE.md
       has_images: true

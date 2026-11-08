@@ -1,0 +1,21 @@
+name: Fetch openHAB Sailfish OS Client Docs
+
+on:
+  # Repository dispatch event, to be triggerd by a release
+  # or manually from the repository
+  repository_dispatch:
+    types: [update-openhab-sailfishos-docs-event]
+  workflow_dispatch:
+
+jobs:
+  call-reusable-fetch-workflow:
+    uses: openhab/openhab-docs/.github/workflows/fetch_external_docs_reusable.yml@main
+    with:
+      base_source_repository: openhab-sailfishos
+      base_source_ref: ${{ github.event.client_payload.ref }}
+      base_folder: addons/uis/apps/sailfishos
+      base_file: readme.md
+      doc_base_dir: /docs
+      doc_base_file: USAGE.md
+      doc_exclude_pattern: DEV*.md
+      has_images: true

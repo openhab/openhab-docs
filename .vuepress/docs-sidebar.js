@@ -50,7 +50,15 @@ module.exports = [
       ['installation/linux', 'Linux'],
       ['installation/windows', 'Windows'],
       ['installation/macos', 'macOS'],
-      'installation/openhabian',
+      ['installation/openbsd', 'OpenBSD'],
+      { title: 'openHABian',
+        children: [
+          'installation/openhabian',
+          'installation/openhabian-troubleshooting',
+          'installation/openhabian-backup',
+          'installation/openhabian-exim',
+        ]
+      },
       'installation/armbian',
       'installation/docker',
       'installation/synology',
@@ -68,7 +76,14 @@ module.exports = [
       'concepts/discovery',
       'concepts/audio',
       'concepts/units-of-measurement',
-      'concepts/rules',
+      { title: 'Rules',
+        path: '/docs/concepts/rules',
+        children: [
+          ['concepts/standard-triggers', 'Standard Triggers'],
+          ['concepts/standard-conditions', 'Standard Conditions'],
+          ['concepts/standard-actions', 'Standard Actions']
+        ]
+      }
     ]
   },
   {
@@ -102,6 +117,18 @@ module.exports = [
               ['configuration/blockly/rules-blockly-standard-ext', 'Standard Extensions'],
             ]
           },
+          { title: 'YAML Configuration',
+            path: '/docs/configuration/yaml/',
+            children: [
+              ['configuration/yaml/things', 'Things'],
+              ['configuration/yaml/items', 'Items'],
+              ['configuration/yaml/tags', 'Tags'],
+              ['configuration/yaml/rules', 'Rules'],
+              ['configuration/yaml/ruletemplates', 'Rule Templates'],
+              ['configuration/yaml/pages', 'Pages'],
+              ['configuration/yaml/widgets', 'Widgets'],
+            ]
+          },
         ]
       },
       'configuration/actions',
@@ -120,6 +147,7 @@ module.exports = [
     collapsable: false,
     children: [
       ['mainui/', 'Overview'],
+      ['mainui/chat', 'Chat'],
       { title: 'Settings',
         path: '/docs/mainui/settings/',
         children: [
@@ -140,7 +168,8 @@ module.exports = [
         path: '/docs/mainui/developer/',
         children: [
           ['mainui/developer/sidebar', 'Developer Sidebar'],
-          ['mainui/developer/widgets', 'Widgets']
+          ['mainui/developer/widgets', 'Widgets'],
+          ['mainui/developer/log-viewer', 'Log Viewer']
         ]
       },
       ['mainui/about', 'Help & About'],
@@ -178,8 +207,10 @@ module.exports = [
       },
       ['ui/components/', 'Component Reference'],
       'ui/habpanel/habpanel',
-      ['apps/android', 'Android App'],
+      'apps/android',
       'apps/ios',
+      'apps/sailfishos/',
+      'apps/garmin/',
       'apps/windows'
     ]
   },
@@ -190,8 +221,6 @@ module.exports = [
       ['ecosystem/alexa/', 'Amazon Alexa'],
       ['ecosystem/google-assistant/', 'Google Assistant'],
       ['../addons/integrations/homekit/', 'Apple HomeKit'],
-      // ['ecosystem/ifttt/', 'IFTTT'], // Temporary remove until service gets reactivated
-      ['ecosystem/mycroft/', 'Mycroft.AI'],
       ['../addons/integrations/openhabcloud/', 'openHAB Cloud'],
     ]
   },
@@ -220,6 +249,7 @@ module.exports = [
           'developer/ide/intellij',
           'developer/ide/vscode',
           'developer/ide/generic',
+          'developer/ide/karaf',
         ]
       },
       'developer/guidelines',
