@@ -190,6 +190,15 @@ Then run `sudo systemctl enable openhab.service`.
 
 Finally run `sudo systemctl start openhab.service` to start openHAB running.
 
+### Easypanel
+
+[Easypanel](https://easypanel.io) is a self-hosted Docker deployment platform, and it has a one-click deployment template for openHAB:
+
+[![Deploy on Easypanel][easypanel-btn]][easypanel-deploy]
+
+[easypanel-btn]: https://easypanel.io/img/deploy-on-easypanel-40.svg
+[easypanel-deploy]: https://easypanel.io/templates/openhab
+
 ## Explanation of Arguments Passed to Docker
 
 Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
