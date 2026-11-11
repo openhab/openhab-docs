@@ -40,12 +40,12 @@ Non-rendered component with functions, constants, and scoped variables for widge
 </PropBlock>
 <PropBlock type="TEXT" name="constants" label="Widget Constants">
   <PropDescription>
-    Object with key:constant pairs. Constants are available to expressions in all child components via the <code>const</code> object.<br />Constants are evaluated once before the widget is displayed the first time and cannot be changed.
+    Object with key:constant pairs. Constants are available to expressions in all child components via the <code>const</code> object.<br />Constants are evaluated once before the widget is displayed the first time and cannot be changed. If an initial item state dependency is not available yet, constants are re-evaluated once when the missing item state arrives.
   </PropDescription>
 </PropBlock>
 <PropBlock type="TEXT" name="variables" label="Widget Variables">
   <PropDescription>
-    Object with key:variable default value pairs. Variables are available to expressions in all child components via the <code>vars</code> object and take precedence over variables with the same name from higher contexts.<br />Variables are evaluated once before the widget is displayed the first time . Their values can only be changed by other component variable actions (e.g. <a class="external text-color-blue" target="_blank" href="/docs/ui/components/oh-button.html#action-variable">oh-button</a>)
+    Object with key:variable default value pairs. Variables are available to expressions in all child components via the <code>vars</code> object and take precedence over variables with the same name from higher contexts.<br />Variables are evaluated once before the widget is displayed the first time. If an initial item state dependency is not available yet, variable defaults are re-evaluated once when the missing item state arrives. Their values can only be changed by other component variable actions (e.g. <a class="external text-color-theme-alt" target="_blank" href="/docs/ui/components/oh-button.html#action-variable">oh-button</a>).
   </PropDescription>
 </PropBlock>
 </PropGroup>
