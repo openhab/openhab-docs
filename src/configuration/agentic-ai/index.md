@@ -7,6 +7,12 @@ title: Agentic AI and openHAB
 
 This set of pages explains how to let an agentic AI harness (Claude Code, Codex, Cursor, Gemini CLI, an MCP client, and similar tools) work with an openHAB instance through its REST API, safely and productively.
 
+## How this differs from the built-in Chat
+
+openHAB can also use an AI model itself: an [LLM-based interpreter](../multimedia.md#llm-based-interpreters) answers natural-language requests, for example in the Main UI [Chat](../../mainui/chat.md), and can only read and command Items allowed by the Item permission model.
+These pages cover the other direction: an external agent, running on your own computer, that uses the REST API to inspect and change openHAB's configuration as well as its Items.
+That makes it much more capable, and it needs the safeguards described here.
+
 ## Pages
 
 1. [Creating an API Token for an Agent](api-token.md)
