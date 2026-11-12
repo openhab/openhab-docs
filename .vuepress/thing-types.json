@@ -640,6 +640,16 @@
     "label": "Ruuvi Sensor"
   },
   {
+    "bindingId": "bmwcardata",
+    "id": "bmwcardata:account",
+    "label": "BMW CarData Account"
+  },
+  {
+    "bindingId": "bmwcardata",
+    "id": "bmwcardata:vehicle",
+    "label": "BMW CarData Vehicle"
+  },
+  {
     "bindingId": "bondhome",
     "id": "bondhome:bondBridge",
     "label": "Bond Home Bridge"
