@@ -4,6 +4,7 @@ label: EyeOnWater
 title: EyeOnWater - Bindings
 type: binding
 description: This binding integrates with the EyeOnWater smart water meter service, allowing you to monitor water consumption, flow rates, and alerts directly from openHAB.
+logo: images/addons/eyeonwater.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.eyeonwater/README.md
 meta:
@@ -16,6 +17,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # EyeOnWater Binding
+
+<AddonLogo />
 
 This binding integrates with the EyeOnWater smart water meter service, allowing you to monitor water consumption, flow rates, and alerts directly from openHAB.
 
