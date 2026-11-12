@@ -4,6 +4,7 @@ label: MotionBlinds
 title: MotionBlinds - Bindings
 type: binding
 description: This binding controls blind, curtain and gate motors that are directly connected to Wi-Fi and are operated with the _Connector_ app (Dooya) or the _Motion Blinds_ app.
+logo: images/addons/motionblinds.png
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.motionblinds/README.md
 meta:
@@ -16,6 +17,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # MotionBlinds Binding
+
+<AddonLogo />
 
 This binding controls blind, curtain and gate motors that are directly connected to Wi-Fi and are operated with the _Connector_ app (Dooya) or the _Motion Blinds_ app.
 Many brands sell these motors under their own name.
