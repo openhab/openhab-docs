@@ -4,6 +4,7 @@ label: Candy
 title: Candy - Bindings
 type: binding
 description: This binding monitors Candy Bianca washing machines and provides optional washing controls over the local simply-Fi Wi-Fi protocol.
+logo: images/addons/candy.png
 install: manual
 children:
 - - doc/protocol
@@ -21,6 +22,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # Candy Binding
+
+<AddonLogo />
 
 This binding monitors Candy Bianca washing machines and provides optional washing controls over the local simply-Fi Wi-Fi protocol.
 Configure your simply-Fi account credentials and the washer's LAN address; the binding retrieves and matches the existing appliance key automatically.
