@@ -28,7 +28,7 @@ If you have backups, there is little you could do that will actually break thing
 
 ## Developer Sidebar
 
-MainUI has a tool called the Developer Sidebar.
+Main UI has a tool called the Developer Sidebar.
 Bring up the sidebar through Developer Tools or the key combination <kbd>Alt</kbd><kbd>Shift</kbd><kbd>D</kbd>.
 
 ![Developer Sidebar](images/developer-sidebar.png)
@@ -80,7 +80,7 @@ However, if the rule runs very fast it might flash too quickly to see, so there 
 In addition to the enable/disable control, rules also have a play icon where the rule can be manually triggered.
 
 Once everything you are currently working on is pinned in one place, developing capabilities becomes much easier because everything you need is right there and you can get to everything you need to with one click.
-Objects will remain pinned until the sidebar is closed, even if you click to other tabs in the sidebar or navigate to another page in MainUI.
+Objects will remain pinned until the sidebar is closed, even if you click to other tabs in the sidebar or navigate to another page in Main UI.
 
 ### Event Monitor
 
@@ -130,7 +130,7 @@ In cases where the failure can not be found in a fast way you can have a look at
 The `square_list` icon right next to the developer sidebar icon toggles the integrated log viewer pane from any page, or you can press <kbd>Shift</kbd><kbd>Alt</kbd><kbd>L</kbd>.
 When the log viewer pane is open, <kbd>Shift</kbd><kbd>Alt</kbd><kbd>F</kbd> maximizes or restores it.
 
-In MainUI, the integrated log viewer can be opened from **Developer Tools -> Log Viewer** or toggled from any page as a bottom pane with <kbd>Shift</kbd><kbd>Alt</kbd><kbd>L</kbd>.
+In Main UI, the integrated log viewer can be opened from **Developer Tools -> Log Viewer** or toggled from any page as a bottom pane with <kbd>Shift</kbd><kbd>Alt</kbd><kbd>L</kbd>.
 It stays visible while you move between pages, and <kbd>Shift</kbd><kbd>Alt</kbd><kbd>F</kbd> maximizes or restores it.
 
 Accessing the logs depends on different factors (e.g. the way you have installed openHAB).

@@ -56,7 +56,7 @@ See the automation add-on's reference for how to access and install the Helper L
 
 ::: tab JS
 
-In the case of JavaScript Scripting, the Helper Library comes with the add-on (nothing to install separately) and it is automatically imported into your rules for you (advanced users can turn off that auto import in MainUI Settings -> JS Scripting).
+In the case of JavaScript Scripting, the Helper Library comes with the add-on (nothing to install separately) and it is automatically imported into your rules for you (advanced users can turn off that auto import in Main UI Settings -> JS Scripting).
 To get the latest version of the Helper Library instead of waiting for the next release of OH, it can be installed using `npm`.
 
 :::

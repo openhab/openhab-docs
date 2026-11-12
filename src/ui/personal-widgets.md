@@ -40,7 +40,7 @@ config:
 The custom widget feature has been designed to be very accessible and users do not require a detailed understanding of webdesign to get started.
 It may be useful even to beginning users, however, to have a basic understanding of the logical flow of the system.
 Custom widgets are defined using YAML which is a human readable data format that easily converts back and forth from JSON, a text-based data format widely-used in web applications.
-MainUI uses the JSON data to populate templates built using Vue, a language for dynamically building HTML, taking advantage of the pre-made components available from the [Framework7 (F7)](https://framework7.io/) library.
+Main UI uses the JSON data to populate templates built using Vue, a language for dynamically building HTML, taking advantage of the pre-made components available from the [Framework7 (F7)](https://framework7.io/) library.
 The complete flow looks like this:
 
 > YAML → Vue (Framework7) → HTML
@@ -86,7 +86,7 @@ Where each component comes from determines many of the options available for con
 
 The most common type of component in most widgets will be the openHAB (OH) family of widgets.
 These are modified versions of the F7 library of components.
-The modifications include themeing to match the MainUI color and style themes and functionality that provides direct interaction with OH features such as Items.
+The modifications include themeing to match the Main UI color and style themes and functionality that provides direct interaction with OH features such as Items.
 A basic description of each of these components and the their capabilities (with examples) can be found on the [Component Reference](components/) page.
 Because most of the OH specific components are built on top of the F7 components, [the documentation of the F7 components](https://framework7.io/vue/) is often useful for users wishing to understand more about the OH components as well.
 
@@ -96,7 +96,7 @@ There are several subsets of OH components, each with different uses and strengt
 - **Standalone Card**: a component placed inside a container styled to look like a separate visual element (e.g., `oh-slider-card`)
 - **Cell**: a container styled to look like a separate visual element which will expand to show the component when clicked (e.g., `oh-slider-cell`)
 - **List Item**: a component placed inside a list type container meant only to be displayed as part of a list and which will not display properly on its own (e.g., `oh-slider-item`)
-- **Specialized components**: many of the available page types in the MainUI (e.g., chart pages) have their own series of specialized components
+- **Specialized components**: many of the available page types in the Main UI (e.g., chart pages) have their own series of specialized components
 
 ### F7 components
 

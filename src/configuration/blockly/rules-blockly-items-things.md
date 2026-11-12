@@ -248,7 +248,7 @@ with the blocks that can access it:
 ![blockly-metadata](../images/blockly/blockly-metadata.png)
 
 There a two different type of blocks:
-The value block is the main one for the _value_ of the namespace, which is also directly shown in the MainUI's list of an item's metadata, while the _config_ part holds more complex configuration of that metadata structure below the entry _config_.
+The value block is the main one for the _value_ of the namespace, which is also directly shown in the Main UI's list of an item's metadata, while the _config_ part holds more complex configuration of that metadata structure below the entry _config_.
 
 The following blocks allow to _change_ the config values in the namespace _expire_:
 
