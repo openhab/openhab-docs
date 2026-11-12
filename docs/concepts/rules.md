@@ -220,7 +220,7 @@ openHAB has a set of [standard actions with specific definitions](./standard-act
 Unfortunately the term "Script" is overloaded in openHAB, and has multiple meanings based on the context:
 
 - A UI rule consisting only of a single Script Action with the tag "Script".
-  - These will appear in a specific "Scripts" section on MainUI.
+  - These will appear in a specific "Scripts" section on Main UI.
   - They can be used to reuse code and logic across multiple other rules, one off experimentation to figure something out, create a catalog of examples, or to drive tests for other rules and behaviors.
 - In text based rules, a script is a file that is processed by a script engine, see the [automation add-ons](/addons/#automation).
   Those scripts can be used to create (multiple) rules, or those are loaded by other script files as libraries.
@@ -269,7 +269,7 @@ Fill out the rule's metadata as usual and select an installed rule template from
 Choose the rule template, and fill out the template configuration.
 
 Once a rule is created, it is separated from its template and can be further customized.
-To update a rule template, return to the Automation menu in MainUI, select the rule template, remove it and then readd it.
+To update a rule template, return to the Automation menu in Main UI, select the rule template, remove it and then readd it.
 Then to update a rule from the template, delete the rule(s) that were instantiated from the template and recreate them.
 Note, when clicking on the "Code" tab of the rule, the properties used when instantiating the rule are preserved in the configuration section.
 
