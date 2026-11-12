@@ -4,6 +4,7 @@ label: Volvo Cars
 title: Volvo Cars - Bindings
 type: binding
 description: 'This binding integrates Volvo cars using the official [Volvo Cars APIs](https://developer.volvocars.com): the Connected Vehicle API, the Energy API and the Location API.'
+logo: images/addons/volvocars.svg
 install: manual
 source: https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.volvocars/README.md
 meta:
@@ -16,6 +17,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # Volvo Cars Binding
+
+<AddonLogo />
 
 This binding integrates Volvo cars using the official [Volvo Cars APIs](https://developer.volvocars.com): the Connected Vehicle API, the Energy API and the Location API.
 It reads the state of doors, windows, locks, fuel, battery, charging, trip statistics, location and maintenance information, and lets you lock and unlock the car, start and stop the climatization or the engine, and make the car honk or flash its lights.
