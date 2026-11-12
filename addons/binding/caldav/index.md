@@ -4,6 +4,7 @@ label: CalDAV
 title: CalDAV - Bindings
 type: binding
 description: The CalDAV binding connects openHAB directly to CalDAV servers.
+logo: images/addons/caldav.svg
 install: manual
 children:
 - - doc/calendar-agenda-widget
@@ -19,6 +20,8 @@ meta:
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # CalDAV Binding
+
+<AddonLogo />
 
 The CalDAV binding connects openHAB directly to CalDAV servers.
 An account is represented by a bridge and each CalDAV Calendar Collection by a Calendar Thing.
