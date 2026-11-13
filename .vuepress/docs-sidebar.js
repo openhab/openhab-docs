@@ -139,6 +139,16 @@ module.exports = [
       ['configuration/restdocs', 'REST API'],
       ['configuration/websocket', 'WebSocket API'],
       ['configuration/apitokens', 'API Token Generation'],
+      { title: 'Agentic AI',
+        path: '/docs/configuration/agentic-ai/',
+        children: [
+          ['configuration/agentic-ai/api-token', 'Creating an API Token'],
+          ['configuration/agentic-ai/secure-storage', 'Storing the Token Securely'],
+          ['configuration/agentic-ai/harness', 'Injecting the Token'],
+          ['configuration/agentic-ai/best-practices', 'Best Practices'],
+          ['configuration/agentic-ai/examples', 'Examples'],
+        ]
+      },
       ['configuration/migration/', 'Migration from openHAB 2']
     ]
   },
