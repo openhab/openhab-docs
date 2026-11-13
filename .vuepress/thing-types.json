@@ -5121,6 +5121,31 @@
   },
   {
     "bindingId": "modbus",
+    "id": "modbus:hager-flow-ems",
+    "label": "Hager Flow EMS"
+  },
+  {
+    "bindingId": "modbus",
+    "id": "modbus:hager-flow-evse",
+    "label": "Hager Flow EVSE"
+  },
+  {
+    "bindingId": "modbus",
+    "id": "modbus:hager-flow-powermeter",
+    "label": "Hager Flow PowerMeter"
+  },
+  {
+    "bindingId": "modbus",
+    "id": "modbus:hager-flow-sgready",
+    "label": "Hager Flow SG-Ready Device"
+  },
+  {
+    "bindingId": "modbus",
+    "id": "modbus:hager-flow-storage",
+    "label": "Hager Flow Storage"
+  },
+  {
+    "bindingId": "modbus",
     "id": "modbus:helios-easycontrols",
     "label": "Helios Ventilation"
   },
@@ -11097,16 +11122,6 @@
   {
     "bindingId": "volvocars",
     "id": "volvocars:vehicle",
-    "label": "Volvo Vehicle"
-  },
-  {
-    "bindingId": "volvooncall",
-    "id": "volvooncall:vocapi",
-    "label": "VolvoOnCall API"
-  },
-  {
-    "bindingId": "volvooncall",
-    "id": "volvooncall:vehicle",
     "label": "Volvo Vehicle"
   },
   {

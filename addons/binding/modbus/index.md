@@ -26,6 +26,7 @@ And it has specialist extensions for the following manufacturers products:
 - [Modbus Anker SOLIX Binding](../modbus.ankersolix/)
 - [Hager / E3DC Power Plants](../modbus.e3dc/)
 - [Modbus Fox ESS Inverters (Solakon ONE, Avocado 22 Pro, etc.)](../modbus.foxinverter/)
+- [Hager Flow Modbus Binding](../modbus.hager/)
 - [Helios easyControls](../modbus.helioseasycontrols/)
 - [Kermi Heat pump](../modbus.kermi/)
 - [Lambda Heat Pump](../modbus.lambda/)
