@@ -7,6 +7,7 @@ title: Agentic AI Examples for openHAB
 
 These examples show outcome-style requests (see [Agentic AI Best Practices for openHAB](best-practices.md)), what a capable agent typically does with them, and what you should review afterwards.
 They assume `OPENHAB_URL` and `OPENHAB_API_TOKEN` are available as described in [Injecting the openHAB API Token into an Agent Harness](harness.md).
+The requests work the same through the [MCP Server add-on](/addons/integrations/mcp/); the agent then uses its tools instead of the REST calls below, except where a step needs your computer, such as building an add-on.
 
 ## REST API quick reference
 

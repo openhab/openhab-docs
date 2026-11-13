@@ -13,6 +13,21 @@ openHAB can also use an AI model itself: an [LLM-based interpreter](../multimedi
 These pages cover the other direction: an external agent, running on your own computer, that uses the REST API to inspect and change openHAB's configuration as well as its Items.
 That makes it much more capable, and it needs the safeguards described here.
 
+## MCP Server add-on or REST API
+
+An agent can reach openHAB in two ways, and both use the same API token.
+
+- The [MCP Server add-on](/addons/integrations/mcp/) gives the agent a set of openHAB tools.
+  It understands the semantic model, matches Items by fuzzy name, builds rules from typed triggers and actions, and keeps riskier capabilities (full REST access, scripting, log access) switched off until you enable them.
+  It also works with chat apps that cannot run commands.
+  It suits everyday control and configuration of your home.
+- Calling the [REST API](../restdocs.md) directly, for example with `curl`, needs nothing installed on the server and reaches every endpoint.
+  It combines with everything else the agent can do on your computer, such as building and deploying an add-on, reading log files, or editing configuration kept in Git.
+  It suits development, testing, and bulk or scripted work.
+
+Many people use both.
+The pages below apply either way.
+
 ## Pages
 
 1. [Creating an API Token for an Agent](api-token.md)
@@ -25,6 +40,6 @@ That makes it much more capable, and it needs the safeguards described here.
 
 - Create a **dedicated openHAB user** for the agent and issue an API token for that user, so you can revoke it without affecting anyone else.
 - Keep the token in your **platform's secure storage** (macOS Keychain, Linux Secret Service, Windows SecretManagement, or a password manager CLI), never in a file in a repository.
-- Let the harness **read the token at run time** into an environment variable, and tell the agent never to print it.
+- Let the harness **read the token at run time**, into an environment variable or the MCP connection's headers, and tell the agent never to print it.
 - **Tell the agent what you want, not what to do**, and then **review** what it did before you trust it.
 - Take a **backup first**, and prefer a test instance for anything risky.

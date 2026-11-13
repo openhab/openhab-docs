@@ -52,26 +52,34 @@ Never print, echo, log, or write the token to a file, and never ask the user to 
 
 This works even when the harness was launched from a GUI and has no environment variable, because the command substitution runs inside each shell command.
 
-## Pattern 4: an MCP server
+## Pattern 4: the openHAB MCP Server add-on
 
-If you use an openHAB MCP server, pass the token through the environment rather than hard-coding it in the configuration.
-Claude Code expands `${VAR}` references in `.mcp.json`, so the file can be committed safely:
+The [MCP Server add-on](/addons/integrations/mcp/) serves the Model Context Protocol at `http://<your-openhab>:8080/mcp` and expects the same bearer token in an `Authorization` header.
+Many client setup examples put the token directly in the client configuration, which stores it in plain text.
+Prefer one of these instead.
+
+Let the client read the token from secure storage each time it connects.
+Claude Code runs a `headersHelper` command and uses the JSON it prints as request headers (macOS shown):
 
 ```json
 {
   "mcpServers": {
     "openhab": {
-      "command": "<your-openhab-mcp-server>",
-      "env": {
-        "OPENHAB_URL": "${OPENHAB_URL}",
-        "OPENHAB_API_TOKEN": "${OPENHAB_API_TOKEN}"
-      }
+      "type": "http",
+      "url": "http://openhab.local:8080/mcp",
+      "headersHelper": "printf '{\"Authorization\":\"Bearer %s\"}' \"$(security find-generic-password -a \"$USER\" -s openhab-api-token -w)\""
     }
   }
 }
 ```
 
-Other MCP clients have similar mechanisms; check that yours expands variables instead of treating `${OPENHAB_API_TOKEN}` as a literal string.
+Add it for your user rather than to a project file, for example with `claude mcp add-json --scope user openhab '<the JSON for "openhab" above>'`.
+The command runs again on every reconnect, so a rotated token is picked up automatically.
+
+If your client cannot run a command, reference an environment variable instead, for example `"Authorization": "Bearer ${OPENHAB_API_TOKEN}"`.
+Check that your client expands the variable rather than sending the literal text, and remember that a client started from the Dock or Start menu may not have the variable set.
+
+Clients that support OAuth can also sign in through the browser, so no token is stored in the client at all; see the add-on's documentation.
 
 ## Keep the token out of the transcript
 
