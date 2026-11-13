@@ -28,6 +28,15 @@ An agent can reach openHAB in two ways, and both use the same API token.
 Many people use both.
 The pages below apply either way.
 
+Some practical differences to keep in mind:
+
+- An MCP client loads the description of every tool into each agent session, whether or not the session uses openHAB.
+  If that matters, register the server only for the projects or sessions that need it.
+- Fuzzy search finds Items from everyday names, but for an exact question it can return many loose matches.
+  Lists from the MCP tools also arrive in pages, so ask the agent to make sure it has seen all of them.
+- Unfiltered REST responses can be very large, for example `/rest/things` on an installation with many Things.
+  Ask the agent to filter responses, for example with `jq`, before reading them.
+
 ## Pages
 
 1. [Creating an API Token for an Agent](api-token.md)
