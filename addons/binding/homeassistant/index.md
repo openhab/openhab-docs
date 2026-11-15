@@ -185,6 +185,8 @@ If a device has multiple device triggers for the same subtype (the particular bu
 
 ### [Number](https://www.home-assistant.io/integrations/number.mqtt/)
 
+Recognized units of measurement provide a dimension and unit hint for creating linked Items.
+
 | Channel ID      | Type   | R/W | Description                                         |
 |-----------------|--------|-----|-----------------------------------------------------|
 | number          | Number | R/W |                                                     |
@@ -207,6 +209,8 @@ If a device has multiple scenes, they will only show up as a single channel. You
 | json-attributes | String | RO  | Additional attributes, as a serialized JSON string.                                 |
 
 ### [Sensor](https://www.home-assistant.io/integrations/sensor.mqtt/)
+
+Numeric sensors with recognized units of measurement provide a dimension and unit hint for creating linked Items.
 
 | Channel ID      | Type                  | R/W | Description                                         |
 |-----------------|-----------------------|-----|-----------------------------------------------------|

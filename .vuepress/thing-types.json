@@ -1700,6 +1700,21 @@
     "label": "Smart Plug"
   },
   {
+    "bindingId": "dreame",
+    "id": "dreame:account",
+    "label": "Dreame/MOVA Account"
+  },
+  {
+    "bindingId": "dreame",
+    "id": "dreame:vacuum",
+    "label": "Dreame Vacuum"
+  },
+  {
+    "bindingId": "dreame",
+    "id": "dreame:mower",
+    "label": "Dreame/MOVA Robotic Mower"
+  },
+  {
     "bindingId": "dscalarm",
     "id": "dscalarm:envisalink",
     "label": "EyezOn Envisalink"
@@ -8281,343 +8296,38 @@
   },
   {
     "bindingId": "smartthings",
-    "id": "smartthings:smartthings",
-    "label": "SmartThings Hub"
+    "id": "smartthings:airconditioner",
+    "label": "Samsung Air Conditioner"
   },
   {
     "bindingId": "smartthings",
-    "id": "smartthings:accelerationSensor",
-    "label": "Acceleration Sensor"
+    "id": "smartthings:airpurifier",
+    "label": "Samsung Air Purifier"
   },
   {
     "bindingId": "smartthings",
-    "id": "smartthings:airConditionerMode",
-    "label": "Air Conditioner Mode"
+    "id": "smartthings:appliance",
+    "label": "Samsung OCF Appliance"
   },
   {
     "bindingId": "smartthings",
-    "id": "smartthings:alarm",
-    "label": "Alarm"
+    "id": "smartthings:dehumidifier",
+    "label": "Samsung Dehumidifier"
   },
   {
     "bindingId": "smartthings",
-    "id": "smartthings:battery",
-    "label": "Battery Status"
+    "id": "smartthings:dryer",
+    "label": "Samsung Dryer"
   },
   {
     "bindingId": "smartthings",
-    "id": "smartthings:beacon",
-    "label": "Beacon"
+    "id": "smartthings:refrigerator",
+    "label": "Samsung Refrigerator"
   },
   {
     "bindingId": "smartthings",
-    "id": "smartthings:bulb",
-    "label": "Bulb"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:button",
-    "label": "Button"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:carbonDioxideMeasurement",
-    "label": "Carbon Dioxide Measurement"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:carbonMonoxideDetector",
-    "label": "Carbon Monoxide Detector"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:colorControl",
-    "label": "Color Control"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:color",
-    "label": "Color"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:colorTemperature",
-    "label": "Color Temperature"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:consumable",
-    "label": "Consumable"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:contactSensor",
-    "label": "Contact Sensor"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:doorControl",
-    "label": "Door Control"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:dryerMode",
-    "label": "Dryer Mode"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:dryerOperatingState",
-    "label": "Dryer Operating State"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:energyMeter",
-    "label": "Energy Meter"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:estimatedTimeOfArrival",
-    "label": "Estimated Time of Arrival"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:garageDoorControl",
-    "label": "Garage Door Control"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:holdableButton",
-    "label": "Holdable Button"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:illuminanceMeasurement",
-    "label": "Illuminance Measurement"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:imageCapture",
-    "label": "Image Capture"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:indicator",
-    "label": "Indicator"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:infraredLevel",
-    "label": "Infrared Level"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:light",
-    "label": "Light"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:lock",
-    "label": "Lock"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:lockOnly",
-    "label": "Lock Only"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:mediaController",
-    "label": "Media Controller"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:motionSensor",
-    "label": "Motion Sensor"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:musicPlayer",
-    "label": "Music Player"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:outlet",
-    "label": "Outlet"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:pHMeasurement",
-    "label": "pH Measurement"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:powerMeter",
-    "label": "PowerMeter"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:powerSource",
-    "label": "Power Source"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:presenceSensor",
-    "label": "Presence Sensor"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:relativeHumidityMeasurement",
-    "label": "Humidity Sensor"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:relaySwitch",
-    "label": "Relay Switch"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:shockSensor",
-    "label": "Shock Sensor"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:signalStrength",
-    "label": "Signal Strength"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:sleepSensor",
-    "label": "Sleep Sensor"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:smokeDetector",
-    "label": "Smoke Detector"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:soundPressureLevel",
-    "label": "Sound Pressure Level"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:soundSensor",
-    "label": "Sound Sensor"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:speechRecognition",
-    "label": "Speech Recognition"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:stepSensor",
-    "label": "Step Sensor"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:switch",
-    "label": "Switch"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:switchLevel",
-    "label": "Switch Level"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:tamperAlert",
-    "label": "Tamper Alert"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:temperatureMeasurement",
-    "label": "Temperature Measurement"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:thermostat",
-    "label": "Thermostat"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:thermostatCoolingSetpoint",
-    "label": "Thermostat Cooling Setpoint"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:thermostatFanMode",
-    "label": "Thermostat Fan Mode"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:thermostatHeatingSetpoint",
-    "label": "Thermostat Heating Setpoint"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:thermostatMode",
-    "label": "Thermostat Mode"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:thermostatOperatingState",
-    "label": "Thermostat Operating State"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:thermostatSetpoint",
-    "label": "Thermostat Setpoint"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:threeAxis",
-    "label": "Three Axis"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:timedSession",
-    "label": "Timed Session"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:touchSensor",
-    "label": "Touch Sensor"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:ultravioletIndex",
-    "label": "Ultraviolet Index"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:valve",
-    "label": "Valve"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:voltageMeasurement",
-    "label": "Voltage Measurement"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:washerMode",
-    "label": "Washer Mode"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:washerOperatingState",
-    "label": "Washer Operating State"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:waterSensor",
-    "label": "Water Sensor"
-  },
-  {
-    "bindingId": "smartthings",
-    "id": "smartthings:windowShade",
-    "label": "Window Shade"
+    "id": "smartthings:washer",
+    "label": "Samsung Washer"
   },
   {
     "bindingId": "smgw",
@@ -10913,6 +10623,31 @@
     "bindingId": "velux",
     "id": "velux:window",
     "label": "@text/thing-type.velux.window.label"
+  },
+  {
+    "bindingId": "veluxactive",
+    "id": "veluxactive:account",
+    "label": "VELUX ACTIVE Account"
+  },
+  {
+    "bindingId": "veluxactive",
+    "id": "veluxactive:gateway",
+    "label": "VELUX ACTIVE Gateway"
+  },
+  {
+    "bindingId": "veluxactive",
+    "id": "veluxactive:indoor-sensor",
+    "label": "VELUX ACTIVE Indoor Climate Sensor"
+  },
+  {
+    "bindingId": "veluxactive",
+    "id": "veluxactive:departure-switch",
+    "label": "VELUX ACTIVE Departure Switch"
+  },
+  {
+    "bindingId": "veluxactive",
+    "id": "veluxactive:opening",
+    "label": "VELUX ACTIVE Window/Cover"
   },
   {
     "bindingId": "venstarthermostat",
