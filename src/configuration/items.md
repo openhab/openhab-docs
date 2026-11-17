@@ -215,8 +215,13 @@ This section provides information about what a user can expect regarding the beh
 
 - An Item's state may also be set through a Binding which may be reacting to changes in the real world
 
-- A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
-    The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
+Two special states distinguish an absent value from one that cannot be represented:
+
+- `NULL` indicates the absence of a value.
+  Examples include an Item that has not yet been initialized, a device that has gone offline so its state can no longer be determined, or a Channel that is not relevant for a specific device.
+
+- `UNDEF` indicates that a value exists but cannot be represented as a concrete state.
+  Examples include infinity or NaN (not a number), which cannot be represented as a `DecimalType`; a sensor that reports an out-of-range reading without knowing the exact value; or a rollershutter that can detect when it is fully open or fully closed but cannot determine its exact position in between.
 
 _N.B._  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
 
