@@ -626,6 +626,11 @@
   },
   {
     "bindingId": "bluetooth",
+    "id": "bluetooth:hhccjcy01",
+    "label": "Mi Flora Plant Sensor"
+  },
+  {
+    "bindingId": "bluetooth",
     "id": "bluetooth:radoneye_rd200",
     "label": "RadonEye RD200"
   },
@@ -4298,6 +4303,11 @@
     "bindingId": "lutron",
     "id": "lutron:hwserialbridge",
     "label": "Lutron HomeWorks RS232 Bridge"
+  },
+  {
+    "bindingId": "lutron",
+    "id": "lutron:hwtelnetbridge",
+    "label": "Lutron HomeWorks Telnet Bridge"
   },
   {
     "bindingId": "lutron",

@@ -425,6 +425,28 @@ Frame label="Entrance Gates" {
 The ➡️ [`Group`](/docs/ui/sitemaps.html#element-type-group) Sitemap Widget will present a submenu containing all the items in the associated item of type `Group`.
 This also works recursively, if the `Group` item itself contains other `Group` items, those will again open their own submenus.
 
+If the group type maps to a widget the app can control (`Switch`, `Rollershutter`, or `Dimmer`), the submenu contains an additional first entry that represents the Group item itself.
+This allows you to send a command to the group as a whole (for example, switching all lights at once) without leaving the submenu.
+The entry uses the group label by default.
+
+You can define a different label for this entry by appending it to the group label, separated by a pipe:
+
+```java
+Group item=CC_House_Lights label="All Lights|All Lights Switch"
+```
+
+For group types without a control entry, the label is used unchanged.
+
+This is a Garmin-specific convention, not an openHAB feature. Other sitemap-based UIs will display the pipe and the complete label.
+The label is only split if both sides are non-empty and there is no additional pipe; otherwise the label is used unchanged.
+The optional state pattern must remain at the end of the label, because that is where openHAB appends the formatted state:
+
+```java
+Group item=CC_House_Lights label="All Lights|All Lights Switch [%s]"
+```
+
+In this example, the group entry in the parent menu and the submenu header are labelled "All Lights", while the control entry in the submenu is labelled "All Lights Switch" and shows the group state.
+
 ##### Example configuration:
 
 In this example, the `CC_House_Lights` item represents a hierarchical structure: it contains groups for each floor (e.g., the first floor), which in turn contain groups for individual rooms, and those room groups include the actual light switch items.
@@ -466,12 +488,12 @@ As a result, `Selection` is treated as a **synonym for `Switch`**, and both beha
 The widget supports four rendering variants, selected based on the underlying Item type and the available command descriptions. The following conditions are evaluated in order, from top to bottom. The first matching variant is used:
 
 1. **Player Control** – A full-screen control for `Player` Items, providing `PLAY`/`PAUSE`, `NEXT`, and `PREVIOUS` buttons.
-2. **Rollershutter Control** – A full-screen control for `Rollershutter` Items, providing `UP`, `DOWN`, and `STOP` buttons.
-3. **Toggle Switch** – A two-state toggle control used when:
+1. **Rollershutter Control** – A full-screen control for `Rollershutter` Items, providing `UP`, `DOWN`, and `STOP` buttons.
+1. **Toggle Switch** – A two-state toggle control used when:
    - The underlying Item is of type `Switch`, and its available commands are not an `ON`/`OFF` pair with descriptions.
    - The underlying Item is of type `Dimmer`, and no command descriptions or sitemap mappings are available.
    - The underlying Item is not of type `Switch`, and its available commands consist of exactly `ON` and `OFF` without descriptions.
-4. **Generic Switch** – A selection control used for `Switch` Items with an `ON`/`OFF` pair with descriptions, and for non-`Switch` Items whose available commands are not an undescribed `ON`/`OFF` pair.
+1. **Generic Switch** – A selection control used for `Switch` Items with an `ON`/`OFF` pair with descriptions, and for non-`Switch` Items whose available commands are not an undescribed `ON`/`OFF` pair.
 
 Valid explicit sitemap mappings take precedence over command descriptions provided by the Item's metadata. If none of the conditions match, the widget is not supported.
 
