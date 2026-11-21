@@ -50,7 +50,7 @@ sitemap demo label="My home automation" {
 <!-- Note to author: If you update this example, remember to copy it to the end of the article as well! -->
 
 This textual UI configuration will produce a user interface similar to this:
-![Presentation of the example in BasicUI](images/sitemap_demo_fullexample.png)
+![Presentation of the example in Basic UI](images/sitemap_demo_fullexample.png)
 
 <!-- Note to author: The files to create all screenshots can be found at the end of the article! -->
 
@@ -230,7 +230,7 @@ Frame label="Demo" {
 }
 ```
 
-![Presentation of the Frame element in BasicUI](images/sitemap_demo_frame.png)
+![Presentation of the Frame element in Basic UI](images/sitemap_demo_frame.png)
 
 ### Element Type 'Default'
 
@@ -261,7 +261,7 @@ Please refer to the documentation on [item State Presentation]({{base}}/configur
 Text item=Temperature label="Livingroom [%.1f °C]" staticIcon=temperature
 ```
 
-![Presentation of the Text element in BasicUI](images/sitemap_demo_text.png)
+![Presentation of the Text element in Basic UI](images/sitemap_demo_text.png)
 
 ### Element Type 'Group'
 
@@ -287,7 +287,7 @@ Please refer to the documentation on [Item groups]({{base}}/configuration/items.
 Group item=gTemperature label="Room Temperatures [%.1f °C]"
 ```
 
-![Presentation of the Group element in BasicUI](images/sitemap_demo_group.png)
+![Presentation of the Group element in Basic UI](images/sitemap_demo_group.png)
 
 ### Element Type 'Switch'
 
@@ -309,8 +309,8 @@ Switch item=LR_CeilingLight label="Ceiling Light" icon=light
 Switch item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC One", 2="Cartoon Network"]
 ```
 
-![Presentation of the On/Off Switch element in BasicUI](images/sitemap_demo_switch1.png)
-![Presentation of the multi-state Switch element in BasicUI](images/sitemap_demo_switch2.png)
+![Presentation of the On/Off Switch element in Basic UI](images/sitemap_demo_switch1.png)
+![Presentation of the multi-state Switch element in Basic UI](images/sitemap_demo_switch2.png)
 
 ### Element Type 'Buttongrid'
 
@@ -349,7 +349,7 @@ The content of each button can be text but also an icon; the icon will be used b
 Buttongrid label="Remote Control" staticIcon=screen item=RemoteControl buttons=[1:1:POWER="Power"=switch-off , 1:2:MENU="Menu" , 1:3:EXIT="Exit" , 2:2:UP="Up"=f7:arrowtriangle_up , 4:2:DOWN="Down"=f7:arrowtriangle_down , 3:1:LEFT="Left"=f7:arrowtriangle_left , 3:3:RIGHT="Right"=f7:arrowtriangle_right , 3:2:OK="Ok" , 2:4:VOL_PLUS="Volume +" , 4:4:VOL_MINUS="Volume -" , 3:4:MUTE="Mute"=soundvolume_mute]
 ```
 
-![Presentation of the Buttongrid element in BasicUI](images/sitemap_demo_buttongrid.png)
+![Presentation of the Buttongrid element in Basic UI](images/sitemap_demo_buttongrid.png)
 
 ### Element Type 'Button'
 
@@ -407,7 +407,7 @@ The element type is, in its use cases, similar to a Switch with multiple states 
 Selection item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC One", 2="Cartoon Network"]
 ```
 
-![Presentation of the Selection element in BasicUI](images/sitemap_demo_selection.png)
+![Presentation of the Selection element in Basic UI](images/sitemap_demo_selection.png)
 
 ### Element Type 'Setpoint'
 
@@ -424,7 +424,7 @@ Setpoint item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<ico
 Setpoint item=KI_Temperature label="Kitchen [%.1f °C]" minValue=4.5 maxValue=30 step=0.5
 ```
 
-![Presentation of the Setpoint element in BasicUI](images/sitemap_demo_setpoint.png)
+![Presentation of the Setpoint element in Basic UI](images/sitemap_demo_setpoint.png)
 
 ### Element Type 'Slider'
 
@@ -448,7 +448,7 @@ This type presents a value as a user-adjustable control which slides from left (
 Slider item=KI_Temperature label="Kitchen"
 ```
 
-![Presentation of the Slider element in BasicUI](images/sitemap_demo_slider.png)
+![Presentation of the Slider element in Basic UI](images/sitemap_demo_slider.png)
 
 ### Element Type 'Colorpicker'
 
@@ -468,7 +468,7 @@ The content of this middle button can also show what is the current color.
 Colorpicker item=LR_LEDLight_Color label="LED Light Color" staticIcon=colorwheel
 ```
 
-![Presentation of the Colorpicker element in BasicUI](images/sitemap_demo_colorpicker.png)
+![Presentation of the Colorpicker element in Basic UI](images/sitemap_demo_colorpicker.png)
 
 ### Element Type 'Colortemperaturepicker'
 
@@ -489,7 +489,7 @@ The content of this button can also show what is the current color temperature.
 Colortemperaturepicker item=LR_LEDLight_ColorTemp label="LED Light Color Temperature" staticIcon=colorwheel
 ```
 
-![Presentation of the Colortemperaturepicker element in BasicUI](images/sitemap_demo_colortemperaturepicker.png)
+![Presentation of the Colortemperaturepicker element in Basic UI](images/sitemap_demo_colortemperaturepicker.png)
 
 ### Element Type 'Input'
 
@@ -513,7 +513,7 @@ Note that this element type may not be supported on all user interfaces that sup
 Input item=Meter_Reading label="Meter [%.0f %unit%]" staticIcon=energy inputHint="number"
 ```
 
-![Presentation of the Input element in BasicUI](images/sitemap_demo_input.png)
+![Presentation of the Input element in Basic UI](images/sitemap_demo_input.png)
 
 ### Element Type 'Webview'
 
@@ -533,7 +533,7 @@ Please be aware that Webview elements are not usable by all user interface optio
 Webview url="https://www.openhab.org" height=5
 ```
 
-![Presentation of the Webview element in BasicUI](images/sitemap_demo_webview.png)
+![Presentation of the Webview element in Basic UI](images/sitemap_demo_webview.png)
 
 ### Element Type 'Mapview'
 
@@ -552,7 +552,7 @@ Displays an [OSM](https://www.openstreetmap.org) map based on a given Location I
 Mapview item=Demo_Location height=5
 ```
 
-![Presentation of the Mapview element in BasicUI](images/sitemap_demo_mapview.png)
+![Presentation of the Mapview element in Basic UI](images/sitemap_demo_mapview.png)
 
 ### Element Type 'Image'
 
@@ -578,7 +578,7 @@ Image url="https://raw.githubusercontent.com/wiki/openhab/openhab/images/feature
 Image url="https://192.168.1.203:8080/?action=snapshot" refresh=10000
 ```
 
-![Presentation of the Image element in BasicUI](images/sitemap_demo_image.png)
+![Presentation of the Image element in Basic UI](images/sitemap_demo_image.png)
 
 ### Element Type 'Video'
 
@@ -604,7 +604,7 @@ An embedded and/or protected video is not supported.
 Video url="https://demo.openhab.org/Hue.m4v"
 ```
 
-![Presentation of the Video element in BasicUI](images/sitemap_demo_video.png)
+![Presentation of the Video element in Basic UI](images/sitemap_demo_video.png)
 
 ### Element Type 'Chart'
 
@@ -893,7 +893,7 @@ Text item=TemperatureTrend icon=[TemperatureTrend=="UP"=f7:arrowtriangle_up, Tem
 
 ## Full Example
 
-![Presentation of the example in BasicUI](images/sitemap_demo_fullexample.png)
+![Presentation of the example in Basic UI](images/sitemap_demo_fullexample.png)
 
 <!-- Note to author: If you update this example, remember to copy it to the beginning of this article as well! -->
 

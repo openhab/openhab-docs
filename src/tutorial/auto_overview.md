@@ -5,7 +5,7 @@ title: Pages - Overview Page
 
 # Automatically Generated Overview Tabs
 
-MainUI will automatically generate an Overview page (id:overview).
+Main UI will automatically generate an Overview page (id:overview).
 This Overview page has four tabs: Overview, Locations, Equipment, and Properties.
 
 [[toc]]
@@ -78,7 +78,7 @@ If you've customized the chart and want to return to the same chart again, you c
 
 ## Customization / Page Configuration
 
-MainUI does a pretty good job of guessing a decent default method to present information to you.
+Main UI does a pretty good job of guessing a decent default method to present information to you.
 But what's the fun in just accepting the default?
 Luckily there are a lot of opportunities for customization.
 You've already seen some customizations to the Locations tab above.
@@ -105,7 +105,7 @@ Hidden Model Tabs | Allows the Locations, Equipment, and/or Properties tabs to b
 
 Below these settings one can select one of the three tabs to customize.
 This will list all the possible cards that can be shown on that tab based on your model.
-MainUI will only show those cards that have something in them, even if that card is selected to be shown.
+Main UI will only show those cards that have something in them, even if that card is selected to be shown.
 Unchecking a card will prevent it from being shown on that tab even if it does have entries in it.
 
 Next to each card entry there is a black and white icon that will open that card's customization form when clicked.
@@ -154,7 +154,7 @@ This default can be overridden here.
 
 Using this feature may require a bit more work.
 
-If you find a picture on the Internet that allows cross linking, all you need to do is put the URL of that picture in this field and MainUI will load it and use it as the background for the card.
+If you find a picture on the Internet that allows cross linking, all you need to do is put the URL of that picture in this field and Main UI will load it and use it as the background for the card.
 You may also wish to use your own images instead of something downloaded from the Internet.
 However, remember that text and icons will be displayed on top of the image.
 So regardless of the source, you might need to modify the original image to make it look good.

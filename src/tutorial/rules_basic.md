@@ -30,8 +30,8 @@ Each rule has four pieces of metadata.
 
 | Metadata    | Purpose                      | Notes                                                                                                                                                                                                                                            |
 |-------------|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Unique ID   | uniquely identifies the rule | must be completely different from all other rule's UIDs, initialized with a random value but I strongly recommend entering your own UID                                                                                                         |
-| Name        | "title" of the rule          | This will be the name under which the rule is shown in MainUI and is the primary field used for search and sorting                                                                                                                               |
+| Unique ID   | uniquely identifies the rule | must be completely different from all other rule's UIDs, initialized with a random value but I strongly recommend entering your own UID                                                                                                          |
+| Name        | "title" of the rule          | This will be the name under which the rule is shown in Main UI and is the primary field used for search and sorting                                                                                                                              |
 | Description | describes what the rule does | do not skip, provide information about what the rule does and what it does it to; leave breadcrumbs you can use later to associated rules with Items and Channels                                                                                |
 | Tags        | arbitrary tags               | Another place to leave breadcrumbs or to group rules together. Note the `Script` and `Schedule` tags have a special meaning (see previous page), and although Semantic tags are available, rules are not yet integrated into the Semantic Model. |
 
@@ -165,7 +165,7 @@ Under the "Languages & Technologies" section there are "Rule Templates" and "Blo
 These are community created capabilities posted to the [Marketplace](https://community.openhab.org/c/marketplace/69).
 Someone may have already written the code for you so all you have to do is install and configure it.
 
-In MainUI click on a rule template that seems to do what you want.
+In Main UI click on a rule template that seems to do what you want.
 This will open it's documentation page which explains how the template works, configuration parameters, dependencies, etc.
 
 ![alarm clock rule template](images/alarm-clock-rule-template.png)
@@ -199,7 +199,7 @@ The rule will not change automatically even if the rule template is changed or r
 To update a template use the following process:
 
 1. Notice that there has been an update to a template that you want to use (keep checking back).
-1. Select the template in MainUI and click "Remove".
+1. Select the template in Main UI and click "Remove".
 Then click "Add" to refresh the template with the new changes.
 
 #### Update a rule

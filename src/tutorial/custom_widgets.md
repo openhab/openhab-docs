@@ -5,7 +5,7 @@ title:  Pages - Custom Widgets
 
 # Custom Default Item Widgets
 
-As mentioned on the previous page, MainUI allows for the creation of custom widgets.
+As mentioned on the previous page, Main UI allows for the creation of custom widgets.
 These custom widgets can be reused for multiple Items in a given openHAB setup, and better still they can be shared with the community.
 A growing number of very impressive custom widgets have been posted to [Add-ons -> UI on the forum](https://community.openhab.org/c/add-ons/uis/30).
 This page provides just a few examples of custom widgets with an emphasis on the overall approach to developing your own.
@@ -15,7 +15,7 @@ For a comprehensive reference on creating widgets, please see the [Building Page
 
 ## Where to Create Custom Widgets
 
-In MainUI under Developer Tools there is a "Widgets" option.
+In Main UI under Developer Tools there is a "Widgets" option.
 Opening this will present a page with a list of all your custom widgets.
 Clicking the + icon will open the editor, which is a window split in half with a text entry area on the left and a preview on the right.
 
@@ -393,7 +393,7 @@ Please see the docs for more details.
 Now that the widgets are created, it's time to put them on a Page.
 We will focus on the Overview tab of the Overview page.
 
-To edit any Page go to Settings -> Pages in MainUI. There will be a grayed-out entry which represents the customized Locations, Equipment, and Properties tabs, and there will be an Overview entry.
+To edit any Page go to Settings -> Pages in Main UI. There will be a grayed-out entry which represents the customized Locations, Equipment, and Properties tabs, and there will be an Overview entry.
 That entry represents the Overview tab.
 Clicking on it will bring up a configuration page that allows you to configure the Overview tab with your custom widgets.
 You can build the widgets here, but it's more flexible to create custom widgets and add them to this page.

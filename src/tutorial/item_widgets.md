@@ -7,7 +7,7 @@ title: Pages - Item Widgets
 
 As with the Overview Page and individual cards, the way individual Point Items are presented can be customized.
 In general, the steps to do this include navigating to the Item in the Model tree or the Items Settings, clicking on "Add Metadata", and selecting "Default List Widget" to customize how the Item appears in the automatically generated cards on the Overview Page.
-One can also set the "Default Stand Alone Widget" and "Default Cell Widget" to change how an Item appears in other parts of MainUI.
+One can also set the "Default Stand Alone Widget" and "Default Cell Widget" to change how an Item appears in other parts of Main UI.
 
 [[toc]]
 
@@ -71,7 +71,7 @@ The screen shots above are an extreme case where there is a lot of Equipment wit
 
 ## Configure a Custom Widget
 
-By default MainUI will make a best guess on how to represent an Item.
+By default Main UI will make a best guess on how to represent an Item.
 If it fails to allow the interactions desired, or doesn't look the way you desire, a custom widget can be defined as metadata on the Item.
 To change how the Item appears in the automatically generated parts of the Overview Page, set the "Default List Widget".
 You can do so from the Model settings page or from the Item's settings page by clicking on "Add Metadata".
@@ -100,17 +100,17 @@ There is also a [marketplace](https://community.openhab.org/c/marketplace/69) av
 By default the state of the Item will be displayed on the right hand side of the widget.
 Sometimes the binding will provide hints on how to display the state, but most of the time this default will be just the string from `MyItem.state.toString()`.
 
-Note that the `label` field of an Item's definition in a .items file or the label set on the Item is _not_ used by MainUI.
+Note that the `label` field of an Item's definition in a .items file or the label set on the Item is _not_ used by Main UI.
 
 To customize the state of the Item, the "State Description" metadata must be configured.
 This metadata lets you define the format and any transformations to apply to the Item's state before it is displayed.
-When this metadata is defined, it will be used by default everywhere in MainUI.
+When this metadata is defined, it will be used by default everywhere in Main UI.
 
 Field | What it does
 -|-
-Read Only | A toggle that when set tells MainUI the Item is not controllable (e.g. a Switch used to represent a sensor state) so a text/label widget will be used instead of a toggle.
+Read Only | A toggle that when set tells Main UI the Item is not controllable (e.g. a Switch used to represent a sensor state) so a text/label widget will be used instead of a toggle.
 Pattern | Defines the pattern used to display the state. This is where you will define the transformation and any other formatting information using the same [syntax used by sitemaps]({{base}}/configuration/items.html#state-presentation). Everything that can go between the `[ ]` in an Item label as described by that doc (excluding the `[ ]` themselves) can go here.
-Min/Max/Step | Hints to MainUI used for slider, setpoint, and knob type widgets.
+Min/Max/Step | Hints to Main UI used for slider, setpoint, and knob type widgets.
 Options | Can be used with Actions (see below) to provide a mapping between the state of the Item and a command to issue.
 
 There may be times when you want to suppress the state of the Item entirely.
