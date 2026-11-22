@@ -96,7 +96,7 @@ Once the app is installed, you can configure the following settings by opening i
 
 | Setting                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **URL (e.g. https://yourhost:yourport). Note: HTTP works only on iOS; Android requires HTTPS with a valid certificate. For myopenhab.org, use https://home.myopenhab.org.** | Your openHAB URL. See [Connectivity](#connectivity) and [Using myopenHAB](#using-myopenhab) for details.                                                                                                                                                                                                                                                                      |
+| **URL (e.g. `https://yourhost:yourport`). Note: HTTP works only on iOS; Android requires HTTPS with a valid certificate. For myopenhab.org, use `https://home.myopenhab.org`.** | Your openHAB URL. See [Connectivity](#connectivity) and [Using myopenHAB](#using-myopenhab) for details.                                                                                                                                                                                                                                                                      |
 | **Sitemap Name**                  | Name of the sitemap to display. See [Sitemap Setup](#sitemap-setup) for details.                                                                                                                                                                                                                                                                                                                                                                                      |
 | **Enable this option if your openHAB installation supports the JSON-based REST API for sending commands.** | Enabled by default. When enabled, the app uses the JSON-based REST API to send commands. See [Sending Commands](#sending-commands) for details.                                                                                                                                                                                                                                                                                                                              |
 | **Webhook Identifier – A way to send commands if the JSON-based REST API is not available. See the documentation for setup instructions.** | If your openHAB version does not support the JSON-based REST API, you can disable the setting above and configure a custom webhook instead to send commands. See [Sending Commands](#sending-commands) for details.                                                                                                                                                                                                                                                                              |
@@ -104,7 +104,9 @@ Once the app is installed, you can configure the following settings by opening i
 | **Password**                      | Password for basic authentication                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **Suppress errors for empty sitemap responses. Recommended when using myopenhab.org, which occasionally returns empty results.** | See the related [openhab-cloud issue #496](https://github.com/openhab/openhab-cloud/issues/496) for details.                                                                                                                                                                                                                             |
 | **Polling interval (ms): Time between data requests to your openHAB instance. Set to 0 to request new data immediately after the previous response is processed.** | Polling only occurs while the app is open, not in the background. If you're using **myopenhab.org**, it's recommended to use the default (3000 ms) or a higher value to avoid overloading their servers. If you're connecting to your own openHAB server directly, you may try setting it to 0 for more responsive updates. |
-| **Post command hold time (ms): Time during which state updates are ignored after a command is sent. This prevents temporary state flip-flopping while the system processes the command and applies the new state.** | Since a sitemap request is executed immediately after sending a command, a slow response from openHAB may still return the previous state, causing switches in the UI to briefly toggle back and forth. The post-command hold time prevents this by locking the item state for a configurable duration while the command is processed and the new state is applied. |
+| **Post command hold time (ms): Time during which state updates are ignored after a command is sent. This prevents temporary state flip-flopping while the system processes the command and applies the new state. Set to 0 to disable.** | Since a sitemap request is executed immediately after sending a command, a slow response from openHAB may still return the previous state, causing switches in the UI to briefly toggle back and forth. The post-command hold time prevents this by locking the item state for a configurable duration while the command is processed and the new state is applied. The value is applied with millisecond precision. |
+
+Settings are read when the app starts. If you change settings while the app is open, the app stops requesting data and asks you to close and reopen it. The new settings are applied when the app starts again.
 
 <div style="display: flex; justify-content: center;">
   <img src="./images/app-settings/app-settings.png" alt="App Settings" style="max-width: 340px;">
@@ -166,7 +168,7 @@ Due to the limitations of the Wi-Fi mode, the app does not regularly poll openHA
   <img src="./images/app/12-nostates.png"/>
 </div>
 
-Only if no cached sitemap is available at startup, for example after settings changes or a fatal error, the app enters sync mode to retrieve the full sitemap. The [settings menu](#settings-menu) shows when the sitemap was last retrieved, and the user can also manually trigger an update via Wi-Fi, for example to download structural changes to the sitemap.
+Only if no cached sitemap is available at startup, for example after settings changes or a critical error, the app enters sync mode to retrieve the full sitemap. The [settings menu](#settings-menu) shows when the sitemap was last retrieved, and the user can also manually trigger an update via Wi-Fi, for example to download structural changes to the sitemap.
 
 <div class="garmin-screenshot-container">
   <img src="./images/app/12-settings-last-update.png"/>
@@ -528,31 +530,29 @@ The widget supports four rendering variants, selected based on the underlying It
 
 1. **Player Control** – A full-screen control for `Player` Items, providing `PLAY`/`PAUSE`, `NEXT`, and `PREVIOUS` buttons.
 1. **Rollershutter Control** – A full-screen control for `Rollershutter` Items, providing `UP`, `DOWN`, and `STOP` buttons.
-1. **Toggle Switch** – A two-state toggle control used when:
+1. **Toggle Switch** – A two-state toggle control used for `Switch` and `Dimmer` Items:
    - The underlying Item is of type `Switch`, and its available commands are not an `ON`/`OFF` pair with descriptions.
-   - The underlying Item is of type `Dimmer`, and no command descriptions or sitemap mappings are available.
-   - The underlying Item is not of type `Switch`, and its available commands consist of exactly `ON` and `OFF` without descriptions.
-1. **Generic Switch** – A selection control used for `Switch` Items with an `ON`/`OFF` pair with descriptions, and for non-`Switch` Items whose available commands are not an undescribed `ON`/`OFF` pair.
+   - The underlying Item is of type `Dimmer`, and either no commands are available or its available commands consist of exactly `ON` and `OFF` without descriptions.
+1. **Generic Switch** – A selection control used for all other Items with available commands. This includes `Switch` Items with an `ON`/`OFF` pair with descriptions, and Items of all other types with commands, including undescribed `ON`/`OFF` commands.
 
 Valid explicit sitemap mappings take precedence over command descriptions provided by the Item's metadata. If none of the conditions match, the widget is not supported.
 
 ##### Toggle Switch
 
-The toggle switch is used when **any** of the following applies:
+The toggle switch is only used for `Switch` and `Dimmer` items. It is used when **any** of the following applies:
 
 - The item is of type `Switch`, and its available commands are not an `ON`/`OFF` pair with descriptions.
-- The item is of type `Dimmer` and no commands are available.
-- The item is not of type `Switch`, and its available commands consist of exactly `ON` and `OFF` without descriptions.
+- The item is of type `Dimmer`, and either no commands are available or its available commands consist of exactly `ON` and `OFF` without descriptions.
 
-In all cases, the item must **not** be of type `Rollershutter` or `Player`.
+Only `Switch` and `Dimmer` items are eligible for the toggle, because their state can be interpreted as binary without losing information. Items of other types always use the generic switch.
 
 The switch simply toggles between `ON` and `OFF`.
 
 **Note:** A `Switch` item with an `ON`/`OFF` pair with descriptions is displayed as a generic switch so those descriptions can be shown. A `Switch` item without commands, with non-`ON`/`OFF` commands, or with an undescribed `ON`/`OFF` pair is displayed as a toggle switch.
 
-**Note:** For non-`Switch` items, `ON`/`OFF` commands with descriptions are displayed as a generic switch so the descriptions remain visible. Only undescribed `ON`/`OFF` commands are rendered as a toggle switch.
+**Note:** A `Dimmer` item with an `ON`/`OFF` pair with descriptions, or with other commands, is displayed as a generic switch.
 
-**Note:** If a `Dimmer` item is rendered as a toggle switch, the toggle sends `ON` and `OFF` commands. For display purposes, a `Dimmer` state of `0` is treated as `OFF`, while any value from `1` to `100` is considered `ON`.
+**Note:** If a `Dimmer` item is rendered as a toggle switch, the toggle sends `ON` and `OFF` commands. For display purposes, a `Dimmer` state of `0` is treated as `OFF`, while any value from `1` to `100` is considered `ON`. If the `Dimmer` has no state (`NULL`), a command selection menu is shown instead.
 
 **Note:** A `Dimmer` item without available commands is rendered as a toggle switch. Other item types without available commands are not supported by this widget.
 
@@ -621,15 +621,15 @@ Frame label="Switches" {
 This variant is used for items that don’t fall under the previous cases and have available commands. This includes:
 
 - `Switch` items with an `ON`/`OFF` pair with descriptions; these are displayed as generic switches so the descriptions can be shown.
-- Items that are not of type `Switch` whose commands are not exactly `ON` and `OFF` without descriptions.
+- `Dimmer` items with an `ON`/`OFF` pair with descriptions, or with other commands.
+- Items of all other types with available commands, including commands consisting of exactly `ON` and `OFF` without descriptions.
 
 It supports multiple custom commands, defined either via:
 
 - `mappings` in the sitemap,
 - or command/state descriptions on the item (e.g., from a channel or metadata).
 
-For items that are not of type `Switch`, commands consisting of exactly `ON` and `OFF` **without descriptions** are displayed as a toggle switch.
-If descriptions are provided for the `ON`/`OFF` commands, the generic switch is used so those descriptions are shown.
+Only `Switch` and `Dimmer` items can be rendered as a toggle switch. Items of all other types always use the generic switch, so that a state like `Playing`, `OPEN`, or `200` is never interpreted as binary.
 
 In the menu, the widget displays the current state as text:
 
@@ -665,7 +665,7 @@ The actual appearance may vary depending on the device, as it uses a native UI c
 
 **Example with `ON`/`OFF` Mapping Entries:**
 
-A `Switch` item with mappings consisting of exactly `ON` and `OFF` is displayed as a generic switch, showing the mapped text state.
+A `Switch` item with mappings consisting of exactly `ON` and `OFF`, where at least one entry has a description, is displayed as a generic switch, showing the mapped text state.
 A typical use case is a garage door opener: sending an `ON` command triggers the gate to open or close, and the switch automatically resets to `OFF` after one second.
 
 ```java
@@ -713,6 +713,7 @@ The only behavioral difference between the two is the `Slider` widget’s suppor
 - A maximum of 100 steps is supported, for example:
   - minValue=0, maxValue=100, step=1
   - minValue=0, maxValue=50, step=0.5
+- `step` must be greater than `0`, and `maxValue` must be greater than or equal to `minValue`. Invalid values are rejected with an error message that names the widget and the invalid parameter.
 - While up to 100 steps are supported, this can be impractical for wearable interfaces. It is recommended to define the range and `step` so that the total number of steps is limited to roughly 10 to 20, making interaction significantly more manageable.
 - The formatting pattern defined in the item’s metadata is not used. Instead, predefined formatting rules are applied when displaying values:
   - In the menu, values are formatted as compactly as possible and the unit is appended without a space to conserve space. For example “20°C” or “20.5°C”.
@@ -860,39 +861,47 @@ This section explains how the app handles errors and lists common issues you mig
 
 ### How the App Handles Errors
 
-The app distinguishes between **temporary (non-fatal)** and **critical (fatal)** errors:
+The app distinguishes between **temporary**, **critical**, and **fatal** errors:
 
-- **Non-fatal errors** trigger a toast notification at the top of the screen, allowing you to continue using the app.
-- **Fatal errors** display a full-screen error view, halting further use until the issue is resolved.
+- **Temporary errors** trigger a toast notification at the top of the screen; you can continue using the app.
+- **Critical errors** display a full-screen error view, but the app keeps requesting data in the background and returns to the sitemap automatically once it receives a valid response.
+- **Fatal errors** are also shown in a full-screen error view, but the app stops requesting data and cannot recover by itself. Close and reopen the app. This applies to fatal user interface errors and to a settings change while the app is running.
 
-#### Non-fatal errors include:
+#### Temporary errors (toast notification)
 
 - Most communication-related issues when requesting the sitemap.
 - All communication-related issues when sending a command.
-- Issues that occur while processing user input
+- Issues that occur while processing user input.
 
-> Note: Non-fatal errors related to requesting the sitemap will become fatal if they persist for more than 10 seconds.
+> Note: Temporary errors during sitemap polling become critical if they persist for more than 10 seconds.
 
-#### Immediately fatal errors include:
+#### Critical errors (full-screen error, recoverable)
 
 - Certain communication errors when requesting the sitemap, specifically:
 
-  - Error `-1001` (see below)
+  - Error `-1001` (secure connection required, see below)
   - HTTP error `404`
+  - Errors `-402` (response too large) and `-403` (out of memory)
 - Errors encountered while parsing the sitemap.
-- Any other unexpected errors or exceptions.
+- Other unexpected errors while processing server responses.
 
-> Note: Apart from fatal user interface errors, the app continues querying the sitemap after a fatal error. If a response is successfully processed, it returns to displaying the sitemap.
-> Fatal user interface errors stop sitemap polling permanently, so the app must be restarted to continue.
+> Note: The app continues querying the sitemap while a critical error is displayed. If a later response is processed successfully, it returns to displaying the sitemap.
 
-#### If "Suppress errors for empty sitemap responses" is enabled:
+#### Fatal errors and states (full-screen error, require restart)
+
+- Fatal user interface errors, shown with the prefix `Fatal UI error:`.
+- A settings change while the app is running. The new settings are applied when the app starts again.
+
+In both cases, the app stops sitemap polling permanently and cancels pending requests, including commands. It cannot recover by itself, so close and reopen the app.
+
+#### If "Suppress errors for empty sitemap responses" is enabled
 
 When this option is enabled in the [Settings](#configuration), toast notifications for the following errors will be suppressed:
 
 - `INVRES` – Invalid response (error code `-400`)
 - `EMRES` – Empty response
 
-However, if these errors persist for more than 10 seconds, they will be treated as fatal, and a full-screen error view will be shown.
+However, if these errors persist for more than 10 seconds, they will be treated as critical, and a full-screen error view will be shown.
 
 ### Communication Error Codes (Prefix: `S:`/`C:`)
 
@@ -922,9 +931,9 @@ The following error codes are used for common communication issues and those wit
 
 ### User Interface Error Codes (Prefix `UI:`)
 
-All error codes with the `UI:` prefix currently indicate an internal programming error in the user interface. These errors are not caused by incorrect user interaction or configuration.
+All error codes with the `UI:` prefix currently indicate an internal programming error in the user interface. The same applies to errors shown with the `Fatal UI error:` prefix. These errors are not caused by incorrect user interaction or configuration.
 
-If you encounter a **UI:** error code, please report it to the development team, as it helps identify and fix issues in the application. Including the exact error code and the circumstances under which it occurred is especially helpful. Reports can be submitted in [the forum](https://community.openhab.org/t/announcing-openhab-for-garmin/163891) or by creating an issue on [GitHub](https://github.com/openhab/openhab-garmin/issues).
+If you encounter a **UI:** error code or a **Fatal UI error:** message, please report it to the development team, as it helps identify and fix issues in the application. Including the exact error code or message and the circumstances under which it occurred is especially helpful. Reports can be submitted in [the forum](https://community.openhab.org/t/announcing-openhab-for-garmin/163891) or by creating an issue on [GitHub](https://github.com/openhab/openhab-garmin/issues).
 
 ### Common Issues
 
@@ -932,7 +941,7 @@ If you encounter a **UI:** error code, please report it to the development team,
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `S:0` or `C:0` | When in [Wi-Fi mode](#wi-fi), this error occurs if a sitemap request or command fails because the server is not reachable, for example due to an incorrect URL in the configuration. |
 | `C:415`   | HTTP response code **415** means _Unsupported Media Type_. This usually occurs when the JSON-based REST API is enabled in the [Configuration](#configuration), but your openHAB instance doesn’t support it. If you're using the backport (see [Sending Commands](#sending-commands) and have recently updated openHAB to a newer version or installed a new binding, you may need to re-install the backport to restore compatibility.                                                       |
-| `S:EMRES` | myopenHAB currently experiences an intermittent issue ([details here](https://github.com/openhab/openhab-cloud/issues/496)) where sitemap requests may return empty responses. When this happens, the app displays a non-fatal `S:EMRES` notification. Typically, the next request succeeds, so the issue doesn't escalate into a fatal error. To avoid seeing these notifications, you can enable the **Suppress errors for empty sitemap responses** option in the [Configuration](#configuration) settings. |
+| `S:EMRES` | myopenHAB currently experiences an intermittent issue ([details here](https://github.com/openhab/openhab-cloud/issues/496)) where sitemap requests may return empty responses. When this happens, the app displays a toast notification for `S:EMRES`. Typically, the next request succeeds, so the issue doesn't escalate into a full-screen error. To avoid seeing these notifications, you can enable the **Suppress errors for empty sitemap responses** option in the [Configuration](#configuration) settings. |
 
 ### Edge 550 / 850 Menu Focus Indicator Issue
 

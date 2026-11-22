@@ -4441,6 +4441,11 @@
   },
   {
     "bindingId": "lutron",
+    "id": "lutron:hwkeypad",
+    "label": "Lutron Keypad (Legacy HomeWorks)"
+  },
+  {
+    "bindingId": "lutron",
     "id": "lutron:ra-dimmer",
     "label": "Lutron Dimmer (Legacy RadioRA)"
   },
