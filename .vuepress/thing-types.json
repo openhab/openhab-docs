@@ -1000,6 +1000,11 @@
     "label": "Rain Forecast"
   },
   {
+    "bindingId": "bydbatterybox",
+    "id": "bydbatterybox:hv-premium",
+    "label": "BYD Battery-Box Premium"
+  },
+  {
     "bindingId": "caddx",
     "id": "caddx:bridge",
     "label": "Caddx"
@@ -18518,20 +18523,5 @@
     "bindingId": "zwavejs",
     "id": "zwavejs:node",
     "label": "Z-Wave Node"
-  },
-  {
-    "bindingId": "zway",
-    "id": "zway:zwayServer",
-    "label": "Z-Way Server"
-  },
-  {
-    "bindingId": "zway",
-    "id": "zway:zwayDevice",
-    "label": "Z-Wave Device"
-  },
-  {
-    "bindingId": "zway",
-    "id": "zway:zwayVirtualDevice",
-    "label": "Z-Way Virtual Device"
   }
 ]
