@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="GME Gestore dei Mercati Energetici">
+<rect x="8" y="8" width="240" height="240" rx="35" fill="#fff" stroke="#08742a" stroke-width="9"/>
+<g fill="none" stroke="#19a313" stroke-width="12" stroke-linecap="round"><path d="M31 83C51 151 78 197 130 211"/><path d="M49 83C68 145 93 185 142 205"/><path d="M67 83C86 140 108 177 155 199"/></g>
+<text x="100" y="112" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-style="italic" font-size="65" fill="#303030">GME</text>
+<text x="116" y="140" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="600" font-style="italic" fill="#555">Gestore dei</text>
+<text x="116" y="157" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="600" font-style="italic" fill="#555">Mercati</text>
+<text x="116" y="174" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="600" font-style="italic" fill="#555">Energetici</text>
+<path d="M130 211H191Q207 211 215 193" fill="none" stroke="#139a20" stroke-width="12" stroke-linecap="round"/>
+<g transform="translate(212 190) rotate(23)"><path d="M-19-19H19V4Q19 22 0 22Q-19 22-19 4Z" fill="#079523"/><path d="M-10-19V-34M10-19V-34" stroke="#079523" stroke-width="8" stroke-linecap="round"/><path d="M3-14L-8 2H1L-4 15L12-5H3Z" fill="#fff"/></g>
+</svg>
