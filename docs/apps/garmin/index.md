@@ -71,6 +71,11 @@ In this manual, "Widget" refers to the Garmin app component, while "Sitemap Widg
 
 The following sections provide detailed guidance on configuring the app, supported Sitemap Widgets, user interface behavior, and troubleshooting tips.
 
+## Supported Languages
+
+The app UI and error messages are available in English, German, French, Italian, Spanish, and Polish.
+The app uses the watch's system language and falls back to English if a translation is missing.
+
 ## Supported Devices
 
 The app supports the following Garmin device series:
@@ -468,7 +473,7 @@ This also works recursively, if the `Group` item itself contains other `Group` i
 
 If the group type maps to a widget the app can control (`Switch`, `Rollershutter`, or `Dimmer`), the submenu contains an additional first entry that represents the Group item itself.
 This allows you to send a command to the group as a whole (for example, switching all lights at once) without leaving the submenu.
-The entry uses the group label by default.
+The entry is labeled `All` by default (translated to the app language, for example `Alle` in German).
 
 You can define a different label for this entry by appending it to the group label, separated by a pipe:
 

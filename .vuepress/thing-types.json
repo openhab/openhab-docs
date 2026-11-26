@@ -9266,6 +9266,16 @@
   },
   {
     "bindingId": "tapocontrol",
+    "id": "tapocontrol:EP10",
+    "label": "EP10 Smart Plug Mini"
+  },
+  {
+    "bindingId": "tapocontrol",
+    "id": "tapocontrol:EP40",
+    "label": "EP40 Outdoor Smart Plug"
+  },
+  {
+    "bindingId": "tapocontrol",
     "id": "tapocontrol:H100",
     "label": "Tapo Hub H100"
   },
@@ -9278,6 +9288,11 @@
     "bindingId": "tapocontrol",
     "id": "tapocontrol:HS220",
     "label": "HS220 Smart Dimmer Switch"
+  },
+  {
+    "bindingId": "tapocontrol",
+    "id": "tapocontrol:KP405",
+    "label": "KP405 Outdoor Smart Dimmer Plug"
   },
   {
     "bindingId": "tapocontrol",
