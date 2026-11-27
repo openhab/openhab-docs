@@ -584,6 +584,9 @@ In the menu and in the full-screen view, the item displays a textual or percenta
 - `mappings` can be used to map numeric states (e.g., `0="Open"`, `100="Closed"`). They affect both the menu label and the state shown in the full-screen view.
 - If the state cannot be mapped to a text, the numeric percentage is shown.
 
+Percentages are always shown as whole numbers, for example `42%`. This also applies when the state is fractional, which happens for example when a `Rollershutter` Group item aggregates the states of its members (e.g., an average of `42.5` is shown as `43%`).
+The formatting pattern defined in the item's metadata is not used.
+
 **Example:**
 
 ```java
@@ -721,7 +724,7 @@ The only behavioral difference between the two is the `Slider` widget’s suppor
 - `step` must be greater than `0`, and `maxValue` must be greater than or equal to `minValue`. Invalid values are rejected with an error message that names the widget and the invalid parameter.
 - While up to 100 steps are supported, this can be impractical for wearable interfaces. It is recommended to define the range and `step` so that the total number of steps is limited to roughly 10 to 20, making interaction significantly more manageable.
 - The formatting pattern defined in the item’s metadata is not used. Instead, predefined formatting rules are applied when displaying values:
-  - In the menu, values are formatted as compactly as possible and the unit is appended without a space to conserve space. For example “20°C” or “20.5°C”.
+  - In the menu, values are formatted as compactly as possible and the unit is appended without a space to conserve space. For example “20°C” or “20.5°C”. Percentages are always shown without decimal places, for example “42%”.
   - In the full-screen widget, values are always formatted with the same number of decimal places as defined by the step. The unit is appended with a space, except for %. For example “20.0 °C” or “20.5 °C” with step=0.5.
 
 ##### Example configuration:
@@ -879,6 +882,9 @@ The app distinguishes between **temporary**, **critical**, and **fatal** errors:
 - Issues that occur while processing user input.
 
 > Note: Temporary errors during sitemap polling become critical if they persist for more than 10 seconds.
+> The threshold is the age of the last successful sitemap response, so an app that has never
+> received one — the first start, or the first start after the app's data was cleared — has no
+> fresh data to fall back on and shows the full-screen error view immediately.
 
 #### Critical errors (full-screen error, recoverable)
 

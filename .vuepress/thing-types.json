@@ -3280,6 +3280,11 @@
     "label": "HTTP URL Thing"
   },
   {
+    "bindingId": "httphook",
+    "id": "httphook:endpoint",
+    "label": "HTTP Hook Endpoint"
+  },
+  {
     "bindingId": "hue",
     "id": "hue:0850",
     "label": "CLIP Generic Flag Sensor"
@@ -5356,6 +5361,16 @@
   },
   {
     "bindingId": "mqtt",
+    "id": "mqtt:awtrix-ng-clock",
+    "label": "AWTRIX NG Clock"
+  },
+  {
+    "bindingId": "mqtt",
+    "id": "mqtt:awtrix-ng-app",
+    "label": "AWTRIX NG App"
+  },
+  {
+    "bindingId": "mqtt",
     "id": "mqtt:awtrix-clock",
     "label": "Awtrix Light Device"
   },
@@ -5463,6 +5478,36 @@
     "bindingId": "myuplink",
     "id": "myuplink:generic-device",
     "label": "myUplink Generic Device"
+  },
+  {
+    "bindingId": "myvaillant",
+    "id": "myvaillant:account",
+    "label": "myVAILLANT Account"
+  },
+  {
+    "bindingId": "myvaillant",
+    "id": "myvaillant:circuit",
+    "label": "myVAILLANT Circuit"
+  },
+  {
+    "bindingId": "myvaillant",
+    "id": "myvaillant:device",
+    "label": "myVAILLANT Device"
+  },
+  {
+    "bindingId": "myvaillant",
+    "id": "myvaillant:dhw",
+    "label": "myVAILLANT Hot Water"
+  },
+  {
+    "bindingId": "myvaillant",
+    "id": "myvaillant:system",
+    "label": "myVAILLANT System"
+  },
+  {
+    "bindingId": "myvaillant",
+    "id": "myvaillant:zone",
+    "label": "myVAILLANT Zone"
   },
   {
     "bindingId": "nanoleaf",
@@ -9613,6 +9658,16 @@
     "bindingId": "threedprinter",
     "id": "threedprinter:octoprint",
     "label": "OctoPrint Printer"
+  },
+  {
+    "bindingId": "tibber",
+    "id": "tibber:pulse-bridge",
+    "label": "Tibber Pulse Bridge"
+  },
+  {
+    "bindingId": "tibber",
+    "id": "tibber:pulse-meter",
+    "label": "Tibber Pulse Meter"
   },
   {
     "bindingId": "tibber",
