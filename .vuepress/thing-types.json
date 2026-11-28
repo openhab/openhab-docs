@@ -320,6 +320,16 @@
     "label": "City Report"
   },
   {
+    "bindingId": "atv",
+    "id": "atv:appletv",
+    "label": "Apple TV"
+  },
+  {
+    "bindingId": "atv",
+    "id": "atv:speaker",
+    "label": "AirPlay Speaker"
+  },
+  {
     "bindingId": "autelis",
     "id": "autelis:jandy",
     "label": "Jandy Pool Controller"
