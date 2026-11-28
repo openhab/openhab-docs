@@ -41,8 +41,7 @@ The log shell provides the following commands:
 | `log:clear`             | Clear log entries                                                 |
 | `log:display`           | Display the last log entries                                      |
 | `log:exception-display` | Displays the last occurred exception from the log                 |
-| `log:get`               | Show the currently set log level                                  |
-| `log:list`              | List the currently set loggers with their levels                  |
+| `log:get`               | Show the log level of the given logger, or of all loggers         |
 | `log:log`               | Log a message                                                     |
 | `log:set`               | Set the log level                                                 |
 | `log:tail`              | Continuously display log entries. Use ctrl-c to quit this command |
