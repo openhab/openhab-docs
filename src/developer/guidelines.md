@@ -353,42 +353,54 @@ private @NonNullByDefault({}) MyService injectedService;
 
 ### Default Libraries
 
-In order to not have every binding use a different library, the following packages are available by default:
+To avoid every add-on bringing its own library for the same purpose, the following libraries are part of the openHAB runtime and should be preferred.
+Do not embed them in your add-on.
 
-For XML Processing
+For JSON processing
 
-- com.thoughtworks.xstream
-- com.thoughtworks.xstream.annotations
-- com.thoughtworks.xstream.converters
-- com.thoughtworks.xstream.io
-- com.thoughtworks.xstream.io.xml
+- Gson (`com.google.gson.*`) is the default.
+- Jackson 3 (`tools.jackson.*`, annotations in `com.fasterxml.jackson.annotation`) may be used where Gson is not sufficient or a library you depend on already uses Jackson.
+  Jackson 2 is no longer part of the runtime.
 
-For JSON Processing
+For XML processing
 
-- com.google.gson.*
+- The JDK's StAX (`javax.xml.stream`) or DOM (`javax.xml.parsers`, `org.w3c.dom`) APIs.
+- Jackson 3 XML (`tools.jackson.dataformat.xml`) to map XML to Java objects.
+- JAXB 4 (`jakarta.xml.bind.*`), e.g. for classes generated from an XSD.
 
-For HTTP Operations
+When parsing XML received from devices or the network, disable DTDs and external entity resolution.
 
-- org.eclipse.jetty.client.*
-- org.eclipse.jetty.client.api.*
-- org.eclipse.jetty.http.*
-- org.eclipse.jetty.util.*
-
-::: tip Note
-HttpClient instances should be obtained by the handler factory through the HttpClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+::: warning
+XStream (`com.thoughtworks.xstream.*`) is deprecated and should not be used in new code.
+It relies on `sun.misc.Unsafe`, which future Java releases will block, and it will be removed from the runtime.
+Existing add-ons should migrate to one of the options above.
 :::
 
-For Web Socket Operations
+For HTTP and WebSocket operations
 
-- org.eclipse.jetty.websocket.client
-- org.eclipse.jetty.websocket.api
+- `org.eclipse.jetty.client.*`
+- `org.eclipse.jetty.http.*`
+- `org.eclipse.jetty.util.*`
+- `org.eclipse.jetty.websocket.api.*`
+- `org.eclipse.jetty.websocket.client.*`
 
 ::: tip Note
-WebSocketClient instances should be obtained by the handler factory through the WebSocketClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+Obtain `HttpClient` instances through the `HttpClientFactory` service and `WebSocketClient` instances through the `WebSocketFactory` service.
+Unless there are specific configuration requirements, use the shared instance.
 :::
 
-For Server Sent Events (SSE) Operations
+For HTTP endpoints
 
-- javax.ws.rs.client
-- javax.ws.rs.core
-- javax.ws.rs.sse
+- Use the `WebhookService` (`org.openhab.core.io.rest`) to receive callbacks from cloud services.
+- Register servlets, e.g. for an interactive authorization step, through the OSGi HTTP Whiteboard (`org.osgi.service.servlet.whiteboard`).
+  Do not use the legacy `HttpService` or start an embedded HTTP server.
+
+For Server-Sent Events (SSE) operations
+
+- `jakarta.ws.rs.client.*`
+- `jakarta.ws.rs.core.*`
+- `jakarta.ws.rs.sse.*`
+
+::: tip Note
+Obtain the `ClientBuilder` and the `SseEventSourceFactory` (`org.osgi.service.jakartars.client`) as OSGi service references instead of creating them yourself.
+:::
