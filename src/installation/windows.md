@@ -111,6 +111,7 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.java.classpath.3=%KARAF_HOME%\lib\jdk9plus\*.jar
     wrapper.java.classpath.4=%KARAF_HOME%\lib\endorsed\*.jar
     wrapper.java.library.path.1=%KARAF_DATA%\lib\wrapper\
+    wrapper.java.library.path.2=%OPENHAB_USERDATA%\tmp\lib
 
     # Java Parameters
     wrapper.java.additional.1=-Dkaraf.home="%KARAF_HOME%"
@@ -129,7 +130,7 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.java.additional.14=-Djdk.util.zip.disableZip64ExtraFieldValidation=true
     wrapper.java.additional.15=-Djetty.host=0.0.0.0
     wrapper.java.additional.16=-Djetty.http.compliance=RFC2616
-    wrapper.java.additional.17=-Dorg.apache.cxf.osgi.http.transport.disable=true
+    wrapper.java.additional.17=-Dorg.ops4j.pax.web.listening.addresses=0.0.0.0
     wrapper.java.additional.18=-Dorg.osgi.service.http.port=8080
     wrapper.java.additional.19=-Dorg.osgi.service.http.port.secure=8443
     wrapper.java.additional.20=-Djava.util.logging.config.file="%KARAF_ETC%\java.util.logging.properties"

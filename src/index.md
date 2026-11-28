@@ -187,7 +187,7 @@ But it comes with a rather steep learning curve.
 
 openHAB is developed in [Java](https://www.java.com/) and uses [OSGi](https://www.osgi.org/) for modularity.
 [Apache Karaf](https://karaf.apache.org/) serves as a container with [Eclipse Equinox](https://www.eclipse.org/equinox/) as the OSGi runtime environment.
-[Jetty](https://www.eclipse.org/jetty/) is included as an HTTP server.
+[Jetty](https://jetty.org/) is included as an HTTP server.
 
 openHAB is highly modular software that can be extended through "Add-ons".
 Add-ons give openHAB a wide array of capabilities, from User Interfaces, to the ability to interact with a large and growing number of physical Things.

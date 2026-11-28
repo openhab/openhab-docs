@@ -91,7 +91,7 @@ Bundles that are shared by different openHAB bundles are excluded from embedding
 The need to be added to the feature to make them available at runtime.
 Two cases need to be treated differently:
 
-1. Bundles that have a core feature are referenced by the feature (e.g. `<feature>openhab-runtime-jna</feature>` or `<feature>openhab-transport-upnp</feature>`).
+1. Bundles that have a core feature are referenced by the feature (e.g. `<feature>openhab.tp-jna</feature>` or `<feature>openhab-transport-upnp</feature>`).
 1. Bundles that do not have a core feature are added directly (e.g. `<bundle dependency="true">mvn:commons-codec/commons-codec/1.10</bundle>`).
 
 ### Multi-Bundle Features / Sub-Bundles
